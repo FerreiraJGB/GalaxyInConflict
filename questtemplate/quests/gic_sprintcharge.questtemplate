@@ -1,0 +1,34 @@
+{
+  "id" : "gic_sprintchargequest",
+  "title" : "^#D1FFDE;Unitan Basic Training Manual",
+  "prerequisites" : [  ],
+  "text" : "Taking quick flick at the book, you unsurprisingly find a lot of empty pages for writing notes, and a myriad of completely non-military topics within.",
+  "completionText" : "^orange;[Sprint-Charge] unlocked and equipped as a [BODY Tech]",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : false,
+	
+    "showTech" : [
+      "gic_sprint"
+    ],
+    "equipTech" : [
+      "gic_sprint"
+    ],
+
+
+    "conditions" : [
+    ]
+  }
+}

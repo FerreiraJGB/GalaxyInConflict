@@ -1,0 +1,23 @@
+{
+  "id" : "gic_fantesar_arena_quest",
+  "title" : "^green;Fantesar Arena",
+  "text" : "You have unlocked a replayable challenge mission!",
+  "completionText" : "Fantesar Arena unlocked. Something is calling from beyond. Something unexpected is expected, yet still unexpected. [SAIL UPDATED]",
+  "speaker" : "player",
+  "moneyRange" : [500, 1000],
+  "rewards" : [
+      [ [ "rewardbag" ] ]
+   ],
+  "canBeAbandoned" : false,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+		"portraits" : {
+		"default" : "player"
+		},
+	"associatedMission" : "gic_fantesar_arena",
+    "turnInDescription" : "Fantesar Arena unlocked!",
+    "requireTurnIn" : false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "itemName" : "gic_spiritualremedy",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#738587;Mana Potion^white;",
+  "inventoryIcon" : "gic_spiritualremedy.png",
+  "maxStack" : 15,
+  "description" : "''Known to stop Gestalt influences and to improve the emotional energy of women.''
+The Glitch Free-Thinkers were aware of their origins as simulated race and desperately clamoured for answers. Spiritual Remedies claim to strengthen a Glitch's connection to the spiritual realm whilst resisting against malicious spirits.
+^green;+80% Psychic Resistance for 30s.^white;
+^orange;Disables 'Steel Surge' Glitch Free-Thinker racial trait for 15 minutes.^white;",
+
+  "shortdescription" : "Spiritual Remedy",
+  "effects" : [ [
+      {
+        "effect" : "gic_psychicbleeding_lightStatusImmunity_spiritualremedy",
+        "duration" : 30
+      },
+      {
+        "effect" : "gic_spiritualremedy",
+        "duration" : 30
+      },
+	  {
+        "effect" : "gic_healing_slowdown_1_spiritualremedy"
+      },
+	  {
+        "effect" : "gic_steelsurge_primerStatusImmunity",
+        "duration" : 900
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_elixirheal" ],
+  "blockingEffects" : [
+  ]
+}

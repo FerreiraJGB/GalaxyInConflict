@@ -1,0 +1,41 @@
+{
+  "projectileName" : "gic_redtracerbullet_heavy_miss_a_machinegun",
+  "image" : "icon.png",
+  "animationCycle" : 0.0,
+  "physics" : "laser",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "timeToLive" : 0.05,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [240, 240, 50],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_redtracerbullet_heavy_miss_b",
+      "directional" : "true",
+      "inheritDamageFactor" : 1
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shellcasing_heavy",
+      "fuzzAngle" : 20,
+      "angle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_gunfirenoise_standard",
+      "inheritDamageFactor" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_case_belt_link",
+      "fuzzAngle" : 20,
+      "angle" : 90
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "noDamage",
+  "damageKind" : "ews_heavyarms"
+}

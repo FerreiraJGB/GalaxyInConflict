@@ -1,0 +1,97 @@
+{
+  "type" : "gic_federal_frostsoldier",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 13,
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Target inbound! Open fire!",
+            "Opening fire!",
+			"Holy shit!",
+			"Shit!",
+			"Fucker!",
+			"We got a live one!"
+          ]
+        }
+      }
+    },
+    "reactions" : {
+      "spontaneous" : [
+        [2.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+//        [1.0, "patrol", { "timeRange" : [0.1,0.3]}],
+        [2.0, "wander"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_bandithood_scarf", "parameters" : { "colorIndex" : [3] } } ],
+            "chest" : [ { "name" : "gic_kotv3chest", "parameters" : { "colorIndex" : [3] }  } ],
+            "legs" : [ { "name" : "gic_ebcplegs", "parameters" : { "colorIndex" : [3] }  } ],
+            "back" : [ { "name" : "gic_wolfpackback", "parameters" : { "colorIndex" : [3] }  } ],
+            "primary" : [
+			  "gic_bastardrifle",
+			  "gic_metroshambler",
+			  "gic_usm47a2"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"], 
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -0.4
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.3
+      }
+	  
+	  
+    }
+  }
+  
+}

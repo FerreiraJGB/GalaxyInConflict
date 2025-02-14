@@ -1,0 +1,79 @@
+{
+  "type" : "gic_surfacecityspacecolonist_khurtovyna_dealer",
+  "baseType" : "gic_villagerbase",
+
+  "damageTeam" : 1,
+  "damageTeamType" : "friendly",
+  
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      "greetingChance" : 0.0
+    },
+    "questGenerator" : {
+      "enableParticipation" : false
+    },
+    "offeredQuests" : [ "gic_khurtovyna_dealer_repeatablequest" ],
+    "turnInQuests" : [ "gic_khurtovyna_dealer_repeatablequest" ],
+
+    "dialog" : {
+      "converse" : "/dialog/space_colony/gic_surfacecityspacecolonist_khurtovyna_dealer.config:converse"
+    },
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}]
+      ]
+    }
+	
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+
+            "chest" : [ { "name" : "gic_g4rtmvchest", "parameters" : { "colorIndex" : [2] } } ],
+            "legs" : [ { "name" : "gic_sdkplegs", "parameters" : { "colorIndex" : [2] } } ]
+          }
+        ] ]
+    ]
+  },
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 500.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      }
+	  
+	  
+    }
+  }
+  
+}

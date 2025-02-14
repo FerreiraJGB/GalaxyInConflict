@@ -1,0 +1,111 @@
+{
+  "type" : "gic_insurgent_frostsoldier",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 14,
+  "dropPools" : [ "gic_internalprisonguardTreasure" ],
+
+  "scriptConfig" : {
+  
+	"behavior" : "gic_hostileguard",
+	  
+    "behaviorConfig" : {
+	  "queryRange": 120,
+	  "trackingRange": 120,
+      "keepTargetInRange" : 120
+    },
+  
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Attack!"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "Target inbound! Open fire!",
+            "Opening fire!",
+			"Holy shit!",
+			"Shit!",
+			"Fucker!",
+			"We got a live one!"
+          ]
+        }
+      }
+    },
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}],
+        [1.0, "wander"]
+      ]
+    }
+	
+  },
+
+
+
+
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_brigandhead", "parameters" : { "colorIndex" : [3] } }, { "name" : "gic_s6b710head", "parameters" : { "colorIndex" : [3] } } ],
+            "chest" : [ { "name" : "snowinfantrychest", "parameters" : { "colorIndex" : [3] } }, { "name" : "gic_s6b702chest", "parameters" : { "colorIndex" : [3] } } ],
+            "legs" : [ { "name" : "snowinfantrypants", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [
+			  "gic_ashot",
+			  "gic_polisduplet",
+			  "gic_metroshambler",
+			  "gic_scumbagpistol",
+			  "gic_bastardrifle"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"], 
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	  
+	  
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+	  
+    }
+  }
+  
+}

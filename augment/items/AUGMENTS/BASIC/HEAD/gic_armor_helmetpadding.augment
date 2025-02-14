@@ -1,0 +1,34 @@
+{
+  "itemName" : "gic_armor_helmetpadding",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CCD8B6;Helmet Equipment^reset;",
+  "inventoryIcon" : "gic_armor_helmetpadding.png",
+  
+  "description" : 
+  
+"While most helmets come with liners to prevent troops from being tortured by their own equipment, this kit allows one to add even more padding to the insides of their helmet or headgear. It makes it a little more comfortable to wear, but it won't help much against a bullet or halberd going through your skull.
+
+^green;+5% SMALL-ARMS and MELEE Resistance.^reset;",
+
+
+
+  "shortdescription" : "Helmet Padding",
+
+  "augment" : {
+    "type" : "gic_basichead",
+    "name" : "gic_armor_helmetpadding",
+    "displayName" : "Helmet Padding",
+    "displayIcon" : "/items/augments/basic/head/gic_armor_helmetpadding.png",
+    "effects" : [ 
+	"gic_armor_helmetpadding",
+	{"stat" : "ews_smallarmsResistance", "amount" : 0.05},
+	{"stat" : "ews_meleeResistance", "amount" : 0.05}
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_helmet_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

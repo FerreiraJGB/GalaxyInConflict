@@ -1,0 +1,307 @@
+{
+  "itemName" : "gic_flare_ews",
+  "price" : 10,
+  "inventoryIcon" : "gic_flare_ews.png:armed.1",
+  "maxStack" : 15,
+  "rarity" : "Common",
+  "description" : "Flare with a 5 minute burn duration. Can be held or thrown.
+
+Thrown flares are capable of ^orange;IGNITING any target^reset; (friendly, enemy, or even yourself) afflicted with ^orange;OIL-COATING^reset; (Usually from Oil Bottles).
+
+^orange;IGNITION^reset; deals non-scaled but very high amounts of fire damage on targets. Directly hitting or letting an enemy ^orange;OIL-COATED^reset; target walk over a burning flare is likely to cause ^orange;IGNITION^reset;.",
+  "shortdescription" : "Fusee [GIC]",
+  "level" : 1,
+  "tooltipFields" : {
+	"smallDescriptionLabel" : "Basic flare with a 5 minute burn duration. Can be held or thrown."
+  },
+  "tooltipKind" : "gic_largebase_hybrid",
+  "category" : "Utility",
+  //"itemTags" : ["weapon","ranged"],
+  "twoHanded" : false,
+  
+  "pinPulled" : false,
+  "useItem" : true,
+  "flareTimerMax" : 300,
+  "durability" : 300, //set to same as flareTimerMax for hotbar purposes n etc
+  "durabilityHit" : 0,
+  
+  "ammoMax" 		: 1,		
+  "ammoAmount" 		: 1,		
+  "magazineProjectile": "gic_null",
+  "usesAmmo" 		: true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_flare_ews.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+	"animatedParts":{
+      "stateTypes" : {
+        "gunState" : {
+          "default" : "empty",
+          "states" : {
+			"firing" :{
+			  "frames" : 1,
+			  "cycle" : 0.0,
+			  "mode" : "transition",
+			  "transition" : "armed"
+			},
+            "armed" : {
+              "frames" : 1,
+			  "mode":"end"
+            },
+			"primed" : {					//nade transitions to "primed" state when pin is pulled
+              "frames" : 2,
+			  "cycle" : 0.25,
+			  "mode":"loop"
+            },
+            "empty" : {
+              "frames" : 1,
+			  "mode":"end"
+            },
+			"reloading" : {
+			  "frames" : 1,
+			  "cycle" : 1.0,
+			  "mode" : "transition",
+			  "transition" : "empty"
+			}
+          }
+        }
+      },
+
+      "parts" : {
+        "middle" : {
+          "properties" : {
+            "image" : null
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<partImage>:firing.<frame><paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+			  "primed" : {
+                "properties" : {
+                  "image" : "<partImage>:primed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<partImage>:empty.<frame><paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<partImage>:firing.<frame><paletteSwaps>"
+				}
+			  }
+            }
+          }
+        }
+      }
+	},
+	"lights" : {
+		"flare" : {
+			"active" : false,
+			"position" : [0, 0],
+			"color" : [255, 0, 0]
+		}
+	},
+	"particleEmitters" : {
+      "muzzleFlash" : {
+        "burstCount" : 0,
+        "particles" : [
+          //{ "particle" : "minivehicledustysmoke", "offset" : [-0.2, 0.1] }
+        ]
+      },
+      "hotsmoke" : {
+        "burstCount" : 0,
+        "particles" : [
+		  //{ "particle" : "minivehicledustysmoke", "offset" : [1.75, -0.0]}
+        ]
+      }//,
+	  //"pin" : {
+        //"burstCount" : 1,
+        //"particles" : [
+          //{ "particle" : "fireember", "offset" : [-0.2, 0.1] }
+        //]
+      //}
+    },
+    "sounds" : {
+      "fire" 		: [ "/sfx/projectiles/spinning_throw.ogg" ],
+	  "empty"		: [ "/assetmissing.wav" ],
+      "switchAmmo" 	: [ "/sfx/melee/bouquet_hit_organic.ogg" ],
+	  "pin"			: [ "/sfx/projectiles/fire_out.ogg" ],
+	  "tick" 		: [ "/sfx/gun/impact_wooden5.ogg" ]
+    }
+  },
+
+	
+  //"animationScripts" : [
+    //"/items/active/effects/laserbeam.lua"
+  //],
+
+
+  "baseOffset" : [-0.2, 0.5],
+  "muzzleOffset" : [0.0, 0.5],
+
+  "scripts" : ["/items/active/weapons/ranged/ews_throwableitemscript.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/WEAPONS/THROWN/gic_flare_ews/ews_flare.lua"],
+    "class" : "GunFire",
+
+
+    "fireTime" : 0.25,
+    //"baseDps" : 20,
+	"baseDamage" : 0,
+	"bonusDps" : 0,
+    "energyUsage" : false,
+    "inaccuracy" : 0.02,
+
+    "projectileCount" : 1,
+    "fireType" : "semi",
+
+	
+    "projectileType" : "gic_fusee",
+    "projectileParameters" : {
+      "knockback" : 0
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : -20,
+        "weaponRotation" : -20,
+        "twoHanded" : false,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "swim.1"
+      },
+      "fire" : {
+        "duration" : 0.2,
+        "armRotation" : -150,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+  
+        "allowRotate" : true,
+        "allowFlip" : false,
+		"frontArmFrame" : "rotation",
+        "backArmFrame" : "rotation"
+      },
+      "motion1" : {
+        "duration" : 0
+
+      },
+      "motion2" : {
+        "duration" : 0
+      },
+      "motion3" : {
+        "duration" : 0
+      },
+      "motion4" : {
+        "duration" : 0
+      },
+      "motion5" : {
+        "duration" : 0
+      },
+      "motion6" : {
+        "duration" : 0
+      },
+      "reload" : {
+        "duration" : 0.3,
+        "armRotation" : 20,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+  
+        "allowRotate" : true,
+        "allowFlip" : false,
+
+		"frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.3"
+      },
+      "reload1" : {
+        "duration" : 0
+      },
+      "reload2" : {
+        "duration" : 0.25,
+        "armRotation" : -10,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		"frontArmFrame" : "swim.2",
+        "backArmFrame" : "swim.2"
+      },
+      "reload3" : {
+        "duration" : 0.25,
+        "armRotation" : -10,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		"frontArmFrame" : "run.3",
+        "backArmFrame" : "run.3"
+      },
+      "reload4" : {
+        "duration" : 0.25,
+        "armRotation" : -15,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "run.2"
+      },
+      "reload5" : {
+        "duration" : 0.25,
+		"armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "swim.1"
+      },
+      "reload6" : {
+        "duration" : 0
+      },
+      "cooldown" : {
+        "duration" : 0,
+        "armRotation" : -0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "run.2"
+      }
+    }
+  },
+
+
+  "builder" : "/items/buildscripts/ews_buildunrandweapon.lua"
+}

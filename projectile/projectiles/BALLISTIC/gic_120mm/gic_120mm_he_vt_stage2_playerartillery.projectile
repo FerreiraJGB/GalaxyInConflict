@@ -1,0 +1,71 @@
+{
+  "projectileName" : "gic_120mm_he_vt_stage2_playerartillery",
+  "image" : "gic_120mm_he_vt_stage2.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "fullbright" : true,
+  "physics" : "gic_cannonfall",
+  "renderLayer" : "Monster+10",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_blackfog/2.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+	
+  ],
+  
+"periodicActions" : [
+],
+  "persistentAudio" : "/sfx/gic_mowas2_trace_22.ogg",  
+  "power" : 5000,
+  "speed" : 200,
+
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot", "gic_fracture_injury" ],
+  
+  "damageKind" : "ews_explosive",
+  "damageType" : "ignoresdef",
+  "damageTeam" : { "type" : "indiscriminate" }
+}

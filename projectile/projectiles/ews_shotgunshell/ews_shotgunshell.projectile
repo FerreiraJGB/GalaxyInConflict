@@ -1,0 +1,31 @@
+{
+  "projectileName" : "ews_shotgunshell",
+  "image" : "ews_shotgunshell.png",
+  "animationCycle" : 0.25,
+  "renderLayer" : "Player+1", 
+  "physics" : "grenade",
+  "piercing" : true,
+  "bounces" : 20,
+  "speed" : 10,
+  //"frameNumber" : 1,
+  "timeToLive" : 10,
+  //"damageKindImage" : "icon.png",
+  "power" : 0,
+  "damageType" : "NoDamage",
+  "damageKind" : "default",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [ 
+	  "/sfx/ews_casedrop1.ogg","/sfx/ews_casedrop2.ogg","/sfx/ews_casedrop3.ogg","/sfx/ews_casedrop4.ogg"
+	  ]
+    }
+  ],
+  "actionOnHit" : [
+    {
+      "action" : "projectile",
+      "type" : "ews_shotgunshell_end",
+      "fuzzAngle" : 360
+    }
+  ]
+}

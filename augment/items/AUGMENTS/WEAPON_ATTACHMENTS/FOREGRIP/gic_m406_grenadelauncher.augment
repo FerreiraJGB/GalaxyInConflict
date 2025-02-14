@@ -1,0 +1,67 @@
+{
+  "itemName" : "gic_m406_grenadelauncher",
+  "price" : 500,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Foregrip Attachment^white;",
+  "inventoryIcon" : "gic_m406_grenadelauncher_icon.png",
+  
+  "tooltipKind" : "gic_largebase",    
+  
+  
+  
+//  "description" : "Grenades deal 100 damage per; fire/reload by tapping alt fire. Uses ews_ammo_dummy for ammo. Decreases hit chance and accuracy by 25%.",
+  
+  
+  "description" : "The M406 is a single-shot 40x46mm (LV) under-barrel grenade launcher designed to be attached to a rifle. Its primary purpose is to engage enemies in dead space that cannot be reached by direct fire. Classified as an anti-personnel weapon, the M406 is not intended to be used against armored or heavy vehicles.
+
+^orange;Tap Right-Click to Fire/Reload the Grenade Launcher.
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  
+  
+  "shortdescription" : "M406 UGL",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_m406_grenadelauncher", //name of attachment
+	"attachmentTag" : ["ews_grenadelauncher", "gic_grenadelauncher" ], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/WEAPON_ATTACHMENTS/FOREGRIP/gic_m406_grenadelauncher.png", //determines what image is displayed on the resulting gun. For grenade launchers/under barrel launchers, do NOT add a frame identifier. Keep this as "[...].png".
+	
+	"attachmentId" : "gic_m406_grenadelauncher", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "grenadelauncher",
+		"grenadelauncherConfig" : {	//requires some part anims stuff in the main activeitem and some particle stuff. also needs some stances built in too.
+			"altFireTime" : 0.25,
+			"altAmmoMax" : 1,
+			"altAmmo" : 0,			//default starting ammo value
+			"altMagazine" : "gic_40x46mm_lv_he_grenade",				//the magazine item the alt fire needs to reload
+			"projectileTypeGrenade" : "gic_40x46mm_lv_he_grenade", //grenadeimpact
+			"projectileTypeGrenadeCount" : 1,
+			"projectileTypeGrenadeConfig" : {
+				"power" : 500,		//damage for projectile
+				//"speed" : 150,
+				"bounces" : 0
+			},
+			
+			"fireSFX" : "/sfx/gun/grenade1.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("soundEffectGrenade")
+			"reloadSFX" : "/sfx/gic_mg_reload.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("switchAmmoAlt")
+			
+			"altInaccuracy" : 0,
+			"grenadeMuzzleOffset" : [1.2,-0.15]		//not the same thing as a muzzle offset; this is an offset offsetted off the main muzzleOffset
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1.0,1.0,1.0,1.0,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1.0,1.0,1.0,1.0] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

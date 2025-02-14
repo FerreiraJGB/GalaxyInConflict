@@ -1,0 +1,113 @@
+{
+  "metadata" : {
+    "name" : "gic_ancientvault_kiln",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_ancientvault_protectoratefactory_start"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 60,
+    "extendSurfaceFreeSpace" : 10,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_ancientvault_protectoratefactory_start",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_ancientvault_protectoratefactory_start.json" ] ],
+      "chance" : 0
+    },
+	
+	
+    {
+      "name" : "gic_ancientvault_protectoratefactory_bossroom_right",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_ancientvault_protectoratefactory_bossroom_right.json" ],
+      "chance" : 0
+    },		
+	
+
+	
+    {
+      "name" : "gic_ancientvault_protectoratefactory_elevatorhub",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_ancientvault_protectoratefactory_elevatorhub.json" ] ],
+      "chance" : 600
+    },	
+	
+    {
+      "name" : "gic_ancientvault_protectoratefactory_elevator",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_ancientvault_protectoratefactory_elevator.json" ] ],
+      "chance" : 500
+    },	
+	
+    {
+      "name" : "gic_ancientvault_protectoratefactory_habitation",
+      "rules" : [
+        [ "maxSpawnCount", [2] ]
+      ],
+      "def" : [ "tmx", [ "gic_ancientvault_protectoratefactory_habitation.json" ] ],
+      "chance" : 500
+    },	
+
+    {
+      "name" : "gic_ancientvault_protectoratefactory_buzzbay",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_ancientvault_protectoratefactory_buzzbay.json" ] ],
+      "chance" : 500
+    },	
+
+
+    {
+      "name" : "gic_ancientvault_protectoratefactory_elevator_endbottom",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_ancientvault_protectoratefactory_elevator_endbottom.json" ],
+      "chance" : 0
+    },	
+
+    {
+      "name" : "gic_ancientvault_protectoratefactory_elevator_endtop",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_ancientvault_protectoratefactory_elevator_endtop.json" ],
+      "chance" : 0
+    },
+	
+		
+		
+		
+		
+		
+		
+		
+		
+    {
+      "name" : "gic_ancientvault_protectoratefactory_hangar",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_ancientvault_protectoratefactory_hangar.json" ] ],
+      "chance" : 500
+    }
+	
+  ]
+}

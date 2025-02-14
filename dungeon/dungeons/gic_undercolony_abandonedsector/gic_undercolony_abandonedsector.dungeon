@@ -1,0 +1,88 @@
+{
+  "metadata" : {
+    "name" : "gic_undercolony_abandonedsector",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_undercolony_abandonedsector_start"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 10,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_undercolony_abandonedsector_start",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_undercolony_abandonedsector_start.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_undercolony_abandonedsector_floodedhallway",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_undercolony_abandonedsector_floodedhallway" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_undercolony_abandonedsector_floodedhallway.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_undercolony_abandonedsector_hallway",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_undercolony_abandonedsector_hallway" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_undercolony_abandonedsector_hallway.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_undercolony_abandonedsector_holdout",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_undercolony_abandonedsector_holdout" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_undercolony_abandonedsector_holdout.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_undercolony_abandonedsector_offices",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_undercolony_abandonedsector_offices" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_undercolony_abandonedsector_offices.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_undercolony_abandonedsector_roadway",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_undercolony_abandonedsector_roadway" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_undercolony_abandonedsector_roadway.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_undercolony_abandonedsector_end",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_undercolony_abandonedsector_end.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

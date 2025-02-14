@@ -1,0 +1,32 @@
+{
+  "objectName" : "gic_flawlesschest",
+  "colonyTags" : ["valuable","storage"],
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "price" : 100,
+  "description" : "[Unlocks additional unique boss drops if the boss was killed without a player dying or leaving the instance world]",
+  "shortdescription" : "^orange;Flawless No-Death",
+  "race" : "human",
+  "health" : 1.5,
+
+  "inventoryIcon" : "gic_flawlesschesticon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_flawlesschest.png:<color>.<key>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/chest_small_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/chest_small_close.ogg" ],
+  "slotCount" : 16,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

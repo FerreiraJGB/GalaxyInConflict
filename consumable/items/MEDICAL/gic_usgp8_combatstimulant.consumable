@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_usgp8_combatstimulant",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_usgp8_combatstimulant.png",
+  "maxStack" : 2,
+  "description" : "''Move! My mum's faster than you!''
+  
+A ^yellow;modern combat stimulant^white; issued to specific militaries of the ^green;United Systems.^white; While not technically chemically-addictive, many still feel as if they cannot operate without it.
+
+^green;Grants suppression immunity^white; for ^yellow;2 hours.^white;",
+
+  "shortdescription" : "^yellow;United Systems Go-Pill 8",
+  
+  "effects" : [ [
+      {
+        "effect" : "gic_suppressed_gopillStatusImmunity",
+        "duration" : 7200
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "bandageuse" ],
+  "blockingEffects" : [
+    "salveheal",
+    "bandageheal",
+    "medkitheal",
+    "nanowrapheal"
+  ]
+}

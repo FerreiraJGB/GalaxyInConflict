@@ -1,0 +1,1294 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+		
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop",
+			
+			"properties" : {
+				"particleEmittersOff" : ["spinslam"]
+			}
+          },
+		  
+		  "p2idle" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop",
+			
+			"properties" : {
+				"particleEmittersOff" : [ "dropkickSkid" ]
+			}
+          },
+		  
+          "walk" : {
+            "frames" : 8,
+            "cycle" : 1,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/armor/gic_bloodborne_body-hauberk-1.wav", "", "/sfx/armor/gic_bloodborne_body-hauberk-2.wav", "", "/sfx/armor/gic_bloodborne_body-hauberk-3.wav", "", "/sfx/armor/gic_bloodborne_body-hauberk-4.wav"]
+            }
+          },
+		  
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "loop",
+			
+            "properties" : {
+            }
+			
+          },
+
+
+		  //first intro animation
+		  "introA" : {
+            "frames" : 1,
+            "cycle" : 0.5,
+			
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_demonssouls_biorrofthetwinfangs-01.ogg",
+              "immediateSoundRangeMultiplier" : 12.0
+            },
+			
+			"mode" : "transition",
+			"transition" : "introB"
+          },
+		  
+		  "introB" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+			
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_comboattack4.wav",
+              "immediateSoundRangeMultiplier" : 12.0
+            },
+			
+			"mode" : "transition",
+			"transition" : "introC"
+          },
+		  
+		  "introC" : {
+            "frames" : 7,
+            "cycle" : 1.0,
+			
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_shing.ogg",
+              "immediateSoundRangeMultiplier" : 12.0
+            },
+			
+			"mode" : "transition",
+			"transition" : "introD"
+          },
+		  
+		  "introD" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+			
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_comboattack4.wav",
+			  //"immediateSound" : "/sfx/melee/gic_sekiro_shing.ogg",
+              "immediateSoundRangeMultiplier" : 12.0
+            },
+			
+			"mode" : "transition",
+			"transition" : "idle"
+          },
+		  
+		  "parryWindup" : {
+            "frames" : 7,
+            "cycle" : 0.5,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_mortalblade_sheathe.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+		  
+		  "parry" : {
+            "frames" : 1,
+            "cycle" : 0.75
+          },
+		  
+		  "parryWinddown" : {
+            "frames" : 2,
+            "cycle" : 0.5
+          },
+		  
+		  "lethalBowWindup" : {
+			"frames" : 1,
+			"cycle" : 0.25,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 10.0
+            },
+			"mode" : "transition",
+            "transition" : "bowWindup"
+		  },
+		  
+		  "p2lethalBowWindup" : {
+			"frames" : 1,
+			"cycle" : 0.25,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 10.0
+            },
+			"mode" : "transition",
+            "transition" : "p2bowWindup"
+		  },
+		  
+		  "bowWindup" : {
+            "frames" : 6,
+            "cycle" : 1.0,
+			"properties" : {
+              "immediateSound" : "/sfx/gun/bow_draw1.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  "p2bowWindup" : {
+            "frames" : 6,
+            "cycle" : 0.75,
+			"properties" : {
+              "immediateSound" : "/sfx/gun/bow_draw1.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+		  "bowShot" : {
+            "frames" : 1,
+            "cycle" : 0.5
+          },
+		  "p2bowShot" : {
+            "frames" : 1,
+            "cycle" : 0.5
+          },
+		  
+		  "cleaveWindup" : {
+            "frames" : 5,
+            "cycle" : 1.0
+          },
+		  
+		  "cleave" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_charge-comboattack.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "cleaveWinddown"
+          },
+		  
+		  "cleaveWinddown" : {
+            "frames" : 1,
+            "cycle" : 0.25
+          },
+		  
+		  "combo1_cleaveWindup" : {
+			"frames" : 4,
+            "cycle" : 0.8,
+			"mode" : "transition",
+            "transition" : "cleave"
+		  },
+		  
+		  "chargeWindup" : {
+            "frames" : 3,
+            "cycle" : 0.75
+          },
+		  
+		  "charge" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_comboattack4.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "chargeWinddown"
+          },
+		  
+		  "chargeWinddown" : {
+            "frames" : 1,
+            "cycle" : 0.25
+          },
+		  
+		  "backslashWindup" : {
+            "frames" : 5,
+            "cycle" : 0.5,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_shing.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  "combo2_backslashWindup" : {
+            "frames" : 5,
+            "cycle" : 0.5,
+			"mode" : "transition",
+            "transition" : "combo2_backslash",
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_shing.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+		  "backslash" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_comboattack4.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "backslashWinddown"
+          },
+		  "combo2_backslash" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_comboattack4.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "chargeWindup"
+          },
+		  
+		  "backslashWinddown" : {
+            "frames" : 1,
+            "cycle" : 0.25
+          },
+		  
+		  "upslashWindup" : {
+            "frames" : 3,
+            "cycle" : 0.75
+          },
+		  
+		  "upslashWindupCounter" : {
+            "frames" : 3,
+            "cycle" : 0.75,
+			"properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-07.ogg",
+			  "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+		  "upslash" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_charge-comboattack.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "upslashWinddown"
+          },
+		  
+		  "upslashWinddown" : {
+            "frames" : 1,
+            "cycle" : 0.25
+          },
+		  
+		  "hiltBashWindup" : {
+            "frames" : 7,
+            "cycle" : 0.5,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+		  "hiltBash" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_onosao_sao1.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			}
+          },
+		  
+		  
+		  //					     //
+		  // - PHASE 0.5 NEW MOVES - //
+		  //					     //
+		  
+		  
+		  "p0.5intro" : { //breathe in, breathe out.
+            "frames" : 6,
+            "cycle" : 1.5,
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_demonssouls_biorrofthetwinfangs-03.ogg",
+              "immediateSoundRangeMultiplier" : 12.0
+            },
+			"mode" : "transition",
+			"transition" : "idle"
+          },
+		  
+		  "combo4_upslashWindup" : {
+            "frames" : 3,
+            "cycle" : 0.66,
+			"mode" : "transition",
+			"transition" : "upslash",
+			
+			"properties" : {
+				"particleEmittersOff" : ["spinslam"]
+			}
+          },
+		  
+		  "combo5_upslashWindup" : {
+            "frames" : 3,
+            "cycle" : 0.75,
+			"mode" : "transition",
+			"transition" : "combo5_upslash"
+          },
+		  
+		  "combo5_upslash" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_charge-comboattack.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "combo5_upslashWinddown"
+          },
+		  
+		  "combo5_upslashWinddown" : {
+            "frames" : 1,
+            "cycle" : 0.25//,
+			//"mode" : "transition",
+            //"transition" : "idle"//"combo2_backslashWindup"
+          },
+		  
+		  "combo6_chargeWindup" : {
+            "frames" : 3,
+            "cycle" : 0.66,
+			"mode" : "transition",
+            "transition" : "charge"
+          },
+		  
+		  "spinslamWindup" : {
+            "frames" : 7,
+            "cycle" : 1.0,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+		  "spinslam" : {
+            "frames" : 4,
+            "cycle" : 0.2,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_comboattack1.wav",
+				"immediateSoundRangeMultiplier" : 1.0,
+				"particleEmittersOn" : ["spinslam"]
+			},
+			"mode" : "transition",
+            "transition" : "spinslamWinddown"
+          },
+		  
+		  "spinslamWinddown" : {
+            "frames" : 1,
+            "cycle" : 0.5,
+			"mode" : "transition",
+            "transition" : "idle"
+          },
+		  
+		  
+		  
+		  //					   //
+		  // - PHASE 2 NEW MOVES - //
+		  //					   //
+		  
+		  
+		  "p2walk" : {
+            "frames" : 8,
+            "cycle" : 0.65,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/armor/gic_bloodborne_body-hauberk-1.wav", "", "/sfx/armor/gic_bloodborne_body-hauberk-2.wav", "", "/sfx/armor/gic_bloodborne_body-hauberk-3.wav", "", "/sfx/armor/gic_bloodborne_body-hauberk-4.wav"]
+            }
+          },
+		  
+		  "p2intro" : { //stab sword into ground, before actual stab
+            "frames" : 1,
+            "cycle" : 0.5,
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_demonssouls_biorrofthetwinfangs-02.ogg",
+              "immediateSoundRangeMultiplier" : 12.0
+            },
+			"mode" : "transition",
+			"transition" : "p2intro2"
+          },
+		  
+		  "p2intro2" : { //stab sword into ground, actual stab
+            "frames" : 1,
+            "cycle" : 0.5,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_hammer-hit2.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            },
+			"mode" : "transition",
+			"transition" : "p2intro3"
+          },
+		  
+		  "p2intro3" : {
+			"frames" : 6,
+            "cycle" : 0.75,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_shing.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+		  },
+		  
+		  "p2parryWindup" : {
+            "frames" : 7,
+            "cycle" : 0.5,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_mortalblade_sheathe.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+		  "p2parry" : {
+            "frames" : 1,
+            "cycle" : 0.75
+          },
+		  
+		  "p2parryWinddown" : {
+            "frames" : 2,
+            "cycle" : 0.5
+          },
+		  
+		  "combo3_p2punchWindup" : {
+            "frames" : 2,
+            "cycle" : 0.33,
+			"mode" : "transition",
+            "transition" : "p2punch"
+          },
+		  "p2punchWindup" : {
+            "frames" : 2,
+            "cycle" : 0.33
+          },
+		  "p2punch" : {
+            "frames" : 3,
+            "cycle" : 0.125,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_comboattack4.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "p2punchWinddown"
+          },
+		  "p2punchWinddown" : {
+            "frames" : 1,
+            "cycle" : 0.25
+          },
+		  
+		  "p2uppercutWindup" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_shing.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  "p2uppercut" : {
+            "frames" : 3,
+            "cycle" : 0.125,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_charge-comboattack.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "p2uppercutWinddown"
+          },
+		  "p2uppercutWinddown" : {
+            "frames" : 1,
+            "cycle" : 0.25
+          },
+		  
+		  "p2shieldattackCounterWindup" : {
+			"frames" : 3,
+            "cycle" : 0.35,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_shing.ogg",
+              "immediateSoundRangeMultiplier" : 10.0
+            }
+		  },
+		  "p2shieldattackWindup" : {
+            "frames" : 3,
+            "cycle" : 0.5
+          },
+		  "p2shieldattack" : {
+            "frames" : 3,
+            "cycle" : 0.125,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_comboattack4.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "p2shieldattackWinddown"
+          },
+		  "p2shieldattackWinddown" : {
+            "frames" : 1,
+            "cycle" : 0.25
+          },
+		  
+		  "p2shieldslamWindup" : {
+            "frames" : 3,
+            "cycle" : 0.5
+          },
+		  "p2shieldslam" : {
+            "frames" : 3,
+            "cycle" : 0.125,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_charge-comboattack.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "p2shieldslamWinddown"
+          },
+		  "p2shieldslamWinddown" : {
+            "frames" : 1,
+            "cycle" : 0.25
+          },
+		  
+		  
+		  "p2dropkickWindup" : {
+            "frames" : 6,
+            "cycle" : 1.0,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 5.0
+            }
+          },
+		  "p2dropkick" : {
+            "frames" : 6,
+            "cycle" : 0.25,
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_kentsuchi_tsuchi_swing0.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "p2dropkickWinddown"
+          },
+		  "p2dropkickWinddown" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+			
+			"properties" : {
+				"immediateSound" : "/sfx/armor/gic_bloodborne_body-hauberk-rolling.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			
+			"mode" : "transition",
+            "transition" : "p2dropkickSkid"
+          },
+		  
+		  "p2dropkickSkid" : {
+            "frames" : 1,
+            "cycle" : 0.15,
+			
+			"properties" : {
+				"particleEmittersOn" : [ "dropkickSkid" ]
+			},
+			
+			"mode" : "transition",
+            "transition" : "p2idle"
+          },
+		  
+		  
+		  
+          "sweepwindup_shing" : {
+            "frames" : 1,
+            "cycle" : 0.75,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_shing.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          }
+		  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+	  "dropkickDamage" : { //damage areas for dropkick
+		"properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.5]
+        },
+		"partStates" : {
+			"body" : {
+				"p2dropkick" : {
+					"properties" : {
+						"damageArea" : [ [0.0,-3.0], [4.0, -3.0], [4.0, 1.0], [0.0, 1.0] ]
+					}
+				}
+			}
+		}
+	  },
+	  "uppercutDamage" : { //damage areas for uppercut
+		"properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.5]
+        },
+		"partStates" : {
+			"body" : {
+				"p2uppercut" : {
+					"properties" : {
+						"damageArea" : [ [0.0,-3.0], [2.0, -3.0], [2.0, 1.0], [0.0, 1.0] ]
+					}
+				}
+			}
+		}
+	  },
+	  "spinslamDamage" : { //damage areas for spinslam
+		"properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.5]
+        },
+		"partStates" : {
+			"body" : {
+				"spinslam" : {
+					"properties" : {
+						"damageArea" : [ [-5.0,-5.0], [5.0, -5.0], [5.0, 1.0], [-5.0, 1.0] ]
+					}
+				}
+			}
+		}
+	  },
+	  "hiltBashDamage" : { //damage areas for uppercut
+		"properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.5]
+        },
+		"partStates" : {
+			"body" : {
+				"hiltBash" : {
+					"properties" : {
+						"damageArea" : [ [0.0,-3.0], [2.0, -3.0], [2.0, 1.0], [0.0, 1.0] ]
+					}
+				}
+			}
+		}
+	  },
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.5]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.1"
+              }
+            },
+			"p2idle" : {
+              "properties" : {
+                "image" : "<partImage>:p2idle.1"
+              }
+            },
+			
+			"aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.1"
+              }
+            },
+			
+			"introA" : {
+              "properties" : {
+                "image" : "<partImage>:introA.<frame>"
+              }
+            },
+			
+			"introB" : {
+              "properties" : {
+                "image" : "<partImage>:introB.<frame>"
+              }
+            },
+			
+			"introC" : {
+              "properties" : {
+                "image" : "<partImage>:introC.<frame>"
+              }
+            },
+			
+			"introD" : {
+              "properties" : {
+                "image" : "<partImage>:introD.<frame>"
+              }
+            },
+			
+			"p0.5intro" : {
+              "properties" : {
+                "image" : "<partImage>:p0.5intro.<frame>"
+              }
+            },
+			
+			"spinslamWindup" : {
+              "properties" : {
+                "image" : "<partImage>:spinslamWindup.<frame>"
+              }
+            },
+			
+			"spinslam" : {
+              "properties" : {
+                "image" : "<partImage>:spinslam.<frame>"
+              }
+            },
+			
+			"spinslamWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:spinslamWinddown.<frame>"
+              }
+            },
+			
+			"walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+			"p2walk" : {
+              "properties" : {
+                "image" : "<partImage>:p2walk.<frame>"
+              }
+            },
+			
+			"parryWindup" : {
+              "properties" : {
+                "image" : "<partImage>:parryWindup.<frame>"
+              }
+            },
+			
+			"parry" : {
+              "properties" : {
+                "image" : "<partImage>:parry.<frame>"
+              }
+            },
+			
+			"parryWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:parryWinddown.<frame>"
+              }
+            },
+			
+			"lethalBowWindup" : {
+              "properties" : {
+                "image" : "<partImage>:bowWindup.<frame>"
+              }
+            },
+			"bowWindup" : {
+              "properties" : {
+                "image" : "<partImage>:bowWindup.<frame>"
+              }
+            },
+			"p2lethalBowWindup" : {
+              "properties" : {
+                "image" : "<partImage>:p2bowWindup.<frame>"
+              }
+            },
+			"p2bowWindup" : {
+              "properties" : {
+                "image" : "<partImage>:p2bowWindup.<frame>"
+              }
+            },
+			
+			"bowShot" : {
+              "properties" : {
+                "image" : "<partImage>:bowShot.<frame>"
+              }
+            },
+			"p2bowShot" : {
+              "properties" : {
+                "image" : "<partImage>:p2bowShot.<frame>"
+              }
+            },
+			
+			"cleaveWindup" : {
+              "properties" : {
+                "image" : "<partImage>:cleaveWindup.<frame>"
+              }
+            },
+			"combo1_cleaveWindup" : {
+              "properties" : {
+                "image" : "<partImage>:cleaveWindup.<frame>"
+              }
+            },
+			
+			"cleave" : {
+              "properties" : {
+                "image" : "<partImage>:cleave.<frame>",
+				"damageArea" : [ [0.0,-5.0], [6.5, -5.0], [6.5, 1.0], [0.0, 1.0] ]
+              }
+            },
+			"cleaveWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:cleaveWinddown.<frame>"
+              }
+            },
+			
+			"chargeWindup" : {
+              "properties" : {
+                "image" : "<partImage>:chargeWindup.<frame>"
+              }
+            },
+			
+			"combo6_chargeWindup" : {
+              "properties" : {
+                "image" : "<partImage>:chargeWindup.<frame>"
+              }
+            },
+			
+			"charge" : {
+              "properties" : {
+                "image" : "<partImage>:charge.<frame>",
+				"damageArea" : [ [0.0,-3.0], [8.5, -3.0], [8.5, -1.0], [0.0, -1.0] ]
+              }
+            },
+			"chargeWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:chargeWinddown.<frame>"
+              }
+            },
+			
+			"backslashWindup" : {
+              "properties" : {
+                "image" : "<partImage>:backslashWindup.<frame>"
+              }
+            },
+			"combo2_backslashWindup" : {
+              "properties" : {
+                "image" : "<partImage>:backslashWindup.<frame>"
+              }
+            },
+			
+			"backslash" : {
+              "properties" : {
+                "image" : "<partImage>:backslash.<frame>",
+				"damageArea" : [ [0.0,-5.0], [6.5, -5.0], [6.5, 1.0], [0.0, 1.0] ]
+              }
+            },
+			"combo2_backslash" : {
+              "properties" : {
+                "image" : "<partImage>:backslash.<frame>",
+				"damageArea" : [ [0.0,-5.0], [6.5, -5.0], [6.5, 1.0], [0.0, 1.0] ]
+              }
+            },
+			"backslashWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:backslashWinddown.<frame>"
+              }
+            },
+			
+			"combo4_upslashWindup" : {
+              "properties" : {
+                "image" : "<partImage>:upslashWindup.<frame>"
+              }
+            },
+			
+			"combo5_upslashWindup" : {
+              "properties" : {
+                "image" : "<partImage>:upslashWindup.<frame>"
+              }
+            },
+			
+			"upslashWindup" : {
+              "properties" : {
+                "image" : "<partImage>:upslashWindup.<frame>"
+              }
+            },
+			
+			"upslashWindupCounter" : {
+              "properties" : {
+                "image" : "<partImage>:upslashWindup.<frame>"
+              }
+            },
+			
+			"upslash" : {
+              "properties" : {
+                "image" : "<partImage>:upslash.<frame>",
+				"damageArea" : [ [0.0,-5.0], [6.5, -5.0], [6.5, 1.0], [0.0, 1.0] ]
+              }
+            },
+			
+			"combo5_upslash" : {
+              "properties" : {
+                "image" : "<partImage>:upslash.<frame>",
+				"damageArea" : [ [0.0,-5.0], [6.5, -5.0], [6.5, 1.0], [0.0, 1.0] ]
+              }
+            },
+			
+			"upslashWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:upslashWinddown.<frame>"
+              }
+            },
+			
+			"combo5_upslashWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:upslashWinddown.<frame>"
+              }
+            },
+			
+			"hiltBashWindup" : {
+              "properties" : {
+                "image" : "<partImage>:hiltBashWindup.<frame>"
+              }
+            },
+			
+			"hiltBash" : {
+              "properties" : {
+                "image" : "<partImage>:hiltBash.<frame>"
+              }
+            },
+			
+			"p2intro" : {
+              "properties" : {
+                "image" : "<partImage>:p2intro.1"
+              }
+            },
+			
+			"p2intro2" : {
+              "properties" : {
+                "image" : "<partImage>:p2intro.2"
+              }
+            },
+			
+			"p2intro3" : {
+              "properties" : {
+                "image" : "<partImage>:p2intro3.<frame>"
+              }
+            },
+			
+			"p2parryWindup" : {
+              "properties" : {
+                "image" : "<partImage>:p2parryWindup.<frame>"
+              }
+            },
+			
+			"p2parry" : {
+              "properties" : {
+                "image" : "<partImage>:p2parry.<frame>"
+              }
+            },
+			
+			"p2parryWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:p2parryWinddown.<frame>"
+              }
+            },
+			
+			"p2punchWindup" : {
+              "properties" : {
+                "image" : "<partImage>:p2punchWindup.<frame>"
+              }
+            },
+			
+			"combo3_p2punchWindup" : {
+              "properties" : {
+                "image" : "<partImage>:p2punchWindup.<frame>"
+              }
+            },
+			
+			"p2punch" : {
+              "properties" : {
+                "image" : "<partImage>:p2punch.<frame>",
+				"damageArea" : [ [0.0,-3.0], [2.5, -3.0], [2.5, 1.0], [0.0, 1.0] ]
+              }
+            },
+			
+			"p2punchWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:p2punchWinddown.<frame>"
+              }
+            },
+			
+			"p2shieldattackWindup" : {
+              "properties" : {
+                "image" : "<partImage>:p2shieldattackWindup.<frame>"
+              }
+            },
+			"p2shieldattackCounterWindup" : {
+              "properties" : {
+                "image" : "<partImage>:p2shieldattackWindup.<frame>"
+              }
+            },
+			
+			"p2shieldattack" : {
+              "properties" : {
+                "image" : "<partImage>:p2shieldattack.<frame>",
+				"damageArea" : [ [0.0,-3.0], [2.5, -3.0], [2.5, 1.0], [0.0, 1.0] ]
+              }
+            },
+			
+			"p2shieldattackWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:p2shieldattackWinddown.<frame>"
+              }
+            },
+			
+			"p2uppercutWindup" : {
+              "properties" : {
+                "image" : "<partImage>:p2uppercutWindup.<frame>"
+              }
+            },
+			
+			"p2uppercut" : {
+              "properties" : {
+                "image" : "<partImage>:p2uppercut.<frame>"
+              }
+            },
+			
+			"p2uppercutWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:p2uppercutWinddown.<frame>"
+              }
+            },
+			
+			"p2shieldslamWindup" : {
+              "properties" : {
+                "image" : "<partImage>:p2shieldslamWindup.<frame>"
+              }
+            },
+			
+			"p2shieldslam" : {
+              "properties" : {
+                "image" : "<partImage>:p2shieldslam.<frame>",
+				"damageArea" : [ [0.0,-3.0], [2.5, -3.0], [2.5, 1.0], [0.0, 1.0] ]
+              }
+            },
+			
+			"p2shieldslamWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:p2shieldslamWinddown.<frame>"
+              }
+            },
+			
+			"p2dropkickWindup" : {
+              "properties" : {
+                "image" : "<partImage>:p2dropkickWindup.<frame>"
+              }
+            },
+			
+			"p2dropkick" : {
+              "properties" : {
+                "image" : "<partImage>:p2dropkick.<frame>"//,
+				//"damageArea" : [ [0.0,-3.0], [4.5, -3.0], [4.5, 1.0], [0.0, 1.0] ]
+              }
+            },
+			
+			"p2dropkickWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:p2dropkickWinddown.<frame>"
+              }
+            },
+			
+			"p2dropkickSkid" : {
+              "properties" : {
+                "image" : "<partImage>:p2idle.1"
+              }
+            }
+			
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:stun.<phaseId>"
+              }
+            }
+          }
+        }
+      }
+	}
+  },
+  "globalTagDefaults" : {
+    "aggro" : "",
+	"phaseId" : "1"
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+  
+  "lights" : {
+    "glow" : {
+      "active" : false,
+      "position" : [0, 0],
+      "color" : [2550, 160, 160], //255, 255, 107
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+	  
+	"dropkickSkid" : {
+      "enabled" : true,
+      "emissionRate" : 10.0,
+      "particles" : [
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" }
+      ]
+    },
+	
+	"spinslam" : {
+      "enabled" : true,
+      "emissionRate" : 10.0,
+      "particles" : [
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+		{ "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" }
+      ]
+    },
+	
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+
+        { "particle" : "deathfizz1left" },
+        { "particle" : "deathfizz1right" },
+        { "particle" : "deathfizz2left" },
+        { "particle" : "deathfizz2right" },
+        { "particle" : "deathfizz3left" },
+        { "particle" : "deathfizz3right" },
+        { "particle" : "deathfizz4left" },
+        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+	"hiltBash" : {
+		"pool" : ["/sfx/melee/gic_bloodborne_onosao_sao1.wav"],
+		"rangeMultiplier" : 1.0
+	},
+  
+    "bowFire" : {
+      "pool" : [ "/sfx/gun/bow_loose_perfect.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+	"swordStab" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_hammer-hit2.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "ichimonji_swing" : {
+      "pool" : [ "/sfx/melee/gic_sekiro_ichimonji_16speed.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "thrust_jab" : {
+      "pool" : [ "/sfx/melee/gic_sekiro_ichimonji_16speed.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "sweep_swing" : {
+      "pool" : [ "/sfx/melee/gic_sekiro_ichimonji_16speed.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "danmaku" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_tan_1-15db.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+  
+    "wallCrash" : [ "/sfx/npc/monsters/peblit_drop1.ogg" ],
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : {
+      "pool" :	["/music/DemonsSouls/gic_demonssouls_remake_penetrator_deathtune.ogg"],
+      "rangeMultiplier" : 6.0
+	}
+  }
+}

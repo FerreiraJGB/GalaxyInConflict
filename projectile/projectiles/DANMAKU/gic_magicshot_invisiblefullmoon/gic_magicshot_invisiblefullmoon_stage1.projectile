@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_magicshot_invisiblefullmoon_stage1",
+  "image" : "gic_magicshot_invisiblefullmoon_stage1.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 10,
+  "timeToLive" : 12,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 2,
+      "action" : "projectile",
+      "type" : "gic_magicshot_invisiblefullmoon_stage2",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 0
+    }
+],
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

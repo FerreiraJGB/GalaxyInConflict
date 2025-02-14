@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_electrictravelingswoosh_returningswoosh_stage2",
+  "image" : "gic_electrictravelingswoosh_360pattern.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 3,
+  "timeToLive" : 0.25,
+  "fullbright" : true,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+  ],
+  
+"actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_electrictravelingswoosh",
+      "inheritDamageFactor" : 1
+    }
+],
+
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

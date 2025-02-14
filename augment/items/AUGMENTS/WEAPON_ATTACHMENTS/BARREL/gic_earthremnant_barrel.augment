@@ -1,0 +1,69 @@
+{
+  "itemName" : "gic_earthremnant_barrel",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Barrel Attachment^white;",
+  "inventoryIcon" : "gic_earthremnant_barrel_icon.png",
+  
+  
+  
+  "description" : "''Nowadays if you can't get creative, your chances of livin' go straight down the tubes. That one crazy idea you've been keepin' in your back pocket? Time to take it out for a spin.''
+Supports attachment on most firearms that can attach a barrel.
+^orange;Shots that count as ''misses'' will no longer miss at all, but will only deal 25% of the damage that would be dealt normally.
+^yellow;Point-blank and shots that count as ''hits'' still deal full damage.
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Earth Remnant Barrel",
+
+  "attachment" : {
+  
+  
+	"specialAttachmentConfig" : {
+		"projectileConfig" : {	
+		
+		
+		
+		
+		
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c",
+      "fuzzAngle" : 0.0,
+      "inheritDamageFactor" : 0.25,
+      "directional" : "true"
+    }
+  ]
+  
+  
+  
+  
+		                     }
+
+	},
+  
+  
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_earthremnant_barrel", //name of attachment
+	"attachmentTag" : ["gic_earthremnant_barrel", "gic_barrel"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_earthremnant_barrel.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_earthremnant_barrel", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

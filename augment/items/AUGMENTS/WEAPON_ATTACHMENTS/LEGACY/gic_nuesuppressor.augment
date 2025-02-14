@@ -1,0 +1,54 @@
+{
+  "itemName" : "gic_nuesuppressor",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Barrel Attachment^white;",
+  "inventoryIcon" : "gic_nuesuppressor_icon.png",
+  
+  
+  "description" : "^yellow;Significantly reduces sound profile, nullifying excessive sound debuffs caused by firing. Alters firing sound.^white; Supports attachment on USM-Type 5.45, USM-Type 7.62, DC-Type 5.56, Koloniya-Type 7.7, 9x18 SMG, 9x19 SMG, and 9x20 SMG.
+  
+^#B10000;Projectiles are faded-out, becoming near-invisible.^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Nue Suppressor (GiC)",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_nuesuppressor", //name of attachment
+	
+	"attachmentTag" : [ "gic_nuesuppressor", "gic_barrel_usm_545", "gic_barrel_usm_762", "gic_barrel_dc_556", "gic_barrel_koloniya_770", "gic_barrel_smg_918", "gic_barrel_smg_919", "gic_barrel_smg_920" ],     //if target item has one or more of these tags, then this attachment will be applicable to the item
+	
+	"attachmentId" : "gic_nuesuppressor", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_nuesuppressor.png", //determines what image is displayed on the resulting gun
+	
+	"specialAttachmentConfig" : {
+		"type" : "suppressor",			//will require the main activeitem file to have "suppressedFire" sfx
+		"fireShellProjectile" : "ews_null",		//exists mostly for GiC's "noise" system.
+		"projectileConfig" : {
+			"processing" : "?crop=10;3;10;3"
+		},
+		
+		"statusEffects" : ["gic_nue_suppressor"] //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+		
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

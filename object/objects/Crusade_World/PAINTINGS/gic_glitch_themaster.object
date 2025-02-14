@@ -1,0 +1,35 @@
+{
+  "objectName" : "gic_glitch_themaster",
+  "colonyTags" : [],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "A painting of a particularly well-dressed Glitch. Every detail is perfectly arranged, with the one exception being his slightly crooked mouth. He appears to be wearing some sort of military uniform, but its opulence and design are more befitting of a religious leader. An analysis of the paint's age shows that the subject is likely dead by now. He probably won't mind that you've stolen his very valuable portrait.
+
+                                                                                        ^gray;- Beltsasar^reset;",
+  "shortdescription" : "The Master",
+  "race" : "generic",  
+  "category" : "furniture",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase_glitchpainting",
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "smashSounds" : [ "/sfx/gic_dishonored_paintingacquired.ogg" ],  
+  
+  "breakDropOptions" : [
+    [ [ "gic_glitch_themaster", 1, { } ] ]
+  ],
+
+  "inventoryIcon" : "gic_glitch_themaster_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_themaster.png",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

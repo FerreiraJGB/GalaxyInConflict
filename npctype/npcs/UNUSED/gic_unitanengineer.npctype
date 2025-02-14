@@ -1,0 +1,68 @@
+{
+  "type" : "gic_unitanengineer",
+  "baseType" : "gic_soldierbase",
+
+  "dropPools" : [ "villagertreasure" ],
+
+  "movementParameters" : {
+    "runSpeed" : 14.2
+  },
+  
+  "scriptConfig" : {
+
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/gic_unitan_combat_cocky.config:attack",
+      "reattack" : "/dialog/gic_unitan_combat_cocky.config:reattack",
+      "killedTarget" : "/dialog/gic_unitan_combat_cocky.config:killedTarget",
+      "lostTarget" : "/dialog/gic_unitan_combat_cocky.config:lostTarget",
+      "outOfSight" : "/dialog/gic_unitan_combat_cocky.config:outOfSight",
+      "cheerOn" : "/dialog/gic_unitan_combat_cocky.config:cheerOn",
+      "cantReach" : "/dialog/gic_unitan_combat_cocky.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [5, [
+          {
+            "head" : [ { "name" : "gic_spaceinfantrymodern_unitapatternhead", "parameters" : { "colorIndex" : [6] }  } ],
+            "chest" : [ { "name" : "gic_spaceinfantrymodernchest", "parameters" : { "colorIndex" : [11] }  } ],
+            "legs" : [ { "name" : "gic_spaceinfantrymodernlegs", "parameters" : { "colorIndex" : [11] }  } ],
+            "back" : [ { "name" : "gic_spaceinfantrymodernback", "parameters" : { "colorIndex" : [11] }  } ],
+            "primary" : [ "gic_npcdronekit" ],
+            "sheathedprimary" : [
+              "gic_autogun"
+            ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 99.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.0
+      },
+      "protection" : {
+        "baseValue" : 0.94
+      }
+    }
+  }
+}

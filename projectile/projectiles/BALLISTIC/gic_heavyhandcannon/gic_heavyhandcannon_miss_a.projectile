@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_heavyhandcannon_miss_a",
+  "bounces" : 0,
+  "image" : "gic_handcannon_miss_a.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_miss_c",
+      "inheritDamageFactor" : 1,
+	  "directional" :true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.17,
+  "physics" : "laser"
+}

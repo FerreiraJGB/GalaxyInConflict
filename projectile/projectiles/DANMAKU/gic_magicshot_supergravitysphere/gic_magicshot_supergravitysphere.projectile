@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_magicshot_supergravitysphere",
+  "image" : "gic_magicshot_supergravitysphere.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 1.8,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_supergravitysphere",
+      "inheritDamageFactor" : 0.2,
+      "angle" : 0
+    }
+
+
+  ],
+  "statusEffects" : [ ],
+  "power" : 500.0,
+  "speed" : 20,
+  "knockback" : 0
+}

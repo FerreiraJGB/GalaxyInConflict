@@ -1,0 +1,54 @@
+{
+  "objectName" : "gic_ied_trashbag",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Common",
+
+  "category" : "wire",
+  "price" : 15,
+  "description" : "A trash bag. What a load of rubbish.",
+  "shortdescription" : "Garbage Bag IED",
+  "race" : "generic",
+
+  "apexDescription" : "A bag of trash.",
+  "avianDescription" : "A bag of unwanted items.",
+  "floranDescription" : "Gaaaarbage day!",
+  "glitchDescription" : "Observant. A bag of trash.",
+  "humanDescription" : "Just another bag of trash.",
+  "hylotlDescription" : "A bag of waste carelessly left here.",
+  "novakidDescription" : "A bag of garbage, nothin' of use here.",
+  
+  "gic_realistichumanDescription" : "Something doesn't seem right with this bag...",
+  "gic_realisticfloranDescription" : "There isss a bomb in that trassh bag. I can sssense it.",  
+  
+
+  "inventoryIcon" : "gic_ied_trashbag.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_ied_trashbag.png",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+
+
+  ],
+
+  "animation" : "/objects/noisy/noisy.animation",
+
+  "inputNodes" : [ [0, 1] ],
+
+  "scripts" : [
+    "/objects/scripts/wiredmine.lua"
+  ],
+  "scriptDelta" : 5,
+
+  "triggerOnBreak" : false,
+
+  "explosionProjectile" : "gic_uxo_mortar",
+  "explosionOffset" : [0, 0],
+
+  "triggerSounds" : [ "/sfx/objects/hiddenswitch1.ogg" ],
+  "detonationTime" : 1.0
+}

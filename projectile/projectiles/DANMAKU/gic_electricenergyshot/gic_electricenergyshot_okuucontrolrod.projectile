@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_electricenergyshot_okuucontrolrod",
+  "physics" : "bullet",
+  "bounces" : 0,
+  "image" : "gic_electricenergyshot_okuucontrolrod.png",
+  "animationCycle" : 1,
+  "lightColor" : [255, 139, 0],
+  "frameNumber" : 1,
+  "power" : 150,
+  "speed" : 100,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef",
+//  "statusEffects" : [ "gic_electricaldamage" ],
+  "fullbright" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ]
+  
+}

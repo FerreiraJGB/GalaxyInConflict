@@ -1,0 +1,42 @@
+{
+  "projectileName" : "gic_pulse_mine",
+  "physics" : "gic_deployablemine",
+  "actionOnCollide" : [
+  ],
+  "bounces" : -1,
+  "image" : "gic_pulse_mine.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "speed" : 0,
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 0,
+  "lightColor" : [0, 100, 0],
+  "knockback" : 15,
+  "knockbackDirectional" : true,
+  "timeToLive" : 15,
+  "pointLight" : false,
+  
+  "damageKind" : "noDamage",
+  "damageTeam": { "type" : "indiscriminate" }, 
+  
+  "damagePoly" : [ [-74, 0], [-56, -56], [0, -74], [56, -56], [74, 0], [56, 56], [0, 74], [-56, 56] ],
+
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/gic_custom_emcp19_spreadshot_fire.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_handcannon_immediate_hunterspistol_miss_a_knockbackrevision_noshot",
+
+	  "fuzzAngle": 0,
+      "angle" : 0
+    }
+  ]
+  
+  
+}

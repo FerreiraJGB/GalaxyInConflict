@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_airtoair_missile",
+
+  "bounces" : 0,
+  "image" : "gic_airtoair_missile.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    }
+  ],
+  "power" : 10,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+
+  "maxSpeed" : 250,
+  
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  "persistentAudio" : "/sfx/vehicles/gic_highfleet_missile_run_01.ogg",  
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 5.0,
+  "acceleration" : 200,
+  "timeToLive" : 10,
+  "physics" : "rocket",
+  
+  "rotationRate" : 5,
+  "trackingLimit" : 3000
+}

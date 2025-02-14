@@ -1,0 +1,39 @@
+{
+  "objectName" : "gic_industrialsynth_corpse1",
+  "rarity" : "Common",
+  "category" : "storage",
+  "colonyTags" : ["human"],
+  "price" : 50,
+  "printable" : false,
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "description" : "Corpse.",
+  "shortdescription" : "Corpse",
+  "race" : "human",
+  "health" : 2.0,
+
+
+  "breakDropOptions" : [
+    [ [ "fleshblock", 1, { } ] ]
+  ],
+  
+  "inventoryIcon" : "gic_industrialsynth_corpse1.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_industrialsynth_corpse1.png:<color>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+	
+  ],
+
+  "openSounds" : [ "/sfx/objects/fleshdoor_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/fleshdoor_close.ogg" ],
+  "slotCount" : 9,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

@@ -1,0 +1,16 @@
+{
+  "name" : "gic_applyopiate_withdrawal",
+  "blockingStat" : "gic_opiate_withdrawalProtection",
+  
+  "effectConfig" : {
+    "diseases" : [
+		"gic_opiate_withdrawal" //note: THIS DISEASE CORRESPONDS WITH THE VALUE LISTED IN /stats/gic_diseases.config, NOT THE STATUS EFFECT ITSELF
+	]
+  },
+  "defaultDuration" : 0.5,
+
+  "scripts" : [
+    "gic_applydiseases.lua"
+  ],
+  "scriptDelta" : 1
+}

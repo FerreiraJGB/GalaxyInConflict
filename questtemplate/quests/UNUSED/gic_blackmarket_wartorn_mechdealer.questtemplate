@@ -1,0 +1,27 @@
+{
+  "id" : "gic_blackmarket_wartorn_mechdealerQuest",
+  "title" : "^#D1FFDE;Wartorn Black Market: Mech Cache",
+  "prerequisites" : [  ],
+  "text" : "Hey! Stranger! Over here! Stay inside of something if you want to stay safe. A mech is one of those options, but don't rely on it all the time.",
+  "completionText" : "Put these on your mech. We have a Mech Replicator outside if you would prefer to use a mech. Just remember that it leaves you open to Air Defenses.",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_dualmachinegun", 1 ], [ "gic_m2420_incendiary_multicannon", 1 ], [ "gic_madsen_mech_dragonshot", 1 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+	
+    "turnInEntityUid" : "gic_blackmarket_wartorn",
+    "conditions" : [
+    ]
+  }
+}

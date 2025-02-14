@@ -1,0 +1,1009 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+		
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "idlesword" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "idlegun" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "walk" : {
+            "frames" : 8,
+            "cycle" : 1,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/armor/gic_bloodborne_body-lobe-1.wav", "", "/sfx/armor/gic_bloodborne_body-lobe-2.wav", "", "/sfx/armor/gic_bloodborne_body-lobe-3.wav", "", "/sfx/armor/gic_bloodborne_body-lobe-4.wav"]
+            }
+          },
+		  
+          "jump" : {
+            "frames" : 3,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "fall" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "land" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "loop",
+			
+            "properties" : {
+             "immediateSound" : "/sfx/npc/gic_sekiro_loneshadow_theysayyoureimmortalletsseeifthatstrue.ogg",
+              "immediateSoundRangeMultiplier" : 12.0
+            }
+			
+          },
+		  
+		  
+          "aggro_phase2" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "loop",
+			
+            "properties" : {
+             "immediateSound" : "/sfx/npc/gic_sekiro_loneshadow_bastard.ogg",
+              "immediateSoundRangeMultiplier" : 12.0
+            }
+			
+          },
+		  
+		  
+		  
+          "hop" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "hopfull",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/gleap_hop.ogg" ]
+            }
+          },
+          "hopfull" : {
+            "frames" : 3,
+            "cycle" : 0.325
+          },		  
+		  
+		  
+		  
+          "shieldparry" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_kentsuchi_henkei.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },		  
+		  
+		
+          "selfhealingwindup" : {
+            "frames" : 6,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_miracle-pre.wav",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },
+
+          "selfhealing" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_miracle.wav",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },			  
+		
+		
+          "overheadswingwindup_perilous" : {
+            "frames" : 3,
+            "cycle" : 0.55,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "overheadswingwindup" : {
+            "frames" : 3,
+            "cycle" : 0.66,
+            "properties" : {
+            }
+          },
+		  
+          "overheadswing" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_nokonata_noko1.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            },
+			
+			"mode" : "transition",
+            "transition" : "overheadswingwinddown"
+          },
+          "overheadswingwinddown" : {
+            "frames" : 1,
+            "cycle" : 0.2,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_iron-stab-iron.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },		  
+		  
+
+		  
+		  
+          "sweepwindup_perilous" : {
+            "frames" : 1,
+            "cycle" : 0.4,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "sweepwindup" : {
+            "frames" : 1,
+            "cycle" : 0.4,
+            "properties" : {
+            }
+          },
+		  
+          "sweep" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+			
+			"properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_nokonata_noko2.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            },
+			
+			"mode" : "transition",
+            "transition" : "sweepwinddown"
+          },		  
+
+          "sweepwinddown" : {
+            "frames" : 1,
+            "cycle" : 0.2
+          },
+		  
+		  
+		  
+
+		  
+		  
+
+
+          "throwwindup_perilous" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+
+          "throwwindup" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_mortalblade_sheathe.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "throw" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+			"mode" : "transition",
+            "transition" : "throwwinddown",
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_sprj_yari_throw00.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "throwwinddown" : {
+            "frames" : 1,
+            "cycle" : 0.1
+          },	
+
+
+
+		  
+		  
+          "thrustwindup_perilous" : {
+            "frames" : 3,
+            "cycle" : 0.5,
+
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+            
+          },		  
+		  
+          "thrustwindup" : {
+            "frames" : 3,
+            "cycle" : 0.5,
+            "properties" : {
+            }
+          },
+		  
+          "thrustjab" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+			
+			"properties" : {
+				"immediateSound" : "/sfx/melee/gic_bloodborne_nokonata_noko3.wav",
+				"immediateSoundRangeMultiplier" : 1.0
+			},
+			"mode" : "transition",
+            "transition" : "thrustwinddown"
+          },
+		  
+          "thrustwinddown" : {
+            "frames" : 1,
+            "cycle" : 0.3
+          },
+
+
+
+
+
+
+
+
+          "riflewindup" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_bloodborne_sprj_oodutsu_tsutsu.wav",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },
+		  
+          "riflefire" : {
+            "frames" : 3,
+            "cycle" : 0.7,
+            "mode" : "loop"
+          },
+		  
+          "riflewinddown" : {
+            "frames" : 1,
+            "cycle" : 0.2,
+            "mode" : "transition",
+            "transition" : "reload"
+          },		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+          "meleeguncombowindup" : {
+            "frames" : 3,
+            "cycle" : 0.3,
+           "mode" : "transition",
+            "transition" : "meleeguncombowindupattack"
+          },
+		  
+          "meleeguncombowindupattack" : {
+            "frames" : 4,
+            "cycle" : 0.3,
+            "mode" : "transition",
+            "transition" : "meleeguncombowindupattack2",
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_kill-kick.wav",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },
+		  
+          "meleeguncombowindupattack2" : {
+            "frames" : 1,
+            "cycle" : 0.3,
+            "mode" : "transition",
+            "transition" : "meleeguncombowinduprifle",
+            "properties" : {
+            }
+          },
+
+          "meleeguncombowinduprifle" : {
+            "frames" : 2,
+            "cycle" : 0.4,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_bloodborne_sprj_oodutsu_tsutsu.wav",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },		  
+
+		  
+          "meleeguncomboriflefire" : {
+            "frames" : 1,
+            "cycle" : 0.3,
+            "mode" : "transition",
+            "transition" : "reload"
+          },
+		  
+		  //SKIP
+          "meleeguncombowinddown" : {
+            "frames" : 1,
+            "cycle" : 0.5,
+            "mode" : "transition",
+            "transition" : "reload"
+          },		  
+		  
+          "reload" : {
+            "frames" : 5,
+            "cycle" : 0.5,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_bloodborne_sprj_gun_reload2.ogg",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+
+		  
+          "chargewindup" : {
+            "frames" : 1,
+            "cycle" : 0.25
+          },
+		  
+          "charge" : {
+            "frames" : 3,
+            "cycle" : 1,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/gic_bloodborne_movement2.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "chargewinddown" : {
+            "frames" : 1,
+            "cycle" : 0.2,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+
+
+
+
+
+		  
+          "runcharge" : {
+            "frames" : 8,
+            "cycle" : 1,
+            "mode" : "loop",
+            "properties" : {
+//              "immediateSound" : "/sfx/tech/gic_tech_dash_+7db.ogg",
+//              "immediateSoundRangeMultiplier" : 1.0
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/armor/gic_bloodborne_body-lobe-1.wav", "", "/sfx/armor/gic_bloodborne_body-lobe-2.wav", "", "/sfx/armor/gic_bloodborne_body-lobe-3.wav", "", "/sfx/armor/gic_bloodborne_body-lobe-4.wav"]
+            }
+          },
+
+
+
+
+
+
+          "dashthrustwindup_perilous" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+
+          "dashthrustwindup" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_nokonata_tenkai.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "backdash" : {
+            "frames" : 1,
+            "cycle" : 1,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/gic_bloodborne_movement2.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "dashthrust" : {
+            "frames" : 1,
+            "cycle" : 1,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/gic_bloodborne_movement1.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "dashthrustwinddown" : {
+            "frames" : 4,
+            "cycle" : 0.2,
+            "mode" : "transition",
+            "transition" : "dashthrustwinddown2",
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_nokonata_noko2.wav",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },
+		  
+          "dashthrustwinddown2" : {
+            "frames" : 1,
+            "cycle" : 0.2,
+            "properties" : {
+            }
+          }	  
+
+
+
+
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 5.6]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "idlesword" : {
+              "properties" : {
+                "image" : "<partImage>:idlesword.<frame>"
+              }
+            },
+            "idlegun" : {
+              "properties" : {
+                "image" : "<partImage>:idlegun.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "<partImage>:fall.<frame>"
+              }
+            },
+            "land" : {
+              "properties" : {
+                "image" : "<partImage>:land.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "aggro_phase2" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },			
+			
+            "hop" : {
+              "properties" : {
+                "image" : "<partImage>:prep.<frame>"
+              }
+            },
+            "hopfull" : {
+              "properties" : {
+                "image" : "<partImage>:hop.<frame>"
+              }
+            },
+			
+			
+			
+            "selfhealingwindup" : {
+              "properties" : {
+                "image" : "<partImage>:selfhealingwindup.<frame>"
+              }
+            },
+            "selfhealing" : {
+              "properties" : {
+                "image" : "<partImage>:selfhealing.<frame>"
+              }
+            },
+			
+
+			
+            "overheadswingwindup_perilous" : {
+              "properties" : {
+                "image" : "<partImage>:overheadswingwindup.<frame>"
+              }
+            },			
+            "overheadswingwindup" : {
+              "properties" : {
+                "image" : "<partImage>:overheadswingwindup.<frame>"
+              }
+            },
+            "overheadswing" : {
+              "properties" : {
+                "image" : "<partImage>:overheadswing.<frame>",
+				"damageArea" : [ [0.0, -8], [7.5, -8], [7.5, -4.0], [0.0, -4.0] ]
+              }
+            },
+            "overheadswingwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:overheadswingwinddown.<frame>"
+              }
+            },		
+
+
+			
+			
+            "thrustwindup_perilous" : {
+              "properties" : {
+                "image" : "<partImage>:thrustwindup.<frame>"
+              }
+            },
+            "thrustwindup" : {
+              "properties" : {
+                "image" : "<partImage>:thrustwindup.<frame>"
+              }
+            },
+            "thrustjab" : {
+              "properties" : {
+                "image" : "<partImage>:thrustjab.<frame>",
+				"damageArea" : [ [1.5, -5.2], [6.4, -5.2], [6.4, -5.8], [1.5, -5.8] ]
+              }
+            },
+            "thrustwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:thrustwinddown.<frame>"
+              }
+            },	
+			
+			
+			
+
+
+
+
+
+            "throwwindup_perilous" : {
+              "properties" : {
+                "image" : "<partImage>:throwwindup.<frame>"
+              }
+            },
+            "throwwindup" : {
+              "properties" : {
+                "image" : "<partImage>:throwwindup.<frame>"
+              }
+            },
+            "throw" : {
+              "properties" : {
+                "image" : "<partImage>:throw.<frame>"
+              }
+            },
+            "throwwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:throwwinddown.<frame>"
+              }
+            },	
+			
+			
+			
+			
+			
+            "sweepwindup_perilous" : {
+              "properties" : {
+                "image" : "<partImage>:sweepwindup.<frame>"
+              }
+            },
+            "sweepwindup" : {
+              "properties" : {
+                "image" : "<partImage>:sweepwindup.<frame>"
+              }
+            },
+            "sweep" : {
+              "properties" : {
+                "image" : "<partImage>:sweep.<frame>",
+				"damageArea" : [ [0.0, -8], [5.5, -8], [5.5, -4.0], [0.0, -4.0] ]
+              }
+            },
+            "sweepwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:sweepwinddown.<frame>"
+              }
+            },	
+			
+			
+			
+			
+            "riflewindup" : {
+              "properties" : {
+                "image" : "<partImage>:riflewindup.<frame>"
+              }
+            },
+            "riflefire" : {
+              "properties" : {
+                "image" : "<partImage>:riflefire.<frame>"
+              }
+            },
+            "riflewinddown" : {
+              "properties" : {
+                "image" : "<partImage>:riflewinddown.<frame>"
+              }
+            },	
+			
+			
+			
+			
+			
+            "meleeguncombowindup" : {
+              "properties" : {
+                "image" : "<partImage>:meleeguncombowindup.<frame>"
+              }
+            },			
+            "meleeguncombowindupattack" : {
+              "properties" : {
+                "image" : "<partImage>:meleeguncombowindupattack.<frame>",
+              "damageArea" : [ [1.0, -4.5], [4.5, -4.5], [4.5, -6.8], [1.0, -6.8] ]
+              }
+            },
+            "meleeguncombowindupattack2" : {
+              "properties" : {
+                "image" : "<partImage>:meleeguncombowindupattack2.<frame>"
+              }
+            },				
+            "meleeguncombowinduprifle" : {
+              "properties" : {
+                "image" : "<partImage>:meleeguncombowinduprifle.<frame>"
+              }
+            },
+            "meleeguncomboriflefire" : {
+              "properties" : {
+                "image" : "<partImage>:meleeguncomboriflefire.<frame>"
+              }
+            },
+            "meleeguncombowinddown" : {
+              "properties" : {
+                "image" : "<partImage>:meleeguncombowinddown.<frame>"
+              }
+            },	
+			
+			
+			
+            "reload" : {
+              "properties" : {
+                "image" : "<partImage>:reload.<frame>"
+              }
+            },				
+			
+			
+
+			
+            "backdash" : {
+              "properties" : {
+                "image" : "<partImage>:dashthrust.<frame>"
+              }
+            },				
+            "dashthrust" : {
+              "properties" : {
+                "image" : "<partImage>:dashthrust.<frame>",
+              "damageArea" : [ [1.0, -5.2], [2.5, -5.2], [2.5, -6.8], [1.0, -6.8] ]
+              }
+            },			
+            "dashthrustwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:dashthrustwinddown.<frame>",
+              "damageArea" : [ [1.5, -5.2], [6.4, -5.2], [6.4, -5.8], [1.5, -5.8] ]
+              }
+            },
+            "dashthrustwinddown2" : {
+              "properties" : {
+                "image" : "<partImage>:dashthrustwinddown2.<frame>"
+              }
+            },
+
+
+            "dashthrustwindup_perilous" : {
+              "properties" : {
+                "image" : "<partImage>:dashthrustwindup.<frame>"
+              }
+            },	
+            "dashthrustwindup" : {
+              "properties" : {
+                "image" : "<partImage>:dashthrustwindup.<frame>"
+              }
+            },		
+            "runcharge" : {
+              "properties" : {
+                "image" : "<partImage>:runcharge.<frame>",
+              "damageArea" : [ [1.5, -5.4], [3.6, -5.4], [3.6, -6.0], [1.5, -6.0] ]
+              }
+            },
+			
+            "shieldparry" : {
+              "properties" : {
+                "image" : "<partImage>:shieldparry.<frame>"
+              }
+            },				
+			
+			
+            "chargewindup" : {
+              "properties" : {
+                "image" : "<partImage>:chargewindup.<frame>"
+              }
+            },		
+            "charge" : {
+              "properties" : {
+                "image" : "<partImage>:charge.<frame>"
+              }
+            },
+            "chargewinddown" : {
+              "properties" : {
+                "image" : "<partImage>:chargewinddown.<frame>"
+              }
+            }			
+			
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+	}
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+  
+  "lights" : {
+    "glow" : {
+      "active" : false,
+      "position" : [0, 0],
+      "color" : [255, 160, 160], //255, 255, 107
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+
+        { "particle" : "deathfizz1left" },
+        { "particle" : "deathfizz1right" },
+        { "particle" : "deathfizz2left" },
+        { "particle" : "deathfizz2right" },
+        { "particle" : "deathfizz3left" },
+        { "particle" : "deathfizz3right" },
+        { "particle" : "deathfizz4left" },
+        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+    "fire_bow" : {
+      "pool" : [ "/sfx/gun/bow_loose_perfect.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "fire_gun" : {
+      "pool" : [ "/sfx/gun/gic_r8_1.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "ichimonji_swing" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_swing-sword.wav" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "thrust_jab" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_swing-stab2.wav" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "sweep_swing" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_swing-knock.wav" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "fire" : {
+      "pool" : [ "/sfx/gun/gic_bloodborne_sprj_minigun_shot.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "laser" : {
+      "pool" : [ "/sfx/gun/gic_energyweapon_02.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "summon" : {
+      "pool" : [ "/sfx/gic_sekiro_fingerwhistle2.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "throw" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_swing-throw.wav" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "heal" : {
+      "pool" : [ "/sfx/statuseffects/gic_powerup_+10db.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+	
+    "buff" : {
+      "pool" : [ "/sfx/gic_sekiro_heal.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "danmaku" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_tan_1-15db.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+  
+    "wallCrash" : [ "/sfx/npc/monsters/peblit_drop1.ogg" ],
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+	
+    "deathPuff" : {
+      "pool" :	["/music/Remnant2/gic_remnant2_nerud_titansreach_deathtune.ogg"],
+      "rangeMultiplier" : 6.0
+	}
+	
+  }
+}

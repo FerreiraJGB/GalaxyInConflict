@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_hunterspistol_thrown",
+  "physics" : "grenade",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "gic_hunterspistol_thrown.png",
+  "animationCycle" : 0.2,
+  "frameNumber" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 30,
+  "speed" : 40,
+  "knockback" : 5,
+  "knockbackDirectional" : true,
+  "statusEffects" : [ "gic_bulletshot", "gic_stun_1" ],
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

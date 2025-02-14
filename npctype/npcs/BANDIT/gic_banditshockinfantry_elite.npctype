@@ -1,0 +1,115 @@
+{
+  "type" : "gic_banditshockinfantry_elite",
+  "baseType" : "gic_banditbase",
+
+  "dropPools" : [ "gic_shockbanditTreasure" ],
+
+  "scriptConfig" : {
+  
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+  
+    "dialog" : {
+	  "attack" : "/dialog/bandits/gic_shockbandit_combat.config:attack",
+      "reattack" : "/dialog/bandits/gic_shockbandit_combat.config:reattack",
+      "killedTarget" : "/dialog/bandits/gic_shockbandit_combat.config:killedTarget",
+      "lostTarget" : "/dialog/bandits/gic_shockbandit_combat.config:lostTarget",
+      "outOfSight" : "/dialog/bandits/gic_shockbandit_combat.config:outOfSight",
+      "cheerOn" : "/dialog/bandits/gic_shockbandit_combat.config:cheerOn",
+      "cantReach" : "/dialog/bandits/gic_shockbandit_combat.config:cantReach"
+    },
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.4]}],
+        [1.0, "wander", { "timeRange" : [0.3,0.1]}],
+        [1.0, "patrol"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+
+//Thrower
+          {
+            "head" : [ { "name" : "gic_oldadventurersarmorhead", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_oldadventurersarmorchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_oldadventurersarmorlegs", "parameters" : { "colorIndex" : [1] } } ],
+            "back" : [ { "name" : "gic_shockbanditcarrierback", "parameters" : { "colorIndex" : [1] }  } ],
+			
+            "primary" : ["gic_riot_stun_spear_directthrow" ],
+            "alt" : [
+              "gic_oldhunters_greatshield"
+            ]
+			
+          },
+		  
+//Auxilliary
+          {
+            "head" : [ { "name" : "gic_challengerarmorhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_challengerarmorchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_challengerarmorlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_shockbanditcarrierback", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : ["gic_bandit_cleaver_npc"],
+            "alt" : [
+              "gic_crudewoodenshield"
+            ]
+          },
+
+//Spearman
+          {
+            "head" : [ { "name" : "gic_oldprotectorsarmorhead", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_oldprotectorsarmorchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_oldprotectorsarmorlegs", "parameters" : { "colorIndex" : [1] } } ],
+            "back" : [ { "name" : "gic_shockbanditcarrierback", "parameters" : { "colorIndex" : [1] }  } ],
+            "primary" : ["gic_bandit_spear_npc"]
+          }		
+  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_shockbanditcarrier_light", "gic_commandingofficer_phylake_rally_shockbandit"],  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 200.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.4
+      },
+	  
+      "ews_bleedResistance" : {
+        "baseValue" : 0.7
+      }
+	  
+	  
+	  
+    }
+  }
+  
+}

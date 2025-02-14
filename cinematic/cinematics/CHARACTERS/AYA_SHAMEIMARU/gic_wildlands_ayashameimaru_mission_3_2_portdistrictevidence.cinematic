@@ -1,0 +1,232 @@
+{
+  "muteSfx" : true,
+  "muteMusic" : true,
+  "skippable" : true,
+//  "letterbox" : true,
+//  "backgroundColor" : [0, 0, 0, 200],
+//  "backgroundFadeTime" : 0.5,
+
+  "panels" : [
+  
+	
+	// --- --- ---
+	
+	
+  //Character Chatbox
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Character.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 35,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 35.5,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        }
+      ]
+    },
+	
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Textbox.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 35,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 35.5,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        }
+      ]
+    },
+
+
+// ----------------- dialogue: Initial Meeting
+    {
+      "drawables" : [
+      ],
+      "text" : "Gods...
+
+This isn't a crime-syndicate or cartel. This is a cult. We're dealing with a cult, and nobody uttered a single word before all this. All this... What the hell is all this about? Why? How am I supposed to even write about this? What? Am I meant to be a whistleblower now?",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 1.0,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 13,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 16,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 16.5,
+          "alpha" : 0.0
+        }
+      ]
+    },
+
+
+    {
+      "drawables" : [
+      ],
+      "text" : "Sniper!",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 17.5,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 18,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 19.5,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 20,
+          "alpha" : 0.0
+        }
+      ]
+    },
+	
+	
+    {
+      "drawables" : [
+      ],
+      "text" : "All of these papers look important enough! I'll have a read later! For now, we need to focus on getting out of here alive. You know how to deal with snipers, right? Stick to cover and all that? Because that's what we're going to have to do right about now!",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 20,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 32,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 35,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 35.5,
+          "alpha" : 0.0
+        }
+      ]
+    }
+
+
+  ],
+  "audio" : [
+  
+    {
+      "timecode" : 1,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    },
+	
+    {
+      "timecode" : 17,
+      "resource" : "/sfx/Darktide/gic_darktide_snipershot-03.ogg"
+    }
+	
+	
+  ]
+}

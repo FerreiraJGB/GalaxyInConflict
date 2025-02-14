@@ -1,0 +1,157 @@
+{
+  "itemName" : "gic_protectorate_knight_spear_player",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  
+  "description" : "The simplest and most effective weapon known to man would suffice in the hands of those that had finally died one too many times to retain their sanity. Hidden in the altered Ancient Vaults, these undying individuals were posted until suitable synthetic infrastructure could surpass their vigil.
+^#D1C8BF;+25 TRUE DMG for standard attacks.
+^#D6DFFF;Shield-Splitter: Press [SHIFT] to initiate a heavy forward thrust, stepping forward and dealing heavy damage against both [GiC] bosses (3s BOSS-BLEED) and standard enemies.^white;",
+
+  "shortdescription" : "Protectorate Knight Long-Spear",
+  "tooltipKind" : "gic_largebase_sword",
+  "tooltipFields" : {
+	"objectImage" : "/items/weapons/melee/player/gic_protectorate_knight_spear/gic_protectorate_knight_spear_icon2.png"
+  },
+  "category" : "^#D6DFFF;Formation Pike^white;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_protectorate_knight_spear_icon.png",
+
+  "animation" : "gic_protectorate_knight_spear.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_protectorate_knight_spear.png"
+  },
+  
+  "animationCustom" : { "sounds" : {
+ 
+      "heavyAttack" : ["/sfx/melee/gic_bloodborne_nokonata_tenkai.wav"],
+      "heavyAttackSwing" : ["/sfx/melee/gic_bloodborne_onosao_ono0.wav"],
+      "heavyAttackHit" : ["/sfx/melee/gic_bloodborne_iron-cut-iron2.wav"],
+
+      "shing" : ["/sfx/melee/gic_bloodborne_nokonata_tojiru.wav"],
+  
+          "fire" : ["/sfx/melee/gic_bloodborne_nokonata_nata1.wav", "/sfx/melee/gic_bloodborne_nokonata_nata2.wav", "/sfx/melee/gic_bloodborne_nokonata_nata3.wav"]
+        } },
+ 
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua", "/abilities/weapons/gic_base_formation_weapon.lua"],
+  "scriptDelta" : 1,
+  
+  "elementalType" : "ews_melee",
+
+  //"aimOffset" : -2.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+	"scripts" : ["/items/active/weapons/melee/abilities/gic_spearstab.lua"],
+    "fireTime" : 1.25,
+    "baseDps" : 85,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [ {"effect" : "gic_unblockableDamage_flat", "duration" : 25.0} ],
+      "knockbackRange" : 2,
+	  "knockback" : 15,
+	  "damageType" : "IgnoresDef"
+    },
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -90,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.0],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 0.5, //0.3
+        "armRotation" : -110,
+        "weaponRotation" : 20,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.0],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.5, //0.4
+        "armRotation" : -20,
+        "weaponRotation" : -70,
+        "twoHanded" : false,
+        "weaponOffset" : [0.1, 2.0], //0.1, 3.0
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "hold" : {
+        "armRotation" : -30,
+        "weaponRotation" : -60,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.0],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+	}
+  },
+  
+
+  "altAbilityType" : "spin",
+  "altAbility" : {
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [{"effect":"gic_boss_melee_primer","duration":3}], //2
+      "baseDamage" : 300,
+      "knockback" : 30, //50
+      "timeout" : 0.15,
+      "timeoutGroup" : "alt"
+    },
+	"scripts" : ["/items/weapons/melee/player/gic_protectorate_knight_spear/gic_protectorate_knight_spear_charge.lua"],
+	"class" : "Charge",
+	
+	"cooldownTime" : 1.0,
+	
+	"name" : "Heavy Thrust",
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -70,
+        "weaponRotation" : -20,
+		"aimAngle" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.5],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 1.0,
+		"aimAngle" : 0,
+        "armRotation" : -115,
+        "weaponRotation" : 12.5,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.5],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.75,
+        "armRotation" : -20,
+        "weaponRotation" : -65, //-70
+        "twoHanded" : false,
+        "weaponOffset" : [0.1, 3.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

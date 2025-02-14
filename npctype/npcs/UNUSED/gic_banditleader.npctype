@@ -1,0 +1,62 @@
+{
+  "type" : "gic_banditleader",
+  "baseType" : "gic_banditbase",
+
+  "dropPools" : [ "banditTreasure" ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Attack!"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "Fuck!",
+			"Shit!",
+			"Fucker!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_stalkerhead" } ],
+            "chest" : [ { "name" : "coolchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+              "gic_ake40"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      }
+	  
+	  
+	  
+    }
+  }
+  
+}

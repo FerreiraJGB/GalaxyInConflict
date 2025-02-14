@@ -1,0 +1,30 @@
+{
+  "frameGrid" : {
+    "size" : [64, 64],
+    "dimensions" : [6, 9],
+
+    "names" : [
+      [ "idle.1", "hurt.1",null, null, null, null ],
+      [ null, null, null, null, null, null ],
+      [ "fire.1", "fire.2", "fire.3", null, null, null ],
+	  [ "pinwindup.1", "pinwindup.2", "pinfire.1", null, null, null],
+	  [ "aimbotshotwindup.1", "aimbotshotwindup.2", "aimbotshotwindup.3", "aimbotshotwindup.4", "aimbotshotwindup.5", "aimbotshotwindup.6" ],
+	  [ "centralpinwindup.1", "centralpinfire.1", "centralpinwinddown.1" ],
+	  [ "laserlightwindup.1", "laserlightwindup.2", "laserlightwindup.3", "laserlightwindup.4", "laserlightwindup.5", "laserlightwindup.6" ],
+	  [ "nanobotdeploywindup.1", "nanobotdeploywindup.2", "nanobotdeploywindup.3", null, null, null ],
+	  [ "boltstreamwindup.1", "boltstreamwindup.2", "boltstreamwindup.3", null, null, null]
+    ]
+  },
+
+  "aliases" : {
+  
+    "pinwinddown.1" : "pinfire.1",
+  
+    "aimbotshotfire.1" : "aimbotshotwindup.6",
+    "aimbotshotwinddown.1" : "aimbotshotwindup.6",
+  
+    "laserlightfire.1" : "laserlightwindup.6",  
+  
+    "boltstreamfire.1" : "boltstreamwindup.3"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "objectName" : "gic_loudspeaker_dishonoredklaxon",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+
+  "description" : "Some sort of alarm.",
+  "shortdescription" : "Klaxon",
+  "race" : "human",
+
+
+  "lightColor" : [0, 0, 0],
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_loudspeaker_dishonoredklaxon.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+      "lightPosition" : [-1, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    },
+    {
+      "image" : "gic_loudspeaker_dishonoredklaxon.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+
+      "direction" : "right",
+      "lightPosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "animation" : "gic_loudspeaker_dishonoredklaxon.animation",
+  "animationParts" : {
+    "bg" : "gic_loudspeaker_dishonoredklaxon.png",
+    "fg" : "gic_loudspeaker_dishonoredklaxon_lit.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/alerts/gic_dishonored_Wall_of_Light_Beep_1.ogg" ],
+      "off" : [ "/sfx/alerts/gic_dishonored_Wall_of_Light_Beep_1.ogg" ]
+    }
+  },
+  "animationPosition" : [-8, 0],
+
+  "scripts" : [
+    "/objects/wired/light/light.lua"
+  ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [0, 1] ],
+
+  "soundEffect" : "/sfx/alerts/gic_dishonored_Wall_of_Light_Beep_2.ogg",
+  "soundEffectRangeMultiplier" : 2.0
+}

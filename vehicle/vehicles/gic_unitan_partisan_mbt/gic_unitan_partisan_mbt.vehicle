@@ -1,0 +1,187 @@
+{
+  "name" : "gic_unitan_partisan_mbt",
+  "script" : "gic_unitan_partisan_mbt.lua",
+  "boundBox" : [-5, -5, 5, 5],
+  "slaveControlTimeout" : 2.0,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : true,
+  "persistent" : true,
+  "animation" : "gic_unitan_partisan_mbt.animation",
+  "animationCustom" : {
+    "particleEmitters" : {
+      "damageShards" : {
+        "transformationGroups" : ["rotation"],
+        "emissionRate" : 3.0,
+        "burstCount"  : 20,
+        "offsetRegion" : [-4, -4, 4, 0],
+        "particles" : [{ "particle" : "steelshard"},
+                       { "particle" : "fireshard"}]
+      }
+    }
+  },
+
+  "animationPartTags" : {
+    "frontGun" : {
+      "partImage" : "gic_unitan_partisan_mbtgun.png"
+    },
+    "frontGun2" : {
+      "partImage" : "gic_unitan_partisan_mbtgun.png"
+    }
+  },
+
+  "movementSettings" : {
+    "collisionPoly" : [[-8.0, 0.8], [-5.0, -3.7], [5.0, -3.7], [8.0, 0.8], [5.0, 5.0], [-5.0, 5.0]],
+    "mass" : 5,
+    "airFriction" : 1,
+    "groundFriction" : 100,
+    "ignorePlatformCollision" : true
+  },
+
+  "loungePositions" : {
+    "drivingSeat" : {
+      "part" : "seat",
+      "partAnchor" : "drivingSeatPosition",
+      "statusEffects" : ["invulnerable"],
+      "orientation" : "sit",
+	  "cameraFocus" : true,
+      "exitBottomOffset" : [-1.0, -1.0]
+    },
+    "hatchGunner" : {
+      "part" : "seat",
+      "partAnchor" : "hatchGunnerPosition",
+      "statusEffects" : ["invulnerable","invisible"],
+      "orientation" : "stand",
+	  "dance" : "warmhands",
+      "exitBottomOffset" : [-1.0, -1.0]
+    },
+    "backSeat1" : {
+      "part" : "seat",
+      "partAnchor" : "backSeat1Position",
+      "statusEffects" : ["invulnerable"],
+      "orientation" : "sit",
+      "exitBottomOffset" : [-1.0, -1.0]
+    }
+  },
+
+  "mechAimLimit" : 20,
+  
+  "mechFireCycle" : 4.5,
+  "mechFireCycle2" : 0.1, //0.15
+    
+  "mechProjectile" : "gic_120mm_heat_stage1",
+  "mechProjectileConfig" : {
+    "speed" : 0,
+    "power" : 5000
+  },
+  "mechProjectile2" : "gic_greentracerbullet",
+  "mechProjectile2Config" : {
+    "power" : 83
+  },
+  
+  "hatchGunnerFireCycle" : 0.33,
+  "hatchGunnerProjectile" : "gic_m20h5_grenade_he",
+  "hatchGunnerProjectileConfig" : {
+    "power" : 185,
+	"speed" : 150
+  },
+  
+  "deathProjectileType" : "gic_tankexplosion_smoke",
+  "deathProjectileParameters" : {
+    "power" : 4000,
+    "damageTeam" : { "type" : "indiscriminate", "team" : 0 },
+    "damageKind" : "ews_explosive",
+	"ignoresDef" : true
+  },
+  
+  "repairTextConfig" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.6,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^green;+100 HP^reset;",
+            "velocity": [0.2,1.0],
+			"variance" : {
+				"initialVelocity" : [-0.4,0.0]
+			}
+          }
+        }
+      ]
+  },
+  
+  "minWaterFactorToFloat" : 0.1,
+
+  "targetMoveSpeed" : 16,
+
+  "moveControlForce" : 10000,
+
+  "windLevelOffset" : [0, 4],
+  "rockingWindAngleMultiplier": 0,
+
+  "rockingInterval" : 10,
+  "maxRockingAngle": 0.1,
+  "speedRotationMultiplier": 0.025,
+  "angleApproachFactor" : 0.025,
+  "maxGroundSearchDistance" : 5.0,
+
+  
+  "maxHealth" : 7000,
+  "protection" : 1000,
+  "materialKind" : "robotic",
+  
+  "resistances" : {
+	"ews_melee" : 1.0,
+	"ews_smallarms" : 1.0,
+	"ews_heavyarms" : 1.0,
+	"ews_antitank" : 0.5,
+	"ews_explosive" : 0.5
+  },
+  
+
+  "undamagedSettings" : {
+    "frictionEnabled" : true,
+    "groundFriction" : 100
+  },
+  "slowSettings" : {
+    "frictionEnabled" : true,
+    "groundFriction" : 120
+  },
+  "wreckedSettings" : {
+    "frictionEnabled" : true,
+    "groundFriction" : 150
+  },
+
+  "sinkingBuoyancy" : 0,
+  "sinkingFriction" : 15,
+  "maxSinkTime" : 10,
+  "destroyParticleBurstCount" : 20,
+
+  "damageStateNames" : ["undamaged","scratched","broken","wrecked"],
+  "damageMovementSettingNames" : ["undamagedSettings","undamagedSettings","slowSettings","wreckedSettings"],
+  "damageStateDriverEmotes" : ["happy","happy","sad","annoyed"],
+  "damageTakenEmote" : "oooh",
+  "damageEmoteTime" : 2.0,
+
+  "physicsCollisions" : {
+    "deck" : {
+      "collision" : [ [-5, 2.2], [-0.5, 2.2], [1, 2.2]],
+      "collisionKind" : "platform",
+      "attachToPart" : "seat"
+    }
+  },
+
+  "bowWaveParticles" : ["bowWaveWater","bowWaveLava","splashPoison"],
+  "bowWaveMaxEmissionRate" : 200,
+  "splashParticles" : ["splashWater","splashLava","splashPoison"],
+  "splashEpsilon" : 0.025
+}

@@ -1,0 +1,28 @@
+{
+  "itemName" : "gic_sashimiplatter",
+  "rarity" : "Rare",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_sashimiplatter.png",
+  "description" : "Premium-quality tuna and salmon served with wasabi and soy sauce. A prime albeit expensive Japanese delicacy.
+  
+To highlight the delicate flavor as well as for texture, the chef cuts the fish into different thicknesses by variety of the fish, its age and by the season.",
+  "shortdescription" : "Sashimi Platter",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 10,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id" : "gic_esther_chapter_0_0_legacystorylinequest",
+  "title" : "^#D1FFDE;GIC LEGACY STORYLINE",
+
+  "text" : "---",
+  "completionText" : "---",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+	
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_physicalcredit",
+        "count" : 500,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ],
+	
+    "turnInEntityUid" : "gic_legacystoryline_statue"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "projectileName" : "gic_rocketartilleryarrow_stage1",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_rocketartilleryarrow_stage2",
+      "inheritSpeedFactor" : 1,
+      "inheritDamageFactor" : 1,
+	  "directional" :true
+    }
+  ],
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+      "image" : "/animations/gic_smallsteamcloud/gic_smallsteamcloud.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.1,
+        "destructionTime" : 1,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+],
+  
+  "image" : "gic_rocketartilleryarrow.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+//  "statusEffects" : ["gic_bleeding_light", "gic_bleeding_medium", "gic_bulletshot" ],
+  "statusEffects" : ["gic_bulletshot" ],
+  "timeToLive" : 0.5,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

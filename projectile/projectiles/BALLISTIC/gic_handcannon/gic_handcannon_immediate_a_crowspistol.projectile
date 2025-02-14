@@ -1,0 +1,169 @@
+{
+  "projectileName" : "gic_handcannon_immediate_a_crowspistol",
+  "bounces" : 0,
+  "image" : "gic_handcannon_a.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback.config"
+    },
+	
+	
+	
+	
+	
+	
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_handcannon_b_indiscriminate",
+      "inheritDamageFactor" : 1,
+	  "directional" :true
+    },
+	
+	
+	
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },	
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },		
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },		
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },	
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },		
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },	
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },		
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },	
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },	
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },		
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_shotgun_crowspistol_primer",
+      "inheritDamageFactor" : 0.05,
+	  "fuzzAngle" : 10,
+	  "directional" :true
+    },		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 2.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 2.0,
+        "destructionTime" : 4,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.0,
+  "physics" : "laser"
+}

@@ -1,0 +1,39 @@
+{
+  "projectileName" : "gic_firebolt",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.1,
+      "angleAdjust" : 0
+    }	
+  ],
+  "image" : "gic_firebolt.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarmsthermal",
+  "lightColor" : [253, 143, 77],  
+  "statusEffects" : [
+    "burning", "gic_oilfire_primer"
+  ],
+  
+  "hydrophobic" : true,
+  
+  "emitters" : [ "arrowflames" ],
+  
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+  "speed" : 60
+}

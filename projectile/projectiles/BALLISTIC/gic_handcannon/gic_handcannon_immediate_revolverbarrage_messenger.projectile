@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_handcannon_immediate_revolverbarrage_messenger",
+  "bounces" : 0,
+  "image" : "gic_handcannon_a.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "periodicActions" : [
+    {
+      "time" : 0.05,
+      "action" : "projectile",
+      "type" : "gic_handcannon_a_revolverbarrage",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 1,
+	  "directional" :true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.31,
+  "physics" : "laser"
+}

@@ -1,0 +1,73 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_dialogue_scabgunner.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : {
+      "pool" : [
+        "/sfx/Darktide/gic_darktide_scabgunner-03.ogg",	//Heavy Support
+        "/sfx/Darktide/gic_darktide_scabgunner-11.ogg",	//Heavy Support
+        "/sfx/Darktide/gic_darktide_scabgunner-15.ogg",	//Establishing Fire Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-23.ogg",	//Establishing Fire Base
+        "/sfx/Darktide/gic_darktide_scabgunner-25.ogg",	//Establishing Heavy Fire Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-29.ogg",	//Getting shot at.
+        "/sfx/Darktide/gic_darktide_scabgunner-30.ogg",	//Heavy Support on alert.
+        "/sfx/Darktide/gic_darktide_scabgunner-33.ogg",	//Establishing Fire Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-39.ogg",	//Establishing Kill Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-43.ogg",	//Heavy Support establishing fire corridor
+        "/sfx/Darktide/gic_darktide_scabgunner-45.ogg",	//Clearing Fire Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-47.ogg",	//Heavy Support moving to overwatch
+        "/sfx/Darktide/gic_darktide_scabgunner-50.ogg"	//Establishing Kill Zone
+		],
+      "rangeMultiplier" : 4.0
+		},
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

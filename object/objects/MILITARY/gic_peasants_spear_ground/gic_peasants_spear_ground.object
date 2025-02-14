@@ -1,0 +1,35 @@
+{
+  "objectName" : "gic_peasants_spear_ground",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "breakable",
+  "price" : 5,
+  "description" : "A spear stuck in the ground.",
+  "shortdescription" : "Peasant's Spear",
+  "race" : "human",
+  "maxStack" : 3,
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "smashSounds" : [ "/sfx/objects/gic_ammopickup.ogg" ],
+  "scriptDelta" : 0,  
+  "breakDropOptions" : [
+    [ [ "gic_peasants_spear_player", 1, { } ] ]
+  ],
+  
+  "inventoryIcon" : "gic_peasants_spear_ground.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_peasants_spear_ground.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+
+
+}

@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_mechincendiarybullet_miss_primer",
+  "image" : "/projectiles/CORE_CODE/gic_null/gic_null.png",
+  "physics" : "laser",
+  "timeToLive" : 0,
+  "pointLight" : false,
+  "flippable" : true,
+  "actionOnReap" : [
+  ],
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 1,
+  
+  
+  "hitProjectile" : "gic_mechincendiarybullet_a_mech",
+  "missProjectile" : "gic_mechincendiarybullet_miss_a_mech",
+  "missChance" : 50,
+  
+  "periodicActions" : [
+    {
+      "time" : 0.0,
+	  "repeat" : false,
+	  "action" : "projectile",
+      "type" : "gic_gunfirenoise_standard",
+      "inheritDamageFactor" : 0
+    }
+  ],
+  
+  "scripts" : [ "/scripts/projectiles/gic_mech_miss_primer.lua" ],
+  "damageType" : "noDamage",
+  "damageKind" : "noDamage",
+  "knockback" : 0
+}

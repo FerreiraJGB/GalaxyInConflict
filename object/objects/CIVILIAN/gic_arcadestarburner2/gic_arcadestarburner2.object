@@ -1,0 +1,65 @@
+{
+  "objectName" : "gic_arcadestarburner2",
+  "colonyTags" : ["human","gic_redya","electronic"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 200,
+  "description" : "An old-school arcade machine. This one plays Starburner 2: Defense Atmosphere.",
+  "shortdescription" : "Starburner 2 Arcade Machine",
+  "race" : "generic",
+
+  "apexDescription" : "Starburner, an atmospheric fighter game where you fly a human 'Jet' and fight other 'Jets'.",
+  "avianDescription" : "Starburner is all about fighting for a single planet using a fighter 'Jet'.",
+  "floranDescription" : "Floran like sstarburner 2. Issss very eassy.",
+  "glitchDescription" : "Curious. This game portrays Earth Air Battles in a fun sense.",
+  "humanDescription" : "Ah yes, Starburner 2: Defense Atmosphere. This game recieved alot of negative criticism for being 'too arcadey' compared to the first game and that there was too much 'Fan-service' in the animated cutscenes.",
+  "hylotlDescription" : "Starburner 2, a gripping story of tragedy as you fight your way through countless hordes of of enemy fighter Jets.",
+  "novakidDescription" : "Starburner 2, an arcadey combat game where you fly some weird thing called a 'Jet'.",
+  
+  "avaliDescription" : "A REALLY old arcade cabinet that plays Starburner 2: Defense Atmosphere.",
+  "avikanDescription" : "Starburner 2: Defense Atmosphere is a really good game where you fly in a human aircraft. The sequel adds in so much more kinds of Aircraft!",
+  "trinkDescription" : "An entertainment cabinet playing Starburner. Not my type of game.",
+  "drodenDescription" : "Entertainment Device detected. Non-relevant object.",
+  "aegiDescription" : "Starburner 2: Defense Atmosphere was even more violent with its gripping story. The amount of cleavage in the cutscenes was what ultimately forced us to pull this from the shelves.",
+
+  "inventoryIcon" : "gic_arcadestarburner2.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_arcadestarburner2.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "scripts" : [ "/scripts/npcToyObject.lua"],
+  "npcToy" : {
+    "influence" : [
+      "videogame",
+      "videogame",
+      "videogame",
+      "videogame",
+      "videogameComplete"
+    ],
+    "defaultReactions" : {
+      "videogame" : [
+        [1.0, "typing"]
+      ],
+      "videogameComplete" : [
+        [1.0, "smile"],
+        [1.0, "annoyed"],
+        [1.0, "punch"]
+      ]
+    },
+    "preciseStandPositionLeft" : [-0.5, 0.0],
+    "preciseStandPositionRight" : [2.0, 0.0],
+    "maxNpcs" : 1
+  },
+
+  "soundEffect" : "/sfx/objects/arcademachine.ogg"
+
+}

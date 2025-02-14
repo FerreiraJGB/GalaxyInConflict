@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_summon_ultrasheriff_turretpod_ironsentinel_spawn",
+  "image" : "gic_null_ironsentinel.png",
+  "animationCycle" : 0.2,
+  "frameNumber" : 3,
+  "lightColor" : [150, 100, 100],
+  "fullbright" : true,
+  "damageKindImage" : "icon.png",
+  "physics" : "laser",
+  "emitters" : [ ],
+  "timeToLive" : 0,  
+  "periodicActions" : [
+
+  ],
+  
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "angle" : 90
+    },	
+    {
+      "action" : "projectile",
+      "type" : "gic_summon_ultrasheriff_turretpod_ironsentinel"
+    }	
+  ],
+  "damagePoly" : [ ],
+  "damageKind" : "ews_antitank",
+  "onlyHitTerrain" : true,
+  "flippable" : true,
+  "piercing" : true,
+  "speed" : 30,
+  "damageType" : "IgnoresDef",
+  "scripts" : [ "/projectiles/tracksourcestatus.lua" ],
+  "scriptDelta" : 1
+}

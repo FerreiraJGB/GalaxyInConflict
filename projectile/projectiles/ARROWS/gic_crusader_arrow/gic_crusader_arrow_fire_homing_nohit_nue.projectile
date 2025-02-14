@@ -1,0 +1,48 @@
+{
+  "projectileName" : "gic_crusader_arrow_fire_homing_nohit_nue",
+  "physics" : "gic_grenadenormal",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  
+  
+  "actionOnReap" : [
+      {
+      "action" : "projectile",
+      "type" : "gic_crystal_areashockwave_stage2",
+      "inheritDamageFactor" : 1,
+	  "angle" : 90,
+	  "fuzzAngle" : 0
+    }
+  ],  
+
+  
+  
+  "image" : "gic_crusader_arrow_fire.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_melee",
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 10,
+  
+  "lightColor" : [253, 143, 77],
+  
+  "onlyHitTerrain" : true,
+  
+  "knockbackDirectional" : true,
+  "speed" : 100,
+  "emitters" : [ "arrowflames" ],  
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  "rotationRate" : 0.5,
+  "trackingLimit" : 300 
+  
+}

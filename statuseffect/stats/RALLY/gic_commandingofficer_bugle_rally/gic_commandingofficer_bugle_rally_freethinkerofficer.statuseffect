@@ -1,0 +1,49 @@
+{
+  "name" : "gic_commandingofficer_bugle_rally_freethinkerofficer",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_rally_freethinkerofficer", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_rally_freethinkerofficer", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.8,
+            "color": [255, 255, 255],
+            "timeToLive": 0.4,
+            "destructionAction": "fade",
+            "destructionTime": 0.8,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^red;I need more men!^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+	},
+	"missChance" : 0,
+	"offset" : [-0.0,-0.5],
+	"muzzleOffset" : [1.2, 2.0],
+	"muzzleOffset2" : [1.2, 2.0],
+	"trackingDistance" : 80,
+	"trackingAngle" : 181,
+	"fireRate" : 1.0,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 35.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_commandingofficer_bugle_rally.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_commandingofficer_bugle_rally.animation"
+}

@@ -1,0 +1,23 @@
+{
+  "itemName" : "gic_weaponrepair_muzzleloadercleaningkit",
+  "price" : 0,
+  "rarity" : "Essential",
+  "category" : "^#E0EAFF;Weapon Repair Kit^white;",
+  "inventoryIcon" : "gic_weaponrepair_muzzleloadercleaningkit.png",
+  "description" : "A cleaning kit intended for use with muzzle-loaders, consisting of various tools specifically designed for their mechanisms. Considerable discipline was instilled in armies to properly care for their weapons, as blackpowder residue was highly detrimental to the iron of the locks and barrel due to the potassium salt buildup from firing.
+
+^Yellow;Repairs Muzzle-Loader Firearms by 30% if durability is above 10%^reset;",
+  
+  "shortdescription" : "Muzzle-Loader Cleaning Kit",
+  "maxStack" : 4,
+  "tooltipKind" : "gic_largebase",
+  "config" : {
+	"tags" : ["gic_repair_muzzleloader"],	//main activeitem needs to have this tag under "weaponRepairAcceptTags"
+	"limit" : 0.1,	//if main item's weaponDurability/weaponDurabilityMax is greater/equal, then this "augment" can apply.
+	"repairAmount" : 0.30  //how much the weapon repairs (1.0 is 100%)
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/repairItems/ews_repairitem.lua" ]
+}

@@ -1,0 +1,1259 @@
+{
+  "type" : "gic_knightofnights",
+  "shortdescription" : "[Knight of Nights]",
+  "description" : "Why?",
+
+  "categories" : [ "gic_knightofnights" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_knightofnights.animation",
+
+  "dropPools" : ["gic_knightofnightsTreasure"], //{ "default" : "banditTreasure", "bow" : "banditTreasure" }
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster_phases_music_laststand_adaptive.lua"
+    ],
+	
+	"music" : ["/music/touhou/gic_aether_falloffall.ogg"],
+  
+	"range" : 160,			//measured in blocks, default val is 50 blocks
+	"fadeOutTime" : 2.0,	//measured in seconds, default val is 2.0 seconds
+	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+	
+	
+	//ADAPTIVE HEALTH STUFF
+	"adaptiveTrackingRange" : 170, //should be range in blocks
+	"adaptiveHealthBonus" : 13500, //flat max health stat default: 30 000
+	
+	//EXTRA DROP POOLS, DROPS ONE LOOT POOL PER EXTRA PLAYER
+	"extraDropPools" : ["gic_knightofnightsTreasure"],
+	
+	
+	//LAST STAND MUSIC
+	"finalStandThreshold" : 0.5, 	//when health % reaches this value, music played will be permanently swapped to this. may code in last stand regression later?
+	"finalStandMusic" : ["/music/touhou/gic_Hachimitsu-Lemon_falloffall.ogg"],
+	
+	
+    "damageBar" : "Special",
+    "deathBehavior" : "monster-death",
+    "behavior" : "monster",
+
+    "seeThroughLiquid" : false,
+	
+	
+	
+	
+	
+	
+	"phaseTriggerCount" : 1, //how many indices should the monster consider for phases
+	"healthThresholdTriggers" : [0.5], //determines health threshhold for phase trigger [0.66,0.33]
+	"regressPhases" : false, //if enabled, monster will regress to its prior phase if the monster's health increases above its current threshold.
+	
+	"phaseTriggerIds" : ["behaviorConfigInjured1"], //configs to correspond to once the corresponding healthThresholdTrigger has been reached. ["behaviorConfigInjured1","behaviorConfigInjured2"]
+	//configs correspond to healthThresholdTriggers via index, ie index 1 of healthThresholdTrigger corresponds to index 1 of phaseTrigger
+	
+	
+	
+	
+	
+	
+	
+	//--- Phase 1 - Standard Greatsword
+	
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 160,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 120,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro_phase1",
+            "animationTime" : 3.5
+          }
+        }
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "hostileActions" : [
+
+
+
+		
+
+	  //Heavy Overhead - Doesn't follow up on the attack.
+      {
+        "name" : "action-charge",
+        "cooldown" : 9.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 2, 
+          "windupTime" : 0.5,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 1000, //500
+          "chargeControlForce" : 500, //250
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "phase1_heavyoverheadswing",
+          "windupState" : "phase1_heavyoverheadswingwindup",
+          "winddownTime" : 1.0,
+          "winddownState" : ""
+        }
+      },		
+		
+		
+	  
+
+	  //Heavy Overhead + Followup - Strikes, then follows with an upward slash. Upward slash extends all the way back.
+      {
+        "name" : "action-charge",
+        "cooldown" : 9.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 2, 
+          "windupTime" : 1.5,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 1000, //500
+          "chargeControlForce" : 500, //250
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "phase1_heavyoverheadswing",
+          "windupState" : "phase1_heavyoverheadswingwindup",
+          "winddownTime" : 3.0,
+          "winddownState" : "phase1_heavyoverheadswing_followupswingwindup"
+        }
+      },
+	  
+	  
+		
+		
+	  //Jump Stab - Deals incredible damage if not avoided.
+       {
+          "name" : "action-fire",
+          "cooldown" : 15,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 5,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "phase1_jumpstabwindup",
+            "windupTime" : 0.35,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "meleeslash", //meleeslash
+            "projectileParameters" : {
+              "speed" : 120,
+              "timeToLive" : 0.015,
+			  "power" : 450,
+			  "knockback" : 60, //60
+              "damageKind" : "ews_smallarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_stun_3", "gic_attackpowernullification_3", "gic_energynullification_3" ]	  
+            },
+            "fireOffsets" : [[0.5, 0.2]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "phase1_jumpstabdown",
+            "fireSound" : "dualswordswing",
+            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 3
+          }
+        },
+	  
+		
+	  //Light Overhead Swing + Upper Slash + Heavy one-handed down-strike - Bam-bam-hold-BAM.
+      {
+        "name" : "action-charge",
+        "cooldown" : 9.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 2, 
+          "windupTime" : 2,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 1000, //500
+          "chargeControlForce" : 500, //250
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "phase1_lightoverheadswing_secondfollowupswing",
+          "windupState" : "phase1_lightoverheadswingwindup",
+          "winddownTime" : 2.0,
+          "winddownState" : ""
+        }
+      },
+
+
+
+	  //Thrust - Basic thrust attack with no followup.
+      {
+        "name" : "action-charge",
+        "cooldown" : 8.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 10, 
+          "windupTime" : 0.5,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 4000, //500
+          "chargeControlForce" : 2000, //250
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "phase1_thrust",
+          "windupState" : "phase1_thrustwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  
+	  //Sword Rush - Dashes with collision hitbox, dealing damage.
+      {
+        "name" : "action-charge",
+        "cooldown" : 8.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 0, 
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 4000, //500
+          "chargeControlForce" : 4000, //2000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "phase1_swordrush",
+          "windupState" : "phase1_swordrushwindup",
+          "winddownTime" : 0.7,
+          "winddownState" : "phase1_swordrushwinddown"
+        }
+      },
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 4,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+//         "power" : 300,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : -3600, //18
+          "chargeControlForce" : 1000, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "phase1_backdash",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },	  
+	  
+	  	
+	  //Forward Dash - Pass the player if back dash still fails.
+      {
+        "name" : "action-charge",
+        "cooldown" : 8.0,
+        "parameters" : {
+          "maximumRange" : 4,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+//         "power" : 300,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1000, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "phase1_forwarddash",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      }
+	  
+	  
+	  	  
+		
+		
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "idlephase1",
+            "fallState": "idlephase1",
+            "moveState": "phase1walk",
+            "run": false,
+            "idleState": "idlephase1"
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "idlephase1",
+            "fallState": "idlephase1",
+            "moveState": "phase1walk",
+            "run": false,
+            "idleState": "idlephase1"
+          }
+        }
+      ],
+	  
+      "deathActions" : [
+      ],	
+	  
+      "damageTakenActions" : [
+      ],
+
+      "wanderActions" : [
+      ]
+	  
+    },
+
+
+	
+	
+	
+	
+	
+	//--- Phase 2 - Infused Greatsword and the helmet comes off. Combines with Repeating Crossbow.
+	
+	
+    "behaviorConfigInjured1" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 160,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 160,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro_phase2",
+            "animationTime" : 3.5
+          }
+        }
+      ],
+
+      "hostileActions" : [
+
+
+
+
+
+	
+	  
+	  
+	  
+	  
+	  //Homing Soul Mass - Fires 12 delayed shots into the air, which will then rain down on nearby targets. Unlike the Ruin variant, fires inwards.
+       {
+          "name" : "action-fire",
+          "cooldown" : 24,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "phase2_homingsoulmasswindup",
+            "windupTime" : 0.75,
+            "projectileCount" : 3,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 1,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicbullet_ice_12pattern_delayedmassshot",
+            "projectileParameters" : {
+			  "power" : 70,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ice",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[0.3, -0.4]],
+            "aimDirection" : [0, 2],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "phase2_homingsoulmass",
+            "fireSound" : "magicforce",
+            "winddownState" : "",
+            "winddownTime" : 3.5
+//            "damageRepeatGroup": ""
+          }
+        },
+			  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  //Heavy Overhead + Sweep + Sweep - Strikes, then sweeps to turn around then spins again. Intentional opening.
+      {
+        "name" : "action-charge",
+        "cooldown" : 16.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 2, 
+          "windupTime" : 1.75,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 1000, //500
+          "chargeControlForce" : 500, //250
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "phase2_heavyoverheadswing_secondfollowupswing",
+          "windupState" : "phase2_heavyoverheadswingwindup",
+          "winddownTime" : 1.5,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  
+	  
+	  
+	  	  
+	  //Medium Overhead Swing - Standard overhead strike.
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 2, 
+          "windupTime" : 0.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 1000, //500
+          "chargeControlForce" : 500, //250
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "phase2_mediumoverheadswing",
+          "windupState" : "phase2_mediumoverheadswingwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },				  
+	  
+	  
+	  
+	  //Sword Rush + Upwards followup - Rushes forward, then follows up with an upward slash.
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 14,
+          "minimumRange" : 2,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1000, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "phase2_swordrushwindup",
+          "chargeState" : "phase2_swordrush",
+          "winddownTime" : 1.5,
+          "winddownState" : "phase2_swordrush_followupwindup"
+        }
+      },
+	  
+	  
+	  
+		
+	  //Heavy Thrust - Extended thrust with a swooshing projectile.
+       {
+          "name" : "action-fire",
+          "cooldown" : 22,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "phase2_heavythrustwindup",
+            "windupTime" : 1.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_psychicshot_konpaku", //meleeslash
+            "projectileParameters" : {
+              "speed" : 120,
+              "timeToLive" : 15,
+			  "power" : 50,
+			  "knockback" : -60, //60
+              "damageKind" : "electric",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1", "gic_attackpowernullification_3", "gic_energynullification_3" ]	  
+            },
+            "fireOffsets" : [[0.2, 0.4]], //0.2, 1.0
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "phase2_heavythrust",
+            "fireSound" : "projectedforce",
+            "aimDirection" : [1, 0],
+            "winddownState" : "",
+            "winddownTime" : 2
+          }
+        },			  
+	  
+	  
+	  
+	  //Repeating Crossbow - Regular ranged attack. Punishes incredibly hard for going out of range.
+       {
+          "name" : "action-fire",
+          "cooldown" : 12,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 150,
+            "minimumRange" : 20,
+            "windupStopForce" : 10,
+            "windupState" : "phase2_repeatingcrossbowwindup",
+            "windupTime" : 0.15,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_owlhunterscrossbow_bolt_10barrage_stage1", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+			  "power" : 40,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_explosive",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[1.0, 0.9]], //x, 1.0 for accurate fire
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "phase2_repeatingcrossbowfire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.25
+          }
+        },
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	  //Returning Swoosh - Emits a force wave, returning once hitting a dead-end.
+       {
+          "name" : "action-fire",
+          "cooldown" : 25,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 150,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "phase2_returningswooshwindup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_electrictravelingswoosh_returningswoosh_stage1",
+            "projectileParameters" : {
+			  "power" : 200,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "electric",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[0.2, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "aimDirection" : [1, 0],
+            "fireState" : "phase2_returningswoosh",
+            "fireSound" : "magicforce",
+            "winddownState" : "",
+            "winddownTime" : 2.5,
+            "damageRepeatGroup": ""
+          }
+        },
+		
+		
+		
+		
+		
+		
+		
+		
+	  //Light Thrust - Quick one-handed thrust.
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 2, 
+          "windupTime" : 0.25,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 1000, //500
+          "chargeControlForce" : 500, //250
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "phase2_lightthrust",
+          "windupState" : "phase2_lightthrustwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },					
+		
+		
+		
+		
+		
+	  //Jump Stab - Stabs, then follows up with an extended thrust.
+       {
+          "name" : "action-fire",
+          "cooldown" : 15,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 7,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "phase2_jumpstabwindup",
+            "windupTime" : 0.35,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "meleeslash", //meleeslash
+            "projectileParameters" : {
+              "speed" : 120,
+              "timeToLive" : 0.015,
+			  "power" : 450,
+			  "knockback" : 60, //60
+              "damageKind" : "ews_smallarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_stun_3", "gic_attackpowernullification_3", "gic_energynullification_3" ]	  
+            },
+            "fireOffsets" : [[0.5, 0.2]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "phase2_jumpstabdown",
+            "fireSound" : "dualswordswing",
+            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 2
+          }
+        },		
+		
+		
+		
+		
+		
+		
+		
+		
+	  //Ground Thrust - Stabs the ground, emitting ice spikes in both directions. Spikes are staggered, but release a batch of secondary arrows.
+       {
+          "name" : "action-fire",
+          "cooldown" : 30,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 150,
+            "minimumRange" : 30,
+            "windupStopForce" : 10,
+            "windupState" : "phase2_groundthrustwindup",
+            "windupTime" : 0.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_spikewave_2pattern_knightofnights",
+            "projectileParameters" : {
+			  "power" : 50,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "electric",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[0.2, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "aimDirection" : [1, 0],
+            "fireState" : "phase2_groundthrust",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 3.5
+          }
+        },
+
+		
+		
+		
+		
+	  //Light Overhead - Quick one-handed strike.
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 2, 
+          "windupTime" : 0.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 1000, //500
+          "chargeControlForce" : 500, //250
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "phase2_lightoverheadswing",
+          "windupState" : "phase2_lightoverheadswingwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	  
+	  //Sword Rush Extended + Upwards followup - Rushes forward, then follows up with an upward slash.
+      {
+        "name" : "action-charge",
+        "cooldown" : 25.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 6,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 4000, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "phase2_swordrushwindup",
+          "chargeState" : "phase2_swordrush",
+          "winddownTime" : 1.5,
+          "winddownState" : "phase2_swordrush_followupwindup"
+        }
+      },
+		
+		
+		
+		
+		
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 4,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+//         "power" : 300,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : -3600, //18
+          "chargeControlForce" : 1000, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "phase2_backdash",
+          "winddownTime" : 0.15,
+          "winddownState" : ""
+        }
+      },	  
+	  
+	  	
+	  //Forward Dash - Pass the player if back dash still fails.
+      {
+        "name" : "action-charge",
+        "cooldown" : 8.0,
+        "parameters" : {
+          "maximumRange" : 4,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+//         "power" : 300,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1000, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "phase2_forwarddash",
+          "winddownTime" : 0.15,
+          "winddownState" : ""
+        }
+      }
+		
+		
+		
+	  	
+		
+		
+		
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "idlephase2",
+            "fallState": "idlephase2",
+            "moveState": "phase2walk",
+            "run": true,
+            "idleState": "idlephase2"
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "idlephase2",
+            "fallState": "idlephase2",
+            "moveState": "phase2walk",
+            "run": true,
+            "idleState": "idlephase2"
+          }
+        }
+      ],
+	  
+      "damageTakenActions" : [
+      ],
+      "deathActions" : [
+      ],	
+      "periodicActions" : [],
+      "wanderActions" : [
+      ]
+	  
+    },	
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    "damageParts" : { //Pouncing or dashing attack
+      "body" : {
+        "damage" : 180,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.25,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 40,
+        "statusEffects" : [ "gic_stun_025" ]
+      }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.15], [0.5, -2.15], [0.5, 2.0], [-0.5, 2.0] ],             // [-0.5, -2.15], [0.5, -2.15], [0.5, 2.6], [-0.5, 2.6],    [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375] 
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.05,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.75], [-0.35, -2.05], [0.35, -2.05], [0.75, -1.75], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ], 
+
+      "mass" : 1,
+      "walkSpeed" : 8,
+      "runSpeed" : 18,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 1
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 500
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 60000 //60000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.5 //0.5x fire damage intake
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -3.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

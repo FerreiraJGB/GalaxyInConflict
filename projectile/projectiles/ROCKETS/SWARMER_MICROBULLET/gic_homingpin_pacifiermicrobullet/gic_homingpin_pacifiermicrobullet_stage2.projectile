@@ -1,0 +1,35 @@
+{
+  "projectileName" : "gic_homingpin_pacifiermicrobullet_stage2",
+//  "renderLayer" : "Monster+10",
+  "bounces" : 0,
+  "image" : "gic_homingpin_pacifiermicrobullet_stage2.png",
+  "animationCycle" : 0.25,
+  "lightColor" : [255, 112, 193],
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_homingpin_pacifiermicrobullet_stage3",
+      "inheritDamageFactor" : 1
+    }
+  ],
+  
+"periodicActions" : [
+
+],
+  
+  "power" : 10,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+
+  "maxSpeed" : 0,
+
+
+
+//  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 40,
+  "timeToLive" : 2,
+  "physics" : "bullet"
+}

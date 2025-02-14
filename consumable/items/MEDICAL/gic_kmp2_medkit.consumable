@@ -1,0 +1,41 @@
+{
+  "itemName" : "gic_kmp2_medkit",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_kmp2_medkit.png",
+  "maxStack" : 10,
+  "description" : "'Komplekt Medecinskih Pripasov', meaning 'Medical Supply Pack' was an early miniature first aid kit issued to colonists since the first days of large-scale space travel.
+
+^green;- Restores 100 health over 2 seconds, costing 2 seconds.
+^yellow;- Heals Bruising.^white;
+^orange;- Heals Burn Wounds.^white;",
+
+  "shortdescription" : "^yellow;KMP-2 Medkit",
+  "effects" : [ [
+      {
+        "effect" : "gic_kmp2_medkitheal"
+      },
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 2
+      },
+	  
+      {
+        "effect" : "gic_medkit_use_messenger",
+        "duration" : 2
+      },	
+	  
+	  {
+        "effect" : "gic_bruise_pack_recovery"
+      },
+      {
+        "effect" : "gic_burn_pack_recovery"
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_medkit_use" ],
+  "blockingEffects" : [
+  ]
+}

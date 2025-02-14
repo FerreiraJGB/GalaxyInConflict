@@ -1,0 +1,26 @@
+{
+  "id" : "gic_ec43b_clownpiecequest",
+  "title" : "^#D1FFDE;Clowning Around",
+  "prerequisites" : [  ],
+  "text" : "",
+  "completionText" : "",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_clownpiecehead", 1 ], [ "gic_clownpiecechest", 1 ], [ "gic_clownpiecelegs", 1 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : false,
+
+    "conditions" : [
+    ]
+  }
+}

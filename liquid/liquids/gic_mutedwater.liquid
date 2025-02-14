@@ -1,0 +1,34 @@
+{
+  "name" : "gic_mutedwater",
+  "liquidId" : 247,
+  "description" : "Plain old water.",
+  "tickDelta" : 1,
+  "color" : [90, 120, 126, 200], //x, y, z, 128
+  "itemDrop" : "liquidwater",
+  "statusEffects" : [ "swimming" ],
+
+  "interactions" : [
+    {
+      "liquid" : 3,
+      "liquidResult" : 3
+    },
+    {
+      "liquid" : 8,
+      "liquidResult" : 0
+    },
+    {
+      "liquid": 12,
+      "liquidResult" : 12
+    },
+    {
+      "liquid": 6,
+      "liquidResult" : 6
+    }
+  ],
+
+  "texture" : "/liquids/gic_mutedwatertex.png",
+  "bottomLightMix" : [0, 78, 255],
+  "textureMovementFactor" : 2.6
+}
+
+//From regular vanilla water, use hue-saturation tool and value of 0 RGB change, 33 saturation, and -12 brightness to achieve something similar to Dunwall Daytime's water color.

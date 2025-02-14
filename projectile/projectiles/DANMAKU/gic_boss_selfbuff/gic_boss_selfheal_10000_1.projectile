@@ -1,0 +1,34 @@
+{
+  "projectileName" : "gic_boss_selfheal_10000_1",
+  "image" : "null.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  
+  "damageKind" : "ews_melee",
+  "damageType" : "IgnoresDef",
+  "damageTeam" : { "type" : "assistant", "team" : 1 },  
+  "statusEffects" : [ "gic_boss_selfheal_10000_1" ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 0
+}

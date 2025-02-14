@@ -1,0 +1,79 @@
+{
+  "type" : "gic_unitanpilot",
+  "baseType" : "gic_soldierbase",
+
+  "dropPools" : [ "basicTreasure" ],
+
+  "scriptConfig" : {
+
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Attack!"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "What the hell!?",
+			"I need backup! Anyone!?",
+			"Intruder!",
+			"Alarm!",
+			"We will never falter!",
+			"Get them off my ship!",
+			"We are the Unitan Navy!",
+			"I'm kicking your ass! Armor or no armor!",
+			"We are ready to die for the Unitan Navy!",
+			"Never underestimate your enemy!",
+			"To cover! Now!",
+			"Shit!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_spaceinfantrymodern_unitapatternhead", "parameters" : { "colorIndex" : [2] }  } ],
+            "chest" : [ { "name" : "gic_spaceinfantrymodernchest", "parameters" : { "colorIndex" : [2] }  } ],
+            "legs" : [ { "name" : "gic_spaceinfantrymodernlegs", "parameters" : { "colorIndex" : [2] }  } ],
+            "primary" : [
+              "gic_emcp19"
+            ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 76.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

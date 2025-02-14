@@ -1,0 +1,31 @@
+{
+  "name" : "gic_armor_longrangeradio_commissar",
+  "blockingStat" : "gic_armor_longrangeradioStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_projectile_spawnnpc_gic_realistichuman_gic_khurtovyna_redarmy_veteran_playerally", //does not accept arrays
+	"projectileTypeMiss" : "gic_projectile_spawnnpc_gic_realistichuman_gic_khurtovyna_redarmy_veteran_playerally", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 100,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 80.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 80.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_armor_longrangeradio.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_armor_longrangeradio.animation"
+}

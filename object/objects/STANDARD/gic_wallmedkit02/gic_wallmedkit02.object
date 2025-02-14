@@ -1,0 +1,54 @@
+{
+  "objectName" : "gic_wallmedkit02",
+  "colonyTags" : ["storage"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+  
+  "category" : "storage",
+  "price" : 85,
+  "description" : "Medical cabinet intended to store items with medical purposes.",
+  "shortdescription" : "Medical Cabinet",
+  "race" : "generic",
+  "health" : 1.5,
+
+
+
+
+  "inventoryIcon" : "gic_wallmedkit02.png",
+  "orientations" : [
+    {
+      "image" : "gic_wallmedkit02.png",
+      "direction" : "left",
+      "flipImages" : true,
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ],
+      "collision" : "background"
+    },
+    {
+      "image" : "gic_wallmedkit02.png",
+      "direction" : "right",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ],
+      "collision" : "background"
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/woodenbox_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/woodenbox_close.ogg" ],
+  "slotCount" : 4,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

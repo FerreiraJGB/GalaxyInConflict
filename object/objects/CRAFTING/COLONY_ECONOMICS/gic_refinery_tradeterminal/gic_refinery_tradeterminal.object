@@ -1,0 +1,482 @@
+{
+  "objectName" : "gic_refinery_tradeterminal",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "description" : "Trade Terminal for Refinery Economies.",
+  "shortdescription" : "^orange;Economy Terminal: Refinery [GIC]^white;",
+  "race" : "generic",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_generic_economy_3tab.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+	  
+	  
+	  
+        "title" : "  Economy Terminal: Refinery
+
+
+
+
+
+
+
+",
+		
+		
+//"''Do not act as if you were going to live 10,000 years. Death hangs over you. While it is in your power, be good.''		
+        "subtitle" : 
+" A station or settlement geared towards the refinement of various chemicals, metals, and other substances
+ which are typically too impure to use by itself. Most commonly, these economies will handle the processing of
+ unrefined fuels and impure ores to convert them into more useful materials en-masse with unrivalled
+ efficiency.
+
+ Imports: Raw Minerals
+
+ Exports: Refined Metals
+",
+		
+		
+		
+        "icon" : {
+          "file" : "/interface/crafting/gic_tradeterminal_refinery.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+	
+	
+	
+	
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":36,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_industrialequipmentcargo"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_tradeterminal", "gic_trade_buy" ]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":4,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_rawmineralscargo"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_tradeterminal", "gic_trade_buy" ]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_refinedmetalscargo"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_tradeterminal", "gic_trade_buy" ]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_industrialequipmentcargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":2,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_tradeterminal", "gic_trade_sell" ]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_rawmineralscargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":3,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_tradeterminal", "gic_trade_sell" ]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":4,
+				"name":"gic_refinedmetalscargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_tradeterminal", "gic_trade_sell" ]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"copperore"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Copper Bar ^orange;(Mass-Refined)",
+			"description" : "Copper shaped into an ingot for ease of storage and handling. Copper is estimated to have first been used around 8000-5000 B.C on Terra in coins and ornaments. Tools are estimated to have been made with copper around 5500 B.C.
+
+[This item is otherwise identical to standard copper bars, and can be used in crafting recipes involving copper bars]",
+			"tooltipKind" : "gic_largebase"
+},
+				"count":100,
+				"name":"copperbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_services" ]
+		},
+	
+	
+	
+	
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"goldore"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Gold Bar ^orange;(Mass-Refined)",
+			"description" : "Gold shaped into an ingot for ease of storage and handling. Gold is estimated to have first been used around 3000 B.C by the Ancient Egyptians, used in jewelry and religious idols.
+
+[This item is otherwise identical to standard gold bars, and can be used in crafting recipes involving gold bars]",
+			"tooltipKind" : "gic_largebase"
+},
+				"count":100,
+				"name":"goldbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_services" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"ironore"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Iron Bar ^orange;(Mass-Refined)",
+			"description" : "Iron shaped into an ingot for ease of storage and handling. It's speculated the Hittites of ancient Egypt hammered or pounded the metal to create tools around 5000-3000 B.C.
+
+[This item is otherwise identical to standard iron bars, and can be used in crafting recipes involving iron bars]",
+			"tooltipKind" : "gic_largebase"
+},
+				"count":100,
+				"name":"ironbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_services" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10,
+				"name":"gic_scrapmetal"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_services" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"silverore"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Silver Bar ^orange;(Mass-Refined)",
+			"description" : "Silver shaped into an ingot for ease of storage and handling. The earliest accounts of silver can be traced to 3000 B.C in former Turkey, where its mining spurred trade in the ancient Aegean and Mediterranean seas.
+
+[This item is otherwise identical to standard silver bars, and can be used in crafting recipes involving silver bars]",
+			"tooltipKind" : "gic_largebase"				
+},
+				"count":100,
+				"name":"silverbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_services" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"titaniumore"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Titanium Bar ^orange;(Mass-Refined)",
+			"description" : "Titanium shaped into an ingot for ease of storage and handling. Titanium metal was not used outside the laboratory until 1932 when William Justin Kroll produced it by reducing titanium tetrachloride (TiCl4) with calcium. Titanium is not a naturally-occurring resource but with Earth's destruction and the breaking of the borders of reality, such a new effect is not so otherworldly.
+[This item is otherwise identical to standard titanium bars, and can be used in crafting recipes involving titanium bars]",
+			"tooltipKind" : "gic_largebase"	
+				},
+				"count":100,
+				"name":"titaniumbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_services" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"tungstenore"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Tungsten Bar ^orange;(Mass-Refined)",
+			"description" : "Tungsten shaped into an ingot for ease of storage and handling. The metal was first isolated in 1783 by Spanish scientists Jose and Fausto d'Elhuyar through the reduction, by means of charcoal, of the tungstic acid found in wolframite.
+
+[This item is otherwise identical to standard tungsten bars, and can be used in crafting recipes involving tungsten bars]",
+			"tooltipKind" : "gic_largebase"	
+				},
+				"count":100,
+				"name":"tungstenbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_services" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_cyanide_pack"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_services" ]
+		}
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_refinery_tradeterminal" ]
+  },
+  "printable" : false,
+  "price" : 300,
+  
+  "inventoryIcon" : "gic_refinery_tradeterminal.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_refinery_tradeterminal.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+
+}

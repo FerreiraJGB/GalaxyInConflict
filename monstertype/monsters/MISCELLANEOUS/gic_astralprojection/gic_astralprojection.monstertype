@@ -1,0 +1,215 @@
+{
+  "type" : "gic_astralprojection",
+
+  "categories" : [ "gic_astralprojection" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_astralprojection.animation",
+  "reversed" : false,
+
+  "dropPools" : [],
+  "damageTeam" : { "type" : "friendly", "team" : 0},
+  
+  "baseParameters" : {
+	"clientEntityMode" : "ClientMasterAllowed",
+	
+    "scripts" : [
+      "/monsters/MISCELLANEOUS/gic_astralprojection/gic_astralprojection.lua"
+    ],
+	
+	"behavior" : "monster",
+	
+    "deathBehavior" : "monster-death",
+
+    "behaviorConfig" : {
+      "damageOnTouch" : false,
+
+      "targetQueryRange" : 40,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 50,
+      "targetOutOfSightTime" : 1.0,
+
+      "swoopVelocity" : 30,
+
+      "foundTargetActions" : [ ],
+
+      "fleeActions" : [ ],
+
+      "hostileActions" : [ ],
+
+      "periodicActions" : [ ],
+
+      "approachActions" : [
+      ],
+
+      "followActions" : [
+      ],
+
+      "wanderActions" : [
+      ],
+
+      "concurrentActions" : [ ],
+
+      "concurrentHostileActions" : [
+		
+		//Laser Barrage
+       {
+          "name" : "action-fire",
+          "cooldown" : 0,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "",
+            "windupTime" : 0.1,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.05,
+            "projectileType" : "gic_magicbullet_ice",
+            "projectileParameters" : {
+              "speed" : 35,
+			  "power" : 10,
+              "damageKind" : "ews_psychic"
+            },
+            "fireOffsets" : [[-2, -0.5], [2, -0.5]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "laser",
+            "damageRepeatGroup" : "",
+            "aimDirection" : [1, -0.5],
+            "winddownState" : "",
+            "winddownTime" : 0.0
+          }
+        }
+	  ],
+	  
+	  "deathActions" : [
+
+
+      ]
+	  
+    },
+
+	
+    "metaBoundBox" : [-2.5, -2.5, 2.5, 2.5],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "gravityEnabled" : false,
+      "collisionPoly" : [ [0.3125, 0.46875], [0.45, 0.21875], [0.45, -0.21875], [0.3125, -0.46875], [-0.3125, -0.46875], [-0.45, -0.21875], [-0.45, 0.21875], [-0.3125, 0.46875] ],
+	  "ignorePlatformCollision" : true,
+	  
+      "mass" : 1.0,
+      "flySpeed" : 16,
+      "airFriction" : 0.25,
+      "airForce" : 25.0
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.1,
+    "knockoutEffect" : "blink",
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+
+    "touchDamage" : {
+      "poly" : [ [0.3125, 0.46875], [0.45, 0.21875], [0.45, -0.21875], [0.3125, -0.46875], [-0.3125, -0.46875], [-0.45, -0.21875], [-0.45, 0.21875], [-0.3125, 0.46875] ],
+      "damage" : 10,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "lash",
+      "knockback" : 20,
+      "statusEffects" : [ "electrified" ]
+    },
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/monster_primary.lua"
+      ],
+      "primaryScriptDelta" : 1,
+
+      "stats" : {
+        "knockbackStunTime" : {
+          "baseValue" : 0.25
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 9
+        },
+		"grit" : {
+          "baseValue" : 0.5
+        },
+        "maxHealth" : {
+          "baseValue" : 2500
+        },
+        "protection" : {
+          "baseValue" : 0.0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1.0
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : -0.5
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.75
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.5
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.5
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        }
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : true,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

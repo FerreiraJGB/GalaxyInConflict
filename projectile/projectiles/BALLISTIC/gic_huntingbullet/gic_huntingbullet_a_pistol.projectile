@@ -1,0 +1,37 @@
+{
+  "projectileName" : "gic_huntingbullet_a_pistol",
+  "image" : "icon.png",
+  "animationCycle" : 0.0,
+  "physics" : "laser",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "timeToLive" : 0.05,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [32, 32, 6],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_huntingbullet_b",
+      "directional" : "true",
+      "inheritDamageFactor" : 1
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_gunfirenoise_standard",
+      "inheritDamageFactor" : 0
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_shellcasing_pistol",
+      "fuzzAngle" : 20,
+      "angle" : 90
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "noDamage",
+  "damageKind" : "ews_smallarms"
+}

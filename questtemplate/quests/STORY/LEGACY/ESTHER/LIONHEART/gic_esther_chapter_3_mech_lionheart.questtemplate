@@ -1,0 +1,42 @@
+{
+  "id" : "gic_esther_chapter_3_mech_lionheartQuest",
+  "title" : "^#D1FFDE;The End of Gensokyo", //Originally met in Chapter 3 to give a mech. Removed.
+  "prerequisites" : [ ],
+  
+  "text" : "Man, this place is wild. They're fighting as hard as they can, pulling up every allied youkai and spirit into their service against the abyssal hordes.",
+  
+  "completionText" : "",
+  
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_healingflask", 10 ], [ "gic_frostmilitia_lightballista", 1 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      }
+    },
+
+
+    "descriptions" : {
+      "turnIn" : "Speak to ^orange;Lionheart^reset;."
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_3_lionheart",
+    "conditions" : [
+    ],
+  "setUniverseFlags" : ["gic_esther_chapter_1_hubworld_dockingbay75_attachment_brigandluteplayer"] 	
+
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "name" : "gic_dshk_gunturret2_prefab",
+  "script" : "/vehicles/gic_mountedturret.lua",
+  
+  "startingWrenchHit" : 10, //set to 10 for automatic turret construction
+  
+  "deteriorationMultiplier" : 1.0, //increase to increase rate of how quickly turret will reach 100% deterioration
+  "inaccuracy" : 0.02,
+  "missChance" : 30, //out of 100
+  "mechFireCycle2" : 0.4, //fire rate
+  
+  "boundBox" : [-6.0, -0.25, 2.4, 3.4],
+  "slaveControlTimeout" : 2.0,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : false,
+  "persistent" : true,
+  "animation" : "gic_dshk_gunturret2.animation",
+  "animationCustom" : {
+    "particleEmitters" : {
+      "damageShards" : {
+        "transformationGroups" : ["rotation"],
+        "emissionRate" : 0.0,
+        "burstCount"  : 20,
+        "offsetRegion" : [-4, -4, 4, 0],
+        "particles" : [{ "particle" : "steelshard"},
+                       { "particle" : "fireshard"}]
+      }
+    }
+  },
+
+  "animationPartTags" : {
+    "frontGun" : {
+      "partImage" : ""
+    },
+    "frontGun2" : {
+      "partImage" : "gic_dshk_gunturretgun.png"
+    }
+  },
+
+  "movementSettings" : {
+    "collisionPoly" : [[-2.0, 0.5], [-2.0, -0.0], [2.0, -0.0], [2.0, 0.5], [0, 1.5]],
+    "mass" : 1,
+    "airFriction" : 1,
+    "groundFriction" : 100,
+    "ignorePlatformCollision" : false
+  },
+
+  "loungePositions" : {
+    "drivingSeat" : {
+      "part" : "seat",
+      "partAnchor" : "drivingSeatPosition",
+	  "cameraFocus" : true,
+      "statusEffects" : [],
+      "orientation" : "stand",
+      "dance" : "warmhands",
+      "exitBottomOffset" : [-1.0, -2.0]
+    }//,
+    //"titanicPose" : {
+      //"part" : "seat",
+      //"partAnchor" : "titanicSeatPosition",
+      //"statusEffects" : [],
+      //"orientation" : "stand",
+      //"exitBottomOffset" : [-1.0, -1.0]
+    ///}
+  },
+
+  "mechAimLimit" : 28,
+  
+  "mechFireCycle" : 100000.0,
+  //"mechFireCycle2" : 0.16,
+    
+  "mechProjectile" : "",
+  "mechProjectileConfig" : {
+    "power" : 0
+  },
+  "mechProjectile2" : "gic_redtracerbullet_heavy_a_machinegun",
+  "missProjectile" : "gic_redtracerbullet_heavy_miss_a_machinegun",
+  "mechProjectile2Config" : {
+    "power" : 185
+  },
+  
+  "textProjectile" : "gic_null",
+  "jammedTextConfig" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.4,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^red;JAMMED^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+  },
+  
+  "unjammedTextConfig" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.4,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^green;UNJAMMED^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+  },
+  
+  "repairedTextConfig" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.4,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^green;FULLY REPAIRED^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+  },
+  
+  "repairTextConfig" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.6,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^green;+100 HP^reset;",
+            "velocity": [0.2,1.0],
+			"variance" : {
+				"initialVelocity" : [-0.4,0.0]
+			}
+          }
+        }
+      ]
+  },
+  
+  "minWaterFactorToFloat" : 0.1,
+
+  "targetMoveSpeed" : 0.1,
+
+  "moveControlForce" : 0,
+
+  "windLevelOffset" : [0, 4],
+  "rockingWindAngleMultiplier": 0,
+
+  "rockingInterval" : 10,
+  "maxRockingAngle": 0.1,
+  "speedRotationMultiplier": 0.025,
+  "angleApproachFactor" : 0.025,
+  "maxGroundSearchDistance" : 2.5,
+
+  "maxHealth" : 1000,
+  "protection" : 100,
+  "materialKind" : "robotic",
+  
+  "resistances" : {
+	"ews_melee" : 0.0,
+	"ews_smallarms" : 0.5,
+	"ews_heavyarms" : 0.25,
+	"ews_antitank" : 0.0,
+	"ews_explosive" : 0.0
+  },
+
+  "undamagedSettings" : {
+    "frictionEnabled" : true,
+    "groundFriction" : 100
+  },
+  "slowSettings" : {
+    "frictionEnabled" : true,
+    "groundFriction" : 100
+  },
+  "wreckedSettings" : {
+    "frictionEnabled" : true,
+    "groundFriction" : 100
+  },
+
+  "sinkingBuoyancy" : 0,
+  "sinkingFriction" : 20,
+  "maxSinkTime" : 10,
+  "destroyParticleBurstCount" : 20,
+
+  "damageStateNames" : ["undamaged","scratched","broken","wrecked"],
+  "damageMovementSettingNames" : ["undamagedSettings","undamagedSettings","slowSettings","wreckedSettings"],
+  "damageStateDriverEmotes" : ["happy","happy","sad","annoyed"],
+  "damageTakenEmote" : "oooh",
+  "damageEmoteTime" : 2.0,
+
+  "physicsCollisions" : {
+    "deck" : {
+      "collision" : [ [-0, 0], [-0.0, 0.0], [0, 0.0]],
+      "collisionKind" : "platform",
+      "attachToPart" : "seat"
+    }
+  },
+
+  "bowWaveParticles" : ["bowWaveWater","bowWaveLava","splashPoison"],
+  "bowWaveMaxEmissionRate" : 200,
+  "splashParticles" : ["splashWater","splashLava","splashPoison"],
+  "splashEpsilon" : 0.025
+}

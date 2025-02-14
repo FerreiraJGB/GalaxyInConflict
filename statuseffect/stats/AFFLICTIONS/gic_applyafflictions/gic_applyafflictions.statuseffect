@@ -1,0 +1,27 @@
+{
+  // READ ME PLEASE //
+  
+  
+  // ok so this is basically a dummy demonstration effect for how to apply "AFFLICTION" status effects
+  // copy and paste this .statuseffect file and simply edit "name", "blockingStat", and "statusEffects" as appropriate
+  // duration literally doesn't even matter here so yeah
+  
+  // you'll have to make separate status effects for the afflictions themselves, so these status effects are just the application scripts
+  
+  
+  // OK YOU READ THIS (I HOPE) //
+  
+  
+  "name" : "gic_applyafflictions",
+  "blockingStat" : "gic_afflictionProtection",
+  
+  "effectConfig" : {
+    "statusEffects" : ["gic_invadersboots","gic_spiritoftheghostlyswordswoman"] //testing effects
+  },
+  "defaultDuration" : 0.5,
+
+  "scripts" : [
+    "gic_applyafflictions.lua"
+  ],
+  "scriptDelta" : 1
+}

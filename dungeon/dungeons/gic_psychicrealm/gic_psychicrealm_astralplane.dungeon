@@ -1,0 +1,109 @@
+{
+  "metadata" : {
+    "name" : "gic_psychicrealm_astralplane",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_psychicrealm_astralplane_astraltemple_start" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 30,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+  
+
+    {
+      "name" : "gic_psychicrealm_astralplane_astraltemple_start",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_astralplane_astraltemple_start" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_astralplane_astraltemple_start.json" ]
+    },
+		
+	
+	
+	
+	
+	//Arenas - Basic combat segments.
+	
+    {
+      "name" : "gic_psychicrealm_astralplane_arena1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_astralplane_arena1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_astralplane_arena1.json" ]
+    },
+    {
+      "name" : "gic_psychicrealm_astralplane_arena2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_astralplane_arena2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_astralplane_arena2.json" ]
+    },	
+    {
+      "name" : "gic_psychicrealm_astralplane_arena3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_astralplane_arena3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_astralplane_arena3.json" ]
+    },
+    {
+      "name" : "gic_psychicrealm_astralplane_arena4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_astralplane_arena4" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_astralplane_arena4.json" ]
+    },	
+    {
+      "name" : "gic_psychicrealm_astralplane_arena5",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_astralplane_arena5" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_astralplane_arena5.json" ]
+    },	
+    {
+      "name" : "gic_psychicrealm_astralplane_crossroads",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_astralplane_crossroads" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_astralplane_crossroads.json" ]
+    },	
+	
+	
+    {
+      "name" : "gic_psychicrealm_astralplane_astraltemple_exit",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_psychicrealm_astralplane_astraltemple_exit.json" ] ],
+      "chance" : 0
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

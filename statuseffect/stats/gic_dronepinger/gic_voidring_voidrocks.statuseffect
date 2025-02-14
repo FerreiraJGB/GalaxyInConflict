@@ -1,0 +1,31 @@
+{
+  "name" : "gic_voidring_voidrocks",
+  "blockingStat" : "gic_voidring_voidrocksImmunity",
+  "effectConfig" : {
+	"projectileType" : "", //does not accept arrays
+	"projectileTypeMiss" : "", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 20,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 10000000000000000000.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 1000000000000000.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_voidring_voidrocks.animation"
+}

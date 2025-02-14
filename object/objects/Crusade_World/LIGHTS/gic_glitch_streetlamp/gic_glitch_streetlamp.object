@@ -1,0 +1,59 @@
+{
+  "objectName" : "gic_glitch_streetlamp",
+  "colonyTags" : ["outdoor","light"],
+  "printable" : false,
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 110,
+  "description" : "Street Lamp.",
+  "shortdescription" : "Street Lamp",
+  "race" : "generic",
+  "tooltipKind" : "gic_largebase",
+
+  "lightColor" : [153, 153, 122],
+  "pointLight" : true,
+  "pointBeam" : 2,
+  "beamAmbience" : 0.5,
+
+  "inventoryIcon" : "gic_glitch_streetlamp_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_streetlamp.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+      "direction" : "left",
+      "flipImages" : true,
+      "lightPosition" : [1, 10],
+      "beamAngle" : 270,
+      "animationPosition" : [0, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "gic_glitch_streetlamp.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+      "direction" : "right",
+      "lightPosition" : [3, 10],
+      "beamAngle" : 270,
+      "animationPosition" : [0, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_glitch_streetlamp.animation",
+  "animationParts" : {
+    "bg" : "gic_glitch_streetlamp.png",
+    "fg" : "gic_glitch_streetlamp_lit.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "interactive" : false,
+
+  "inputNodes" : [ [1, 1] ]
+}

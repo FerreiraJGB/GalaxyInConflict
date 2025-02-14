@@ -1,0 +1,56 @@
+{
+  "objectName" : "gic_invisiblenpcspawner_tracker",
+  "colonyTags" : ["misc"],
+  "rarity" : "Common",
+  "description" : "Spawns npcs in a variety of configurable ways. Tracks NPCs that spawn and die.",
+  "shortdescription" : "Npc Spawner (Tracker Var.)",
+  "race" : "human",
+  "printable" : false,
+  "scannable" : false,
+  "category" : "spawner",
+  "price" : 133,
+
+  "inventoryIcon" : "gic_invisiblenpcspawner.png",
+  "orientations" : [
+    {
+      "image" : "gic_invisiblenpcspawnerhidden.png",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+    }
+  ],
+
+  "scripts" : [ "/objects/STAGE/gic_npcspawner/gic_npcspawner_tracker.lua" ],
+  "scriptDelta" : 10,
+  
+  
+  "animation" : "gic_invisiblenpcspawner.animation",
+
+  "animationParts" : {
+    "switch" : "gic_invisiblenpcspawnerhidden.png"
+  },
+  "animationPosition" : [-8, 0],
+  
+
+  "inputNodes" : [ [-1, 1] ],
+  "outputNodes" : [ [-1, 0] ],
+
+  "spawner" : {
+    "typeName" : ["hostile"], //type of npc to spawn (random from list)
+	"npc" : [ "apex", "avian", "floran", "glitch", "human", "hylotl", "novakid" ], //species of NPC to spawn.
+    "npcLevel" : [1, 10], //level of npc to spawn (random within range, or leave blank for world threat level)
+    "npcParams" : { //additional parameters of spawned npc
+      "aggressive" : true
+    },
+    "position" : [0, 2], //relative position to spawn at
+    "positionVariance" : [3, 0], //[x,y] size of randomized spawn area, centered on position
+    "frequency" : [5.0, 5.0], //cooldown time between spawns (random within range)
+    "stock" : 5, //total number of spawns, -1 for infinite
+	"deadTriggerThreshold" : 3, //how many dead npcs before the output signal is activated
+    "trigger" : "wireunload", //options include "wire", "interact", "break", null (periodic), "wireunload" (when wired, unload all npcs possible)
+    "outOfSight" : false //only spawn where the player can't see
+  },
+
+  "smashOnBreak" : true
+}

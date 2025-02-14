@@ -1,0 +1,332 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+          "walk" : {
+            "frames" : 4,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+          "jump" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+          "fall" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "staffaim_charged" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "properties" : {
+              "immediateSound" : "/sfx/gun/gic_spartanlaser_in.ogg",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },
+		  
+          "staffaim" : {
+            "frames" : 4,
+            "cycle" : 0.5
+          },
+		  
+          "fire" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "staffunaim" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "properties" : {
+//              "immediateSound" : "/sfx/gic_reloadmedium_shell.ogg",
+//              "immediateSoundRangeMultiplier" : 2.0,
+//              "persistentSound" : "/sfx/vehicles/gic_tank_idle.ogg",
+//              "persistentSoundRangeMultiplier" : 3.75,
+//              "persistentSoundStopTime" : 0.0
+            }
+          },
+		  
+          "throwwindup" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop",
+            "properties" : {
+              "particleEmittersOn" : [ ],
+//              "persistentSound" : "/sfx/npc/monsters/oogler_windup.ogg",
+              "persistentSoundStopTime" : 0.5
+            }
+          },
+          "throw" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "staffraise_charged" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/gun/gic_spartanlaser_in.ogg",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },
+		  
+          "staffraise" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "charge" : {
+            "frames" : 4,
+            "cycle" : 0.35,
+            "mode" : "loop",
+            "properties" : {
+//              "persistentSound" : "/sfx/npc/monsters/oogler_charge.ogg",
+              "persistentSoundStopTime" : 1
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "", "", "", "", "", "" ]
+            }
+          }
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, -0.5]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "staffaim_charged" : {
+              "properties" : {
+                "image" : "<partImage>:staffaim.<frame>"
+              }
+            },
+            "staffaim" : {
+              "properties" : {
+                "image" : "<partImage>:staffaim.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:staffaim.4"
+              }
+            },
+            "staffunaim" : {
+              "properties" : {
+                "image" : "<partImage>:staffunaim.<frame>"
+              }
+            },
+            "throwwindup" : {
+              "properties" : {
+                "image" : "<partImage>:throwwindup.<frame>"
+              }
+            },
+            "throw" : {
+              "properties" : {
+                "image" : "<partImage>:throw.<frame>"
+              }
+            },
+            "staffraise_charged" : {
+              "properties" : {
+                "image" : "<partImage>:staffraise.<frame>"
+              }
+            },
+            "staffraise" : {
+              "properties" : {
+                "image" : "<partImage>:staffraise.<frame>"
+              }
+            },
+            "charge" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+	}
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+  
+  "lights" : {
+    "glow" : {
+      "active" : true,
+      "position" : [0, 0],
+      "color" : [2550, 160, 160], //255, 255, 107
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+
+        { "particle" : "deathfizz1left" },
+        { "particle" : "deathfizz1right" },
+        { "particle" : "deathfizz2left" },
+        { "particle" : "deathfizz2right" },
+        { "particle" : "deathfizz3left" },
+        { "particle" : "deathfizz3right" },
+        { "particle" : "deathfizz4left" },
+        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+    "fire" : {
+      "pool" : [ "/sfx/gun/rocket_electric1.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "throw" : {
+      "pool" : [ "/sfx/hit/gic_halflife2_ric5_lowvol.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "slam" : {
+      "pool" : [ "/sfx/hit/gic_spartanlaser_laser_impact1.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "danmaku" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_tan_1-15db.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+  
+    "wallCrash" : [ "/sfx/npc/monsters/peblit_drop1.ogg" ],
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/npc/enemydeathpuff.ogg" ]
+  }
+}

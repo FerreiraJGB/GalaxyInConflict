@@ -1,0 +1,24 @@
+{
+  "projectileName" : "gic_cannonlaser_a",
+  "image" : "gic_cannonlaser.png",
+  "animationCycle" : 0.0,
+  "physics" : "laser",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "timeToLive" : 0.05,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [255, 255, 50],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_cannonlaser_b",
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "IgnoresDef",
+  "damageKind" : "ews_antitank"
+}

@@ -1,0 +1,45 @@
+{
+  "itemName" : "gic_koloniya50_medkit",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_koloniya50_medkit.png",
+  "maxStack" : 10,
+  "description" : "A Medical Kit offering the ^yellow;bare minimum equipment^white; deemed ^green;safe^white; by the Galactic Community. Covers most broad types of injuries. Not intended for military use.
+
+^green;- Restores 200 health over 4 seconds, costing 4 seconds.
+^yellow;- Heals Bruising.^white;
+^orange;- Heals Burn Wounds.^white;
+^gray;- Heals Fractures.^white;",
+
+  "shortdescription" : "^yellow;Koloniya-50 Medkit",
+  "effects" : [ [
+      {
+        "effect" : "gic_koloniya50_medkitheal"
+      },
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 4
+      },
+	  
+      {
+        "effect" : "gic_medkit_use_messenger",
+        "duration" : 4
+      },	
+	  
+	  {
+        "effect" : "gic_bruise_pack_recovery"
+      },
+      {
+        "effect" : "gic_burn_pack_recovery"
+      },
+      {
+        "effect" : "gic_fracture_pack_recovery"
+      }	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_medkit_use" ],
+  "blockingEffects" : [
+  ]
+}

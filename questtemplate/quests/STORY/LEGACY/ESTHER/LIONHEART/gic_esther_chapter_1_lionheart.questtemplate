@@ -1,0 +1,42 @@
+{
+  "id" : "gic_esther_chapter_1_lionheartQuest",
+  "title" : "^#D1FFDE;The Calling", //After completing Chapter 1
+  "prerequisites" : [ "gic_esther_chapter_1_1_fngquest" ],
+  
+  "text" : "Kamish doesn't actually need the water. I figure she just wants to eyeball you, see what you can do.",
+  
+  "completionText" : "Here's some flasks. If you didn't already know how to get them: kill beings of great strength.",
+  
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_healingflask", 20 ], [ "gic_healingflask", 20 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      }
+    },
+
+
+    "descriptions" : {
+      "turnIn" : "Speak to ^orange;Lionheart^reset;."
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_1_lionheart",
+    "conditions" : [
+    ]
+	
+	
+  }
+}

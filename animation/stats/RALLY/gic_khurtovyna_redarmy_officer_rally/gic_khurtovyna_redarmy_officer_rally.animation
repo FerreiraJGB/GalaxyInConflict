@@ -1,0 +1,78 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_khurtovyna_redarmy_officer_rally.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [
+		
+		"/sfx/CompanyOfHeroes/gic_commissar_marking1.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking2.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking3.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking4.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking5.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking6.ogg",
+
+		"/sfx/CompanyOfHeroes/gic_commissar_marking9.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking10.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking11.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking12.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking13.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking14.ogg",
+		
+		"/sfx/CompanyOfHeroes/gic_commissar_marking15.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking16.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar_marking17.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar7.ogg",
+		"/sfx/CompanyOfHeroes/gic_commissar8.ogg"
+	
+		],
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

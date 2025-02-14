@@ -1,0 +1,31 @@
+{
+  "id" : "gic_letheiadealer_livingerchiussamplequest",
+  "title" : "^orange;Get me a sample [Repeatable]",
+  "text" : "We're not exactly here to help. But that doesn't mean ^orange;you^white; can't be helpful. We require only a small ^orange;neurologically-active Erchius sample^white;, separated from the main clusters, but ^orange;nothing mixed with human DNA^white;. No questions. Hand one over, or don't.",
+  "completionText" : "Right. Here you go. Hope this was worth it.",
+  "moneyRange" : [500,2500],
+  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 25 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_livingerchiussample",
+        "count" : 1,
+        "consume" : true
+      }
+    ]
+  }
+}

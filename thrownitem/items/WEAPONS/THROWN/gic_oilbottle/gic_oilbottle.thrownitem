@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_oilbottle",
+  "price" : 100,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_oilbottle_icon.png",
+  "image" : "gic_oilbottle.png",
+  "shortdescription" : "Oil Bottle",
+  "description" : "''There's one thing all manner of Human, Youkai, and Xeno share a fright of, and that thing is flame. Or domestic violence.''
+Upon impact with terrain or an enemies, releases an AoE oil cloud which afflicts ^orange;OIL-COATING.^reset; AoE is Line-of-Sight, and thus cannot go through multiple targets or walls.
+^orange;[GiC] Molotov Flames, Tracer Rounds, Hand-Held Torches,^reset; or any other source of valid ignition that make contact with ^orange;OIL-COATED^reset; targets causes ^orange;IGNITION^reset; which deal non-scaled base 100HP/s FIRE DMG for up to 10s.",
+  "tooltipKind" : "gic_largebase_ammogun",
+  "ammoUsage" : 1,
+  "maxStack" : 24,
+  "edgeTrigger" : true,
+  "windupTime" : 0.15, //0.65
+  "cooldown" : 0.15,
+  "elementalType" : "ews_melee",
+  "projectileType" : "gic_oilbottle",
+  "projectileConfig" : {
+
+    "speed" : 41.5,
+    "power" : 5.5,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  }
+}

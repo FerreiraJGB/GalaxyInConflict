@@ -1,0 +1,294 @@
+{
+  "type" : "gic_soldierbase",
+  "baseType" : "gic_base",
+
+  "persistent" : true,
+
+  "damageTeam" : 2,
+
+  "dropPools" : [ "money" ],
+  
+  "scripts" : [
+    //"/npcs/gic_bmain.lua",
+	"/npcs/gic_hidden_bmain.lua"
+  ],
+
+  "scriptConfig" : {
+    "behavior" : "gic_hostileguard",
+
+    "behaviorConfig" : {
+	  "queryRange": 120,
+	  "trackingRange": 120,
+      "keepTargetInRange" : 120,
+      //"leapWindup" : 0.75,
+      "rangedAimTime" : 0.0,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/gic_generic_combat_panic.config:attack",
+      "reattack" : "/dialog/gic_generic_combat_panic.config:reattack",
+      "killedTarget" : "/dialog/gic_generic_combat_panic.config:killedTarget",
+      "lostTarget" : "/dialog/gic_generic_combat_panic.config:lostTarget",
+      "outOfSight" : "/dialog/gic_generic_combat_panic.config:outOfSight",
+      "cheerOn" : "/dialog/gic_generic_combat_panic.config:cheerOn",
+      "cantReach" : "/dialog/gic_generic_combat_panic.config:cantReach"
+    },
+
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0.05,
+        "broadsword" : 0.05,
+        "dagger" : 0.04,
+        "axe" : 0.05,
+        "hammer" : 1,
+        "shortsword" : 0.03,
+        "spear" : 0.05
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 1.0,
+        "broadsword" : 1.7,
+        "dagger" : 0.7,
+        "axe" : 1.4,
+        "hammer" : 0.2,
+        "shortsword" : 1.0,
+        "spear" : 1.4
+      }
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "humantier1head" } ],
+            "chest" : [ { "name" : "humantier1chest" } ],
+            "legs" : [ { "name" : "humantier1pants" } ],
+            "primary" : [ "gic_usm47a2" ]
+//            "sheathedprimary" : [ "npcbroadsword" ]
+          }
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 20,
+    "statusEffects" : [ ]
+  },
+
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],    
+
+  "statusControllerSettings" : {
+    "appliesEnvironmentStatusEffects" : false,
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "gic_suppressedProtection" : {
+        "baseValue" : 0.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 0.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_bleedResistance" : {
+        "baseValue" : 0.75
+      },
+	  
+      "gic_true_1g" : {
+        "baseValue" : 1.0
+      },
+
+      "gic_ammo_replicatorBlock" : {
+        "baseValue" : 1.0
+      },
+
+        "iceResistance" : {
+          "baseValue" : 0.2
+        },
+        "electricResistance" : {
+          "baseValue" : 0.5
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.2
+        },
+
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+	
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  
+	  
+	  
+	  
+	  
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+	  
+	  
+      "novaResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0.7
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 0.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 0.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 0.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.8
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0.5
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0.8
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0.8
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 0.8
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0.8
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 0
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.8
+				} 	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+    }
+  }
+}

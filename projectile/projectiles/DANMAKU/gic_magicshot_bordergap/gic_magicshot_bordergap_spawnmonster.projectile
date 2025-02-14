@@ -1,0 +1,20 @@
+{
+  "projectileName" : "gic_magicshot_bordergap_spawnmonster",
+  "speed" : 20,
+  "bounces" : 1,
+  "physics" : "grenade",
+  "image" : "gic_magicshot_bordergap_spawnmonster.png",
+  "animationCycle" : 0.5,
+  "timeToLive" : 0.01,
+  "power" : 0,
+  "frameNumber" : 1,
+  "damageKind" : "NoDamage", //hidden
+  "actionOnReap" : [
+    { 
+      "action":"spawnmonster",
+      "type":"gic_anomaly_stalker_bordergap",
+	  "level":1,
+      "arguments":{"damageTeam":2}
+	}
+  ]
+}

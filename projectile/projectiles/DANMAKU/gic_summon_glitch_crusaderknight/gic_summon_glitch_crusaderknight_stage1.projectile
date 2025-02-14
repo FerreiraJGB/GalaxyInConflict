@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_summon_glitch_crusaderknight_stage1",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_summon_glitch_crusaderknight_stage1.png",
+  "animationCycle" : 0.1,
+  "onlyHitTerrain" : true,
+  "frameNumber" : 1,
+  "physics" : "laser",
+  "timeToLive" : 0.5,
+  "power" : 0,
+  "speed" : 20,
+  "orientationLocked" :true,
+  "damageKind" : "hidden",
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+  
+    {
+      "action" : "projectile",
+      "type" : "gic_summon_glitch_crusaderknight_stage2",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 0
+    }
+  ]
+}

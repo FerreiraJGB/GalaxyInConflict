@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_plasma",
+  "image" : "gic_plasma.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "damageType" : "ignoresdef",
+  "lightColor" : [0, 0, 96],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_laserimpact/gic_laserimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_plasmaimpact_large/gic_plasmaimpact_large.config"
+    }
+  ],
+  
+  "emitters" : [ "rocketsmoke" ],
+  "power" : 10.0,
+  "speed" : 250,
+  "damageKind" : "ews_antitank"
+}

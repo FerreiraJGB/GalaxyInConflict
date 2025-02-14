@@ -1,0 +1,40 @@
+{
+  "id" : "gic_esther_planetincentive_0_introquest",
+  "title" : "^yellow;Rude Awakening",
+  "prerequisites" : [ "gaterepair" ],
+  
+  //QUEST 1
+  
+  //No cutscene, immediately finishes after accepting.
+  
+  "text" : "",
+  
+  //Maybe have something regarding independence and initiative.
+  
+  "completionText" : "",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+  "rewards" : [
+    [ [ "gic_esther_artifactpackage" ], [ "gic_physicalcredit", 5 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+		"portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+		},
+//    "gic_missionUnlockedCinema" : "",
+//    "gic_missionCompleteCinema" : "",	 //leave as coordinates if no need for secondary
+    "turnInDescription" : "Speak to Esther.",
+    "requireTurnIn" : true
+  }
+  
+  
+}

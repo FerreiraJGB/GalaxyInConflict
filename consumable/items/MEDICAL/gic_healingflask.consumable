@@ -1,0 +1,41 @@
+{
+  "itemName" : "gic_healingflask",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#FFAD12;Conspicuous Consumable^white;",
+  "inventoryIcon" : "gic_healingflask.png",
+  "maxStack" : 15, ////Protectors, Undead, and other beings of great power treasure these dull flasks. It is wise to carry many, though none know the true origins of these healing implements.
+  "description" : "''Flasks filled with a sun-like liquid from another realm. Many beings of great power treasure these green dull flasks: Youkai, Demigods, Undead, and so-forth.''
+  
+^green;Heals 200HP over 2s. All BLEEDING is removed.^white;
+^red;Mobility hindered for 2s.^white;",
+
+  "shortdescription" : "^yellow;Healing Flask",
+  "effects" : [ [
+      {
+        "effect" : "gic_bleeding_lightStatusImmunity",
+        "duration" : 2
+      },
+      {
+        "effect" : "gic_bleeding_mediumStatusImmunity",
+        "duration" : 2
+      },
+      {
+        "effect" : "gic_bleeding_heavyStatusImmunity",
+        "duration" : 2
+      },
+      {
+        "effect" : "gic_healingflask_medkitheal",
+        "duration" : 2
+      },
+	  {
+        "effect" : "gic_healing_slowdown_1",
+        "duration" : 2
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_sekiroheal" ],
+  "blockingEffects" : [
+  ]
+}

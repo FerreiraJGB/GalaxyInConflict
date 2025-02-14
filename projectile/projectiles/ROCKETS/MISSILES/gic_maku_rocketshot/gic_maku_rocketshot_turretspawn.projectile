@@ -1,0 +1,35 @@
+{
+  "projectileName" : "gic_maku_rocketshot_turretspawn",
+
+  "bounces" : 0,
+  "image" : "gic_maku_rocketshot.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    },
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_autogunturret_maku",
+     "level" : 1,
+     "offset": [0, 0.5],
+     "arguments" : { "damageTeam" : 15 }
+    }
+  ],
+  "power" : 100,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+
+  "maxSpeed" : 250,
+  
+  "persistentAudio" : "/sfx/vehicles/gic_highfleet_missile_run_01.ogg",  
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 30.0,
+  "acceleration" : 1,
+  "timeToLive" : 20,
+  "physics" : "rocket"
+}

@@ -1,0 +1,399 @@
+{
+  "type" : "gic_khurtovyna_metrowanderer_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ ],
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0} ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "gic_noinspectcrew",
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+
+
+
+
+	  //------------
+	  
+ //Retainer Add-on - Had to concede with the default popup.  
+      "interactAction" : "ShowPopup", //ScriptPane
+	  
+      "interactData" : {
+      "uiConfig" : "/interface/windowconfig/gic_retainerpopup.config", //-- This doesn't work, the bastards!
+	  
+//	  "gui" : "/interface/windowconfig/gic_retainerpopup.config",
+	  
+        "icon" : {
+          "file" : "/interface/crafting/gic_undercolonyworkshopmerchant.png"
+        },
+	  
+      "title" : "^#52A8DD;Metro Wanderer Retainer^reset;",	  
+      "subtitle" : "^#E0C200;''Force answers force, war breeds war-''^reset;",
+
+    "paneLayoutOverride" : { //This doesn't work either!
+      "windowtitle" : {
+        "icon" : {
+          "file" : "/interface/crafting/gic_undercolonyworkshopmerchant.png"
+        }
+      }
+    },
+	  
+      "message" : 
+"^#E0C200;''-and death only brings death.''^reset;
+^#E0C200;+30% Psychic Resistance^reset; for 1 hour.
+
+^#52A8DD;Harried by years of brutal cold and plagued by visions of realms beyond, the Metro Wanderer has traversed their homeland as much as their own mind.^reset;"
+      },
+
+
+
+//----------------------
+
+
+
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "soldier",
+        "name" : "Wanderer",
+        "field" : "Defense Military",
+        "uniformColorIndex" : 3,
+		
+        "benefits" : [
+          {
+            // Ephemeral effects gained upon leaving the ship - Grants 30% psychic resistance
+            "type" : "EphemeralEffect",
+            "effect" : "gic_armor_metrowanderer_crew",
+            "duration" : 3600
+          }
+//          {
+            // Persistent effects are active while on the ship
+//            "type" : "PersistentEffect",
+//            "effect" : "shiprunboost"
+//          }
+        ]
+		
+      },
+
+      "ranks" : [
+//        "Head of <field>",
+		"Sergeant 1st-Class",
+		"Staff Sergeant",
+		"Corporal",
+		"Private 1st-Class",
+		"Private 2nd-Class"
+		
+      ],
+
+      "defaultUniform" : {
+	    "head" : "",
+        "chest" : "gic_rangerchest", //soldierchest
+        "legs" : "gic_rangerpants", //soldierpants
+		"back" : ""
+      },
+      "uniformSlots" : ["chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"]
+    },
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "I am... free? Thanks. Guess I owe you one!",
+			  "The whispers from beyond tried to take me. Tried to take you too. Let's get out of here!",
+			  "You've freed me from some kind of hell! I can't stay here any longer. Not after what I've seen. Take me with you, please?",
+			  "Freedom! Well, almost. Do you have a way off this rock?",
+			  "Oh man, how long was I out for? Doesn't matter. Better your influence than theirs. Need a cohort?",
+			  "Ugh, the voices: They hate; They love; They shout! I can't stand it anymore. Get me out of here, would you?",
+			  
+			  "Ah'ight. I'mma take a seat.",
+              "Damn my ass hurts.",
+              "...guess it's time for smoko."
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Aight, I'll be here then.",
+              "I'll just check the fridge.",
+			  "Nothing for us left.",
+			  "Life is too short for all of us.",
+              "I'll be here.",
+			  "I'll be here then."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "Aw hell, now I'm immortal."
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "Alright, I'll guard this area.",
+              "I'll stay here for now, then.",
+              "I'll stay here.",
+              "Aight, I'll be here then.",
+              "I'll be here."
+            ]
+          }
+        },
+		
+
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy.",
+			"Move it!"
+          ]
+        }
+      },
+		
+        "follow" : {
+          "default" : {
+            "default" : [
+              "Ready for whatever.",
+			  "Ready then.",
+              "What are we dealing with?",
+              "What's the mission?",
+			  "Never a good feeling. What're we dealing with?"
+            ]
+          }
+        },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+	    }
+	
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Engaging!",
+			"Over there!",
+			"Get moving!",
+			"Opening up!",
+			"There!",
+			"Opening fire!"
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "Engaging!",
+			"Over there!",
+			"Get moving!",
+			"Opening up!",
+			"There!",
+			"Opening fire!"
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "Got one.",
+			"Gotcha.",
+			"Down!",
+			"Disengaging.",
+			"Weapons down.",
+			"Calm it.",
+			"They've stopped.",
+			"Well, they've stopped. Good for us then.",
+			"Is it over?"
+          ]
+        }
+      },
+	
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "Lost track of 'em.",
+			"Lost 'em.",
+			"Gone, I guess.",
+			"Bloody gone.",
+			"Eh, better off that way then.",
+			"So be it.",
+			"Not my problem anymore."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "Got no visual!",
+			"Lost visual.",
+			"Lost visual of target.",
+			"Lost sight of target.",
+			"I don't have sight of the target.",
+			"Target's out of my sight.",
+			"No eyes on target.",
+			"Anyone got eyes on?"
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "converse" : {
+        "default" : {
+          "default" : [
+			"I have stared into the abyss, but in that abyss there is a light. It's trying to signal us.",
+			"So long as I have breath, no power from beyond shall have me.",
+			"Now is the envy of the dead.",
+			"Hope is all we've ever dreamt of.",
+			"Your purpose in life is for you to decide.",
+			"I will never go back there. Never again.",
+			"I've conversed with the whispers from beyond. I know their secrets, as they do mine.",
+			"Where I've been? More-so where they've been.",
+			"Material possessions won't save you from those beyond. They have learned to adapt to our... contemporary society.",
+			"I've seen folk from beyond. More bad than good, but they're opening the door for us. That much I know.",
+			"The spirits from beyond want us to reach for them. They're waiting for us.",
+			"Every step to finding out what's beyond the veil has only led worlds to an eternal freeze.",
+			"I've severed my connection since, but... it's hard to tell if they're good folk.",
+			"There is an untouched world from beyond. It is the lost light in the abyss.",
+			"Maybe there are places worth saving. I've travelled the lonely road long enough.",
+			"We're never truly alone. They're watching us, from beyond. They are here, and not here. Some wish us death. Many pity us.",
+			"Some of the watchers from beyond wish us death, to rip our minds from our bodies. Our souls. They have been reduced to mindless feral husks.",
+			"Some of the watchers from beyond only wish to comfort us, out of pity. They just didn't know how. Too many of them tried to influence me at the same time.",
+			"Many are listening, and they are fighting amongst themselves. To save us or destroy us? They take our forms, and they have learnt to disagree."
+          ]
+        }
+      }
+
+
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player = 18
+    "runSpeed" : 12
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+//            "head" : [ { "name" : "gic_rangerhead", "parameters" : { "colorIndex" : [0] } } ],
+            "chest" : [ { "name" : "gic_rangerchest", "parameters" : { "colorIndex" : [0] } } ],
+            "legs" : [ { "name" : "gic_rangerpants", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [ "gic_metroshambler" ],
+            "sheathedprimary" : [ "gic_metroshambler" ]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1000.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

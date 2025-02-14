@@ -1,0 +1,38 @@
+{
+  "id" : "gic_khurtovyna_rundown_biohazardquest",
+  "prerequisites" : [ "gic_khurtovyna_rundown_deeperquest" ],
+  "title" : "^#7AA8E0;RUNDOWN: BIOHAZARD",
+  "text" : "[Obtain Aggressive Artifacts from RUNDOWN: BIOHAZARD]
+RUNDOWN: BIOHAZARD is a High-Risk Expedition similar to RUNDOWN: DEEPER, but with a severe atmospheric hazard - Mold A-5. This environmental condition requires that Divers wear Gas Masks if they wish to avoid Mold C-1. Unlocks RUNDOWN: ETERNAL.",
+
+  "completionText" : "Unlocked RUNDOWN: ETERNAL - //:ERR _A#87: SECURITY SYSTEM MALFUNCTION - ILLEGAL INSTRUCTION AT 548CA92F1D79E2DC - ALARM - D_FE#####D VO_____ID C05E//REACTOR.",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_khurtovyna_psychicbarrier-codex", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_aggressive_artifact",
+        "count" : 2,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}
+
+
+

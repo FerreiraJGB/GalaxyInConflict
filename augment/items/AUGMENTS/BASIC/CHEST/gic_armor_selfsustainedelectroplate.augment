@@ -1,0 +1,30 @@
+{
+  "itemName" : "gic_armor_selfsustainedelectroplate",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Armor Plate^reset;",
+  "inventoryIcon" : "gic_armor_selfsustainedelectroplate.png",
+  "maxStack" : 1,  
+  "description" : 
+  
+"A piece of equipment able to be slotted into conventional vests with plate slots. It is its own self-contained unit able to prevent concentrated electrical shocks that spread out such as those from Stun Spear Javelins and Energy Disruptors, preventing the disruption of muscles and power-armor systems that would normally be needed to attack enemies.
+^green;+15% MELEE Resistance | +60% ELECTRICAL Resistance.
+Protects against strong localized electrical shocks and Overcharging.^reset;",
+
+
+
+  "shortdescription" : "Mule Self-Sustained Electro-Plate",
+
+  "augment" : {
+    "type" : "gic_basicchest",
+    "name" : "gic_armor_selfsustainedelectroplate",
+    "displayName" : "Mule Self-Sustained Electro-Plate",
+    "displayIcon" : "/items/augments/basic/chest/gic_armor_selfsustainedelectroplate.png",
+    "effects" : [ {"stat" : "gic_advancedmunition_overchargedProtection", "amount" : 1.0}, {"stat" : "ews_meleeResistance", "amount" : 0.15}, {"stat" : "gic_tazedStatusImmunity", "amount" : 1.0}, {"stat" : "electricResistance", "amount" : 0.6}, {"stat" : "electricStatusImmunity", "amount" : 1.0}, "gic_armor_selfsustainedelectroplate" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_armorplate_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

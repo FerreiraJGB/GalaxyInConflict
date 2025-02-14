@@ -1,0 +1,37 @@
+{
+  "projectileName" : "gic_maku_rocketshot_hotgrenade_parried_stage2",
+  "physics" : "gic_grenadenormal",
+  "actionOnTimeout" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/electricexplosionknockbackstatus.config"
+    }
+  ],
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "gic_maku_rocketshot_hotgrenade.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 4,
+  "damageKind" : "electric",
+  
+  "bounces" : -1,
+  
+  "statusEffects" : ["electrified", {"effect":"gic_advancedmunition_overcharged","duration":5.0}, {"effect":"gic_boss_melee_primer","duration":10} ],
+  "emitters" : [ "electricplasma" ],
+  "lightColor" : [ 143, 174, 211 ],
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "timeToLive" : 20,
+  "onlyHitTerrain" : false,
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "damageTeam" : { "type" : "assistant" },
+  "speed" : 20
+}

@@ -1,0 +1,68 @@
+{
+  "id" : "gic_esther_chapter_5_0_division16Quest",
+  "title" : "^yellow;[GiC]: Chapter 5 - Division 16",
+  "prerequisites" : [ "gic_esther_chapter_4_0_eldestabodequest" ],
+  
+  //QUEST 3
+  
+  //The text before warping to mission.
+  
+  "text" : "---", //MAX
+  
+  //Returning after goal trigger.
+  
+  "completionText" : "---", //MAX
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : false,
+  "rewards" : [
+    [ [ "gic_m100h", 1 ], [ "gic_762x63mm_enblocclip", 10 ], [ "gic_762x63mm_enblocclip", 10 ], [ "gic_762x63mm_enblocclip", 10 ], [ "gic_762x63mm_enblocclip", 10 ], [ "gic_762x63mm_enblocclip", 10 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_noassociatedmission.lua", //Same as original variant. Enables cutscenes when starting and finishing.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_keine_hubworld/gic_esther_keine_hubworld_portrait.png"} ],
+        "title" : "Kamish"
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_keine_hubworld/gic_esther_keine_hubworld_portrait.png"} ],
+        "title" : "Kamish"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;Lionheart^reset; to travel to ^orange;The Planetarium^reset;.",
+      "findGoal" : "Explore the local area for anything important.",
+      "turnIn" : "Return to ^orange;Kamish^reset;."
+    },
+
+    "warpEntityUid" : "gic_esther_chapter_1_lionheart",
+    "warpAction" : "instanceworld:gic_esther_chapter_5_1_VoidFields",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_esther_chapter_5_1_VoidFields_confirmation",
+	
+    "gic_missionUnlockedCinema" : "/cinematics/gic_coordinates.cinematic", //???
+    "gic_missionCompleteCinema" : "/cinematics/gic_coordinates.cinematic",	 //literally crashes if you don't give it a 2nd cutscene
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 25,
+
+    "goalEntityUid" : "gic_esther_chapter_5_4_HallowedCity_Goal",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "gic_esther_keine_hubworld",
+	
+	
+  "setUniverseFlags" : [ "gic_esther_chapter_1_hubworld_dockingbay75_attachment_cheeseroom", "gic_esther_chapter_1_hubworld_dockingbay75_attachment_fancybar",     "gic_esther_chapter_1_hubworld_dockingbay75_attachment_crewquarters", "gic_esther_chapter_1_hubworld_dockingbay75_attachment_lionheartmove", "gic_esther_chapter_1_hubworld_dockingbay75_attachment_lionheartsroom"] 
+	
+	
+  }
+  
+}

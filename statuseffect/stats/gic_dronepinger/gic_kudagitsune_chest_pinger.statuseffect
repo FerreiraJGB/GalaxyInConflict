@@ -1,0 +1,34 @@
+{
+  "name" : "gic_kudagitsune_chest_pinger",
+  "blockingStat" : "gic_kudagitsune_chest_pingerStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_kudagitsune_chest", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_kudagitsune_chest", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 20,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 4.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_shrinemaiden_pinger.animation",
+   
+   "label" : "Kuda-Gitsune Romper [CHEST] - Nearby enemies within 20 blocks receive +25% ATK when ABOVE 50% HP, but -20% ATK when BELOW 50% HP.",
+  "icon" : "/interface/statuses/gic_kudagitsune_chest.png"
+}

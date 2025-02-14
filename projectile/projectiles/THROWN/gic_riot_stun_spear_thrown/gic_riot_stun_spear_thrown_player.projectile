@@ -1,0 +1,35 @@
+{
+  "projectileName" : "gic_riot_stun_spear_thrown_player",
+  "physics" : "arrow",
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/electricexplosionknockbackstatus.config"
+    },
+    {
+      "action" : "item",
+      "name" : "gic_riotstunspear_javelin_broken",
+      "count" : 1
+    }
+  ],
+  "image" : "gic_riot_stun_spear_thrown.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "damageKindImage" : "icon.png",
+  "power" : 40,
+  "onlyHitTerrain" : false,
+  "knockback" : 2,
+  "knockbackDirectional" : true,
+  "statusEffects" : [ "gic_tazed_1", "gic_tazed", "electrified", {"effect":"gic_advancedmunition_overcharged","duration":30.0} ],
+  "timeToLive" : 5,
+  "pointLight" : false,
+  "damagePoly" : [ [12, -0.2], [12.5, -0.2], [12.5, 0.2], [12, 0.2] ]
+}

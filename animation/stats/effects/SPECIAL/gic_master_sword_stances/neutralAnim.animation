@@ -1,0 +1,43 @@
+{
+  "particleEmitters" : {
+	"emitters" : {
+		"enabled" : true,
+		"emissionRate" : 10.0,
+		"particles" : [
+			{
+				"particle" : {
+					"destructionAction": "fade",
+					"destructionTime": 0.25,
+					"fullbright": true,
+					"layer": "front",
+					"timeToLive": 0.5,
+					
+					"type" : "ember",
+					"color" : [100, 100, 100, 255],
+					"fade" : 0.9,
+					"size" : 1.0,
+					"position" : [0,0.5],
+					
+					"initialVelocity" : [0, -3.0],
+					"finalVelocity" : [0, -3.0],
+					
+					"variance": {
+						"position": [0,0],
+						//"rotation": 180,
+						"initialVelocity" : [1, 0.0],
+						"finalVelocity" : [0, 0.0],
+						"size" : 0.5
+					}
+				}
+			}
+		]
+	}
+  },
+  "lights" : {
+    "glow" : {
+      "active" : true,
+      "position" : [0, 0],
+      "color" : [127, 127, 127]
+    }
+  }
+}

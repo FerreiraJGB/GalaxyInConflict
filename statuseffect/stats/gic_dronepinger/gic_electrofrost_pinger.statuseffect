@@ -1,0 +1,34 @@
+{
+  "name" : "gic_electrofrost_pinger",
+  "blockingStat" : "gic_electrofrost_pingerStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_electrofrost", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_electrofrost", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 20,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 4.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_electrofrost_pinger.animation",
+   
+  "label" : "Electro-Frost Earring - When a nearby enemy takes 50HP+ base damage, they receive 60HP ICE damage, and are afflicted with a 50HP ELECTRIC Damage-over-Time for 3s | 20s cooldown per unit.",
+  "icon" : "/interface/statuses/gic_electrofrostearring.png"
+}

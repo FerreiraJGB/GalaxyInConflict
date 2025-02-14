@@ -1,0 +1,34 @@
+{
+  "id" : "gic_ancientgate_choicequest",
+  "title" : "^green;Ancient Gate Choice",
+  "text" : "The Ancient Gate grants you a choice. You can either make for the nano ship repair kit (GiC - Left), or you can head through the ancient gate (Vanilla - Right).",
+  "completionText" : "Choose wisely, as this determines your character's path. GiC left. Vanilla Right. Dev Note: Yeah if you try to do both you'll probably crash the game so don't do it please. Same goes if you're using an existing character so uh good luck.",
+  "speaker" : "player",
+  "moneyRange" : [0, 0],
+  
+  "rewards" : [
+    [ [ "gic_ancientgate_choicetoken", 1 ] ]
+  ],
+  
+  "canBeAbandoned" : false,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+		"portraits" : {
+		"default" : "player"
+		},
+
+	"associatedMission" : "gic_shockbanditboss_ancientarena",
+    "turnInDescription" : "Shock Bandit Boss is now available as a replayable enemy.",
+    "requireTurnIn" : false,
+    "goalTrigger" : "proximity",
+    "proximityRange" : 20,
+
+    "goalEntityUid" : "gic_radiotower_phone",
+    "indicateGoal" : false,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "gic_radiotower_phone"
+  }
+}

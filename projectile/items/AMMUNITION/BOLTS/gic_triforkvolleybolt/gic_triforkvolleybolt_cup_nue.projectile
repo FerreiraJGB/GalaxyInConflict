@@ -1,0 +1,117 @@
+{
+  "projectileName" : "gic_triforkvolleybolt_cup_nue",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  
+  "actionOnTimeout" : [
+	
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.33,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.34,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.33,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.33,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.34,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.33,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.33,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.34,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.33,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.33,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.34,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_triforkvolleybolt_nue",
+      "inheritDamageFactor" : 0.33,
+      "inheritSpeedFactor" : 1.00,
+      "fuzzAngle" : 30
+    }
+	
+  ],
+  
+  "image" : "gic_triforkvolleybolt_cup.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_melee",
+  "statusEffects" : [ "gic_bulletshot", "gic_bleeding_heavy" ],
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 0.15,
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "speed" : 60
+}

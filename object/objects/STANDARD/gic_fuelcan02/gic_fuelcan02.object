@@ -1,0 +1,59 @@
+{
+  "objectName" : "gic_fuelcan02",
+  "colonyTags" : ["human"],
+  "printable" : false,
+  "rarity" : "Common",
+//  "objectType" : "container",
+  "tooltipKind" : "gic_largebase",
+  
+  "category" : "breakable",  
+  "price" : 85,  
+  "description" : "Fuel Canisters containing useful combustible fuels. Can be taken on-the-spot.",
+  "shortdescription" : "Jerry Cans [Obtainable]",
+  "race" : "generic",
+  "health" : 1.5,
+
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "smashSounds" : [ "/sfx/objects/locker_open.ogg" ],  
+  
+  "breakDropOptions" : [
+    [ [ "gic_fuelcanister", 2, { } ] ]
+  ],
+
+
+  "inventoryIcon" : "gic_fuelcan02.png",
+  "orientations" : [
+    {
+      "image" : "gic_fuelcan02.png",
+      "direction" : "left",
+      "flipImages" : true,
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "background"
+    },
+    {
+      "image" : "gic_fuelcan02.png",
+      "direction" : "right",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "background"
+    }
+  ]
+
+//  "openSounds" : [ "/sfx/objects/locker_open.ogg" ],
+//  "closeSounds" : [ "/sfx/objects/locker_close.ogg" ],
+//  "slotCount" : 1,
+//  "uiConfig" : "/interface/chests/chest<slots>.config",
+//  "frameCooldown" : 5,
+//  "autoCloseCooldown" : 3600
+}

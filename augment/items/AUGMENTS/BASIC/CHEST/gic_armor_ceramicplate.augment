@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_armor_ceramicplate",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Armor Plate^reset;",
+  "inventoryIcon" : "gic_armor_ceramicplate.png",
+  "maxStack" : 1,  
+  "description" : 
+  
+"Basic Type III-E28 Ceramic Plating Ballistic Protection is commonly used by contemporary armies in the former and current United Systems. It grants the highest form of ballistic protection for its weight. While firearms may have reduced the overall effectiveness of armor, personal protection always remains key. Nobody wants to die, after all.
+
+^green;+20% SMALL-ARMS, MELEE, and PHYSICAL Resistance.^reset;
+^green;Prevents Medium Bleeding^reset; | ^red;-20% Movement Speed.",
+
+
+
+  "shortdescription" : "Type III-E28 Ceramic Plate",
+
+  "augment" : {
+    "type" : "gic_basicchest",
+    "name" : "gic_armor_ceramicplate",
+    "displayName" : "Type III Ceramic Plate",
+    "displayIcon" : "/items/augments/basic/chest/gic_armor_ceramicplate.png",
+    "effects" : [ "gic_bleeding_mediumStatusImmunity", {"stat" : "ews_smallarmsResistance", "amount" : 0.2}, {"stat" : "ews_meleeResistance", "amount" : 0.2}, {"stat" : "ews_smallarmsthermalResistance", "amount" : 0.2}, {"stat" : "physicalResistance", "amount" : 0.2}, "gic_armor_ceramicplate" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_armorplate_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

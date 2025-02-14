@@ -1,0 +1,51 @@
+{
+  "objectName" : "gic_junctionbox_button",
+  "colonyTags" : ["electronic"],
+  "rarity" : "Common",
+  "description" : "A service panel.",
+  "shortdescription" : "Service Panel",
+  "race" : "generic",
+  "category" : "decorative",
+  "price" : 50,
+
+  "apexDescription" : "A service panel. I better switch these off to stop any alarms from sounding.",
+  "avianDescription" : "A service panel with a warning sign.",
+  "floranDescription" : "Turn off to avoid making noisssse from doorss.",
+  "glitchDescription" : "Factual. I need to turn these off to prevent the alarm going off from the doors.",
+  "humanDescription" : "A junction box. I need to switch these off to shut down certain alarmed doors.",
+  "hylotlDescription" : "A simple service panel. I need to shut these off in order to avoid alerting anyone.",
+  "novakidDescription" : "Just some kinda service panel. Useful for shutting down alarms.",
+
+  "inventoryIcon" : "gic_junctionbox_button.png",
+  "orientations" : [
+    {
+      "image" : "gic_junctionbox_button.png:<color>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ],
+
+  "scripts" : [
+    "/objects/wired/momentaryswitch/momentaryswitch.lua",
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/switch/switchtoggle.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/tinywallbutton.ogg" ]
+    }
+  },
+  "animationParts" : {
+    "switch" : "gic_junctionbox_button.png"
+  },
+  "animationPosition" : [-8, -8],
+
+  "outputNodes" : [ [0, -1] ],
+
+  "interval" : 15
+}

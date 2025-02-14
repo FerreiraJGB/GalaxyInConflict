@@ -1,0 +1,42 @@
+{
+  "projectileName" : "gic_huntersmarkbolt_rapidtargetcoordinator_pointblank",
+  "physics" : "laser",
+  "actionOnCollide" : [
+  ],
+  
+  "actionOnReap" : [
+  ],
+  
+"periodicActions" : [
+
+],
+
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_huntersmarkbolt_rapidtargetcoordinator",
+      "fuzzAngle" : 0.0,
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    }
+  ],
+
+ "statusEffects" : [ ],
+
+  "onlyHitTerrain" : true,
+
+  "image" : "gic_huntersmarkbolt_rapidtargetcoordinator.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_melee",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "piercing" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 0.15,
+  "pointLight" : false,
+  "power" : 0.0,
+  "fullbright" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "speed" : 180
+}

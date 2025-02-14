@@ -1,0 +1,36 @@
+{
+  "itemName" : "ews_effect_reddot",
+  "price" : 5000,
+  "rarity" : "Common",
+  "category" : "Attachment",
+  "inventoryIcon" : "ews_reddot.png",
+  "description" : "Provides 20% improved accuracy and hit chance. Also applies the \"camouflage\" effect.",
+  "shortdescription" : "Red Dot Sight + Status Effect (EWS)",
+
+  "attachment" : {
+	"attachmentType" : "sight", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "ews_effect_reddot", //name of attachment
+	"attachmentTag" : ["ews_rifle","ews_effect_reddot"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/attachments/ews_reddot.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "ews_effect_reddot", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "statusEffect", //this can be applied to any attachment of type "sight", "barrel", "stock", or "underbarrel".
+		"statusEffects" : ["camouflage50"] //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [0.8,0.8,0.8,0.8,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [0.8,0.8,0.8,0.8] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

@@ -1,0 +1,42 @@
+{
+  "objectName" : "gic_spiritsummon_florantriarii",
+  "category" : "Decorative",
+  "rarity" : "Common",
+  "description" : "Summon - Floran Triarii",
+  "shortdescription" : "Summon - Floran Triarii",
+  "race" : "human",
+
+  "printable" : false,
+  "price" : 0,
+
+  //Use glow of 4, 10, 10.
+  
+  "inventoryIcon" : "gic_spiritsummon_florantriarii.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_spiritsummon_florantriarii.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+
+    }
+  ],
+  
+  
+  
+  "outputNodes" : [ [0, 0] ],
+
+  "smashable" : true,
+  "smashSounds" : [ "/sfx/gic_bloodborne_bell_host_oneshot_new.wav" ],
+  "smashParticles" : [ { "count" : 4, "particle" : "firesmoke" }, { "count" : 4, "particle" : "firestormflame" }, { "count" : 4, "particle" : "firefly" } ],
+
+  "scripts" : ["gic_spiritsummon_object.lua"],
+  "scriptDelta" : 0
+  
+  
+
+}

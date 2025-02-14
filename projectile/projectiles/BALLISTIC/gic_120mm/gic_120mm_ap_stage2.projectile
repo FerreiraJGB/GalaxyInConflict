@@ -1,0 +1,129 @@
+{
+  "projectileName" : "gic_120mm_ap_stage2",
+  "image" : "gic_120mm_ap_stage2.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "fullbright" : true,
+  "physics" : "gic_cannonfall",
+  "renderLayer" : "Monster+10",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_medium/gic_shellhit_medium.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+  ],
+  
+"periodicActions" : [
+],
+  "persistentAudio" : "/sfx/WorldAtWar/gic_artillery_whistle1.ogg",  
+  "power" : 5000,
+  "speed" : 200,
+  
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot", "gic_fracture_injury" ],
+  
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef"
+}

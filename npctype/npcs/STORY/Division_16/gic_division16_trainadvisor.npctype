@@ -1,0 +1,112 @@
+{
+  "type" : "gic_division16_trainadvisor",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+
+  "identity" : {
+    "gender" : "male"
+  },
+  
+  "persistent" : true,
+
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+  
+  
+    "behavior" : "speaker",
+
+    "behaviorConfig" : {
+      "alwaysRun" : false,
+      "wanderWaitTime" : [6.0, 10.0],
+      "wanderTime" : [0.0, 0.0],
+      "wanderDistance" : 0,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ]
+    },
+
+	
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"[Dialogue repeat]"
+          ]
+        }
+      },
+      "speak" : {
+        "default" : {
+          "default" : [
+            "Hey, <entityname>! Need to talk to you!"
+          ]
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "gic_bedouinhead", "parameters" : { "colorIndex" : [4] } }
+            ],
+            "chest" : [
+              { "name" : "bedouinchest", "parameters" : { "colorIndex" : [4] } }
+            ],
+            "legs" : [
+              { "name" : "bedouinlegs", "parameters" : { "colorIndex" : [4] } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

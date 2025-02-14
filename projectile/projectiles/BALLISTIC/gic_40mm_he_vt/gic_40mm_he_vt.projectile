@@ -1,0 +1,71 @@
+{
+  "projectileName" : "gic_40mm_he_vt",
+  "image" : "gic_40mm_he_vt.png",
+  "animationCycle" : 0.25,
+  "physics" : "gic_cannonfall",
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "fullbright" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback_flak.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_blackfog/2.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+  ],
+  
+  "periodicActions" : [  
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_usoa50_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "fade", //shrink
+        "fullbright" : false
+      }
+    }
+  ], 
+  "persistentAudio" : "/sfx/WorldAtWar/gic_artillery_whistle2.ogg",  
+  "emitters" : [ ],
+  "power" : 800.0,
+  
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot", "gic_fracture_injury" ],
+  
+  "damagePoly" : [ [-128, 0], [-22, -22], [0, -128], [22, -22], [22, 0], [22, 22], [0, 128], [-22, 22]  ],
+  "speed" : 190,
+  "damageKind" : "ews_explosive",
+  "damageType" : "NoDamage"
+}

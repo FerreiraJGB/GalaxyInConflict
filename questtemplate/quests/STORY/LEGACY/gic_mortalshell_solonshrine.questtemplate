@@ -1,0 +1,35 @@
+{
+  "id" : "gic_mortalshell_solonshrineQuest",
+  "title" : "^#D1FFDE;Solon, The Lawbringer",
+  "prerequisites" : [  ],
+  "text" : "There's a collection box embedded into the base of the statue. A few pockets of Erchius are nested in its corners. Before you can react, something jabs you...",
+  "completionText" : "You feel invigorated by an unknown power, even amidst the local hellscape. ^yellow;[Mortal Shell: Solon] unlocked and equipped as [HEAD Tech]",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_munitionsworkbench_mortalshell_solon_guide-codex", 1 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : false,
+	
+    "showTech" : [
+      "gic_mortalshell_solon"
+    ],
+    "equipTech" : [
+      "gic_mortalshell_solon"
+    ],
+
+	
+    "turnInEntityUid" : "gic_unitan_solonthelawbringer_statue_quest",
+    "conditions" : [
+    ]
+  }
+}

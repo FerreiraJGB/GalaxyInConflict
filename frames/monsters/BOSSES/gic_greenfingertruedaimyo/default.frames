@@ -1,0 +1,109 @@
+{
+  "frameGrid" : {
+    "size" : [164, 126],
+    "dimensions" : [8, 20],
+
+    "names" : [
+      ["idleSheathe.1", "idle.1", null, null, null, null, null, null],
+	  ["walk.1", "walk.2", "walk.3", "walk.4", "walk.5", "walk.6", "walk.7", "walk.8"],
+	  ["overheadWindup1.1", "overheadWindup1.2", "overheadSwing.1", "overheadSwing.2", "overheadSwing.3", "overheadSwing.4", "overheadWindup2.1", "overheadWindup2.2"],
+	  ["thrustWindup.1", "thrustWindup.2", "thrustWindup.3", "thrustWindup.4", "thrust.1", "thrust.2", "thrust.3", "thrust.4"],
+	  ["swipe1Windup.1", "swipe1Windup.2", "swipe1.1", "swipe1.2", "swipe1.3", "swipe1.4", "fireAoeWindup.4", "fireAoe.1"],
+	  ["swipe2Windup.2", "swipe2.1", "swipe2.2", "swipe2.3", "swipe2.4", "fireAoeWindup.1", "fireAoeWindup.2", "fireAoeWindup.3"],
+	  ["hiltbashWindup.1", "hiltbashWindup.2", "hiltbashWindup.3", "hiltbashWindup.4", "hiltbash.1", "hiltbash.2", "hiltbash.3", "hiltbash.4"],
+	  ["intro.1", "intro.2", "intro.3", "intro.4", "intro.5", "intro.6", "intro.7", "parry.1"],
+	  ["aoeWindup.1", "aoeWindup.2", "aoeWindup.3", "aoeWindup.4", "aoe.1", "aoe.2", "aoe.3", "aoe.4"],
+	  ["fireOverheadWindup1.1", "fireOverheadWindup1.2", "fireOverheadSwing.1", "fireOverheadSwing.2", "fireOverheadSwing.3", "fireOverheadSwing.4", "fireOverheadWindup2.1", "fireOverheadWindup2.2"],
+	  ["fireUnderheadWindup.2", "fireUnderhead.1", "fireUnderhead.2", "fireUnderhead.3", "fireUnderhead.4", "fireUnderheadWindup.1", null, null],
+	  ["fireCrackerWindup.1","fireCracker.1","fireCracker.2","fireCracker.3","fireCracker.4","fireCrackerWindup2.1",null,null],
+	  
+	  ["electric_overheadWindup1.1", "electric_overheadWindup1.2", "electric_overheadSwing.1", "electric_overheadSwing.2", "electric_overheadSwing.3", "electric_overheadSwing.4", "electric_overheadWindup2.1", "electric_overheadWindup2.2"],
+	  ["electric_thrustWindup.1", "electric_thrustWindup.2", "electric_thrustWindup.3", "electric_thrustWindup.4", "electric_thrust.1", "electric_thrust.2", "electric_thrust.3", "electric_thrust.4"],
+	  ["electric_swipe1Windup.1", "electric_swipe1Windup.2", "electric_swipe1.1", "electric_swipe1.2", "electric_swipe1.3", "electric_swipe1.4", null, null],
+	  ["electric_swipe2Windup.2", "electric_swipe2.4", "electric_swipe2.1", "electric_swipe2.2", "electric_swipe2.3", null, null, null],
+	  ["forcePush.1", "forcePush.2", "forcePush.3", "forcePush.4", "thrustTransition.1", "thrustTransition.2", "thrustTransition.3", null],
+	  ["fireSuperUnderheadWindup.1", "fireSuperUnderheadWindup.2", "fireSuperUnderheadWindup.3", "crossWindup.1", "crossWindup.2", "crossWindup.3", "crossWindup.4", "crossPreSlash.1"],
+	  ["cross1.1", "cross1.2", "cross1.3", "cross1.4", "cross2.1", "cross2.2", "cross2.3", "cross2.4"],
+	  ["gunWindup.1", "gunWindup.2", "gunWindup.3", "gunFire.1", "gunShortFire.1", null, null, null]
+    ]
+  },
+  
+  "aliases" : {
+	"gunShortWindup.1" : "gunWindup.1",
+	"gunShortWindup.2" : "gunWindup.2",
+	
+	"gunShortWinddown.1" : "gunWindup.2",
+	"gunShortWinddown.2" : "gunWindup.1",
+	
+	"cross2Windup.1" : "swipe1Windup.2",
+	
+	"cross1Winddown.1" : "cross1.4",
+	"cross2Winddown.1" : "cross2.4",
+	
+	"crossWindup.5" : "crossWindup.4",
+	"crossWindup.6" : "crossWindup.4",
+	
+	"fireSuperUnderheadWindup.4" : "fireUnderheadWindup.2",
+	"fireSuperUnderheadWindup.5" : "fireUnderheadWindup.2",
+	"fireSuperUnderheadWindup.6" : "fireUnderheadWindup.2",
+	
+	"forcePushWinddown.1" : "forcePush.4",
+	  
+	"electric_overheadWinddown.1" : "electric_overheadSwing.4",
+	"electric_thrustWindup.5" : "electric_thrustWindup.4",
+	"electric_thrustWindup.6" : "electric_thrustWindup.4",
+	"electric_thrustWinddown.1" : "electric_thrust.4",
+	"electric_swipe1Winddown.1" : "electric_swipe1.4",
+	"electric_swipe2Winddown.1" : "electric_swipe2.4",
+	"electric_swipe2Windup.1" : "electric_overheadWindup2.2",
+	
+	"intro.8" : "idle.1",
+	  
+	"overheadWinddown.1" : "overheadSwing.4",
+	
+	"fireOverheadWinddown.1" : "overheadSwing.4",
+	
+	"fireUnderheadWinddown.1" : "fireUnderhead.4",
+	
+    "thrustWindup.5" : "thrustWindup.4",
+	"thrustWindup.6" : "thrustWindup.4",
+	"thrustWinddown.1" : "thrust.4",
+	
+	"swipe1Winddown.1" : "swipe1.4",
+	
+	"swipe2Winddown.1" : "swipe2.4",
+	
+	"swipe2Windup.1" : "overheadWindup2.2",
+	
+	"hiltbashWindup.5" : "hiltbashWindup.4",
+	"hiltbashWindup.6" : "hiltbashWindup.4",
+	"hiltbashWinddown.1" : "hiltbash.4",
+	
+	"aoeWindup.5" : "aoeWindup.4",
+	"aoeWindup.6" : "aoeWindup.4",
+	
+	"fireAoeWindup.5" : "fireAoeWindup.4",
+	"fireAoeWindup.6" : "fireAoeWindup.4",
+	"fireAoeWindup.7" : "fireAoeWindup.4",
+	"fireAoeWindup.8" : "fireAoeWindup.4",
+	"fireAoeWindup.9" : "fireAoeWindup.4",
+	"fireAoeWindup.10" : "fireAoeWindup.4",
+	
+	//extra frames
+	"overheadWindup1.3" : "overheadWindup1.2",
+	"overheadWindup2.3" : "overheadWindup2.2",
+	"swipe1Windup.3" : "swipe1Windup.2",
+	"swipe2Windup.3" : "swipe2Windup.2",
+	"fireOverheadWindup1.3" : "fireOverheadWindup1.2",
+	"fireOverheadWindup2.3" : "fireOverheadWindup2.2",
+	"fireUnderheadWindup.3" : "fireUnderheadWindup.2",
+	
+	"electric_overheadWindup1.3" : "electric_overheadWindup1.2",
+	"electric_overheadWindup2.3" : "electric_overheadWindup2.2",
+	"electric_swipe1Windup.3" : "electric_swipe1Windup.2",
+	"electric_swipe2Windup.3" : "electric_swipe2Windup.2",
+	
+	"fireCrackerWinddown.1" : "fireCracker.4"
+	
+  }
+}

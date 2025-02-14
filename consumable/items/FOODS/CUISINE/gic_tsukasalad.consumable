@@ -1,0 +1,28 @@
+{
+  "itemName" : "gic_tsukasalad",
+  "rarity" : "Common",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_tsukasalad.png",
+  "description" : "Kuda-gitsune are mythological beings associated with foxes, weasels, or larval rollers, small enough to fit inside a pipe or bamboo tube. According to tradition, they answer questions to those who conjure them up, or take possession of people.
+  
+This salad is named after a particularly sly individual, after she was ''sliced'' by various individuals. She was subsequently placed in a Swedish-style Rehabilitative Prison.",
+  "shortdescription" : "Tsukasalad",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 30,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

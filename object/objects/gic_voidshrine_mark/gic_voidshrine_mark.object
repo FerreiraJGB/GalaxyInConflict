@@ -1,0 +1,50 @@
+{
+  "objectName" : "gic_voidshrine_mark",
+  "colonyTags" : ["ancient","storage"],
+  "rarity" : "Legendary",
+  "tooltipKind" : "base",
+  "race" : "ancient",
+  "health" : 1.5,
+
+  "category" : "storage",
+  "price" : 0,
+  "printable" : false,
+  "description" : "Void Shrine - Interact to receive the Outsider's Mark.",
+  "shortdescription" : "Void Shrine",
+
+  "inventoryIcon" : "icon.png",
+
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_voidshrine_mark.png:default", "fullbright" : true }, { "image" : "gic_voidshrine_mark_lit.png:default" } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "gic_voidshrine_mark.png:default", "fullbright" : true }, { "image" : "gic_voidshrine_mark_lit.png:default" } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_voidshrine_mark.animation",
+  "animationPosition" : [-16, 0],
+
+  "scripts" : ["/objects/scripts/treasureburst.lua"],
+  "scriptDelta" : 0,
+
+  "burstTreasurePool" : "gic_voidshrine_markTreasure",
+  "burstItemVelocityRange" : [5, 10],
+  "burstAngleVariance" : 0.5,
+  "burstOffset" : [0.5, 0],
+  "burstIntangibleTimeRange" : [0.25, 0.5]
+}

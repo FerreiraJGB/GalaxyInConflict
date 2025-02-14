@@ -1,0 +1,59 @@
+{
+  "projectileName" : "gic_magicshot_artificialsun_stage3",
+  "physics" : "gic_arrowlaser",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosion2.config"
+    }
+  ],
+  
+   "actionOnTimeout" : [
+  
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosion2.config"
+    }
+	
+  ], 
+  
+  "periodicActions" : [
+  
+    {
+      "time" : 0.25,
+      "action" : "projectile",
+      "type" : "gic_magicshot_artificialsun_stage4",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 20,
+      "angleAdjust" : 180
+    }
+	
+  ],
+  
+  "image" : "gic_magicshot_artificialsun_stage3.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "onlyHitTerrain" : true,
+  "piercing" : true,
+  "power" : 70,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+//  "statusEffects" : ["gic_bleeding_light", "gic_bleeding_medium", "gic_bulletshot" ],
+  "statusEffects" : ["gic_bulletshot" ],
+  "timeToLive" : 50,
+  "pointLight" : false,
+//  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  
+  "speed" : 1,
+  "acceleration" : 10
+  
+}

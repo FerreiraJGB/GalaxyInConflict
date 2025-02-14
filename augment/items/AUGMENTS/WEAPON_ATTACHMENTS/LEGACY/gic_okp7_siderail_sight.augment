@@ -1,0 +1,46 @@
+{
+  "itemName" : "gic_okp7_siderail_sight",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Receiver Siderail Sight Attachment^white;",
+  "inventoryIcon" : "gic_okp7_siderail_sight_icon.png",
+  "description" : "Close-quarters sight offering superior optical field of view compared to traditional close-lensed designs. Mounted on a fixed siderail mount, supporting placement on most weapons lacking integrated rails.
+
+^green;+7.5% accuracy and hit chance.^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  "shortdescription" : "OKP-7 Siderail Dovetail (GiC)",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "sight", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_okp7_siderail_sight", //name of attachment
+	"attachmentTag" : ["gic_sight_receiver","gic_okp7_siderail_sight"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/sight/gic_okp7_siderail_sight.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_okp7_siderail_sight", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "scope",
+		
+		//"scopeIn" : "/cursors/ews_scopeIn.cursor",
+		//"scopeInTime" : 0.5,						//seconds, aka the animationCycle from the cursor
+		//"scopeOut" : "/cursors/ews_scopeOut.cursor",
+		//"scopeOutTime" : 0.25,						//seconds, aka the animationCycle from the cursor
+		
+		"scopedIn" : "/cursors/gic_okp7_sight_aim.cursor"	//only parameter absolutely needed for the scope function to work. Scope in and scope out stuff are optional.
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [0.925,0.925,0.925,0.925,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,0.925,1,0.925] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

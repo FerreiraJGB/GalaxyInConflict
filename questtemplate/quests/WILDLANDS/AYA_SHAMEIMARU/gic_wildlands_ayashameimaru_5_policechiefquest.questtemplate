@@ -1,0 +1,27 @@
+{
+  "id" : "gic_wildlands_ayashameimaru_5_policechiefquest",
+  "title" : "^#D1FFDE;[AYA-5] Armory",
+  "prerequisites" : [  ],
+  "text" : "The confirmed death of the corrupt Police Chief will be of shock to any lesser-devoted cultists. Perhaps it will influence things to come.",
+  "completionText" : "The confirmed death of the corrupt Police Chief will be of shock to any lesser-devoted cultists. ^#D1FFDE;[Less enemy resistance in the Final AYA Mission]",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : false,
+
+    "setUniverseFlags" : ["gic_wildlands_ayashameimaru_office_hubworld_ayagone"] ,
+	
+    "turnInEntityUid" : "",
+    "conditions" : [
+    ]
+  }
+}

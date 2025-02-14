@@ -1,0 +1,45 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"body" : {
+				"properties" : {
+					"image" : "gic_oilburning.png<facingDirection>",
+					"zLevel" : -10,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0, 3.0]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"body" : {}
+	},
+  "particleEmitters" : {
+    "flames" : {
+      "enabled" : true,
+      "emissionRate" : 3.0, //24
+      "particles" : [
+        {
+          "particle" : "burningdust"
+        },
+        {
+          "particle" : "burningdust"
+        }
+      ]
+    }
+  },
+  "lights" : {
+    "glow" : {
+      "active" : true,
+      "position" : [0, 0],
+      "color" : [191, 103, 2]
+    }
+  },
+  "sounds" : {
+    "burn" : [ "/sfx/gic_bloodborne_torch.wav" ]
+  }
+}

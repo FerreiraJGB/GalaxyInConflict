@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_realisticgasflame",
+  "image" : "gic_realisticgasflame.png",
+  "physics" : "gic_realisticflame",
+  "animationCycle" : 1,
+  "animationLoops" : false,
+  "frameNumber" : 12,
+  "winddownFrames" : 3,
+  "intangibleWinddown" : true,
+  "power" : 50,
+  "speed" : 70,
+  "timeToLive" : 1,
+  "bounces" : 8,
+  "piercing" : true,
+  
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/fireexplosion/fireexplosion.config"
+    }
+  ],
+  
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "lightColor" : [235, 126, 2],
+  "damageKind" : "ews_explosive",
+  "damageKindImage" : "/interface/statuses/fire.png",
+  "statusEffects" : [
+    "burning", "gic_oilfire_primer", "gic_burn_wounds"
+  ],
+  "hydrophobic" : true
+}

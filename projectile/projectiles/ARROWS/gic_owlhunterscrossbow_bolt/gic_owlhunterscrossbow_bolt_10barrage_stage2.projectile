@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_owlhunterscrossbow_bolt_10barrage_stage2",
+  "physics" : "gic_bulletfall",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback_owlhunterscrossbow.config"
+    },
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/bow/gic_bloodborne_bowgun-shot.wav"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_owlhunterscrossbow_bolt_monster",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 1,
+	  "directional" :true
+    }
+  ],
+  "image" : "gic_owlhunterscrossbow_bolt.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 20,
+  "knockback" : 15,
+  "knockbackDirectional" : true,
+  "statusEffects" : ["gic_bulletshot" ],
+  "timeToLive" : 0.01,
+  "pointLight" : false
+//  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

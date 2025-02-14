@@ -1,0 +1,88 @@
+{
+  "itemName" : "gic_afflicted_riotshield_npc",
+  "fixedLevel" : false,
+  "price" : 10,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "shield",
+  
+  "description" : "A bullet-resistant riot shield reinforced with metal frames and a shield boss to better protect against strikes.
+
+^#D6DFFF;Shield Bash: Moving at great speeds and colliding with an enemy will deal damage based on the speed of the user. Deals higher bash damage compared to other greatshields. No perfect-block.^white;",
+
+  "shortdescription" : "Afflicted Riot Shield NPC",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_afflicted_riotshield.png:nearidle",
+
+  "animation" : "/items/shields/gic_stone_greatshield/shield.animation",
+  "animationParts" : {
+    "shield" : "gic_afflicted_riotshield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/armor/gic_bloodborne_body-armor-6.wav" ],
+      "perfectBlock" : [ "/sfx/melee/gic_bloodborne_hammer-hit2.wav" ],
+      "block" : [ "/sfx/melee/gic_bloodborne_hammer-hit2.wav" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  
+	  "shieldBash" : [ "/sfx/melee/gic_bloodborne_shieldpress.wav" ]
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_shieldbash.lua", "/abilities/weapons/gic_base_greatshield_limiter.lua"],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : true,
+  "baseShieldHealth" : 70,
+  "cooldownTime" : 0.05,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 0.0,
+
+  "knockback" : 10, //15
+  
+  "damageBleedthroughEnabled" : true,
+  "damageBleedthroughAmount" : 0.15, //at 0.1, 10% of all damage received by the shield will bleed through and etc - unless the shield was broken on the hit.
+  //also note that as of the initial version, bleedthrough damage is dealt as "default"/physical damage; there is no way to pull the actual damage type received, as of my testing so far.  
+  
+  // CUSTOM SHIELD BASH PARAMS
+  "minVelocity" : 15, //10
+  "accelKnockback" : 10, //30
+  "accelMaxKnockback" : 35, //45
+  
+  "accelDamage" : 10, //20
+  "accelMaxDamage" : 75, //50
+  
+  "minDamageTimeout" : 0.25,
+  "maxDamageTimeout" : 1.0,
+  // CUSTOM SHIELD BASH PARAMS  
+  
+  
+  
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 5,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "twoHanded" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

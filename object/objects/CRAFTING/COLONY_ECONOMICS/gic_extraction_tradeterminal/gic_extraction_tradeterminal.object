@@ -1,0 +1,402 @@
+{
+  "objectName" : "gic_extraction_tradeterminal",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "description" : "Trade Terminal for Extraction Economies.",
+  "shortdescription" : "^orange;Trade Terminal: Extraction [GIC]^white;",
+  "race" : "generic",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_generic_economy_3tab.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+	  
+	  
+        "title" : "  Economy Terminal: Extraction
+
+
+
+
+
+
+
+",
+		
+		
+//"''Do not act as if you were going to live 10,000 years. Death hangs over you. While it is in your power, be good.''		
+        "subtitle" : 
+" The local station or settlement's primary economy type is geared towards the extraction of the planet's metal
+ reserves indicating a high metal content world, with its inhabitants mostly consisting of a mix of temporary
+ and permanent mining staff. Minerals are chemical compounds that are mined from naturally-occurring deposits
+ and can be refined into other substances.
+
+ Imports: Industrial Equipment
+
+ Exports: Raw Minerals
+",
+
+
+        "icon" : {
+          "file" : "/interface/crafting/gic_tradeterminal_extraction.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+	
+	
+	
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":27,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_industrialequipmentcargo"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_buy" ]
+		},
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_rawmineralscargo"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_buy" ]
+		},
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":6,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_refinedmetalscargo"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_buy" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_industrialequipmentcargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":18,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_sell" ]
+		},
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":3,
+				"name":"gic_rawmineralscargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_sell" ]
+		},
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2,
+				"name":"gic_refinedmetalscargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_sell" ]
+		},
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":12,
+				"name":"gic_cyanide_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_sell" ]
+		},
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":40,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Copper Ore ^orange;(Industrial)",
+			"description" : "Copper, Cu, atomic number 29. Melting point 1358K. A highly ductile lustrous red-orange metal, with good thermal and electrical conductivity. Used broadly by industry as a cheap conductor and in many alloys. It is also used in biotech and aquaculture especially in many extraterrestrial and hemocyanal species.
+
+[This item is otherwise identical to standard copper ore, and can be used in crafting recipes involving copper ore]",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"copperore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_services" ]
+		},			
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Core Fragment ^orange;(Industrial)",
+			"description" : "A relatively newly-discovered substance that forms close to the cores of certain planets. Its energy potential when ground into dust rivals that of modern gunpowder, with some modern bullets substituting the explosive payload with Volatile Powder.
+
+[This item is otherwise identical to standard core fragments, and can be used in crafting recipes involving core fragments]",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"corefragmentore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_services" ]
+		},			
+				
+
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":500,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Gold Ore ^orange;(Industrial)",
+			"description" : "Gold, Au, atomic number 79. Melting point 1337K. A valuable precious metal, and because it is the most resistive metal to corrosion, is widely used in jewelry and luxury goods and for contact pads in electronics.
+
+[This item is otherwise identical to standard gold ore, and can be used in crafting recipes involving gold ore]",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"goldore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_services" ]
+		},			
+
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Silver Ore ^orange;(Industrial)",
+			"description" : "Silver, Ag, atomic number 47. Melting point 1234K. A precious metal valued in jewelry. It also has many useful industrial properties being the best electrical and thermal conductor of any metal, and also the most reflective, and so is widely used in high tech applications, either in its pure form or alloyed with other metals.
+
+[This item is otherwise identical to standard silver ore, and can be used in crafting recipes involving silver ore]",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"silverore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_services" ]
+		},			
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":40,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Iron Ore ^orange;(Industrial)",
+			"description" : "Iron is a chemical element with the symbol Fe (from Latin ferrum 'iron') and atomic number 26. It is a metal that belongs to the first transition series and group 8 of the periodic table. Iron is just one of the vast myriad of metals that keep the galactic community alive.
+
+[This item is otherwise identical to standard iron ore, and can be used in crafting recipes involving iron ore]",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"ironore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_services" ]
+		},				
+
+
+
+
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Titanium Ore ^orange;(Industrial)",
+			"description" : "Titanium, Ti, atomic 22. Melting point 1941K. A lustrous, silver-grey, low density, high strength metal that is used in a great many industrial applications, including high spec spacecraft hulls.
+
+[This item is otherwise identical to standard titanium ore, and can be used in crafting recipes involving titanium ore]",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"titaniumore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_services" ]
+		},		
+
+
+		
+
+		
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Tungsten Ore ^orange;(Industrial)",
+			"description" : "Tungsten is a greyish-white lustrous metal, which is a solid at room temperature. Tungsten has the highest melting point and lowest vapor pressure of all metals, and at temperatures over 1650C has the highest tensile strength. It has excellent corrosion resistance and is attacked only slightly by most mineral acids.
+
+[This item is otherwise identical to standard tungsten ore, and can be used in crafting recipes involving tungsten ore]",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"tungstenore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_tradeterminal", "gic_trade_services" ]
+		}
+		
+		
+		
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_extraction_tradeterminal" ]
+  },
+  "printable" : false,
+  "price" : 300,
+  
+  "inventoryIcon" : "gic_extraction_tradeterminal.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_extraction_tradeterminal.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+
+}

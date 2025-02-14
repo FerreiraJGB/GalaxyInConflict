@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_us_medkit",
+  "rarity" : "Uncommon",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_us_medkit.png",
+
+  "description" : "A ^white;Medical Kit^white; issued to all standard militaries of the ^green;United Systems^white;. The equipment within the kit is nearly identical to the same type of Medical Kits that the ^yellow;Russian Military^white; used during ^yellow;World War 3^white; aside from the addition of ^white;improved blood transfusion equipment^white;.
+
+^green;Restores 1000 health^white; over ^yellow;5 minutes^white;. ^green;Recovers light^white; and ^green;medium bleeding ailments^white;.",
+
+  "shortdescription" : "^yellow;Unitan Military Medkit",
+  "effects" : [ [
+      {
+        "effect" : "gic_us_medkitheal"
+      },
+      {
+        "effect" : "gic_bleeding_lightStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_bleeding_mediumStatusImmunity",
+        "duration" : 1
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "bandageuse" ],
+  "blockingEffects" : [
+    "salveheal",
+    "bandageheal",
+    "medkitheal",
+    "nanowrapheal"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name" : "gic_shinigami_below50_chest",
+  "blockingStat" : "gic_shinigami_below50_chestBlockingStat",
+  "effectConfig" : {
+	"healthTriggerPercentage" : 0.5, //what this percentage (in range [0,1.0]) stats (and optional triggerStatusEffect) will trigger, behavior determined by "triggerAtAbove"
+	"triggerAtAbove" : false, //if enabled, then stats/status effect triggers when ABOVE or AT the percentage above. if disabled, things will trigger BELOW the status effect
+	
+	"stats" : [
+//		{"stat" : "protection", "amount" : 50},
+//		{"stat" : "powerMultiplier", "amount" : -0.2}
+//		{"stat" : "maxHealth", "baseMultiplier" : 1.5}, //i don't know exactly the difference between baseMultiplier and effectiveMultiplier, but oh well.
+//		{"stat" : "maxEnergy", "effectiveMultiplier" : 1.5},
+
+{"stat" : "ews_bleedResistance", "amount" : -0.50},		
+{"stat" : "ews_meleeResistance", "amount" : -0.50},	
+{"stat" : "ews_smallarmsResistance", "amount" : -0.50},	
+{"stat" : "ews_heavyarmsResistance", "amount" : -0.50},
+{"stat" : "ews_explosiveResistance", "amount" : -0.50},
+{"stat" : "ews_antitankResistance", "amount" : -0.50},
+{"stat" : "ews_psychicResistance", "amount" : -0.50},
+
+{"stat" : "physicalResistance", "amount" : -0.50},
+{"stat" : "fireResistance", "amount" : -0.50},
+{"stat" : "iceResistance", "amount" : -0.50},
+{"stat" : "electricResistance", "amount" : -0.50},
+{"stat" : "poisonResistance", "amount" : -0.50},
+
+{"stat" : "novaResistance", "amount" : -0.50},
+{"stat" : "holyResistance", "amount" : -0.50},
+{"stat" : "demonicResistance", "amount" : -0.50},
+{"stat" : "bleedResistance", "amount" : -0.50},
+
+{"stat" : "shadowResistance", "amount" : -0.50},
+{"stat" : "cosmicResistance", "amount" : -0.50},
+{"stat" : "radioactiveResistance", "amount" : -0.50},
+{"stat" : "linerifleResistance", "amount" : -0.50},
+{"stat" : "centensianenergyResistance", "amount" : -0.50},
+{"stat" : "xanafianResistance", "amount" : -0.50},
+{"stat" : "akkimariacidResistance", "amount" : -0.50},
+{"stat" : "silverResistance", "amount" : -0.50}
+
+	],
+	
+	"triggerStatusEffect" : { //alternate status effect proc, can be enabled alongside the stats. useful if you want to give fancier effects when at a health % threshold!
+		"enabled" : false,
+		"statusEffects" : ["statusEffectHere"] //note that particle effects tend to be a bit.. funky for this status effect. side effect of status effect being constantly applied, same occurs for the primer-activated effects.
+	}
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "/stats/gic_healthpercentage_primer_demo/gic_healthpercentage_primer_demo.lua"
+  ]
+  
+}

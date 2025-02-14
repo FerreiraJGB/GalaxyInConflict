@@ -1,0 +1,59 @@
+{
+  "projectileName" : "gic_handcannon_miss_b_pointblank",
+  "image" : "gic_handcannon_b.png",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 0.05,
+  "actionOnHit" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    }
+  ],
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_heavybullet_trail/trail.png",
+        "position" : [-2, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_miss_c",
+      "fuzzAngle" : 0.0,
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    }
+  ],
+  
+  "statusEffects" : [ "gic_bleeding_heavy", "gic_bulletshot" ],  
+  
+  
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+  "fullbright" : true,
+  "maxSpeed" : 250,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 190.0,
+  "acceleration" : 0,
+  "physics" : "gic_musketshot"
+}

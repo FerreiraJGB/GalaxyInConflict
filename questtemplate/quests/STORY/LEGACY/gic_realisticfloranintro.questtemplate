@@ -1,0 +1,60 @@
+{
+  "id" : "gic_realisticfloranintroquest",
+  "mainQuest" : true,
+  "title" : "^yellow;[GIC] Battle for New Germania",
+  "text" : "''Liberator... Oh Liberator! Give me back my warriors!''
+
+First, we were men of the mud. Second, we were men bound by the code of honor. Third, we became free men through fire.",
+  "completionText" : "This text shouldn't be shown.", //This text is not used or displayed.
+  "moneyRange" : [50, 50],
+  "canBeAbandoned" : false,
+  "invisible" : false,
+  "logOnly" : true,
+  
+  "showAcceptDialog" : false,
+  "showCompleteDialog" : false,
+  "showFailDialog" : false,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/tutorial/gic_realisticfloranintro.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "default" : "player"
+    },
+    "startingMusicTime" : 1.0, //11.5
+    "startingMusicTracks" : ["/music/TotalWarAttila/gic_totalwarattila_peopleofthedesert.ogg"],
+    "openingCinematic" : "/cinematics/intro/gic_realisticfloran_intro/gic_realisticfloran_introstart.cinematic",
+	
+    "midpointMusicTime" : 160.0, //48
+    "midpointMusicTracks" : ["/music/TotalWarAttila/gic_totalwarattila_assaultbysea_dynamic.ogg"],
+    "midpointCinematic" : "/cinematics/intro/gic_realisticfloran_intro_midpoint/gic_realisticfloran_intro_midpoint.cinematic",
+    "reinforcelegionCinematic" : "/cinematics/intro/gic_realisticfloran_intro_midpoint/gic_realisticfloran_intro_midpoint.cinematic",	
+
+	
+    "midpointTeleportPosition" : [495, 823.5],
+    "endpointCinematic" : "/cinematics/intro/gic_realisticfloran_intro_endpoint/gic_realisticfloran_intro_endpoint.cinematic",
+    "confiscateItems" : [
+      "brokenprotectoratebroadsword",
+      "protectorateflowerhead",
+      ["salve", 1000],
+      ["bandage", 1000],
+      "afprotectorateflower",
+      ["money", 1000],
+      ["ash", 1000]
+    ],
+    "skipIntroItems" : [
+      "brokenprotectoratebroadsword"
+    ],
+
+    "descriptions" : {
+      "findbearing" : "A bad dream...",//Wake up
+      "eldermeeting" : "Pick up your gear in the Far-Western section of the village.", //Pass the command post.
+	  "pushup" : "Clear the village of Protectors and regroup on the other side of the village.",
+      "matterManipulator" : "Reinforce assaulting troops near the Protectorate Landing Zone.",//Enter bunker.
+      "landingzonebattle" : "Secure the Protectorate Ship.", //Reach the battlefield.
+      "escape" : "Rally the men!"
+    },
+
+    "followUp" : "bootship"
+  }
+}

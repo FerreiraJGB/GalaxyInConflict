@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_hakutakuspecial",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#CC8A4D;Rock and Stone Brewers",
+  "inventoryIcon" : "gic_hakutakuspecial.png",
+  
+  
+  
+  "description" : "''I've been waiting. You've got some guts, challenging me on the night of the full moon. I won't let you lay one finger on that human!''
+
+^#CC8A4D;Reduces cooldown of UNYIELDING BULWARK by -5% | Lasts for 30 minutes.^reset;",
+  
+  "shortdescription" : "Hakutaku Special",
+  
+  "effects" : [ [
+   {
+        "effect" : "gic_beverage_hakutakuspecial",
+        "duration" : 1800
+    }
+  ] ],
+  
+  
+  
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

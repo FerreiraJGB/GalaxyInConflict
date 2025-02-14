@@ -1,0 +1,337 @@
+{
+  "itemName" : "gic_heavystubber",	//this is an example weapon. Copy the folder to your mod (in appropriate location) and change "examplerifle" for the name you want to use
+  "price" : 150,
+  "inventoryIcon" : "gic_heavystubber.png:armed.1",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "''In ancient times, men built wonders, laid claim to the stars and sought to better themselves for the good of all. But we are much wiser now.''
+Unlike their Storm Stubber cousins, the Heavy Stubber is intended for a purely suppressive role. Granting a single individual with a massive 400rnd belt-linked ammunition backpack, these guns offer a significant boost to a gang-squadron's firepower in the dense and closely-packed halls of an undercolony. Uses 7.62x39mm custom Heavy Stubber belt-fed ammunition.",
+  "shortdescription" : "Heavy Stubber",
+  "level" : 1,
+  "tooltipKind" : "gic_largebase_ammogun_highres_base",//custom tooltip, values set by the .lua
+  "highResImg" : "/items/weapons/ranged/independent/SCAVENGER/gic_heavystubber/gic_heavystubber_highres.png",
+  "category" : "^orange;Autogun^reset;",
+  "itemTags" : ["weapon","ranged","rifle","gic"],
+  "twoHanded" : true,
+  
+  "weaponDeterioration" : true,				//weapon deterioration module enabler; when enabled, the gun will lose one "durability" with every single shot. the lower the durability, the worse the performance.
+  "weaponDurability" : [600,1200],					//how much total durability the weapon has. will be set dynamically by scripts, this reps. default value. Can be set as an array to randomize initial durability.
+  "weaponDurabilityMax" : 1200,				//max durability for weapon
+  "weaponDurabilityEffectMultiplier" : 1.45,		//negative effects of wep. deterioration are multiplied by this. For context by default at 0.0% durability, weapon will have 100% worse stats.
+  
+  "alwaysUseAmmo" : true, //if enabled, the gun will ignore the ews_infammo stat
+  
+  "weaponAcceptRepairs" : true,		//if enabled, then accepts repair items
+  "weaponRepairAcceptTags" : ["gic_repair"],	//repair item tags that this weapon can accept. repair items function like vanilla augments/attachments
+
+  "fireShellProjectile" : "gic_gunfirenoise_standardknockback",		//shell projectile that spawns at muzzleOffset every time user fires
+  "fireShellProjectileConfig" : {			//config to actually "spawn" the shell projectile in a upwards manner so it looks more realistic.
+	"timeToLive" : 0,
+	"actionOnReap" : [
+		{
+			"action" : "projectile",
+			"type" : "gic_shellcasing",
+			"fuzzAngle" : 20,
+			"angle" : -90
+		},
+		{
+			"action" : "projectile",
+			"type" : "gic_case_belt_link",
+			"fuzzAngle" : 20,
+			"angle" : -90
+		}
+	]
+  },
+
+  "consumeAmmoModule" : true,
+  "consumeAmmoType" : "gic_heavystubber_back_pack",
+  
+  "ammoMax" 		: 400,			//Specifies how big the guns' magazine is.
+  "magazineProjectile": "gic_heavystubber_back_pack_magreload", //"ews_20mm_casing", //Projectile dropped when reloading, basically a dummy projectile (Gnio)
+  "ammoAmount" 		: 400,			//Holds the current amount of ammo. Mostly set dynamically
+  "usesAmmo" 		: false,			//Used by ammo to determine if it should bother trying to load into the gun
+  "ammoTags" 		: ["bullet"],	//Tags, specifying the kind of ammo the gun takes
+  "ammoName" 		: "Focused Heat Energy",			//Used by the tooltip, set by ammo
+  "ammoType" 		: "", //"ews_augmentyr_20mm_magazineammo",			//Holds the name of currently used ammo item
+  "magazineType"	: "none",		//Holds the name of currently used magazine item or false if not using magazines (can omit this). Set to "none" for making a gun without a mag in currently.
+  "ammoIcon" 		: "/items/augments/ammo/simplebulletammo/icon.png",			//Used by the tooltip, set by ammo	
+  "ammoCasing" 		: false,	//Used by the gunfireammo ability. False for no casings, name of the casing item otherwise. Supposed to be set by the ammo item.
+  "extraAmmo" 		: false,		//Used for ejecting ammo, set dynamically
+  "extraAmmoList" 	: [],			//Used for ejecting ammo, set dynamically
+  "reloadParam" 	: false,		//false for reloadammo secondary ejecting ammo, [reload_amount,reload_cost,cooldown] for reloadammo reloading the gun (eg, for reloading one bullet for 20 energy every 2 seconds it will look like [1,20,2])
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_heavystubber.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/WEAPONS/ranged/gic_heavymachinegun_muzzleflash.png"
+  },
+  "animationCustom" : {
+	"animatedParts":{
+      "stateTypes" : {
+        "gunState" : {
+          "default" : "empty",
+          "states" : {					//animations are handled by both gunammo.lua (ammo states) and gunfireammo.lua (firing state). If you want to change those, make a copy and work with that.
+			"firing" :{					//gun will transition to "firing" state each time you pull the trigger
+			  "frames" : 4,
+			  "cycle" : 0.2,
+			  "mode" : "transition",
+			  "transition" : "armed"	//transition mode and animation is set up for the crossbow. may not work for everything
+			},
+            "armed" : {					//gun transitions to "armed" state if it has ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+            "empty" : {					//gun transitions to "empty" if it has no ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+			"reloading" : {				//reloading animation, placeholder here but can be useful if reloadejects is set to false
+			  "frames" : 1,
+			  "cycle" : 1.0,
+			  "mode" : "transition",
+			  "transition" : "empty"
+			}
+          }
+        }
+      },
+
+      "parts" : {
+        "middle" : {
+          "properties" : {
+            "image" : null
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<partImage>:firing.<frame><paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<partImage>:empty.<frame><paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<partImage>:empty.<frame><paletteSwaps>"
+				}
+			  }
+            }
+          }
+        }
+      }
+	},
+	"particleEmitters" : {
+      "muzzleFlash" : {
+        "burstCount" : 2,
+		"transformationGroups" : ["muzzle"],
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [0.7, 0.1], "count" : 2 }
+        ]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+		"transformationGroups" : ["muzzle"],
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [0.7, 0.1], "count" : 3 }
+        ]
+      }
+    },
+	
+	
+    "sounds" : {
+      "fire" 		: ["/sfx/Battlefield5/gic_BFV_M1919.ogg"],
+	  "fireStart" 	: [ "/sfx/gun/flamethrower_start.ogg" ],
+	  "fireLoop" 	: [ "/sfx/gun/flamethrower_loop.ogg" ],
+	  "fireEnd" 	: [ "/sfx/gun/flamethrower_stop.ogg" ],
+	  "empty"		: [ "/sfx/gun/reload/machinepistol_reload_clip1.ogg" ],
+      "switchAmmo" 	: [ "/sfx/gic_generic_reload.ogg" ]
+    }
+  },
+
+	
+  "animationScripts" : [
+    "/items/active/effects/laserbeam.lua"
+  ],
+
+
+  "baseOffset" : [0.5, -0.5],
+  "muzzleOffset" : [2.4, 0.15],
+  "shellOffset" : [-0.1, 0.1],	//new shell offset param; if enabled, determines offset of where shell will spawn (added to baseOffset to determine pos, just like muzzleOffset). Also works for ejectProjectile module.
+  "scripts" : ["/items/active/weapons/ranged/ews_weaponcore.lua", "/abilities/weight/gic_heavy_weapon.lua"],
+
+  "elementalType" : "ews_smallarms",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/ews_weapon.lua"],
+    "class" : "GunFire",
+
+	"missChance" : 50, //out of 100
+	"missChanceCrouch" : 40, //missChanceCrouch is automatically 60% less than missChance, but placed this here for reference.
+	//"dynamicRecoilTemplate" : "ASSAULTRIFLE", uneeded as dynamicRecoilTemplate for assault rifles are present by default unless otherwise specified
+
+    "fireTime" : 0.15,
+    "baseDamage" : 76.2,
+	"bonusDps" : 0,					//the parameter responsible for extra per-shot damage, introduced by ammo. Per shot damage gets spread over all the projectiles
+    "energyUsage" : false,
+    "inaccuracy" : 0.015,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+	
+	//switch fire modes related configs
+	"altFireType" : "semi",
+	"altMissChance" : 70, //defaults to "missChance" if not stated
+	"altMissChanceCrouch" : 40, //defaults to "missChanceCrouch" if not stated
+	"altInaccuracy" : 0.02, //defaults to "inaccuracy" if not stated
+	"altCrouchInaccuracy" : 0.015, //defaults to "crouchInaccuracy" if not stated
+
+	"projectileTypeMiss" : "gic_highvelbullet_miss_c_pistol_pointblank",
+    "projectileType" : "gic_highvelbullet_c",
+    "projectileParameters" : {
+      "knockback" : 20
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+		"frontArmFrame" : "run.3",
+        "backArmFrame" : "fall.1"
+      },
+      "fire" : {
+        "duration" : 0.01,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+		"frontArmFrame" : "run.3",
+        "backArmFrame" : "fall.1"
+      },
+      "motion1" : {
+        "duration" : 0
+      },
+      "motion2" : {
+        "duration" : 0
+      },
+      "motion3" : {
+        "duration" : 0
+      },
+      "motion4" : {
+        "duration" : 0
+      },
+      "motion5" : {
+        "duration" : 0
+      },
+      "motion6" : {
+        "duration" : 0
+      },
+      "reload" : {
+        "duration" : 0.25,
+        "armRotation" : -20,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.3",
+		"backArmFrame" : "fall.1"
+      },
+      "reload1" : {
+        "duration" : 0.25,
+        "armRotation" : -20,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.2",
+		"backArmFrame" : "rotation"
+      },
+      "reload2" : {
+        "duration" : 0.25,
+        "armRotation" : -10,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.2",
+		"backArmFrame" : "rotation"
+      },
+      "reload3" : {
+        "duration" : 0.25,
+        "armRotation" : -10,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "jump.1",
+		"backArmFrame" : "rotation"
+      },
+      "reload4" : {
+        "duration" : 0.25,
+        "armRotation" : -15,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "swim.4",
+		"backArmFrame" : "rotation"
+      },
+      "reload5" : {
+        "duration" : 0.25,
+        "armRotation" : -20,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.3",
+		"backArmFrame" : "fall.1"
+      },
+      "reload6" : {
+        "duration" : 0
+      },
+      "cooldown" : {
+        "duration" : 0.02,
+        "armRotation" : 0,
+        "weaponRotation" : 3,
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+		"frontArmFrame" : "run.3",
+        "backArmFrame" : "fall.1"
+      }
+    }
+  },
+
+
+  "builder" : "/items/buildscripts/ews_buildunrandweapon_highres.lua"
+}

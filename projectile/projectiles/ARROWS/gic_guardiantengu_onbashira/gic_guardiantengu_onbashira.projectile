@@ -1,0 +1,66 @@
+{
+  "projectileName" : "gic_guardiantengu_onbashira",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ruinorb_12pattern_delayedruinshot",
+      "angle" : 90,
+      "inheritDamageFactor" : 1
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "angle" : 90
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_remnantfromtheashes_claviger-04.ogg"
+      ]
+    }
+  ],
+
+  
+"actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ruinorb_12pattern_delayedruinshot",
+      "angle" : 90,
+      "inheritDamageFactor" : 1
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "angle" : 90
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_remnantfromtheashes_claviger-04.ogg"
+      ]
+    }
+	
+],
+  
+  
+  "onlyHitTerrain" : true,  
+  "image" : "gic_guardiantengu_onbashira.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 20,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+  "statusEffects" : ["gic_bleeding_light", "gic_bleeding_medium", "gic_bulletshot" ],
+  "timeToLive" : 15,
+  "pointLight" : false,
+  "flippable" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

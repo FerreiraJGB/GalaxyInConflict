@@ -1,0 +1,69 @@
+{
+  "projectileName" : "gic_20mm_he",
+  "image" : "gic_20mm_he.png",
+  "fullbright" : true,
+  "lightColor" : [96, 0, 0],
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_blackfog/2.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+  ],
+  
+  "periodicActions" : [  
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_usoa50_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "fade", //shrink
+        "fullbright" : false
+      }
+    }
+  ], 
+  "power" : 300.0,
+  "speed" : 190,
+  
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot", "gic_fracture_injury" ],
+  
+  "damageKind" : "ews_heavyarmsbullet",
+  "damageType" : "IgnoresDef"
+}

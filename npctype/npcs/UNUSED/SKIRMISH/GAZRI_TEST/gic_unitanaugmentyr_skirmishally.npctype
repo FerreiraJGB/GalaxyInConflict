@@ -1,0 +1,139 @@
+{
+  "type" : "gic_unitanaugmentyr_skirmishally",
+  "baseType" : "gic_followerbase",
+
+  "dropPools" : [ "basicTreasure" ],
+
+
+  "identity" : {
+    "gender" : "male"
+  },  
+
+  "persistent" : true,
+
+  "movementParameters" : {
+    "runSpeed" : 18,
+    "walkSpeed" : 18
+  },
+
+
+  "scriptConfig" : {
+    "behavior" : "follower",
+
+    "dialog" : {
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+      "follower" : {
+        "attack" : {
+          "default" : {
+            "default" : [
+              "The flesh is weak.",
+              "By our steel, they will see our shine.",
+			  "The Iron Legion reigns.",
+			  "We are the Augmentyr.",
+			  "We are the purest form of humanity's future.",
+			  "Moving to assault the enemy.",
+			  "We are the defenders of humanity.",
+			  "A hail of iron awaits our enemies.",
+			  "By my light, they shall see our might.",
+			  "The flesh lies."
+            ]
+          }
+        },
+        "join" : {
+          "default" : {
+            "default" : [
+              "Linking."
+            ]
+          }
+        },
+        "returnFromCombat" : {
+          "default" : {
+            "default" : [
+              "Target down."
+            ]
+          }
+        },
+        "wait" : {
+          "default" : {
+            "default" : [
+              "Standing by."
+            ]
+          }
+        },
+        "returnFromWait" : {
+          "default" : {
+            "default" : [
+              "Linking. Awaiting orders."
+            ]
+          }
+        }
+      }
+    }
+  },
+
+
+
+
+
+
+
+
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_augmentyr_soldierhead", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "glitchtier5achest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "humantier5mpants", "parameters" : { "colorIndex" : [1] }  } ],
+            "back" : [ { "name" : "foundryforemanback", "parameters" : { "colorIndex" : [1] }  } ],
+            "primary" : [
+              "gic_augmentyr_arm_mg",
+              "gic_augmentyr_arm_plasma",
+              "gic_augmentyr_arm_plasma"
+			  ],
+            "alt" : [ "gic_energyshield" ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 500.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.0
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "gic_suppressed_energyregenProtection" : {
+        "baseValue" : 1.0
+      },
+      "gic_suppressed_redflashProtection" : {
+        "baseValue" : 1.0
+      },
+      "gic_suppressed_vulnerabilityProtection" : {
+        "baseValue" : 1.0
+      },
+      "gic_suppressedProtection" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "objectName" : "gic_breadseedpoppy_wild",
+  "colonyTags" : ["nature"],
+  "rarity" : "Common",
+  "category" : "seed",
+  
+  "description" : "A seed containing Papaver somniferum, also known as the Opium Poppy or Breadseed Poppy. 
+  
+Opium can be harvested from these plants, where the dried latex from its pods can be processed into Opium. Its seeds can also be packaged for the food industry sector.
+Use of the opium poppy predates written history. The making and use of opium was known to the ancient Minoans. Its sap was later named opion by the ancient Greeks.",
+
+  "shortdescription" : "Breadseed Poppy Seed",
+  "objectType" : "farmable",
+  "printable" : false,
+  "price" : 25,
+
+  "inventoryIcon" : "gic_breadseedpoppy_icon.png",
+
+  "tooltipKind" : "gic_largebase",
+  "largeImage" : "gic_breadseedpoppy.png:default.2.0",
+
+
+  "orientations" : [
+    {
+      "dualImage" : "gic_breadseedpoppy.png:<color>.<stage>.<alt>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaces" : [ [0, 0], [0, 1], [0, 2] ],
+      "requireTilledAnchors" : false,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "radioMessagesOnPickup" : [ "pickupseed" ],
+
+  "stages" : [
+    {
+      "duration" : [570, 630] //[570, 630]
+    },
+    {
+      "duration" : [570, 630] //[570, 630]
+    },
+    {
+      "alts" : 5,
+      "harvestPool" : "gic_breadseedpoppyHarvest",
+      "resetToStage" : 1
+    }
+  ],
+
+  "maxImmersion" : 0.25
+}

@@ -1,0 +1,123 @@
+{
+  "type" : "gic_disillusionedfederal_guard",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  
+  "scriptConfig" : {
+    "behavior" : "gic_villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 1.00,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [5.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+      "converse" : "/dialog/mercenaries/gic_disillusionedfederal_converse.config:converse",
+	  
+      "greeting" : "/dialog/mercenaries/gic_disillusionedfederal_converse.config:converse",
+
+      "attack" : "/dialog/gic_generic_combat_panic.config:attack",
+      "reattack" : "/dialog/gic_generic_combat_panic.config:reattack",
+      "killedTarget" : "/dialog/gic_generic_combat_panic.config:killedTarget",
+      "lostTarget" : "/dialog/gic_generic_combat_panic.config:lostTarget",
+      "outOfSight" : "/dialog/gic_generic_combat_panic.config:outOfSight",
+      "cheerOn" : "/dialog/gic_generic_combat_panic.config:cheerOn",
+      "cantReach" : "/dialog/gic_generic_combat_panic.config:cantReach",
+
+      "hail" : "/dialog/gic_generic_guard_hail.config:hail",
+
+      "accuse" : "/dialog/thief.config:accuse"
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "default" : [
+      [0, [
+		  
+          {
+            "head" : [ { "name" : "gic_kabal6head", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_kotv3chest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_ebcplegs", "parameters" : { "colorIndex" : [1] }  } ],
+            "back" : [ { "name" : "gic_banner_wartornrepublicback", "parameters" : { "colorIndex" : [1] }  } ],
+            "primary" : [ "gic_usm45", "gic_transheya12" ]
+          }
+
+        ] ]
+		
+
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.7
+      },
+	  
+      "gic_true_1g" : {
+        "baseValue" : 1.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.3
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

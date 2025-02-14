@@ -1,0 +1,24 @@
+{
+  "itemName" : "gic_ironration",
+  "rarity" : "Common",
+  "price" : 3000,
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_ironration.png",
+  "description" : "The dreaded Iron Ration. To humans, this stuff is incredibly hard to eat.",
+  "shortdescription" : "Iron Ration",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 60
+    }
+  ] ],
+  "foodValue" : 95,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 20,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "type" : "gic_insurgent_soldier",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 14,
+  "dropPools" : [ "gic_wartorninsurgentTreasure" ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/gic_generic_combat_panic.config:attack",
+      "reattack" : "/dialog/gic_generic_combat_panic.config:reattack",
+      "killedTarget" : "/dialog/gic_generic_combat_panic.config:killedTarget",
+      "lostTarget" : "/dialog/gic_generic_combat_panic.config:lostTarget",
+      "outOfSight" : "/dialog/gic_generic_combat_panic.config:outOfSight",
+      "cheerOn" : "/dialog/gic_generic_combat_panic.config:cheerOn",
+      "cantReach" : "/dialog/gic_generic_combat_panic.config:cantReach"
+    },
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}],
+        [1.0, "wander"]
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  
+	  //Bushman
+          {
+            "head" : [ { "name" : "gic_operatorcaphead", "parameters" : { "colorIndex" : [0, 1] }  }, { "name" : "" }, { "name" : "" } ],
+            "chest" : [ { "name" : "workoutchest", "parameters" : { "colorIndex" : [1, 2, 3, 11] }  } ],
+            "legs" : [ { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : [1, 2, 3, 11] } } ],
+            "primary" : [
+			  
+			  "gic_m20c",
+			  "gic_usm47a2_insurgent_blindfire",
+			  "gic_sova545",
+			  "gic_fal"
+            ]
+          },
+	  
+	  
+	  //Militiaman
+          {
+            "head" : [ { "name" : "gic_stahlhelmhead", "parameters" : { "colorIndex" : [1] }  }, { "name" : "gic_militiaoperatorcaphead" }, { "name" : "gic_kabal6head" }, { "name" : "gic_bedouinhead" } ],
+            "chest" : [ { "name" : "gic_militiarigchest", "parameters" : { "colorIndex" : [1, 2, 3, 11] }  } ],
+            "legs" : [ { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [1, 2, 3, 11] } } ],
+            "primary" : [
+			  "gic_panzerfaust",
+			  "gic_mk483smaw",
+			  
+			  "gic_usm47a2_insurgent_blindfire",
+
+			  "gic_mg2750_npc",
+			  
+			  "gic_fal_riflegrenade_npc",
+			  "gic_fal_riflegrenade_npc",
+			  "gic_fal_sniper_npc",
+			  "gic_fal_sniper_npc",
+			  
+			  "gic_fal",
+			  "gic_fal",
+			  "gic_fal"
+            ]
+          },
+		  
+		  //Professional
+          {
+            "head" : [ { "name" : "gic_stahlhelmhead", "parameters" : { "colorIndex" : [11] }  }, { "name" : "gic_berethead", "parameters" : { "colorIndex" : [0, 11] } } ],
+            "chest" : [ { "name" : "gic_militiarigchest", "parameters" : { "colorIndex" : [11] }  } ],
+            "legs" : [ { "name" : "gic_ebcplegs", "parameters" : { "colorIndex" : [11] } } ],
+            "primary" : [
+			  "gic_panzerfaust",
+			  "gic_mk483smaw",
+			  
+			  "gic_usm47a2_insurgent_blindfire",
+			  
+			  "gic_mg2750_npc",
+			  
+			  "gic_fal_riflegrenade_npc",
+			  "gic_fal_riflegrenade_npc",
+			  "gic_fal_sniper_npc",
+			  "gic_fal_sniper_npc",
+			  
+			  "gic_fal",
+			  "gic_fal",
+			  "gic_fal"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_rally_insurgent_primer", "gic_npc_death_blood_explosion"],    
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.4
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -0.4
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.2
+      }
+	  
+	  
+    }
+  }
+  
+}

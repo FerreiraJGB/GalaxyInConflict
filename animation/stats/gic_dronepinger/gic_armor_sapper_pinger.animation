@@ -1,0 +1,39 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"body" : {
+				"properties" : {
+					"image" : "gic_armor_sapper_pinger.png<facingDirection>",
+					"zLevel" : -10,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0, 2.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [],
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

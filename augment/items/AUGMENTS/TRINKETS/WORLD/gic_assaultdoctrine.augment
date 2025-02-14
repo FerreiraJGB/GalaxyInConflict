@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_assaultdoctrine",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_assaultdoctrine.png",
+  "maxStack" : 1,  
+  "description" :
+
+"''At the tip of the spear of any attack is the infantry. No other force can hold ground as effectively but no other arm of the land battle is so misunderstood in so many ways. For most armies, only 10-20% of soldiers are actual frontline troops.''
+
+^orange;Enemies killed within approximately 60 blocks grant +33% [EWS] Hit Chance and Accuracy for all bearers with the doctrine equipped, for up to 15s^reset; | ^yellow;Counts as a 0-damage effect, also proccing ON-DAMAGE effects on a kill.",
+
+
+
+  
+  
+  
+  "shortdescription" : "Assault Doctrine",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_assaultdoctrine",
+    "displayName" : "Assault Doctrine",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_assaultdoctrine.png",
+    "effects" : [ "gic_assaultdoctrine_pinger", "gic_assaultdoctrine_primer" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_rig_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

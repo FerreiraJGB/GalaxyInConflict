@@ -1,0 +1,163 @@
+{
+  "projectileName" : "gic_magicshot_atomicfire_stage2_large_meltdown",
+  "image" : "gic_magicshot_atomicfire_stage2_large.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 0,
+  "piercing" : true,
+  "frameNumber" : 1,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 20,
+  "emitters" : [ "fireplasma" ],
+  "damagePoly" : [ [-64, 0], [-44, -44], [0, -64], [44, -44], [64, 0], [44, 44], [0, 64], [-44, 44]  ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_large_disappear",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 0
+    }
+  ],
+  
+  "actionOnReap" : [
+  ],
+  
+  "periodicActions" : [
+    {
+      "time" : 0.4,
+      "action" : "sound",
+      "options" : [
+        "/sfx/touhou/gic_touhou_se_kira00-13db.ogg"
+      ]
+    },    
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : -90
+    },
+  
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : -75
+    },
+  
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : -60
+    },
+  
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : -45
+    },
+  
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : -30
+    },
+  
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : -15
+    },
+  
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : 0
+    },
+	
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : 15
+    },
+	
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : 30
+    },
+	
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : 45
+    },
+	
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : 60
+    },
+	
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : 75
+    },	
+	
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : 90
+    }
+	
+	
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 50.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 10
+}

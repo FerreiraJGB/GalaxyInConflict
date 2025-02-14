@@ -1,0 +1,41 @@
+{
+  "id" : "gic_chapter2_bossrush_undercolonyquest",
+  "title" : "^orange;Boss Rush: Undercolony",
+  "text" : "Obtain: Electric Torch and Undefined Fantastic Object Earring (kill Scatter-Spear Sicario and Occasus Assassin).
+
+^orange;[Upon completion: Unlocks the Scatter-Spear Sicario and Occasus Assassin Boss-Rush Replays at the Portal Lab]",
+  "completionText" : "[Scatter-Spear Sicario and Occasus Assassin can now be replayed via the Portal Lab]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 100 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_electrictorch_player",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_undefinedfantasticobjectearring",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

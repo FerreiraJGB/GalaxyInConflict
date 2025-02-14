@@ -1,0 +1,34 @@
+{
+  "id" : "gic_tylian_bossrush_ancientvault_kilnquest",
+  "title" : "^orange;Boss Rush: Ancient Kiln",
+  "text" : "Obtain: Legionary's Ring (kill the Protectorate Deserter).
+
+^orange;[Upon completion: Unlocks the Protectorate Deserter Boss-Rush Replay at the Bazaar]",
+  "completionText" : "[Protectorate Deserter can now be replayed via the Bazaar]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_legionarysring",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_crusader_greatarrow_championbarrage_messenger",
+  "bounces" : 0,
+  "image" : "gic_crusader_greatarrow.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  
+  //0.328 per arrow.
+  
+  "periodicActions" : [
+    {
+      "time" : 0.328,
+      "action" : "projectile",
+      "type" : "gic_handcannon_a_revolverbarrage",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 1,
+	  "directional" :true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.656, //0.656
+  "physics" : "laser"
+}

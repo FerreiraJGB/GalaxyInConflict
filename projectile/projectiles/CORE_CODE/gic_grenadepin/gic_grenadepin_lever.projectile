@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_grenadepin_lever",
+  "image" : "gic_grenadepin_lever.png",
+  "animationCycle" : 0.25,
+  "renderLayer" : "Player+1", 
+  "physics" : "grenade",
+  "piercing" : true,
+  "bounces" : 20,
+  "speed" : 10,
+  //"frameNumber" : 1,
+  "timeToLive" : 10,
+  //"damageKindImage" : "icon.png",
+  "power" : 0,
+  "damageType" : "NoDamage",
+  "damageKind" : "default",
+  "actionOnCollide" : [
+    //{
+      //"action" : "sound",
+      //"options" : [ 
+	  //"/sfx/gic_casedrop1_disabled.ogg","/sfx/gic_casedrop2.ogg","/sfx/gic_casedrop3.ogg","/sfx/gic_casedrop4.ogg"
+	  //]
+    //}
+  ],
+  "actionOnHit" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_grenadepin_lever_end",
+      "fuzzAngle" : 360
+    }
+  ]
+}

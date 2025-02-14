@@ -1,0 +1,28 @@
+{
+  "projectileName" : "gic_utilinrocket_stage1",
+
+  "bounces" : 0,
+  "image" : "gic_utilinrocket_stage1.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_utilinrocket_stage2",
+      "inheritDamageFactor" : 1
+    }
+  ],
+  "power" : 10,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 250,
+  
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 20.0,
+  "acceleration" : -0.1,
+  "timeToLive" : 0.2,
+  "physics" : "rocket"
+}

@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_magicshot_iceeruption",
+  "image" : "gic_magicshot_iceeruption.png",
+  "physics" : "grenade",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 2,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "iceeruptiontele",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    }
+
+
+  ],
+  "statusEffects" : [ ],
+  "power" : 500.0,
+  "speed" : 20,
+  "knockback" : 18
+}

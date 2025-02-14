@@ -1,0 +1,41 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"body" : {
+				"properties" : {
+					"image" : "gic_droneturret.png<facingDirection>",
+					"zLevel" : -10,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : ["/sfx/tools/area_scan1.ogg"],
+		"reload" : ["/assetmissing.wav"]
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [0.4, 0.0], "count" : 2 }
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [0.4, 0.0], "count" : 3 }
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

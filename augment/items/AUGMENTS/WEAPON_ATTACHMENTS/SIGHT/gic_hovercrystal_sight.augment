@@ -1,0 +1,48 @@
+{
+  "itemName" : "gic_hovercrystal_sight",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Sight Attachment^white;",
+  "inventoryIcon" : "gic_hovercrystal_sight_icon.png",
+  "description" : "''Dumb as a rock when there's no hivemind connected to it.''
+  
+An odd attachment forged from anomalous Erchius crystals. Mysteriously manipulates munition mass.
+^green;+20% Accuracy.^reset;
+^yellow;Does not improve hit chance.^reset;
+
+^green;Right-click on a compatible GiC Weapon that supports any sight-type to attach.^reset;",
+  "shortdescription" : "Hover-Crystal Sight",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "sight", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_hovercrystal_sight", //name of attachment
+	"attachmentTag" : ["gic_sight", "gic_hovercrystal_sight"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/sight/gic_hovercrystal_sight.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_hovercrystal_sight", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "scope",
+		
+		//"scopeIn" : "/cursors/ews_scopeIn.cursor",
+		//"scopeInTime" : 0.5,						//seconds, aka the animationCycle from the cursor
+		//"scopeOut" : "/cursors/ews_scopeOut.cursor",
+		//"scopeOutTime" : 0.25,						//seconds, aka the animationCycle from the cursor
+		
+		"scopedIn" : "/cursors/gic_hovercrystal_sight_aim.cursor"	//only parameter absolutely needed for the scope function to work. Scope in and scope out stuff are optional.
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [0.8,0.8,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [0.8,0.8,1,1.] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

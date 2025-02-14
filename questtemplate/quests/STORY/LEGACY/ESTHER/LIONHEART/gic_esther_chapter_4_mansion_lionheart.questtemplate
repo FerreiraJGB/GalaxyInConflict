@@ -1,0 +1,42 @@
+{
+  "id" : "gic_esther_chapter_4_mansion_lionheartQuest",
+  "title" : "^#D1FFDE;Lionheart's Distant Bloodline", //Met inside the mansion before the Bridge.
+  "prerequisites" : [ ],
+  
+  "text" : "",
+  
+  "completionText" : "",
+  
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_newlondiniumsoldierhead", 1 ], [ "gic_newlondiniumsoldierchest", 10 ], [ "gic_newlondiniumsoldierlegs", 1 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      }
+    },
+
+
+    "descriptions" : {
+      "turnIn" : "Speak to ^orange;Lionheart^reset;."
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_4_lionheart",
+    "conditions" : [
+    ],
+  "setUniverseFlags" : ["gic_esther_chapter_1_hubworld_dockingbay75_attachment_brigandluteplayer"] 	
+
+  }
+}

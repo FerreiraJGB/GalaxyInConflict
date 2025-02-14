@@ -1,0 +1,44 @@
+{
+  "projectileName" : "gic_khurtovyna_erroralarm_summon_stage2",
+  "image" : "gic_khurtovyna_erroralarm_summon_stage1.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 20,
+  "timeToLive" : 0.5, //0.46
+  "onlyHitTerrain" : true,
+  
+"actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_voidexplosion",
+      "angle" : 90
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/SCPCB/gic_scp106_decay1.ogg",
+        "/sfx/SCPCB/gic_scp106_decay2.ogg",
+        "/sfx/SCPCB/gic_scp106_decay3.ogg"
+      ]
+    },
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_khurtovyna_voidflyer",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : { "damageTeam" : 2 }
+    }
+	
+],
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

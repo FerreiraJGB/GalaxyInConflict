@@ -1,0 +1,21 @@
+{
+  "name" : "gic_hardlightmicrogenerator",
+  "blockingStat" : "gic_hardlightmicrogeneratorStatusImmunity",
+
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 1, //20?
+    "triggerDamageThreshold" : 1000,
+    "explosionDamageAmount" : 0
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "gic_hardlightmicrogenerator.lua"
+  ],
+
+  "animationConfig" : "gic_hardlightmicrogenerator.animation",
+  
+  "label" : "Hardlight Micro-Generator - +100% DMG absorption when active. On taking damage, hardlight shield enters cooldown for 20s.",
+  "icon" : "/interface/statuses/gic_hardlightmicrogenerator.png"
+}

@@ -1,0 +1,34 @@
+{
+  "itemName" : "gic_defensediverter",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_defensediverter.png",
+  "maxStack" : 1,
+  "description" : 
+  
+
+//higher the stat value, better the resistance (i.e. with 0.5 stat mult and 0.1 bleedthrough amount, results in 0.1 - 0.1*0.5 = 0.05% bleedthrough amount)
+
+"''We would use anything in our fight against the Erchius. Stimulants, Heavy Machineguns, Tanks, Artillery, even tinkering with our very genes to give us a combat edge. Anything to keep the fight going against an enemy more relentless than the Florans.''
+
+^green;+50% SHIELD DEF Effectiveness.
+^red;-20% HP",
+
+
+
+  "shortdescription" : "Defense Diverter",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_defensediverter",
+    "displayName" : "Defense Diverter",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_defensediverter.png",
+    "effects" : [  "gic_defensediverter" ]
+  },
+
+  "radioMessagesOnPickup" : [ ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

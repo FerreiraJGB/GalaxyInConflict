@@ -1,0 +1,41 @@
+{
+  "objectName" : "gic_glitch_chandelier",
+  "colonyTags" : ["pretty","light"],
+  "rarity" : "Common",
+  "description" : "Chandelier.",
+  "shortdescription" : "Chandelier",
+  "race" : "apex",
+  "tooltipKind" : "gic_largebase",
+  "category" : "light",
+  "price" : 120,
+  "lightColor" : [191, 191, 163],
+
+  "inventoryIcon" : "gic_glitch_chandelier_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_chandelier.png:<color>.<frame>",
+      "imagePosition" : [-8, -16],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+      
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "fgAnchors" : [ [0, 1], [-1, 1] ]
+    }
+  ],
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "gic_glitch_chandelier.png",
+    "fg" : "gic_glitch_chandelier_lit.png"
+  },
+  "animationPosition" : [-8, -16],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+}

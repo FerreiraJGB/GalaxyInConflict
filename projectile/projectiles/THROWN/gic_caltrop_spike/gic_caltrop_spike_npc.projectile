@@ -1,0 +1,58 @@
+{
+  "projectileName" : "gic_caltrop_spike_npc",
+  "physics" : "gic_genecultist_javelin",
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "timeToLive" : 0.5,
+  "speed" : 70,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "damageType" : "ignoresdef",
+  "damageTeam" : { "type" : "indiscriminate" },
+  "lightColor" : [50, 0, 0],
+  "image" : "gic_caltrop_spike.png",
+  "frameNumber" : 1,
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/grenade/gic_anm14_bounce_01.ogg"
+      ]
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_caltrop_spike",
+      "fuzzAngle" : 45,
+	  "inheritSpeedFactor" : 1.0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_caltrop_spike",
+      "fuzzAngle" : 45,
+	  "inheritSpeedFactor" : 1.0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_caltrop_spike",
+      "fuzzAngle" : 45,
+	  "inheritSpeedFactor" : 1.0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_caltrop_spike",
+      "fuzzAngle" : 45,
+	  "inheritSpeedFactor" : 1.0
+    }
+  ],
+  "power" : 0,
+  
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  "rotationRate" : 1.0,
+  "trackingLimit" : 300,
+  
+  "damageKind" : "ews_explosive",
+  "damagePoly" : [ [-4.5, 0], [-3, -3], [0, -4.5], [3, -3], [4.5, 0], [3, 3], [0, 4.5], [-3, 3] ]
+}

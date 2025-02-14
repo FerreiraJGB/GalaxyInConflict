@@ -1,0 +1,146 @@
+{
+  "type" : "gic_surfacecityspacecolonist_protectorateguard",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ "gic_politicalprotectorateguardTreasure" ],
+  
+  "movementParameters" : {
+    "runSpeed" : 30,
+    "walkSpeed" : 10
+  },  
+  
+  "scriptConfig" : {
+    "behavior" : "gic_villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 0.85,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "questGenerator" : {
+      "pools" : ["guard"],
+      "enableParticipation" : false,
+      "timeLimit" : 30,
+      "nearbyQuestLimit" : 1,
+      "nearbyQuestRange" : 500,
+      "questCountRange" : [1, 4],
+      
+      "graduation" : {
+        "nextNpcType" : [
+          []
+        ]
+      }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [5.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+      "converse" : "/dialog/space_colony/gic_surfacecityspacecolonist_converse.config:converse",
+	  
+      "greeting" : "/dialog/space_colony/gic_surfacecityspacecolonist_converse.config:converse",
+
+      "attack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cantReach",
+
+      "hail" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard.config:hailProtectorate",
+
+      "accuse" : "/dialog/thief.config:accuse"
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "default" : [
+      [0, [
+		  
+          {
+            "chest" : [ { "name" : "peacekeeperchest", "parameters" : { "colorIndex" : [11] } } ],
+            "legs" : [ { "name" : "peacekeeperpants", "parameters" : { "colorIndex" : [11] } } ],
+            "primary" : [ "gic_copsc_laserrifle" ]
+          }
+
+        ] ]
+		
+
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 666.6666
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+	  //Vanilla
+      "physicalResistance" : {
+        "baseValue" : 0.8
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.4
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

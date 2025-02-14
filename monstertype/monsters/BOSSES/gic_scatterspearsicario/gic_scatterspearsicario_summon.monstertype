@@ -1,0 +1,699 @@
+{
+  "type" : "gic_scatterspearsicario_summon",
+  "shortdescription" : "[Scatter-Spear Sicario]",
+  "description" : "This stench... Smells like you, stranger.",
+
+  "categories" : [ "gic_scatterspearsicario" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_scatterspearsicario.animation",
+
+  "dropPools" : [], //{ "default" : "banditTreasure", "bow" : "banditTreasure" }
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster.lua"
+    ],
+	
+	
+    "damageBar" : "None",
+
+    "behavior" : "monster",
+
+    "seeThroughLiquid" : false,
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 120,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 90,
+      "targetOutOfSightTime" : 15,
+
+      "damageTakenActions" : [
+	  //Long-range - Self-Healing - Much fairer than the old one... Winds up, then does a heal. Easy to punish, if one dodges the knives that stun.
+       {
+          "name" : "action-fire",
+          "cooldown" : 15,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 90,
+            "minimumRange" : 10,
+            "windupStopForce" : 10,
+            "windupState" : "selfhealingwindup",
+            "windupTime" : 1.8,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_ibuki_gourd_heal",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.6,
+			  "power" : 0,
+			  "knockback" : 0
+			  
+            },
+            "fireOffsets" : [[0.2, 0.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "selfhealing",
+            "fireSound" : "",
+            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        }
+      ],
+	  
+      "foundTargetActions" : [
+      ],
+
+      "hostileActions" : [
+	  
+	  
+ 
+	  
+	  
+	  
+
+	  
+	  
+	  
+
+	  
+	  //Mid-range - Dash Thrust - Short-ranged burst into the player.
+      {
+        "name" : "action-charge",
+        "cooldown" : 7.0,
+        "parameters" : {
+          "maximumRange" : 20,
+          "minimumRange" : 10, //20
+          "windupTime" : 0.4,
+          "chargeTime" : 0.150, //0.150
+          "chargeSpeed" : 2400, //2400
+          "chargeControlForce" : 1200, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "dashthrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 1,
+          "winddownState" : "dashthrustwinddown"
+        }
+      },
+	  
+	  
+	  
+	  //Close Range - Double-handed Overhead Swing - He's trying.		
+		{
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 6, //5
+          "minimumRange" : 0,
+          "windupTime" : 0.66,
+          "chargeTime" : 0.2, //0.150
+          "chargeSpeed" : 800, //2400
+          "chargeControlForce" : 400, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "overheadswing",
+          "windupState" : "overheadswingwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : "overheadswingwinddown"
+        }
+      },
+	
+	
+	  //Close-range - Kick-Gun Combo - Rear-punches with the spear before turning to fire a shot.
+       {
+          "name" : "action-fire",
+          "cooldown" : 3, //7
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 5,
+            "minimumRange" : 0, //8
+            "windupStopForce" : 10,
+            "windupState" : "meleeguncombowindup",
+            "windupTime" : 1.3,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_handcannon_immediate_a_sicario", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 37.5,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_smallarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[3.5, -0.3]], //x, 1.0 for accurate fire
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "meleeguncomboriflefire",
+            "fireSound" : "fire",
+            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 1.25
+          }
+        },
+	
+	
+		
+	  //Mid-range - Dash Thrust - Short-ranged burst into the player. Slightly less range than the one above.
+      {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "maximumRange" : 12,
+          "minimumRange" : 4, //20
+          "windupTime" : 0.4,
+          "chargeTime" : 0.10, //0.150
+          "chargeSpeed" : 2400, //2400
+          "chargeControlForce" : 800, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "dashthrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 1.0,
+          "winddownState" : "dashthrustwinddown"
+        }
+      },		
+
+	
+		
+	  //Close Range - Thrust Jab - Will absolutely hammer the player. Will not stun.
+		{
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 8, //7
+          "minimumRange" : 0,
+          "windupTime" : 0.66,
+          "chargeTime" : 0.2, //0.150
+          "chargeSpeed" : 200, //2400
+          "chargeControlForce" : 800, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrustjab",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : "idle"
+        }
+      },
+		
+		
+		
+		
+	  //Close Range - Sweep - General Attack.		
+		{
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 8, //7
+          "minimumRange" : 0,
+          "windupTime" : 0.4,
+          "chargeTime" : 0.15, //0.150
+          "chargeSpeed" : 10, //2400
+          "chargeControlForce" : 800, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "sweep",
+          "windupState" : "sweepwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : ""
+        }
+      },
+		
+		
+		
+		
+	  //Mid-range - Running Thrust - Literally just tries to run at the player.
+      {
+        "name" : "action-charge",
+        "cooldown" : 8.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 15, //20
+          "windupTime" : 0.25,
+          "chargeTime" : 1,
+          "chargeSpeed" : 22, //18
+          "chargeControlForce" : 1200,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "runcharge",
+          "windupState" : "dashthrustwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : "dashthrustwinddown"
+        }
+      },		
+		
+
+	  //Long-range - Sniping Shot - Fires at the player, dealing immense damage and stun.
+       {
+          "name" : "action-fire",
+          "cooldown" : 4, //7
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 90,
+            "minimumRange" : 15, //8
+            "windupStopForce" : 10,
+            "windupState" : "riflewindup",
+            "windupTime" : 1,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_handcannon_immediate_a_sicario", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 37.5,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_smallarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[3.5, 0.8]], //x, 1.0 for accurate fire
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "riflefire",
+            "fireSound" : "fire",
+            "aimDirection" : [0, 0],
+            "winddownState" : "riflewinddown",
+            "winddownTime" : 1
+          }
+        },
+		
+		
+		
+	  //Mid-ranged - Knife - Apply pressure.
+       {
+          "name" : "action-fire",
+          "cooldown" : 8,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 80,
+            "minimumRange" : 20,
+            "windupStopForce" : 10,
+            "windupState" : "throwwindup",
+            "windupTime" : 0.35,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_magicshot_knife_fanofknives_stage2_sicario", //meleeslash
+            "projectileParameters" : {
+              "speed" : 90, //80
+              "timeToLive" : 8.0,
+			  "power" : 10,
+			  "knockback" : 10,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 0.2]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "throw",
+            "fireSound" : "",
+//            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 0.25
+          }
+        }
+	
+		
+
+		
+		
+		
+	  
+	  
+	
+      ],
+
+      "periodicActions" : [],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "wanderActions" : [
+      ]
+    },
+
+    "damageParts" : { //For all moving attacks.
+      "body" : {
+        "damage" : 100,
+
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 10,
+        "statusEffects" : [ ]
+      }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.15], [0.5, -2.15], [0.5, 2.0], [-0.5, 2.0] ],
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.05,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.75], [-0.35, -2.05], [0.35, -2.05], [0.75, -1.75], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ], 
+
+      "mass" : 1,
+      "walkSpeed" : 8,
+      "runSpeed" : 8,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 1
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 50
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 10000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -2.5
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

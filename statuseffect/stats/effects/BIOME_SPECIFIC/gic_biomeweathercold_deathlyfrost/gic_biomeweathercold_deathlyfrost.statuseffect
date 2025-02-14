@@ -1,0 +1,25 @@
+{
+  "name" : "gic_biomeweathercold_deathlyfrost",
+  "blockingStat" : "gic_biomeweathercold_deathlyfrostImmunity",
+
+  "effectConfig" : {
+    "directives" : "fade=AAAAFF=0.3",
+    "movementModifiers" : {
+      "speedModifier" : 0.3,
+      "airJumpModifier" : 0.5
+    },
+    "tickRate" : 40,
+    "energyCost" : 3,
+    "healthDamage" : 10
+  },
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "gic_biomeweathercold_deathlyfrost.lua"
+  ],
+
+  "animationConfig" : "gic_biomeweathercold_deathlyfrost.animation",
+
+  "label" : "Deathly Frost - Energy Reserves ceases to be viable and The Storm will kill you over time.",
+  "icon" : "/interface/statuses/biomecold.png"
+}

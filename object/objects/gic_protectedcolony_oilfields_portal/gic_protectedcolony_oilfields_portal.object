@@ -1,0 +1,48 @@
+{
+  "objectName" : "gic_protectedcolony_oilfields_portal",
+  "colonyTags" : ["Human"],
+  "rarity" : "Legendary",
+  "category" : "other",
+  "price" : 0,
+  "printable" : false,
+
+  "description" : "[This door will disappear after six hours once entered]",
+  "shortdescription" : "Oil Fields Entrance",
+  "race" : "human",
+
+  "lightColor" : [76, 60, 86],
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_protectedcolony_oilfields_portal.png:<color>.<frame>", "fullbright" : true }, { "image" : "gic_protectedcolony_oilfields_portal_lit.png:<color>.<frame>" } ],
+      "imagePosition" : [-16, 0],
+      "animationPosition" : [-16, 0],
+      "spaceScan" : 0.1,
+
+      "anchors" : [ "bottom" ],
+      "direction" : "right",
+
+      "lightPosition" : [0, 3],
+
+      "detectArea" : [ [-3, 0], [3, 5] ]
+    }
+  ],
+
+  "animation" : "/objects/gic_protectedcolony_oilfields_portal/gic_protectedcolony_oilfields_portal.animation",
+  "animationParts" : {
+    "bg" : "gic_protectedcolony_oilfields_portal.png",
+    "fg" : "gic_protectedcolony_oilfields_portal_lit.png"
+  },
+
+  "scripts" : [ "/objects/gic_protectedcolony_oilfields_portal/gic_protectedcolony_oilfields_portal.lua" ],
+  "scriptDelta" : 20,
+
+  "vanishTime" : 21600,
+
+  "messagePlayerInterval" : 0.5,
+  "messagePlayerRange" : 30,
+
+  "health" : 10,
+  "smashOnBreak" : true
+}

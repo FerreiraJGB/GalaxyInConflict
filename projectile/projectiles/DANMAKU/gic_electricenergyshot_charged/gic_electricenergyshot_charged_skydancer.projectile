@@ -1,0 +1,60 @@
+{
+  "projectileName" : "gic_electricenergyshot_charged_skydancer",
+  "physics" : "grenade",
+  "bounces" : 0,
+  "image" : "gic_electricenergyshot.png",
+  "animationCycle" : 1,
+  "lightColor" : [0, 0, 128],
+  "renderLayer" : "Monster+10",
+  "frameNumber" : 1,
+  "supportsProcessing" : true,
+  "power" : 400,
+  "speed" : 200,
+  "damageKind" : "ews_heavyarmsthermal",
+  "damageType" : "ignoresdef",
+//  "statusEffects" : [ "gic_electricaldamage" ],
+  "emitters" : [ "electricplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_laserimpact/gic_laserimpact.config"
+    }
+  ],
+  
+"periodicActions" : [
+	
+    {
+      "time" : 0.004,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_railgun_trail/trail.png",
+        "position" : [0.5, 0],
+        "layer" : "front",
+        "timeToLive" : 0.1,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+] 
+  
+}

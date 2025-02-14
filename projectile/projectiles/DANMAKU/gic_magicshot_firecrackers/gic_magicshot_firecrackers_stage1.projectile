@@ -1,0 +1,59 @@
+{
+  "projectileName" : "gic_magicshot_firecrackers_stage1",
+  "bounces" : 0,
+  "image" : "gic_magicshot_firecrackers_stage1.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_firecrackers_stage2",
+      "inheritDamageFactor" : 1,
+	  "directional" :true,
+	  "fuzzAngle": 20
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_firecrackers_stage2",
+      "inheritDamageFactor" : 1,
+	  "directional" :true,
+	  "fuzzAngle": 20
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_firecrackers_stage2",
+      "inheritDamageFactor" : 1,
+	  "directional" :true,
+	  "fuzzAngle": 20
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_firecrackers_stage2",
+      "inheritDamageFactor" : 1,
+	  "directional" :true,
+	  "fuzzAngle": 20
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_firecrackers_stage2",
+      "inheritDamageFactor" : 1,
+	  "directional" :true,
+	  "fuzzAngle": 20
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "onlyHitTerrain" : true,
+  "piercing" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.01,
+  "physics" : "laser"
+}

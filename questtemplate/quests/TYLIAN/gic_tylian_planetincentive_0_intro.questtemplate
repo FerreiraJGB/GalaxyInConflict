@@ -1,0 +1,40 @@
+{
+  "id" : "gic_tylian_planetincentive_0_introquest",
+  "title" : "^#CC7970;Tylian of Gensokyo",
+  "prerequisites" : [ ],
+  
+  //QUEST 1
+  
+
+  
+  "text" : "Ah. I think I've heard of you before. Are you lost, perchance? No? Yes? No matter then. Methinks you'd prefer to be given the task instead. Have a few credits then! Welcome to the Celestial Dream, haha! What a bloody shithole, it is.",
+  
+
+  
+  "completionText" : "I can offer you some small jobs across some of the more dangerous planets, or you can try tempering your dream-states with the statue, fight those tough fights again.",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 15 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+		"portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+		},
+//    "gic_missionUnlockedCinema" : "",
+//    "gic_missionCompleteCinema" : "",	 //leave as coordinates if no need for secondary
+    "turnInDescription" : "Speak to Tylian.",
+    "requireTurnIn" : true
+  }
+  
+  
+}

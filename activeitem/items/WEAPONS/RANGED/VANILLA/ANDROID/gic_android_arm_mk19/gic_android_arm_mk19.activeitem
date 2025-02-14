@@ -1,0 +1,114 @@
+{
+  "itemName" : "gic_android_arm_mk19",
+  "price" : 1500,
+  "inventoryIcon" : "gic_android_arm_mk19.png",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "oh hecc",
+  "shortdescription" : "Android Arm Machinegun NPC",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "holy shit",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : false,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_android_arm_mk19.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/WEAPONS/ranged/gic_heavymachinegun_muzzleflash.png"
+  },
+  
+  "animationCustom" : {  "particleEmitters" : { "muzzleFlash" : {  "burstCount" : 1, "particles" : [
+ 
+            { "particle" : {
+                "type" : "textured",
+                "image" : "/projectiles/CASINGS/gic_heatshellcasing/gic_heatshellcasing.png:0",
+                "position" : [-1.8, 0.2],
+                "size" : 1.0,
+                "color" : [255, 255, 255, 255],
+                "fade" : 0,
+                "initialVelocity" : [-5.0, 6.5],
+                "finalVelocity" : [0, -60],
+                "approach" : [5, 50],
+                "rotation" : -90,
+                "flippable" : true,
+                "angularVelocity" : 0,
+                "timeToLive" : 3,
+                "destructionAction" : "fade",
+                "destructionTime" : 1,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [3, 1],
+                  "timeToLive" : 0.1
+                }
+              } }
+
+ ] } },
+    "sounds" : {
+    "fire" : [ "/sfx/gun/gic_50cal1.ogg", "/sfx/gun/gic_50cal2.ogg" ]
+    }
+  },  
+  
+  
+  
+  
+
+
+  "baseOffset" : [0.9, 0.4],
+  "muzzleOffset" : [0.8, 0.2],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "ews_heavyarms",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.005,
+    "baseDps" : 40000,
+    "energyUsage" : 80,
+    "inaccuracy" : 0.02,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "gic_redtracerbullet_heavy_c",
+    "projectileParameters" : {
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.17,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [-0.0, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.0,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [-0.0, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

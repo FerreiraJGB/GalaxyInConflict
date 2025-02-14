@@ -1,0 +1,1280 @@
+[
+  [  // TEST INFO
+    {
+      "inverse": true,
+      "op": "test",
+      "path": "/mods_present"
+    },
+    {
+      "op": "add",
+      "path": "/mods_present",
+      "value": {}
+    }
+  ],
+  
+  [  //THIS MOD PRESENT
+    {
+      "op": "add",
+      "path": "/mods_present/Galaxy_in_Conflict",
+      "value": true
+    }
+  ],
+  
+  [  //CLEAR TEST FOR TRUESPACE
+    {
+      "inverse": false,
+      "op": "test",
+      "path": "/systemTypes/ClassBStar"
+    },
+    {
+      "op": "add",
+      "path": "/mods_present/TrueSpace",
+      "value": true
+    }
+  ],
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  [ //COLONIZED BARREN ROCK
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_colonized_barrenrock",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/biomes/gic_colonized_barrenrock/maskie<num>.png",
+        "dynamicsImages": "/celestial/system/terrestrial/dynamics/arid/<num>.png",
+        "dynamicsRange": [ 1, 50 ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_colonized_barrenrock",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/horizon/textures/gic_colonized_barrenrock_<selector>.png",
+        "maskPerPlanetRange": [ 0, 0 ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier2/baseParameters/terrestrialType/-",
+      "value": "gic_colonized_barrenrock"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier3/baseParameters/terrestrialType/-",
+      "value": "gic_colonized_barrenrock"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier4/baseParameters/terrestrialType/-",
+      "value": "gic_colonized_barrenrock"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier5/baseParameters/terrestrialType/-",
+      "value": "gic_colonized_barrenrock"
+    },
+    {
+      "op": "add",
+      "path": "/satelliteTypes/Tier1/baseParameters/terrestrialType/-",
+      "value": "gic_colonized_barrenrock"
+    }
+  ],
+  
+  
+  
+  
+  
+  [ //TRUESPACE - COLONIZED BARREN ROCK
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/SpicyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_colonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/HotPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_colonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/WarmPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_colonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_colonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/CoolPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_colonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/ColdPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_colonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/FrostyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_colonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/DrkPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_colonized_barrenrock"
+    }
+  ],
+  
+  
+  
+  
+  [ //COLONIZED BARREN ROCK
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_afflictedcolonized_barrenrock",
+      "value": {
+      "baseImages" : "/celestial/system/terrestrial/biomes/midnight/maskie<num>.png",
+      "liquidImages" : "",
+      "dynamicsImages" : "/celestial/system/terrestrial/dynamics/arid/<num>.png",
+      "dynamicsRange" : [1, 30]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_afflictedcolonized_barrenrock",
+      "value": {
+      "baseImages" : "/celestial/system/terrestrial/horizon/textures/midnight_<selector>.png",
+      "maskPerPlanetRange" : [3, 3]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier2/baseParameters/terrestrialType/-",
+      "value": "gic_afflictedcolonized_barrenrock"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier3/baseParameters/terrestrialType/-",
+      "value": "gic_afflictedcolonized_barrenrock"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier4/baseParameters/terrestrialType/-",
+      "value": "gic_afflictedcolonized_barrenrock"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier5/baseParameters/terrestrialType/-",
+      "value": "gic_afflictedcolonized_barrenrock"
+    }
+  ],
+  
+  
+  
+  
+  
+  [ //TRUESPACE - AFFLICTED COLONIZED BARREN ROCK
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/SpicyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_afflictedcolonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/HotPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_afflictedcolonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/WarmPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_afflictedcolonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_afflictedcolonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/CoolPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_afflictedcolonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/ColdPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_afflictedcolonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/FrostyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_afflictedcolonized_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/DrkPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_afflictedcolonized_barrenrock"
+    }
+  ],  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  [ //BARREN ROCK
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_barrenrock",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/biomes/gic_barrenrock/maskie<num>.png",
+        "dynamicsImages": "/celestial/system/terrestrial/dynamics/arid/<num>.png",
+        "dynamicsRange": [ 1, 50 ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_barrenrock",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/horizon/textures/gic_barrenrock<selector>.png",
+        "maskPerPlanetRange": [ 0, 0 ]
+      }
+    }
+//    {
+//      "op": "add",
+//      "path": "/planetaryTypes/Tier1/baseParameters/terrestrialType/-",
+//      "value": "gic_barrenrock"
+//    },
+  ],  
+  
+  
+  
+  
+  [ //TRUESPACE - BARREN ROCK
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/SpicyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/HotPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/WarmPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/CoolPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/ColdPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/FrostyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenrock"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/DrkPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenrock"
+    }
+  ],
+  
+  
+  
+  
+  
+  
+  
+  
+  [ //BARREN FREEZE
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_barrenfreeze",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/biomes/gic_barrenrock/maskie<num>.png",
+        "dynamicsImages": "/celestial/system/terrestrial/dynamics/arid/<num>.png",
+        "dynamicsRange": [ 1, 50 ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_barrenfreeze",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/horizon/textures/gic_barrenfreeze<selector>.png",
+        "maskPerPlanetRange": [ 0, 0 ]
+      }
+    }
+//    {
+//      "op": "add",
+//      "path": "/planetaryTypes/Tier1/baseParameters/terrestrialType/-",
+//      "value": "gic_barrenfreeze"
+//    },
+  ],  
+  
+  
+  
+  
+  [ //TRUESPACE - BARREN FREEZE
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/SpicyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenfreeze"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/HotPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenfreeze"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/WarmPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenfreeze"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenfreeze"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/CoolPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenfreeze"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/ColdPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenfreeze"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/FrostyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenfreeze"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/DrkPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_barrenfreeze"
+    }
+  ],  
+  
+  
+  
+  
+  
+  
+  
+  
+  [ //ATMOSPHERIC WARTORN (Desert and Grass)
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_atmospheric_wartorn",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/biomes/gic_atmospheric_wartorn/maskie<num>.png",
+        "dynamicsImages": "/celestial/system/terrestrial/dynamics/temperate/<num>.png",
+        "dynamicsRange": [ 1, 4 ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_atmospheric_wartorn",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/horizon/textures/gic_atmospheric_wartorn_<selector>.png",
+        "maskPerPlanetRange": [ 3, 5 ],
+        "maskRange": [ 1, 25 ],
+        "maskTextures": "/celestial/system/terrestrial/horizon/masks/temperate/<mask>_<selector>.png"
+      }
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier3/baseParameters/terrestrialType/-",
+      "value": "gic_atmospheric_wartorn"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier4/baseParameters/terrestrialType/-",
+      "value": "gic_atmospheric_wartorn"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier5/baseParameters/terrestrialType/-",
+      "value": "gic_atmospheric_wartorn"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier6/baseParameters/terrestrialType/-",
+      "value": "gic_atmospheric_wartorn"
+    }
+//    {
+//      "op": "add",
+//      "path": "/satelliteTypes/Tier1/baseParameters/terrestrialType/-",
+//      "value": "gic_atmospheric_wartorn"
+//    }
+  ],  
+  
+  
+  
+  
+  [ //TRUESPACE - ATMOSPHERIC WARTORN
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/SpicyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_atmospheric_wartorn"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/HotPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_atmospheric_wartorn"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/WarmPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_atmospheric_wartorn"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_atmospheric_wartorn"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/CoolPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_atmospheric_wartorn"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/ColdPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_atmospheric_wartorn"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/FrostyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_atmospheric_wartorn"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/DrkPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_atmospheric_wartorn"
+    }
+  ],
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  [ //FOREST RAZED (Desert and Grass)
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_razed_forest",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/biomes/gic_razed_forest/maskie<num>.png",
+        "dynamicsImages": "/celestial/system/terrestrial/dynamics/temperate/<num>.png",
+        "dynamicsRange": [ 1, 4 ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_razed_forest",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/horizon/textures/gic_razed_forest_<selector>.png",
+        "maskPerPlanetRange": [ 3, 5 ],
+        "maskRange": [ 1, 25 ],
+        "maskTextures": "/celestial/system/terrestrial/horizon/masks/temperate/<mask>_<selector>.png"
+      }
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier2/baseParameters/terrestrialType/-",
+      "value": "gic_razed_forest"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier3/baseParameters/terrestrialType/-",
+      "value": "gic_razed_forest"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier4/baseParameters/terrestrialType/-",
+      "value": "gic_razed_forest"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier5/baseParameters/terrestrialType/-",
+      "value": "gic_razed_forest"
+    }
+  ],  
+  
+  
+  
+  
+  [ //TRUESPACE - FOREST RAZED
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/SpicyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_razed_forest"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/HotPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_razed_forest"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/WarmPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_razed_forest"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_razed_forest"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/CoolPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_razed_forest"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/ColdPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_razed_forest"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/FrostyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_razed_forest"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/DrkPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_razed_forest"
+    }
+  ],
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  [ //PROTECTED COLONY
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_protectedcolony",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/biomes/snow/maskie<num>.png",
+        "dynamicsImages": "/celestial/system/terrestrial/dynamics/temperate/<num>.png",
+        "dynamicsRange": [ 1, 4 ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_protectedcolony",
+      "value": {
+	  
+        "baseImages": "/celestial/system/terrestrial/horizon/textures/snow_<selector>.png",
+//        "maskPerPlanetRange": [ 0, 0 ],
+        "maskPerPlanetRange": [ 3, 5 ],
+        "maskRange": [ 1, 25 ],
+        "maskTextures": "/celestial/system/terrestrial/horizon/masks/temperate/<mask>_<selector>.png"
+      }
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier2/baseParameters/terrestrialType/-",
+      "value": "gic_protectedcolony"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier3/baseParameters/terrestrialType/-",
+      "value": "gic_protectedcolony"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier4/baseParameters/terrestrialType/-",
+      "value": "gic_protectedcolony"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier5/baseParameters/terrestrialType/-",
+      "value": "gic_protectedcolony"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier6/baseParameters/terrestrialType/-",
+      "value": "gic_protectedcolony"
+    }
+  ],  
+  
+  
+  
+  
+  [ //TRUESPACE - PROTECTED COLONY
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/SpicyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_protectedcolony"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/HotPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_protectedcolony"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/WarmPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_protectedcolony"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_protectedcolony"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/CoolPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_protectedcolony"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/ColdPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_protectedcolony"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/FrostyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_protectedcolony"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/DrkPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_protectedcolony"
+    }
+  ],
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  [ //CRUSADE
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_crusade",
+      "value": {
+      "baseImages" : "/celestial/system/terrestrial/biomes/ocean/maskie<num>.png",
+      "dynamicsImages" : "/celestial/system/terrestrial/dynamics/ocean/<num>.png",
+      "dynamicsRange" : [1, 20]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_crusade",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/horizon/textures/gic_crusade_<selector>.png",
+        "maskPerPlanetRange": [ 1, 2 ],
+        "maskRange": [ 1, 25 ],
+      "maskTextures" : "/celestial/system/terrestrial/horizon/masks/ocean/<mask>_<selector>.png"
+      }
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier2/baseParameters/terrestrialType/-",
+      "value": "gic_crusade"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier3/baseParameters/terrestrialType/-",
+      "value": "gic_crusade"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier4/baseParameters/terrestrialType/-",
+      "value": "gic_crusade"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier5/baseParameters/terrestrialType/-",
+      "value": "gic_crusade"
+    }
+  ],  
+  
+  
+  
+  
+  [ //TRUESPACE - CRUSADE
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/SpicyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_crusade"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/HotPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_crusade"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/WarmPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_crusade"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_crusade"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/CoolPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_crusade"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/ColdPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_crusade"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/FrostyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_crusade"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/DrkPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_crusade"
+    }
+  ],
+    
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  [ //WILDLANDS
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_wildlands",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/biomes/forest/maskie<num>.png",
+        "dynamicsImages": "/celestial/system/terrestrial/dynamics/temperate/<num>.png",
+        "dynamicsRange": [ 1, 4 ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_wildlands",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/horizon/textures/forest_<selector>.png",
+        "maskPerPlanetRange": [ 3, 5 ],
+        "maskRange": [ 1, 25 ],
+        "maskTextures": "/celestial/system/terrestrial/horizon/masks/temperate/<mask>_<selector>.png"
+      }
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier2/baseParameters/terrestrialType/-",
+      "value": "gic_wildlands"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier3/baseParameters/terrestrialType/-",
+      "value": "gic_wildlands"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier4/baseParameters/terrestrialType/-",
+      "value": "gic_wildlands"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier5/baseParameters/terrestrialType/-",
+      "value": "gic_wildlands"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier6/baseParameters/terrestrialType/-",
+      "value": "gic_wildlands"
+    },
+    {
+      "op": "add",
+      "path": "/satelliteTypes/Tier1/baseParameters/terrestrialType/-",
+      "value": "gic_wildlands"
+    }
+  ],  
+  
+  
+  
+  
+  [ //TRUESPACE - WILDLANDS
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/SpicyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_wildlands"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/HotPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_wildlands"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/WarmPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_wildlands"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_wildlands"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/CoolPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_wildlands"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/ColdPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_wildlands"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/FrostyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_wildlands"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/DrkPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_wildlands"
+    }
+  ],
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  [ //FROSTED PLANET
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_frosted",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/biomes/arctic/maskie<num>.png",
+        "dynamicsImages": "/celestial/system/terrestrial/dynamics/ocean/<num>.png",
+        "dynamicsRange": [ 1, 20 ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_frosted",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/horizon/textures/snow_<selector>.png",
+        "maskPerPlanetRange": [ 0, 0 ]
+      }
+    },
+	
+	
+	
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier2/baseParameters/terrestrialType/-",
+      "value": "gic_frosted"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier3/baseParameters/terrestrialType/-",
+      "value": "gic_frosted"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier4/baseParameters/terrestrialType/-",
+      "value": "gic_frosted"
+    },
+    {
+      "op": "add",
+      "path": "/planetaryTypes/Tier6/baseParameters/terrestrialType/-",
+      "value": "gic_frosted"
+    }
+  ],
+  
+  [ //TRUESPACE - FROSTED
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/CoolPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_frosted"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/ColdPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_frosted"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/FrostyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_frosted"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_frosted"
+    }, 
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/DrkPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_frosted"
+    },	
+	
+    {
+      "op" : "add",
+      "path" : "/satelliteTypes/MildNSat/baseParameters/terrestrialType/-",
+      "value" : "gic_frosted"
+    },
+    {
+      "op" : "add",
+      "path" : "/satelliteTypes/CoolNSat/baseParameters/terrestrialType/-",
+      "value" : "gic_frosted"
+    },
+    {
+      "op" : "add",
+      "path" : "/satelliteTypes/ColdNSat/baseParameters/terrestrialType/-",
+      "value" : "gic_frosted"
+    },
+    {
+      "op" : "add",
+      "path" : "/satelliteTypes/FrostyNSat/baseParameters/terrestrialType/-",
+      "value" : "gic_frosted"
+    },
+    {
+      "op" : "add",
+      "path" : "/satelliteTypes/DrkNSat/baseParameters/terrestrialType/-",
+      "value" : "gic_frosted"
+    }
+  ],
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  [ //DENSE PLANET
+    {
+      "op": "add",
+      "path": "/terrestrialGraphics/gic_denseplanet",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/biomes/volcanic/maskie<num>.png",
+        "dynamicsImages": "/celestial/system/terrestrial/dynamics/temperate/<num>.png",
+        "dynamicsRange": [ 1, 30 ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/terrestrialHorizonGraphics/gic_denseplanet",
+      "value": {
+        "baseImages": "/celestial/system/terrestrial/horizon/textures/volcanic_<selector>.png",
+        "maskPerPlanetRange": [ 3, 3 ],
+        "maskRange": [ 1, 25 ],
+        "maskTextures": "/celestial/system/terrestrial/horizon/masks/temperate/<mask>_<selector>.png"
+      }
+    }
+  ],
+  
+  [ //TRUESPACE - DENSE PLANET
+    {
+      "op" : "test",
+      "path" : "/mods_present/TrueSpace",
+      "inverse" : false
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/IradPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_denseplanet"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/SpicyPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_denseplanet"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/HotPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_denseplanet"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/WarmPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_denseplanet"
+    },
+    {
+      "op" : "add",
+      "path" : "/planetaryTypes/MildPlanet/baseParameters/terrestrialType/-",
+      "value" : "gic_denseplanet"
+    },  
+	
+    {
+      "op" : "add",
+      "path" : "/satelliteTypes/MildNSat/baseParameters/terrestrialType/-",
+      "value" : "gic_denseplanet"
+    },
+    {
+      "op" : "add",
+      "path" : "/satelliteTypes/WarmNSat/baseParameters/terrestrialType/-",
+      "value" : "gic_denseplanet"
+    },
+    {
+      "op" : "add",
+      "path" : "/satelliteTypes/IradNSat/baseParameters/terrestrialType/-",
+      "value" : "gic_denseplanet"
+    },
+    {
+      "op" : "add",
+      "path" : "/satelliteTypes/SpicyNSat/baseParameters/terrestrialType/-",
+      "value" : "gic_denseplanet"
+    },
+    {
+      "op" : "add",
+      "path" : "/satelliteTypes/HotNSat/baseParameters/terrestrialType/-",
+      "value" : "gic_denseplanet"
+    }
+  ]
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+]

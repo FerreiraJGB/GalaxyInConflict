@@ -1,0 +1,42 @@
+{
+  "itemName" : "gic_ringofthedamned",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_ringofthedamned.png",
+  "maxStack" : 1,  
+  "description" :
+
+"''Sacred, the hill of graves. Angel, a despairing face. Heartless, the evil eyes. Present, the sacrifice.''
+
+A ring that pleads to darkness itself not for favor, but for its ignorance. Chaos is still chaos, who in the absence of the divine, will only inevitably destroy everything in an eternal process of entropy.
+^orange;+10% [EWS] HIT CHANCE and ACCURACY for every 10% of HP missing (max 50%, up to +50%).^reset;",
+
+
+
+  
+  
+  
+  "shortdescription" : "Ring of the Damned",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_ringofthedamned",
+    "displayName" : "Ring of the Damned",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_ringofthedamned.png",
+    "effects" : [ 
+
+	"gic_ringofthedamned_90",	
+	"gic_ringofthedamned_80",
+    "gic_ringofthedamned_70",
+	"gic_ringofthedamned_60",
+	"gic_ringofthedamned_50"
+	
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_rig_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

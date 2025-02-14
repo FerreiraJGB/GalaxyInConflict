@@ -1,0 +1,58 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [0.2,0.0]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [0.2,0.0]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_defenderdoll.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [], //"/sfx/touhou/gic_touhou_tan_1-15db.ogg"
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [0.2, 0.0], "count" : 2 }
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [0.2, 0.0], "count" : 3 }
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

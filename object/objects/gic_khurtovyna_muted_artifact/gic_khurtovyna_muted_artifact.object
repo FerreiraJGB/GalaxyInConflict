@@ -1,0 +1,35 @@
+{
+  "objectName" : "gic_khurtovyna_muted_artifact",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "breakable",
+  "price" : 5,
+  "description" : "[INTERACT TO PICK UP]",
+  "shortdescription" : "Muted Artifact",
+  "race" : "human",
+  "maxStack" : 3,
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "smashSounds" : [ "/sfx/objects/gic_ammopickup.ogg" ],
+  "scriptDelta" : 0,  
+  "breakDropOptions" : [
+    [ [ "gic_muted_artifact", 1, { } ] ]
+  ],
+  
+  "inventoryIcon" : "gic_khurtovyna_muted_artifact.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_khurtovyna_muted_artifact.png:<color>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+
+
+}

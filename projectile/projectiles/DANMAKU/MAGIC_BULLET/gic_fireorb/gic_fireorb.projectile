@@ -1,0 +1,58 @@
+{
+  "projectileName" : "gic_fireorb",
+  "fullbright" : true,
+  "bounces" : 0,
+  "image" : "gic_fireorb.png",
+  "animationCycle" : 0.1,
+  "lightColor" : [40, 0, 0],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/melee/gic_bloodborne_magic-fire.wav"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame_fireleak",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.1,
+      "angleAdjust" : 0
+    }
+  ],
+  
+  
+"periodicActions" : [
+    {
+      "time" : 0.05,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_missile_thrustertrail/trail.png",
+        "position" : [-1.3, 0],
+        "layer" : "back",
+        "timeToLive" : 0.1,
+        "destructionTime" : 0.3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+  
+  "power" : 20,
+  "damageKind" : "fire",
+  "damageType" : "IgnoresDef",
+
+  "maxSpeed" : 10,
+  "ignoredef" : true,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 10.0,
+  "acceleration" : 30,
+  "timeToLive" : 10,
+  "physics" : "rocket"
+}

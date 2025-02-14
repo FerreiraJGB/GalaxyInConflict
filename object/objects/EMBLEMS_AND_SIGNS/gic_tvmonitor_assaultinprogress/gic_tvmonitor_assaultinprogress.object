@@ -1,0 +1,43 @@
+{
+  "objectName" : "gic_tvmonitor_assaultinprogress",
+  "colonyTags" : ["station","electronic","space"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "description" : "A screen displaying a variety of assault protocols.",
+  "shortdescription" : "TV Monitor Police Assault in Progress",
+  "race" : "generic",
+
+  
+  "lightColor" : [75, 75, 75],
+
+  "inventoryIcon" : "gic_tvmonitor_assaultinprogressicon.png",
+  "orientations" : [
+    {
+      "image" : "gic_tvmonitor_assaultinprogress.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "animation" : "gic_tvmonitor_assaultinprogress.animation",
+  "animationParts" : {
+    "bg" : "gic_tvmonitor_assaultinprogress.png",
+    "fg" : "gic_tvmonitor_assaultinprogresslit.png"
+  },
+  "animationPosition" : [-8, -0],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [-1, -0] ],
+
+  "interactive" : false,
+
+  "soundEffect" : "/sfx/objects/bunkerdisplay.ogg",
+  "soundEffectRangeMultiplier" : 0.25
+
+}

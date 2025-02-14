@@ -1,0 +1,42 @@
+{
+  "itemName" : "gic_industrialequipmentcargo",
+  "rarity" : "Common",
+  "category" : "^#697D98;Freight Goods",
+  "inventoryIcon" : "gic_industrialequipmentcargo.png",
+  "description" : "A sealed crate of workplace Industrial Equipment, serving its roles in the heavy industry sector of humanity.
+
+Deliver to an Extraction Colony for profit.
+
+^#775526;There's some strong packaging keeping this crate together. It's probably best not to open it unless you really want everything inside or don't mind being wasteful...^reset;",
+
+  "shortdescription" : "Industrial Equipment",
+  "tooltipKind" : "gic_largebase",
+  "price" : 500, //previously 10k
+  "maxStack" : 1,
+  
+  "twoHanded" : true,  
+  
+  "animation" : "gic_openablecargo.animation",
+  "animationCustom" : {
+	"animatedParts" : {
+		"parts" : {
+			"gun" : {
+				"properties" : {
+					"centered" : true,
+					"image" : "gic_industrialequipmentcargo.png",
+					"offset" : [0.0, 0.0]
+				}
+			}	
+		}
+	}
+  },
+  "scripts" : ["gic_openablecargo.lua"],
+
+  "fireTime" : 5.0,
+  "fireOffset" : [1.0, 0.0],	
+	
+  "treasure" : {
+    "pool" : "gic_industrialequipmentTreasure",
+    "level" : 1
+  }  
+}

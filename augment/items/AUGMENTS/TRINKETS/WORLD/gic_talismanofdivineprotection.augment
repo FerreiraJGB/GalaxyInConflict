@@ -1,0 +1,46 @@
+{
+  "itemName" : "gic_talismanofdivineprotection",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_talismanofdivineprotection.png",
+  "maxStack" : 1,  
+  "description" :
+
+"A talisman that seems to promise some form of divine protection against evil spirits. A talisman is any object ascribed with religious or magical powers intended to protect, heal, or harm individuals for whom they are made. Talismans often take the form of objects (eg., clothing, weaponry, or parchment) which are inscribed with magic texts.
+^green;Lethal Bullets do not nullify previously-applied bandages.^reset;
+^green;+0.5% HP regeneration per second.^reset;",
+
+
+
+  
+  
+  
+  "shortdescription" : "Talisman of Divine Protection",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_talismanofdivineprotection",
+    "displayName" : "Talisman of Divine Protection",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_talismanofdivineprotection.png",
+    "effects" : [ 
+	
+	"gic_talismanofdivineprotection",
+	"gic_regenerationaugment_05percentpersecond_talismanofdivineprotection",
+
+    {
+      "stat" : "gic_bulletshotBlock",
+      "amount" : 1.0
+    }
+
+
+
+	
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_rig_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

@@ -1,0 +1,70 @@
+{
+  "projectileName" : "gic_rpg40_ap_warhead_skipdetonate",
+  "image" : "gic_rpg40_ap_warhead.png",
+  "animationCycle" : 2.5,
+  "physics" : "gic_cannonfall",
+  "bounces" : 1,
+  "frameNumber" : 4,
+  "timeToLive" : 5,
+  "onlyHitTerrain" : true,
+  "pointLight" : true,
+  "lightColor" : [255, 255, 128],
+  "emitters" : [ "gic_tinysmoke" ],
+  "damageKindImage" : "icon.png",
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+      "image" : "/animations/gic_mediumsteamcloud/gic_mediumsteamcloud.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.2,
+        "destructionTime" : 2,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+],
+  
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.0125,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.0125,
+      "fuzzAngle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 180,
+      "inheritDamageFactor" : 0.0125,
+      "directional" : "true"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 45,
+      "inheritDamageFactor" : 0.0125,
+      "directional" : "true"
+    }
+  ],
+  "power" : 390.0,
+  "speed" : 190.0,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef"
+}

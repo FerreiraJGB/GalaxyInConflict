@@ -1,0 +1,998 @@
+{
+  "objectName" : "gic_colonial_advancedweaponsdealer",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "printable" : false,
+  "price" : 0,
+  "description" : "''Lavishly-decorated machines of death, gathered from all the forgotten corners of the galaxy...''",
+  "shortdescription" : "Colonial Advanced Weapons Dealer",
+  "race" : "generic",
+
+
+  
+  
+  
+  
+  
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_colonial_advancedweaponsdealer.config",
+    "paneLayoutOverride" : {
+	
+
+      "windowtitle" : {
+	  
+	  
+        "title" : 
+"  Colonial Advanced Weapons Dealer
+
+
+
+
+
+
+
+",
+		
+		
+//''Do not act as if you were going to live 10,000 years. Death hangs over you. While it is in your power, be good.''		
+        "subtitle" : 
+"
+
+''Lavishly-decorated machines of death, gathered from all the forgotten corners of the galaxy...''
+
+ A shady arms dealer who handles both luxuries and armaments. The kind of individual who could source you
+ an Anti-Tank Plasma Gun, just as easily as an overpriced gold-plated wristwatch.
+ 
+ Weapons: Weaponry more suited for rich individuals with more dollars than seconds in their remaining life.
+ Exotic Goods: Handles luxuries. All pre-captured monsters are classed as ''Tier 6''. Guaranteed.
+",	  
+		
+		
+		
+		
+		
+		
+		
+		
+        "icon" : {
+          "file" : "/interface/crafting/gic_colonial_advancedweaponsdealer.png"
+        }
+		
+      }
+    },
+	
+	
+		"recipes" : [
+	
+
+
+
+
+
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_colonialprison_prisonerdocument"
+				}
+			],
+			"output":{
+				"parameters":{
+			"description" : "A Manipulator Module running off a slightly different frequency than normal, preventing this variant from being stacked with its standard brethren. Some Protectors speculate if these modules aren't necessarily machine upgrades as much as they are security bypasses, like a ''cracked'' machine...
+
+This Manipulator Module can be used in transactions and upgrades normally such as for your own Matter Manipulator, without any consequences.",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"manipulatormodule"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_unitan_militarydocument"
+				}
+			],
+			"output":{
+				"parameters":{
+			"description" : "An Upgrade Module that has some minor differences from their normal ''wild'' counterparts, preventing this type from being stacked with its normal version. Upgrade Modules appear to be useful in some capacity but what its true use is for seems to only be known by secretive vendors, or machines.
+
+This Upgrade Module can be used in transactions normally such as with Penguin Pete or Biggy's Reputable Weaponry, without any consequences.",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"upgrademodule"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_unitan_psionicdocument"
+				}
+			],
+			"output":{
+				"parameters":{
+			"description" : "A Teleporter Core with some slight energy leaks and as such cannot be stacked with its normal counterparts (but can still be stacked nigh-infinitely with its own kind). Modern teleportation has been theorized to involve the deconstruction and reconstruction of matter at a different location; a cut-and-paste operation, rather than a ''move'' function...
+
+This Teleporter Core can be used in transactions and crafting normally such as with the 2-Stop Teleshop, without consequences.",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"teleportercore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_occasus_militarydocument"
+				}
+			],
+			"output":{
+				"parameters":{
+			"description" : "A Tech Card that is simply incompatible with its standard ''wild'' variants, not stacking with its kind (but can still stack nigh-infinitely with its own kind). Tech Cards appear to be advanced circuit boards, which merely ''permit'' a user to perform seemingly reconstructive feats such as teleportation or achieve superhuman speeds.
+
+This Tech Card can be used in transactions and crafting normally such as with producing new Techs, without any consequences.",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"techcard"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				},
+				{
+				"parameters":{},
+				"count":1000,
+				"name":"money"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_copsc_sidearm"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				},
+				{
+				"parameters":{},
+				"count":4000,
+				"name":"money"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_copsc_smg"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				},
+				{
+				"parameters":{},
+				"count":6000,
+				"name":"money"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_copsc_shotgun"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},	
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				},
+				{
+				"parameters":{},
+				"count":8000,
+				"name":"money"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_copsc_servicerifle"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},	
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				},
+				{
+				"parameters":{},
+				"count":10000,
+				"name":"money"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_copsc_dmr"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				},
+				{
+				"parameters":{},
+				"count":12000,
+				"name":"money"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_copsc_laserrifle"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},			
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				},
+				{
+				"parameters":{},
+				"count":16000,
+				"name":"money"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_weaponrepair_lasermaintenancekit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_copsc_1270x108mm_mag"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":2,
+				"name":"gic_copsc_1143x23mm_mag"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_copsc_770x56mm_mag"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":3,
+				"name":"gic_copsc_9x19mm_mag"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				},
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_groundvehiclebattery"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_fieldbattery_ilws"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},
+
+
+
+
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	//WEAPONS
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":150,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_marspattern_assaultplasmagun"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},	
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":5,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_plasmagun_hydrogenflask_mag"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		},	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//EXOTIC
+
+
+
+
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_protector_idcard"
+				},
+				{
+				"parameters":{},
+				"count":1000,
+				"name":"money"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_ammo_replicator"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},	
+
+
+
+//Pet Ixoling
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":100,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+		"parameters" : {
+			"shortdescription" : "Ixoling",
+			"description" : "A lifetime to breed. Another to domesticate.",
+			"tooltipKind" : "gic_largebase_capturepod_hybrid",
+			"tooltipFields" : {
+				"subtitle" : "''What the hell is this?''"
+			},
+            "currentCollar" : "obliviouscollar",
+			"pets" : [{
+				"name" : "Ixoling",
+				"config" : {
+					"type" : "ixoling",
+					"parameters" : {
+						"level" : 6,
+						"aggressive" : false
+					}
+				}	
+			   }
+			  ]
+			},
+				"count":1,
+				"name":"filledcapturepod"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},
+
+
+
+
+
+
+
+//Pet Cat
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+		"parameters" : {
+			"shortdescription" : "Terran Cat",
+			"description" : "Lazes around all day.",
+			"tooltipKind" : "gic_largebase_capturepod_hybrid",
+			"tooltipFields" : {
+				"subtitle" : "''Meow Meow!''"
+			},
+            "currentCollar" : "obliviouscollar",
+			"pets" : [{
+				"name" : "Cat",
+				"config" : {
+					"type" : "blackcat",
+					"parameters" : {
+						"level" : 6,
+						"aggressive" : false
+					}
+				}	
+			   }
+			  ]
+			},
+				"count":1,
+				"name":"filledcapturepod"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},
+
+
+
+
+//Pet Dog
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+		"parameters" : {
+			"shortdescription" : "Terran Dog",
+			"description" : "''-Then me. Then you...''",
+			"tooltipKind" : "gic_largebase_capturepod_hybrid",
+			"tooltipFields" : {
+				"subtitle" : "''The hound comes first-''"
+			},
+            "currentCollar" : "obliviouscollar",
+			"pets" : [{
+				"name" : "Terran Dog",
+				"config" : {
+					"type" : "pinfriend",
+					"parameters" : {
+						"level" : 6,
+						"aggressive" : true
+					}
+				}	
+			   }
+			  ]
+			},
+				"count":1,
+				"name":"filledcapturepod"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},
+
+
+
+
+
+
+
+
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":30,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_gnomega_wristwatch"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},	
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{
+			"shortdescription" : "Diamond",
+			"description" : "A diamond sourced through dubious means. The Protectorate often lacks the foresight to actually care about the quality of its supposedly-rare materials, encouraging its Protectors to source diamonds from wherever they please, and rewarding them with the augmented reality ''pixels''.
+
+In spite of all of this, this diamond can be used in transactions normally, such as at the Outpost or in certain machines without any consequences.",
+			"tooltipKind" : "gic_largebase"
+			},
+				"count":1,
+				"name":"diamond"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},	
+
+//Kluex Totem
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":60,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+		"parameters" : {
+			"shortdescription" : "Kluex Totem",
+			"description" : "A totem that wasn't nailed down hard enough.",
+			"tooltipKind" : "gic_largebase_capturepod_hybrid",
+			"tooltipFields" : {
+				"subtitle" : "''A curious measure.''"
+			},
+            "currentCollar" : "obliviouscollar",
+			"pets" : [{
+				"name" : "Kluex Totem",
+				"config" : {
+					"type" : "kluextotem",
+					"parameters" : {
+						"level" : 6,
+						"aggressive" : true
+					}
+				}	
+			   }
+			  ]
+			},
+				"count":1,
+				"name":"filledcapturepod"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},
+		
+		
+//Kluex Sentry
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":40,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+		"parameters" : {
+			"shortdescription" : "Kluex Sentry",
+			"description" : "Stolen from an Avian Temple, like most of its treasures.",
+			"tooltipKind" : "gic_largebase_capturepod_hybrid",
+			"tooltipFields" : {
+				"subtitle" : "''No treasure. Just this.''"
+			},
+            "currentCollar" : "obliviouscollar",
+			"pets" : [{
+				"name" : "Kluex Sentry",
+				"config" : {
+					"type" : "kluexsentry",
+					"parameters" : {
+						"level" : 6,
+						"aggressive" : true
+					}
+				}	
+			   }
+			  ]
+			},
+				"count":1,
+				"name":"filledcapturepod"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},		
+		
+		
+		
+//Gosmet
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":25,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+		"parameters" : {
+			"shortdescription" : "Gosmet",
+			"description" : "Looks like a ghostly samurai. It isn't.",
+			"tooltipKind" : "gic_largebase_capturepod_hybrid",
+			"tooltipFields" : {
+				"subtitle" : "''Samurai Ghost Girl!''"
+			},
+            "currentCollar" : "obliviouscollar",
+			"pets" : [{
+				"name" : "Gosmet",
+				"config" : {
+					"type" : "gosmet",
+					"parameters" : {
+						"level" : 6,
+						"aggressive" : true
+					}
+				}	
+			   }
+			  ]
+			},
+				"count":1,
+				"name":"filledcapturepod"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},		
+				
+		
+		
+		
+//Narfin
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+		"parameters" : {
+			"shortdescription" : "Narfin",
+			"description" : "Yanked from an Icy Ancient Vault.",
+			"tooltipKind" : "gic_largebase_capturepod_hybrid",
+			"tooltipFields" : {
+				"subtitle" : "''Narwhal, but smaller.''"
+			},
+            "currentCollar" : "obliviouscollar",
+			"pets" : [{
+				"name" : "Narfin",
+				"config" : {
+					"type" : "narfin",
+					"parameters" : {
+						"level" : 6,
+						"aggressive" : true
+					}
+				}	
+			   }
+			  ]
+			},
+				"count":1,
+				"name":"filledcapturepod"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},		
+						
+		
+		
+		
+		
+//Toumingo
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+		"parameters" : {
+			"shortdescription" : "Toumingo",
+			"description" : "Resembles a Terran Toucan, just with massive legs.",
+			"tooltipKind" : "gic_largebase_capturepod_hybrid",
+			"tooltipFields" : {
+				"subtitle" : "''Leg Day.''"
+			},
+            "currentCollar" : "obliviouscollar",
+			"pets" : [{
+				"name" : "Toumingo",
+				"portrait" : [
+					{"image" : "/items/active/gic_filledcapturepod/gic_filledcapturepod_anthrolynx_denizen_icon.png"}
+				],
+				"config" : {
+					"type" : "toumingo",
+					"parameters" : {
+						"level" : 6,
+						"aggressive" : true
+					}
+				}	
+			   }
+			  ]
+			},
+				"count":1,
+				"name":"filledcapturepod"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_pets" ]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_fentanyl_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":2,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonial_advancedweaponsdealer", "gic_colonial_advancedweaponsdealer_weapons" ]
+		}
+						
+				
+		
+		
+		
+		
+	
+
+
+
+
+	
+		],
+	
+	
+    "filter" : [ "gic_colonial_advancedweaponsdealer" ]
+  },
+
+
+  
+  
+
+  
+  
+  "lightColor" : [0, 0, 0],
+
+  "inventoryIcon" : "gic_colonial_advancedweaponsdealer_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_colonial_advancedweaponsdealer.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_colonial_advancedweaponsdealer.animation",
+  "animationParts" : {
+    "bg" : "gic_colonial_advancedweaponsdealer.png",
+    "fg" : "gic_colonial_advancedweaponsdealer_lit.png"
+  },
+  "animationPosition" : [-8, -0],
+
+  "interactive" : true
+  
+
+
+
+
+
+}

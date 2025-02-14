@@ -1,0 +1,41 @@
+{
+  "projectileName" : "gic_crusader_greatarrow_championbarrage_stage3",
+  "bounces" : 0,
+  "image" : "gic_crusader_greatarrow_null.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [0, 0, 0],
+  "frameNumber" : 1,
+  
+  //0.328 per arrow.
+  
+  "actionOnReap" : [
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/bow/gic_bloodborne_bow-large-shot.wav"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_crusader_greatarrow",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 0,
+	  "angleAdjust" : 7,
+	  "directional" :true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "onlyHitTerrain" : true,
+
+  "maxSpeed" : 0,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.328,
+  "physics" : "laser"
+}

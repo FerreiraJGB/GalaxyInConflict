@@ -1,0 +1,42 @@
+{
+  "id" : "gic_esther_chapter_3_lionheartQuest",
+  "title" : "^#D1FFDE;The Cursed", //After completing Chapter 3
+  "prerequisites" : [ "gic_esther_chapter_3_0_theotherworldquest" ],
+  
+  "text" : "You're making quick work of anything this universe or the next wants to throw at you. So long as you keep your marbles together, you'll be alright in the long run.",
+  
+  "completionText" : "Keep up the good work. I can't offer much else right now, but know that there are those who support you.",
+  
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_healingflask", 20 ], [ "gic_frostmilitia_lightballista", 1 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      }
+    },
+
+
+    "descriptions" : {
+      "turnIn" : "Speak to ^orange;Lionheart^reset;."
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_1_lionheart",
+    "conditions" : [
+    ]
+	
+	
+  }
+}

@@ -1,0 +1,1051 @@
+{
+  "type" : "gic_erchius_bannerbearer",
+  "shortdescription" : "[Legion]",
+  "description" : "Knights of old.",
+
+  "categories" : [ "gic_erchius_bannerbearer" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_erchius_bannerbearer.animation",
+
+  "dropPools" : [ "gic_erchiuswarriorTreasure" ],
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster_phases_music_adaptive.lua"
+    ],
+
+
+	"music" : ["/music/Remnant2/gic_remnant2_venom.ogg"],
+  
+	"range" : 130,			//measured in blocks, default val is 50 blocks
+	"fadeOutTime" : 6.0,	//measured in seconds, default val is 2.0 seconds
+	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+	
+	
+	//ADAPTIVE HEALTH STUFF
+	"adaptiveTrackingRange" : 200, //should be range in blocks
+	"adaptiveHealthBonus" : 6750, //flat max health stat
+	
+	//EXTRA DROP POOLS, DROPS ONE LOOT POOL PER EXTRA PLAYER
+	"extraDropPools" : ["gic_erchiuswarriorTreasure"],	
+
+
+	"phaseTriggerCount" : 1, //how many indices should the monster consider for phases
+	"healthThresholdTriggers" : [0.66], //determines health threshhold for phase trigger [0.66,0.33]
+	"regressPhases" : false, //if enabled, monster will regress to its prior phase if the monster's health increases above its current threshold.
+	
+	"phaseTriggerIds" : ["behaviorConfigInjured1"], //configs to correspond to once the corresponding healthThresholdTrigger has been reached. ["behaviorConfigInjured1","behaviorConfigInjured2"]
+	//configs correspond to healthThresholdTriggers via index, ie index 1 of healthThresholdTrigger corresponds to index 1 of phaseTrigger
+
+
+    "behavior" : "monster",
+    "deathBehavior" : "monster-death",
+    "seeThroughLiquid" : false,
+	
+    "damageBar" : "Special",	
+	
+	
+	
+	
+
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 170,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 150,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro",
+            "animationTime" : 2
+          }
+        }
+      ],
+
+      "hostileActions" : [
+
+
+
+	  //Summon Gladiators - Summons Gladiators, effectively the original Erchius Warriors as standard enemies.
+       {
+          "name" : "action-fire",
+          "cooldown" : 42,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "pointmarkwindup",
+            "windupTime" : 0.9,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_erchius_bannerbearer_summon_2pattern_gladiator",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 0,
+			  "knockback" : 70,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 1]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "pointmark",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 16
+          }
+        },
+
+
+
+
+	//Projectile Attack
+	
+       {
+          "name" : "action-fire",
+          "cooldown" : 12, //60
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 60,
+            "minimumRange" : 10,
+            "windupStopForce" : 10,
+            "windupState" : "erchiuseyeswindup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.1,
+            "projectileInterval" : 1,
+            "inaccuracy" : 0.1,
+            "projectileType" : "gic_magicshot_impurelaser_stage2", //meleeslash
+            "projectileParameters" : {
+              "speed" : 100,
+              "timeToLive" : 5,
+			  "power" : 150,
+			  "knockback" : 0	  
+            },
+            "fireOffsets" : [[0.7, 0.9], [0.7, 0.9], [0.7, 0.9]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "erchiuseyes",
+            "fireSound" : "",
+            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 2.0
+          }
+        },	
+
+
+
+
+	  //Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 8,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.05,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  
+	  //Sweep
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 8,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.05,
+          "chargeSpeed" : -2400,
+          "chargeControlForce" : 400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "sweep",
+          "windupState" : "sweepwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : ""
+        }
+      },
+
+
+	  
+	  //Overhead Swing
+      {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "maximumRange" : 5,
+          "minimumRange" : 0,
+          "windupTime" : 0.35,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 600,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "overheadswing",
+          "windupState" : "overheadwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : ""
+        }
+      },
+		
+		
+	
+
+	  //Flag Stomp - AoE knockback attack with massive punish window.
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 4,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "flagstompwindup",
+            "windupTime" : 0.9,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_plasmaimpact_crusaderchampion",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.4,
+			  "power" : 20,
+			  "knockback" : 90,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0.5, 0]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "flagstomp",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 4
+          }
+        },
+	  
+	  
+	  
+	  
+	  //Forward Reposition - At close range, immediately charge forward to reposition.
+      {
+        "name" : "action-charge",
+        "cooldown" : 0.20,
+        "parameters" : {
+          "maximumRange" : 2,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 2.0,
+          "chargeSpeed" : 8, //18
+          "chargeControlForce" : 300,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "walk",
+          "winddownTime" : 0.025,
+          "winddownState" : "idle"
+        }
+      }		
+		
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+      "periodicActions" : [
+
+	  ],
+
+      "damageTakenActions" : [
+	  
+	  
+
+
+      ],
+	  
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+	  
+	  
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+
+    "behaviorConfigInjured1" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 170,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 150,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro",
+            "animationTime" : 2
+          }
+        }
+      ],
+
+      "hostileActions" : [
+
+
+
+
+	  //Crystal Storm - Classic spike wave.
+       {
+          "name" : "action-fire",
+          "cooldown" : 18,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "summoncrystalswindup",
+            "windupTime" : 0.9,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_spikewave_2pattern",
+            "projectileParameters" : {
+              "speed" : 100,
+              "timeToLive" : 1,
+			  "power" : 100,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, -1]],
+            "aimDirection" : [0, -1.0],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 4
+          }
+        },
+
+
+	  //Summon Knights - Summons Stone Knights, the intended buildup to the original Erchius Warriors which ended up being more complex than the Warriors themselves. Only needs to point, thus making it a little less easier to spot.
+       {
+          "name" : "action-fire",
+          "cooldown" : 32,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "summonguardswindup",
+            "windupTime" : 0.9,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_erchius_bannerbearer_summon_2pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 0,
+			  "knockback" : 70,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 1]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "summonguards",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 16
+          }
+        },
+
+
+
+
+	//Projectile Attack
+	
+       {
+          "name" : "action-fire",
+          "cooldown" : 12, //60
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 60,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "erchiuseyeswindup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.1,
+            "projectileInterval" : 1,
+            "inaccuracy" : 0.1,
+            "projectileType" : "gic_magicshot_impurelaser_stage2", //meleeslash
+            "projectileParameters" : {
+              "speed" : 100,
+              "timeToLive" : 5,
+			  "power" : 200,
+			  "knockback" : 0	  
+            },
+            "fireOffsets" : [[0.7, 0.9], [0.7, 0.9], [0.7, 0.9]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "erchiuseyes",
+            "fireSound" : "",
+            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 2.0
+          }
+        },	
+
+
+
+
+	  //Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 8,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.05,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  
+	  //Sweep
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 8,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.05,
+          "chargeSpeed" : -2400,
+          "chargeControlForce" : 400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "sweep",
+          "windupState" : "sweepwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+
+
+	  
+	  //Overhead Swing
+      {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "maximumRange" : 5,
+          "minimumRange" : 0,
+          "windupTime" : 0.35,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 600,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "overheadswing",
+          "windupState" : "overheadwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+		
+		
+	
+
+	  //Flag Stomp - AoE knockback attack with massive punish window.
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 4,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "flagstompwindup",
+            "windupTime" : 0.9,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_plasmaimpact_crusaderchampion",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.4,
+			  "power" : 20,
+			  "knockback" : 90,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0.5, 0]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "flagstomp",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 4
+          }
+        },
+
+	 	  
+	  
+	  
+	  //Forward Reposition - At close range, immediately charge forward to reposition.
+      {
+        "name" : "action-charge",
+        "cooldown" : 0.20,
+        "parameters" : {
+          "maximumRange" : 2,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 2.0,
+          "chargeSpeed" : 8, //18
+          "chargeControlForce" : 300,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "walk",
+          "winddownTime" : 0.025,
+          "winddownState" : "idle"
+        }
+      }		
+		
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+      "periodicActions" : [
+
+	  ],
+
+      "damageTakenActions" : [
+	  
+	  
+
+
+      ],
+	  
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+	  
+	  
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+	
+	
+
+    "damageParts" : { //Greed
+      "body" : {
+        "damage" : 120,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.35,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 20,
+        "statusEffects" : [ ]
+      },
+      "stunDamage" : {
+        "damage" : 50,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.35,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 20,
+        "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_stun_3", "gic_advancedmunition_corrosive" ]
+      }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.15], [0.5, -2.15], [0.5, 2.0], [-0.5, 2.0] ], // [-0.5, -2.15], [0.5, -2.15], [0.5, 2.6], [-0.5, 2.6],    [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375] 
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [  ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.1,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.75], [-0.35, -2.05], [0.35, -2.05], [0.75, -1.75], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ],                 //[ [-0.5, -2.15], [0.5, -2.15], [0.5, 1.8], [-0.5, 1.8],      [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375]  ], //1.8 > 2.0
+
+      "mass" : 1,
+      "walkSpeed" : 6,
+      "runSpeed" : 6,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 1
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 50
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 30000 //25000 (forlorn forager)
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireResistance" : {
+          "baseValue" : -0.1
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.5
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : -0.1
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -2.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.75
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.75
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

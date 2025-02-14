@@ -1,0 +1,78 @@
+{
+  "objectName" : "gic_industrialterminal1",
+  "colonyTags" : ["human","electronic","wired"],
+  "rarity" : "Common",
+  "description" : "A bulky terminal for the outer reaches of space.",
+  "shortdescription" : "Industrial Terminal 1",
+  "race" : "generic",
+  "category" : "wire",
+  "price" : 200,
+  "lightColor" : [0, 0, 0], //[128, 98, 38],
+  "lightColorOff" : [0, 0, 0], //[64, 17, 17],
+  
+  "flickerPeriod" : 0.5,
+  "flickerMinIntensity" : 0.975,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0,
+  "flickerIntensityVariance" : 0,
+
+  "inventoryIcon" : "gic_industrialterminal1_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_industrialterminal1.png:<color>.on",
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-8, 0],
+
+      "flipImages" : true,
+      "direction" : "left",
+
+      "lightPosition" : [-1, 2],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "gic_industrialterminal1.png:<color>.on",
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-8, 0],
+
+      "direction" : "right",
+
+      "lightPosition" : [0, 2],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [
+    "/objects/wired/switch/switch.lua",
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 5,
+
+  "animation" : "gic_industrialterminal1.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/console_generic_switchon.ogg" ],
+      "off" : [ "/sfx/objects/console_generic_switchoff.ogg" ]
+    }
+  },
+  "animationParts" : {
+    "bg" : "gic_industrialterminal1.png",
+    "fg" : "gic_industrialterminal1_lit.png"
+  },
+
+  "outputNodes" : [ [0, 1] ],
+
+  "npcToy" : {
+    "ownerOnly" : true,
+    "influence" : [
+      "console"
+    ],
+    "defaultReactions" : {},
+    "preciseStandPositionLeft" : [-0.5, 0.0],
+    "preciseStandPositionRight" : [2.0, 0.0],
+    "maxNpcs" : 1
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "invisible" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "idle" : {
+            "frames" : 1
+          },
+          "walk" : {
+            "frames" : 1,
+            "cycle" : 0.333333333333333333333333333,
+            "mode" : "loop"
+          },
+          "windup" : {
+            "frames" : 1,
+            "cycle" : 0.5
+          },
+          "fire" : {
+            "frames" : 1,
+            "cycle" : 0.04,
+            "mode" : "transition",
+            "transition" : "idle"
+          }
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.625],
+          "zLevel" : 1
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "windup" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "winddown" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+	  
+    }
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+
+  "particleEmitters" : {
+    "deathPoof" : {
+      "particles" : [
+//        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "muzzleFlash" : {
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "looping" : true,
+            "animation" : "/animations/gic_20mm_muzzle/gic_20mm_muzzle.animation",
+            "position" : [3.6, 1.4],
+            "layer" : "front",
+            "timeToLive" : 0.05,
+			"fullbright" : true,
+            "rotation" : 0.0
+          }
+        }
+      ]
+    }
+  },
+
+  "sounds" : {
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/npc/enemydeathpuff.ogg" ],
+    "fire" : {
+      "pool" : [ "/sfx/gun/gic_lewis_01.ogg" ],
+      "rangeMultiplier" : 3.0
+    }
+  }
+}

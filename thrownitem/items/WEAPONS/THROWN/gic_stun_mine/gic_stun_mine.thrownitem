@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_stun_mine",
+  "price" : 50,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_stun_mine.png",
+  "image" : "gic_stun_mine.png",
+  "shortdescription" : "Stun Mine",
+  "description" : "A deployable mine that stuns, rather than outright damaging targets. It will scan for targets to the left and right of the mine, and detonate indiscriminately once armed. Upon detonation, it explodes, blinding and stunning all targets within range akin to a Stun Grenade. Will detect enemies through doors and walls, so be sure to give it plenty of open space! 5 minute auto-detonation timer.",
+  "tooltipKind" : "gic_largebase",
+  "ammoUsage" : 1,
+  "maxStack" : 3,
+  "edgeTrigger" : true,
+  "windupTime" : 0.0,
+  "cooldown" : 1.5,
+
+  "projectileType" : "gic_stun_mine_arming",
+  "projectileConfig" : {
+    "speed" : 10,
+    "power" : 0,
+    "knockback" : 20,
+
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  }
+
+}

@@ -1,0 +1,157 @@
+{
+  "globalTagDefaults" : {
+    "colour" : ""
+  },
+
+  "animatedParts" : {
+    "stateTypes" : {
+      "flash" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+
+          "on" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "loop"
+          }
+
+        }
+      },
+	  "sing" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+
+          "on" : {}
+
+        }
+      },
+	  "coin" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 2,
+            "cycle" : 0.4,
+            "mode" : "loop"
+          },
+		  
+		  "frozen" : {}
+
+        }
+      }
+
+
+    },
+
+    "parts" : {
+
+	   "coin" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"]//,
+		  //"image" : "gic_coin.png"
+        },
+
+        "partStates" : {
+
+          "coin" : {
+            "idle" : {
+              "properties" : {
+				"zLevel" : 2,
+                "image" : "gic_coinanimated.png:<frame>"
+              }
+            },
+			"frozen" : {
+				"properties" : {
+					"zLevel" : 2,
+					"image" : "gic_coin.png"
+				}
+			}
+          }
+        }
+      },
+	  
+	  "flash" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"]//,
+		  //"image" : "gic_coin.png"
+        },
+
+        "partStates" : {
+
+          "flash" : {
+            "on" : {
+              "properties" : {
+				//"offset" : [-0.33,-0.33],
+				"zLevel" : 1,
+                "image" : "gic_coinflash.png:<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+	  "sing" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"]//,
+		  //"image" : "gic_coin.png"
+        },
+
+        "partStates" : {
+
+          "sing" : {
+            "on" : {
+              "properties" : {
+				//"offset" : [-0.33,-0.33],
+				"zLevel" : 1,
+                "image" : "gic_coinsing.png"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "rotation" : {
+      "interpolated" : true
+    },
+    "flip" : {}
+  },
+
+  "particleEmitters" : {
+    "damageIntermittent" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 0.0,
+      "burstCount"  : 5,
+      "offsetRegion" : [-3.25, -1.5, -3, -1.25],
+      "particles" : [{ "particle" : "burningvehiclesmokefront"},
+                     { "particle" : "fireshard"}]
+    }
+  },
+
+ "lights" : {
+  },
+
+  "sounds" : {
+    "coinHit" : ["/sfx/gic_ultrakill_coinhit.ogg"],
+	
+	"coinFlash" : ["/sfx/ULTRAKILL/coinflashloop.wav"],
+	"coinSing" : ["/sfx/ULTRAKILL/coinspin.wav"],
+
+   "explode" : [  "/sfx/gun/grenadeblast_small_fire1.ogg",
+                  "/sfx/gun/grenadeblast_small_fire2.ogg",
+                  "/sfx/gun/grenadeblast_small_fire3.ogg" ]
+
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "itemName" : "gic_recondrone_controller",
+  "level" : 1,
+  "price" : 0,
+  "rarity" : "Legendary",
+  "category" : "^#DBC5A6;Reconnaissance Tool",
+  "description" : "A retooled Protectorate Swarmer drone for use in reconnaissance operations. Extremely useful for gathering intel on a distant area, or probing for hostiles by garnering enemy reactions (such as gunfire).
+  
+^#DBC5A6;[MOUSE1] to spawn/despawn drone.
+HOLD [SHIFT] to increase the drone's speed at cost of handling.
+[MOUSE2] to emit a terrain-detecting ping at the drone's location which can also detect neutral or hostile entities.^reset;",
+  
+  "shortdescription" : "Drone Controller",
+  "twoHanded" : true,
+  "maxStack" : 1,
+  "itemTags" : [],
+
+  "animation" : "gic_recondrone_controller.animation",
+  "scripts" : ["gic_recondrone_controller.lua"],
+  
+  //"animationScripts" : ["/items/active/effects/detector.lua"],
+  "animationScripts" : ["/items/active/misc/gic_recondrone_controller/gic_detector.lua"],
+  "animationDelta" : 5,
+  "pingDetectConfig" : {
+    "type" : "entity",
+    "image" : "/items/active/unsorted/oredetector/detectnoise.png:<variant>",
+    "variants" : 4,
+    "colors" : {
+      "empty" : [0, 180, 0, 255],
+      "solid" : [120, 160, 120, 50],
+	  "hostile" : [255,0,0,255],
+	  "neutral" : [255,255,0,255]
+    }
+  },
+
+  "pingRange" : 50,
+  "pingBandWidth" : 8,
+  "pingDuration" : 3.0,
+  "pingCooldown" : 0.5,
+  
+  
+  "tooltipKind" : "gic_largebase",
+  //"largeImage" : "/items/active/misc/gic_outsiders_mark/red.png",
+  
+  //"tooltipFields" : {
+	//"objectImage" : "/items/active/misc/gic_outsiders_mark/gic_highres_outsiders_mark.png" //high-res image
+  //},
+
+  //"respawnTime" : 1.0,
+
+  //yes i did base this script off vanilla vehicle scripts wtf you gon do about it
+  //:vibecheck:
+  
+  //"vehicleType" : "sportscar",
+  "boundingBox" : [-1, -1, 1, 1],
+  
+  //"teleportPreviewImage" : "/items/active/misc/gic_outsiders_mark/gic_player_outline.png",
+  //"teleportCrouchingPreviewImage" : "/items/active/misc/gic_outsiders_mark/gic_player_outline_crouching.png",
+  //"teleportLimitOutlineImage" : "/items/active/misc/gic_outsiders_mark/gic_outsiders_mark_outline.png",
+
+  "animationParts" : {
+    "controller" : "gic_recon_drone_controller.png"
+  },
+
+  "inventoryIcon" : "gic_recon_drone_controller_icon.png"
+}

@@ -1,0 +1,98 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_dialogue_seegsonsynthetic.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : {
+      "pool" : [
+        "/sfx/AlienIsolation/gic_alienisolation_workingjoe-01.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-02.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-03.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-04.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-05.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-06.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-07.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-08.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-09.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-10.ogg",
+        "/sfx/AlienIsolation/gic_alienisolation_workingjoe-11.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-12.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-13.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-14.ogg",
+		
+		//Flame
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-15.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-16.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-17.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-18.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-19.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-20.ogg",
+      "/sfx/AlienIsolation/gic_alienisolation_workingjoe-21.ogg",
+		//Flame
+		
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-22.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-23.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-24.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-25.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-26.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-27.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-28.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-29.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-30.ogg",
+        "/sfx/AlienIsolation/gic_alienisolation_workingjoe-31.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-32.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-33.ogg",
+		"/sfx/AlienIsolation/gic_alienisolation_workingjoe-34.ogg"
+		],
+      "rangeMultiplier" : 4.0
+		},
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

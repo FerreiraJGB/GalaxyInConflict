@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_magicshot_knife_snake_stage2",
+  "image" : "gic_magicshot_knife_snake_stage2.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 4,
+  "pointLight" : false,
+  "speed" : 3,
+  "timeToLive" : 0.25,
+  "fullbright" : true,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+  ],
+  
+"actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_knife_snake_stage3",
+      "inheritDamageFactor" : 1
+    }
+],
+
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

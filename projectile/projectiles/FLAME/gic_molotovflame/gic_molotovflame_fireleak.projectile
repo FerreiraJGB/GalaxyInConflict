@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_molotovflame_fireleak",
+  "physics" : "grenadenobounce",
+  "bounces" : -1,
+  "timeToLive" : 0.5,
+  "speed" : 15,
+  "image" : "gic_molotovflame.png",
+  "animationCycle" : 0.8,
+  "lightColor" : [235, 126, 2],
+  "frameNumber" : 8,
+//  "emitters" : [ "flames" ],
+  "piercing" : true,
+  
+  "fullbright" : true,
+  
+  "damagePoly" : [ [-6, 0], [-4, -4], [0, -6], [4, -4], [6, 0], [4, 4], [0, 6], [-4, 4] ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smoke/smoke.config"
+    }
+  ],
+
+  "statusEffects" : [
+    "burning", "gic_oilfire_primer", "gic_burn_wounds"
+  ],
+  "hydrophobic" : true,
+  "damageKind" : "ews_explosive",
+  "damageTeam" : { "type" : "indiscriminate" },
+  "persistentAudio" : "/sfx/objects/torch.ogg"
+}

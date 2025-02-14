@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_crusader_arrow_fire_razed",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+	
+	
+  ],
+  "image" : "gic_crusader_arrow_fire.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarmsthermal",
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 4,
+  "pointLight" : false,
+  "power" : 24.0,
+  "knockback" : 0,
+
+  "lightColor" : [253, 143, 77],
+  "statusEffects" : [
+    "burning", "gic_oilfire_primer"
+  ],
+  "hydrophobic" : true,
+  
+  "knockbackDirectional" : true,
+  "speed" : 80
+}

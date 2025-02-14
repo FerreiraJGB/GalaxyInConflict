@@ -1,0 +1,79 @@
+{
+  "type" : "gic_wildlands_island_rivalnewsreporter_ayashameimaru_starter",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+
+  "identity" : {
+    "gender" : "male"
+  },
+  
+  "persistent" : true,
+  "uniqueId" : "gic_wildlands_island_rivalnewsreporter_ayashameimaru_starter",
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+  
+  
+    "questGenerator" : {
+      "enableParticipation" : false
+    },
+	
+    "offeredQuests" : [ "gic_wildlands_ayashameimaru_0_rivalnewsreporterquest" ],
+	
+    "turnInQuests" : [ ],
+  
+    "behavior" : "speaker",
+
+    "behaviorConfig" : {
+      "alwaysRun" : false,
+      "wanderWaitTime" : [6.0, 10.0],
+      "wanderTime" : [0.0, 0.0],
+      "wanderDistance" : 0,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ]
+    },
+
+	
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+			"Always an adventure for you, eh?"
+          ]
+        }
+      },
+      "speak" : {
+        "default" : {
+          "default" : [
+		  "Man, this place just ain't right."
+//            "Hey, <entityname>, over here! I need to speak to you!"
+          ]
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "gic_militiaoperatorcaphead", "parameters" : { "colorIndex" : [4] } }
+            ],
+            "chest" : [
+              { "name" : "gic_wt1pcchest", "parameters" : { "colorIndex" : [4] } }
+            ],
+            "legs" : [
+              { "name" : "peasantlegs", "parameters" : { "colorIndex" : [4] } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

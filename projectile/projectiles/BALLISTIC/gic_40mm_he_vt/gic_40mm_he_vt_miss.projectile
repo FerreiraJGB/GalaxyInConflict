@@ -1,0 +1,52 @@
+{
+  "projectileName" : "gic_40mm_he_vt_miss",
+  "image" : "gic_40mm_he_vt_miss.png",
+  "animationCycle" : 0.25,
+  "physics" : "gic_cannonfall",
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "fullbright" : true,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightcannon_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.05,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+],
+  "persistentAudio" : "/sfx/WorldAtWar/gic_artillery_whistle2.ogg",  
+  "emitters" : [],
+  "power" : 5.0,
+  "speed" : 190,
+  "damageKind" : "ews_explosive",
+  "damageType" : "NoDamage"
+}

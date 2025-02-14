@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_heavyhandcannon_a_homing_close",
+  "bounces" : 0,
+  "image" : "gic_heavyhandcannon_a.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_heavyhandcannon_b_homing_close",
+      "inheritDamageFactor" : 1,
+	  "directional" :true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.17,
+  "physics" : "laser"
+}

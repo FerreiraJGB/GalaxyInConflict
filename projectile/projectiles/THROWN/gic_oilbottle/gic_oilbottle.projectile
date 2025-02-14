@@ -1,0 +1,252 @@
+{
+  "projectileName" : "gic_oilbottle",
+  "image" : "gic_oilbottle.png",
+  "animationCycle" : 0.25,
+  "physics" : "gic_grenadenormal",
+  "frameNumber" : 1,
+  "bounces" : 0,
+  "timeToLive" : 30,
+  "pointLight" : false,
+  "speed" : 50,
+  "damagePoly" : [ [-2, 0], [-2, -2], [0, -2], [2, -2], [2, 0], [2, 2], [0, 2], [-2, 2] ],
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/objects/vase_break_large1.ogg"
+      ]
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/objects/vase_break_large2.ogg"
+      ]
+    },
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_blackfog/2.png",
+			"fullbright":true,"size":1.0,
+			"destructionAction":"fade",
+			"destructionTime":1.0
+		}
+	},
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_blackfog/2.png",
+			"fullbright":true,"size":1.0,
+			"destructionAction":"fade",
+			"destructionTime":1.0
+		}
+	},
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_blackfog/2.png",
+			"fullbright":true,"size":1.0,
+			"destructionAction":"fade",
+			"destructionTime":1.0
+		}
+	},	
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_blackfog/2.png",
+			"fullbright":true,"size":1.0,
+			"destructionAction":"fade",
+			"destructionTime":1.0
+		}
+	},
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_blackfog/2.png",
+			"fullbright":true,"size":1.0,
+			"destructionAction":"fade",
+			"destructionTime":1.0
+		}
+	},
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_blackfog/2.png",
+			"fullbright":true,"size":1.0,
+			"destructionAction":"fade",
+			"destructionTime":1.0
+		}
+	},
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 20
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 40
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 60
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 80
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 100
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 120
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 140
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 160
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 180
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 200
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 220
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 240
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 260
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 280
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 300
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 320
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_oilbottle",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 340
+    }
+
+	
+	
+  ],
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_oil", "gic_stun_025" ],
+  "power" : 5.0,
+  "emitters" : [ "rocketsmoke" ],
+  "damageKind" : "ews_smallarms"
+}
+
+

@@ -1,0 +1,35 @@
+{
+  "id" : "gic_workshop_wildlands_vehicledealerQuest",
+  "title" : "^#D1FFDE;Workshop: Schnellfeuer Hoverbike",
+  "prerequisites" : [  ],
+  "text" : "A battered Hoverbike sits abandoned on the oily gravel. A discarded Vehicle Controller lies on the side. Perhaps it could be repaired...",
+  "completionText" : "The Vehicle Controller makes high-pitched mechanical noises, and then a *ping* as if to indicate readiness. Protectorate Technology is enigmatic, and somebody sought to save their beloved bike through nano-replication...",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_schnellfeuer_hoverbikecontroller", 1 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+	
+    "turnInEntityUid" : "gic_workshop_broken_schnellfeuer_hoverbike",
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_groundvehiclebattery",
+        "count" : 4,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "type" : "gic_floranliberationfront_lastonestanding",
+  "baseType" : "gic_floranliberationfront_base",
+
+
+  "damageTeam" : 17,
+  "scriptConfig" : {
+//    "behavior" : "gic_combat_default",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [10.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:attack",
+      "reattack" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:reattack",
+      "killedTarget" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:killedTarget",
+      "lostTarget" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:lostTarget",
+      "outOfSight" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:outOfSight",
+      "cheerOn" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:cheerOn",
+      "cantReach" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_uscmichhead", "parameters" : { "colorIndex" : [7] }  } ],
+            "chest" : [ { "name" : "gic_wt1pcchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_hscplegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_banner_floranliberationfrontback" } ],
+            "primary" : [ "gic_floran_shinobi_katana_player" ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 333.3333 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.05
+      },
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+        "physicalResistance" : {
+          "baseValue" : 1
+        },
+        "fireResistance" : {
+          "baseValue" : 0.6
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 1
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 1
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 1
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 1
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.99
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.99
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.00
+      },
+
+      "novaResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+	  
+				"biooozeImmunity": {
+					"baseValue": 1
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1
+				},
+				"gasImmunity": {
+					"baseValue": 1
+				},
+				"shadowImmunity": {
+					"baseValue": 1
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 1
+				},
+				"cosmicResistance": {
+					"baseValue": 1
+				},
+				"radioactiveResistance": {
+					"baseValue": 1
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 1
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 1
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 1
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 1
+				}
+	  
+
+    }
+  }
+}

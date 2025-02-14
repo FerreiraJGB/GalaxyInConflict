@@ -1,0 +1,43 @@
+{
+  "objectName" : "gic_generic_smallassemblyline",
+  "colonyTags" : ["station","electronic","space"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "description" : "Some sort of tiny assembly line that produces... something.",
+  "shortdescription" : "Generic Small Assembly Line",
+  "race" : "generic",
+
+  
+  "lightColor" : [0, 0, 0],
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_generic_smallassemblyline.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_generic_smallassemblyline.animation",
+  "animationParts" : {
+    "bg" : "gic_generic_smallassemblyline.png",
+    "fg" : "gic_generic_smallassemblyline_lit.png"
+  },
+  "animationPosition" : [-8, -0],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [-1, -0] ],
+
+  "interactive" : false,
+
+  "soundEffect" : "/sfx/vehicles/gic_tank_idle.ogg",
+  "soundEffectRangeMultiplier" : 0.25
+
+}

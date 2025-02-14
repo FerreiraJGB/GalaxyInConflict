@@ -1,0 +1,42 @@
+{
+  "objectName" : "gic_khurtovyna_trenchbunk",
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 125,
+  "description" : "A 5-block tall bunk etched into the wall.",
+  "shortdescription" : "Trench Bunk",
+  "race" : "human",
+  "printable" : false,
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : true,
+  "sitOrientation" : "lay",
+  "sitAngle" : 90,
+  "sitEmote" : "sleep",
+  "sitStatusEffects" : [
+    "gic_bed4"
+  ],
+  "sitEffectEmitters" : [ "sleepbubbles" ],
+
+  "inventoryIcon" : "gic_khurtovyna_trenchbunk.png",
+  "orientations" : [
+
+    {
+      "image" : "gic_khurtovyna_trenchbunk.png:<color>",
+      "flipImages" : true,
+      "imagePosition" : [-24, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["background"],
+      "direction" : "left",
+      "sitPosition" : [0, 10]
+    },
+    {
+      "image" : "gic_khurtovyna_trenchbunk.png:<color>",
+      "imagePosition" : [-24, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["background"],
+      "direction" : "right",
+      "sitPosition" : [-8, 10]
+    }
+  ]
+}

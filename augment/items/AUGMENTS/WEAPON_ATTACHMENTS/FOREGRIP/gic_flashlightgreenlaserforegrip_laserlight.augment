@@ -1,0 +1,60 @@
+{
+  "itemName" : "gic_flashlightgreenlaserforegrip_laserlight",
+  "price" : 500,
+  "rarity" : "Common",
+  "category" : "Attachment",
+  "inventoryIcon" : "gic_flashlightgreenlaserforegrip_laserlight_icon.png",
+  "description" : "Provides the function of a flashlight and a lasersight, along with the benefits of a foregrip. Cannot be attached to pistols.
+  
+^green;+10% Standing HIT CHANCE.^reset;
+^green;+15% Recoil Recovery Speed.^reset;",
+  "shortdescription" : "Flashlight/Foregrip/Green Laser Combo",
+
+  "tooltipKind" : "gic_largebase",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_flashlightgreenlaserforegrip_laserlight", //name of attachment
+	"attachmentTag" : ["gic_foregrip","gic_flashlightgreenlaserforegrip_laserlight"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/WEAPON_ATTACHMENTS/FOREGRIP/gic_flashlightgreenlaserforegrip_laserlight.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_flashlightgreenlaserforegrip_laserlight", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "laserlight", //works for sights, underbarrels
+		
+		"transformationGroupWeapon" : true,		//if enabled, then the laser sight will properly align with the weapon transformation group
+		"lasersightConfig" : {
+			"originalOffset" : [0.750, 0.350],		//original offset
+			"offset" : [0,0],					//mostly set dynamically by scripts if transformationGroupWeapon is true
+			"color" : [0, 255, 0, 150],
+			"length" : 60,
+			"segments" : 20,
+			"angle" : 0
+		},
+		
+		"lightConfig" : {
+			"active" : true,
+			"offset" : [0.3, 0.3], //offset, not position. Position will be set by the main gun scripts
+			"transformationGroups" : ["weapon"],
+			"color" : [200, 200, 200],
+			"pointLight" : true,
+			"pointAngle" : 0.00,
+			"pointBeam" : 5
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,0.9,1,1,1,0.85,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

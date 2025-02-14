@@ -1,0 +1,46 @@
+{
+  "objectName" : "gic_rusted_smine",
+  "colonyTags" : ["combat"],
+  "printable" : false,
+  "scannable" : false,
+  "rarity" : "Common",
+  "breakDropOptions" : [],
+
+  "category" : "wire",
+  "price" : 20,
+  "description" : "An old mine that's clearly weathered. These will jump out when triggered.",
+  "shortdescription" : "RSM-15 S-Mine",
+  "race" : "generic",
+
+  "inventoryIcon" : "gic_rusted_smine_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_rusted_smine.png:<color>.off",
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [ "gic_rusted_smine.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/switch/switchtoggle.animation",
+  "animationParts" : {
+    "switch" : "gic_rusted_smine.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "on" : ["/sfx/Battlefield5/gic_BFV_Webleyrevolver.ogg"]
+    }
+  },
+  "animationPosition" : [0, 0],
+
+  "outputNodes" : [ [0, 0] ],
+
+  "firstProjectile" : "smoke",
+  "triggerDelay" : 0.01,
+  "secondProjectile" : "gic_rusted_smine_spawn",
+  "detectArea" : [[-5.0, 0], [5.0, 0.5]] //[[-1.0, 0], [1.0, 0.5]]
+}

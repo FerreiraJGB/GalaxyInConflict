@@ -1,0 +1,20 @@
+{
+  "itemName" : "gic_weaponrepair_rebuildkit",
+  "price" : 0,
+  "rarity" : "Essential",
+  "category" : "^#E0EAFF;Weapon Repair Kit^white;",
+  "inventoryIcon" : "gic_weaponrepair_rebuildkit.png",
+  "description" : "A full rebuild kit for most ballistic small arms. Contains many necessary and redundant parts used in most weapons. ^Yellow;But it can't bring back an abused and neglected firearm (Durability under 5%).^reset;",
+  "shortdescription" : "Rebuild Kit [EWS]",
+  "maxStack" : 1,
+  "tooltipKind" : "gic_largebase",
+  "config" : {
+	"tags" : ["gic_repair"],	//main activeitem needs to have this tag under "weaponRepairAcceptTags"
+	"limit" : 0.05,	//if main item's weaponDurability/weaponDurabilityMax is greater/equal, then this "augment" can apply.
+	"repairAmount" : 1.0  //how much the weapon repairs (1.0 is 100%)
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/repairItems/ews_repairItem.lua" ]
+}

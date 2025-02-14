@@ -1,0 +1,22 @@
+{
+  "name" : "gic_quickdash",
+  "type" : "body",
+
+  "scripts" : ["gic_quickdash.lua"],
+  "animator" : "gic_quickdash.animation",
+
+  "description" : "Double tap ^green;[A]/[D]^white; to dash. Further distance. Cooldown: 1s",
+  "shortDescription" : "Quick Dash",
+  "rarity" : "Common",
+  "icon" : "/tech/gic_shinobidash.png",
+
+  "chipCost" : 2,
+
+  "maximumDoubleTapTime" : 0.25,
+  "dashControlForce" : 4000, //2000
+  "dashSpeed" : 50, //50
+  "dashDuration" : 0.3, //0.15
+  "dashCooldown" : 1.0, //0.8
+  "stopAfterDash" : true,
+  "groundOnly" : true
+}

@@ -1,0 +1,141 @@
+{
+  "animatedParts" : {
+    "parts" : {
+      "broom" : {
+        "properties" : {
+          "zLevel" : 0,
+          "centered" : true,
+          "image" : "gic_unpackedsoyuzcigarettes.png",
+          "offset" : [0.1, 0.0],
+          "transformationGroups" : ["broom"]
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "broom" : {}
+  },
+
+  "particleEmitters" : {
+  
+  
+  
+    "cigwindup" : {
+      "burstCount" : 9, //3
+      "particles" : [
+        {
+          "particle" : {
+    "type" : "ember",
+    "size" : 1.0,
+    "color" : [253, 143, 77, 150],
+    "fade" : 0.9,
+    "initialVelocity" : [0, 1],
+    "finalVelocity" : [0, 3],
+    "approach" : [10, 5], 
+	"destructionAction" : "fade",
+    "destructionTime" : 0.5,
+        "ignoreWind" : false,
+        "collidesForeground" : true,
+    "collidesLiquid" : true,
+    "timeToLive" : 0.5,
+    "layer" : "back",
+    "variance" : {
+    "initialVelocity" : [2.0, 2.0], //1.0, 1.0
+    "layer" : "front",
+      "size" : 0.5
+            }
+          }
+        },
+		{
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/gic_tinysmoke/gic_tinysmoke.animation",
+            "layer" : "front",
+			"ignoreWind" : false,
+			"collidesForeground" : true,
+			"collidesLiquid" : true,
+            "fade" : 0.9,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.4,
+            "flip" : true,
+            "position" : [0.0, -0.0],
+            "initialVelocity" : [2, 1],
+            "timeToLive" : 0.6,
+            "variance" : {
+              "position" : [0.0, 0],
+              "initialVelocity" : [2.0, 2.0] //1.0, 1.0
+            }
+          }
+          }
+      ]
+    },
+	
+	
+	
+    "cig" : {
+      "burstCount" : 9, //3
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "mode" : "LoopForever",
+            "animation" : "/animations/gic_tinysmoke/gic_tinysmoke.animation",
+            "size" : 0.35,
+            "fade" : 0.9,
+            "position" : [0, 0],
+            "offsetRegion" : [0, 0, 0, 0],
+			"initialVelocity" : [2, 1.0],
+			"ignoreWind" : false,
+			"collidesForeground" : true,
+			"collidesLiquid" : true,
+            "layer" : "front",
+            "finalVelocity" : [0, 2.0],
+            "approach" : [2, 5],
+            "timeToLive" : 1.5,
+            "variance" : {
+              "initialVelocity" : [2.0, 2.0], //1.0, 1.0
+            "size" : 0.15
+            }
+          }
+        }
+      ]
+    },
+	
+	
+	
+    "cigsweepback" : {
+      "burstCount" : 9, //3
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/gic_tinysmoke/gic_tinysmoke.animation",
+            "layer" : "front",
+			"ignoreWind" : false,
+			"collidesForeground" : true,
+			"collidesLiquid" : true,
+            "fade" : 0.9,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.4,
+            "flip" : true,
+            "position" : [0.0, -0.0],
+            "initialVelocity" : [2, 1],
+            "timeToLive" : 0.6,
+            "variance" : {
+              "position" : [0.0, 0],
+              "initialVelocity" : [2.0, 2.0] //1.0, 1.0
+            }
+          }
+        }
+      ]
+    }
+	
+	
+	
+  },
+
+  "sounds" : {
+    "sweep" : ["/sfx/melee/broom_sweep.ogg"]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "objectName" : "gic_glitch_industriallight",
+  "colonyTags" : ["light"],
+  "rarity" : "Common",
+  "description" : "Industrial Light.",
+  "shortdescription" : "Industrial Light",
+  "race" : "generic",
+  "category" : "light",
+  "price" : 30,
+  "printable" : false,
+  "lightColor" : [204, 204, 188],
+  "pointLight" : true,
+  "pointBeam" : 3,
+  "beamAmbience" : 0.4,
+  "tooltipKind" : "gic_largebase",
+  "inventoryIcon" : "gic_glitch_industriallight_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_industriallight.png:<color>.<frame>",
+      "imagePosition" : [-8, -8],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "left" ],
+      "lightPosition" : [-1, -0],
+      "beamAngle" : 315
+    },
+    {
+      "image" : "gic_glitch_industriallight.png:<color>.<frame>",
+      "imagePosition" : [-8, -8],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "right" ],
+      "lightPosition" : [0, -0],
+      "beamAngle" : 225
+    }
+  ],
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "gic_glitch_industriallight.png",
+    "fg" : "gic_glitch_industriallight_lit.png"
+  },
+  "animationPosition" : [-8, -8],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+}

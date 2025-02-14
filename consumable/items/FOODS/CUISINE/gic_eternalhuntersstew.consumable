@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_eternalhuntersstew",
+  "rarity" : "Rare",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_eternalhuntersstew.png",
+  
+  "description" : "''A well-fed and well-paid soldier is the most likely to fight the hardest for his cause.''
+  
+^#CC8A4D;Hard-Fought Food - When UNYIELDING BULWARK is triggered, gain +100% HIT CHANCE and ACCURACY for 60 seconds | Cuisine effect expires on trigger | 1hr duration.^reset;",
+  
+  "shortdescription" : "Eternal Hunter's Stew",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+  
+    {
+        "effect" : "gic_cuisine_eternalhuntersstew_primer",
+        "duration" : 3600
+    }
+  ] ],
+  "foodValue" : 70,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

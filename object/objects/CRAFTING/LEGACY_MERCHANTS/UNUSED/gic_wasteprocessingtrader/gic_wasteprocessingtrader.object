@@ -1,0 +1,158 @@
+{
+  "objectName" : "gic_wasteprocessingtrader",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "description" : "Turn in Junk for cash.",
+  "shortdescription" : "^orange;Waste Processing Turn-in (GIC)^white;",
+  "race" : "generic",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_wasteprocessing_largebase.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Waste Processing Dealer",
+        "subtitle" : "  Turn in various junk items for pitiful amounts of Physical Credits.",
+        "icon" : {
+          "file" : "/interface/crafting/gic_wasteprocessingtrader.png"
+        }
+      }
+    },
+	"recipes" : [
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":25,
+				"name":"soggypaper"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalmicrocredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_wasteprocessingtrader", "gic_trade_sell" ]
+		},
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_emptyglassbottle"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalmicrocredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_wasteprocessingtrader", "gic_trade_sell" ]
+		},
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_emptyplasticbottle"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalmicrocredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_wasteprocessingtrader", "gic_trade_sell" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"junk"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalmicrocredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_wasteprocessingtrader", "gic_trade_sell" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":100,
+				"name":"gic_junkdocuments"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalmicrocredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_wasteprocessingtrader", "gic_trade_sell" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_junkdocuments"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"paper"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_wasteprocessingtrader", "gic_trade_sell" ]
+		}
+		
+		
+	],
+    "filter" : [ "gic_wasteprocessingtrader" ]
+  },
+  "printable" : false,
+  "price" : 300,
+  "radioMessagesOnPickup" : [ "gic_wasteprocessingtrader" ],
+  
+  "apexDescription" : "You turn in some special junk to get money.",
+  "avianDescription" : "Nothing to see here. Just a normal trade.",
+  "floranDescription" : "Concept of junk for money is confussing to Floran.",
+  "glitchDescription" : "Amused. You can input certain junk items to receive money.",
+  "humanDescription" : "For all the violent things that happen in the Galaxy, they're still doing 5 cents worth a bottle.",
+  "hylotlDescription" : "For humans, it has to be money to convince themselves to recycle.",
+  "novakidDescription" : "I throw the junk in, they throw the money out.",
+  
+  "avaliDescription" : "A machine that transfers money to those with the correct item input...",
+  "avikanDescription" : "You turn in special junk for money. Minimum recycling.",
+  "trinkDescription" : "A simple method of convincing the local populace to recycle.",
+  "drodenDescription" : "[LOGIC ERROR]",
+  "aegiDescription" : "By inputting special waste, one can receive Physical Currency.",
+  
+  "inventoryIcon" : "gic_wasteprocessingtrader.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_wasteprocessingtrader.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1
+//      "anchors" : [ "bottom" ]
+
+    }
+  ]
+
+}

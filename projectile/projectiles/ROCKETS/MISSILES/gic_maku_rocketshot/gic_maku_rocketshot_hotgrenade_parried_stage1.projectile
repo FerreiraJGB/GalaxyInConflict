@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_maku_rocketshot_hotgrenade_parried_stage1",
+  "physics" : "arrow",
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_maku_rocketshot_hotgrenade_parried_stage2",
+      "directional" : "true",
+      "inheritDamageFactor" : 1,
+      "inheritSpeedFactor" : 1
+    }
+  ],
+  "image" : "gic_maku_rocketshot_hotgrenade.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 4,
+  "damageKind" : "electric",
+  "statusEffects" : [ ],
+  "emitters" : [ "electricplasma" ],
+  "lightColor" : [ 143, 174, 211 ],
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 0.05,
+  "onlyHitTerrain" : true,
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 20,
+  "damageTeam" : { "type" : "friendly" },
+  "knockbackDirectional" : true,
+  "speed" : 20
+  
+}

@@ -1,0 +1,204 @@
+{
+  "metadata" : {
+    "name" : "gic_razed_floranfortifiedtown",
+    "species" : "floran",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_razed_floranfortifiedtown_spawnmountain"],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 45,
+    "extendSurfaceFreeSpace" : 50,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+	
+	
+
+	
+
+
+
+	
+
+	
+
+
+
+
+    {
+      "name" : "gic_razed_floranfortifiedtown_meleecombat",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_meleecombat.json" ] ],
+      "chance" : 1
+    },
+	
+
+    {
+      "name" : "gic_razed_floranfortifiedtown_formationcombat",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_formationcombat.json" ] ],
+      "chance" : 1
+    },
+	
+
+    {
+      "name" : "gic_razed_floranfortifiedtown_liberationoutpost",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_liberationoutpost.json" ] ],
+      "chance" : 1
+    },
+		
+	
+    {
+      "name" : "gic_razed_floranfortifiedtown_citadel",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_citadel.json" ] ],
+      "chance" : 1
+    },
+
+	
+	
+	
+    {
+      "name" : "gic_razed_floranfortifiedtown_rightgate", //Transition to Battlefield
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_rightgate.json" ] ],
+      "chance" : 0
+    },	
+	
+	
+
+    {
+      "name" : "gic_razed_floranfortifiedtown_defensetower",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+	    [ "doNotConnectToPart", [ "gic_razed_floranfortifiedtown_defensetower"] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_defensetower.json" ] ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_razed_floranfortifiedtown_gunsmith",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_razed_floranfortifiedtown_gunsmith"] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_gunsmith.json" ] ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_razed_floranfortifiedtown_residence1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_razed_floranfortifiedtown_residence1"] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_residence1.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_razed_floranfortifiedtown_residence2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_razed_floranfortifiedtown_residence2"] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_residence2.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_razed_floranfortifiedtown_residence3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_razed_floranfortifiedtown_residence3"] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_residence3.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_razed_floranfortifiedtown_residence4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_razed_floranfortifiedtown_residence4"] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_residence4.json" ] ],
+      "chance" : 1
+    },
+
+
+    {
+      "name" : "gic_razed_floranfortifiedtown_residence5",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_razed_floranfortifiedtown_residence5"] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_residence5.json" ] ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_razed_floranfortifiedtown_residence6",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+	    [ "doNotConnectToPart", [ "gic_razed_floranfortifiedtown_residence6"] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_residence6.json" ] ],
+      "chance" : 1
+    },
+
+
+
+    {
+      "name" : "gic_razed_floranfortifiedtown_splitbridge",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_razed_floranfortifiedtown_splitbridge"] ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_splitbridge.json" ] ],
+      "chance" : 1
+    },
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+    {
+      "name" : "gic_razed_floranfortifiedtown_leftgate",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_leftgate.json" ] ],
+      "chance" : 0
+    },
+		
+    {
+      "name" : "gic_razed_floranfortifiedtown_spawnmountain",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_razed_floranfortifiedtown_spawnmountain.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "projectileName" : "gic_summon_piratetether_stage3",
+  "image" : "gic_summon_piratetether_null.png",
+  "physics" : "laser",
+  "piercing" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "damageKindImage" : "icon.png",
+//  "emitters" : [ "smok" ],
+  "scripts" : [  "gic_summon_piratetether_stage3.lua" ],
+  
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_uxo_mortar",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : 0
+    }
+  ],
+  
+  "speed" : 0.0,
+  "timeToLive" : 0.001,
+  "onlyHitTerrain" : true,
+  "damageKind" : "default",
+  "damageType" : "NoDamage"
+}

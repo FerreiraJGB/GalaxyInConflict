@@ -1,0 +1,44 @@
+{
+  "id" : "gic_esther_planetincentive_4_frostedquest",
+  "title" : "^orange;[GiC] Necropolis: Khurtovyna",
+  "text" : "",
+
+  "prerequisites" : [ "gic_esther_planetincentive_0_introquest", "avian_mission2" ],
+  "canBeAbandoned" : true,
+  "completionText" : "",
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 50 ], [ "bigapedoll", 1 ], [ "miniknognewspaper", 1 ], [ "bigapetargetmap", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questGiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_unitan_psionicdocument",
+        "count" : 2,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Khurtovyna Planet^reset;: ^green;<current> / <required>^reset;"
+      },
+	  
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_colonialprison_prisonerdocument",
+        "count" : 4,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Khurtovyna Planet^reset;: ^green;<current> / <required>^reset;"
+      }
+	  
+    ]
+  }
+}

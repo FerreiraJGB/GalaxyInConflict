@@ -1,0 +1,34 @@
+{
+  "itemName" : "gic_sigilofthesinner",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_sigilofthesinner.png",
+  "maxStack" : 1,  
+  "description" :
+
+"''One will find that the sins of the father and mother are never washed away.''
+
+^orange;On HEALING FLASK use: Gain +16% HP/s for 5s atop standard healing.
+
+^red;After 10s, lose 4% HP/s for 15s.^reset;",
+  
+  
+  
+  "shortdescription" : "Sigil of the Sinner",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_sigilofthesinner",
+    "displayName" : "Sigil of the Sinner",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_sigilofthesinner.png",
+    "effects" : [ 
+	"gic_sigilofthesinner_regen_primer"
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_helmet_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

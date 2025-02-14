@@ -1,0 +1,76 @@
+{
+  "itemName" : "gic_peacekeepers_shield",
+  "fixedLevel" : true,
+  "price" : 600,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "^#D6DFFF;Balanced Shield^white;",
+  "description" : "''The strongest took the spoils, and we fell down at their shoes.''
+Many Peacekeepers who still aligned themselves with the Colonial Synthetic AIs like the B.I.R.Bs would equip themselves with the same 'illegal' ballistic firearms they once eschewed.
+
+^orange;Heretic: 0.75s PARRY WINDOW | 900HP STABILITY | 60% DEF.^reset;
+^#D6DFFF;Full Force Forward!: +25% HIT CHANCE and ACCURACY with [EWS] guns whilst equipped in either hand.^white;
+^red;New Age Movement: Energy regeneration crippled whilst equipped.^reset;",
+
+  "shortdescription" : "Peacekeeper's Shield",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_peacekeepers_shield.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_peacekeepers_shield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/armor/gic_bloodborne_body-armor-6.wav" ],
+      "perfectBlock" : [ "/sfx/block/gic_demonssoulsremake_parry_shieldquiet.wav" ],
+      "block" : [ "/sfx/melee/gic_bloodborne_shield-iron1.wav" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  
+	  "shieldBash" : [ "/sfx/melee/gic_bloodborne_shieldpress.wav" ]
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_bucklershield.lua", "/abilities/weapons/gic_peacekeepers_shield.lua"  ],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 900,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.75,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 0.75,
+
+  "knockback" : 1, //15
+  
+  "damageBleedthroughEnabled" : true,
+  "damageBleedthroughAmount" : 0.4, //at 0.1, 10% of all damage received by the shield will bleed through and etc - unless the shield was broken on the hit.
+  //also note that as of the initial version, bleedthrough damage is dealt as "default"/physical damage; there is no way to pull the actual damage type received, as of my testing so far.     
+  
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

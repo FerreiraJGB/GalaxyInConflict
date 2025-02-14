@@ -1,0 +1,17 @@
+{
+  "name" : "gic_psychicbleeding_light",
+  "blockingStat" : "gic_psychicbleeding_lightStatusImmunity",
+
+  "effectConfig" : {
+    "tickDamagePercentage" : 0.00625, //0.00625 original value for light bleeding
+    "rampUpPerTick" : 0.005 //this % value is added to initialTickDamagePercentage every damage tick
+  },
+  "defaultDuration" : 60, //60
+
+  "scripts" : [
+    "gic_psychicbleeding_light.lua"
+  ],
+
+  "label" : "Suspicious Sensation - A growing sense of unease is becoming palpable, and increasingly painful.",
+  "icon" : "/interface/statuses/gic_psychicbleeding_light.png"
+}

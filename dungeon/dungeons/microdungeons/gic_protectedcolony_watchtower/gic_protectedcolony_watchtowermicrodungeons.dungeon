@@ -1,0 +1,55 @@
+{
+  "metadata" : {
+    "name" : "gic_protectedcolony_watchtowermicrodungeons",
+    "species" : "generic",
+    "rules" : [
+    ],
+
+    "anchor" : [ 
+	"gic_protectedcolony_watchtower_android",	
+	"gic_protectedcolony_watchtower_android_deactivated",
+	
+	"gic_protectedcolony_watchtower_drone",
+	"gic_protectedcolony_watchtower_drone_deactivated"
+	],
+
+
+    "maxRadius" : 1000000,
+    "maxParts" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+    {
+      "name" : "gic_protectedcolony_watchtower_android",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_watchtower_android.json" ]
+    },
+    {
+      "name" : "gic_protectedcolony_watchtower_android_deactivated",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_watchtower_android_deactivated.json" ]
+    },
+    {
+      "name" : "gic_protectedcolony_watchtower_drone",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_watchtower_drone.json" ]
+    },
+    {
+      "name" : "gic_protectedcolony_watchtower_drone_deactivated",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_watchtower_drone_deactivated.json" ]
+    }
+
+	
+
+  ]
+}

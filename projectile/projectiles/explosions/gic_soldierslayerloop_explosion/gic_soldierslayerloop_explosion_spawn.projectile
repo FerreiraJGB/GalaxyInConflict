@@ -1,0 +1,37 @@
+{
+  "projectileName" : "gic_soldierslayerloop_explosion_spawn",
+  "image" : "gic_soldierslayerloop_explosion_null.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_melee",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_soldierslayerloop_explosion/gic_soldierslayerloop_explosion.config"
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/melee/gic_bloodborne_blood-ghost_lowvol.wav"
+      ]
+    }	
+	
+  ],
+  
+  "actionOnCollide" : [
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

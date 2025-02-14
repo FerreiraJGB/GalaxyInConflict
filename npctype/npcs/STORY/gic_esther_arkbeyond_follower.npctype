@@ -1,0 +1,112 @@
+{
+  "type" : "gic_esther_arkbeyond_follower",
+  "baseType" : "base",
+  
+  "damageTeamType" : "friendly",
+  "damageTeam" : 1,
+
+  "npcname" : "Esther",
+  "identity" : {
+    "imagePath" : "esther",
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "1"
+  },
+
+  "humanoidConfig" : "/npcs/story/gic_estheroid.config",
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "follower",
+	
+    "behaviorConfig" : {
+      "play" : false,
+      "chat" : false
+    },
+
+    "dialog" : {
+
+      "follower" : {
+        "attack" : {
+          "default" : {
+            "default" : [
+              "Combat it seems.",
+			  "Not my favourite activity.",
+			  "I have attack capabilities too, dear."
+            ]
+          }
+        },
+        "join" : {
+          "default" : {
+            "default" : [
+              "Let's get a move on, dear.",
+			  "We have to get to the ship.",
+			  "My vessel will be up ahead."
+            ]
+          }
+        },
+        "returnFromCombat" : {
+          "default" : {
+            "default" : [
+              "Fighting isn't everything. We must go.",
+			  "Dear, fighting isn't all there is to this.",
+			  "We have to keep moving, dear."
+            ]
+          }
+        },
+        "wait" : {
+          "default" : {
+            "default" : [
+              "You won't get far without me.",
+			  "You'll need me to get there too, dear."
+            ]
+          }
+        },
+        "returnFromWait" : {
+          "default" : {
+            "default" : [
+              "We need to go, dear."
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "primary" : [ "gic_uscm4" ]
+          }
+        ] ]
+    ]
+  },
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1000000000000000000.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 100
+      },
+      "grit" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "gic_estherdroneturret" : {
+        "baseValue" : 1
+      }
+	  
+	  
+    }
+  }
+}

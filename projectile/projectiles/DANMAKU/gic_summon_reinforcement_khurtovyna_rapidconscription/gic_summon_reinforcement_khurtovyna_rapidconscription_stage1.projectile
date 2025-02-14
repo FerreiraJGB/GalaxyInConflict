@@ -1,0 +1,55 @@
+{
+  "projectileName" : "gic_summon_reinforcement_khurtovyna_rapidconscription_stage1",
+  "bounces" : -1,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_summon_reinforcement_khurtovyna_rapidconscription_null.png",
+  "animationCycle" : 0.1,
+  "onlyHitTerrain" : true,
+  "frameNumber" : 1,
+  "physics" : "laser",
+  "timeToLive" : 3,
+  "power" : 0,
+  "speed" : 0,
+  "orientationLocked" :true,
+  "damageKind" : "hidden",
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 3
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_smokegrenade/1.png",
+			"fullbright":true,"size":1.3,
+			"destructionAction":"fade",
+			"destructionTime":4.0
+		}
+	},  
+ 	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 3
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_smokegrenade/1.png",
+			"fullbright":true,"size":1.3,
+			"destructionAction":"fade",
+			"destructionTime":6.0
+		}
+	}, 
+    {
+      "action" : "projectile",
+      "type" : "gic_summon_reinforcement_khurtovyna_rapidconscription_stage2",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 0
+    }
+  ]
+}

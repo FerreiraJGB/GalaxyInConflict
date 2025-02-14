@@ -1,0 +1,40 @@
+{
+  "metadata" : {
+    "name" : "gic_protectedcolony_laboratory_bossrush",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_protectedcolony_laboratory_start"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 3,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_protectedcolony_laboratory_start",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_start.json" ] ],
+      "chance" : 0
+    },
+	
+	
+
+    {
+      "name" : "gic_protectedcolony_laboratory_end_alt",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_end_alt.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

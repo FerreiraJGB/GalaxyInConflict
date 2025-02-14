@@ -1,0 +1,114 @@
+{
+  "type" : "gic_floranliberationfront_introstory_advisor6",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+
+  "identity" : {
+    "gender" : "male"
+  },
+  
+  "persistent" : true,
+
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+    "behavior" : "speaker",
+
+    "behaviorConfig" : {
+      "alwaysRun" : false,
+      "wanderWaitTime" : [6.0, 10.0],
+      "wanderTime" : [0.0, 0.0],
+      "wanderDistance" : 0,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ]
+    },
+
+	
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+			"Aeternix is doing their best to hold the main enemy force.",
+			"Landline comms were cut. No doubt Protectorate orders. The barbarians aren't that smart.",
+			"You remember what you had to do right? Grab at least one matter manipulator from the Protectors.",
+			"That M.M is priceless. Every Protector has one, but not every Protector goes down easily.",
+			"Go. Advisor-3 cannot hold them off forever.",
+			"Go. Bishamonten be with you.",
+			"Doesn't your arrogant pride fear the Gods any longer? Go!",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"[Dialogue repeat]"
+          ]
+        }
+      },
+      "speak" : {
+        "default" : {
+          "default" : [
+            "Advisor-1! I need to speak to you right about now!"
+          ]
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "gic_stahlhelmhead", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "chest" : [
+              { "name" : "gic_ashigaruchest", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "legs" : [
+              { "name" : "gic_hscplegs", "parameters" : { "colorIndex" : [0] } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

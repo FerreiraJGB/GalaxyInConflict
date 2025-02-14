@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_armor_earplugs",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CCD8B6;Helmet Equipment^reset;",
+  "inventoryIcon" : "gic_armor_earplugs.png",
+  
+  "description" : 
+  
+"*EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE*
+
+^green;Immunity to excessive gunfire noise.^reset;",
+
+
+
+  "shortdescription" : "Ear Plugs",
+
+  "augment" : {
+    "type" : "gic_basichead",
+    "name" : "gic_armor_earplugs",
+    "displayName" : "Ear Plugs",
+    "displayIcon" : "/items/augments/basic/head/gic_armor_earplugs.png",
+    "effects" : [ 
+	"gic_armor_earplugs",
+	{"stat" : "gic_gunfirenoiseProtection", "amount" : 1.0}
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_helmet_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

@@ -1,0 +1,94 @@
+{
+  "type" : "gic_federal_officer",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 13,
+  "dropPools" : [ "gic_federalsoldierTreasure" ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Open fire!",
+            "Opening fire!",
+			"Holy shit!",
+			"Shit!",
+			"Fucker!",
+			"We got a live one!"
+          ]
+        }
+      }
+    },
+    "reactions" : {
+      "spontaneous" : [
+        [2.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+//        [1.0, "patrol", { "timeRange" : [0.1,0.3]}],
+        [2.0, "wander"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_operatorcaphead", "parameters" : { "colorIndex" : [3] } }, { "name" : "", "parameters" : { "colorIndex" : [0] } } ],
+            "chest" : [ { "name" : "peacekeeperchest", "parameters" : { "colorIndex" : [11] } } ],
+            "legs" : [ { "name" : "peacekeeperpants", "parameters" : { "colorIndex" : [11] } } ],
+            "primary" : [
+			  "gic_armoredprotectorspistol"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"], 
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.2
+      }
+	  
+	  
+    }
+  }
+  
+}

@@ -1,0 +1,139 @@
+{
+  "itemName" : "gic_floran_yari_spear_npc_razed",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A Floran Primitive's favorite, with subtle additions based off ancient Hylotl weaponry looted long ago.
+  
+^#D6DFFF;Ashen Ashigaru: Hold [ALT-FIRE] to initiate a flurry of rapid-fire attacks.^reset;",
+
+  "shortdescription" : "Floran ^green;Ashigaru^white; Spear NPC Razed",
+  "tooltipKind" : "gic_largebase_sword",
+  "category" : "^#D6DFFF;Spear^white;",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_floran_yari_spear.png",
+
+  "animation" : "gic_floran_yari_spear.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_floran_yari_spear.png"
+  },
+  "animationCustom" : { "sounds" : {
+          "fire" : ["/sfx/melee/swing_spear.ogg"]
+        } },
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua"],
+  "scriptDelta" : 2,
+  
+  "elementalType" : "ews_melee_razed",
+
+//  "aimOffset" : -2.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+	"scripts" : ["/items/active/weapons/melee/abilities/gic_spearstab.lua"],
+    "fireTime" : 1.11,
+    "baseDps" : 60, //80
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee_razed",
+//      "statusEffects" : [ "gic_boss_melee_primer" ],
+      "knockbackRange" : 25,
+	  "damageType" : "IgnoresDef",
+      "timeout" : 0.5
+    },
+
+
+	"stances" : {
+	
+      "idle" : {
+        "armRotation" : -55,
+		"aimAngle" : 0,
+        "weaponRotation" : -15,
+        "allowRotate" : false,
+        "allowFlip" : true,
+		"twoHanded" : true,
+		"weaponOffset" : [ 0.0, 0.2 ],
+		
+		"backArmFrame" : "swim.3"
+      },
+	  
+      "windup" : {
+        "duration" : 0.45,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "twoHanded" : true,
+		"weaponOffset" : [ 0.0, 0.6 ],
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+
+	  
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+		"weaponOffset" : [ 0.0, 0.6 ],
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+	  "hold" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+		"weaponOffset" : [ 0.0, 0.6 ],
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+	  
+	  
+	}
+
+  },
+
+  "altAbilityType" : "flurry",
+  "altAbility" : {
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee_razed",
+      "statusEffects" : [ ],
+      "baseDamage" : 5, //35
+      "knockback" : 20,
+      "timeout" : 0.25,
+      "timeoutGroup" : "alt"
+    },
+	
+	"cooldownResetTime" : 0.35, //0.25
+    "maxCooldownTime" : 0.35, //0.25
+    "minCooldownTime" : 0.27, //0.17
+    "cooldownSwingReduction" : 0.08, //0.04
+	
+	"cycleRotationOffsets" : [0, 3.0, -3.0],
+	"stances" : {
+	  "idle" : {
+	    "armRotation" : -90,
+	    "weaponRotation" : 0,
+	    "twoHanded" : false,
+	    "weaponOffset" : [0, 0.5],
+
+	    "allowRotate" : true,
+	    "allowFlip" : true
+	  },
+      "swing" : {
+        "duration" : 0.15,
+        "armRotation" : -15,
+        "weaponRotation" : -75,
+        "twoHanded" : true,
+        "weaponOffset" : [0.0, 1.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

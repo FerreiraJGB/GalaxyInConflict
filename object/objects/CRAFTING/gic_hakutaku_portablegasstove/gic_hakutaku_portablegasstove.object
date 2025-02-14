@@ -1,0 +1,184 @@
+{
+  "objectName" : "gic_hakutaku_portablegasstove",
+  "colonyTags" : [],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "Hakutaku Portable Gas Stove - Can cook [GIC] food.
+
+Despite only being a portable gas stove, it seems like you're capable of cooking a large variety of foodstuffs that shouldn't even be possible with this.",
+  "shortdescription" : "Hakutaku Gas Stove",
+  "race" : "generic",  
+  "category" : "furniture",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  
+ "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_generic_shop_notab.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Hakutaku Portable Gas Stove",
+        "subtitle" : "  Cook [GIC] food here.",
+        "icon" : {
+          "file" : "/interface/crafting/gic_hakutaku_portablegasstove.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+	
+	
+	
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"rawfish"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_seafoodmisosoup"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_hakutaku_portablegasstove", "objects", "all" ]
+		},	
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2,
+				"name":"wheat"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_darkbread"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_hakutaku_portablegasstove", "objects", "all" ]
+		},	
+		
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"rawfish"
+				},
+				{
+				"parameters":{},
+				"count":1,
+				"name":"wheat"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_meatdumplings"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_hakutaku_portablegasstove", "objects", "all" ]
+		},	
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"alienmeat"
+				},
+				{
+				"parameters":{},
+				"count":1,
+				"name":"wheat"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_meatdumplings"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_hakutaku_portablegasstove", "objects", "all" ]
+		},	
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":3,
+				"name":"rawfish"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_kabayakilampreys"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_hakutaku_portablegasstove", "objects", "all" ]
+		},	
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":5,
+				"name":"rice"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_lunardangos"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_hakutaku_portablegasstove", "objects", "all" ]
+		},			
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"rice"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_rumiariceball"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_hakutaku_portablegasstove", "objects", "all" ]
+		}
+		
+	],
+    "filter" : [ "gic_hakutaku_portablegasstove" ]
+  },
+
+
+  "inventoryIcon" : "gic_hakutaku_portablegasstove_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_hakutaku_portablegasstove.png",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+//      "collision" : "platform"
+
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "objectName" : "gic_crusade_cavesystem_portal",
+  "colonyTags" : ["human"],
+  "rarity" : "Legendary",
+  "category" : "other",
+  "price" : 0,
+  "printable" : false,
+
+  "description" : "[This door will disappear after six hours once entered]",
+  "shortdescription" : "Crusade Cave System Entrance",
+  "race" : "human",
+
+  "lightColor" : [76, 60, 86],
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_crusade_cavesystem_portal.png:<color>.<frame>", "fullbright" : true }, { "image" : "gic_crusade_cavesystem_portal_lit.png:<color>.<frame>" } ],
+      "imagePosition" : [-16, 0],
+      "animationPosition" : [-16, 0],
+      "spaceScan" : 0.1,
+
+      "anchors" : [ "bottom" ],
+      "direction" : "right",
+
+      "lightPosition" : [0, 3],
+
+      "detectArea" : [ [-3, 0], [3, 5] ]
+    }
+  ],
+
+  "animation" : "/objects/gic_crusade_cavesystem_portal/gic_crusade_cavesystem_portal.animation",
+  "animationParts" : {
+    "bg" : "gic_crusade_cavesystem_portal.png",
+    "fg" : "gic_crusade_cavesystem_portal_lit.png"
+  },
+
+  "scripts" : [ "/objects/gic_crusade_cavesystem_portal/gic_crusade_cavesystem_portal.lua" ],
+  "scriptDelta" : 20,
+
+  "vanishTime" : 21600,
+
+
+  "health" : 10,
+  "smashOnBreak" : true
+}

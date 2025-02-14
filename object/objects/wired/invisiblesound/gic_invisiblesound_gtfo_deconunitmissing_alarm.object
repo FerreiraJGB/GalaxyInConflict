@@ -1,0 +1,42 @@
+{
+  "objectName" : "gic_invisiblesound_gtfo_deconunitmissing_alarm",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Common",
+  "category" : "wire",
+  "price" : 0,
+  "health" : 0.1,
+  "description" : "...",
+  "shortdescription" : "Invisible Sound Source",
+  "race" : "generic",
+
+  "smashOnBreak" : true,
+  "lightColor" : [0, 0, 0],
+
+  "inventoryIcon" : "invisiblesound.png:default.1",
+  "orientations" : [
+    {
+      "image" : "invisiblesound.png:default.1",
+      "imagePosition" : [-8, -8],
+      "spaces" : [ [0, 0] ],
+      "direction" : "right"
+    }
+  ],
+
+  "animation" : "invisiblesound.animation",
+
+  "animationParts" : {
+    "light" : "invisiblesoundhidden.png"
+  },
+  "animationPosition" : [-8, -8],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  // "interactive" : false,
+
+  "inputNodes" : [ [-1, 0] ],
+
+  "soundEffect" : "/sfx/GTFO/gic_gtfo_deconunitmissing_alarm.ogg",
+  "soundEffectRangeMultiplier" : 2.0
+}

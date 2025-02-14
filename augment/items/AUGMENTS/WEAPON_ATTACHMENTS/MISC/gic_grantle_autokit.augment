@@ -1,0 +1,32 @@
+{
+  "itemName" : "gic_grantle_autokit",
+  "price" : 5000,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Miscellaneous Attachment^reset;",
+  "inventoryIcon" : "gic_grantle_autokit.png",
+  "description" : "A collection of tools and parts that can modify the Grantle-218 and turn it into a fully automatic weapon. Rarely found in civilian hands, but can be easily obtained from black markets if one has enough cash.",
+  "shortdescription" : "G218 Auto Kit",
+  "tooltipKind" : "gic_largebase",
+
+  "attachment" : {
+	"attachmentType" : "misc", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_grantle_autokit", //name of attachment
+	"attachmentTag" : ["gic_grantle_autokit"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	
+	"fireType" : "auto",
+	"notAttachment" : true, //if this is enabled, then only unique misc attachment effects will apply, i.e. the above fireType modifier. If this is enabled, the misc attachment slot will NOT be taken up when applied. Normal attachment bonuses (below) will have no effect if enabled.
+	//this param only works with misc attachments.
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

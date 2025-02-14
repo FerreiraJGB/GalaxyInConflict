@@ -1,0 +1,83 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_dialogue_soviet_conscriptinfantry.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : {
+      "pool" : [	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-01.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-02.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-03.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-04.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-05.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-06.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-07.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-08.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-09.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-10.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-11.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-12.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-13.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-14.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-15.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-16.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-17.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-18.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-19.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-20.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-21.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-22.ogg",	
+        "/sfx/CompanyOfHeroes/gic_coh2_soviet_conscriptinfantry-23.ogg"
+		],
+      "rangeMultiplier" : 2.0
+		},
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

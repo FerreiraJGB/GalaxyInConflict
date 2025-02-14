@@ -1,0 +1,47 @@
+{
+  "objectName" : "gic_glitch_sofa",
+  "colonyTags" : ["bench"],
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 125,
+  "description" : "Sofa.",
+  "shortdescription" : "Sofa",
+  "race" : "generic",
+  "tooltipKind" : "gic_largebase",
+  "inventoryIcon" : "gic_glitch_sofa.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_sofa.png:<color>",
+      "imagePosition" : [-16, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "sitPositions" : [
+        // Positions from front to back.
+        [-5, 21], // Right
+        [7, 21] // Left
+      ],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "gic_glitch_sofa.png:<color>",
+      "imagePosition" : [-16, 0],
+      "direction" : "right",
+
+      "sitPositions" : [
+        // Positions from front to back.
+        [-6, 21], // Left
+        [7, 21] // Right
+      ],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : false
+
+}

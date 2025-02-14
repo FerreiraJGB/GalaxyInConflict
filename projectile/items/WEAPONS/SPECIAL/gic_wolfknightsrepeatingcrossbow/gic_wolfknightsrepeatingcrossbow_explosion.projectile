@@ -1,0 +1,56 @@
+{
+  "projectileName" : "gic_wolfknightsrepeatingcrossbow_explosion",
+  "image" : "/projectiles/gic_null/gic_null.png",
+  "animationCycle" : 0.25,
+  "physics" : "laser",
+  "frameNumber" : 1,
+  "timeToLive" : 0,
+  "damageKindImage" : "gic_uxo_mortaricon.png",
+  "pointLight" : false,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+  ],
+  
+
+  
+  "emitters" : [ ],
+  "power" : 300.0, //deals 150hp dmg at 600 power
+  "knockback" : 60,
+  "speed" : 0,
+  "damageKind" : "ews_explosive",
+  "damageType" : "NoDamage",
+  "damageTeam" : { "type" : "indiscriminate" }
+}

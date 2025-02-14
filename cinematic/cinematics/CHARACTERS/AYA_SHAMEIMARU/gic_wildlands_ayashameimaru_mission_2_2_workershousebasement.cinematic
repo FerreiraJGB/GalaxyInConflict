@@ -1,0 +1,196 @@
+{
+  "muteSfx" : true,
+  "muteMusic" : true,
+  "skippable" : true,
+//  "letterbox" : true,
+//  "backgroundColor" : [0, 0, 0, 200],
+//  "backgroundFadeTime" : 0.5,
+
+  "panels" : [
+  
+	
+	// --- --- ---
+	
+	
+  //Character Chatbox
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Character.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 40.5,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 41,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        }
+      ]
+    },
+	
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Textbox.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 40.5,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 41,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        }
+      ]
+    },
+
+
+// ----------------- dialogue: Initial Meeting
+    {
+      "drawables" : [
+      ],
+      "text" : "Oh by the Gods...
+
+What the hell have they done to you, you poor soul? They need to know this. It's... ugh. I've covered wars before, but never to this level of brutality. You would think the other couriers would know something about this, given that someone like Bradley went missing without a single query put into place about his whereabouts.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 1.0,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 15,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 18,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 18.5,
+          "alpha" : 0.0
+        }
+      ]
+    },
+
+
+    {
+      "drawables" : [
+      ],
+      "text" : "What was that?...
+	  
+Alright, I'm going to make this quick. I'll get to work on the pictures and bagging anything that might be useful for us later. I'm not stupid, I think someone doesn't like us being here. It happens in movies, in games, and I'm certain it's happening right now. Head back up and keep them off my back.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 21.5,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 35.5,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 40.5,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 41,
+          "alpha" : 0.0
+        }
+      ]
+    }
+
+
+  ],
+  "audio" : [
+  
+    {
+      "timecode" : 1,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    },
+	
+    {
+      "timecode" : 18,
+      "resource" : "/cinematics/esther_story/gic_esther_lunarailgun/jeep_skid_stop01.ogg"
+    },
+
+    {
+      "timecode" : 20,
+      "resource" : "/cinematics/esther_story/gic_esther_lunarailgun/door_truck_military_open2.ogg"
+    }
+	
+	
+  ]
+}

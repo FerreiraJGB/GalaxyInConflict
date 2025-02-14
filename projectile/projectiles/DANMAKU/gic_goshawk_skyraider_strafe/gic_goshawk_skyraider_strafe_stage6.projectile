@@ -1,0 +1,43 @@
+{
+  "projectileName" : "gic_goshawk_skyraider_strafe_stage6",
+  "physics" : "gic_goshawk_machinegun_strafe_stage6_physics",
+  
+  "actionOnHit" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_tankexplosion_smoke",
+      "inheritSpeedFactor" : 1,
+      "inheritDamageFactor" : 1
+    }
+  ],
+  
+  "actionOnReap" : [
+
+  ],
+  
+   "periodicActions" : [
+   
+  ], 
+  
+  
+
+
+  "image" : "gic_goshawk_skyraider_strafe_stage6.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+ 
+  "persistentAudio" : "/sfx/vehicles/gic_highfleet_jet_engine_02.wav",
+  
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 130,
+  "acceleration" : 60,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 3.0,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

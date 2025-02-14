@@ -1,0 +1,38 @@
+{
+  "objectName" : "gic_glitch_tubelight_alt",
+  "colonyTags" : ["light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "lightColor" : [204, 204, 188],
+  "price" : 60,
+  "description" : "Tube Light.",
+  "shortdescription" : "Tube Light Alt",
+  "race" : "apex",
+  "tooltipKind" : "gic_largebase",
+  "inventoryIcon" : "gic_glitch_tubelight_alt_icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_glitch_tubelight_alt.png:<color>.<frame>", "fullbright" : true }, { "image" : "gic_glitch_tubelight_alt_lit.png:<color>.<frame>" } ],
+      "imagePosition" : [-8, 0],
+      
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+  
+  "animation" : "/objects/wired/light/lighttoggle.animation",
+  "animationParts" : {
+    "light" : "gic_glitch_tubelight_alt.png"
+  },
+  "animationPosition" : [-8, 0],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+  
+}

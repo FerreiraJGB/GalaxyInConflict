@@ -1,0 +1,52 @@
+{
+  "name" : "gic_patron_ammunitionfairy",
+  "effectConfig" : {
+	"projectileType" : "gic_ammunitionfairy_area", //does not accept arrays
+	"projectileTypeMiss" : "gic_ammunitionfairy_area", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.2,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^red;Reloading^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+	},
+	"missChance" : 0,
+	"offset" : [-0.8,0.5],
+	"muzzleOffset" : [0.2, 2.0],
+	"muzzleOffset2" : [0.2, 2.0],
+	"trackingDistance" : 100,
+	"trackingAngle" : 360,
+	"fireRate" : 5.0,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 5.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_patron_ammunitionfairy.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_patron_ammunitionfairy.animation",
+ 
+  "label" : "Patron: Ammunition Fairy - Grants bearer and nearby allies EWS Infinite Ammo/Reloads for 10s when within 100 blocks of a valid enemy target | Bearer will explode if damaged.",
+  "icon" : "/interface/statuses/gic_patron_ammunitionfairy.png"
+}

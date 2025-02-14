@@ -1,0 +1,304 @@
+{
+  "projectileName" : "gic_khurtovyna_moldc1_exploder",
+  "physics" : "gic_grenadenormal",
+  "renderLayer" : "Player+1",
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "timeToLive" : 0,
+  "speed" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_khurtovyna_moldc1_exploder.png",
+  "frameNumber" : 1,
+  "piercing" : false,
+  "actionOnCollide" : [
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/vsmallregularexplosion/vsmallregularexplosionnodamage.config"
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/GTFO/gic_gtfo_Striker_Alert_1.ogg"
+      ]
+    },
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_flashbang/1.png",
+			"fullbright":true,"size":2.0,
+			"destructionAction":"fade",
+			"destructionTime":2.0
+		}
+	},
+    {
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 90
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 100
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 80
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 110
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 70
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 120
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 60
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 130
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 50
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 140
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 40
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 150
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 160
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 170
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 10
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 180
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 0
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 190
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : -10
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 200
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : -20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 210
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : -30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 220
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : -40
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 230
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : -50
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 240
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : -60
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 250
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : -70
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 260
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : -80
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : 270
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_khurtovyna_moldc1_exploder_shrapnel",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 0.0,
+      "angle" : -90
+    }
+	
+  ],
+  "power" : 0,
+  "damageKind" : "shotgunbullet"
+}

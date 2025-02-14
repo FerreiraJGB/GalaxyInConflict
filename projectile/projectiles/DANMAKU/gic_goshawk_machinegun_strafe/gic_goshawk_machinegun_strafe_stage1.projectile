@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_goshawk_machinegun_strafe_stage1",
+  "physics" : "laser",
+  "actionOnReap" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_goshawk_machinegun_strafe_stage3",
+      "inheritDamageFactor" : 1,
+	  "angle" : 180,
+	  "fuzzAngle" : 0,
+      "angleAdjust" : 0
+    }
+	
+  ],
+  "image" : "gic_goshawk_machinegun_strafe_stage1.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 40,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "fullbright" : true,
+  "timeToLive" : 1.25, //1.0 at 40 spd
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

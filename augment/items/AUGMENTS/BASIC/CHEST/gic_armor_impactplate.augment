@@ -1,0 +1,30 @@
+{
+  "itemName" : "gic_armor_impactplate",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Armor Plate^reset;",
+  "inventoryIcon" : "gic_armor_impactplate.png",
+  "maxStack" : 1,  
+  "description" : 
+  
+"Plating with an emphasis on cushioning the impact across a greater area compared to their typical military-grade brethren. While most body armor already cushions incoming force (thus the damage absorption), the ''abjuration'' used here is somewhat more exotic. The force transfer prevents bleeding in a certain area, but that just means you feel more pain everywhere when shot.
+
+^green;Prevents Light and Medium Bleeding.^reset;",
+
+
+
+  "shortdescription" : "Type XIIV Impact Plate",
+
+  "augment" : {
+    "type" : "gic_basicchest",
+    "name" : "gic_armor_impactplate",
+    "displayName" : "Type XIIV Impact Plate",
+    "displayIcon" : "/items/augments/basic/chest/gic_armor_impactplate.png",
+    "effects" : [ "gic_bleeding_mediumStatusImmunity", "gic_bleeding_lightStatusImmunity", "gic_armor_impactplate" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_armorplate_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

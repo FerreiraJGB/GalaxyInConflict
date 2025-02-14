@@ -1,0 +1,34 @@
+{
+  "name" : "gic_shrinemaiden_legs_pinger",
+  "blockingStat" : "gic_shrinemaiden_legs_pingerStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_shrinemaiden_legs", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_shrinemaiden_legs", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 20,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 4.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_shrinemaiden_pinger.animation",
+   
+   "label" : "Shrine Maiden [LEGS] - Nearby enemies within 20 blocks receive 1.25x PSYCHIC damage.",
+  "icon" : "/interface/statuses/gic_shrinemaiden_legs.png"
+}

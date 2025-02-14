@@ -1,0 +1,94 @@
+{
+  "projectileName" : "gic_electrictravelingswoosh_8pattern_thunderhammer",
+  "image" : "gic_electrictravelingswoosh_360pattern.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_electrictravelingswoosh",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle": 0,
+      "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_electrictravelingswoosh",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle": 0,
+      "angle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_electrictravelingswoosh",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle": 0,
+      "angle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_electrictravelingswoosh",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle": 0,
+      "angle" : 135
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_electrictravelingswoosh",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle": 0,
+      "angle" : 180
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_electrictravelingswoosh",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle": 0,
+      "angle" : 225
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_electrictravelingswoosh",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle": 0,
+      "angle" : 270
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_electrictravelingswoosh",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle": 0,
+      "angle" : 315
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_plasmaimpact_large/gic_plasmaimpact_large.config"
+    }
+  ],
+  
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

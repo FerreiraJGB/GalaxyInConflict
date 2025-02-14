@@ -1,0 +1,28 @@
+{
+  "itemName" : "gic_pacificplatter",
+  "rarity" : "Rare",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_pacificplatter.png",
+  "description" : "''Takes a bit of work, this one. The trick is to fry them all in the same pan, sprinkling the Lunar Herbs every minute or so. Trust me, that stuff is literal magic.''
+  
+Lamprey, Salmon, and Tuna deep-fried in egg-flour batter, topped with special Lunar Herbs to help neutralize the greasy flavor.",
+  "shortdescription" : "Pacific Platter",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 10,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

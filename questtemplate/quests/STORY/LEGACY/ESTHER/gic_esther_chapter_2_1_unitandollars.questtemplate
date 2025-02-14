@@ -1,0 +1,26 @@
+{
+  "id" : "gic_esther_chapter_2_1_unitandollarsQuest",
+  "title" : "^#D1FFDE;Before you go...",
+
+  "text" : "---",
+  "completionText" : "---",
+  "moneyRange" : [500,500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalunitandollar", 2000 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : false,
+    "turnInEntityUid" : "",
+    "conditions" : [
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "type" : "gic_abandonedcolonialprison_prisonerscavenger",
+  "baseType" : "gic_soldierbase",
+
+  "persistent" : true,
+  
+  "movementParameters" : {
+    "runSpeed" : 14
+  },
+
+  "damageTeam" : 8,
+  "dropPools" : [ "gic_internalprisonguardTreasure" ],
+
+  "scriptConfig" : {
+    "behavior" : "gic_hostileguard",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 0.50,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [10.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/bandits/gic_militiabandit_combat.config:attack",
+      "reattack" : "/dialog/bandits/gic_militiabandit_combat.config:reattack",
+      "killedTarget" : "/dialog/bandits/gic_militiabandit_combat.config:killedTarget",
+      "lostTarget" : "/dialog/bandits/gic_militiabandit_combat.config:lostTarget",
+      "outOfSight" : "/dialog/bandits/gic_militiabandit_combat.config:outOfSight",
+      "cheerOn" : "/dialog/bandits/gic_militiabandit_combat.config:cheerOn",
+      "cantReach" : "/dialog/bandits/gic_militiabandit_combat.config:cantReach"
+    },
+
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0.05,
+        "broadsword" : 0.45,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 0.6,
+        "shortsword" : 0.35,
+        "spear" : 0.55
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.02,
+        "broadsword" : 1.7,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 2.0,
+        "shortsword" : 1.0,
+        "spear" : 1.4
+      }
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_sarh14thead", "parameters" : { "colorIndex" : [1] } }, { "name" : "gic_glasses5head", "parameters" : { "colorIndex" : [1] } }, { "name" : "gic_s6b710head", "parameters" : { "colorIndex" : [1] } }, { "name" : "", "parameters" : { "colorIndex" : [1] } }, { "name" : "", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "apexofficerjacket", "parameters" : { "colorIndex" : [5] } }, { "name" : "apexofficerjacket", "parameters" : { "colorIndex" : [5] } }, { "name" : "gic_wt1pcchest", "parameters" : { "colorIndex" : [5] } }, { "name" : "gic_g4rtmvchest", "parameters" : { "colorIndex" : [5] } }, { "name" : "gic_s6b702chest", "parameters" : { "colorIndex" : [5] } } ],
+            "legs" : [ { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [5] } } ],
+            "back" : [ { "name" : "gic_scavengerpackback", "parameters" : { "colorIndex" : [0] } }, { "name" : "", "parameters" : { "colorIndex" : [1] } }, { "name" : "", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+			  "gic_vich919_special_spotter",
+			  "gic_tyurma70_special_spotter"
+			]
+          }
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 20,
+    "statusEffects" : [ ]
+  },
+  
+  
+  
+  "innateStatusEffects" : ["gic_defenderdoll_prisoner_npc", "gic_npc_death_blood_explosion"],
+  
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.2
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : -100.0
+      }
+    }
+  }
+}

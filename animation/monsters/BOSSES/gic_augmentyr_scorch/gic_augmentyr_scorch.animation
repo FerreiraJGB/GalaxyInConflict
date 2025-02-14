@@ -1,0 +1,261 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 1.0,
+            "mode" : "loop",
+            "properties" : {
+            }				
+          },
+          "fly" : {
+            "frames" : 1,
+            "mode" : "loop",
+            "cycle" : 1.0
+          },  
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+          "aim" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "properties" : {
+              "particleEmittersOn" : [ ]
+            }	
+          },		  
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "properties" : {
+              "particleEmittersOff" : [ ]
+            }	
+          }  
+        }
+      },
+      "body2" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 1.0,
+            "mode" : "loop",
+            "properties" : {
+            }				
+          },
+          "fly" : {
+            "frames" : 1,
+            "mode" : "loop",
+            "cycle" : 1.0
+          },  
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+          "aim" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "properties" : {
+              "particleEmittersOn" : [ ]
+            }	
+          },		  
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "properties" : {
+              "particleEmittersOff" : [ ]
+            }	
+          }  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "aim", "facing", "body" ],
+          "offset" : [0, 1]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+			
+            "aim" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+
+			
+			
+			
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true },
+    "facing" : { "interpolated" : false },
+    "aim" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+
+  "lights" : {
+    "glow" : {
+      "active" : false,
+      "position" : [0, 0],
+      "color" : [50, 50, 150], //255, 255, 107
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+    "stars" : {
+      "enabled" : true,
+      "emissionRate" : 3.0,
+      "particles" : [
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" }
+      ]
+    },
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "burningvehiclesmokefront" },
+        { "particle" : "burningvehiclesmokemiddle" },
+        { "particle" : "burningvehiclesmokeback" },
+        { "particle" : "redgas" },
+        { "particle" : "burningdust" },
+        { "particle" : "burningvehicleflamesback" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+    "fire" : {
+      "pool" : [ "/sfx/gun/gic_highfleet_shell_far_med_01.ogg", "/sfx/gun/gic_highfleet_shell_far_med_02.ogg", "/sfx/gun/gic_highfleet_shell_far_med_03.ogg", "/sfx/gun/gic_highfleet_shell_far_med_04.ogg", "/sfx/gun/gic_highfleet_shell_far_med_05.ogg" ],
+      "rangeMultiplier" : 1.0
+    },
+	
+    "rocket" : {
+      "pool" : [ "/sfx/gun/gic_calliopefire_01.ogg" ],
+      "rangeMultiplier" : 1.0
+    },
+  
+    "aggroHop" : [ ],
+    "deathPuff" : {
+      "pool" :	["/music/RemnantFromTheAshes/gic_remnantfromtheashes_rhomminiboss_deathtune.ogg"],
+      "rangeMultiplier" : 6.0
+	}
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "objectName" : "gic_colonyvendingmachine",
+  "colonyTags" : ["station","mechanical","commerce", "human"],
+  "rarity" : "Common",
+  "category" : "other",
+  "price" : 300,
+  "printable" : false,
+  "description" : "Standard colony vending machine. Requires physical microcredits, rather than pixels seen in most common Protectorate vending machines.",
+  "shortdescription" : "Colony Vending Machine",
+  "race" : "generic",
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_generic_shop_notab.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Colony Vending Machine",
+        "subtitle" : "  Requires physical microcredits, rather than pixels seen in most common Protectorate vending machines.",
+        "icon" : {
+          "file" : "/interface/crafting/gic_tradeterminal.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":40,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_naloxone_pack"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonyvendingmachine", "objects", "all" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_opium_pack"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonyvendingmachine", "objects", "all" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":8,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_mech_energizer_battery"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonyvendingmachine", "objects", "all" ]
+		},	
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10, //4
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bottledwater"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonyvendingmachine", "objects", "all" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":12,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_cannedmineralwater"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonyvendingmachine", "objects", "all" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_cannedcoffee"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonyvendingmachine", "objects", "all" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":15,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_packagedmixedmeal"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_colonyvendingmachine", "objects", "all" ]
+		}
+		
+		
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_colonyvendingmachine" ]
+  },
+
+  "inventoryIcon" : "gic_colonyvendingmachine.png",
+  "orientations" : [
+    {
+      "image" : "gic_colonyvendingmachine.png:<color>",
+      "imagePosition" : [-16, -0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    },
+    {
+      "image" : "gic_colonyvendingmachine.png:<color>",
+      "imagePosition" : [-16, -0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ],
+
+  "soundEffect" : "/sfx/objects/fluorescent_light_loud.ogg",
+  "soundEffectRangeMultiplier" : 0.5,
+
+  "scripts" : [
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 60,
+
+  "npcToy" : {
+    "influence" : [
+      "vendingmachineActivate",
+      "vendingmachineCollect",
+      "vendingmachineConsume",
+      "vendingmachineComplete"
+    ],
+    "defaultReactions" : {
+      "vendingmachineActivate" : [
+        [1.0, "pressbutton"]
+      ],
+      "vendingmachineCollect" : [
+        [1.0, "crouchcollect"]
+      ],
+      "vendingmachineConsume" : [
+        [1.0, "drink"]
+      ],
+      "vendingmachineComplete" : [
+        [1.0, "smile"],
+        [0.1, "vomit"]
+      ]
+    },
+    "preciseStandPositionLeft" : [-2.0, 1.0],
+    "preciseStandPositionRight" : [2.0, 1.0],
+    "maxNpcs" : 1
+  }
+}

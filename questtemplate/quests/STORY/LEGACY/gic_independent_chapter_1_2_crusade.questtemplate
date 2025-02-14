@@ -1,0 +1,50 @@
+{
+  "id" : "gic_independent_chapter_1_2_crusadeQuest",
+  "title" : "^orange;[GiC] Spiritual Dissection",
+  "text" : "-Blank-",
+
+  "prerequisites" : [ "gic_independent_chapter_1_1_confrontcainQuest" ],
+  "canBeAbandoned" : false,
+  
+  "completionText" : "-Blank-",
+  
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_jiangshi_firelance_player", 1 ], [ "gic_jiangshi_bell_player", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_independent_chapter_1_cain/gic_independent_chapter_1_cainportrait.png"} ],
+        "title" : ""
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_independent_chapter_1_cain/gic_independent_chapter_1_cainportrait.png"} ],
+        "title" : ""
+      }
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_soulscalpel",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Crusade Planet^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_crusaderchampionshelmethead",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Crusade Planet^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

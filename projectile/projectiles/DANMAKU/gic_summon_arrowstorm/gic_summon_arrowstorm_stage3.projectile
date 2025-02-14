@@ -1,0 +1,38 @@
+{
+  "projectileName" : "gic_summon_arrowstorm_stage3",
+  "physics" : "rocket",
+  "actionOnReap" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_rocketartilleryarrow_stage2",
+      "inheritDamageFactor" : 1,
+//	  "angle" : -90,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : 0
+    }
+	
+  ],
+  "image" : "gic_summon_arrowstorm_stage3.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  
+  "rotationRate" : 5,
+  "trackingLimit" : 300,
+  
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 5,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "statusEffects" : ["gic_antimobility_grenade" ],
+  "timeToLive" : 0.5,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

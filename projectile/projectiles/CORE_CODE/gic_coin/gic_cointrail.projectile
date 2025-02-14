@@ -1,0 +1,45 @@
+{
+  "projectileName" : "gic_cointrail",
+  "image" : "trail.png",
+  "physics" : "illusion",
+  "animationCycle" : 0.25,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "damageKind" : "noDamage",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.1,
+  //"emitters" : [ "arrowflames" ],
+  "periodicActions" : [
+    {
+      "time" : 0.0,
+      "repeat" : false,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_heavybullet_trail/trail2.png",
+        "position" : [0, 0],
+        "layer" : "back",
+        "timeToLive" : 0.3,
+        "destructionTime" : 0.15,
+        "destructionAction" : "fade",
+        "fullbright" : true
+      }
+    }
+  ],
+  "actionOnReap" : [
+  ],
+  "statusEffects" : [ ],
+  
+  "scripts" : [],
+  "scriptDelta" : 3,
+  
+  "power" : 0.0,
+  "speed" : 0,
+  "knockback" : 0,
+  
+  "damageType" : "noDamage",
+  
+  "piercing" : true
+}

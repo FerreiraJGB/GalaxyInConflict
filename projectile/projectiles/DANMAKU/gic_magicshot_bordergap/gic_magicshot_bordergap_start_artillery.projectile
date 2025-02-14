@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_magicshot_bordergap_start_artillery",
+  "image" : "gic_magicshot_bordergap_start.png",
+  "animationCycle" : 0.1,
+  "animationLoops" : false,
+  "frameNumber" : 5,
+  "timeToLive" : 0.1,
+  "lightColor" : [50, 50, 50],
+  "pointLight" : true,
+  "flippable" : true,
+  "piercing" : true,
+  "statusEffects" : [ ],
+  "power" : 5.0,
+  "speed" : 0,
+  "knockback" : 30,
+  "knockbackDirectional" : true,
+  "movementSettings" : {
+    "collisionEnabled" : false
+  },
+  "damageKind" : "broadsword",
+  "fullbright" : true,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_bordergap_stop_artillery",
+      "inheritDamageFactor" : 0.25,
+      "inheritSpeedFactor" : 1
+    }
+  ],
+
+  "persistentAudio" : "/sfx/projectiles/astraltear_start.ogg"
+}

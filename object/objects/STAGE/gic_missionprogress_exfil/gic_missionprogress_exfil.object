@@ -1,0 +1,29 @@
+{
+  "objectName" : "gic_missionprogress_exfil",
+  "colonyTags" : ["misc"],
+  "printable" : false,
+  "price" : 3000,
+  "rarity" : "Common",
+  "description" : "A mission-only teleporter that transports the player to the next section of the campaign.",
+  "shortdescription" : "Loading Zone - Mission Progressor",
+
+  "category" : "teleporter",
+  "lightColor" : [128, 0, 0],
+
+  "interactAction" : "OpenTeleportDialog",
+  "interactData" : "/interface/warping/exitteleporter.config",
+
+  "inventoryIcon" : "gic_missionprogress_exfil.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_missionprogress_exfil.png:<color>", "fullbright" : false }, { "image" : "gic_missionprogress_exfil.png:<color>" } ],
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

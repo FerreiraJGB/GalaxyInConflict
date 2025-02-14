@@ -1,0 +1,480 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 0.10,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+              "persistentSoundRangeMultiplier" : 1.35,
+              "persistentSoundStopTime" : 0.0
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/batong_flap1.ogg", "", "", "", "/sfx/npc/monsters/batong_flap2.ogg", "", "" ]
+            }
+          },
+          "fly" : {
+            "frames" : 1,
+            "cycle" : 0.10,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+              "persistentSoundRangeMultiplier" : 1.35,
+              "persistentSoundStopTime" : 0.0
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/batong_flap1.ogg", "", "", "", "/sfx/npc/monsters/batong_flap2.ogg", "", "" ]
+            }
+          },
+          "firewindup" : {
+            "frames" : 1,
+            "cycle" : 0.10,
+            "mode" : "transition",
+            "transition" : "winduploop",
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/batong_flap1.ogg", "", "" ]
+            }
+          },
+          "winduploop" : {
+            "frames" : 1,
+            "cycle" : 0.10,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/batong_flap2.ogg", "", "" ]
+            },
+            "properties" : {
+              "persistentSound" : "/sfx/npc/monsters/pteropod_windup.ogg"
+            }
+          },
+          "fire" : {
+            "frames" : 1,
+            "cycle" : 0.10,
+            "mode" : "loop",
+            "transition" : "idle"
+          }
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1,
+            "cycle" : 0.10,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/batong_flap3.ogg", "", "", "", "/sfx/npc/monsters/batong_flap3.ogg", "", "" ]
+            }
+          }
+        }
+      },
+	  "mainThrusters" : {
+		"default" : "off",
+		"states" : {
+			"off" : {
+				
+			},
+			"on" : {
+				"frames" : 4,
+				"cycle" : 0.4,
+				"mode" : "transition",
+				"transition" : "off",
+				"properties" : {
+				}
+			},
+			"thrust" : {
+				"frames" : 2,
+				"cycle" : 0.3,
+				"mode" : "loop"
+			}
+		}
+	  },
+	  "topleftThruster" : {
+		"default" : "off",
+		"states" : {
+			"off" : {
+				
+			},
+			"on" : {
+				"frames" : 4,
+				"cycle" : 0.75,
+				"mode" : "transition",
+				"transition" : "off",
+				"properties" : {
+				}
+			},
+			"thrust" : {
+				"frames" : 2,
+				"cycle" : 0.3,
+				"mode" : "loop"
+			}
+		}
+	  },
+	  "toprightThruster" : {
+		"default" : "off",
+		"states" : {
+			"off" : {
+				
+			},
+			"on" : {
+				"frames" : 4,
+				"cycle" : 0.75,
+				"mode" : "transition",
+				"transition" : "off",
+				"properties" : {
+				}
+			},
+			"thrust" : {
+				"frames" : 2,
+				"cycle" : 0.3,
+				"mode" : "loop"
+			}
+		}
+	  },
+	  "bottomleftThruster" : {
+		"default" : "off",
+		"states" : {
+			"off" : {
+				
+			},
+			"on" : {
+				"frames" : 4,
+				"cycle" : 0.75,
+				"mode" : "transition",
+				"transition" : "off",
+				"properties" : {
+				}
+			},
+			"thrust" : {
+				"frames" : 2,
+				"cycle" : 0.3,
+				"mode" : "loop"
+			}
+		}
+	  },
+	  "bottomrightThruster" : {
+		"default" : "off",
+		"states" : {
+			"off" : {
+				
+			},
+			"on" : {
+				"frames" : 4,
+				"cycle" : 0.75,
+				"mode" : "transition",
+				"transition" : "off",
+				"properties" : {
+				}
+			},
+			"thrust" : {
+				"frames" : 2,
+				"cycle" : 0.3,
+				"mode" : "loop"
+			}
+		}
+	  },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "aim", "body", "facing" ],
+          "offset" : [0.25, -0.25]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "firewindup" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "winduploop" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  "mainThrusters" : {
+		"properties" : {
+          "transformationGroups" : [ "aim", "body", "facing" ],
+          "offset" : [0.25, -0.25],
+		  "fullbright" : true
+        },
+		"partStates" : {
+          "mainThrusters" : {
+            "off" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/main_thrusters.png:off"
+              }
+            },
+            "on" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/main_thrusters.png:on.<frame>"
+              }
+            },
+            "thrust" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/main_thrusters.png:thrust.<frame>"
+              }
+            }
+          }
+        }
+	  },
+	  
+	  "topleftThruster" : {
+		"properties" : {
+          "transformationGroups" : [ "aim", "body", "facing" ],
+          "offset" : [0.25, -0.25],
+		  "fullbright" : true
+        },
+		"partStates" : {
+          "topleftThruster" : {
+            "off" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/topleft_thruster.png:off"
+              }
+            },
+            "on" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/topleft_thruster.png:on"
+              }
+            },
+            "thrust" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/topleft_thruster.png:on"
+              }
+            }
+          }
+        }
+	  },
+	  "toprightThruster" : {
+		"properties" : {
+          "transformationGroups" : [ "aim", "body", "facing" ],
+          "offset" : [0.25, -0.25],
+		  "fullbright" : true
+        },
+		"partStates" : {
+          "toprightThruster" : {
+            "off" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/topright_thruster.png:off"
+              }
+            },
+            "on" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/topright_thruster.png:on"
+              }
+            },
+            "thrust" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/topright_thruster.png:on"
+              }
+            }
+          }
+        }
+	  },
+	  "bottomleftThruster" : {
+		"properties" : {
+          "transformationGroups" : [ "aim", "body", "facing" ],
+          "offset" : [0.25, -0.25],
+		  "fullbright" : true
+        },
+		"partStates" : {
+          "bottomleftThruster" : {
+            "off" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/bottomleft_thruster.png:off"
+              }
+            },
+            "on" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/bottomleft_thruster.png:on"
+              }
+            },
+            "thrust" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/bottomleft_thruster.png:on"
+              }
+            }
+          }
+        }
+	  },
+	  "bottomrightThruster" : {
+		"properties" : {
+          "transformationGroups" : [ "aim", "body", "facing" ],
+          "offset" : [0.25, -0.25],
+		  "fullbright" : true
+        },
+		"partStates" : {
+          "bottomrightThruster" : {
+            "off" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/bottomright_thruster.png:off"
+              }
+            },
+            "on" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/bottomright_thruster.png:on"
+              }
+            },
+            "thrust" : {
+              "properties" : {
+                "image" : "/monsters/protectorate/gic_protectorate_gunnerdrone/bottomright_thruster.png:on"
+              }
+            }
+          }
+        }
+	  }
+	  
+	  
+    }
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true },
+    "facing" : { "interpolated" : false },
+    "aim" : { "interpolated" : true }
+  },
+
+  "rotationGroups" : {
+    "aim" : {
+      "angularVelocity" : 1
+    }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+
+  "particleEmitters" : {
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "monstersplosion" },
+        { "particle" : "poisondust" },
+        { "particle" : "poisondust" },
+        { "particle" : "poisondust" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathfizz1left" },
+        { "particle" : "deathfizz1right" },
+        { "particle" : "deathfizz2left" },
+        { "particle" : "deathfizz2right" },
+        { "particle" : "deathfizz3left" },
+        { "particle" : "deathfizz3right" },
+        { "particle" : "deathfizz4left" },
+        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/npc/enemydeathpuff.ogg" ],
+	
+	    "fire" : {
+      "pool" : [ "/sfx/gic_highfleet_emp_01.ogg" ],
+      "rangeMultiplier" : 3.0
+    },
+	    "fire_mg" : {
+      "pool" : [ 	  "/sfx/gun/gic_highfleet_shell_out_tiny_01.wav", "/sfx/gun/gic_highfleet_shell_out_tiny_02.wav", "/sfx/gun/gic_highfleet_shell_out_tiny_03.wav" ],
+      "rangeMultiplier" : 1.0
+    },
+	    "fire_cannon" : {
+      "pool" : [ 	  "/sfx/gun/gic_highfleet_shell_out_med_01.wav", "/sfx/gun/gic_highfleet_shell_out_med_02.wav", "/sfx/gun/gic_highfleet_shell_out_med_03.wav" ],
+      "rangeMultiplier" : 3.0
+    }
+	
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name" : "gic_stormrulers_rapier",
+  "effectConfig" : {
+	"projectileType" : "gic_magicbullet_ice_12pattern_delayedmassshot_stormruler", //does not accept arrays
+	"projectileTypeMiss" : "", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.6,
+            "color": [255, 255, 255],
+            "timeToLive": 1, //0.2
+            "destructionAction": "fade",
+            "destructionTime": 1, //0.8
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^red;Recharging [15 seconds]^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+	},
+	"missChance" : 0,
+	"offset" : [-0.7,0.8],
+	//"xOffset" : 0.0,
+	//"yOffset" : 0.4,
+	"muzzleOffset" : [-0.8,0.5],
+	"muzzleOffset2" : [-0.75,0.45],
+	//"rotationOffset" : [-0.4,0.3],
+	//"xOffsetRotationPoint" : 0.0,
+	//"yOffsetRotationPoint" : 0.4,
+	"trackingDistance" : 100,
+	"trackingAngle" : 181,
+	"fireRate" : 14.99,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 15,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 0.01
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_stormrulers_rapier.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_stormrulers_rapier.animation",
+ 
+  "label" : "Ruler of the Storm - Automatic ranged attack for enemies within 100 units of range. 15-second cooldown per attack.",
+  "icon" : "/interface/statuses/gic_stormrulers_rapier.png"
+}

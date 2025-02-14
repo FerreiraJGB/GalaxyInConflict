@@ -1,0 +1,229 @@
+{
+  "type" : "gic_gazrian_villager",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ ],
+  
+  "scriptConfig" : {
+    "behavior" : "villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 1,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+	  
+      "converse" : {
+        "default" : {
+          "default" : [
+            "...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"..."
+          ]
+        }
+      },
+	  
+      "greeting" : {
+        "default" : {
+          "default" : [
+            "Dust, dust, dust...",
+			"Can't ever get a break.",
+			"Not enough for the harvest.",
+			"What about the harvest tax?",
+			"We don't have enough. Not for this year.",
+			"There's no way we will survive with this little.",
+			"Not enough traffic through here. No traffic, no money.",
+			"I told them, it wasn't enough.",
+			"Never a chance...",
+			"Always sand. Would be nice to grow a garden.",
+			"Elders talked about the Black Sea above us. I wonder what's it like out there?",
+			"The Elders will keep us above, for sure.",
+			"The desert is too harsh.",
+			"Nothing but bad crops and highway taxes.",
+			"There's only so much raiding and scavenging we can do.",
+			"What manner of sorcery is this?",
+			"Damnit. Sand's everywhere."
+          ]
+        }
+      },
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "hail" : {
+        "default" : {
+          "default" : [
+            "Dust, dust, dust...",
+			"Can't ever get a break.",
+			"Not enough for the harvest.",
+			"What about the harvest tax?",
+			"We don't have enough. Not for this year.",
+			"There's no way we will survive with this little.",
+			"Not enough traffic through here. No traffic, no money.",
+			"I told them, it wasn't enough.",
+			"Never a chance...",
+			"Always sand. Would be nice to grow a garden.",
+			"Elders talked about the Black Sea above us. I wonder what's it like out there?",
+			"The Elders will keep us above, for sure.",
+			"The desert is too harsh.",
+			"Nothing but bad crops and highway taxes.",
+			"There's only so much raiding and scavenging we can do.",
+			"What manner of sorcery is this?",
+			"Damnit. Sand's everywhere."
+          ]
+        }
+      },
+	  
+      "accuse" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      }
+	  
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_bedouinhead", "parameters" : { "colorIndex" : [0, 1, 2, 3] }  }, { "name" : "", "parameters" : { "colorIndex" : [0] }  }, { "name" : "", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "bedouinchest", "parameters" : { "colorIndex" : [0, 1, 2, 3] }  } ],
+            "legs" : [ { "name" : "bedouinlegs", "parameters" : { "colorIndex" : [0, 1, 2, 3] } } ],
+            "sheathedprimary" : [ "gic_usm45" ]
+		  }
+        ] ]
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

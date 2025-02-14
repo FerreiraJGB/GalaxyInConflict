@@ -1,0 +1,28 @@
+{
+  "itemName" : "gic_meatdumplings",
+  "rarity" : "Common",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_meatdumplings.png",
+  "description" : "''You need to put the meat in it BEFORE you cook the dough!''
+  
+Dumpling is a broad class of dish that constitutes cooked dough often made from starchy sources, typically wrapped around a filling such as meat. Dumplings can be prepared in a myriad of ways, varying across different individuals and Earthern cultures.",
+  "shortdescription" : "Izakaya Dumplings",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 20,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

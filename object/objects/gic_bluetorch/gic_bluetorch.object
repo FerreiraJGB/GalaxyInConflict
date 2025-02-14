@@ -1,0 +1,111 @@
+{
+  "objectName" : "gic_bluetorch",
+  "colonyTags" : ["light"],
+  "printable" : false,
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 5,
+
+  "description" : "This torch flickers softly.",
+  "shortdescription" : "Blue Torch",
+  "race" : "generic",
+
+  "maximumLiquidLevel" : 0.2,
+
+  "lightColor" : [42, 96, 196],
+
+  "flickerPeriod" : 0.3,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+
+  "inventoryIcon" : "gic_bluetorchicon.png",
+  "orientations" : [
+    {
+      "image" : "gic_bluetorch.png:<color>.<frame>",
+      "imagePosition" : [1, 0],
+
+      "animationParts" : {
+        "bg" : "gic_bluetorch.png",
+        "fg" : "gic_bluetorchlit.png"
+      },
+      "animationPosition" : [1, 0],
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "fgAnchors" : [ [0, -1] ],
+
+      "direction" : "right"
+    },
+
+    {
+      "image" : "gic_bluetorchleft.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "animationParts" : {
+        "bg" : "gic_bluetorchleft.png",
+        "fg" : "gic_bluetorchleftlit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "fgAnchors" : [ [-1, 0] ],
+
+      "direction" : "right"
+    },
+
+    {
+      "image" : "gic_bluetorchright.png:<color>.<frame>",
+      "imagePosition" : [2, 0],
+
+      "animationParts" : {
+        "bg" : "gic_bluetorchright.png",
+        "fg" : "gic_bluetorchrightlit.png"
+      },
+      "animationPosition" : [2, 0],
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "fgAnchors" : [ [1, 0] ],
+
+      "direction" : "right"
+    },
+
+    {
+      "image" : "gic_bluetorch.png:<color>.<frame>",
+      "imagePosition" : [1, 0],
+
+      "animationParts" : {
+        "bg" : "gic_bluetorch.png",
+        "fg" : "gic_bluetorchlit.png"
+      },
+      "animationPosition" : [1, 0],
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "bgAnchors" : [ [0, 0] ],
+
+      "direction" : "right"
+    }
+  ],
+
+  "soundEffect" : "/sfx/objects/torch.ogg",
+  "soundEffectRangeMultiplier" : 0.5,
+
+  "animation" : "gic_bluetorch.animation",
+  "animationParts" : {
+    "bg" : "gic_bluetorch.png",
+    "fg" : "gic_bluetorchlit.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/torch_on1.ogg", "/sfx/objects/torch_on2.ogg" ],
+      "off" : [ "/sfx/objects/torch_off1.ogg", "/sfx/objects/torch_off2.ogg", "/sfx/objects/torch_off3.ogg" ]
+    }
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  // "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+}

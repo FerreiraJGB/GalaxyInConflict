@@ -1,0 +1,64 @@
+{
+  "projectileName" : "gic_magicshot_loyaltylaser_maku_stage2",
+  "image" : "gic_magicshot_loyaltylaser_appear_maku.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 4,
+  "pointLight" : false,
+  "speed" : 0,
+  "timeToLive" : 0.25,
+  "fullbright" : true,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+  ],
+  
+"actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_loyaltylaser_maku_stage3",
+      "inheritDamageFactor" : 1
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_burningshrapnel_maku",
+      "inheritDamageFactor" : 0,
+	  "angle" : 90,
+	  "fuzzAngle" : 20
+    },	
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_burningshrapnel_maku",
+      "inheritDamageFactor" : 0,
+	  "angle" : 90,
+	  "fuzzAngle" : 20
+    },	
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_burningshrapnel_maku",
+      "inheritDamageFactor" : 0,
+	  "angle" : 90,
+	  "fuzzAngle" : 20
+    },	
+	
+    {
+      "time" : 0.8,
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_remnantfromtheashes_claviger-04.ogg"
+      ]
+    }
+],
+
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

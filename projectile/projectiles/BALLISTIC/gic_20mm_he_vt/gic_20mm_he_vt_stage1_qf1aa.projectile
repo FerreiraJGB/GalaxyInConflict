@@ -1,0 +1,59 @@
+{
+  "projectileName" : "gic_20mm_he_vt_stage1_qf1aa",
+  "bounces" : 0,
+  "image" : "gic_20mm_he_vt.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_autocannonmuzzle/gic_autocannonmuzzle_qf1aa.config"
+    },
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/gun/gic_highfleet_shell_out_small_01.wav", "/sfx/gun/gic_highfleet_shell_out_small_02.wav", "/sfx/gun/gic_highfleet_shell_out_small_03.wav"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_20mm_he_vt",
+	  "directional" : true
+    }
+  ],
+  
+  "periodicActions" : [  
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_usoa50_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "fade", //shrink
+        "fullbright" : false
+      }
+    }
+  ], 
+  
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "statusEffects" : [ ],
+
+  "maxSpeed" : 0,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.01,
+  "physics" : "laser"
+}

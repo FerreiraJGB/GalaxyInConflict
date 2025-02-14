@@ -1,0 +1,102 @@
+{
+  "itemName" : "gic_firebreathbottle",
+  "price" : 500,
+  "inventoryIcon" : "gic_firebreathbottle.png",
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "inhale oil, exhale fire.",
+  "shortdescription" : "fire breath thing",
+  "level" : 1,
+  "category" : "Unique",
+  "itemTags" : ["weapon","ranged","pistol"],
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_firebreathbottle.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : ["/sfx/gun/dragonhead_charged_fire4.ogg"],
+	  "drink" : ["/sfx/humanoid/drink.ogg"]
+    },
+    "lights" : {
+      "muzzleFlash" : {
+        "color" : [0, 0, 0]
+      }
+    }
+  },
+
+  "baseOffset" : [0.0, -0.25],
+  "muzzleOffset" : [-0.625, 0.5],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "fire",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/weapons/special/gic_firebreathbottle/gic_firebreath.lua"],
+    "class" : "FireBreath",
+
+    "fireTime" : 0.2,
+    "baseDps" : 13,
+    "energyUsage" : 0,
+    "inaccuracy" : 0.02,
+
+    "projectileCount" : 5,
+
+    "projectileType" : "flamethrower",
+    "projectileParameters" : {
+      "speed" : [10, 17],
+  "statusEffects" : [
+    "burning", "gic_oilfire_primer"
+  ]
+    },
+    "stances" : {
+      "idle" : {
+		"duration" : 0.15,
+        "armRotation" : -90,
+        "weaponRotation" : 0,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+	  "windup" : {
+		"duration" : 0.15,
+        "armRotation" : 20,
+        "weaponRotation" : 50,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+	  "windupFin" : {
+		"duration" : 0.25,
+        "armRotation" : 25,
+        "weaponRotation" : 50,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : -40,
+        "weaponRotation" : 0,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "cooldown" : {
+        "duration" : 0.1,
+        "armRotation" : -40,
+        "weaponRotation" : 0,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

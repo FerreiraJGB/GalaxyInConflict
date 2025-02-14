@@ -1,0 +1,52 @@
+{
+  "projectileName" : "gic_crystalshot_droppedspike_summon_crystalsentinel",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/electricexplosionknockbackstatus.config"
+    }
+  ],
+  
+"periodicActions" : [
+
+],
+
+  "actionOnReap" : [
+  
+    {
+      "action" : "projectile",
+      "type" : "gic_summon_crystalsentinel",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+      "angle" : 90
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/electricexplosionknockbackstatus.config"
+    }
+
+  ],
+  
+  "image" : "gic_crystalshot_droppedspike.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_antitank",
+  "fullbright" : true,
+  "damageType" : "IgnoresDef",
+  "damageKindImage" : "icon.png",
+  "power" : 40,
+  "onlyHitTerrain" : true,
+  "knockback" : 2,
+  "knockbackDirectional" : true,
+//  "statusEffects" : [ "gic_tazed_1", "gic_tazed", "electrified" ],
+  "timeToLive" : 5,
+  "pointLight" : false,
+  "damagePoly" : [ [12, -0.2], [12.5, -0.2], [12.5, 0.2], [12, 0.2] ]
+}

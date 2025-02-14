@@ -1,0 +1,86 @@
+{
+  "objectName" : "gic_glitch_lantern",
+  "colonyTags" : ["light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 60,
+  "tooltipKind" : "gic_largebase",
+  "description" : "Lantern.",
+  "shortdescription" : "Lantern",
+  "race" : "generic",
+  "printable" : false,
+
+  "statusEffects" : [ ],
+
+  "lightColor" : [179, 155, 107],
+
+  "flickerPeriod" : 0.3,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+
+  "inventoryIcon" : "gic_glitch_lantern_icon.png",
+  "orientations" : [
+
+    {
+      "image" : "gic_glitch_lantern.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "fgAnchors" : [ [0, -1] ]
+    },
+
+    {
+      "image" : "gic_glitch_lantern.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "bgAnchors" : [ [0, 1] ]
+    },
+
+    {
+      "image" : "gic_glitch_lantern.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "bgAnchors" : [ [0, 0] ]
+    }
+  ],
+
+  "soundEffect" : "/sfx/objects/oillantern.ogg",
+
+  "animation" : "gic_glitch_lantern.animation",
+  "animationParts" : {
+    "bg" : "gic_glitch_lantern.png",
+    "fg" : "gic_glitch_lantern_lit.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/oillantern_on.ogg" ],
+      "off" : [ "/sfx/objects/oillantern_off.ogg" ]
+    }
+  },
+  "animationPosition" : [0, 0],
+
+  "scripts" : [ "/objects/wired/light/light.lua", "/objects/scripts/explodingsmashable.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : true,
+
+  "inputNodes" : [ [0, 0] ],
+  
+  
+  "smashable" : true,
+  "smashOnBreak" : false,
+  "smashSounds" : [ ],
+  "smashDropPool" : "empty",
+  
+  "explosionProjectile" : "gic_liquidflame_slow_lantern_lantern_explosion",
+  "explosionOffset" : [1, 2]
+  
+
+}

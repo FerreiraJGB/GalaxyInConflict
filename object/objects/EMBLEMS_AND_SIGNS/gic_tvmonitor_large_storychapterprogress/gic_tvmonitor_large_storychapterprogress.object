@@ -1,0 +1,43 @@
+{
+  "objectName" : "gic_tvmonitor_large_storychapterprogress",
+  "colonyTags" : ["station","electronic","space"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "description" : "A screen displaying progress on GiC's main plotline.",
+  "shortdescription" : "Story Chapter Progress",
+  "race" : "generic",
+
+  
+  "lightColor" : [145, 145, 145],
+
+  "inventoryIcon" : "gic_tvmonitor_large_storychapterprogressicon.png",
+  "orientations" : [
+    {
+      "image" : "gic_tvmonitor_large_storychapterprogress.png:<color>.<frame>",
+      "imagePosition" : [-48, -16],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "animation" : "gic_tvmonitor_large_storychapterprogress.animation",
+  "animationParts" : {
+    "bg" : "gic_tvmonitor_large_storychapterprogress.png",
+    "fg" : "gic_tvmonitor_large_storychapterprogresslit.png"
+  },
+  "animationPosition" : [-48, -16],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [-6, -2] ],
+
+  "interactive" : false,
+
+  "soundEffect" : "/sfx/objects/bunkerdisplay.ogg",
+  "soundEffectRangeMultiplier" : 0.25
+
+}

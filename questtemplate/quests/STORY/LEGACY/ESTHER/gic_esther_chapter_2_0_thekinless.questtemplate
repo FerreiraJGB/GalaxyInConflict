@@ -1,0 +1,66 @@
+{
+  "id" : "gic_esther_chapter_2_0_thekinlessquest",
+  "title" : "^yellow;[GiC]: Chapter 2 - The Kinless",
+  "prerequisites" : [ "gic_esther_chapter_1_1_fngquest" ],
+  
+  //QUEST 3
+  
+  //The text before warping to mission.
+  
+  "text" : "---",
+  
+  //Returning after goal trigger. In this case, trigger when finding the lab. This will play a small cutscene acknowledging the discovery of the portal-lab.
+  
+  "completionText" : "---",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : false,
+  "rewards" : [
+    [ [ "gic_mr42", 1 ], [ "gic_mr42_792x57mm_mag", 3 ], [ "gic_mr42_792x57mm_mag", 3 ], [ "gic_mr42_792x57mm_mag", 3 ], [ "gic_mr42_792x57mm_mag", 3 ], [ "gic_gazri_portallab_notice", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_noassociatedmission.lua", //Same as original variant. Enables cutscenes when starting and finishing.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_keine_hubworld/gic_esther_keine_hubworld_portrait.png"} ],
+        "title" : "Kamish"
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_keine_hubworld/gic_esther_keine_hubworld_portrait.png"} ],
+        "title" : "Kamish"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;Kamish^reset; to travel to ^orange;Gazri^reset;.",
+      "findGoal" : "Locate the tanker for information on the Portal-Labs.",
+      "turnIn" : "Find ^orange;Kamish^reset;."
+    },
+
+    "warpEntityUid" : "gic_esther_keine_hubworld",
+    "warpAction" : "instanceworld:gic_esther_chapter_2_1_howlingwinds",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_esther_chapter_2_1_howlingwinds_confirmation",
+	
+    "gic_missionUnlockedCinema" : "/cinematics/gic_coordinates.cinematic", //???
+    "gic_missionCompleteCinema" : "/cinematics/gic_coordinates.cinematic",	 //leave as coordinates if no need for secondary
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 40,
+
+    "goalEntityUid" : "gic_esther_chapter_2_7_thekinless_goal",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "gic_esther_keine_hubworld",
+	
+  "setUniverseFlags" : ["gic_esther_chapter_1_hubworld_dockingbay75_attachment_cheeseroom"] 
+	
+  }
+  
+}

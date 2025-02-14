@@ -1,0 +1,56 @@
+{
+  "projectileName" : "gic_airtoair_missile_sika_courageous",
+
+  "bounces" : 0,
+  "image" : "gic_airtoair_missile_sika.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    }
+	
+  ],
+  
+  
+"periodicActions" : [
+    {
+      "time" : 0.1, //0.015
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+      "image" : "/animations/gic_mediumsteamcloud/gic_mediumsteamcloud.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 1,
+        "destructionTime" : 2,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+],
+  
+  
+  "power" : 2000,
+  "damageKind" : "ews_explosive",
+  "damageType" : "ignoresdef",
+  "persistentAudio" : "/sfx/vehicles/gic_highfleet_missile_run_01.ogg",  
+  "maxSpeed" : 250,
+  
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 20.0,
+  "acceleration" : 10,
+  "timeToLive" : 15,
+  "physics" : "rocket",
+  
+  "rotationRate" : 0.5,
+  "trackingLimit" : 300
+}

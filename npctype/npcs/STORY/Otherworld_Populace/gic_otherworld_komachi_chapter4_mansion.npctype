@@ -1,0 +1,264 @@
+{
+  "type" : "gic_otherworld_komachi_chapter4_mansion",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+
+  "npcname" : "The Shinigami",
+  "identity" : {
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "fem12",
+    "hairColor" : "2", //RED (15 DARK GREEN)
+    "bodyColor" : "4" //LIGHTEST
+  },  
+  
+  "keepAlive" : true,
+  
+  "humanoidConfig" : "/npcs/story/Otherworld_Populace/gic_otherworld_komachi.config",
+  
+  "persistent" : true,
+
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+    "behavior" : "speaker",
+	
+	
+    "questGenerator" : {
+      "enableParticipation" : false
+    },
+	
+	
+    "offeredQuests" : [
+
+	],
+	
+	
+    "turnInQuests" : [
+
+	],
+	
+
+    "behaviorConfig" : {
+      "alwaysRun" : false,
+      "wanderWaitTime" : [6.0, 10.0],
+      "wanderTime" : [0.0, 0.0],
+      "wanderDistance" : 0,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ]
+    },
+
+    "chatSounds" : {
+      "human" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_female1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_female1.ogg"
+        ]
+      },
+      "default" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_female1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_female1.ogg"
+        ]
+      }
+    },	
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+			"I feel like I've done a terrible thing...",
+			"I never should've left the Yama.",
+			"I fear that I will see her soon...",
+			"But twisted, and corrupted by the Abyss.",
+			"I've ferried so many souls.",
+			"I've extinguished many souls.",
+			"I've even harvested souls from those that cheated death.",
+			"But now? I fear that I will have to reap the dear Yama's soul.",
+			"It seems that perhaps...",
+			"She will have to pay for what she's reaped.",
+			"I can't even be by her side, in her final hours.",
+			"If you find a... clown fairy...",
+			"We will need her.",
+			"She'll be able to cause the life forces to go berserk.",
+			"She can counteract the terrible death that radiates from the Yama.",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"[Dialogue repeat]"
+          ]
+        }
+      },
+      "speak" : {
+        "default" : {
+          "default" : [
+            "Oh, uh, hello?"
+          ]
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "gic_shinigamihead", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "chest" : [
+              { "name" : "gic_shinigamichest", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "legs" : [
+              { "name" : "gic_shinigamilegs", "parameters" : { "colorIndex" : [0] } }
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1111111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 1.0
+      },
+	  
+	  //Psychic
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },	
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : -0.5
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	,
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 100.0
+      }
+    },
+    "statusProperties" : {
+      "effectDirectives" : "?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=8af062FF?replace=31a6ffFF=40bf21FF"
+    }
+  }
+  
+}

@@ -1,0 +1,30 @@
+{
+  "metadata" : {
+    "name" : "gic_highwaybattle_depottest",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_highwaybattle_federaldepot" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 31,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+  
+    {
+      "name" : "gic_highwaybattle_federaldepot",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_highwaybattle_federaldepot" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_highwaybattle_federaldepot.json" ]
+    }
+	
+  ]
+}

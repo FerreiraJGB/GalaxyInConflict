@@ -1,0 +1,84 @@
+{
+  "itemName" : "gic_frostdynasty_greatshield_npc",
+  "fixedLevel" : true,
+  "price" : 600,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "^#D6DFFF;Anti-Missile Greatshield^white;",
+  "description" : "---
+
+^#D6DFFF;Shield Bash: Moving at great speeds and colliding with an enemy will deal damage based on the speed of the user.^white;",
+
+  "shortdescription" : "Frost Dynasty Scutum NPC",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield", "greatshield"],
+
+  "inventoryIcon" : "gic_frostdynasty_greatshield.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_frostdynasty_greatshield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.0, -1.5], [-0.0, 1.3], [0.55, 1.3], [0.55, -1.5] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/armor/gic_bloodborne_body-armor-6.wav" ],
+      "perfectBlock" : [ "/sfx/melee/gic_bloodborne_shield-iron1.wav" ],
+      "block" : [ "/sfx/melee/gic_bloodborne_shield-wood.wav" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  
+	  "shieldBash" : [ "/sfx/melee/gic_bloodborne_shieldpress.wav" ]
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_shieldbash_nostun.lua", "/abilities/weapons/gic_base_greatshield_limiter.lua"  ],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : true,
+  "baseShieldHealth" : 100,
+  "cooldownTime" : 0.05,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 0.0,
+
+  "knockback" : 10, //15
+  
+  
+  
+  // CUSTOM SHIELD BASH PARAMS
+  "minVelocity" : 15, //10
+  "accelKnockback" : 10, //30
+  "accelMaxKnockback" : 35, //45
+  
+  "accelDamage" : 10, //20
+  "accelMaxDamage" : 50, //100
+  
+  "minDamageTimeout" : 0.25,
+  "maxDamageTimeout" : 1.0,
+  // CUSTOM SHIELD BASH PARAMS  
+  
+  
+  
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -80, //25
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

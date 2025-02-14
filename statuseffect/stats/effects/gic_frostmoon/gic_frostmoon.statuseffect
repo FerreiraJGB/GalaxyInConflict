@@ -1,0 +1,21 @@
+{
+  "name" : "gic_frostmoon",
+  "blockingStat" : "gic_frostmoonStatusImmunity",
+
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 1,
+    "triggerDamageThreshold" : 1000,
+    "explosionDamageAmount" : 0
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "gic_frostmoon.lua"
+  ],
+
+  "animationConfig" : "gic_frostmoon.animation",
+  
+  "label" : "Transcendent Frost Moon - +50HP | -50HP/s when ABOVE 50% HP | Another -50HP/s when ABOVE 75% HP | +100% DMG absorption when active. On taking damage, the Frost Moon DMG RES enters cooldown for 7s.",
+  "icon" : "/interface/statuses/gic_frostmoon_artifact.png"
+}

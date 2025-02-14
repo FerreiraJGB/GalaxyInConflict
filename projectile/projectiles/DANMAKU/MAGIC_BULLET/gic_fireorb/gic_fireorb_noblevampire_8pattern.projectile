@@ -1,0 +1,74 @@
+{
+  "projectileName" : "gic_fireorb_noblevampire_8pattern",
+  "image" : "gic_fireorb.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_fireorb",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireorb",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireorb",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireorb",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 135
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireorb",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 180
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireorb",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 225
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireorb",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 270
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireorb",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 315
+    }
+  ],
+  
+  "actionOnCollide" : [
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

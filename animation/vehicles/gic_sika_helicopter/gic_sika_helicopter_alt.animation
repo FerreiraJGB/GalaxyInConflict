@@ -1,0 +1,830 @@
+{
+  "globalTagDefaults" : {
+    "colour" : "",
+	"missilestatus" : "missile",
+	"doorstatus" : "" //"_nomissile"
+  },
+
+  "animatedParts" : {
+    "stateTypes" : {
+
+
+      "movement" : {
+        "default" : "idle",
+        "states" : {
+
+          "warpInPart1" : {
+            "frames" : 4,  
+            "cycle" : 0.0,//0.33
+            "mode" : "transition",
+            "transition" : "warpInPart2"
+            },
+
+          "warpInPart2" : {
+            "frames" : 4,  
+            "cycle" : 0.0,//0.33
+            "mode" : "transition",
+            "transition" : "idle"
+            },
+
+          "idle" : {},
+
+          "warpOutPart1" : {
+            "frames" : 4,  
+            "cycle" : 0.0,//0.33
+            "mode" : "transition",
+            "transition" : "warpOutPart2"
+            },
+
+          "warpOutPart2" : {
+            "frames" : 4,  
+            "cycle" : 0.0,//0.33
+            "mode" : "transition",
+            "transition" : "invisible"
+            },
+
+          "invisible" : {}
+
+        }
+      },
+
+	  "sikadoor" : {
+		"default" : "idle",
+		"states" : {
+			"idle" : {},
+			"opened" : {},
+			
+			"opening" : {
+				"frames" : 6,  
+				"cycle" : 0.5,
+				"mode" : "transition",
+				"transition" : "opened"
+            },
+			"closing" : {
+				"frames" : 6,  
+				"cycle" : 0.5,
+				"mode" : "transition",
+				"transition" : "idle"
+            }
+		}
+	  },
+	  
+	  "rotors" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+		  
+		  "warpIn" : {
+			"frames" : 1,  
+            "cycle" : 0.0,//0.33
+            "mode" : "transition",
+            "transition" : "off"
+		  },
+
+          "on" : {
+            "frames" : 3,
+            "cycle" : 0.05,
+            "mode" : "loop",
+			"properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_helicopterrotorloop_alt.ogg",
+              "persistentSoundRangeMultiplier" : 5.35 //5
+              //"persistentSoundStopTime" : 0.0
+            }
+          }
+
+        }
+      },
+      
+	  "onfire" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+
+          "on" : {
+            "frames" : 6,
+            "cycle" : 0.5,
+            "mode" : "loop"
+          }
+
+        }
+      },
+
+      "rearThruster" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.125,
+            "mode" : "loop"
+          }
+
+        }
+      },
+
+      "bottomThruster" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.125,
+            "mode" : "loop"
+          }
+
+        }
+      },
+
+       "headlights" : {
+        "default" : "off",
+        "states" : {
+          "off" : {"frames" : 1,"mode" : "loop"},
+
+          "on" : {"frames" : 1,"mode" : "loop"}
+        }
+      },
+
+      "autocannonFiring" : {
+        "default" : "off",
+
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.05,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              //"immediateSound" : "/sfx/gun/gic_highfleet_shell_out_tiny_02.wav"
+            }
+          },
+
+          "off" : { }
+        }
+      },
+	  
+	  "frontFiring" : {
+        "default" : "off",
+
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.05,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "immediateSound" : "/sfx/gun/gic_highfleet_shell_out_tiny_02.wav"
+            }
+          },
+
+          "off" : { }
+        }
+      },
+
+      "backFiring" : {
+        "default" : "off",
+
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.05,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "immediateSound" : "/sfx/gun/gic_highfleet_shell_out_tiny_01.wav"
+            }
+          },
+
+          "off" : { }
+        }
+      }
+
+
+    },
+
+    "parts" : {
+
+
+
+	  "rotors" : {
+		"properties" : {
+		  "centered" : true,
+          "zLevel" : 2,
+          //"transformationGroups" : ["flip", "rotation"],
+		  "offset" : [5.0,5.0],
+		  "anchorPart" : "foreground"
+		 },
+		 
+		 "partStates" : {
+			"rotors" : {
+				"warpIn" : {
+					"properties" : {
+						"image" : "/assetmissing.png"
+					}
+				},				
+				"off" : {
+					"properties" : {
+						"image" : "idle_rotor.png:idle"
+					}
+				},
+				"on" : {
+					"properties" : {
+						"image" : "gic_colonial_sika_helicopter_rotor.png:idle.<frame>"
+					}
+				}
+			}
+		 }
+	  },
+      "foreground" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+		  "offset" : [-4.75,0.0],
+          "transformationGroups" : ["flip", "rotation"],
+		  
+          "drivingSeatPosition" : [11, -2],
+		  "copilotSeatPosition" : [9, -1],
+          "passengerSeatPosition" : [2, -1.25],
+          "passengerSeatPosition2" : [6, -1.25],
+          "passengerSeatPosition3" : [0.5, 0],
+          "passengerSeatPosition4" : [2, 0],
+		  
+		  "centerPosition" : [4, -1]
+        },
+
+        "partStates" : {
+
+          "movement" : {
+
+            "warpInPart1" : {
+              "properties" : {
+                "image" : ""
+              }
+            },
+            "warpInPart2" : {
+              "properties" : {
+                "image" : "gic_colonial_sika_helicopter.png:nodoor.<missilestatus>"
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "gic_colonial_sika_helicopter.png:nodoor.<missilestatus>"
+              }
+            },
+
+            "warpOutPart1" : {
+              "properties" : {
+                "image" : "gic_colonial_sika_helicopter.png:nodoor.<missilestatus>"
+              }
+            },
+
+            "warpOutPart2" : {
+              "properties" : {}
+            },
+
+            "invisible" : {
+              "properties" : {}
+            }
+          }
+        }
+      },
+	  
+	  "fullbright" : {
+		"properties" : {
+          "centered" : true,
+		  "fullbright" : true,
+          "zLevel" : 2,
+		  "anchorPart" : "foreground"
+		  //"image" : "sika_fuselage_lit.png",
+        },
+		
+		"partStates" : {
+			"headlights" : {
+				"on" : {
+					"properties" : {
+						"centered" : true,
+						"fullbright" : true,
+						"anchorPart" : "foreground",
+						"zLevel" : 2,
+						"image" : "sika_fuselage_lit.png"
+					}
+				},
+				"off" : {
+					"properties" : {
+						"image" : "/assetmissing.png"
+					}
+				}
+			}
+		  }
+	  },
+	  
+	  "background" : {
+		"properties" : {
+          "centered" : true,
+          "zLevel" : -1,
+		  "anchorPart" : "foreground",
+		  "image" : "background.png:idle.1"
+        }
+	  },
+	  
+	  "sikadoor" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2,
+		  "anchorPart" : "foreground"
+        },
+
+        "partStates" : {
+          "sikadoor" : {
+            "idle" : {
+              "properties" : {
+                "image" : "sika_door<doorstatus>.png:open.1"
+              }
+            },
+			"opened" : {
+              "properties" : {
+                "image" : "sika_door<doorstatus>.png:open.6"
+              }
+            },
+			"opening" : {
+              "properties" : {
+                "image" : "sika_door<doorstatus>.png:open.<frame>"
+              }
+            },
+			"closing" : {
+              "properties" : {
+                "image" : "sika_door<doorstatus>.png:close.<frame>"
+              }
+            }
+          }
+        }
+      },
+
+      "warp" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"]
+        },
+
+        "partStates" : {
+
+          "movement" : {
+
+            "warpInPart1" : {
+              "properties" : {
+                "image" : "ue_earlywar_starburnerwarp.png:warpInPart1.<frame>"
+              }
+            },
+            "warpInPart2" : {
+              "properties" : {
+                "image" : "ue_earlywar_starburnerwarp.png:warpInPart2.<frame>"
+              }
+            },
+
+
+            "idle" : {
+              "properties" : {}
+            },
+
+
+            "warpOutPart1" : {
+              "properties" : {
+                "image" : "ue_earlywar_starburnerwarp.png:warpOutPart1.<frame>"
+              }
+            },
+            "warpOutPart2" : {
+              "properties" : {
+                "image" : "ue_earlywar_starburnerwarp.png:warpOutPart2.<frame>"
+              }
+            },
+
+
+            "invisible" : {
+              "properties" : {}
+            }
+
+          }
+        }
+      },
+
+       "lights" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"]
+        },
+
+        "partStates" : {
+
+          "headlights" : {
+
+            "off" : {
+              "properties" : {
+              }
+            },
+
+            "on" : {
+              "properties" : {
+                //"image" : "hoverbikeheadlights.png:headlights.<damageState>",
+                //"offset" : [6.7, -2.5 ]
+              }
+            }
+          }
+        }
+      },
+
+
+      "fire" : {
+        "properties" : {
+          "centered" : true,
+		  "offset" : [0,3.0],
+          "zLevel" : 2,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"]
+        },
+
+        "partStates" : {
+          "onfire" : {
+            "on" : {
+              "properties" : {
+                "image" : "fireburn.png:burn.<frame>"
+              }
+            }
+          }
+        }
+      },
+
+
+      "rearThrust" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -1,
+          "fullbright" : true,
+          //"light" : [87, 148, 150],
+          "transformationGroups" : ["flip", "rotation"]
+        },
+
+        "partStates" : {
+          "rearThruster" : {
+            "on" : {
+              "properties" : {
+                //"image" : "/assetmissing.png",
+
+                "offset" : [-6.2, -1.14]
+              }
+            }
+          }
+        }
+      },
+
+
+	  "rocketPodPosition" : {
+		"properties" : {
+          "centered" : true,
+          "zLevel" : 5,
+          "offset" : [-1,-4],
+		  "firePoint" : [0,0],
+		  "missileFirePoint" : [-0.5,1.5],
+          "anchorPart" : "foreground"
+        }//,
+		
+		//"partStates" : {
+          //"movement" : {
+            //"idle" : {
+              //"properties" : {
+                //"image" : "gic_colonial_sika_helicopter_turretrear.png"
+              ///}
+            ///}
+          ///}
+        ///}
+	  },
+	  "autocannonPosition" : {
+		"properties" : {
+          "centered" : true,
+          "zLevel" : 5,
+          "offset" : [0,-2],
+		  "firePoint" : [0,0],
+          "anchorPart" : "foreground"
+        }
+	  },
+	  
+	  "autocannonFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 5,
+          "offset" : [0,-2],
+          "anchorPart" : "foreground"
+        },
+
+        "partStates" : {
+          "autocannonFiring" : {
+            "fire" : {
+              "properties" : {
+			   "fullbright" : true,
+               "image" : "sawmuzzleflash.png:default.<frameIndex>",
+			   "offset" : [-3.0, -2.25]
+              }
+            }
+          }
+        }
+      },
+	  
+	  
+      "bottomThrust" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -1,
+          "fullbright" : true,
+          //"light" : [87, 148, 150],
+          "transformationGroups" : ["flip", "rotation"]
+        },
+
+        "partStates" : {
+          "bottomThruster" : {
+            "on" : {
+              "properties" : {
+                //"image" : "/assetmissing.png",
+                "offset" : [0.1, -2.8]
+              }
+            }
+          }
+        }
+      },
+	  
+	  "frontTurretCap" : {
+		"properties" : {
+          "centered" : true,
+          "zLevel" : 5,
+          "offset" : [10.625, -4.85],
+          "anchorPart" : "foreground"
+        },
+		
+		"partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "gic_colonial_sika_helicopter_turretfront.png"
+              }
+            }
+          }
+        }
+	  },
+	  
+	  "backTurretCap" : {
+		"properties" : {
+          "centered" : true,
+          "zLevel" : -2,
+          "offset" : [12.625, -4.85],
+          "anchorPart" : "foreground"
+        },
+		
+		"partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "gic_colonial_sika_helicopter_turretrear.png"
+              }
+            }
+          }
+        }
+	  },
+
+      "backGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -2,
+          "offset" : [13.9, -4.85],
+          "rotationGroup" : "guns",
+          "rotationCenter" : [12.625, -4.85],
+          "anchorPart" : "foreground"
+        },
+
+        "partStates" : {
+          "backFiring" : {
+            "fire" : {
+              "properties" : {
+				"fullbright" : true,
+                "image" : "sawmuzzleflash.png:default.<frameIndex>",
+				"offset" : [15.4, -4.95]
+              }
+           }
+          }
+        }
+      },
+
+      "backGun" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -1,
+          "offset" : [13.9, -4.85],
+          "rotationGroup" : "guns",
+          "rotationCenter" : [12.625, -4.85],
+          "firePoint" : [-1, 0],
+          "anchorPart" : "foreground"
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "gic_colonial_sika_helicopter_reargun.png"
+              }
+            }
+          }
+        }
+      },
+
+      "frontGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3,
+          "offset" : [11.9, -4.85],
+          "rotationGroup" : "guns",
+          "rotationCenter" : [10.625, -4.85],
+          "anchorPart" : "foreground"
+        },
+
+        "partStates" : {
+          "frontFiring" : {
+            "fire" : {
+              "properties" : {
+			   "fullbright" : true,
+               "image" : "sawmuzzleflash.png:default.<frameIndex>",
+			   "offset" : [13.4, -4.95]
+              }
+            }
+          }
+        }
+      },
+
+      "frontGun" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 4,
+          "offset" : [11.9, -4.85],
+          "rotationGroup" : "guns",
+          "rotationCenter" : [10.625, -4.85],
+          "firePoint" : [-1, 0],
+          "anchorPart" : "foreground"
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "gic_colonial_sika_helicopter_frontgun.png"
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+  },
+
+  "transformationGroups" : {
+    "rotation" : {
+      "interpolated" : true
+    },
+    "flip" : {}
+  },
+  "rotationGroups" : {
+    "guns" : {
+      "angularVelocity" : 10.0
+    }
+  },
+
+  "particleEmitters" : {
+
+    "rearThrusterIdle" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 5.0,
+      "offsetRegion" : [-7.0, -2.15, -7.0, -2.15],
+      "particles" : []
+    },
+
+    "rearThrusterDrive" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 15.0,
+      "offsetRegion" : [-7.0, -2.15, -7.0, -2.15],
+      "particles" : []
+    },
+
+    "ventralThrusterIdle" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 5.0,
+      "offsetRegion" : [-0.5, -1.5, 0.5, -1.55],
+      "particles" : []
+    },
+    "ventralThrusterJump" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 15.0,
+      "burstCount"  : 2,
+      "offsetRegion" : [-0.5, -1.5, 0.5, -1.55],
+      "particles" : []
+    },
+
+
+    "smoke" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 0.0,
+      "offsetRegion" : [-3, 2, 0, 1.25],
+      "particles" : [{ "particle" : "burningvehiclesmokefront"}]
+    },
+    
+    "fire" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 0.0,
+      "offsetRegion" : [-7, 0, -4, 0],
+      "particles" : [ { "particle" : "burningdust"},
+                      { "particle" : "campfireflames"},
+                      { "particle" : "fireshard"},
+                      { "particle" : "burningvehiclesmokeback"}]
+
+    },
+
+    "damageIntermittent" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 0.0,
+      "burstCount"  : 5,
+      "offsetRegion" : [-3.25, -1.5, -3, -1.25],
+      "particles" : [{ "particle" : "burningvehiclesmokefront"},
+                     { "particle" : "fireshard"}]
+    }
+  },
+
+ "lights" : {
+    "headlightBeam" : {
+      "active" : false,
+	  "anchorPart" : "foreground",
+      //"transformationGroups" : ["flip", "rotation"],
+      //"position" : [6.7, 0.0],
+	  "position" : [11.5, -4.85],
+      "color" : [255, 255, 255, 255],
+      "pointLight" : true,
+      "pointAngle" : -45,
+      "pointBeam" : 0.610865238
+    },
+	"dashboardGlow" : {
+      "active" : false,
+      "transformationGroups" : ["flip", "rotation"],
+      "position" : [2.0, 0.5],
+      "color" : [120, 80, 0],
+      "pointLight" : true,
+      "pointAngle" : 140,
+      "pointBeam" : 5
+    }
+  },
+
+  "sounds" : {
+    "collisionNotification" : [ "/sfx/tech/hoverbike_bump1.ogg",
+                                "/sfx/tech/hoverbike_bump2.ogg",
+                                "/sfx/tech/hoverbike_bump3.ogg"  ],
+
+    "collisionDamage" : ["/sfx/melee/bite_robotic1.ogg"],
+
+
+   "changeDamageState" : [  "/sfx/gun/grenadeblast_small_fire1.ogg",
+                            "/sfx/gun/grenadeblast_small_fire2.ogg",
+                            "/sfx/gun/grenadeblast_small_fire3.ogg" ],
+
+   "explode" : [  "/sfx/gun/grenadeblast_small_fire1.ogg",
+                  "/sfx/gun/grenadeblast_small_fire2.ogg",
+                  "/sfx/gun/grenadeblast_small_fire3.ogg" ],
+
+
+    "engineStart" : ["/sfx/tools/teleport_up.ogg"],
+
+    "engineLoop" : ["/sfx/tech/hoverbike_drive_loop.ogg"],
+
+    "engineStartDamaged" : ["/sfx/tools/teleport_up.ogg"],
+
+    "engineLoopDamaged" : ["/sfx/tech/hoverbike_idle_loop.ogg"],
+
+    "damageIntermittent" : [ "/sfx/gun/grenadeblast_small_fire1.ogg",
+                             "/sfx/gun/grenadeblast_small_fire2.ogg",
+                             "/sfx/gun/grenadeblast_small_fire3.ogg" ],
+
+    "hornLoop" : ["/sfx/tech/honk.ogg"],
+    "headlightSwitchOn" : ["/sfx/objects/floodlights_on.ogg"],
+    "headlightSwitchOff" : ["/sfx/objects/floodlights_off.ogg"],
+	
+	"autocannonFire" : ["/sfx/gun/gic_at4_fire.ogg"],
+	"autocannonReload" : ["/sfx/gun/mech_gatling_windup.ogg"],
+	
+	"rocketpodFire" : ["/sfx/gun/gic_at4_fire.ogg"],
+	"rocketpodReload" : ["/sfx/gun/mech_gatling_windup.ogg"],
+    "returnvehicle" : ["/sfx/tech/vehicle_disappear1.ogg"],
+	
+	"rotorSpin" : ["/sfx/vehicles/gic_helicopterrotorloop.ogg"],
+	"missileReload" : ["/sfx/gic_artillery_reload.ogg"],
+	"missileLoaded" : ["/sfx/gun/crossbow1.ogg"]
+
+
+  }
+}

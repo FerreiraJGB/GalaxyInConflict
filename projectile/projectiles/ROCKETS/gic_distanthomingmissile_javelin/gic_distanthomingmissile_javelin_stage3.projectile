@@ -1,0 +1,58 @@
+{
+  "projectileName" : "gic_distanthomingmissile_javelin_stage3",
+  "renderLayer" : "Monster+10",
+  "bounces" : 0,
+  "image" : "gic_distanthomingmissile_javelin_stage3.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.0125,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.0125,
+      "fuzzAngle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 180,
+      "inheritDamageFactor" : 0.0125,
+      "directional" : "true"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 45,
+      "inheritDamageFactor" : 0.0125,
+      "directional" : "true"
+    }
+  ],
+  "power" : 10,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "maxSpeed" : 250,
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+
+//  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 70.0,
+  "acceleration" : 40,
+  "timeToLive" : 10,
+  "physics" : "rocket",
+  
+  "rotationRate" : 0.8, //1
+  "trackingLimit" : 300
+}

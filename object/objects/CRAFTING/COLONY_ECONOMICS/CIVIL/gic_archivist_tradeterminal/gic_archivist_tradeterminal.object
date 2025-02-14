@@ -1,0 +1,109 @@
+{
+  "objectName" : "gic_archivist_tradeterminal",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "description" : "It seems that standard credits are worthless to archivists...",
+  "shortdescription" : "^orange;Trade Terminal: Archivist [GIC]^white;",
+  "race" : "generic",
+  
+  "uniqueId" : "gic_archivist_tradeterminal",
+  
+  "turnInQuests" : [
+  "gic_esther_chapter_0_0_technicalitiesQuest"
+  ],  
+  
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_archivist_tradeterminal.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : 
+		"  Trade Terminal: Archivist
+
+
+
+
+
+
+
+",
+
+
+//''Do not act as if you were going to live 10,000 years. Death hangs over you. While it is in your power, be good.''	
+        "subtitle" : 
+		
+"  ''Things just weren't the same ever since the market crash.''",
+		
+		
+		
+        "icon" : {
+		
+		
+          "file" : "/interface/crafting/gic_archivist_tradeterminal.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+	
+	
+		
+		
+
+		
+
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_solarshuttle_pilotlog"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":10,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_archivist_tradeterminal", "gic_archivist_searchandrescue"]
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_archivist_tradeterminal" ],
+	"requiresBlueprint" : false
+  },
+  "printable" : false,
+  "price" : 300,
+  
+  "inventoryIcon" : "gic_archivist_tradeterminal.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_archivist_tradeterminal.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+
+}

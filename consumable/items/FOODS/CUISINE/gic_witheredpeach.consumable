@@ -1,0 +1,27 @@
+{
+  "itemName" : "gic_witheredpeach",
+  "rarity" : "Rare",
+  "price" : 0,
+  "category" : "^red;False Immortality",
+  "inventoryIcon" : "gic_witheredpeach.png",
+  "description" : "''The mortals will do anything to live. The immortals will do anything to die.''
+
+^green;+0.5% HP Regen per second for 30 minutes.",
+  "shortdescription" : "^orange;Withered Peach",
+
+  "foodValue" : 10,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "effects" : [ [
+    {
+      "effect" : "gic_regenerationaugment_05percentpersecond_witheredpeach",
+      "duration" : 1800
+    }
+    ] ],
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

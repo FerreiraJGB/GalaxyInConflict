@@ -1,0 +1,76 @@
+{
+  "itemName" : "gic_riot_stun_spear_thrown_player",
+  "rarity" : "Common",
+  "maxStack" : 10,
+  "inventoryIcon" : "gic_riot_stun_spear_thrown_player.png",
+  "image" : "gic_riot_stun_spear_thrown_player.png",
+  "shortdescription" : "Throwing Riot Stun Spear",
+  "description" : "A Riot Stun Spear you've prepared to throw. It's tuned to overload upon impact with the ground, releasing chaff-like metallic dust which rapidly electrifies an immediate area.
+There was archaeological evidence that javelins and throwing sticks were already in use by the last phase of the Lower Paleolithic. Seven spear-like objects were found on Earth in a coal mine in the former city of Schöningen, Germany (now an exclusion zone). Stratigraphic dating indicates that the weapons were about 400,000 years old.",
+  
+  "tooltipKind" : "gic_largebase_hybrid",
+  "category" : "^green;Throwing Spear^white;",
+  
+  "learnBlueprintsOnPickup" : [ "gic_riot_stun_spear", "gic_riot_stun_spear_thrown_player", "gic_mule_shockgrenade" ],
+  "ammoUsage" : 1,
+
+  "edgeTrigger" : true,
+  "windupTime" : 1,
+  "cooldown" : 1.5,
+
+  "projectileType" : "gic_riot_stun_spear_thrown_player",
+  "projectileConfig" : {
+//    "speed" : 50,
+//    "power" : 33.75,
+//    "knockback" : 20,
+
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  },
+  
+  
+  
+  "primaryAbility" : {
+    "stances" : {
+      "idle" : {
+        "armRotation" : 90,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+	    "frontArmFrame" : "run.2",
+	    "backArmFrame" : "run.2",
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.3,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  
+  
+  "tooltipFields" : {
+	"smallDescriptionLabel" : "Taze animals and ruffians from even longer ranges by yeeting the spear entirely."
+  }
+}

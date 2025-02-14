@@ -1,0 +1,69 @@
+{
+  "projectileName" : "gic_ammoresupply_droppod_stage2",
+  "physics" : "laser",
+  
+  
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "rangeMultiplier" : 4.0,
+      "options" : [
+        "/sfx/WorldAtWar/gic_naval_gun5.ogg"
+      ]
+    },  		
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_tankexplosion_smoke",
+      "inheritSpeedFactor" : 1,
+      "inheritDamageFactor" : 1
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_largeexplosion/gic_largeexplosionknockback_indiscriminate_flyingbomb.config"
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_ammoresupply_droppod_stage3",
+	  "fuzzAngle" : 10,
+      "angleAdjust" : 0
+    }
+  ],
+  
+  "periodicActions" : [
+    {
+	  "time" : 0.25,
+	  "offset" : [0, 1],
+      "action" : "projectile",
+      "type" : "gic_yamaxanadu_tyrantjudge_statue_gib_7_droppod",
+      "inheritDamageFactor" : 0,
+	  "fuzzAngle" : 25
+    },
+    {
+	  "time" : 0.2,
+	  "offset" : [0, 1],
+      "action" : "projectile",
+      "type" : "gic_yamaxanadu_tyrantjudge_statue_gib_12_droppod",
+      "inheritDamageFactor" : 0,
+	  "fuzzAngle" : 25
+    }  
+  ],
+  
+  "image" : "gic_ammoresupply_droppod_stage2.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+ 
+  
+  "damageKindImage" : "icon.png",
+  "power" : 0,
+  "speed" : 0,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

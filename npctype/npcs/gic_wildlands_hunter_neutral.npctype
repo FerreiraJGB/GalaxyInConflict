@@ -1,0 +1,355 @@
+{
+  "type" : "gic_wildlands_hunter_neutral",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ ],
+  
+  "identity" : {
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "fem11",
+    "hairColor" : "15"
+  },  
+  
+  "scriptConfig" : {
+    "behavior" : "villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 1,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+	
+      "complain" : {
+        "default" : {
+          "default" : [
+            "Hey, you made it alright.",
+			"Ceasefire zone. Keep it tucked in, buddy.",
+			"Ceasefire zone.",
+			"I don't need shit from you.",
+
+"Necromancy is bullshit...",
+"Necromancy ain't fancy, but it works.",
+"Everyone around here always has necromancy.",
+"Nobody really dies out there...",
+"Don't blow all your bounty money on Avto's and Dolch's...",
+"I can't believe perma-deaths have dropped ever since we got that statue working.",
+"One minute a man is dead. The next, he's up walkin' like nothin' happened.",
+"Necromancy... Doki Doki, Waku Waku... Damned earworm...",
+"I think I'll take Necromancy instead of whatever the Protectorate's got.",
+"Man could necro' and be off with a token if he's running Magpie!",
+"This is ridiculous. Everyone's got Necromancy!",
+"Nobody really dies... Because we've all got Necromancy!",
+			
+"You'll be alright here, hunter.",
+"If you go creepin' around, watch out for the beasts.",
+"Just once I'd like to see her buy the drinks. Just one time. Is that too much to ask?",
+"Hundred times I thought about leaving this place.",
+"I like to play cards. Toss the dice once in a while. Who doesn't?",
+"I got no kids. No wife neither. Had a nice girl once, but she had to fall into a river...",
+"I'll probably find myself a card table later on.",
+"Two bounty tokens for the cat-lap? No thank you.",
+"I might wind up at the alehouse tonight.",
+"Whatever you need, I can't help you.",
+"Hope they all rot in the void of space. Damned scum.",
+"I told her, if you want my advice, just pay the fine and be done with it. No use making trouble.",
+"Something's happened they say. Not safe they say. Well, I got news for them. It ain't ever safe for the likes of me.",
+"Hey, watch out.",
+"Something really stinks around here. And this time it ain't me.",
+"I have nothing to say to you.",
+"Watch your manners."
+			
+			
+          ]
+        }
+      },
+	
+      "converse" : {
+        "default" : {
+          "default" : [
+            "Hey, you made it alright.",
+			"Ceasefire zone. Keep it tucked in, buddy.",
+			"Ceasefire zone.",
+			"I don't need shit from you.",
+
+"Necromancy is bullshit...",
+"Necromancy ain't fancy, but it works.",
+"Everyone around here always has necromancy.",
+"Nobody really dies out there...",
+"Don't blow all your bounty money on Avto's and Dolch's...",
+"I can't believe perma-deaths have dropped ever since we got that statue working.",
+"One minute a man is dead. The next, he's up walkin' like nothin' happened.",
+"Necromancy... Doki Doki, Waku Waku... Damned earworm...",
+"I think I'll take Necromancy instead of whatever the Protectorate's got.",
+"Man could necro' and be off with a token if he's running Magpie!",
+"This is ridiculous. Everyone's got Necromancy!",
+"Nobody really dies... Because we've all got Necromancy!",
+			
+"You'll be alright here, hunter.",
+"If you go creepin' around, watch out for the beasts.",
+"Just once I'd like to see her buy the drinks. Just one time. Is that too much to ask?",
+"Hundred times I thought about leaving this place.",
+"I like to play cards. Toss the dice once in a while. Who doesn't?",
+"I got no kids. No wife neither. Had a nice girl once, but she had to fall into a river...",
+"I'll probably find myself a card table later on.",
+"Two bounty tokens for the cat-lap? No thank you.",
+"I might wind up at the alehouse tonight.",
+"Whatever you need, I can't help you.",
+"Hope they all rot in the void of space. Damned scum.",
+"I told her, if you want my advice, just pay the fine and be done with it. No use making trouble.",
+"Something's happened they say. Not safe they say. Well, I got news for them. It ain't ever safe for the likes of me.",
+"Hey, watch out.",
+"Something really stinks around here. And this time it ain't me.",
+"I have nothing to say to you.",
+"Watch your manners."
+          ]
+        }
+      },
+	  
+      "greeting" : {
+        "default" : {
+          "default" : [
+            "Hey, you made it alright.",
+			"Ceasefire zone. Keep it tucked in, buddy.",
+			"Ceasefire zone.",
+			"I don't need shit from you.",
+
+"Necromancy is bullshit...",
+"Necromancy ain't fancy, but it works.",
+"Everyone around here always has necromancy.",
+"Nobody really dies out there...",
+"Don't blow all your bounty money on Avto's and Dolch's...",
+"I can't believe perma-deaths have dropped ever since we got that statue working.",
+"One minute a man is dead. The next, he's up walkin' like nothin' happened.",
+"Necromancy... Doki Doki, Waku Waku... Damned earworm...",
+"I think I'll take Necromancy instead of whatever the Protectorate's got.",
+"Man could necro' and be off with a token if he's running Magpie!",
+"This is ridiculous. Everyone's got Necromancy!",
+"Nobody really dies... Because we've all got Necromancy!",
+			
+"You'll be alright here, hunter.",
+"If you go creepin' around, watch out for the beasts.",
+"Just once I'd like to see her buy the drinks. Just one time. Is that too much to ask?",
+"Hundred times I thought about leaving this place.",
+"I like to play cards. Toss the dice once in a while. Who doesn't?",
+"I got no kids. No wife neither. Had a nice girl once, but she had to fall into a river...",
+"I'll probably find myself a card table later on.",
+"Two bounty tokens for the cat-lap? No thank you.",
+"I might wind up at the alehouse tonight.",
+"Whatever you need, I can't help you.",
+"Hope they all rot in the void of space. Damned scum.",
+"I told her, if you want my advice, just pay the fine and be done with it. No use making trouble.",
+"Something's happened they say. Not safe they say. Well, I got news for them. It ain't ever safe for the likes of me.",
+"Hey, watch out.",
+"Something really stinks around here. And this time it ain't me.",
+"I have nothing to say to you.",
+"Watch your manners."
+          ]
+        }
+      },
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "hail" : {
+        "default" : {
+          "default" : [
+            "Hey, you made it alright.",
+			"Ceasefire zone. Keep it tucked in, buddy.",
+			"Ceasefire zone.",
+			"I don't need shit from you.",
+
+"Necromancy is bullshit...",
+"Necromancy ain't fancy, but it works.",
+"Everyone around here always has necromancy.",
+"Nobody really dies out there...",
+"Don't blow all your bounty money on Avto's and Dolch's...",
+"I can't believe perma-deaths have dropped ever since we got that statue working.",
+"One minute a man is dead. The next, he's up walkin' like nothin' happened.",
+"Necromancy... Doki Doki, Waku Waku... Damned earworm...",
+"I think I'll take Necromancy instead of whatever the Protectorate's got.",
+"Man could necro' and be off with a token if he's running Magpie!",
+"This is ridiculous. Everyone's got Necromancy!",
+"Nobody really dies... Because we've all got Necromancy!",
+			
+"You'll be alright here, hunter.",
+"If you go creepin' around, watch out for the beasts.",
+"Just once I'd like to see her buy the drinks. Just one time. Is that too much to ask?",
+"Hundred times I thought about leaving this place.",
+"I like to play cards. Toss the dice once in a while. Who doesn't?",
+"I got no kids. No wife neither. Had a nice girl once, but she had to fall into a river...",
+"I'll probably find myself a card table later on.",
+"Two bounty tokens for the cat-lap? No thank you.",
+"I might wind up at the alehouse tonight.",
+"Whatever you need, I can't help you.",
+"Hope they all rot in the void of space. Damned scum.",
+"I told her, if you want my advice, just pay the fine and be done with it. No use making trouble.",
+"Something's happened they say. Not safe they say. Well, I got news for them. It ain't ever safe for the likes of me.",
+"Hey, watch out.",
+"Something really stinks around here. And this time it ain't me.",
+"I have nothing to say to you.",
+"Watch your manners."
+          ]
+        }
+      },
+	  
+      "accuse" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      }
+	  
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [1, [
+
+	  //Balanced
+          {
+            "head" : [ { "name" : "gic_outlawhathead", "parameters" : { "colorIndex" : [0] }  }, { "name" : "", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "novakidfancychest", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }  }, { "name" : "novakidjacket", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }  }, { "name" : "novakidsuspenders", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }  }, { "name" : "novakidwaistcoat", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }  } ],
+            "legs" : [ { "name" : "novakidfancypants", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] } }, { "name" : "novakidjacketpants", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] } }, { "name" : "novakidsuspenderspants", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] } }, { "name" : "novakidblackpants", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] } } ],
+            "primary" : [
+			  
+			  "gic_fcs243",
+			  "gic_fcp243",
+			  "gic_mfsg12",
+			  "gic_wbss2"
+			  
+            ]
+          }
+
+        ] ]
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

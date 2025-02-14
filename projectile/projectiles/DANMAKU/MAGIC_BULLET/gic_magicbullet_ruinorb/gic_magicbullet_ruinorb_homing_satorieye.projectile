@@ -1,0 +1,39 @@
+{
+  "projectileName" : "gic_magicbullet_ruinorb_homing_satorieye",
+
+  "bounces" : 0,
+  "image" : "gic_magicbullet_ruinorb.png",
+  "animationCycle" : 0.1,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "inheritDamageFactor" : 0.25,
+	  "angleAdjust" : 0
+    }
+  ],
+  "power" : 20,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef",
+
+  "maxSpeed" : 10,
+  "ignoredef" : true,
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+
+  "emitters" : [ ],
+  "flippable" : true,
+  "speed" : 3.0,
+  "acceleration" : 7,
+  "timeToLive" : 10,
+  "physics" : "rocket",
+  
+  "rotationRate" : 0.25,
+  "trackingLimit" : 300
+}

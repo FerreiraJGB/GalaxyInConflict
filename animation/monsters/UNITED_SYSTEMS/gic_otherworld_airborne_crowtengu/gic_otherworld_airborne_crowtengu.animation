@@ -1,0 +1,364 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 8,
+            "cycle" : 1.0,
+            "mode" : "loop",
+            "properties" : {
+
+            }			
+			
+          },
+          "fly" : {
+            "frames" : 16,
+            "mode" : "loop",
+            "cycle" : 2.0,
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "", "/sfx/gic_remnantfromtheashes_pan_slink_wing-01.ogg", "", "", "", "/sfx/gic_remnantfromtheashes_pan_slink_wing-02.ogg", "", "", "", "/sfx/gic_remnantfromtheashes_pan_slink_wing-03.ogg", "", "", "", "/sfx/gic_remnantfromtheashes_pan_slink_wing-04.ogg", ""]
+            }
+          },
+		  
+		  
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_remnantfromtheashes_pan_slink_snarl.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }	
+          },
+		  
+		  
+		  
+		  
+
+          "knifethrowwindup" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-03.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }	
+          },	
+
+          "knifethrowwindup2" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "properties" : {
+            }	
+          },			  
+
+          "knifethrowwindup3" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-04.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }	
+          },
+
+          "knifethrow" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_swing-hand.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }	
+          },
+		  
+		
+		  
+          "crossbowwindup" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-01.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }	
+          },		  
+		  
+          "crossbowfire" : {
+            "frames" : 1,
+            "cycle" : 0.5,
+            "mode" : "transition",
+            "transition" : "crossbowreload",
+            "properties" : {
+              "immediateSound" : "/sfx/bow/gic_bloodborne_bowgun-shot.wav",
+              "immediateSoundRangeMultiplier" : 2.0
+            }	
+          },
+
+          "crossbowreload" : {
+            "frames" : 4,
+            "cycle" : 1.0,
+            "mode" : "transition",
+            "transition" : "idle",
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-02.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }	
+          },			  
+
+
+          "throwwindup" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-06.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }	
+          },		  
+		  
+          "throw" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "particleEmittersOff" : [ ]
+            }	
+          }
+
+
+
+
+
+
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+			
+            "knifethrowwindup" : {
+              "properties" : {
+                "image" : "<partImage>:knifethrowwindup.<frame>"
+              }
+            },
+			
+            "knifethrowwindup2" : {
+              "properties" : {
+                "image" : "<partImage>:knifethrowwindup.<frame>"
+              }
+            },
+			
+            "knifethrowwindup3" : {
+              "properties" : {
+                "image" : "<partImage>:knifethrowwindup.<frame>"
+              }
+            },
+			
+            "knifethrow" : {
+              "properties" : {
+                "image" : "<partImage>:knifethrow.<frame>"
+              }
+            },
+			
+            "crossbowwindup" : {
+              "properties" : {
+                "image" : "<partImage>:crossbowwindup.<frame>"
+              }
+            },
+			
+            "crossbowfire" : {
+              "properties" : {
+                "image" : "<partImage>:crossbowfire.<frame>"
+              }
+            },
+			
+			
+            "crossbowreload" : {
+              "properties" : {
+                "image" : "<partImage>:crossbowreload.<frame>"
+              }
+            },
+			
+            "throwwindup" : {
+              "properties" : {
+                "image" : "<partImage>:throwwindup.<frame>"
+              }
+            },
+			
+            "throw" : {
+              "properties" : {
+                "image" : "<partImage>:throw.<frame>"
+              }
+            }
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+
+  "lights" : {
+    "glow" : {
+      "active" : false,
+      "position" : [0, 0],
+      "color" : [50, 50, 150], //255, 255, 107
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+    "stars" : {
+      "enabled" : true,
+      "emissionRate" : 3.0,
+      "particles" : [
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" }
+      ]
+    },
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "bluecartoonstar" },
+        { "particle" : "bluecartoonstar" },
+        { "particle" : "bluecartoonstar" },
+        { "particle" : "bluecartoonstar" },
+
+        { "particle" : "bluecartoonstar" },
+        { "particle" : "bluecartoonstar" },
+        { "particle" : "bluecartoonstar" },
+        { "particle" : "bluecartoonstar" },
+        { "particle" : "bluecartoonstar" },
+        { "particle" : "bluecartoonstar" },
+        { "particle" : "bluecartoonstar" },
+        { "particle" : "bluecartoonstar" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+    "throw" : {
+      "pool" : [ "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-01.ogg", "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-02.ogg", "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-03.ogg" ],
+      "rangeMultiplier" : 1.0
+    },
+  
+    "laser" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_magic-fireball-14db.wav" ],
+      "rangeMultiplier" : 3.0
+    },
+  
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/npc/gic_bloodborne_female_uncategorized_death_1.wav", "/sfx/npc/gic_bloodborne_female_uncategorized_death_2.wav", "/sfx/npc/gic_bloodborne_female_uncategorized_death_3.wav" ]
+  }
+}

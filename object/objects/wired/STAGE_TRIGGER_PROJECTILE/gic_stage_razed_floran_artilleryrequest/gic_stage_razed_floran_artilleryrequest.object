@@ -1,0 +1,43 @@
+{
+  "objectName" : "gic_stage_razed_floran_artilleryrequest",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Common",
+  "scannable" : false,
+  "category" : "wire",
+  "price" : 15,
+  "description" : "Plays a radio sound. Due to mechanics, only plays once. It's a crude way of working with it, but it's better than nothing.",
+  "shortdescription" : "Stage Radio Sound",
+  "race" : "generic",
+
+  "inventoryIcon" : "gic_stage_razed_floran_artilleryrequest.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_stage_razed_floran_artilleryrequest.png",
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+    }
+
+
+  ],
+
+  "animation" : "/objects/noisy/noisy.animation",
+
+  "inputNodes" : [ [0, 0] ],
+
+  "scripts" : [
+    "/objects/scripts/wiredmine.lua"
+  ],
+  "scriptDelta" : 5,
+
+  "triggerOnBreak" : false,
+
+  "explosionProjectile" : "gic_null",
+  "explosionOffset" : [0, 0],
+  
+  "triggerSounds" : [ "/sfx/gic_risingstorm2_australiancommander_artilleryrequest.ogg" ], ///sfx/objects/hiddenswitch1.ogg
+  
+  "detonationTime" : 1.0
+}

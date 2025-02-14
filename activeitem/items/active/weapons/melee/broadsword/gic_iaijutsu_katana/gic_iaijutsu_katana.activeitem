@@ -1,0 +1,237 @@
+{
+  "itemName" : "gic_iaijutsu_katana",
+  "price" : 15000,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "oiiiiiiiiiiii",
+  "shortdescription" : "Iaijutsu Katana",
+  "tooltipKind" : "sword",
+  "category" : "broadsword",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","katana","broadsword"],
+
+  "inventoryIcon" : "gic_iaijutsu_katana.png",
+
+  "animation" : "/items/active/weapons/melee/broadsword/combobroadsword.animation",
+  "animationParts" : {
+    "handle": "",
+    "blade" : "gic_iaijutsu_katana.png"
+  },
+  "animationCustom" : {
+	"sounds" : {
+      "fire" : [ "/sfx/melee/swing_broadsword.ogg" ],
+      "fire2" : [ "/sfx/melee/swing_shortsword.ogg" ],
+      "fire3" : [ "/sfx/melee/swing_spear.ogg" ],
+	  "fire4" : [ "/sfx/melee/swing_broadsword.ogg" ],
+	  "fire5" : [ "/sfx/melee/swing_spear.ogg" ],
+	  "fire6" : [ "/sfx/melee/swing_broadsword.ogg" ],
+	  "fire7" : [ "/sfx/melee/swing_broadsword.ogg" ],
+	  "fire8" : [ "/sfx/melee/swing_broadsword.ogg" ]
+    },
+	"animatedParts" : {
+	"stateTypes" : {
+      "swoosh" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+          },
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "firetemp"
+          },
+		  "firetemp" : {
+            "frames" : 1,
+            "cycle" : 0.2,
+            "mode" : "transition",
+            "transition" : "idle"
+          }
+        }
+      }
+    },
+	"parts" : {
+	  "parryShield" : {
+          "properties" : {
+            "zLevel" : -1,
+            "centered" : true,
+            "offset" : [-0.75, 1.75],
+            "transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0],
+            "shieldPoly" : [ [-0.25, -2.5], [-0.25, 2.0], [1.0, 2.75], [1.0, -1.0] ]
+        }
+	  },
+	  "blade":{
+	    "partStates" : {
+          "swoosh" : {
+            "idle" : {
+              "properties" : {
+                "image" : "gic_iaijutsu_katana_sheathed.png"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "gic_iaijutsu_katana.png"
+              }
+            },
+			"firetemp" : {
+              "properties" : {
+                "image" : "gic_iaijutsu_katana.png"
+              }
+            }
+          }
+        }
+	  },
+      "swoosh" : {
+        "properties" : {
+          "zLevel" : 5,
+          "centered" : true,
+          "transformationGroups" : ["swoosh"],
+          "rotationCenter" : [0, 0]
+        },
+        "partStates" : {
+          "swoosh" : {
+            "idle" : {
+              "properties" : {
+                "image" : ""
+              }
+            },
+            //"fire" : {
+            //  "properties" : {
+            //    "image" : "/items/active/weapons/melee/broadsword/swoosh/<elementalType>swoosh.png:<frame>",
+            //    "offset" : [0, 2.5],
+            //    "damageArea" : [[-5, 2], [-2.5, 3], [1, 3], [4, 1.75], [5, -0.25], [5, -2.25], [4, -3.25], [0, -2.5]]
+            //  }
+            //},
+            "fire" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh/<elementalType>swoosh.png:<frame>?flipy",
+                "offset" : [0.0, -2.5],
+                "damageArea" : [[-1, 3], [1, -3], [4, -1.25], [5, 0.25], [5, 3.75]]
+              }
+            },
+			"firetemp" : {
+              "properties" : {
+                "image" : ""
+              }
+            }
+          }
+        }
+      }
+    }
+	},
+	"particleEmitters" : {
+	 "ews_meleeswoosh" : {
+	  "active" : false,
+      "transformationGroups" : ["swoosh"],
+      "emissionRate" : 1,
+      "burstCount" : 1,
+      "particles" : [
+//        { "particle" : "gic_meleeswoosh1"},
+//        { "particle" : "gic_meleeswoosh2"},
+//        { "particle" : "gic_meleeswoosh3"}
+	  ]
+	 }
+	}
+  },
+  
+  "baseOffset" : [ 0.5, 0 ],
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "broadswordcombo",
+  "primaryAbility" : {
+    "fireTime" : 1.0,
+    "baseDps" : 110.0,
+	//"damageKind" : "IgnoresDef",
+	//"damageType" : "IgnoresDef",
+	"comboSteps" : 1,
+	"damageConfig" : {
+      "damageSourceKind" : "broadsword",
+      "statusEffects" : [ ],
+      "knockbackMode" : "facing",
+	  //"damageKind" : "IgnoresDef",
+	  "damageType" : "IgnoresDef",
+      "timeout" : 0.3
+    },
+	"swooshOffsetRegions" : [
+      [0.75, 0.0, 4.25, 5.0],
+      [3.0, -0.5, 6.5, 2.0],
+      [1.5, -1.0, 5.5, 1.0],
+	  [0.75, 0.0, 4.25, 5.0],
+	  [1.5, -1.0, 5.5, 1.0],
+	  [1.5, -1.0, 5.5, 1.0],
+	  [1.5, -1.0, 5.5, 1.0],
+	  [1.5, -1.0, 5.5, 1.0]
+    ],
+	"stepDamageConfig" : [
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 15
+      }
+    ],
+	"comboSpeedFactor" : 0.6,
+	"stances" : {
+      "idle" : {
+        "armRotation" : -20,
+        "weaponRotation" : -260,
+		"twoHanded" : false,
+        "allowRotate" : false,
+        "allowFlip" : true,
+		"weaponOffset" : [ -0.4, 0.2 ]
+      },
+      "windup1" : {
+        "duration" : 0.3,
+        "armRotation" : -24,
+        "weaponRotation" : -254,
+		"twoHanded" : true,
+        "allowRotate" : false,
+        "allowFlip" : true,
+		"weaponOffset" : [ -0.4, -0.1 ]
+      },
+      "preslash1" : {
+        "duration" : 0.1,
+        "armRotation" : -37,
+        "weaponRotation" : -254,
+		"twoHanded" : true,
+        "allowRotate" : false,
+        "allowFlip" : true,
+		"weaponOffset" : [ -0.4, -0.1 ]
+      },
+      "fire1" : {
+        "duration" : 0.3,
+        "armRotation" : 50,
+        "weaponRotation" : -130,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		"weaponOffset" : [ -0.2, 0.0 ]
+      }
+    }
+  },
+  
+  "altAbilityType" : "parry",
+  "altAbility" : {
+	"scripts" : ["/items/active/weapons/melee/broadsword/ews_parry_shift.lua"],
+	"class" : "Parry",
+	"parryTime" : 1.5,
+	"cooldownTime" : 1.0,
+	"shieldHealth" : 300,
+	"stances" : {
+      "parry" : {
+        "armRotation" : 35,
+        "weaponRotation" : -205,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

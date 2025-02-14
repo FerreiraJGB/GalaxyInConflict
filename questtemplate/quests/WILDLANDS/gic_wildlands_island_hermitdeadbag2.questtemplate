@@ -1,0 +1,28 @@
+{
+  "id" : "gic_wildlands_island_hermitdeadbag2quest",
+  "title" : "^#D1FFDE;Hermit Dead Drop Pt.2",
+  "prerequisites" : [ "gic_wildlands_island_hermitdeadbagquest" ],
+  "text" : "A note inside reads: ''They foretold a truth more terrifying than any other. Those who glimpse it behold no monster other than an utter lack of meaning. The visage of a razor thin line between existence and nonexistence and nothing in between.'' It would be best to bring the news to the Patrol Ranger.",
+  "completionText" : "What? That's what was in his bag? That's ridiculous he... No, thank you. I should pay for private investigators. Here, something for your time.",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 2 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+	
+    "turnInEntityUid" : "gic_wildlands_island_hermitpatrolranger",
+    "conditions" : [
+    ]
+  }
+}

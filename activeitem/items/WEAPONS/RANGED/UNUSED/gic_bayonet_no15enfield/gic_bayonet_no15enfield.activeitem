@@ -1,0 +1,420 @@
+{
+  "itemName" : "gic_bayonet_no15enfield",	//this is an example weapon. Copy the folder to your mod (in appropriate location) and change "examplerifle" for the name you want to use
+  "price" : 150,
+  "inventoryIcon" : "gic_bayonet_no15enfield.png:armed.1",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A basic bolt action rifle built by various manufacturers to colonies in need of cheap, effective firearms. While not quite packing the lethality of a full automatic assault rifle, this simple rifle has survived the test of time for good reason.",
+  "shortdescription" : "No.15 Enfield Rifle",
+  "level" : 1,
+  "tooltipKind" : "gic_largebase_ammogun",//custom tooltip, values set by the .lua (the code is spread to gunammo.lua, ammo.lua and reloadammo.lua)
+  "category" : "^#14e903;Service Rifle^reset;",
+  "itemTags" : ["weapon","ranged","rifle"],
+  "twoHanded" : true,
+  
+  "shellProjectile" : "gic_shellcasing",
+  
+  "ammoMax" 		: 25,			//Specifies how big the guns' magazine is.
+  "magazineProjectile": "gic_mag_bayonet_enfieldreload", //Projectile dropped when reloading, basically a dummy projectile (Gnio)
+  "ammoAmount" 		: 25,			//Holds the current amount of ammo. Mostly set dynamically
+  "usesAmmo" 		: false,			//Used by ammo to determine if it should bother trying to load into the gun
+  "ammoTags" 		: ["bullet"],	//Tags, specifying the kind of ammo the gun takes
+  "ammoName" 		: "Simple Bullet",			//Used by the tooltip, set by ammo
+  "ammoType" 		: "simplebulletammo",			//Holds the name of currently used ammo item
+  "magazineType"	: "none",		//Holds the name of currently used magazine item or false if not using magazines (can omit this). Set to "none" for making a gun without a mag in currently.
+  "ammoIcon" 		: "/items/augments/ammo/simplebulletammo/icon.png",			//Used by the tooltip, set by ammo	
+  "ammoCasing" 		: false,		//Used by the gunfireammo ability. False for no casings, name of the casing item otherwise. Supposed to be set by the ammo item.
+  "extraAmmo" 		: false,		//Used for ejecting ammo, set dynamically
+  "extraAmmoList" 	: [],			//Used for ejecting ammo, set dynamically
+  "reloadParam" 	: false,		//false for reloadammo secondary ejecting ammo, [reload_amount,reload_cost,cooldown] for reloadammo reloading the gun (eg, for reloading one bullet for 20 energy every 2 seconds it will look like [1,20,2])
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_bayonet_no15enfield.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+	"animatedParts":{
+      "stateTypes" : {
+        "gunState" : {
+          "default" : "empty",
+          "states" : {					//animations are handled by both gunammo.lua (ammo states) and gunfireammo.lua (firing state). If you want to change those, make a copy and work with that.
+			"firing" :{					//gun will transition to "firing" state each time you pull the trigger
+			  "frames" : 9,
+			  "cycle" : 1.0,
+			  "mode" : "transition",
+			  "transition" : "armed"	//transition mode and animation is set up for the crossbow. may not work for everything
+			},
+            "armed" : {					//gun transitions to "armed" state if it has ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+            "empty" : {					//gun transitions to "empty" if it has no ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+			"reloading" : {				//reloading animation, placeholder here but can be useful if reloadejects is set to false
+			  "frames" : 7,
+			  "cycle" : 1.6,
+			  "mode" : "transition",
+			  "transition" : "empty"
+			}
+          }
+        }
+      },
+
+      "parts" : {
+        "middle" : {
+          "properties" : {
+            "image" : null,
+			"damageArea" : [[0.7,-0.4],[0.7,0.4],[2.8,0.4],[2.8,-0.4]]
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<partImage>:firing.<frame><paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<partImage>:firing.3<paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<partImage>:reload.<frame><paletteSwaps>"
+				}
+			  }
+            }
+          }
+        }
+      }
+	},
+	"particleEmitters" : {
+      "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [2.2, 0.0], "count" : 2 }
+        ]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [2.1, 0.6], "count" : 3 }
+        ]
+      }
+    },
+    "sounds" : {
+      "fire" 		: [ "/sfx/gun/gic_enfield_02_short.ogg" ],
+	  "empty"		: [ "/sfx/gun/reload/machinepistol_reload_clip1.ogg" ],
+      "switchAmmo" 	: [ "/sfx/ars_reload.ogg" ],
+	  "stab" : [ "/sfx/melee/swing_broadsword.ogg" ]
+    }
+  },
+
+	
+  "animationScripts" : [
+    "/items/active/effects/laserbeam.lua"
+  ],
+
+
+
+  "baseOffset" : [0.5, 0.3],
+  "muzzleOffset" : [-0.7, 0.22],
+
+  "scripts" : ["/items/active/weapons/ranged/gunammo.lua","/abilities/weight/gic_medium_weapon.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gic_bayonet_enfield/boltfireammonreload.lua"],
+    "class" : "GunFire",
+
+
+    "fireTime" : 0.7, //RPM to RPS: 1/(RPM/60)
+    "baseDamage" : 50, //Damage Per Bullet: (baseDps*fireTime)*(1+0.5*level-1) sounds like a long equation, but blame the SB leveling system for adding a retarded step. just default to level:1 for ease. To find baseDps from bullet damage and fire time, (damagePerShot/fireTime)=baseDps
+	"bonusDps" : 0,					//the parameter responsible for extra per-shot damage, introduced by ammo. Per shot damage gets spread over all the projectiles
+    "energyUsage" : false,
+    "inaccuracy" : 0.005,
+	
+	//"fixHitboxTimer" : 0.001,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+	
+    "projectileType" : "gic_merc_50calc",
+    "projectileParameters" : {
+      "knockback" : 5
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 2,
+        "weaponRotation" : -2,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.2",
+        "backArmFrame" : "run.5"
+      },
+      "fire" : {
+        "duration" : 0.1,
+        "armRotation" : 6,
+        "weaponRotation" : 4,
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "run.2",
+        "backArmFrame" : "run.5"
+      },
+	  "motion1" : {
+        "duration" : 0.1,
+        "armRotation" : 4,
+        "weaponRotation" : 2,
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "run.2",
+        "backArmFrame" : "run.5"
+      },
+      "motion2" : {
+        "duration" : 0.2,
+        "armRotation" : 2,
+        "weaponRotation" : -2,
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "run.2",
+        "backArmFrame" : "run.5"
+      },
+      "motion3" : {
+        "duration" : 0.2,
+        "armRotation" : -10,
+        "weaponRotation" : 4,
+		"weaponOffset" : [-0.1,0.0],
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "run.5"
+      },
+      "motion4" : {
+        "duration" : 0.4,
+        "armRotation" : -10,
+        "weaponRotation" : 4,
+		"weaponOffset" : [-0.3,0.0],
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.4",
+        "backArmFrame" : "run.5"
+      },
+      "motion5" : {
+        "duration" : 0.2,
+        "armRotation" : -10,
+        "weaponRotation" : 2,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.2",
+        "backArmFrame" : "run.5"
+      },
+      "motion6" : {
+        "duration" : 0.4,
+        "armRotation" : 2,
+        "weaponRotation" : -2,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.2",
+        "backArmFrame" : "run.5"
+      },
+      "reload" : {
+        "duration" : 0.25,
+        "armRotation" : -15,
+        "weaponRotation" : 10,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "run.5"
+      },
+ 
+      "reload1" : {
+        "duration" : 0.15,
+        "armRotation" : -15,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "idle.5",
+        "backArmFrame" : "run.5"
+      },
+      "reload2" : {
+        "duration" : 0.15,
+        "armRotation" : -5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "jump.2",
+        "backArmFrame" : "run.5"
+      },
+      "reload3" : {
+         "duration" : 0.15,
+        "armRotation" : -5,
+        "weaponRotation" : 20,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		//"frontArmFrame" : "swim.4",
+        "backArmFrame" : "run.5"
+      },
+      "reload4" : {
+        "duration" : 0.20,
+        "armRotation" : -10,
+        "weaponRotation" : 4,
+		"weaponOffset" : [-0.1,0.0],
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "run.5"
+      },
+      "reload5" : {
+        "duration" : 0.4,
+        "armRotation" : -10,
+        "weaponRotation" : 4,
+		"weaponOffset" : [-0.3,0.0],
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.4",
+        "backArmFrame" : "run.5"
+      },
+      "reload6" : {
+        "duration" : 0.2,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "run.5"
+      },
+      "cooldown" : {
+        "duration" : 0.0,
+        "armRotation" : 2,
+        "weaponRotation" : -2,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.2",
+        "backArmFrame" : "run.5"
+      }
+    }
+  },
+  
+  "altAbility" : {
+	"scripts" : ["/items/active/weapons/ranged/ews_bayonet.lua"],
+	"class" : "LanceAttack",
+	"fixHitboxTimer" : 0.001,
+	"damageConfig" :{
+		"baseDamage":20,
+		"damageSourceKind":"ews_melee",
+		"timeoutGroup":"alt",
+		"knockback":20,
+		"timeout":0.5,
+		"statusEffects":[]
+	},
+	"damageConfigTStab" :{
+		"baseDamage":0,
+		"damageSourceKind":"noDamage",
+		"timeoutGroup":"alt",
+		"knockback":0,
+		"timeout":0.2,
+		"statusEffects":[]
+	},
+	"damageConfigIntStab":{
+		"baseDamage":40,
+		"damageSourceKind":"ews_melee",
+		"timeoutGroup":"alt",
+		"knockback":35,
+		"timeout":0.5,
+		"statusEffects":[]
+	},
+	"cooldownTime":0.5,
+	"stances":{
+		"windup":{
+			"duration":0.3,
+			"armRotation":-110,
+			"weaponRotation":110,
+			"twoHanded":true,
+			"weaponOffset":[0,0],
+			"allowRotate":false,
+			"allowFlip":false
+		},
+		"fire":{
+			"duration":0.3,
+			"armRotation":0,
+			"weaponRotation":0,
+			"twoHanded":true,
+			"weaponOffset":[0.7,-0.1],
+			"allowRotate":true,
+			"allowFlip":true,
+			"frontArmFrame":"rotation",
+			"backArmFrame":"rotation"
+		},
+		"hold":{
+			"armRotation":-10,
+			"weaponRotation":10,
+			"twoHanded":true,
+			"weaponOffset":[0.7,-0.1],
+			"allowRotate":true,
+			"allowFlip":true
+		}
+	}
+  },
+  "builder" : "/items/buildscripts/buildunrandweaponammo.lua"
+}

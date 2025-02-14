@@ -1,0 +1,118 @@
+{
+  "type" : "gic_banditshockinfantry_guardian",
+  "baseType" : "gic_banditbase",
+
+  "dropPools" : [ "gic_politicalprotectorateguardTreasure" ],
+  "identity" : {
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "fem3",
+    "hairColor" : "15"
+  },  
+  "movementParameters" : {
+    "runSpeed" : 9, //originally 30
+    "walkSpeed" : 5,
+    "airFriction" : 0.2,
+    "airJumpProfile" : {
+      "jumpSpeed" : 70.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.2
+    }
+  },  
+  "scriptConfig" : {
+  
+  
+    "behaviorConfig" : {
+      "leapWindup" : 1
+    },
+
+    "pathing" : {
+      "forceWalkingBackwards" : true,
+      "canOpenDoors" : true
+    },
+  
+    "dialog" : {
+	  "attack" : "/dialog/bandits/gic_shockbandit_combat.config:attack",
+      "reattack" : "/dialog/bandits/gic_shockbandit_combat.config:reattack",
+      "killedTarget" : "/dialog/bandits/gic_shockbandit_combat.config:killedTarget",
+      "lostTarget" : "/dialog/bandits/gic_shockbandit_combat.config:lostTarget",
+      "outOfSight" : "/dialog/bandits/gic_shockbandit_combat.config:outOfSight",
+      "cheerOn" : "/dialog/bandits/gic_shockbandit_combat.config:cheerOn",
+      "cantReach" : "/dialog/bandits/gic_shockbandit_combat.config:cantReach"
+    },
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.4]}],
+        [1.0, "wander", { "timeRange" : [0.3,0.1]}],
+        [7.0, "patrol"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+		  
+          {
+            "head" : [ { "name" : "gic_largehairbowhead", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9] }  } ],
+            "chest" : [ { "name" : "coolchest", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9] }  } ],
+            "legs" : [ { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9] } } ],
+            "back" : [ { "name" : "raggedprotectoratecape", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [ "gic_iajutsu_katana_npc" ]
+//            "sheathedprimary" : ["gic_knifehell_throw_fast"]
+          }
+  
+        ] ]
+    ]
+  },
+  
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.2 //NOTE THIS!
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "shieldHealth" : {
+        "baseValue" : 400
+      },
+      "shieldStaminaRegen" : {
+        "baseValue" : 1.0
+      },
+      "shieldSuppressed" : {
+        "baseValue" : 0.0
+      },
+	  
+      "physicalResistance" : {
+        "baseValue" : 0.8
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.3
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.1
+      }
+	  
+	  
+	  
+    }
+  }
+  
+}

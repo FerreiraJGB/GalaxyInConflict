@@ -1,0 +1,1072 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idlefly",
+        "states" : {
+		
+
+		  
+          "idlefly" : {
+            "properties" : {
+            "particleEmittersOff" : [ "coresmoke", "coresmoke_destroyed" ]
+            },
+            "frames" : 8,
+            "cycle" : 1,
+            "mode" : "loop"
+          },
+
+          "idle" : {
+            "properties" : {
+            "particleEmittersOn" : [ "coresmoke" ],
+              "persistentSound" : "/sfx/npc/boss/apeboss_stage4_loop.ogg",
+              "persistentSoundRangeMultiplier" : 4
+            },
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+	
+          "jump" : {
+            "frames" : 3,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "fall" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "land" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "idlefly"
+          },
+		  
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "transition",
+            "transition" : "idlefly",
+			
+            "properties" : {
+              "immediateSound" : "/sfx/touhou/gic_utsuho_klaxon_+6db.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+			
+          },
+		  
+          "aggro_phase1" : {
+            "frames" : 15,
+            "cycle" : 1.5,
+            "mode" : "transition",
+            "transition" : "idlefly",		  
+            "properties" : {
+            "particleEmittersOn" : [ "coresmoke" ],	
+              "immediateSound" : "/cinematics/esther_story/gic_esther_enitmeeting/gic_siren_11s.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+			
+          },		  
+		  
+          "aggro_phase2" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "transition",
+            "transition" : "idlefly",
+			
+            "properties" : {
+              "immediateSound" : "/sfx/touhou/gic_utsuho_klaxon_+6db.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+			
+          },		  
+
+	
+          "aggro_phase3" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "transition",
+            "transition" : "idlefly",
+			
+            "properties" : {
+              "immediateSound" : "/sfx/touhou/gic_utsuho_klaxon_+6db.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+			
+          },
+
+
+
+          "aggro_phase4" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "transition",
+            "transition" : "idlefly",
+			
+            "properties" : {
+              "immediateSound" : "/cinematics/esther_story/gic_esther_enitmeeting/gic_siren_11s.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+			
+          },
+
+
+	
+		  
+          "hop" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "hopfull",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/gleap_hop.ogg" ]
+            }
+          },
+          "hopfull" : {
+            "frames" : 3,
+            "cycle" : 0.325
+          },		  
+		  
+		  
+		  
+		  
+	
+
+
+		  
+
+	
+
+
+//chargeupstars
+//            "particleEmittersOn" : [ "chargeupstars" ],
+
+
+          "rodupmaterialize" : {
+            "frames" : 9,
+            "cycle" : 0.8,
+            "properties" : {
+			"particleEmittersOn" : [ "chargeupstars" ],
+            "particleEmittersOff" : [ "coresmoke", "coresmoke_destroyed" ],
+              "immediateSound" : "/sfx/touhou/gic_touhou_se_ch00_+3db.ogg", //-6db
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+		 
+          "rodupmaterialize_klaxon" : {
+            "frames" : 9,
+            "cycle" : 0.8,
+            "properties" : {
+			"particleEmittersOn" : [ "chargeupstars" ],
+            "particleEmittersOff" : [ "coresmoke", "coresmoke_destroyed" ],
+              "immediateSound" : "/sfx/touhou/gic_utsuho_klaxon_+6db.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+		  
+          "rodupaim" : {
+            "frames" : 1,
+            "cycle" : 0.3,
+            "mode" : "loop",
+            "properties" : {
+			  "particleEmittersOff" : [ "chargeupstars" ]
+            }
+          },
+		  
+          "rodupaim_meltdown" : {
+            "frames" : 1,
+            "cycle" : 20,
+            "mode" : "transition",
+            "transition" : "rodupdematerialize",
+            "properties" : {
+			  "particleEmittersOff" : [ "chargeupstars" ]
+            }
+          },
+		  
+          "rodupaim_artificialsun" : {
+            "frames" : 1,
+            "cycle" : 60,
+            "mode" : "transition",
+            "transition" : "rodupdematerialize",
+            "properties" : {
+			  "particleEmittersOff" : [ "chargeupstars" ]
+            }
+          },
+		  
+          "rodupdematerialize" : {
+            "frames" : 9,
+            "cycle" : 0.8,
+            "mode" : "transition",
+            "transition" : "idlefly",
+            "properties" : {
+			  "particleEmittersOff" : [ "chargeupstars" ]
+            }
+          },	
+
+
+
+
+          "sungodwindup" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/touhou/gic_utsuho_klaxon_+6db.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+          "sungodfire" : {
+            "frames" : 1,
+            "cycle" : 7,
+            "mode" : "transition",
+            "transition" : "sungodwinddown",
+            "properties" : {
+            }
+          },		  
+          "sungodwinddown" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "idlefly",
+            "properties" : {
+			  "particleEmittersOff" : [ "chargeupstars" ]
+            }
+          },	
+
+
+
+
+
+
+          "roddownmaterialize" : {
+            "frames" : 9,
+            "cycle" : 0.8,
+            "properties" : {
+			"particleEmittersOn" : [ "chargeupstars" ],
+              "immediateSound" : "/sfx/touhou/gic_touhou_se_ch00_+3db.ogg", //-6db
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+          "roddownmaterialize_homingcrosshair" : {
+            "frames" : 9,
+            "cycle" : 0.8,
+            "properties" : {
+			  "particleEmittersOn" : [ "chargeupstars" ],
+              "immediateSound" : "/sfx/touhou/gic_utsuho_klaxon_+6db.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+		  
+          "roddownaim" : {
+            "frames" : 1,
+            "cycle" : 0.3,
+            "mode" : "loop",
+            "properties" : {
+			  "particleEmittersOff" : [ "chargeupstars" ]
+            }
+          },
+		  
+          "roddownaim_energybeam" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "transition",
+            "transition" : "roddowndematerialize",
+            "properties" : {
+			  "particleEmittersOff" : [ "chargeupstars" ]
+            }
+          },
+		  
+          "roddownaim_homingcrosshair" : {
+            "frames" : 1,
+            "cycle" : 7,
+            "mode" : "transition",
+            "transition" : "roddowndematerialize",
+            "properties" : {
+			  "particleEmittersOff" : [ "chargeupstars" ]
+            }
+          },
+		  
+          "roddowndematerialize" : {
+            "frames" : 9,
+            "cycle" : 0.8,
+            "mode" : "transition",
+            "transition" : "idlefly",
+            "properties" : {
+			  "particleEmittersOff" : [ "chargeupstars" ]
+            }
+          },
+
+
+
+
+
+
+
+
+
+
+
+
+		  
+          "backdash" : {
+            "frames" : 3,
+            "cycle" : 1,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/gic_bloodborne_movement2.wav",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          }
+
+
+
+
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.6]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "idlefly" : {
+              "properties" : {
+                "image" : "<partImage>:idlefly.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "<partImage>:fall.<frame>"
+              }
+            },
+            "land" : {
+              "properties" : {
+                "image" : "<partImage>:land.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idlefly.<frame>"
+              }
+            },
+
+            "aggro_phase1" : {
+              "properties" : {
+                "image" : "<partImage>:corewarpout.<frame>"
+              }
+            },
+            "aggro_phase2" : {
+              "properties" : {
+                "image" : "<partImage>:idlefly.<frame>"
+              }
+            },
+            "aggro_phase3" : {
+              "properties" : {
+                "image" : "<partImage>:idlefly.<frame>"
+              }
+            },
+            "aggro_phase4" : {
+              "properties" : {
+                "image" : "<partImage>:idlefly.<frame>"
+              }
+            },
+		
+			
+            "hop" : {
+              "properties" : {
+                "image" : "<partImage>:prep.<frame>"
+              }
+            },
+            "hopfull" : {
+              "properties" : {
+                "image" : "<partImage>:hop.<frame>"
+              }
+            },
+			
+
+
+			
+			
+            "rodupmaterialize_klaxon" : {
+              "properties" : {
+                "image" : "<partImage>:rodupmaterialize.<frame>"
+              }
+            },
+            "rodupmaterialize" : {
+              "properties" : {
+                "image" : "<partImage>:rodupmaterialize.<frame>"
+              }
+            },
+            "rodupaim" : {
+              "properties" : {
+                "image" : "<partImage>:rodupaim.<frame>"
+              }
+            },
+            "rodupaim_meltdown" : {
+              "properties" : {
+                "image" : "<partImage>:rodupaim.<frame>"
+              }
+            },
+            "rodupaim_artificialsun" : {
+              "properties" : {
+                "image" : "<partImage>:rodupaim.<frame>"
+              }
+            },
+            "rodupdematerialize" : {
+              "properties" : {
+                "image" : "<partImage>:rodupdematerialize.<frame>"
+              }
+            },	
+			
+			
+			
+            "roddownmaterialize_homingcrosshair" : {
+              "properties" : {
+                "image" : "<partImage>:roddownmaterialize.<frame>"
+              }
+            },			
+            "roddownmaterialize" : {
+              "properties" : {
+                "image" : "<partImage>:roddownmaterialize.<frame>"
+              }
+            },
+            "roddownaim" : {
+              "properties" : {
+                "image" : "<partImage>:roddownaim.<frame>"
+              }
+            },
+            "roddownaim_energybeam" : {
+              "properties" : {
+                "image" : "<partImage>:roddownaim.<frame>"
+              }
+            },
+            "roddownaim_homingcrosshair" : {
+              "properties" : {
+                "image" : "<partImage>:roddownaim.<frame>"
+              }
+            },
+            "roddowndematerialize" : {
+              "properties" : {
+                "image" : "<partImage>:roddowndematerialize.<frame>"
+              }
+            },
+
+
+            "sungodwindup" : {
+              "properties" : {
+                "image" : "<partImage>:sungodwindup.<frame>"
+              }
+            },	
+            "sungodfire" : {
+              "properties" : {
+                "image" : "<partImage>:sungodfire.<frame>"
+              }
+            },	
+            "sungodwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:sungodwinddown.<frame>"
+              }
+            },				
+
+			
+            "backdash" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },				
+
+            "chargewinddown" : {
+              "properties" : {
+                "image" : "<partImage>:chargewinddown.<frame>"
+              }
+            }			
+			
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+	}
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+  
+  "lights" : {
+    "glow" : {
+      "active" : true,
+      "position" : [0, 0],
+      "color" : [255, 255, 255], //255, 255, 107    2550, 160, 160
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+  
+  
+    "chargeupstars" : {
+      "enabled" : false,
+      "emissionRate" : 6.0,
+      "particles" : [
+        { "particle" : "redcartoonstar" },
+        { "particle" : "greencartoonstar" },
+        { "particle" : "bluecartoonstar" }
+      ]
+    },
+  
+  
+    "deathPoof" : {
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/puff2c/puff2c.animation",
+            "size" : 1,
+            "angularVelocity" : 35,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [1, 1],
+            "timeToLive" : 0.4,
+            "layer" : "middle"
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz1/fizz1.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz1/fizz1.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz2/fizz2.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz2/fizz2.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz3/fizz3.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz3/fizz3.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz4/fizz4.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz4/fizz4.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        }
+      ]
+    },
+	
+    "coresmoke_destroyed" : {
+      "emissionRate" : 20.0,
+      "offsetRegion" : [-8, -4, 8, 8],
+      "particles" : [
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/puff2c/puff2c.animation",
+            "size" : 1,
+            "angularVelocity" : 35,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [1, 1],
+            "timeToLive" : 0.4,
+            "layer" : "middle"
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz1/fizz1.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz1/fizz1.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz2/fizz2.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz2/fizz2.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz3/fizz3.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz3/fizz3.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz4/fizz4.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz4/fizz4.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        }
+      ]
+    },
+	
+    "coresmoke" : {
+      "emissionRate" : 10.0,
+      "offsetRegion" : [-8, -4, 8, 8],
+      "particles" : [
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+    "fire_bow" : {
+      "pool" : [ "/sfx/gun/bow_loose_perfect.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "fire_gun" : {
+      "pool" : [ "/sfx/gun/gic_r8_1.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "laser" : {
+      "pool" : [ "/sfx/gun/gic_energyweapon_02.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "heal" : {
+      "pool" : [ "/sfx/statuseffects/gic_powerup_+10db.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "timefreeze" : {
+      "pool" : [ "/sfx/tech/gic_dishonored_blink_aim_1.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "danmaku" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_tan_1-15db.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "danmaku_energybeam" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_se_nep00.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "danmaku2" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_se_tan00-15db.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+
+    "wallCrash" : [ "/sfx/npc/monsters/peblit_drop1.ogg" ],
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+//    "deathPuff" : [ "/sfx/touhou/gic_touhou_se_enep01-15db.ogg" ]
+	
+    "deathPuff" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_se_enep01.ogg" ],
+      "rangeMultiplier" : 4.0
+    }
+	
+	
+  }
+}

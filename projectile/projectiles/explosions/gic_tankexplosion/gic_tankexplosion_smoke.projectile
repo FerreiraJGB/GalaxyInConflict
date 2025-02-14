@@ -1,0 +1,47 @@
+{
+  "projectileName" : "gic_tankexplosion_smoke",
+  "image" : "gic_tankexplosion.png",
+  "animationCycle" : 1,
+  "frameNumber" : 6,
+  "speed" : 0,
+  "damagePoly" : [ [-144, 0], [-96, -96], [0, -144], [96, -96], [144, 0], [96, 96], [0, 144], [-96, 96] ],
+  "hydrophobic" : true,
+  "animationLoops" : false,
+  "piercing" : true,
+  "flippable" : true,
+  "damageKind" : "ews_explosive",
+  "damageType" : "IgnoresDef",
+  "timeToLive" : 0.0,
+
+  "actionOnReap" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },  
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_medium/gic_shellhit_medium.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_tankexplosion/gic_tankexplosionknockback.config"
+    }
+
+  ]
+  
+  
+  
+  
+}

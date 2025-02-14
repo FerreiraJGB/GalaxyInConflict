@@ -1,0 +1,63 @@
+{
+  "itemName" : "gic_jingasahead",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:head",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "^#CCD8B6;Light ^#E2006D;+ Special Armor^reset;",
+  "description" : "A type of kasa commonly worn by samurai and ashigaru. The samurai class in feudal Japan, as well as their retainers and footsoldiers, used several types of jingasa made from iron, copper, wood, paper, bamboo, or leather.
+^#96CBE7;UNYIELDING BULWARK - On taking FATAL Damage, gain 4s of INVULNERABILITY | BASE 120s cooldown.^reset;
+^#B3AD97;TO THE DEATH - Each piece reduces cooldown of UNYIELDING BULWARK by 7%^reset; | ^green;+5% ATK Power and MELEE Resistance.^reset;",
+  
+  "shortdescription" : "Armored Jingasa",
+  
+  "tooltipKind" : "gic_largebase_armor",
+  "acceptsAugmentType" : "gic_trinket",
+
+  "maleFrames" : "head.png",
+  "femaleFrames" : "head.png",
+  "mask" : "mask.png",
+  
+  "statusEffects" : [
+  "gic_secondchance",
+{"stat" : "gic_secondChance_cooldownMod", "amount" : 0.07},
+    {
+     "stat" : "ews_meleeResistance",
+      "amount" : 0.05
+    },
+    {
+     "stat" : "powerMultiplier",
+      "amount" : 0.05
+    }
+  ],
+
+  "colorOptions" : [
+  
+    // ODA
+    { "ffca8a" : "B3AD97",    "e0975c" : "848067",     "a85636" : "7E7661",    "6f2919" : "463E33" },
+	
+	
+    // BLACK
+    { "e0975c" : "525252", "a85636" : "2a2a2a", "6f2919" : "101010", "807362" : "434343", "61554a" : "242424", "ffca8a" : "828282" },
+    // GREY - Good for the actual GFG
+    { "e0975c" : "707070", "a85636" : "3a3a3a", "6f2919" : "161616", "807362" : "5c5c5c", "61554a" : "313131", "ffca8a" : "828282" },
+    // WHITE
+    { "e0975c" : "c1c1c1", "a85636" : "6d6d6d", "6f2919" : "292929", "807362" : "5c5c5c", "61554a" : "313131", "ffca8a" : "1a1a1a" },
+    // RED
+    { "e0975c" : "773333", "a85636" : "4e2222", "6f2919" : "341717", "807362" : "936b50", "61554a" : "6e503c", "ffca8a" : "513b2c" },
+    // ORANGE
+    { "e0975c" : "69462c", "a85636" : "452e1e", "6f2919" : "2e2015", "807362" : "747b80", "61554a" : "4d5254", "ffca8a" : "333637" },
+    // YELLOW
+    { "e0975c" : "ab8d64", "a85636" : "7b6143", "53422b" : "574835", "807362" : "716556", "61554a" : "564b41", "ffca8a" : "3f352f" },
+    // GREEN
+    { "e0975c" : "5c6739", "a85636" : "363b24", "6f2919" : "212517", "807362" : "5d5d5d", "61554a" : "3b3b3b", "ffca8a" : "232323" },
+    // BLUE
+    { "e0975c" : "394967", "a85636" : "242c3b", "6f2919" : "171b25", "807362" : "5d5d5d", "61554a" : "3b3b3b", "ffca8a" : "232323" },
+    // PURPLE
+    { "e0975c" : "554757", "a85636" : "302731", "6f2919" : "181018", "807362" : "757b65", "61554a" : "484c3f", "ffca8a" : "2b2d26" },
+    // PINK
+    { "e0975c" : "a06987", "a85636" : "5d394b", "6f2919" : "331d28", "807362" : "6b505d", "61554a" : "413138", "ffca8a" : "241a1f" },
+    // BROWN
+    { "e0975c" : "523d32", "a85636" : "2a201a", "6f2919" : "100c0a", "807362" : "a6896c", "61554a" : "786049", "ffca8a" : "4f3f30" }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name" : "gic_nuestridenthorn_pinger",
+  "blockingStat" : "gic_nuestridenthorn_pingerStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_nuestridenthorn", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_nuestridenthorn", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 20,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 4.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_nuestridenthorn_pinger.animation",
+   
+  "label" : "Nue's Trident Horn - Nearby enemies are marked. When a marked enemy receives more than 50HP base damage (unaffected by damage weaknesses), the affected unit is STUNNED for 3s | 40s cooldown per proc.",
+  "icon" : "/interface/statuses/gic_nuestridenthorn.png"
+}

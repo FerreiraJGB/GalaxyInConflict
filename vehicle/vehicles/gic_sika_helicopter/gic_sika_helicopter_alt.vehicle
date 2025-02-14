@@ -1,0 +1,269 @@
+{
+  "name" : "gic_sika_helicopter_alt",
+  "script" : "gic_sika_helicopter_alt.lua",
+  "boundBox" : [-10, -4, 10, 4],
+  "slaveControlTimeout" : 2.0,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : true,
+  "persistent" : true,
+  "animation" : "gic_sika_helicopter_alt.animation",
+
+  "animationCustom" : {
+
+    "particleEmitters" : {
+      "damageShards" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "burstCount"  : 8,
+        "offsetRegion" : [-3, -1.5, 3, 1],
+        "particles" : [
+                       { "particle" : "fireshard"}]
+      },
+
+      "wreckage" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "active" : false,
+        "emissionRate" : 0.0,
+        "particles" : []
+      }
+    }
+  },
+
+  //"scripts" : ["hoverbikecursor.lua"],
+
+  "loungePositions" : {
+    "drivingSeat" : {
+      "part" : "foreground",
+      "partAnchor" : "drivingSeatPosition",
+      "orientation" : "sit",
+	  "cameraFocus" : true,
+      "statusEffects" : ["invulnerable", "liquidimmunity","gic_sika_pilot"],
+      //"emote" : "neutral",
+      "dance" : "warmhands",
+	  "exitBottomOffset" : [-7.0, -1]
+    },
+	"copilotSeat" : {
+      "part" : "foreground",
+      "partAnchor" : "copilotSeatPosition",
+      "orientation" : "sit",
+	  //"cameraFocus" : true,
+      "statusEffects" : ["invulnerable", "liquidimmunity","gic_sika_copilot"],
+      //"emote" : "neutral",
+      "dance" : "warmhands",
+	  "exitBottomOffset" : [-4.0, -2]
+    },
+    "passengerSeat" : {
+      "part" : "foreground",
+      "partAnchor" : "passengerSeatPosition",
+      "orientation" : "stand",
+      "statusEffects" : ["invulnerable", "liquidimmunity"],
+      //"emote" : "neutral",
+      //"dance" : "typing",
+	  "exitBottomOffset" : [2.0, -1.25]
+    },
+	"passengerSeat2" : {
+      "part" : "foreground",
+      "partAnchor" : "passengerSeatPosition2",
+      "orientation" : "stand",
+      "statusEffects" : ["invulnerable", "liquidimmunity"],
+      //"emote" : "neutral",
+      //"dance" : "typing",
+	  "exitBottomOffset" : [-2.0, -1.25]
+    }
+  },
+  
+  "physicsCollisions" : {
+    "deck" : {
+      "collision" : [ [0, -4], [1, -4], [8, -4]],
+      "collisionKind" : "platform",
+      "attachToPart" : "foreground"
+    }
+  },
+
+  "levelApproachFactor" : 0.01,
+  "angleApproachFactor" : 0.01,
+  "maxGroundSearchDistance" : 10,
+  "maxAngle" : 70,
+  "hoverTargetDistance" : 2,
+  "hoverVelocityFactor" : 9.5,
+  "hoverControlForce" : 600,
+  "targetHorizontalVelocity" : 100,
+  "targetVerticalVelocity" : 200,
+  "horizontalControlForce" : 400,
+
+  "nearGroundDistance" : 1,
+  "jumpVelocity" : 40,
+  "jumpTimeout" : 0.25,
+
+  
+  
+  //Health and damage
+  "protection" : 200,
+  "maxHealth" : 16000, //2500
+  
+  "materialKind" : "robotic",
+  
+  "resistances" : {
+	"ews_melee" : 1.0,
+	"ews_smallarms" : 0.8,
+	"ews_heavyarms" : 0.6,
+	"ews_antitank" : 0.7,
+	"ews_explosive" : 0.8
+  },
+  
+  "repairTextConfig" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.6,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^green;+100 HP^reset;",
+            "velocity": [0.2,1.0],
+			"variance" : {
+				"initialVelocity" : [-0.4,0.0]
+			}
+          }
+        }
+      ]
+  },
+
+  "damageStateNames" : ["undamaged","scratched","dented","wrecked"],
+
+  "damageStatePassengerDances" : ["","","panic","panic"],
+
+  "damageStateDriverEmotes" : ["happy","happy","sad","annoyed"],
+  "damageStatePassengerEmotes" : ["happy","annoyed","sad","oh"],
+
+
+
+  "damageTakenEmote" : "oooh",
+  "damageEmoteTime" : 2.0,
+
+  "lightsInDamageState" : [
+                          ["headlightBeam","dashboardGlow"],
+                          ["headlightBeam","dashboardGlow"],
+                          ["headlightBeam","dashboardGlow"],
+                          ["headlightBeam"]
+                          ],
+
+  "minNotificationCollisionAccel" : 15,
+  "minDamageCollisionAccel" : 30,
+  "terrainCollisionDamage" : 1800,
+
+
+  //Damage visual effects
+  "smokeParticleHealthThreshold" : 0.5,
+  "smokeRateAtZeroHealth" : 500,
+
+  "fireParticleHealthThreshold" : 0.25,
+  "fireRateAtZeroHealth" : 120,
+
+  "onFireHealthThreshold" : 0.100,
+  "damagePerSecondWhenOnFire" : 1.0,
+  "explosionConfig" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config",
+  "explosionDamage" : 100,
+
+
+
+  //Sound effects
+  "engineDamageSoundThreshold" : 0.40,
+
+  "intermittentDamageSoundThreshold" : 0.33,
+  "maxDamageSoundInterval" : 10,
+  "minDamageSoundInterval" : 1,
+
+  "engineIdlePitch" : 1.0,
+  "engineRevPitch" : 1.75,
+  "engineIdleVolume" : 2.0,
+  "engineRevVolume" : 3.0,
+  
+  "terrainCollisionDamageSourceKind" : "falling",
+  "accelerationTrackingCount" : 2,
+
+  "backSpringPositions" : [
+      [-3.0, 0.0],
+      [-4.0, 0.0],
+      [-5.0, 0.0],
+      [-6.0, 0.0]
+  ],
+
+  "frontSpringPositions" : [
+      [3.0, 0.0],
+      [4.0, 0.0],
+      [5.0, 0.0],
+      [6.0, 0.0]
+  ],
+
+  "bodySpringPositions" : [
+      [-4.0, -1.0],
+      [-2.0, -1.0],
+      [0.0, -1.0],
+      [2.0, -1.0],
+      [4.0, -1.0]
+  ],
+
+  
+  //Projectile
+  "projectileOffset" : [5,0],
+  "projectileYOffset" : [5,0],
+  "AimLimit" : 0,
+  "shuttleFireCycle" : 0.15, //0.25
+  "shuttleProjectile" : "gic_redtracerbullet_heavy_a",
+  "shuttleProjectileConfig" : {
+    "power" : 185
+  },
+  
+  
+  "rocketpodCycle" : 0.15,
+  "rocketpodProjectile" : "gic_rg8_heat_rocket_sika",
+  "rocketpodProjectileConfig" : {
+	"speed" : 200,
+    "power" : 5000,
+    "damageKind" : "ews_antitank"
+  },
+  
+  "autocannonCycle" : 0.5,
+  "autocannonProjectile" : "gic_40mm_he_vt",
+  "autocannoProjectileConfig" : {
+	"speed" : 190,
+    "power" : 300//,
+    //"damageKind" : "ews_antitank"
+  },
+  
+  "deathProjectileType" : "gic_tankexplosion_smoke",
+  "deathProjectileParameters" : {
+    "power" : 4000,
+    "damageTeam" : { "type" : "indiscriminate", "team" : 0 },
+    "damageKind" : "ews_explosive",
+	"ignoresDef" : true
+  },
+  
+
+  "movementSettings" : {
+    "collisionPoly" : [[-16.75, 0.7], [-16.75, -2], [-7.75, -5], [-7.75, -6.75], [-2.75, -6.75], [0.25, -5], [3.25, -6.75], [5.25, -6.75], [7.25, -5], [10.25, -2.75], [7.25, 0.5], [1.5, 3], [1.0, 7], [-1.0, 7], [-1.5, 3], [-2.25, 3], [-6.75, 0.7]],
+    "mass" : 4,
+    "airFriction" : 2,
+    "ignorePlatformCollision" : true,
+    "gravityEnabled" : true,
+    "collisionEnabled" : true
+  },
+  "movementSettingsFlip" : {
+    "collisionPoly" : [[16.75, 0.7], [16.75, -2], [7.75, -5], [7.75, -6.75], [2.75, -6.75], [-0.25, -5], [-3.25, -6.75], [-5.25, -6.75], [-7.25, -5], [-10.25, -2.75], [-7.25, 0.5], [-1.5, 3], [-1.0, 7], [1.0, 7], [1.5, 3], [2.25, 3], [6.75, 0.7]],
+    "mass" : 4,
+    "airFriction" : 2,
+    "ignorePlatformCollision" : true,
+    "gravityEnabled" : true,
+    "collisionEnabled" : true
+  }
+
+}

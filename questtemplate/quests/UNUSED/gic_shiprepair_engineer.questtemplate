@@ -1,0 +1,49 @@
+
+{
+  "id" : "gic_shiprepair_engineerquest",
+  "title" : "^green;Ship Repair",
+  "prerequisites" : [ "gic_huntgeneral_engineerquest" ],
+  "text" : "Hey, how's it? Lush Planets like these that aren't quite colonised yet are the default landing sites for emergency warp jumps and as such, many are stranded on the ground. Bring me a Nano Ship Repair Kit and a good amount of Credits and I'll do a deal.",
+  "completionText" : "You got it huh? Here, I'll calibrate it using your SAIL. Your ship should be operational now. Consider yourself one of the few lucky ones able to leave from a situation that most would've turned to banditry just to survive.",
+//  "completionCinema" : "/cinematics/upgrading/shipupgrade.cinematic",
+  "moneyRange" : [0, 0],
+  "rewards" : [
+    [ [ "gic_heavybow_player", 1 ], [ "gic_emergencywarplocations-codex", 1 ] ]
+  ],
+	
+  "canBeAbandoned" : false,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questGiver"
+    },
+	
+    "upgradeShip" : { "shipLevel" : 3 },
+    "requireTurnIn" : true,
+    "turnInDescription" : "Deliver an ^orange;Uncalibrated Nano Ship Repair Kit^reset; to an ^orange;Engineer^reset; at a ^orange;Radio Tower^reset;.",
+    
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_nanoshiprepairkit_uncalibrated",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+	  
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_physicalcredit",
+        "count" : 200,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+	  
+    ]
+  }
+}
+
+

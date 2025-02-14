@@ -1,0 +1,245 @@
+{
+  "type" : "gic_division16_officeworker",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ ],
+  
+  "scriptConfig" : {
+    "behavior" : "villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 1,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+	
+      "complain" : {
+        "default" : {
+          "default" : [
+            "Just hopin' for the day we got put back where we're supposed to.",
+			"The Void Sands are dangerous. So many Blood Youkai.",
+			"Blood Youkai... Bastards.",
+			"Those arse-hat Bloods out there are a pain, I tell ye.",
+			"Train supplies raided... All found dead, no supplies stolen... Fuckin' Bloods.",
+			"Blood Youkai? Bunch of braindead monsters. They'll eat you 'live.",
+			"Watch it out there. The Void Sands are harsh.",
+			"Void Sands... We've been stuck here ever since.",
+			"So many of them out there. Blood bastards.",
+			"Blood Youkai? They're not one for subtlety, so starved of flesh and life...",
+			"More of a fairy fella. Some of the Youkai are still prone to... animalistic tendencies.",
+			"The Blood Youkai just won't give us a fuckin' break, man."
+          ]
+        }
+      },
+	
+      "converse" : {
+        "default" : {
+          "default" : [
+            "Just hopin' for the day we got put back where we're supposed to.",
+			"The Void Sands are dangerous. So many Blood Youkai.",
+			"Blood Youkai... Bastards.",
+			"Those arse-hat Bloods out there are a pain, I tell ye.",
+			"Train supplies raided... All found dead, no supplies stolen... Fuckin' Bloods.",
+			"Blood Youkai? Bunch of braindead monsters. They'll eat you 'live.",
+			"Watch it out there. The Void Sands are harsh.",
+			"Void Sands... We've been stuck here ever since.",
+			"So many of them out there. Blood bastards.",
+			"Blood Youkai? They're not one for subtlety, so starved of flesh and life...",
+			"More of a fairy fella. Some of the Youkai are still prone to... animalistic tendencies.",
+			"The Blood Youkai just won't give us a fuckin' break, man."
+          ]
+        }
+      },
+	  
+      "greeting" : {
+        "default" : {
+          "default" : [
+            "Just hopin' for the day we got put back where we're supposed to.",
+			"The Void Sands are dangerous. So many Blood Youkai.",
+			"Blood Youkai... Bastards.",
+			"Those arse-hat Bloods out there are a pain, I tell ye.",
+			"Train supplies raided... All found dead, no supplies stolen... Fuckin' Bloods.",
+			"Blood Youkai? Bunch of braindead monsters. They'll eat you 'live.",
+			"Watch it out there. The Void Sands are harsh.",
+			"Void Sands... We've been stuck here ever since.",
+			"So many of them out there. Blood bastards.",
+			"Blood Youkai? They're not one for subtlety, so starved of flesh and life...",
+			"More of a fairy fella. Some of the Youkai are still prone to... animalistic tendencies.",
+			"The Blood Youkai just won't give us a fuckin' break, man."
+          ]
+        }
+      },
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "hail" : {
+        "default" : {
+          "default" : [
+            "Just hopin' for the day we got put back where we're supposed to.",
+			"The Void Sands are dangerous. So many Blood Youkai.",
+			"Blood Youkai... Bastards.",
+			"Those arse-hat Bloods out there are a pain, I tell ye.",
+			"Train supplies raided... All found dead, no supplies stolen... Fuckin' Bloods.",
+			"Blood Youkai? Bunch of braindead monsters. They'll eat you 'live.",
+			"Watch it out there. The Void Sands are harsh.",
+			"Void Sands... We've been stuck here ever since.",
+			"So many of them out there. Blood bastards.",
+			"Blood Youkai? They're not one for subtlety, so starved of flesh and life...",
+			"More of a fairy fella. Some of the Youkai are still prone to... animalistic tendencies.",
+			"The Blood Youkai just won't give us a fuckin' break, man."
+          ]
+        }
+      },
+	  
+      "accuse" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      }
+	  
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_division16_officechest", "parameters" : { "colorIndex" : [0, 1, 2, 3] }  } ],
+            "legs" : [ { "name" : "gic_division16_officelegs", "parameters" : { "colorIndex" : [0, 1, 2, 3] } } ],
+            "primary" : [ "", "", "gic_unpackedsoyuzcigarettes" ],
+            "sheathedprimary" : [ "gic_scumbagpistol" ]
+		  }
+        ] ]
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

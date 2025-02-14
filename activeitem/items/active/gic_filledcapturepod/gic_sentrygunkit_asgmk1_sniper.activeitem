@@ -1,0 +1,140 @@
+{
+  "itemName" : "gic_sentrygunkit_asgmk1_sniper",
+  "price" : 1000,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "Deployable",
+  "description" : "''Why do they call it data-mining? We're not mining shit.''
+  
+^orange;Type:^reset;^reset; Sniper (400 Range) | ^orange;Damage:^reset; 150 AP BALLISTIC DMG
+^orange;Tracking Rate:^reset; 2.0s/shot | ^orange;Burst Fire Rate:^reset; N/A
+^orange;Hit Rate:^reset; 100%~ | ^orange;Overheat Capacity:^reset; 3
+^orange;Overheat Duration per shot:^reset; 8s
+^orange;Cooldown Duration at Maximum Overheat:^reset; 5s
+^orange;Unique:^reset; Does not deal indiscriminate damage.",
+  "shortdescription" : "Modellonix Automated Sentry Gun Mk.1",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["weapon"],
+
+  "inventoryIcon" : "gic_sentrygunkit_asgmk1_sniper_icon.png",
+  "animation" : "gic_sentrygunkit_asgmk1_sniper.animation",
+  "animationParts" : {
+    "filledcapturepod" : "gic_sentrygunkit_asgmk1_sniper.png"
+  },
+  "animationCustom" : { },
+  "scripts" : ["/items/active/unsorted/filledcapturepod/filledcapturepod.lua"],
+
+  "icons" : {
+    "healthy" : "/items/active/gic_filledcapturepod/gic_sentrygunkit_asgmk1_sniper_icon.png",
+    "dead" : "/items/active/gic_filledcapturepod/gic_sentrygunkit_asgmk1_sniper_icon_dead.png"
+  },
+
+  "deadPodShake" : {
+    "frequency" : 1.5,
+    "phase" : 0, // degrees
+    "amplitude" : 30 // degrees
+  },
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -20,
+      "animationState" : {
+        "weapon" : "visible"
+      },
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "windup" : {
+      "duration" : 0.1,
+      "transitionFunction" : "fire",
+      "armRotation" : 70,
+      "animationState" : {
+        "weapon" : "visible"
+      },
+      "allowRotate" : false,
+      "allowFlip" : false
+    },
+    "dead" : {
+      "duration" : 0.5,
+      "transition" : "idle",
+      "armRotation" : 50,
+      "animationState" : {
+        "weapon" : "visible"
+      },
+      "allowRotate" : false,
+      "allowFlip" : false
+    },
+    "throw" : {
+      "armRotation" : 0,
+      "animationState" : {
+        "weapon" : "hidden"
+      },
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "catch" : {
+      "duration" : 0.2,
+      "transition" : "idle",
+      "armRotation" : 60,
+      "animationState" : {
+        "weapon" : "visible"
+      },
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "monsterEnergyCatch" : {
+      "duration" : 1.5,
+      "transition" : "podTeleportCatch",
+      "transitionFunction" : "showEnergyBall",
+      "armRotation" : 60,
+      "animationState" : {
+        "weapon" : "visible"
+      },
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "podTeleportCatch" : {
+      "duration" : 0.3,
+      "transition" : "idle",
+      "armRotation" : 60,
+      "animationState" : {
+        "weapon" : "visible"
+      },
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "projectileType" : "gic_filledcapturepod_nothrow",
+  "projectileParameters" : {
+    "speed" : 0,
+    "level" : 0
+  },
+
+  "podUuid" : null,
+  "pets" : [
+  
+
+				{ "config" : {
+					"type" : "gic_asgmk1_sniper_autoturret",
+					"parameters" : {
+						"level" : 1,
+						"aggressive" : true
+					}
+				}	
+			   }
+  
+  ],
+  "currentCollar" : null,
+
+  // The player script stores the pet's state while the filledcapturepod is
+  // inactive. When the filledcapturepod becomes active again, it updates
+  // its own version of the state.
+  // But if the filledcapturepod has been updated via a pettether or
+  // pethealingstation then the filledcapturepod should take priority and
+  // update the player script's state instead.
+  // If anything makes changes to the parameters on a filledcapturepod, e.g.
+  // to heal the pets, it should set podItemHasPriority to true.
+  "podItemHasPriority" : false
+}

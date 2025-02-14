@@ -1,0 +1,37 @@
+{
+  "itemName" : "gic_tunnelrat_glass",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#EDC078;Nazrin General Brewers",
+  "inventoryIcon" : "gic_tunnelrat_glass.png",
+  
+  
+  
+  "description" : "''Stop playing with yourselves. We've got ground to take.''
+  
+A brew originating from the planet of Gazri in commemoration of the workers who toiled to build the great planet.
+
+^Green;-50% Fall Damage for 1 hour.^reset;",
+  
+  "shortdescription" : "Tunnel Rat",
+  
+  "effects" : [ [
+   {
+        "effect" : "gic_tunnelrat_drink",
+        "duration" : 3600
+    }
+  ] ],
+  
+  
+  
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

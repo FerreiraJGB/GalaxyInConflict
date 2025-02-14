@@ -1,0 +1,297 @@
+{
+  "type" : "gic_wildlands_grimchaplain_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [],
+
+  "identity" : {
+    "gender" : "male"
+//    "hairGroup" : "hair",
+//    "hairType" : "male15",
+//    "hairColor" : "27"
+  },  
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0} ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "gic_noinspectcrew",
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "soldier",
+        "name" : "Ranger Chaplain",
+        "field" : "The Unburnt",
+        "uniformColorIndex" : 1,
+		
+        "benefits" : [
+          {
+            // Ephemeral effects gained upon leaving the ship - Grants oil immunity.
+            "type" : "EphemeralEffect",
+            "effect" : "gic_armor_grimchaplain_crew",
+            "duration" : 600
+          }
+        ]
+		
+      },
+
+      "ranks" : [
+		"Chaplain of former Rangers",
+		"Counsellor of former Rangers"
+		
+      ],
+
+      "defaultUniform" : {
+	    "head" : "gic_tricornehead",
+        "chest" : "gic_nedkellychest", //soldierchest
+        "legs" : "gic_nedkellylegs", //soldierpants
+		"back" : ""
+      },
+      "uniformSlots" : ["chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"]
+    },
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "The fools..."
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "I'll be here then.",
+              "I'll be here."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "Cursed dream...",
+			  "A thousand eyes, open inside...",
+			  "I dreamt of that damned doll again..."
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "I'll stay here.",
+			  "Has the hunt ended?",
+			  "The hunt has ended."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "Following.",
+			  "Has the hunt begun?",
+			  "The hunt begins."
+            ]
+          }
+        },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+	    },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy.",
+			"Move it!"
+          ]
+        }
+      }
+	
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "You'll be one of them, sooner or later...",
+			"Too proud to show your true face, eh...",
+			"Warming up...",
+			"Cleanse, purge.",
+			"Fires open."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "Too proud to show your true face, eh... But a sporting hunt it was.",
+			"That stench of squalid blood. No beast will be spared.",
+			"Sick creature, may you rest in peace.",
+			"Sick, cursed things."
+          ]
+        }
+      },
+	
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "converse" : {
+        "default" : {
+          "default" : [
+			"...Well, well. A hunter is it?",
+			"Men leave as hunters, and return as beasts.",
+			"...Let there be no doubt. If it moves, you can be sure it's a beast."
+          ]
+        }
+      }
+
+
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player = 18
+    "runSpeed" : 20
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_tricornehead", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "gic_nedkellychest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "gic_nedkellylegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : ["gic_starfield1897"]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1000.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

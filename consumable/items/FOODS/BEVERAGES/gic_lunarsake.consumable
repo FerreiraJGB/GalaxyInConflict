@@ -1,0 +1,38 @@
+{
+  "itemName" : "gic_lunarsake",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#88350B;Otherworldly",
+  "inventoryIcon" : "gic_lunarsake.png",
+  
+  
+  
+  "description" : "''Bring it on, rabbit-boy.''
+  
+A special variant of sake fermented by the Lunarians. Despite claims that only the Lunarians could create such a drink, this has been proven false by both Earth-Rabbits and Cletus from your local farmstead.
+  
+^#EDC078;0.5x Gravity Modifier for 15 minutes.^reset;",
+  
+  "shortdescription" : "Lunar Sake",
+  
+  
+  
+  "effects" : [ [
+  
+    {
+        "effect" : "gic_beverage_lunarsake",
+        "duration" : 900
+    }
+  
+  ] ],
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

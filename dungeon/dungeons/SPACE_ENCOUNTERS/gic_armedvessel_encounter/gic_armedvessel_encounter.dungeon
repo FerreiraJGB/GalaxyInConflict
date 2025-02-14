@@ -1,0 +1,44 @@
+{
+  "metadata" : {
+    "name" : "gic_armedvessel_encounter",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [
+      "gic_vanguardfighter"
+    ],
+	
+    "gravity" : 0,
+    "maxRadius" : 1000000,
+    "maxParts" : 1,
+    "protected" : true
+  },
+
+  "parts" : [
+
+    // SAFE ZONE
+    {
+      "name" : "safe-empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "/dungeons/space/hazards/safe-empty.json" ],
+      "chance" : 0,
+      "markDungeonId" : false
+    },
+	
+	
+	//FIGHTER-CLASS
+	
+	{
+      "name" : "gic_vanguardfighter",
+      "rules" : [],
+      "def" : [ "tmx", "gic_vanguardfighter.json" ],
+      "chance" : 1
+    }
+	
+	
+	
+	
+  ]
+}

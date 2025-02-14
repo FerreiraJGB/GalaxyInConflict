@@ -1,0 +1,238 @@
+{
+  "objectName" : "gic_gazri_wastelandmerchant",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "printable" : false,
+  "price" : 0,
+  "description" : "Someone willing to offer their wares.",
+  "shortdescription" : "Gazrian Wasteland Merchant ''Kari''",
+  "race" : "generic",
+
+
+  
+  
+  "turnInQuests" : [
+    "gic_esther_chapter_2_wud_birdhuntingQuest"
+  ],  
+  
+  "offeredQuests" : [
+    "gic_esther_chapter_2_wud_birdhuntingQuest"
+  ],  
+  
+  
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_gazri_wastelandmerchant.config",
+    "paneLayoutOverride" : {
+	
+
+      "windowtitle" : {
+	  
+	  
+        "title" : 
+"  Gazrian Wasteland Merchant",	
+        "subtitle" : 
+"''The desert breathes as you do. What little life it has left is given unto its children.",	  
+		
+		
+		
+		
+		
+		
+		
+		
+        "icon" : {
+          "file" : "/interface/crafting/gic_gazri_wastelandmerchant.png"
+        }
+
+		
+		
+      }
+    },
+	"recipes" : [
+	
+	
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":5,
+				"name":"gic_physicalunitandollar"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_aseptic_bandage"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_gazrianvillage_merchant", "gic_blackmarket_supplies" ]
+		},
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_physicalunitandollar"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_kmp2_medkit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_gazrianvillage_merchant", "gic_blackmarket_supplies" ]
+		},		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_physicalunitandollar"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_usgp8_combatstimulant"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_gazrianvillage_merchant", "gic_blackmarket_supplies" ]
+		},		
+		
+		
+						
+		
+		
+
+					
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":3000,
+				"name":"gic_physicalunitandollar"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_augmentyr_smg"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_gazrianvillage_merchant", "gic_blackmarket_lore" ]
+		},		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_ironsentinel"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_augmentyr_orblauncher"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_gazrianvillage_merchant", "gic_blackmarket_lore" ]
+		},							
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_genecultist_shamanhead"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_devouringbarrel"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_gazrianvillage_merchant", "gic_blackmarket_lore" ]
+		}
+		
+		
+
+		
+	],
+    "filter" : [ "gic_blackmarket_gazrianvillage_merchant" ]
+  },
+
+
+  
+  
+
+  
+  
+  "lightColor" : [0, 0, 0],
+
+  "inventoryIcon" : "gic_gazri_wastelandmerchant.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_gazri_wastelandmerchant.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_gazri_wastelandmerchant.animation",
+  "animationParts" : {
+    "bg" : "gic_gazri_wastelandmerchant.png",
+    "fg" : "gic_gazri_wastelandmerchant_lit.png"
+  },
+  "animationPosition" : [-8, -0],
+
+  "uniqueId" : "gic_gazri_wastelandmerchant",
+  "interactive" : true,
+
+
+
+
+  
+  "scripts" : [ "/objects/missions/gic_esther_chapter_1_springfield_bartender/gic_springfield_talk.lua" ],
+  "scriptDelta" : 20,
+
+  "chatRadius" : 10,
+  "chatCooldown" : 15,
+  "chatOptions" : [
+    "I know a customer when I can smell one!",
+	"Oh! Come in, come in! I have wares plenty!",
+	"I can't see, but I know a customer when I can smell one!",
+	"Oh! A customer! I have plenty of wares!",
+	"This humble wasteland merchant has all that you need!",
+	"Healing! Ammo! Weapons! I have what you need!",
+	"Oh! A customer! Come on in!",
+	"You have that smell of a customer!",
+	"I might be blind, but that doesn't stop me from doing business!"
+	
+	
+  ]
+  
+
+
+
+
+
+}

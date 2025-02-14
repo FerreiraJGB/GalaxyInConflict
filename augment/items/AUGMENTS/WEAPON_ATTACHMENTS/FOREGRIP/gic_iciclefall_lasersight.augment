@@ -1,0 +1,47 @@
+{
+  "itemName" : "gic_iciclefall_lasersight",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Foregrip Attachment^white;",
+  "inventoryIcon" : "gic_iciclefall_lasersight_icon.png",
+  "description" : "Attachable underbarrel lasersight, colored blue.
+''Where a laser beam travels in a straight line, the path of a bullet gradually deviates after it leaves the barrel due to external forces such as gravity, wind, and even the rotation of the earth. This is a significant issue for long distance shooting. Another related issue is that the beam widens over distance, meaning that a much larger circle may be produced.''
+^green;+10% Standing [EWS] Hit Chance and Accuracy.^reset;
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  "shortdescription" : "Icicle-Fall Lasersight",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_iciclefall_lasersight", //name of attachment
+	"attachmentTag" : ["gic_foregrip", "gic_underbarrel_laser", "gic_underbarrel_flashlight","gic_iciclefall_lasersight"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/foregrip/gic_iciclefall_lasersight.png", //determines what image is displayed on the resulting gun
+		
+	"attachmentId" : "gic_iciclefall_lasersight", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "lasersight",
+		"transformationGroupWeapon" : true,		//if enabled, then the laser sight will properly align with the weapon transformation group
+		"lasersightConfig" : {
+			"originalOffset" : [0.675, 0.200],		//original offset [0.675, 0.155],  [0.675, 0.125]
+			"offset" : [0,0.1],					//mostly set dynamically by scripts if transformationGroupWeapon is true
+			"color" : [114, 152, 255, 150],
+			"length" : 60,
+			"segments" : 20,
+			"angle" : 0
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [0.9,1,0.9,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

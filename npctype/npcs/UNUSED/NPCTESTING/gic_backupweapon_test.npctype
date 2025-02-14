@@ -1,0 +1,110 @@
+//basically just a demo for the NPCs to take out "backup" weapons in case of close-quarters engagements.
+//tl:dr AI switches to "backup" weapons at defined backupWeaponRange (def. 10) and switch back to standard ranged primary weapon after 1.5x backupWeaponRange (def. 15)
+//kinda WiP, but works as is. more or less a testbed for more interesting interactions, such as maybe throwing grenades? doubtful, considering AI logic required
+//to aim and determine proper time to throw grenade can be funky (and resource intensive).
+
+//to change backupWeaponRange, edit the value under behaviorConfig.
+//note that weapon switching isn't instantaneous, and that ammo *is* apparently properly preserved between weapons.
+{
+  "type" : "gic_backupweapon_test",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 13,
+  "dropPools" : [ "gic_federalsoldierTreasure" ],
+
+  "scriptConfig" : {
+	"behavior" : "gic_hostileguard_advanced", //MUST HAVE THIS TO FUNCTION
+	
+	"behaviorConfig" : {
+	  //determines the trigger range for the NPC to switch to a backup weapon. note that the NPC remains on their backup weapon until 1.5x the trigger distance. defaults to 10
+	  "backupWeaponTriggerRange" : 5
+    },
+	
+	
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Target inbound! Open fire!",
+            "Opening fire!",
+			"Holy shit!",
+			"Shit!",
+			"Fucker!",
+			"We got a live one!"
+          ]
+        }
+      }
+    },
+    "reactions" : {
+      "spontaneous" : [
+        [2.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+//        [1.0, "patrol", { "timeRange" : [0.1,0.3]}],
+        [2.0, "wander"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_m80hchead", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_kotv3chest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_ebcplegs", "parameters" : { "colorIndex" : [1] }  } ],
+            "back" : [ 	{ "name" : "gic_wolfpackback", "parameters" : { "colorIndex" : [1] }  } ],
+            "primary" : [
+			  //"gic_m89",
+			  //"gic_ccr71",
+			  //"gic_ccr71",
+			  "gic_ccr71"//,
+			  //"gic_usm47a2",
+			  //"gic_mg2750_npc"
+            ],
+			
+			// READ THIS CAREFULLY
+			"sheathedprimary" : [ 
+				//must have this specific parameter ("backupWeapon" : true) or base item must have an itemTag of "backup" to FUNCTION
+				//backup weapon trigger range determined by value under behaviorConfig, defaults to 10
+				{ "name" : "gic_m2055", "parameters" : { "backupWeapon" : true}  } 
+				//{ "name" : "npcbroadsword", "parameters" : { "backupWeapon" : true }  }
+			]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"], 
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.3
+      }
+	  
+	  
+    }
+  }
+  
+}

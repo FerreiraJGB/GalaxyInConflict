@@ -1,0 +1,50 @@
+{
+  "id" : "gic_khurtovyna_rundown_theadminquest",
+  "title" : "^#7AA8E0;RUNDOWN: THE ADMIN",
+  "text" : "[Obtain Keycode Slips from the Prison Complex within People's Army territory]
+
+Unlocks: RUNDOWNS - Repeatable, high-risk missions where you're tasked with diving into the BUNKER COMPLEX to obtain ARTIFACTs, but drop items on death.",
+
+  "completionText" : "Unlocked RUNDOWN: ARTIFACT - Low-Risk Expedition with multiple exits, small sectors, and a low anomaly count. Likewise, only MUTED ARTIFACTs are capable of spawning.",
+  
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_khurtovyna_bunkerorientation-codex", 1 ], [ "gic_sentrygunkit_asgmk1_sniper", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_khurtovyna_headofsecurity_code",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_khurtovyna_headofmaintenance_code",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_khurtovyna_chiefmedicalofficer_code",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

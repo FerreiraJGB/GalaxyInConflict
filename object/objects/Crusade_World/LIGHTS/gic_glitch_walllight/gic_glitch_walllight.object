@@ -1,0 +1,103 @@
+{
+  "objectName" : "gic_glitch_walllight",
+  "colonyTags" : ["light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 45,
+  "description" : "Wall Light.",
+  "shortdescription" : "Wall Light",
+  "race" : "generic",
+  "tooltipKind" : "gic_largebase",
+  "lightColor" : [179, 179, 152],
+
+  "inventoryIcon" : "gic_glitch_walllight_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_walllight_bg.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "animationParts" : {
+        "bg" : "gic_glitch_walllight_bg.png",
+        "fg" : "gic_glitch_walllight_bg_lit.png"
+      },
+      "animationPosition" : [0, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0] ],
+      "fgAnchors" : [ [0, 0] ]
+    },
+
+
+
+
+
+
+    {
+      "image" : "gic_glitch_walllight_left.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "animationParts" : {
+        "bg" : "gic_glitch_walllight_left.png",
+        "fg" : "gic_glitch_walllight_left_lit.png"
+      },
+      "animationPosition" : [0, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0] ],
+      "fgAnchors" : [ [-1, 0] ]
+    },
+	
+	
+	
+	
+
+    {
+      "image" : "gic_glitch_walllight_right.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "animationParts" : {
+        "bg" : "gic_glitch_walllight_right.png",
+        "fg" : "gic_glitch_walllight_right_lit.png"
+      },
+      "animationPosition" : [0, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0] ],
+      "fgAnchors" : [ [1, 0] ]
+    },
+	
+	
+	
+
+    {
+      "image" : "gic_glitch_walllight_bg.png:<color>.<frame>",
+      "imagePosition" : [0.0, 0],
+
+      "animationParts" : {
+        "bg" : "gic_glitch_walllight_bg.png",
+        "fg" : "gic_glitch_walllight_bg_lit.png"
+      },
+      "animationPosition" : [0.0, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0] ],
+      "bgAnchors" : [ [0, 0] ]
+    }
+  ],
+
+  "soundEffect" : "/sfx/objects/electriclight.ogg",
+  
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "gic_glitch_walllight_bg.png",
+    "fg" : "gic_glitch_walllight_bg_lit.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+
+}

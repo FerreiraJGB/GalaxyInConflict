@@ -1,0 +1,113 @@
+{
+  "type" : "gic_ww3_undeadskeleton_american_soldier",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 16,
+  "dropPools" : [],
+
+  "scriptConfig" : {
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    },
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "patrol", { "timeRange" : [0.1,0.3]}],
+        [2.0, "wander"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "chest" : [ { "name" : "gic_lust_infantryarmorchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_lust_infantryarmorlegs", "parameters" : { "colorIndex" : [0] }  } ],
+            "back" : [ { "name" : "gic_lust_infantryarmorback", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+			  "gic_peasants_battleaxe_player"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : [ "gic_npc_tombofthesatori_ammocarrier_death_ammobox", "gic_npc_death_bone_explosion" ],    
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 222.2
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : -0.5
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      }
+	  
+	  
+    }
+  }
+  
+}

@@ -1,0 +1,42 @@
+{
+  "projectileName" : "gic_magicshot_loyaltylaser_tyrantjudge_stage3",
+  "image" : "gic_magicshot_loyaltylaser_tyrantjudge_spawner.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "lightColor" : [100, 0, 0],
+  "pointLight" : false,
+  "speed" : 0,
+  "timeToLive" : 10,
+  "fullbright" : true,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+  ],
+  
+"periodicActions" : [
+//    {
+//      "time" : 0.25,
+//      "action" : "projectile",
+//      "type" : "gic_fireexplosion",
+//      "inheritDamageFactor" : 1
+//    },
+    {
+      "time" : 0.15,
+      "action" : "projectile",
+      "type" : "gic_soul_arrow",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 7,
+      "angle" : -90
+    }
+],
+
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

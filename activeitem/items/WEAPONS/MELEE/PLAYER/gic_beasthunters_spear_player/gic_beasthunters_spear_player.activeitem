@@ -1,0 +1,473 @@
+{
+  "itemName" : "gic_beasthunters_spear_player",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1, //-todo- description deleted here for now, as this weapon is now very \normal\ (Echo) //It is a niche combination of an anomalously-infused scatter-gun and a simple spear; It utilizes trickery to bridge the gap between ''gods'' and men.
+  "rarity" : "Legendary",
+  "description" : "A weapon crafted by the Gunpowder-Hunters, an enigmatic organization acutely aware of the Protectorate's penchant for fielding immortals. ^green;Hold [ALT-FIRE] to parry^reset;
+
+^#006847;Men Among Beasts: 150hp blocking power with 0.45s Perfect Parry.^reset;
+^#FFFFFF;Gunpowder-Hunter: Holding SHIFT then releasing SHIFT fires a shotgun charge within the spear, or pumps the spear to ready the next round. ^red;Tapping SHIFT will reload your spear with 18.5x70mm Buckshot shotgun shells.^reset;",
+
+  "shortdescription" : "Lanza Cazadora de Bestias",
+  "tooltipKind" : "gic_largebase_sword",
+  "tooltipFields" : {
+	"objectImage" : "/items/weapons/melee/player/gic_beasthunters_spear_player/gic_beasthunters_spear_icon2.png"
+  },
+  "category" : "^#D6DFFF;Sicario's Spear^white;",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_beasthunters_spear_icon.png",
+
+  "animation" : "gic_beasthunters_spear_player.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_beasthunters_spear_player.png"
+  },
+  "animationCustom" : {
+  "sounds" : {
+      "fire" : [ "/sfx/melee/gic_bloodborne_swing-stab.wav" ],
+	  "gunFire" : [ "/sfx/gun/gic_bloodborne_sprj_minigun_shot.ogg" ],
+	  "pump" : [ "/sfx/gic_metro2033_shotgun_pump.ogg" ],
+	  "reload" : [ "/sfx/gun/gic_shotgun_reload.ogg" ],
+	  "spin" 		: [ "/sfx/projectiles/spinning_throw.ogg" ],
+	  "charge" : ["/sfx/melee/gic_sekiro_mortalblade_shing.ogg"],
+	  "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  "guard" : [ "/sfx/melee/sword_guard.ogg" ],
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+      "aim" 	: [ "/sfx/gic_bloodborne_sprj_oodutsu_tamagire.wav" ],
+      "aim_cooldown" 	: [ "/sfx/gic_bloodborne_sprj_oodutsu_tsutsu.wav" ],	  
+	  
+	  
+	  
+	  
+	  
+	  
+      "perfectBlock" : [
+		"/sfx/block/gic_sekiro_meleedeflect1.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect2.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect3.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect4.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect5.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect6.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect7.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect8.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ],
+	  "parry" : [
+		"/sfx/block/gic_sekiro_meleeblock1.ogg",
+		"/sfx/block/gic_sekiro_meleeblock2.ogg",
+		"/sfx/block/gic_sekiro_meleeblock3.ogg",
+		"/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ]
+    },
+	"animatedParts" : {
+		"stateTypes" : {
+			"swoosh" : {
+				"default" : "idle",
+				"states" : {
+					"idle" : {
+					},
+					"fire" : {
+						"frames" : 3,
+						"cycle" : 0.1,
+						"mode" : "transition",
+						"transition" : "idle"
+					},
+					"charge" : {
+						"frames" : 1,
+						"cycle" : 0.4,
+						"mode" : "transition",
+						"transition" : "idle"
+					}
+				}
+			}
+		},
+
+		"parts" : {
+			"parryShield" : {
+				"properties" : {
+					"offset" : [-0.75, 1.0]
+				}
+			},
+			"blade" : {
+				"properties" : {
+					"zLevel" : 1,
+					"centered" : true,
+					"image" : "<partImage><paletteSwaps><directives>",
+					"offset" : [-0.2, -0.3],
+					"transformationGroups" : ["weapon"],
+					"damageArea" : [[-0.3, 3], [-0.3, 4],  [0.3, 4], [0.3, 3]]
+				}
+			},
+			"swoosh" : {
+				"properties" : {
+					"zLevel" : -1,
+					"centered" : true,
+					"offset" : [1.0, 0.0],
+					"transformationGroups" : ["swoosh"]
+				},
+
+				"partStates" : {
+					"swoosh" : {
+						"idle" : {
+							"properties" : {
+								"image" : ""
+							}
+						},
+						"fire" : {
+							"properties" : {
+								"offset" : [1.5, 0.0],
+								"image" : "/items/active/weapons/melee/spear/swoosh/<elementalType>swoosh.png:<frame>",
+								"damageArea" : [[-2.0, 0], [-2.0, 0.3],  [2.7, 0.3], [3.4, 0.1], [2.7, -0.3],      [-2.0, -0.3]]
+							}
+						},
+						"charge" : {
+							"properties" : {
+								"offset" : [5.0, 0.0],
+								"image" : "/items/active/weapons/melee/spear/swoosh/<elementalType>swoosh.png:<frame>",
+								"damageArea" : [[-4.0, 0], [-4.0, 0.3],  [1.2, 0.3], [2.1, 0.1], [1.2, -0.3],      [-0.3, -0.3]]
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"particleEmitters" : {
+      "muzzleFlash" : {
+        "burstCount" : 2,
+		"transformationGroups" : ["weapon"],
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [-0.2, 3.25], "count" : 2 }
+        ]
+      },
+	  
+      "hotsmoke" : {
+        "burstCount" : 3,
+		"transformationGroups" : ["weapon"],
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [-0.2, 3.25], "count" : 3 }
+        ]
+      }
+    }
+	
+	},
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua"],
+  "scriptDelta" : 2,
+  
+  "elementalType" : "ews_melee",
+
+  //"aimOffset" : -4.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+	"scripts" : ["/items/active/weapons/melee/abilities/gic_spearstab.lua"],
+    "fireTime" : 1.0,
+    "baseDps" : 150,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+//      "statusEffects" : [],
+      "knockbackRange" : 25
+    },
+	
+	
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : -55,
+		"aimAngle" : 0,
+        "weaponRotation" : -15,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"twoHanded" : true,
+		"weaponOffset" : [ -0.1, 0.2 ],
+		
+		"backArmFrame" : "swim.3"
+      },
+      "windup" : {
+        "duration" : 0.5,
+        "armRotation" : -110,
+        "weaponRotation" : 20,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire" : {
+        "duration" : 0.45,
+        "armRotation" : -20,
+        "weaponRotation" : -70,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 1.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "hold" : {
+        "armRotation" : -30,
+        "weaponRotation" : -60,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+    }
+	
+	
+	
+  },
+
+  "altAbilityType" : "parry",
+  
+  "altAbility" : {
+	"scripts" : ["/items/weapons/melee/player/gic_beasthunters_spear_player/gic_perfectblock_speargun.lua"],
+	"class" : "Parry",
+	"name" : "Perfect Parry",
+	"parryTime" : 1.5,
+	"cooldownTime" : 0.15,
+	"shieldHealth" : 150,
+	"perfectBlockTime" : 0.45,
+	
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+//      "statusEffects" : ["gic_bleeding_medium", "gic_boss_melee_primer"],
+      "knockbackMode" : "facing",
+	  "knockback" : -35, //negative knockback cus player is actually flipped around lmao
+	  //"damageKind" : "IgnoresDef",
+	  "damageType" : "IgnoresDef",
+	  "baseDamage" : 100,
+      "timeout" : 0.5,
+	  "timeoutGroup" : "alt"
+    },
+	
+	"slashdashConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : ["gic_bleeding_light"],
+      "knockbackMode" : "facing",
+	  //"damageKind" : "IgnoresDef",
+	  "damageType" : "IgnoresDef",
+	  "baseDamage" : 75,
+      "timeout" : 0.5,
+	  "timeoutGroup" : "alt"
+    },
+	
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -90,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "pump" : {
+		"duration" : 0.25, //0.35
+        "armRotation" : 25,
+        "weaponRotation" : -25,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+		"aimAngle" : 0,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  "pumpFin" : {
+		"duration" : 0.25, //0.35
+        "armRotation" : -25,
+        "weaponRotation" : 25,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  "parry" : {
+        "armRotation" : 25,
+        "weaponRotation" : -205,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		
+		"backArmFrame" : "swim.3",
+		"weaponOffset" : [0.0,-0.25]
+      },
+	  
+	  
+	  //note - this is a pretty decent spear point stance, kept in comments for future ref.
+	  //"parry" : {
+        //"armRotation" : 60,
+        //"weaponRotation" : -240,
+        //"twoHanded" : true,
+
+        //"allowRotate" : true,
+        //"allowFlip" : true,
+		
+		//"frontArmFrame" : "jump.1",
+		//"backArmFrame" : "swim.3",
+		//"weaponOffset" : [0.0,-0.25]
+      //},
+	  
+	  
+	  "aimGun" : {
+		"duration" : 0.25, //0.3
+        "armRotation" : 20,
+        "weaponRotation" : -110,
+        "twoHanded" : true,
+        "weaponOffset" : [0, -0.5],
+
+		"playSounds" : ["aim"],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "aimGunCooldown" : {
+		"duration" : 0.25,
+        "armRotation" : 30,
+        "weaponRotation" : -110,
+        "twoHanded" : true,
+        "weaponOffset" : [0, -0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  
+	  "reloadPre" : {
+		"duration" : 0.25, //0.15
+        "armRotation" : -25,
+        "weaponRotation" : -25,
+        "twoHanded" : true,
+        "weaponOffset" : [0, -0.25],
+		"aimAngle" : 0,
+		"frontArmFrame" : "walk.1",
+		"backArmFrame" : "swim.2",
+
+		"playSounds" : ["aim_cooldown"],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  "reload" : {
+		"duration" : 0.25, //0.35
+        "armRotation" : -25,
+        "weaponRotation" : -25,
+        "twoHanded" : true,
+        "weaponOffset" : [0, -0.25],
+		"aimAngle" : 0,
+
+		"frontArmFrame" : "walk.1",
+		"backArmFrame" : "swim.2",
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  "reload2" : {
+		"duration" : 0.25, //0.35
+        "armRotation" : -25,
+        "weaponRotation" : -25,
+        "twoHanded" : true,
+        "weaponOffset" : [0, -0.25],
+		"aimAngle" : 0,
+
+		//"frontArmFrame" : "run.2",
+		"backArmFrame" : "swim.2",
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  "reloadEnd" : {
+		"duration" : 0.2,
+        "armRotation" : -25,
+        "weaponRotation" : -335,
+        "twoHanded" : true,
+        "weaponOffset" : [0, -0.25],
+		"aimAngle" : 0,
+
+		//"frontArmFrame" : "run.2",
+		"backArmFrame" : "swim.2",
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  
+	  "backstabShoot" : {
+		"duration" : 0.3,
+        "armRotation" : 20,
+        "weaponRotation" : -110,
+        "twoHanded" : true,
+        "weaponOffset" : [0, -0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  "backstabCooldown" : {
+		"duration" : 0.3,
+        "armRotation" : 30,
+        "weaponRotation" : -110,
+        "twoHanded" : true,
+        "weaponOffset" : [0, -0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  "slashdashWindup" : {
+		"duration" : 0.35,
+        "armRotation" : -110,
+        "weaponRotation" : 20,
+		"aimAngle" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+	  "slashdash" : {
+		"duration" : 0.5,
+        "armRotation" : -20,
+        "weaponRotation" : -70,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  "backstabWindup" : {
+		"aimAngle" : 0,
+		"duration" : 0.2,
+        "armRotation" : -45,
+        "weaponRotation" : -180,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  "backstab" : {
+		"duration" : 0.3,
+        "armRotation" : -90,
+        "weaponRotation" : -200,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+	}
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+
+}

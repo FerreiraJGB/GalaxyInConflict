@@ -1,0 +1,36 @@
+{
+  "itemName" : "gic_paralyzant_pack",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_paralyzant_pack.png",
+  "maxStack" : 8,
+  
+  "itemTags" : ["gic_syringerifle_ammo"],
+  
+  "description" : "A medical substance that causes paralysis. The paralysis is actually relatively mild, interfering with motor functions significantly but not completely. Whilst not lethal on its own and not very effective when injected into hostiles via long-ranged syringe, it is a key component of Denizen Bane and Pericarpyxanide.
+  
+^red;- Causes a form of Paralysis. Paralysis advances in stages, increasing in effectiveness before wearing off gradually.",
+
+  "shortdescription" : "^orange;Paralyzant Pack",
+  "effects" : [ [
+  
+  
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 1
+      },
+	  
+      {
+        "effect" : "gic_applyparalyzant"
+      }
+	  
+	  
+	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_bandage_use" ],
+  "blockingEffects" : [
+  ]
+}

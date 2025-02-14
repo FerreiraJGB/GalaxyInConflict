@@ -1,0 +1,162 @@
+{
+  "type" : "gic_glitch_crusader_base",
+  "baseType" : "gic_soldierbase",
+
+  "dropPools" : [ ],
+  
+  "identity" : {
+    "gender" : "male"
+  },  
+  
+  "damageTeam" : 30,
+  "scriptConfig" : {
+//    "behavior" : "gic_combat_default",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [5.0, "patrol"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/GLITCH/gic_glitch_crusader_combat.config:attack",
+      "reattack" : "/dialog/GLITCH/gic_glitch_crusader_combat.config:reattack",
+      "killedTarget" : "/dialog/GLITCH/gic_glitch_crusader_combat.config:killedTarget",
+      "lostTarget" : "/dialog/GLITCH/gic_glitch_crusader_combat.config:lostTarget",
+      "outOfSight" : "/dialog/GLITCH/gic_glitch_crusader_combat.config:outOfSight",
+      "cheerOn" : "/dialog/GLITCH/gic_glitch_crusader_combat.config:cheerOn",
+      "cantReach" : "/dialog/GLITCH/gic_glitch_crusader_combat.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_cervellierehelmethead", "parameters" : { "colorIndex" : [0] }  }, { "name" : "gic_kettlehelmethead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_crusadersoldierchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_crusadersoldierlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_crusadersoldierback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [ "gic_peasants_spear_npc" ],
+            "alt" : [ "gic_crusadersoldier_shield" ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+	  
+        "fireResistance" : {
+          "baseValue" : -0.25
+        },
+	  
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+	
+	  
+      "gic_pericarpyx_infectionProtection" : {
+        "baseValue" : 1.0
+      },  	  
+      "gic_opiate_addictionProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_opiate_withdrawalProtection" : {
+        "baseValue" : 1.0
+      },
+      "gic_burn_woundsProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_burn_wounds_severeProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_bruising_lightProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_bruising_mediumProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_bloodloss_heavyProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_cyanide_poisoningProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_opium_medkithealProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_opiate_medkithealProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_opiate_fentanyl_medkithealProtection" : {
+        "baseValue" : 1.0
+      },	
+      "gic_opiate_overdose_active_primarycheck_cardiacProtection" : {
+        "baseValue" : 1.0
+      },	
+      "gic_paralyzantProtection" : {
+        "baseValue" : 1.0
+      },	  
+ 	
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	,
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

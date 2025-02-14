@@ -1,0 +1,32 @@
+{
+  "objectName" : "gic_emptyglassbottle",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#775526;Material",
+  "price" : 5,
+  "description" : "A generic empty glass bottle. Normally used to store liquids of various types. Mostly used to create Oil Bottles or Molotovs. Can be recycled into glass.",
+  "shortdescription" : "Empty Glass Bottle",
+  "race" : "human",
+  "maxStack" : 6,
+  "itemTags" : [],
+  "inventoryIcon" : "gic_emptyglassbottle.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_emptyglassbottle.png:<color>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "scriptDelta" : 0,
+  "smashable" : true,
+  "smashSounds" : [ "/sfx/objects/vase_break_large1.ogg", "/sfx/objects/vase_break_large2.ogg" ],
+  "smashParticles" : [ { "count" : 4, "particle" : "glassshard" } ]
+}

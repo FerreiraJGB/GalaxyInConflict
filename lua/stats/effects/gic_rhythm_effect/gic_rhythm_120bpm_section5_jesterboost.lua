@@ -1,0 +1,23 @@
+function init()
+  self.statModifierGroup = effect.addStatModifierGroup({
+
+    {stat = "ews_misschance_mult", amount = 0.99},	
+    {stat = "ews_inaccuracy_mult", amount = 0.99}
+
+
+  })
+end
+
+local expireSfx = true
+
+function update(dt)
+  if expireSfx and effect.duration() < 0.01 then
+    expireSfx = false
+    animator.playSound("expire")
+  end
+end
+
+function uninit()
+
+	effect.removeStatModifierGroup(self.statModifierGroup)  
+end

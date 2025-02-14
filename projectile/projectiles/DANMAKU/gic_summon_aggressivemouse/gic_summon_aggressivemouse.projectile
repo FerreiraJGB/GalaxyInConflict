@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_summon_aggressivemouse",
+  "physics" : "grenade",
+  "actionOnReap" : [
+	
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_mousecritter_aggressive",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : {}
+    }
+	
+  ],
+  "image" : "gic_summon_aggressivemouse.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 0,
+  "speed" : 10,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 0.1,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

@@ -1,0 +1,125 @@
+{
+  "objectName" : "gic_currencyexchangemachine",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "tooltipKind" : "gic_largebase",
+  "description" : "For a fee, this machine converts microcredits into full physical credits and vice versa.",
+  "shortdescription" : "^orange;Currency Exchange Machine^white;",
+  "race" : "generic",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_generic_shop_notab.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "Currency Exchange Machine",
+        "subtitle" : "This is not an ATM.",
+        "icon" : {
+          "file" : "/interface/crafting/gic_tradeterminal.png"
+        }
+      }
+    },
+	"recipes" : [
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":190,
+				"name":"gic_physicalmicrocredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_currencyexchangemachine" ]
+		},
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":210,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_currencyexchangemachine" ]
+		},
+
+
+//		{
+//			"input":[
+//				{
+//				"parameters":{},
+//				"count":2, //2 is calculated fair price.
+//				"name":"gic_physicalmicrocredit"
+//				}
+//			],
+//			"output":{
+//				"parameters":{},
+//				"count":5,
+//				"name":"money"
+//				},
+//		"matchInputParameters" : false,
+//		"groups" : [ "gic_currencyexchangemachine" ]
+//		}
+		
+		
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":400,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{
+			},
+				"count":1,
+				"name":"gic_1kvoxel_exchanged"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_currencyexchangemachine" ]
+		}
+
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_currencyexchangemachine" ]
+  },
+  "printable" : false,
+  "price" : 300,
+  "radioMessagesOnPickup" : [],
+  
+
+  
+  "inventoryIcon" : "gic_currencyexchangemachine.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_currencyexchangemachine.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+
+}

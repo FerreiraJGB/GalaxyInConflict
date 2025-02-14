@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_sphereofeternalmatter",
+  "price" : 0,
+  "rarity" : "Legendary",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#8B30F0;Trinket",
+  "inventoryIcon" : "gic_sphereofeternalmatter.png",
+  "maxStack" : 1,
+  "description" : 
+  
+"''Everything is inside. Nothing is inside. Take it all.''
+
+^green;Reloading does not consume ammunition with EWS/GiC Weapons when BELOW 50% HP.
+^red;-50% Damage Resistance to most elements when ABOVE 25% HP.^reset;",
+
+
+
+  "shortdescription" : "Sphere of Eternal Matter",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_sphereofeternalmatter",
+    "displayName" : "Sphere of Eternal Matter",
+    "displayIcon" : "/items/augments/TRINKETS/STORY/gic_sphereofeternalmatter.png",
+    "effects" : [ "gic_sphereofeternalmatter_ammo", "gic_sphereofeternalmatter_damage" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_artifact_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

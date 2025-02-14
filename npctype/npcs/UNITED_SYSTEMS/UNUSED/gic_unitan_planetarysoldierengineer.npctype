@@ -1,0 +1,98 @@
+{
+  "type" : "gic_unitan_planetarysoldierengineer",
+  "baseType" : "gic_unitan_base",
+
+
+  "damageTeam" : 16,
+  "scriptConfig" : {
+//    "behavior" : "gic_combat_default",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol"],
+        [2.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:attack",
+      "reattack" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:reattack",
+      "killedTarget" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:killedTarget",
+      "lostTarget" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:lostTarget",
+      "outOfSight" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:outOfSight",
+      "cheerOn" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:cheerOn",
+      "cantReach" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_orch1500head", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_rangerchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_rangerpants", "parameters" : { "colorIndex" : [0] }  } ],
+            "back" : [ { "name" : "gic_wolfpackback", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [ "gic_unitan_npcdronekit" ],
+            "sheathedprimary" : [
+              "gic_kmk18"
+			  ]
+          }
+        ] ]
+    ]
+  },
+
+  "innateStatusEffects" : ["gic_rally_unitan_primer"], 
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.0
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.3
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.4
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

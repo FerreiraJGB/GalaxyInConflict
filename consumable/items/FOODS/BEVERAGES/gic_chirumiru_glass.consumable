@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_chirumiru_glass",
+  "rarity" : "Rare",
+  "price" : 150,
+  "category" : "^#5F96C3;The Strongest",
+  "inventoryIcon" : "gic_chirumiru_glass.png",
+  
+  
+  
+  "description" : "A glass cup of a mysterious but relatively safe milk-based non-alcoholic beverage. Apparently contains 'one-million thousand units of I Am The Strongest' according to the box it was found in. Chemical analysis is unable to yield results on identifying the primary ingredient used in the drink, other than the use of reconstituted milk powders. Said to imbue higher intelligence in those that drink it.
+^#EDC078;Summons Ice Fairies to assist | 45s cooldown | Cannot be buffed by strategic trinkets | Lasts for 15 minutes.^reset;",
+  
+  "shortdescription" : "Chirumiru",
+  
+  
+  
+  "effects" : [ [
+    {
+        "effect" : "gic_beverage_chirumiru_pinger",
+        "duration" : 900
+    }
+  ] ],
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

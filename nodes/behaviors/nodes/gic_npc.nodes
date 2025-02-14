@@ -1,0 +1,93 @@
+{
+  "hasBackupSheathed": {
+    "type": "action",
+    "name": "hasBackupSheathed",
+    "title": "hasBackupSheathed",
+    "properties": {},
+    "category": "GiCNPC",
+    "script": "/scripts/actions/gic_npc_adv.lua", //unecessary because gic_combat_advanced.behavior already references this script, and this node should only ever be used in this context.
+    "output": {
+    }
+  },
+  "hasBackup": {
+    "type": "action",
+    "name": "hasBackup",
+    "title": "hasBackup",
+    "properties": {},
+    "category": "GiCNPC",
+    "script": "/scripts/actions/gic_npc_adv.lua", //unecessary because gic_combat_advanced.behavior already references this script, and this node should only ever be used in this context.
+    "output": {
+    }
+  },
+  "backupRange": {
+    "type": "action",
+    "name": "backupRange",
+    "title": "backupRange",
+    "properties": {},
+    "category": "GiCNPC",
+    "script": "/scripts/actions/gic_npc_adv.lua", //unecessary because gic_combat_advanced.behavior already references this script, and this node should only ever be used in this context.
+    "output": {
+		"range": {"type": "number", "key": null}
+    }
+  },
+  "sheathedBackupRange": {
+    "type": "action",
+    "name": "sheathedBackupRange",
+    "title": "sheathedBackupRange",
+    "properties": {},
+    "category": "GiCNPC",
+    "script": "/scripts/actions/gic_npc_adv.lua", //unecessary because gic_combat_advanced.behavior already references this script, and this node should only ever be used in this context.
+    "output": {
+		"range": {"type": "number", "key": null}
+    }
+  },
+  "gic_combatcoordinator": {
+    "type": "module",
+    "name": "gic_combatcoordinator",
+    "title": "",
+	"category": "GiCNPC",
+    "properties": {}
+  },
+  "gic_npccombat_adv": {
+    "type": "module",
+    "name": "gic_npccombat_adv",
+    "title": "",
+	"category": "GiCNPC",
+    "properties": {
+		"backupWeaponTriggerRange": {"type": "number", "value": 10},
+		"meleeStandby": {"type": "bool", "value": true}
+	}
+  },
+  "gic_npccombat": {
+    "type": "module",
+    "name": "gic_npccombat",
+    "title": "gic_npccombat",
+	"category": "GiCNPC",
+    "properties": {
+      "meleeStandby": {"type": "bool", "value": true}
+    }
+  },
+  "gic_hostiletracking": {
+    "type": "module",
+    "name": "gic_hostiletracking",
+    "title": "gic_hostiletracking",
+	"category": "GiCNPC",
+    "properties": {
+      "queryRange": {"type": "number", "value": 50},
+      "trackingRange": {"type": "number", "value": 50}
+    }
+  },
+  "gic_rangedcombat_adv": {
+    "type": "module",
+    "name": "gic_rangedcombat_adv",
+    "title": "gic_rangedcombat_adv",
+    "properties": {
+      "rangedAimTime": {"type": "number", "value": 0},
+      "rangedWindupTime": {"type": "number", "value": 0.05},
+      "rangedMinFireTime": {"type": "number", "value": 0.5},
+      "rangedMaxFireTime": {"type": "number", "value": 1},
+	  "arrowSpeed": {"type": "number", "value": 62.5},
+      "backupWeaponTriggerRange": {"type": "number", "value": 10}
+    }
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "itemName" : "gic_sinners_dagger_player",
+  "price" : 45,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : 
+
+"''Despite what people might say, laws are not made to be broken. They can, however, be interpreted, elided, even wilfully misunderstood. Any law can be circumvented in the right circumstances--even the laws of the Death Judge herself.''
+^#BCBC87;Sinner's Retribution: Confers alternative rewards if dealing the killing blow on THE TYRANT JUDGE.
+^#D6DFFF;Slashing Counter-Attack: [SHIFT] to initiate COUNTER-ATTACK. If hit while performing the attack, counter with a strong downslash that afflicts ^orange;LOCKED-ON^#D6DFFF; for 3s, reducing the target's ^orange;DMG RES by -100%^reset;",
+
+
+
+  "shortdescription" : "Sinner's Dagger",
+  "tooltipKind" : "gic_largebase_sword",
+  "tooltipFields" : {
+	"objectImage" : "/items/weapons/melee/player/gic_sinners_dagger/gic_sinners_dagger_icon2.png"
+  },
+  "category" : "^#BCBC87;Dagger^white;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","shortsword"],
+
+  "inventoryIcon" : "gic_sinners_dagger_icon.png",
+
+  "animation" : "/items/active/weapons/melee/broadsword/combobroadsword.animation",
+  "animationParts" : {
+    "handle": "",
+    "blade" : "gic_sinners_dagger.png"
+  },
+  "animationCustom" : {
+	"sounds" : {
+      "fire" : [ "/sfx/melee/gic_bloodborne_swing-katana.wav" ], //gic_sekiro_ichimonji_16speed
+      "fire2" : [ "/sfx/melee/gic_bloodborne_swing-stab2.wav" ], //swing_spear
+      "fire3" : [ "/sfx/melee/gic_bloodborne_swing-sword.wav" ], //swing_shortsword
+	  "fire4" : [ "/sfx/melee/gic_bloodborne_swing-sword2.wav" ], //swing_broadsword
+	  
+      "guard" : [ "/sfx/melee/sword_guard.ogg" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+      "parry" : [
+		"/sfx/block/gic_sekiro_meleeblock1.ogg",
+		"/sfx/block/gic_sekiro_meleeblock2.ogg",
+		"/sfx/block/gic_sekiro_meleeblock3.ogg",
+		"/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ],
+	  
+	  "perfectBlock" : [
+		"/sfx/block/gic_sekiro_meleedeflect1.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect2.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect3.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect4.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect5.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect6.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect7.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect8.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ],
+	  
+	  "counterAttack" : ["/sfx/block/gic_darksouls_parry2.ogg"]
+    },
+	"animatedParts" : {
+	"stateTypes" : {
+      "swoosh" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+          },
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire2" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire3" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire4" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire5" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire6" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire7" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire8" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          }
+        }
+      }
+    },
+	"parts" : {
+	  "parryShield" : {
+          "properties" : {
+            "zLevel" : -1,
+            "centered" : true,
+            "offset" : [-0.75, 1.75],
+            "transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0],
+            "shieldPoly" : [ [1.0, -2.7], [1.0, 1.5], [0.25, 1.75], [0.25, -2.0] ] //[-0.25, -2.5], [-0.25, 2.0], [1.0, 2.75], [1.0, -1.0]
+        }
+	  },
+	  "counterShield" : {
+		"properties" : {
+            "zLevel" : -1,
+            "centered" : true,
+            "offset" : [0, 0],
+            //"transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0],
+            "shieldPoly" : [ [0,3], [2,1], [2,-1], [0,-3]]
+        }
+	  },
+      "swoosh" : {
+        "properties" : {
+          "zLevel" : -1,
+          "centered" : true,
+          "transformationGroups" : ["swoosh"],
+          "rotationCenter" : [0, 0]
+        },
+        "partStates" : {
+          "swoosh" : {
+            "idle" : {
+              "properties" : {
+                "image" : ""
+              }
+            },
+			
+			
+			
+            "fire" : { //Overhead
+              "properties" : {
+			  
+                "image" : "/items/active/weapons/melee/broadsword/swoosh3/<elementalType>swoosh.png:<frame>?scalenearest=0.5;1.0",
+                "offset" : [1.25, 0.0],
+                "damageArea" : [[-1.75, 0.3], [0.7, 0.3], [0.7, -0.4], [-1.75, -0.4]]
+			  
+//                "image" : "/items/active/weapons/melee/broadsword/swoosh3/<elementalType>swoosh.png:<frame>?scalenearest=0.75;1.0", //1h jab
+//                "offset" : [2, 0.0],
+//                "damageArea" : [[-1.25, 0.3], [1.7, 0.3], [1.7, -0.4], [-1.25, -0.4]]
+              }
+            },
+            "fire2" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh3/<elementalType>swoosh.png:<frame>?scalenearest=0.5;1.0",
+                "offset" : [0.75, 0.0],
+                "damageArea" : [[-2.25, 0.3], [0.7, 0.3], [0.7, -0.4], [-2.25, -0.4]]
+              }
+            },
+            "fire3" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh/<elementalType>swoosh.png:<frame>?scalenearest=0.75;1.0", //1h overhead-downwards swing
+                "offset" : [0, 2.5],
+                "damageArea" : [[-3, 2], [-2.5, 3], [1, 3], [2.5, 1.75], [4.0, -0.25], [4.0, -2.25], [2.9, -3.25], [0, -2.5]]
+              }
+            },
+			
+			"fire4" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh/<elementalType>swoosh.png:<frame>?flipy?scalenearest=0.35;1.0", //2h upswing
+                "offset" : [0.0, -2.5],
+                "damageArea" : [[-1.0, 3.1], [1.5, 3.1], [1.5, -0.8], [-1.0, -0.8]]
+              }
+            },
+			
+			"fire5" : { //actually just a dummy fire used to place hitbox for iaijutsu shield thing
+              "properties" : {
+                "offset" : [0.0, -2.5],
+                "damageArea" : [[-1.0, 3.1], [1.5, 3.1], [1.5, -0.8], [-1.0, -0.8]]
+              }
+            }
+			
+			
+			
+          }
+        }
+      }
+    }
+	},
+	"particleEmitters" : {
+	 "ews_meleeswoosh" : {
+	  "active" : false,
+      "transformationGroups" : ["swoosh"],
+      "emissionRate" : 1,
+      "burstCount" : 1,
+      "particles" : [
+//        { "particle" : "gic_meleeswoosh1"},
+//        { "particle" : "gic_meleeswoosh2"},
+//        { "particle" : "gic_meleeswoosh3"}
+	  ]
+	 },
+	 "ews_melee_sinnersdaggerswoosh" : {
+	  "active" : false,
+      "transformationGroups" : ["swoosh"],
+      "emissionRate" : 1,
+      "burstCount" : 1,
+      "particles" : [
+	  ]
+	 }
+	}
+  },
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua", "/abilities/weapons/gic_base_formation_weapon.lua"],
+
+  "elementalType" : "ews_melee_sinnersdagger",
+
+  "primaryAbilityType" : "gic_broadswordcombo",
+  "primaryAbility" : {
+    "fireTime" : 0.6,
+    "baseDps" : 90.0, //90
+	//"damageKind" : "IgnoresDef",
+	//"damageType" : "IgnoresDef",
+	"comboSteps" : 2,
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee_sinnersdagger",
+      "statusEffects" : [],
+      "knockbackMode" : "facing",
+	  //"damageKind" : "IgnoresDef",
+	  "damageType" : "IgnoresDef",
+      "timeout" : 0.6
+    },
+	"swooshOffsetRegions" : [
+      [3.0, -0.5, 6.5, 2.0],
+      [1.5, -1.0, 5.5, 1.0],
+      [0.75, 0.0, 4.25, 5.0],	  
+	  
+	  [0.75, 0.0, 4.25, 5.0],
+	  [1.5, -1.0, 5.5, 1.0],
+	  [1.5, -1.0, 5.5, 1.0],
+	  [1.5, -1.0, 5.5, 1.0],
+	  [1.5, -1.0, 5.5, 1.0]
+    ],
+	"stepDamageConfig" : [
+      {
+        "baseDamageFactor" : 1.5,
+        "knockback" : 8,
+      "statusEffects" : []
+      },
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 7,
+      "statusEffects" : [{"effect":"gic_unblockableDamage_flat","duration":40.0}]
+      },
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 6
+      }
+    ],
+	"comboSpeedFactor" : 0.6,
+	"stances" : {
+      "idle" : {
+        "armRotation" : -35,
+        "weaponRotation" : -193, //-13
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"weaponOffset" : [ -0.1, -0.05 ]
+      },
+	  
+	  
+	  
+      "windup1" : {
+		"duration" : 0.10, //0.15
+        "armRotation" : 85, //135
+        "weaponRotation" : -195, //-195
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : false,
+		"weaponOffset" : [ -0.1, -0.05 ]
+      },
+
+
+      "preslash1" : {
+		"duration" : 0.10,
+        "armRotation" : 85, //135
+        "weaponRotation" : -195, //-195
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : false,
+		"weaponOffset" : [ -0.1, -0.05 ]
+      },
+	  
+	  
+      "fire1" : {
+		"duration" : 0.10,
+        "armRotation" : 45,
+        "weaponRotation" : -555,//-180,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : false,
+		"weaponOffset" : [ -0.1, -0.05 ]
+      },
+	  "wait1" : {
+		"duration" : 0.10,
+        "armRotation" : 45,
+        "weaponRotation" : -555,//-180,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : false,
+		"weaponOffset" : [ -0.1, -0.05 ]
+      },
+
+
+
+
+
+
+
+
+
+
+
+
+	  
+      "windup2" : {
+        "duration" : 0.25,
+        "armRotation" : -100, //-100
+        "weaponRotation" : 15,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  
+      "fire2" : {
+        "duration" : 0.3,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "wait2" : {
+        "duration" : 0.25,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+
+
+
+      "windup3" : {
+        "duration" : 0.20,
+        "armRotation" : 90,
+        "weaponRotation" : -10,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "preslash3" : {
+        "duration" : 0.020,
+        "armRotation" : 55,
+        "weaponRotation" : -45,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : false
+      },
+      "fire3" : {
+        "duration" : 0.3,
+        "armRotation" : -45,
+        "weaponRotation" : -55,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : false
+      },
+      "wait3" : {
+        "duration" : 0.15,
+        "armRotation" : -45,
+        "weaponRotation" : -55,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : false
+      }
+
+
+    }
+  },
+  
+  "altAbilityType" : "parry",
+  "altAbility" : {
+	"scripts" : ["/items/weapons/melee/player/gic_floran_katana/gic_perfectblock.lua"],
+	"class" : "Parry",
+	"name" : "Perfect Parry",
+	"parryTime" : 1.5,
+	"cooldownTime" : 0.25,
+	"shieldHealth" : 100,
+	"perfectBlockTime" : 0.45,
+	
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee_sinnersdagger",
+	  "baseDamage" : 100,
+	  "statusEffects" : [ ], //{"effect":"gic_boss_melee_primer","duration":1}
+      "knockbackMode" : "facing",
+	  "damageType" : "IgnoresDef",
+      "timeout" : 0.15
+    },
+	
+	"counterConfig" : {
+      "damageSourceKind" : "ews_melee_sinnersdagger",
+	  "baseDamage" : 200,
+	  "statusEffects" : [ {"effect":"gic_huntersmark_lockedon","duration":3}, {"effect":"gic_stun_1","duration":0.75}, {"effect":"gic_nodamagemultiplier","duration":0.75} ],
+      "knockbackMode" : "facing",
+	  "damageType" : "IgnoresDef",
+      "timeout" : 0.15
+    },
+	
+	
+	"stances" : {
+	  "idle" : {
+		"aimAngle" : 0,
+        "armRotation" : -45,
+        "weaponRotation" : -13,
+        "allowRotate" : false,
+        "allowFlip" : true,
+		"weaponOffset" : [ -0.2, 0.33 ],
+        "twoHanded" : false,
+		
+		"frontArmFrame" : "swim.3",
+        "backArmFrame" : "rotation"
+      },
+	  
+      "parry" : {
+        "armRotation" : 35,
+        "weaponRotation" : -205,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  
+	  "windup" : {
+		"duration" : 0.2,
+        "armRotation" : -24,
+        "weaponRotation" : -240,
+		"twoHanded" : true,
+        "allowRotate" : false,
+        "allowFlip" : true,
+		"weaponOffset" : [ 0.0, 0.1 ]
+	  },
+	  "fire" : {
+        "duration" : 0.3,
+        "armRotation" : 50,
+        "weaponRotation" : -130,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		"weaponOffset" : [ 0.0, 0.0 ]
+      },
+	  "windup2" : {
+        "duration" : 0.20,
+        "armRotation" : 90,
+        "weaponRotation" : -10,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire2" : {
+        "duration" : 0.3,
+        "armRotation" : -45,
+        "weaponRotation" : -55,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

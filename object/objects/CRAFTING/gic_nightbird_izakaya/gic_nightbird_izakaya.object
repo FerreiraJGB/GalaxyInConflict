@@ -1,0 +1,989 @@
+{
+  "objectName" : "gic_nightbird_izakaya",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 160,
+  "description" : "[Hello!]",
+  "shortdescription" : "Nightbird Izakaya",
+  "race" : "human",
+  "health" : 2,
+  
+  "breakDropOptions" : [],
+  
+//  "scriptDelta" : 20,
+
+//  "chatRadius" : 5,
+//  "chatCooldown" : 25,
+//  "chatOptions" : [
+//    "Please state your concern.",
+//	"Yes?",
+//	"What can I do for you, sir?"
+//  ],  
+  
+  "scripts" : [ "/objects/crafting/gic_upgradeablecraftingobject.lua" ],  //, "/objects/missions/gic_esther_chapter_1_springfield_bartender/gic_springfield_talk.lua"
+  
+  "animation" : "gic_nightbird_izakaya.animation",
+  "animationPosition" : [40, 28],  
+  
+  "placementImage" : "gic_nightbird_izakaya.png:default.default",
+  "placementImagePosition" : [-16, 0],      
+  
+  
+  
+  "startingUpgradeStage" : 1,
+  "maxUpgradeStage" : 4,
+
+  "upgradeStages" : [
+  
+  //--- --- ---- FUNDING LEVEL 0
+  
+    {
+      "animationState" : "gic_nightbird_izakaya0",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_nightbird_izakaya_icon.png",
+        "placementImage" : "gic_nightbird_izakaya_tier0.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "[Hello!]",
+        "shortdescription" : "^orange;Nightbird Izakaya | FUNDING: Tier 0^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_nightbird_izakaya.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Nightbird Izakaya",
+            "subtitle" : "FUNDING: Tier 0",
+            "icon" : {
+              "file" : "/interface/crafting/gic_nightbird_izakaya.png"
+            }
+          }
+        },
+
+	"recipes" : [
+	
+	
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_darkbread"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier0" ]
+		},
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bottledwater"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier0" ]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_greentea"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier0" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_rumiariceball"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier0" ]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_seafoodmisosoup"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier0" ]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_combinationnoodlesoup"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier0" ]
+		},
+
+
+
+
+
+
+
+
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_joonjadetea"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier1" ]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_grilledlamprey"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier1" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_fairyfizz"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier1" ]
+		},
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_brashbrandy_glass"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier1" ]
+		},			
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_tunnelrat_glass"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier1" ]
+		},	
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_sparrowsake"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier1"]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":30,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_lettylager_glass"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier1" ]
+		},		
+
+
+
+
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_lunarsake"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier2"]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_sashimiplatter"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier2"]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_meatdumplings"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier2"]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_kabayakilampreys"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier2"]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_tengutango"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier2"]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_nueale_glass"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier2"]
+		},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bulletbeer"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier3"]
+		},	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_wagyusteak"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier3"]
+		},			
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_kirisamekirsch"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier3"]
+		},		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_hakutakuspecial"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier3"]
+		},		
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_pacificplatter"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier3"]
+		},
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_chirumiru_glass"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier3" ]
+		},	
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_marinatedporkribs"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier3" ]
+		},		
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_beefwellington"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier3" ]
+		},		
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_tsukasalad"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier4" ]
+		},		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_margatroidmargheritapizza"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier4" ]
+		},		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_eternalhuntersstew"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier4" ]
+		},		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_lunardangos"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier4" ]
+		},
+				
+				
+				
+				
+				
+				
+				
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_blackcoffee"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier0" ]
+		}		
+		
+		
+		
+		
+		
+	],
+
+        "filter" : [ "gic_nightbird_izakaya" ],
+        "upgradeMaterials" : [
+          { "item" : "tungstenbar", "count" : 6 }
+        ]
+      },
+
+      "learnBlueprintsOnPickup" : [],
+
+      "upgradeSoundEffect" : "fanfare",
+      "upgradeParticleEffect" : "dust"
+    },
+
+
+// --- --- --- FUNDING LEVEL 1
+
+
+    {
+      "animationState" : "gic_nightbird_izakaya1",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_nightbird_izakaya_icon.png",
+        "placementImage" : "gic_nightbird_izakaya_tier1.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "[Hello!]",
+        "shortdescription" : "^orange;Nightbird Izakaya | FUNDING: Tier 1^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_nightbird_izakaya.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Nightbird Izakaya",
+            "subtitle" : "FUNDING: Tier 1",
+            "icon" : {
+              "file" : "/interface/crafting/gic_nightbird_izakaya.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+	
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bounty_blackrocktoken"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":80,
+				"name":"gic_1850x70mm_slug_highexplosive"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier1" ]
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	],
+	
+	
+        "filter" : [ "gic_nightbird_izakaya" ],
+        "upgradeMaterials" : [
+          { "item" : "tungstenbar", "count" : 6 }
+        ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    },
+	
+	
+// --- --- --- FUNDING LEVEL 2
+
+
+    {
+      "animationState" : "gic_nightbird_izakaya2",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_nightbird_izakaya_icon.png",
+        "placementImage" : "gic_nightbird_izakaya_tier1.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "[Hello!]",
+        "shortdescription" : "^orange;Nightbird Izakaya | FUNDING: Tier 2^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_nightbird_izakaya.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Nightbird Izakaya",
+            "subtitle" : "FUNDING: Tier 2",
+            "icon" : {
+              "file" : "/interface/crafting/gic_nightbird_izakaya.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+	
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bounty_blackrocktoken"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":80,
+				"name":"gic_1850x70mm_slug_highexplosive"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier1" ]
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	],
+	
+	
+        "filter" : [ "gic_nightbird_izakaya" ],
+        "upgradeMaterials" : [
+          { "item" : "tungstenbar", "count" : 6 }
+        ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    },
+	
+
+
+
+// --- --- --- FUNDING LEVEL 3
+
+
+    {
+      "animationState" : "gic_nightbird_izakaya3",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_nightbird_izakaya_icon.png",
+        "placementImage" : "gic_nightbird_izakaya_tier1.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "[Hello!]",
+        "shortdescription" : "^orange;Nightbird Izakaya | FUNDING: Tier 3^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_nightbird_izakaya.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Nightbird Izakaya",
+            "subtitle" : "FUNDING: Tier 3",
+            "icon" : {
+              "file" : "/interface/crafting/gic_nightbird_izakaya.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+	
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bounty_blackrocktoken"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":80,
+				"name":"gic_1850x70mm_slug_highexplosive"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier3" ]
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	],
+	
+	
+        "filter" : [ "gic_nightbird_izakaya" ],
+        "upgradeMaterials" : [
+          { "item" : "tungstenbar", "count" : 6 }
+        ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    },
+	
+	
+// --- --- --- FUNDING LEVEL 4
+
+
+    {
+      "animationState" : "gic_nightbird_izakaya4",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_nightbird_izakaya_icon.png",
+        "placementImage" : "gic_nightbird_izakaya_tier1.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "[Hello!]",
+        "shortdescription" : "^orange;Nightbird Izakaya | FUNDING: Tier 4^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_nightbird_izakaya.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Nightbird Izakaya",
+            "subtitle" : "FUNDING: Tier 4",
+            "icon" : {
+              "file" : "/interface/crafting/gic_nightbird_izakaya.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+	
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bounty_blackrocktoken"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":80,
+				"name":"gic_1850x70mm_slug_highexplosive"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_nightbird_izakaya", "gic_nightbird_izakaya_tier1" ]
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	],
+	
+	
+        "filter" : [ "gic_nightbird_izakaya" ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    }
+	
+	
+	
+  ],  
+  
+  
+ // --- --- --- 
+  
+  
+  
+  
+  
+  
+  
+  //gic_nightbird_izakaya_weapons
+  //gic_nightbird_izakaya_equipment
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  "inventoryIcon" : "gic_nightbird_izakaya.png:default.1",
+  "orientations" : [
+    {
+      "dualImage" : "gic_nightbird_izakaya.png:<color>.<frame>",
+      "imagePosition" : [-16, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+}

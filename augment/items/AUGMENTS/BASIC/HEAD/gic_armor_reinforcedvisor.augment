@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_armor_reinforcedvisor",
+  "price" : 0,
+  "rarity" : "Uncommon",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CCD8B6;Helmet Equipment^reset;",
+  "inventoryIcon" : "gic_armor_reinforcedvisor.png",
+  
+  "description" : 
+  
+"Prevents dust from entering your eyes. Equipped with additional armor plating capable of resisting distant shrapnel. The additional protection it provides is meager at best, making it a terrible choice in the long run.
+
+^green;+5% SMALL-ARMS Resistance.^reset;",
+
+
+
+  "shortdescription" : "Reinforced Combat Visor",
+
+  "augment" : {
+    "type" : "gic_basichead",
+    "name" : "gic_armor_reinforcedvisor",
+    "displayName" : "Basic Combat Visor",
+    "displayIcon" : "/items/augments/basic/head/gic_armor_reinforcedvisor.png",
+    "effects" : [ 
+	"gic_armor_reinforcedvisor",
+	{"stat" : "ews_smallarmsResistance", "amount" : 0.05}
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_helmet_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

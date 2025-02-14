@@ -1,0 +1,50 @@
+{
+  "name" : "gic_mortalshell_arthur",
+  "type" : "head",
+
+  "scripts" : ["gic_mortalshell_arthur.lua"],
+  "animator" : "gic_mortalshell.animation",
+
+  "description" : "Move quickly by turning into Shell Form | Mobility-Type | ^green;[F]",
+  "shortDescription" : "Mortal Shell: Arthur",
+  "rarity" : "Rare",
+  "icon" : "/tech/gic_mortalshell_arthur.png",
+
+  "chipCost" : 8,
+
+  "animationParts" : {
+    "ballGlow" : "gic_mortalshell_arthur.png",
+    "ball" : "gic_mortalshell_arthur.png"
+  },
+
+  "transformedMovementParameters" : {
+//    "collisionPoly" : [ [-0.75, -2.0], [-0.35, -2.5], [0.35, -2.5], [0.75, -2.0], [0.75, 0.65], [0.35, 1.22], [-0.35, 1.22], [-0.75, 0.65] ], //    "collisionPoly" : [ [-0.85, -0.45], [-0.45, -0.85], [0.45, -0.85], [0.85, -0.45], [0.85, 0.45], [0.45, 0.85], [-0.45, 0.85], [-0.85, 0.45] ],
+    "collisionPoly" : [ [-0.85, -0.45], [-0.45, -0.85], [0.45, -0.85], [0.85, -0.45], [0.85, 0.45], [0.45, 0.85], [-0.45, 0.85], [-0.85, 0.45] ],
+    "groundForce" : 450.0,
+    "normalGroundFriction" : 100.5, //1.5
+    "ambulatingGroundFriction" : 0.2,
+    "slopeSlidingFactor" : 0.0,
+
+    "airJumpProfile" : {
+      "jumpSpeed" : 32, //16
+      "jumpControlForce" : 800.0, //800
+      "jumpInitialPercentage" : 1.0,
+      "jumpHoldTime" : 0.5 //0.1
+    },
+
+    "liquidJumpProfile" : {
+      "jumpSpeed" : 0.0,
+      "jumpControlForce" : 0.0,
+
+      "multiJump" : false,
+      "autoJump" : false
+    }
+  },
+
+  "ballSpeed" : 18, //36
+
+  "energyCost" : 2000,
+
+  "ballRadius" : 1,
+  "ballFrames" : 6
+}

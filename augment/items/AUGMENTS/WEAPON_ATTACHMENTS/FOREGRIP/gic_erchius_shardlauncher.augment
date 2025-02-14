@@ -1,0 +1,69 @@
+{
+  "itemName" : "gic_erchius_shardlauncher",
+  "price" : 500,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Underbarrel Attachment^white;",
+  "inventoryIcon" : "gic_erchius_shardlauncher_icon.png",
+  
+  "tooltipKind" : "gic_largebase",    
+  
+  
+  
+  
+  
+  "description" : "''No amount of technological progress can change the fact that a sharp projectile through the head will kill almost anything.''
+Exotic underbarrel attachment that can be placed on any weapon supporting foregrips. Fires a single Erchius Shard at an ^yellow;extreme speed^reset; with ^green;high power^reset; able to cause ^green;heavy bleeding^reset; in any target it hits. ^yellow;Indiscriminate.^reset; ^yellow;Reloads using Erchius Pouches.^reset;
+^green;Tap Right-Click to Fire/Reload the Shard Launcher.^reset;
+^yellow;Holds two shots.^reset;
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  
+  
+  "shortdescription" : "Erchius Shard Launcher",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_erchius_shardlauncher", //name of attachment
+	"attachmentTag" : ["ews_grenadelauncher", "gic_grenadelauncher"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/WEAPON_ATTACHMENTS/FOREGRIP/gic_erchius_shardlauncher.png", //determines what image is displayed on the resulting gun. For grenade launchers/under barrel launchers, do NOT add a frame identifier. Keep this as "[...].png".
+		
+	"attachmentId" : "gic_erchius_shardlauncher", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "grenadelauncher",
+		"grenadelauncherConfig" : {	//requires some part anims stuff in the main activeitem and some particle stuff. also needs some stances built in too.
+			"altFireTime" : 0.25,
+			"altAmmoMax" : 2,
+			"altAmmo" : 0,			//default starting ammo value
+			"altMagazine" : "gic_erchius_pouch",				//the magazine item the alt fire needs to reload
+			"projectileTypeGrenade" : "gic_erchius_shard", //grenadeimpact
+			"projectileTypeGrenadeCount" : 1,
+			"projectileTypeGrenadeConfig" : {
+				"power" : 400,		//damage for projectile
+				"speed" : 300,
+				"knockback" : 70,
+                "damageTeam" : { "type" : "indiscriminate" },
+                "statusEffects" : [ "gic_stun_1", "gic_bleeding_heavy" ]
+			},
+			
+			"fireSFX" : "/sfx/gun/gic_12g_sample_0.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("soundEffectGrenade")
+			"reloadSFX" : "/sfx/gic_energyweapon_reload.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("switchAmmoAlt")
+			
+			"altInaccuracy" : 0,
+			"grenadeMuzzleOffset" : [1.2,-0.15]		//not the same thing as a muzzle offset; this is an offset offsetted off the main muzzleOffset
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

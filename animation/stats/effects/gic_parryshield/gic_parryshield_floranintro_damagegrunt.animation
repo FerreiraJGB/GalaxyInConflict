@@ -1,0 +1,62 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "shield" : {
+        "priority" : 2,
+        "default" : "off",
+        "states" : {
+          "off" : {
+          },
+          "hit" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {      
+      "shield" : {
+        "properties" : {
+          "zLevel" : 5,
+          "centered" : true,
+          "offset" : [0, -0.5]
+        },
+
+        "partStates" : {
+          "shield" : {
+            "hit" : {
+              "properties" : {
+//                "image" : "gic_parryshield.png:hit.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  
+  "sounds" : {
+	  "perfectBlock" : [
+		"/sfx/npc/gic_bloodborne_male_grunt_1.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_2.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_3.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_4.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_5.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_6.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_7.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_8.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_9.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_10.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_11.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_12.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_13.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_14.wav",
+		"/sfx/npc/gic_bloodborne_male_grunt_15.wav"
+	  ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "projectileName" : "gic_electricenergyshot_charged_skydancer_muzzle",
+  "bounces" : 0,
+  "image" : "gic_electricenergyshot_charged.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "renderLayer" : "Monster+10",
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_plasmaimpact_small/gic_plasmaimpact_small.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_electricenergyshot_charged_skydancer",
+      "inheritDamageFactor" : 1,
+	  "directional" : true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 0,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.0,
+  "physics" : "laser"
+}

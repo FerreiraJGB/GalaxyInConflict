@@ -1,0 +1,117 @@
+{
+  "type" : "gic_gazring_dockingbay75_tradesman",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ "basicTreasure" ],
+  
+  "scriptConfig" : {
+    "behavior" : "villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 1,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+      "converse" : "/dialog/DockingBay75/gic_dockingbay75_tradesman_converse.config:converse",
+	  
+      "greeting" : "/dialog/DockingBay75/gic_dockingbay75_tradesman_converse.config:converse",
+
+      "attack" : "/dialog/DockingBay75/gic_generic_combat_panic.config:attack",
+      "reattack" : "/dialog/DockingBay75/gic_generic_combat_panic.config:reattack",
+      "killedTarget" : "/dialog/DockingBay75/gic_generic_combat_panic.config:killedTarget",
+      "lostTarget" : "/dialog/DockingBay75/gic_generic_combat_panic.config:lostTarget",
+      "outOfSight" : "/dialog/DockingBay75/gic_generic_combat_panic.config:outOfSight",
+      "cheerOn" : "/dialog/DockingBay75/gic_generic_combat_panic.config:cheerOn",
+      "cantReach" : "/dialog/DockingBay75/gic_generic_combat_panic.config:cantReach",
+
+      "hail" : "/dialog/DockingBay75/gic_dockingbay75_tradesman_guard_hail.config:hail",
+
+      "accuse" : "/dialog/thief.config:accuse"
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "chest" : [ { "name" : "foundrychest", "parameters" : { "colorIndex" : [11] }  } ],
+            "legs" : [ { "name" : "foundrylegs", "parameters" : { "colorIndex" : [0] } } ],
+            "sheathedprimary" : [ "gic_usm45" ]
+		  }
+        ] ]
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.4
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.7
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

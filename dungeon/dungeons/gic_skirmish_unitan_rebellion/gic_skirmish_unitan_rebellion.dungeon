@@ -1,0 +1,292 @@
+{
+  "metadata" : {
+    "name" : "gic_skirmish_unitan_rebellion",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_skirmish_unitan_rebellion_playerbase" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 23,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : false
+  },
+
+  "parts" : [
+  
+    {
+      "name" : "gic_skirmish_unitan_rebellion_playerbase",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_playerbase.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_capturepoint",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_capturepoint" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_capturepoint.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_genecultistsquad",
+      "rules" : [
+        [ "maxSpawnCount", [3] ]
+//        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_terrain1" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_genecultistsquad.json" ] ],
+      "chance" : 1
+    },
+  
+    {
+      "name" : "gic_skirmish_unitan_rebellion_terrain1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_terrain1" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_terrain1.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_terrain2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_terrain2" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_terrain2.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_skirmish_unitan_rebellion_terrain3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_terrain3" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_terrain3.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_skirmish_unitan_rebellion_terrain4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_terrain4" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_terrain4.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_skirmish_unitan_rebellion_terrain5",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_terrain5" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_terrain5.json" ] ],
+      "chance" : 1
+    },
+	
+	
+
+    {
+      "name" : "gic_skirmish_unitan_rebellion_bunker1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_bunker1" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_bunker1.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_bunker2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_bunker2" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_bunker2.json" ] ],
+      "chance" : 1
+    },
+	
+	
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_blowngaspipe",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_blowngaspipe" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_blowngaspipe.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_planecrash",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_planecrash" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_planecrash.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_skirmish_unitan_rebellion_helicoptercrash",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_helicoptercrash" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_helicoptercrash.json" ] ],
+      "chance" : 1
+    },
+	
+
+	
+	
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_building1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_building1" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_building1.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_building2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_building2" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_building2.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_building3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_building3" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_building3.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_skirmish_unitan_rebellion_building4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_building4" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_building4.json" ] ],
+      "chance" : 1
+    },
+	
+	
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_trench1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_trench1" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_trench1.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_trench2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_trench2" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_trench2.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_trench3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_trench3" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_trench3.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_trench4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_trench4" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_trench4.json" ] ],
+      "chance" : 1
+    },
+	
+	
+	
+	
+	
+	
+
+    {
+      "name" : "gic_skirmish_unitan_rebellion_fortress_entrance",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_fortress_entrance.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_fortress_building1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_skirmish_unitan_rebellion_fortress_building1" ] ]
+
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_fortress_building1.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_skirmish_unitan_rebellion_fortress_enemybase",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_skirmish_unitan_rebellion_fortress_enemybase.json" ] ],
+      "chance" : 0
+    }
+
+  ]
+}

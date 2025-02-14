@@ -1,0 +1,304 @@
+{
+  "type" : "gic_wartorn_excultist_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ "gic_wartorn_excultist_crewTreasure" ],
+
+  "identity" : {
+    "gender" : "male",
+    "hairGroup" : "hair",
+    "hairType" : "male4",
+    "hairColor" : "5"
+  },  
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0}, "gic_rally_player_primer" ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "gic_noinspectcrew",
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "soldier",
+        "name" : "Healer",
+        "field" : "Ex-Cultist",
+        "uniformColorIndex" : 11,
+		
+        "benefits" : [
+          {
+            // Ephemeral effects gained upon leaving the ship - Grants Psychic Light Bleeding immunity.
+            "type" : "EphemeralEffect",
+            "effect" : "gic_armor_excultist_crew",
+            "duration" : 2400 //10 minutes at 600 units
+          }
+        ]
+		
+      },
+
+      "ranks" : [
+	    "Ex-Cultist"
+      ],
+
+      "defaultUniform" : {
+	    "head" : "gic_excultisthathead",
+        "chest" : "gic_occasusinfantrychest", //soldierchest
+        "legs" : "cultistlegs", //soldierpants
+		"back" : ""
+      },
+      "uniformSlots" : ["chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"]
+    },
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "Take me with you if you need me. Otherwise, I'm bugging out in a bit on a private voidcraft."
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Oof.",
+              "Mah' dogs're barkin'."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "Argh...",
+			  "Urgh...",
+			  "Damnit..."
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "Sure, I'll stay.",
+			  "Stay? Sure.",
+			  "I'll be here, like always."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "Alright, I'm moving.",
+			  "Hurry up and wait!",
+			  "I'm movin'."
+            ]
+          }
+        },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "Uh, gimme a second to just..."
+            ]
+          }
+	    },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy.",
+			"Move it!"
+          ]
+        }
+      }
+	
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Okay, and?",
+			"WITH THIS SHOT, I ABJURE THEE!",
+			"Let's. Fucking. Go.",
+			"Cowabunga it is.",
+			"Fuck it. Let's do this."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "Ah HAH!"
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "And another one.",
+			"That's some insufficient existentialism right there.",
+			"Gawd. Is it smoko yet?",
+			"Fuggin' DEAD.",
+			"Blow off, choffer."
+          ]
+        }
+      },
+	
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "Shit's gone."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "Shit's still out there. Can't see it though."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "YEAH BOY!"
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "Shit. Can't reach that."
+          ]
+        }
+      },
+	  
+      "converse" : {
+        "default" : {
+          "default" : [
+			"Protectors? Makes me wonder: Do you even protect anything that isn't already yours?",
+			"Maybe I've seen you before. Maybe I've seen you a million times over... Maybe you've killed me before.",
+			"I don't doubt where you're from. Maybe I saw your face back at the academy. Or was it a different one? Never mind then."
+          ]
+        }
+      }
+
+
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player = 18
+    "runSpeed" : 20
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_excultisthathead", "parameters" : { "colorIndex" : [11] } } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [11] } } ],
+            "legs" : [ { "name" : "cultistlegs", "parameters" : { "colorIndex" : [11] } } ],
+            "primary" : ["gic_lewisgun_heavy_excultist_npc"]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 300.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	 
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	 
+      "gic_crewmember_stat" : {
+        "baseValue" : 1.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

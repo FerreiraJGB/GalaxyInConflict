@@ -1,0 +1,117 @@
+{
+  "type" : "gic_protectorate_deserttrooper",
+  "baseType" : "gic_combatandroid_base",
+
+  "dropPools" : [ ],
+  "damageTeam" : 13,
+  
+  "identity" : {
+    "gender" : "male"
+  },  
+  
+  "movementParameters" : {
+    "airFriction" : 0.2,
+    "airJumpProfile" : {
+      "jumpSpeed" : 120.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.2
+    }
+  },
+  
+  "scriptConfig" : {
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "patrol"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_oldsynthguardhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_militiarigchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_hscplegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_jumpdiverkitback", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [ "gic_copsc_shotgun" ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 1.0
+      },
+	  
+	  //Psychic
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },	
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : -0.5
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	,
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

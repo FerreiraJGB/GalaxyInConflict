@@ -1,0 +1,37 @@
+{
+  "itemName" : "gic_armor_steelcaps",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Leg Equipment^reset;",
+  "inventoryIcon" : "gic_armor_steelcaps.png",
+  
+  "description" : 
+  
+"Steel-Cap Footwear Mod Kit which can be modified into your footwear to provide various safety measures against a multitude of elements. Different steel-toes have various levels of protection (though usually built into the footwear, not added post-production) with elements such as antistatic properties, fuel resistance, water penetration and water absorption resistance, sole penetration resistance, temperature insulation, cut and skid resistances. ^green;+5% Melee, Physical, Fire, Ice, Electrical, and Poison Resistance.^reset; | ^green;+10% Knockback Resistance.^reset;",
+
+
+
+  "shortdescription" : "Steel-Cap Footwear Mod",
+
+  "augment" : {
+    "type" : "gic_basiclegs",
+    "name" : "gic_armor_steelcaps",
+    "displayName" : "Steel-Cap Footwear Mod",
+    "displayIcon" : "/items/augments/basic/legs/gic_armor_steelcaps.png",
+    "effects" : [
+	{"stat" : "electricResistance", "amount" : 0.05},
+	{"stat" : "iceResistance", "amount" : 0.05},
+	{"stat" : "fireResistance", "amount" : 0.05},
+	{"stat" : "poisonResistance", "amount" : 0.05},
+	{"stat" : "ews_meleeResistance", "amount" : 0.05},
+	{"stat" : "physicalResistance", "amount" : 0.05},
+    {"stat" : "grit", "amount" : 0.1},
+	"gic_armor_steelcaps"
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_legwear_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

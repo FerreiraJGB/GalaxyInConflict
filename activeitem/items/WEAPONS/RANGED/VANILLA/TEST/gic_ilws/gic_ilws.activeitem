@@ -1,0 +1,84 @@
+{
+  "itemName" : "gic_ilws",
+  "price" : 1200,
+  "inventoryIcon" : "gic_ilws.png",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "The rifle for the high-tech militaries of the galaxy.",
+  "shortdescription" : "Infantry Laser Weapon System",
+  "level" : 6,
+  "tooltipKind" : "gun",
+  "category" : "Battle Rifle",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_ilws.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/gun/gic_plasmariflefire.ogg" ]
+    }
+  },
+
+  "baseOffset" : [0.95, 0.3],
+  "muzzleOffset" : [1.0, 0.18],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "gicheavyarms",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.135,
+    "baseDps" : 26,
+    "energyUsage" : 180,
+    "inaccuracy" : 0.006,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "gic_standardlaser",
+    "projectileParameters" : {
+      "knockback" : 0
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.2, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.2, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

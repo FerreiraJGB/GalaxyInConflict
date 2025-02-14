@@ -1,0 +1,65 @@
+{
+  "projectileName" : "gic_summon_augmentyr_serviceskull_beckon",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_summon_augmentyr_serviceskull.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 3,
+  "timeToLive" : 0,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "angle" : 90
+    },	
+	
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_case_belt_link",
+      "fuzzAngle" : 20,
+      "angle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_case_belt_link",
+      "fuzzAngle" : 20,
+      "angle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_case_belt_link",
+      "fuzzAngle" : 20,
+      "angle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_case_belt_link",
+      "fuzzAngle" : 20,
+      "angle" : 90
+    },	
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_shellcasing",
+      "fuzzAngle" : 20,
+      "angle" : 90
+    },
+  
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_augmentyr_airborne_serviceskull_beckon",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : { "damageTeamType" : "friendly", "damageTeam" : 1 }
+    }
+
+  ]
+}

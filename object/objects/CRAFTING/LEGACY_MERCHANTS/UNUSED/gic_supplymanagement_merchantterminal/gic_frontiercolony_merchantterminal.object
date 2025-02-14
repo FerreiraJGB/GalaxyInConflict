@@ -1,0 +1,386 @@
+{
+  "objectName" : "gic_frontiercolony_merchantterminal",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "description" : "A universal Merchant Terminal for Frontier Colonies, handling local planetary operations.",
+  "shortdescription" : "^orange;Merchant Terminal: Frontier Colony [GIC]^white;",
+  "race" : "generic",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_frontiercolony_merchantterminal.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Merchant Terminal: Frontier Colony",
+        "subtitle" : "  A universal Merchant Terminal for Frontier Colonies, handling local planetary operations.",
+        "icon" : {
+          "file" : "/interface/crafting/gic_militaryfactory.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+	//"gic_frontiercolony_hunting" - Handing in animal goods
+	
+	
+	
+	
+	
+	//"gic_frontiercolony_weapons" - The guns. Outright worse than regular military-spec weapons seriously.
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2000,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_fcp243"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_weapons" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2800,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_wbss2"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_weapons" ]
+		},	
+	
+	//"gic_frontiercolony_ammunition" - For the guns to function. Inherently expensive, but otherwise basic.
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":5,
+				"name":"gic_545x15mm_bullet"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_ammunition" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":3,
+				"name":"gic_556x45mm_bullet"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_ammunition" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":2,
+				"name":"gic_6x52mm_bullet"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_ammunition" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":3,
+				"name":"gic_762x63mm_bullet"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_ammunition" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":80,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":25,
+				"name":"gic_1850x70mm_buckshot"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_ammunition" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":100,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":25,
+				"name":"gic_1850x70mm_slug"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_ammunition" ]
+		},
+		
+	
+	//"gic_frontiercolony_supply" - For armor plates and other field equipment. Slightly cheaper than Embassy counterparts.
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":200,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_at7packback"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_supply" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":90,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_koloniya50_medkit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_supply" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":250,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_wolffak_medkit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_supply" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1800,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_armor_ceramicplate"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_supply" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2300,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_armor_impactplate"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_supply" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":150,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_armor_legpadding"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_supply" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":7000,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_armor_selfsustainedelectroplate"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_supply" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1400,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_armor_spikestabplate"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_supply" ]
+		},
+	
+	
+	
+	
+	
+	//"gic_frontiercolony_sell" - Has the highest sell rate for each cargo type, regardless of any economy types.
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_industrialequipmentcargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":12,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_sell" ]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_rawmineralscargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":4,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_sell" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_refinedmetalscargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":8,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_frontiercolony_merchantterminal", "gic_frontiercolony_sell" ]
+		}
+
+	],
+    "filter" : [ "gic_frontiercolony_merchantterminal" ]
+  },
+  "printable" : false,
+  "price" : 300,
+  
+  "inventoryIcon" : "gic_frontiercolony_merchantterminal.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_frontiercolony_merchantterminal.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+
+}

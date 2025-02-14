@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_molotovbomb",
+  "price" : 100,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_molotovbomb_icon.png",
+  "image" : "gic_molotovbomb.png",
+  "shortdescription" : "Liquid Firebomb [GIC]",
+  "description" : "A Molotov. The fires this molotov emits last far longer than normal, and can be used to deny access points. Direct hits on enemies afflict ^orange;OIL-COATING.^reset; Flames from these molotovs will afflict standard ^orange;BURNING,^reset; as well as ^orange;IGNITION and PANIC^reset; on any target afflicted with ^orange;OIL-COATING.^reset;
+
+^orange;IGNITION^reset; deals non-scaled but high amounts of FIRE damage on targets, as well as afflicting ^orange;PANIC^reset; in enemy infantry, preventing them from using firearms.",
+
+  "tooltipKind" : "gic_largebase_ammogun",
+  "ammoUsage" : 1,
+  "maxStack" : 6,
+  "edgeTrigger" : true,
+  "windupTime" : 0.65,
+  "cooldown" : 0.15,
+  "elementalType" : "ews_explosive",
+  "projectileType" : "gic_molotovbomb",
+  "projectileConfig" : {
+    "speed" : 41.5,
+    "power" : 17.5,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/WorldAtWar/gic_molotov_throw.ogg" ]
+      }
+    ]
+  }
+}

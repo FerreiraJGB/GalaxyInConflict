@@ -1,0 +1,31 @@
+{
+  "name" : "gic_moraleshock_debuffnotifier",
+  "blockingStat" : "gic_moraleshock_debuffnotifierStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "", //does not accept arrays
+	"projectileTypeMiss" : "", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 0,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 999999999999999.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 99999999999999.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_moraleshock_debuffnotifier.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_moraleshock_debuffnotifier.animation"
+}

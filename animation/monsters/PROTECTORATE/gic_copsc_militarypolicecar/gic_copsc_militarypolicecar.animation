@@ -1,0 +1,429 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "invisible" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "walk"
+          },
+		  
+	
+          "aggro_primer" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "loop",
+			
+            "properties" : {
+              "particleEmittersOn" : [ "siren" ],
+              "persistentSound" : "/sfx/vehicles/gic_policesiren_generic_loop.ogg",
+              "persistentSoundRangeMultiplier" : 3.55,
+              "persistentSoundStopTime" : 0.0
+            }
+			
+          },
+	
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "loop",
+			
+            "properties" : {
+              "particleEmittersOn" : [ "siren" ],
+              "persistentSound" : "/sfx/vehicles/gic_policesiren_generic_loop.ogg",
+              "persistentSoundRangeMultiplier" : 3.55,
+              "persistentSoundStopTime" : 0.0
+            }
+			
+          },
+		  
+		  
+		  
+          "idle" : {
+            "frames" : 2,
+            "cycle" : 0.5,
+            "properties" : {
+              "particleEmittersOn" : [ "siren" ],
+              "persistentSound" : "/sfx/vehicles/gic_policesiren_generic_loop.ogg",
+              "persistentSoundRangeMultiplier" : 3.55,
+              "persistentSoundStopTime" : 0.0			
+            }
+          },
+		  
+		  
+		  
+          "walk" : {
+            "frames" : 2,
+            "cycle" : 0.5,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_policesiren_generic_loop.ogg",
+              "persistentSoundRangeMultiplier" : 3.55,
+              "persistentSoundStopTime" : 0.0
+            }
+          },
+		  
+		  
+		  
+          "deployrocket" : {
+            "frames" : 3,
+            "cycle" : 1,
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_policesiren_generic_loop.ogg",
+              "persistentSoundRangeMultiplier" : 3.55,
+              "persistentSoundStopTime" : 0.0,
+              "immediateSound" : "/sfx/vehicles/gic_needforspeedhotpursuit_empwindup.ogg",
+              "immediateSoundRangeMultiplier" : 6.80
+            }
+          },
+		  
+		  
+          "fire" : {
+            "frames" : 1,
+            "cycle" : 1.0,
+            "mode" : "transition",
+            "transition" : "recover",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_policesiren_generic_loop.ogg",
+              "persistentSoundRangeMultiplier" : 3.55,
+              "persistentSoundStopTime" : 0.0,
+              "immediateSound" : "/sfx/gun/gic_rpg7_fire.ogg",
+              "immediateSoundRangeMultiplier" : 6.80
+            }
+          },
+		  
+		  
+		  
+          "recover" : {
+            "frames" : 2,
+            "cycle" : 1,
+            "mode" : "transition",
+            "transition" : "idle",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_policesiren_generic_loop.ogg",
+              "persistentSoundRangeMultiplier" : 3.55,
+              "persistentSoundStopTime" : 0.0
+            }
+          }
+		  		  
+		  
+		  
+		  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.625],
+          "zLevel" : 2
+        },
+        "partStates" : {
+          "body" : {
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "aggro_primer" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "deployrocket" : {
+              "properties" : {
+                "image" : "<partImage>:deployrocket.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:fire.<frame>"
+              }
+            },
+            "recover" : {
+              "properties" : {
+                "image" : "<partImage>:recover.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "fullbright" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.625],
+          "zLevel" : 3,
+          "fullbright" : true
+        },
+        "partStates" : {
+          "body" : {
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "aggro_primer" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "deployrocket" : {
+              "properties" : {
+                "image" : "<partImage>:deployrocket.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:fire.<frame>"
+              }
+            },
+            "recover" : {
+              "properties" : {
+                "image" : "<partImage>:recover.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+	  
+    }
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+
+  "particleEmitters" : {
+  
+  
+    "siren" : {
+      "enabled" : true,
+      "emissionRate" : 5.0,
+      "particles" : [
+        {
+          "particle" : "iceaura"
+        }
+      ]
+    },
+  
+  
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "greenmonstersplosion" },
+        { "particle" : "greendeathember" },
+        { "particle" : "greendeathember" },
+        { "particle" : "greendeathember" },
+        { "particle" : "greendeathember" },
+        { "particle" : "greendeathember" },
+        { "particle" : "greendeathember" },
+        { "particle" : "greendeathember" },
+        { "particle" : "greendeathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "burningvehiclesmokefront" },
+        { "particle" : "burningvehiclesmokefront" },
+        { "particle" : "burningvehiclesmokefront" },
+        { "particle" : "burningvehiclesmokemiddle" },
+        { "particle" : "burningvehiclesmokemiddle" },
+        { "particle" : "burningvehiclesmokemiddle" },
+        { "particle" : "burningvehiclesmokeback" },
+        { "particle" : "burningvehiclesmokeback" },
+        { "particle" : "burningvehiclesmokeback" },
+        { "particle" : "redgas" },
+        { "particle" : "burningdust" },
+        { "particle" : "burningdust" },
+        { "particle" : "burningdust" },
+        { "particle" : "burningdust" },
+        { "particle" : "burningvehicleflamesback" },
+        { "particle" : "burningvehicleflamesback" },
+        { "particle" : "burningvehicleflamesback" },
+        { "particle" : "burningvehicleflamesback" },
+        { "particle" : "burningvehicleflamesback" },
+		
+
+		
+            { "particle" : {
+                "type" : "ember",
+                "size" : 2.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } },
+			  
+        { "particle" : "burningvehicleflamesfront" },
+        { "particle" : "burningvehicleflamesfront" },
+        { "particle" : "burningvehicleflamesfront" },
+        { "particle" : "burningvehicleflamesfront" },
+        { "particle" : "firesmoke" },
+        { "particle" : "firesmoke" },
+        { "particle" : "firesmoke" },
+        { "particle" : "deathfizz1left" },
+        { "particle" : "deathfizz1right" },
+        { "particle" : "deathfizz2left" },
+        { "particle" : "deathfizz2right" },
+        { "particle" : "deathfizz3left" },
+        { "particle" : "deathfizz3right" },
+        { "particle" : "deathfizz4left" },
+        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "muzzleFlash" : {
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "looping" : true,
+            "animation" : "/animations/tankmuzzleflash/tankmuzzleflash.animation",
+            "position" : [4.5, 3.2],
+            "layer" : "middle",
+            "timeToLive" : 0.8,
+            "rotation" : 0.0
+          }
+        }
+      ]
+    },
+	
+    "muzzleFlash_mg" : {
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "looping" : true,
+            "animation" : "/animations/gic_20mm_muzzle/gic_20mm_muzzle.animation",
+            "position" : [2.5, 2.4],
+            "layer" : "front",
+            "timeToLive" : 0.05,
+			"fullbright" : true,
+            "rotation" : 0.0
+          }
+        }
+		
+      ]
+    }
+	
+  },
+
+  "sounds" : {
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/npc/gic_tankdie.ogg" ],
+    "fire" : {
+      "pool" : [ "/sfx/vehicles/gic_needforspeedhotpursuit_empfire.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "shout" : {
+      "pool" : [ 
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2484.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2485.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2486.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2487.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2488.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2489.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2490.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2491.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2492.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2493.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2494.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2495.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2496.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2497.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2498.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2499.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2500.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2501.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2502.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2503.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2504.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2505.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2506.ogg",
+	  "/sfx/NeedForSpeed/gic_needforspeed_copspeech_big2507.ogg"
+	  ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "fire_mg" : {
+      "pool" : [ "/sfx/gun/gic_glock_01.ogg", "/sfx/gun/gic_glock_02.ogg" ],
+      "rangeMultiplier" : 0.5
+    },
+    "windupcharge" : {
+      "pool" : [ "/sfx/gun/gic_spartanlaser_in.ogg" ],
+      "rangeMultiplier" : 4.0
+    }
+  }
+}

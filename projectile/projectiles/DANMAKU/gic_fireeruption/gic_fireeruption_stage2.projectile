@@ -1,0 +1,99 @@
+{
+  "projectileName" : "gic_fireeruption_stage2",
+  "image" : "gic_fireeruption_stage2.png",
+  "animationCycle" : 2.0,
+  "timeToLive" : 0.5,
+  "fullbright" : true,
+  "lightColor" : [100, 100, 200],
+  "animationLoops" : false,
+  "frameNumber" : 60,
+  "power" : 0.0,
+  "speed" : 0,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+  "orientationLocked" : true,
+  "piercing" : true,
+  "flippable" : true,
+  "damagePoly" : [ [-8, 5], [8, 5], [8, -5], [-8, -5] ],
+  "periodicActions" : [
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/fire_out_louder.ogg" ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smoke/smoke.config"
+    },
+    {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "ember",
+            "size" : 1.5,
+            "color" : [134, 127, 119, 255],
+            "fade" : 0.9,
+            "approach" : [30, 30],
+            "light" : [50, 140, 160],
+            "timeToLive" : 0.5,
+            "layer" : "middle",
+            "variance" : {
+              "position" : [1.5, 3.0],
+              "finalVelocity" : [1.5, 1.5],
+              "size" : 0.5,
+              "timeToLive" : 0.3,
+              "fade" : 0.3
+            }
+          }
+        },
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "ember",
+            "size" : 1.5,
+            "color" : [134, 127, 119, 255],
+            "fade" : 0.9,
+            "approach" : [30, 30],
+            "light" : [50, 140, 160],
+            "timeToLive" : 0.5,
+            "layer" : "middle",
+            "variance" : {
+              "position" : [1.5, 3.0],
+              "finalVelocity" : [1.5, 1.5],
+              "size" : 0.5,
+              "timeToLive" : 0.3,
+              "fade" : 0.3
+            }
+          }
+        },
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "ember",
+            "size" : 1.5,
+            "color" : [134, 127, 119, 255],
+            "fade" : 0.9,
+            "approach" : [30, 30],
+            "light" : [50, 140, 160],
+            "timeToLive" : 0.5,
+            "layer" : "middle",
+            "variance" : {
+              "position" : [1.5, 3.0],
+              "finalVelocity" : [1.5, 1.5],
+              "size" : 0.5,
+              "timeToLive" : 0.3,
+              "fade" : 0.3
+            }
+          }
+        }
+      ]
+    }
+  ],
+
+  "scripts" : [ "/projectiles/tracksourcestatus.lua" ],
+  "scriptDelta" : 1
+}

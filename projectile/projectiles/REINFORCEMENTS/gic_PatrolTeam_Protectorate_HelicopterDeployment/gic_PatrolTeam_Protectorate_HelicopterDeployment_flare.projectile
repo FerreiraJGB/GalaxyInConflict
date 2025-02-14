@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_PatrolTeam_Protectorate_HelicopterDeployment_flare",
+  "physics" : "laser",
+  "bounces" : 0,
+  "timeToLive" : 20,
+  "image" : "gic_PatrolTeam_Protectorate_HelicopterDeployment_flare.png",
+  "animationCycle" : 0.25,
+  "lightColor" : [255, 255, 255],
+  "frameNumber" : 2,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_PatrolTeam_Protectorate_HelicopterDeployment_stage1",
+      "angle" : -90
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smoke/smoke.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_illuminationflare",
+      "angle" : -90
+    }
+  ],
+  "power" : 0,
+  "onlyHitTerrain" : true,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

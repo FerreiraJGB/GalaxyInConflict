@@ -1,0 +1,63 @@
+{
+  "projectileName" : "gic_crusader_champions_greataxe_thrown",
+  "physics" : "stickygrenade",
+  
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/melee/gic_bloodborne_hammer-hit2.wav"
+      ]
+    },
+	{
+      "action" : "loop",
+      "count" : 10,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/gic_vehicledustysmoke/gic_vehicledustysmoke.animation",
+                "approach" : [20, 20],
+                "timeToLive" : 2.0,
+				"fade": 0.5,
+                "finalVelocity" : [0.5, 0],
+                "initialVelocity" : [2, 1],
+        "ignoreWind" : false,
+        "collidesForeground" : true,
+    "collidesLiquid" : true,
+				"size": 0.15,
+                "variance" : {
+                  "initialVelocity" : [-0.5, 0],
+                "finalVelocity" : [-2, 1],
+				"size": 0.35,
+                  "timeToLive" : 2.5,
+                  "rotation" : 360
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "image" : "gic_crusader_champions_greataxe_thrown.png",
+  "animationCycle" : 0.4,
+  "frameNumber" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "knockback" : 30,
+  "knockbackDirectional" : true,
+  "statusEffects" : ["gic_bleeding_light", "gic_bleeding_medium", "gic_bulletshot" ],
+  "timeToLive" : 10,
+  "bounces" : -1,
+  "piercing" : true,
+  "pointLight" : false,
+  "scripts" : [ "/scripts/projectiles/gic_crusader_champions_axe.lua" ],
+  "damagePoly" : [[-20, 10], [-10, 20], [10, 20], [20, 10], [20, -10], [10, -20], [-10, -20], [-20, -10]]
+}

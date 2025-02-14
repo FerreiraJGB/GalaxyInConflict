@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_magnificentsixshooter_shot",
+  "image" : "gic_magnificentsixshooter_shot.png",
+  "physics" : "laser",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 12,
+  "fullbright" : true,
+  "periodicActions" : [  
+  ], 
+ 
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    }
+  ],
+  
+  "damageKindImage" : "icon.png",
+  "power" : 185.0,
+  "statusEffects" : [ {"effect":"gic_infantry_panic","duration":5} ],
+  "speed" : 200,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

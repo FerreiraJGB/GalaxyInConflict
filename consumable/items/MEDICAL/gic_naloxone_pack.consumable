@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_naloxone_pack",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_naloxone_pack.png",
+  
+  "itemTags" : ["gic_syringerifle_ammo"],
+  
+  "maxStack" : 2,
+  "description" : "An opioid antagonist for the treatment of opiate-based withdrawal. Naloxone's effectiveness at treating Opiate Addictions with its ease of access and low cost is unparalleled in the poverty-stricken sectors of human-space, where ''unclean'' substances (by Protectorate Standards, anyways) must be used to fight other substances.
+  
+^green;- Removes Opiate Addiction and Withdrawal, costing 7 seconds.",
+
+  "shortdescription" : "^orange;Naloxone Pack",
+  "effects" : [ [
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 7
+      },
+	  
+      {
+        "effect" : "gic_naloxone_pack_recovery",
+        "duration" : 2
+      }
+	  
+	  
+	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_bandage_use" ],
+  "blockingEffects" : [
+  ]
+}

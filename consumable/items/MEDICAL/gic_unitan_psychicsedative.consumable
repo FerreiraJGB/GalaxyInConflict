@@ -1,0 +1,27 @@
+{
+  "itemName" : "gic_unitan_psychicsedative",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#FFAD12;Psychosomatic Pharmaceuticals^white;",
+  "inventoryIcon" : "gic_unitan_psychicsedative.png",
+  "maxStack" : 10,
+  "description" : "Liquid medicine concocted by the occult scholars of the United Systems. Their unending search for wonder-weapons leads them to windows that should've never been looked-through, and doors that should've never been open.
+^yellow;Does not stack with the World Walker artifacts, which will^reset; replace ^yellow;this medicine's effect.^reset;  
+^green;Immunity to Suspicious Sensations for 6 hours.^reset;",
+
+  "shortdescription" : "^red;Unitan Astral Sedative",
+  "effects" : [ [
+      {
+        "effect" : "gic_psychicbleeding_lightStatusImmunity",
+        "duration" : 21600
+      },
+	  {
+        "effect" : "gic_healing_slowdown_1"
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_darksouls_souluse" ],
+  "blockingEffects" : [
+  ]
+}

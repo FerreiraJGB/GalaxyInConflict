@@ -1,0 +1,233 @@
+{
+  "type" : "gic_railcarpanzer",
+
+  "persistent" : true,
+
+  "categories" : [ "gic_railcarpanzer" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_railcarpanzer.animation",
+
+  "dropPools" : [ "gic_vehiclesalvagetankTreasure" ],
+
+  "baseParameters" : {
+    "scripts" : [
+      "/monsters/monster.lua"
+    ],
+
+    "behavior" : "monster",
+
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 230,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 500,
+      "targetOutOfSightTime" : 50,
+
+      "concurrentHostileActions" : [
+        {
+          "name" : "action-fire",
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 140,
+            "minimumRange" : 0,
+            "windupState" : "windup",
+            "windupTime" : 3.0,
+
+            "projectileCount" : 1,
+            "fireDelay" : 0.05,
+            "projectileInterval" : 0.333333333333333333333333333333333333333333333333333333333333,
+            "inaccuracy" : 0.04,
+
+            "projectileParameters" : {
+              "speed" : 270,
+              "power" : 30
+            },
+			
+            "projectileType" : "gic_20mm_he",
+            "fireOffset" : [3.2, 2.4],
+            "aimAtTarget" : false,
+
+            "fireState" : "fire",
+            "fireSound" : "fire",
+            "fireParticleBurst" : "muzzleFlash",
+
+            "winddownTime" : 3.5,
+            "winddownState" : ""
+          }
+        },
+        {
+          "name" : "action-fire",
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 85,
+            "minimumRange" : 0,
+            "windupState" : "",
+            "windupTime" : 1,
+
+            "projectileCount" : 30,
+            "fireDelay" : 0.00,
+            "projectileInterval" : 0.1,
+            "inaccuracy" : 0.1,
+
+            "projectileType" : "gic_redtracerbullet",
+            "fireOffset" : [2.2, 2.4],
+            "aimAtTarget" : true,
+
+            "projectileParameters" : {
+              "power" : 8
+            },
+			
+            "fireState" : "",
+            "fireSound" : "fire_mg",
+            "fireParticleBurst" : "muzzleFlash_mg",
+
+            "winddownTime" : 2,
+            "winddownState" : ""
+          }
+        }
+      ],
+	 
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : false
+          }
+        }
+      ],
+
+      "wanderActions" : [
+        {
+          "name" : "wander-walk",
+          "cooldown" : 2.0,
+          "parameters" : {
+            "wanderTime" : [0, 0]
+          }
+        }
+      ]
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-6, -4.1], [6, -4.1], [6, 5], [-6, 5] ],
+      "damage" : 50,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "slash",
+      "knockback" : 60,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-10, -10, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-6, -4.1], [6, -4.1], [6, 2.7], [-6, 2.7],   [-1.3125, 0.10], [-0.8125, -0.40], [-1.3125, 0.75], [-0.8125, 1.25] ],
+
+      "mass" : 30.0,
+      "walkSpeed" : 60,
+      "runSpeed" : 85,
+
+      "airFriction" : 20,
+
+      "airJumpProfile" : {
+        "jumpSpeed" : 10.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.0
+      }
+    },
+
+    "bodyMaterialKind" : "robotic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "robotic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/monster_primary.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+        "knockbackStunTime" : {
+          "baseValue" : 0.0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 99999
+        },
+        "maxHealth" : {
+          "baseValue" : 1750
+        },
+        "protection" : {
+          "baseValue" : 9999999.0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "grit" : {
+          "baseValue" : 1.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.07
+        },
+        "fireResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.5
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.5
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.5
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        }
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false
+  }
+}

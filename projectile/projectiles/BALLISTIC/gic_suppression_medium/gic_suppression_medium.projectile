@@ -1,0 +1,22 @@
+{
+  "projectileName" : "gic_suppression_medium",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_suppression_medium.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 1,
+  "timeToLive" : 0.01,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_suppression_medium/gic_suppression_mediumknockback.config"
+    }
+  ],
+  "statusEffects" : [
+"gic_suppressed", "gic_suppressed_vulnerability"
+  ]
+}

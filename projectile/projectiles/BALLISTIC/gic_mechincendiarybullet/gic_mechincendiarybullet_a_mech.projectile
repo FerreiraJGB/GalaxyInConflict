@@ -1,0 +1,38 @@
+{
+  "projectileName" : "gic_mechincendiarybullet_a_mech",
+  "bounces" : 0,
+  "image" : "/projectiles/CORE_CODE/gic_null/gic_null.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/gun/gic_highfleet_shell_out_tiny_01.wav", "/sfx/gun/gic_highfleet_shell_out_tiny_02.wav", "/sfx/gun/gic_highfleet_shell_out_tiny_03.wav"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_grenadeexplosion/gic_grenadeexplosion_muzzle.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_mechincendiarybullet",
+	  "fuzzAngle" : 5,
+	  "directional" :true
+    }
+  ],
+  "power" : 40,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.0,
+  "physics" : "laser"
+}

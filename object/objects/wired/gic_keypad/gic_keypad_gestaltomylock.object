@@ -1,0 +1,37 @@
+{
+  "objectName" : "gic_keypad_gestaltomylock",
+"colonyTags" : ["electronic","wired"],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "A numeric security keypad that requires a specific combination.",
+  "shortdescription" : "Numeric Keypad",
+  "race" : "generic",
+
+  "inventoryIcon" : "gic_keypad_gestaltomylock.png",
+  "orientations" : [
+    {
+      "image" : "gic_keypad_gestaltomylock.png",
+      "imagePosition" : [-8, -8],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ],
+
+      "direction" : "right"
+    }
+  ],
+
+  "health" : 5,
+  "rooting" : true,
+
+  "outputNodes" : [ [0, 0] ],
+
+  "scripts" : ["/objects/wired/gic_keypad/gic_keypad.lua"],
+  "scriptDelta" : 30,
+
+  "interactData" : {
+    "baseConfig" : "/interface/scripted/gic_keypad_gestaltomy/gic_keypadgui_gestaltomy.config"
+  },
+
+  "combinationLength" : 6,
+  "combination" : "7925"
+}

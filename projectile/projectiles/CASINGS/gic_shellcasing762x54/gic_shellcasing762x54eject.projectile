@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_shellcasing762x54eject",
+  "image" : "icon.png",
+  "animationCycle" : 0.25,
+  "physics" : "laser",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "timeToLive" : 0.0,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_boltpullback.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shellcasing762x54",
+      "fuzzAngle" : 20,
+      "directional" : "true",
+      "angle" : 90
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

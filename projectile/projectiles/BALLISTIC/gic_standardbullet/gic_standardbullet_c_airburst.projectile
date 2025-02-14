@@ -1,0 +1,56 @@
+{
+  "projectileName" : "gic_standardbullet_c_airburst",
+  "image" : "gic_standardbullet_c_airburst.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 6,
+
+  "fullbright" : true,
+  "lightColor" : [126, 108, 28],
+  
+  "hydrophobic" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+	
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback_airburst.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    }
+	
+  ],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot"],
+  "speed" : 200,
+  
+  "knockback" : 0,
+  
+  "damagePoly" : [ [-11, 0], [-11, -11], [0, -42], [11, -11], [11, 0], [11, 11], [0, 42], [-11, 11]  ],
+  
+  "damageKind" : "ews_explosive",
+  "damageType" : "NoDamage"
+}

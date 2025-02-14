@@ -1,0 +1,138 @@
+{
+  "metadata" : {
+    "name" : "gic_abandonedskyscraper",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_abandonedskyscraper_entrance" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 18,
+    "extendSurfaceFreeSpace" : 200,
+    "protected" : false
+  },
+
+  "parts" : [
+  
+  
+
+  
+  
+
+	
+
+  //Central Section
+  
+    {
+      "name" : "gic_abandonedskyscraper_empty",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_abandonedskyscraper_empty" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedskyscraper_empty.json" ]
+    },
+	
+    {
+      "name" : "gic_abandonedskyscraper_blocked",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedskyscraper_blocked" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedskyscraper_blocked.json" ]
+    },	
+	
+    {
+      "name" : "gic_abandonedskyscraper_shattered",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedskyscraper_shattered" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedskyscraper_shattered.json" ]
+    },		
+	
+    {
+      "name" : "gic_abandonedskyscraper_suicide",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedskyscraper_suicide" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedskyscraper_suicide.json" ]
+    },		
+	
+    {
+      "name" : "gic_abandonedskyscraper_cafeteria",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedskyscraper_cafeteria" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedskyscraper_cafeteria.json" ]
+    },		
+	
+    {
+      "name" : "gic_abandonedskyscraper_apartments",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedskyscraper_apartments" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedskyscraper_apartments.json" ]
+    },
+	
+    {
+      "name" : "gic_abandonedskyscraper_collapseddouble",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedskyscraper_collapseddouble" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedskyscraper_collapseddouble.json" ]
+    },
+
+    {
+      "name" : "gic_abandonedskyscraper_offices",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedskyscraper_offices" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedskyscraper_offices.json" ]
+    },	
+
+
+
+    {
+      "name" : "gic_abandonedskyscraper_entrance",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedskyscraper_entrance.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_abandonedskyscraper_slopedtop",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedskyscraper_slopedtop.json" ] ],
+      "chance" : 0
+    }	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

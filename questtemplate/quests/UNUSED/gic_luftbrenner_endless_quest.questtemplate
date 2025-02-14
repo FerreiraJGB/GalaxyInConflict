@@ -1,0 +1,23 @@
+{
+  "id" : "gic_luftbrenner_endless_quest",
+  "title" : "^green;Luftbrenner (Endless) Gamemode Unlocked!",
+  "text" : "You have unlocked a minigame!",
+  "completionText" : "Luftbrenner (Endless) Gamemode unlocked! Take to the skies in Starburner's predecessor!",
+  "speaker" : "player",
+  "moneyRange" : [500, 1000],
+  "rewards" : [
+      [ [ "rewardbag" ] ]
+   ],
+  "canBeAbandoned" : false,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+		"portraits" : {
+		"default" : "player"
+		},
+	"associatedMission" : "gic_luftbrenner_endless",
+    "turnInDescription" : "Luftbrenner Unlocked!",
+    "requireTurnIn" : false
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "itemName" : "gic_hollowprotectorateknight_shield",
+  "fixedLevel" : true,
+  "price" : 600,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "^#D6DFFF;Balanced Shield^white;",
+  "description" : "''Don't you dare go hollow!''
+
+Once venerated defenders of the Protectorate and its ideals, their deific status was stripped and their existence scrubbed from the memories of the masses. Many Protectors cursed with immortality by their teleporters simply give up in the face of adversity. Without purpose or reason after countless deaths, they lose their sense of self. In a sense, they go ''hollow''.
+^orange;Hollow Knight: 1.0s PARRY WINDOW | 800HP STABILITY | 65% DEF^reset;",
+
+  "shortdescription" : "Hollow Protectorate Knight Shield",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_hollowprotectorateknight_shield_icon.png",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_hollowprotectorateknight_shield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/armor/gic_bloodborne_body-armor-6.wav" ],
+      "perfectBlock" : [
+ 	  "/sfx/block/gic_sekiro_meleedeflect1.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect2.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect3.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect4.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect5.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect6.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect7.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect8.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ], //shield_block_ice_perfect
+	  
+      "block" : [
+	  "/sfx/block/gic_sekiro_meleeblock1.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock2.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock3.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ],
+	  
+      "break" : [
+	  "/sfx/melee/gic_bloodborne_ShieldBreak00.wav"
+	  ],
+	  
+	  "shieldBash" : [ "/sfx/melee/gic_bloodborne_shieldpress.wav" ]
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_bucklershield.lua" ],
+
+  "minActiveTime" : 0.1,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 800,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.5,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 1.0,
+
+  "knockback" : 1, //15
+  
+  "damageBleedthroughEnabled" : true,
+  "damageBleedthroughAmount" : 0.35, //at 0.1, 10% of all damage received by the shield will bleed through and etc - unless the shield was broken on the hit.
+  //also note that as of the initial version, bleedthrough damage is dealt as "default"/physical damage; there is no way to pull the actual damage type received, as of my testing so far.  
+  
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -75,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

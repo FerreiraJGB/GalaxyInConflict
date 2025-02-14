@@ -1,0 +1,42 @@
+{
+  "objectName" : "gic_ied_hgmk121",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Common",
+
+  "category" : "wire",
+  "price" : 15,
+  "description" : "Drops a HGMK121 when triggered.",
+  "shortdescription" : "HGMK121 IED",
+  "race" : "generic",
+
+  "inventoryIcon" : "gic_ied_hgmk121_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_ied_hgmk121.png",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+
+
+  ],
+
+  "animation" : "/objects/noisy/noisy.animation",
+
+  "inputNodes" : [ [0, 0] ],
+
+  "scripts" : [
+    "/objects/scripts/wiredmine.lua"
+  ],
+  "scriptDelta" : 5,
+
+  "triggerOnBreak" : false,
+
+  "explosionProjectile" : "gic_hgmk121_grenade",
+  "explosionOffset" : [0, 0],
+
+  "triggerSounds" : [ "/sfx/objects/hiddenswitch1.ogg" ],
+  "detonationTime" : 1.0
+}

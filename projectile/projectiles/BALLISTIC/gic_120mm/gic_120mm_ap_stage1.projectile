@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_120mm_ap_stage1",
+  "bounces" : 0,
+  "image" : "gic_120mm_ap_stage1.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_tankmuzzle/gic_tankmuzzleknockback.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_120mm_ap_stage2",
+      "inheritDamageFactor" : 1,
+	  "directional" : true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 0,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.01,
+  "physics" : "laser"
+}

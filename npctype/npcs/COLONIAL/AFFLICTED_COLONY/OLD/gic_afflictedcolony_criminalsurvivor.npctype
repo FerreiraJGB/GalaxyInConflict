@@ -1,0 +1,116 @@
+{
+  "type" : "gic_afflictedcolony_criminalsurvivor",
+  "baseType" : "gic_base",
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ "gic_undercolonyarmorymagsspawnTreasure" ],
+
+  "scriptConfig" : {
+    "behavior" : "gic_villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 1,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "patrol", { "timeRange" : [0.6,0.2]}],
+        [5.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+      "converse" : "/dialog/space_colony/gic_afflictedcolony_converse.config:converse",
+	  
+      "greeting" : "/dialog/space_colony/gic_afflictedcolony_converse.config:converse",
+
+      "attack" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:cantReach",
+
+      "hail" : "/dialog/space_colony/gic_afflictedcolony_survivor_hail.config:hail",
+
+      "accuse" : "/dialog/thief.config:accuse"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  
+//Defender
+          {
+            "head" : [ { "name" : "gic_colonialresistancehead", "parameters" : { "colorIndex" : [4] } }, { "name" : "gic_jingasahead", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_colonialresistancechest", "parameters" : { "colorIndex" : [1] }  }, { "name" : "humantier2chest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [3] } } ],
+            "back" : [ { "name" : "gic_scavengerpackback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : ["gic_scumbagpistol_onehanded", "gic_vich515_onehanded"],
+            "alt" : [
+              "gic_securityriotshield", "gic_bandit_cleaver_npc"
+            ]
+          },
+
+
+		  
+		  
+//Gunner	  
+          {
+            "head" : [ { "name" : "gic_bandithood_scarf", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_militiarigchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [1] } } ],
+            "back" : [ { "name" : "gic_scavengerpackback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [ "gic_bastardrifle", "gic_polisduplet", "gic_metroshambler"]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      }
+	  
+	  
+	  
+    }
+  }
+  
+}

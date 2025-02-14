@@ -1,0 +1,37 @@
+{
+  "id" : "gic_tylian_planetincentive_4_wildlandsquest",
+  "title" : "^#CC7970;Tylian: Wildlands",
+  "text" : "Alright, you're doing good. I've got a new list for you. More about scavenging than anything. I'd like you to grab a very specific gun from a Wildlands. We're looking at securing these planets for operations in the future.",
+
+  "prerequisites" : [ "gic_tylian_planetincentive_3_crusadequest" ],
+  "canBeAbandoned" : false,
+  
+  "completionText" : "The documents show a calming of the planetary wildlife which might make these more suitable for colonization in the future. That's... good news. Thank you once again, lad.",
+  
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ], [ "gic_tylian_fleetingthoughts_1-codex", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questGiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_martinihenryconversion",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset; within a ^orange;Wildlands Ranger Outpost^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

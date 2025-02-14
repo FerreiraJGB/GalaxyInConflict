@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_peacemakersboots",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Leg Trinket^reset;",
+  "inventoryIcon" : "gic_peacemakersboots.png",
+  "maxStack" : 1,    
+  "description" : 
+  
+"''We've been left a dog-eat-dog world, kitten. Sooner you accept that, the longer you'll live.'' 
+
+^yellow;Does not stack with the Peacemaker's Ring, and vice versa.^reset;
+^green;Regain HP when shot by lethal bullets. Effect functions even when blocking or parrying.^reset;",
+
+
+
+  "shortdescription" : "Peacemaker's Boots",
+
+  "augment" : {
+    "type" : "gic_basiclegs",
+    "name" : "gic_peacemakersboots",
+    "displayName" : "Peacemaker's Boots",
+    "displayIcon" : "/items/augments/advanced/legs/gic_peacemakersboots.png",
+    "effects" : [ "gic_bulletshot_bonusheal_primer" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_legwear_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

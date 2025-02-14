@@ -1,0 +1,27 @@
+{
+  "projectileName" : "gic_summon_ultrasheriff_turretpod_ironsentinel",
+  "physics" : "grenade",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_summon_ultrasheriff_turretpod.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 1,
+  "timeToLive" : 10,
+  "onlyHitTerrain" : true,
+  "power" : 0,
+  "speed" : 40,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+  
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_ultrasheriff_twigun_ironsentinel",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : { "damageTeamType" : "friendly", "damageTeam" : 1 }
+    }
+
+  ]
+}

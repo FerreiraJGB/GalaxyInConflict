@@ -1,0 +1,35 @@
+{
+  "projectileName" : "gic_spiritsummon_scatterspearsicario",
+  "image" : "gic_spiritsummon_scatterspearsicario.png",
+  "animationCycle" : 0.25,
+  "physics" : "gic_grenadenormal",
+  "onlyHitTerrain" : true,
+  "frameNumber" : 1,
+  "bounces" : -1,
+  "timeToLive" : 2,
+  "pointLight" : false,
+  "speed" : 50,
+  "damagePoly" : [ [-2, 0], [-2, -2], [0, -2], [2, -2], [2, 0], [2, 2], [0, 2], [-2, 2] ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_spiritsummon_scatterspearsicario_appear",
+      "angle" : 180,
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.0,
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_bloodborne_bell_host_oneshot_new.wav"
+      ]
+    }
+  ],
+  "statusEffects" : [ ],
+  "power" : 5.0,
+  "emitters" : [ "rocketsmoke" ],
+  "damageKind" : "ews_smallarms"
+}
+
+

@@ -1,0 +1,209 @@
+{
+  "projectileName" : "gic_ammoresupply_droppod_stage3_altrocket",
+  "physics" : "gic_ammoresupply_pod_altrocket",
+  
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_ammoresupply_droppod_stage4_altrocket",
+      "inheritSpeedFactor" : 1,
+      "inheritDamageFactor" : 1
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_ammoresupply_droppod_cover",
+	  "offset" : [0, 1],
+	  "fuzzAngle" : 5,
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "sound",
+      "rangeMultiplier" : 4.0,
+      "options" : [
+        "/sfx/vehicles/gic_highfleet_engine_rocket_down_01.ogg"
+      ]
+    }
+  ],
+  
+  
+  "periodicActions" : [
+    {
+	  "time" : 0.025,
+	  "offset" : [0.0, -2.0],
+      "action" : "projectile",
+      "type" : "gic_realisticgasflame",
+      "inheritDamageFactor" : 0,
+	  "fuzzAngle" : 5
+    }  
+  ],
+  
+  
+  "actionOnReap" : [
+
+
+
+	    {
+      "action" : "item",
+      "name" : "gic_rpk74m",
+      "count" : 1
+    },
+    {
+      "action" : "item",
+      "name" : "gic_ak74m",
+      "count" : 1
+    },	
+    {
+      "action" : "item",
+      "name" : "gic_aks74u",
+      "count" : 1
+    },
+	
+    {
+      "action" : "item",
+      "name" : "gic_stanag_usm_545x39mm_mag",
+      "count" : 3
+    },
+    {
+      "action" : "item",
+      "name" : "gic_stanag_usm_545x39mm_mag",
+      "count" : 3
+    },	
+    {
+      "action" : "item",
+      "name" : "gic_stanag_usm_545x39mm_mag",
+      "count" : 3
+    },
+    {
+      "action" : "item",
+      "name" : "gic_stanag_usm_545x39mm_mag",
+      "count" : 3
+    },	
+    {
+      "action" : "item",
+      "name" : "gic_stanag_usm_545x39mm_mag",
+      "count" : 3
+    },
+    {
+      "action" : "item",
+      "name" : "gic_stanag_usm_545x39mm_mag",
+      "count" : 3
+    },	
+    {
+      "action" : "item",
+      "name" : "gic_stanag_usm_545x39mm_mag",
+      "count" : 3
+    },
+    {
+      "action" : "item",
+      "name" : "gic_stanag_usm_545x39mm_mag",
+      "count" : 3
+    },	
+	
+	
+	
+	
+    {
+      "action" : "item",
+      "name" : "gic_vich919",
+      "count" : 1
+    },
+    {
+      "action" : "item",
+      "name" : "gic_vich_9x19mm_mag",
+      "count" : 5
+    },
+    {
+      "action" : "item",
+      "name" : "gic_vich_9x19mm_mag",
+      "count" : 5
+    },
+    {
+      "action" : "item",
+      "name" : "gic_vich_9x19mm_mag",
+      "count" : 5
+    },	
+	
+	
+	
+	
+    {
+      "action" : "item",
+      "name" : "gic_lf2_grenade",
+      "count" : 6
+    },		
+    {
+      "action" : "item",
+      "name" : "gic_lf2_grenade",
+      "count" : 6
+    },	
+    {
+      "action" : "item",
+      "name" : "gic_lf2_bundle_grenade",
+      "count" : 1
+    },
+    {
+      "action" : "item",
+      "name" : "gic_lf2_bundle_grenade",
+      "count" : 1
+    },
+    {
+      "action" : "item",
+      "name" : "gic_rpg40",
+      "count" : 1
+    },
+    {
+      "action" : "item",
+      "name" : "gic_rpg40",
+      "count" : 1
+    },	
+	
+    {
+      "action" : "item",
+      "name" : "gic_military_bandage",
+      "count" : 20
+    },		
+    {
+      "action" : "item",
+      "name" : "gic_military_bandage",
+      "count" : 20
+    },	
+	
+	
+	
+    {
+      "action" : "item",
+      "name" : "gic_kmp2_medkit",
+      "count" : 10
+    },
+    {
+      "action" : "item",
+      "name" : "gic_wolffak_medkit",
+      "count" : 4
+    }
+
+	
+	
+  ],
+  
+
+  
+  
+
+
+  "image" : "gic_ammoresupply_droppod_stage3_altrocket.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+  "persistentAudio" : "/sfx/vehicles/gic_highfleet_engine_rocket_01.wav",
+  "damageTeam" : { "type" : "indiscriminate" },  
+  "damageKindImage" : "icon.png",
+  "power" : 200,
+  "speed" : 100,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 5,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

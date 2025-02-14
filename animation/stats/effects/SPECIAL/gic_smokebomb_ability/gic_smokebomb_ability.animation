@@ -1,0 +1,100 @@
+{
+  "particleEmitters" : {
+	"smokebomb" : {
+		"enabled" : true,
+		"emissionRate" : 150.0,
+		"particles" : [
+			{
+			"particle" : {
+				"destructionAction": "fade",
+				"destructionTime": 0.5,
+				"fullbright": true,
+				"image": "/animations/elementalaura/fireaura/fireaura.png:3?fade=000000=0.75",
+				"layer": "front",
+				"timeToLive": 1.75,
+				"type": "textured",
+				"variance": {
+					"initialVelocity": [1,1],
+					"position": [2.5,2.5],
+					"rotation": 180
+				}
+			}
+			},
+			{
+			"particle" : {
+				"destructionAction": "fade",
+				"destructionTime": 0.5,
+				"fullbright": true,
+				"image": "/animations/elementalaura/fireaura/fireaura.png:3?fade=000000=0.75",
+				"layer": "front",
+				"timeToLive": 1.75,
+				"type": "textured",
+				"variance": {
+					"initialVelocity": [1,1],
+					"position": [2.5,2.5],
+					"rotation": 180
+				}
+			}
+			}
+		]
+	},
+	"shadow" : {
+		"emissionRate" : 50,
+		"particles" : [
+		{
+			"particle" : {
+				"destructionAction": "fade",
+				"destructionTime": 0.5,
+				"fullbright": true,
+				"image": "/animations/elementalaura/fireaura/fireaura.png:3?scalenearest=0.5",
+				"layer": "front",
+				"timeToLive": 1.5,
+				"type": "textured",
+				"variance": {
+					"initialVelocity": [0.5,0.5],
+					"position": [1,1],
+					"rotation": 180
+				}
+			}
+		}
+		]
+	},
+	"smoke" : {
+      "enabled" : true,
+      "emissionRate" : 50.0,
+      "particles" : [
+		//{
+          //"particle" : {
+            //"type" : "ember",
+            //"size" : 1.0,
+            //"color" : [150, 0, 0, 255],
+            //"fade" : 1.0,
+            //"destructionAction" : "shrink",
+            //"destructionTime" : 0.8,
+            //"position" : [0.0, 0.0],
+            //"offsetRegion" : [0, 0, 0, 0],
+            //"initialVelocity" : [0, 0.0],
+            //"finalVelocity" : [0.0, 0.0],
+            //"timeToLive" : 2.0,
+			//"variance": {
+				//"initialVelocity": [0.5,0.5]
+			//}
+			//}
+        //},
+		{
+			"particle" : "shadowsmoke"
+		}
+      ]
+    }
+  },
+  "lights" : {
+    "glow" : {
+      "active" : false,
+      "position" : [0, 0],
+      "color" : [191, 40, 2]
+    }
+  },
+  "sounds" : {
+    //"burn" : [ "/sfx/projectiles/flame_burning.ogg" ]
+  }
+}

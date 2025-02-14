@@ -1,0 +1,39 @@
+{
+  "projectileName" : "gic_erchius_shard",
+  "physics" : "laser",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    }
+  ],
+  
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    }
+  ],
+  
+"periodicActions" : [
+
+],
+  "image" : "gic_erchius_shard.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_melee",
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "power" : 5.0,
+  "fullbright" : true,
+  "knockback" : 60,
+  "knockbackDirectional" : true,
+  "speed" : 100
+}

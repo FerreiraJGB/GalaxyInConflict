@@ -1,0 +1,93 @@
+{
+  "objectName" : "gic_basicsecuritycamera",
+  "colonyTags" : ["wired","combat"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+  "price" : 150,
+
+  "slotCount" : 0,
+  "uiConfig" : "/interface/turret/standingturret.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600,
+
+  "shortdescription" : "Basic Security Camera",
+  "subtitle" : "Basic Security Camera",
+  "race" : "generic",
+  "category" : "wire",
+
+  "breakDropOptions" : [
+    [ [ "gic_basicsecuritycamera", 1, { } ] ]
+  ],
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_basicsecuritycamerastand.png:top",
+
+      "imagePosition" : [-8, -8],
+      "imageLayers" : [ { "image" : "gic_basicsecuritycamerastand.png:top" }, { "image" : "gic_basicsecuritycameragun.png:dead", "position": [0, 0] } ],
+      "spaces" : [
+        [0, 0]
+      ],
+      "anchors" : [ "background" ],
+
+      "animationParts" : {
+        "gun" : "gic_basicsecuritycameragun.png",
+        "stand" : "gic_basicsecuritycamerastand.png:top",
+        "energy" : ""
+      },
+	  "muzzleOffset" : [0.0, 0.0],
+      "animationPosition" : [8, 8],
+      "animationCenterLine" : 0,
+
+      "baseOffset" : [0, -0],
+      "energyBarOffset" : [0.0, 0.0],
+      "verticalScaling" : false
+    }
+  ],
+
+  "objectWidth" : 0,
+
+  "animation" : "gic_basicsecuritycamera.animation",
+
+  "scripts" : [
+    "/objects/wired/gic_basicsecuritycamera/gic_basicsecuritycamera.lua",
+    "/scripts/stateMachine.lua",
+    "/scripts/util.lua",
+    "/scripts/vec2.lua"
+  ],
+
+  "damageTeam" : {
+    "type" : "Environment"
+  },
+
+  "scriptDelta" : 5,
+
+  "outputNodes" : [ [0, 0] ],
+  "inputNodes" : [ [0, 1] ],
+
+  "rotationSpeed" : 15,
+
+  "tipOffset" : [0, 0],
+  "offAngle" : -30,
+
+  "scanInterval" : 6.5,
+  "scanAngle" : 30,
+  "scanRange" : 50,
+
+  "targetQueryRange" : 35,
+  "targetMinRange" : 2.5,
+  "targetMaxRange" : 50,
+  "targetAngleRange" : 80,
+  "targetScanAngle" : 40,
+
+  "maxFireAngle" : 80,
+  "energyUsage" : 1,
+  "power" : 1,
+  "fireTime" : 9999.0,
+
+  "maxEnergy" : 500,
+  "energyRegen" : 100,
+  "energyRegenBlock" : 1.0
+}

@@ -1,0 +1,149 @@
+{
+  "projectileName" : "gic_180mm_flak_ultrasheriff_stage2",
+  "image" : "gic_180mm_flak_ultrasheriff_stage2.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "fullbright" : true,
+  "physics" : "gic_cannonfall",
+  "renderLayer" : "Monster+10",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback_flak.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_blackfog/2.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_blackfog/2.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_blackfog/2.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 5.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+	
+	    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.003125,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.003125,
+      "fuzzAngle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 180,
+      "inheritDamageFactor" : 0.003125,
+      "directional" : "true"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 45,
+      "inheritDamageFactor" : 0.003125,
+      "directional" : "true"
+    }
+	
+  ],
+  
+"periodicActions" : [
+],
+  "persistentAudio" : "/sfx/gic_mowas2_trace_22.ogg",  
+  "power" : 2000,
+  "speed" : 50,
+  
+  "damagePoly" : [ [-128, 0], [-22, -22], [0, -128], [22, -22], [22, 0], [22, 22], [0, 128], [-22, 22]  ],
+  
+  "damageKind" : "NoDamage",
+  "damageType" : "ignoresdef"
+}

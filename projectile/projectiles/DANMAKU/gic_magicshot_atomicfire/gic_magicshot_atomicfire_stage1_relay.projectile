@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_magicshot_atomicfire_stage1_relay",
+  "image" : "gic_magicshot_atomicfire_stage1.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.26,
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "frameNumber" : 5,
+  "damageKind" : "ews_heavyarmsthermal",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.25,
+  "emitters" : [ "fireplasma" ],
+  "damagePoly" : [ [-32, 0], [-22, -22], [0, -32], [22, -22], [32, 0], [22, 22], [0, 32], [-22, 22]  ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 200 //180
+    }
+  ],
+  "statusEffects" : [ ],
+  "power" : 50.0,
+  "speed" : 120,
+  "acceleration" : 0,
+  "knockback" : 10
+}

@@ -1,0 +1,67 @@
+{
+  "itemName" : "gic_ricochetbarrel",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Barrel Attachment^white;",
+  "inventoryIcon" : "gic_ricochetbarrel_icon.png",
+  
+  
+  "description" : "''There was only so much the Grand Hakutaku could do against the unending tides of the Abyss. For eons she had consumed history to force others to forget. Just this once, she would forget her own.''
+ 
+^orange;Adds 3 bounces to the gun's projectile, allowing it to ricochet.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Ricochet Barrel",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_ricochetbarrel", //name of attachment
+	
+	"attachmentTag" : [ "gic_ricochetbarrel", "gic_barrel" ],     //if target item has one or more of these tags, then this attachment will be applicable to the item
+	
+	"attachmentId" : "gic_ricochetbarrel", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_ricochetbarrel.png", //determines what image is displayed on the resulting gun
+	
+	"specialAttachmentConfig" : {
+		
+		"projectileConfig" : {
+  "periodicActions" : [  
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_usoa50_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "fade", //shrink
+        "fullbright" : false
+      }
+    }
+  ], 
+  "bounces" : 3
+		}
+		
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1.0,1.0,1.0], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

@@ -1,0 +1,551 @@
+{
+  "objectName" : "gic_blackmarket_wartorn",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "description" : "The fair exchange goods, in a truly free market.",
+  "shortdescription" : "^orange;Black Market: Wartorn [GIC]^white;",
+  "race" : "generic",
+  
+  "uniqueId" : "gic_blackmarket_wartorn",  
+  "turnInQuests" : [
+    "gic_blackmarket_wartorn_mechdealerQuest"
+  ],  
+  
+  "offeredQuests" : [
+    "gic_blackmarket_wartorn_mechdealerQuest"
+  ],
+  
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_blackmarket_wartorn.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" :
+		
+		"  Black Market: Wartorn
+
+
+
+
+
+
+
+",				
+		
+		
+        "subtitle" : 
+		
+" ''We must march until there is a declaration of peace and reconciliation.''
+ A black market located within a supposedly neutral territory between the factions of this Wartorn planet.
+ Offers typical bartering services like any good post-apocalyptic merchant.
+ They are the last vestiges of economic trade before total societal collapse.
+
+ Imports: Medical Cargo | Munitions Cargo | Consumer Goods
+
+ Services: Weapons | Ammo | Supplies
+",
+		
+        "icon" : {
+          "file" : "/interface/crafting/gic_blackmarket_wartorn.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+	
+    //Buy denotes fair trade.
+
+	
+	
+
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":8,
+				"name":"gic_opium_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_m406_grenadelauncher"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_weapons" ]
+		},	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":8,
+				"name":"gic_opium_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_gp168_grenadelauncher"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_weapons" ]
+		},		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":4,
+				"name":"gic_fentanyl_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_rg8"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_weapons" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":5,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_goshawk_artillerycoordinator_grenade"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_weapons" ]
+		},
+						
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_skydancer_flyingbomb_artillerycoordinator_grenade"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_weapons" ]
+		},		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":4,
+				"name":"gic_opium_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_usgp8_combatstimulant"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_supplies" ]
+		},		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_opium_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":5,
+				"name":"gic_military_bandage"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_supplies" ]
+		},
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_opium_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":2,
+				"name":"gic_kmp2_medkit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_supplies" ]
+		},				
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_breadseedpoppy_plant_cut"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_supplies" ]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		//Sell denotes receiving currency items, rather than barter.		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+		
+		
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_fentanyl_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_mk483smaw_heaa"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_ammo" ]
+		},				
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_fentanyl_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_mk483smaw_hedp"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_ammo" ]
+		},				
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_opium_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_garand_he_riflegrenade"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_ammo" ]
+		},				
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":12,
+				"name":"gic_opium_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_rg8_heat_rocket"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_ammo" ]
+		},			
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":4,
+				"name":"gic_opium_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":20,
+				"name":"gic_762x51mm_bullet"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_ammo" ]
+		},			
+			
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":4,
+				"name":"gic_opium_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_40x46mm_lv_he_grenade"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_ammo" ]
+		},			
+				
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":6,
+				"name":"gic_opium_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_stanag_koloniya_770x56mm_mag_smart"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_ammo" ]
+		},		
+			
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2,
+				"name":"gic_morphine_pack"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_cargo" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_waterfilter"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":35,
+				"name":"gic_physicalmicrocredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_cargo" ]
+		},
+
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_soyuzcigarettes"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_cargo" ]
+		},	
+				
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_filteredwater"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":15,
+				"name":"gic_physicalmicrocredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_cargo" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bottledwater"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":10,
+				"name":"gic_physicalmicrocredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_cargo" ]
+		},
+				
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_medicalcargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":15, //10
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_cargo" ]
+		},			
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_munitionscargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":5, //10
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_cargo" ]
+		},		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_consumergoods"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":4, //8
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_blackmarket_wartorn", "gic_blackmarket_cargo" ]
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_blackmarket_wartorn" ]
+  },
+  "printable" : false,
+  "price" : 300,
+  
+  "inventoryIcon" : "gic_blackmarket_wartorn.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_blackmarket_wartorn.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+
+}

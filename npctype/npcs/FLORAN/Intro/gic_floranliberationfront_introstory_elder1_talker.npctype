@@ -1,0 +1,122 @@
+{
+  "type" : "gic_floranliberationfront_introstory_elder1_talker",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+
+  "identity" : {
+    "gender" : "male"
+  },
+  
+  "persistent" : true,
+
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+    "behavior" : "speaker",
+
+    "behaviorConfig" : {
+      "alwaysRun" : false,
+      "wanderWaitTime" : [6.0, 10.0],
+      "wanderTime" : [0.0, 0.0],
+      "wanderDistance" : 0,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ]
+    },
+
+	
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+			"I've been trying to tell them that we need more men trained in metalworking.",
+			"What good are the firearms without the ammunition to produce them?",
+			"We're already at war with some of the nearby tribes.",
+			"This is getting worse now that the Protectorate have decided to show up.",
+			"Can you believe it? The Protectorate at our doorstep.",
+			"I wouldn't have believed it if it wasn't them putting our men under house arrest.",
+			"But of course, the others want more men simply firing more bullets.",
+			"No sense in the others I say. No good for conquest.",
+			"-and the complaints about rice! We CAN eat rice, but they whinge all the time about it.",
+			"There's only so much cattle out there. The time of the warrior is over, I say!",
+			"Well, I guess now isn't the time to debate warriorhood. We have our home to take care of.",
+			"So go kick the Protectorate out of our village. Your ancestors watch over you.",
+			"Go! Spill some blood!",
+			"Don't blame me for stealing your gun!",
+			"The others didn't trust you. Thought you might try to kill them!",
+			"Get outta here, go on. Ta ta!",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"[Dialogue repeat]"
+          ]
+        }
+      },
+      "speak" : {
+        "default" : {
+          "default" : [
+            "Mind if we chat for a bit?"
+          ]
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "gic_colonialsurvivorhead", "parameters" : { "colorIndex" : [4] } }
+            ],
+            "chest" : [
+              { "name" : "gic_colonialsurvivorchest", "parameters" : { "colorIndex" : [4] } }
+            ],
+            "legs" : [
+              { "name" : "gic_colonialsurvivorlegs", "parameters" : { "colorIndex" : [4] } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

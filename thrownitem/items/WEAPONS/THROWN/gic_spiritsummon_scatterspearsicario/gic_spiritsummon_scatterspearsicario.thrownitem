@@ -1,0 +1,34 @@
+{
+  "itemName" : "gic_spiritsummon_scatterspearsicario",
+  "price" : 100,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_spiritsummon_scatterspearsicario.png",
+  "image" : "gic_spiritsummon_scatterspearsicario.png",
+  "shortdescription" : "Spirit Summon - Scatter-Spear Sicario",
+  "description" : "A spirit summon beckons its undying soul, shackled to the mortal realm.
+  
+^yellow;Throw at a location to summon a Scatter-Spear Sicario to fight for you. Does not follow you. Best used against bosses.
+^red;Despawns if chunk is unloaded.",
+  "tooltipKind" : "gic_largebase",
+  "ammoUsage" : 1,
+
+  "edgeTrigger" : true,
+  "windupTime" : 0.65,
+  "cooldown" : 0.15,
+  "elementalType" : "ews_psychic",
+  "projectileType" : "gic_spiritsummon_scatterspearsicario",
+  "projectileConfig" : {
+
+    "speed" : 41.5,
+    "power" : 0.5,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  }
+}

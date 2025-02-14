@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_armor_basichelmetkit",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CCD8B6;Helmet Equipment^reset;",
+  "inventoryIcon" : "gic_armor_basichelmetkit.png",
+  
+  "description" : 
+  
+"A basic helmet kit containing basic equipment to protect the basic soldier. Basically. It includes helmet padding, a basic visor, and some earplugs. Seems great on paper.
+
+^green;+5% SMALL-ARMS and MELEE Resistance.
+^green;Immunity to excessive gunfire noise.^reset;",
+
+  "shortdescription" : "Basic Helmet Kit",
+
+  "augment" : {
+    "type" : "gic_basichead",
+    "name" : "gic_armor_basichelmetkit",
+    "displayName" : "Basic Helmet Kit",
+    "displayIcon" : "/items/augments/basic/head/gic_armor_basichelmetkit.png",
+    "effects" : [ 
+	"gic_armor_basichelmetkit",
+{"stat" : "ews_smallarmsResistance", "amount" : 0.05},
+{"stat" : "gic_gunfirenoiseProtection", "amount" : 1.0},
+{"stat" : "ews_meleeResistance", "amount" : 0.05}	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_helmet_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

@@ -1,0 +1,91 @@
+{
+  "itemName" : "gic_azoyou_wand",
+  "price" : 5000,
+  "inventoryIcon" : "gic_azoyou_wand.png",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "wando",
+  "shortdescription" : "Azoyou 'Timeless' Wand.",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "wand",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : false,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_azoyou_wand.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ ]
+    }
+  },
+
+  "baseOffset" : [0.0, 2.0],
+  "muzzleOffset" : [0.2, 1.0],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.009,
+    "baseDps" : 800,
+    "energyUsage" : 108,
+    "inaccuracy" : 2,
+
+    "projectileCount" : 2,
+    "fireType" : "auto",
+
+    "projectileType" : [
+	"gic_magicshot_bullethell_touhou", "gic_magicshot_bullethell_touhou", "gic_magicshot_bullethell_touhou",
+	"gic_magicshot_knife_touhou_stage1", 	"gic_magicshot_knife_touhou_stage1", "gic_magicshot_knife_touhou_stage1",
+	"gic_magicshot_iceeruption_sweeper_stage1",
+	"gic_magicshot_iceeruption_stage1"
+	],
+	
+    "projectileParameters" : {
+      "knockback" : 25
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 20,
+        "weaponRotation" : 20,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 20,
+        "weaponRotation" : 20,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.08,
+        "armRotation" : 20,
+        "weaponRotation" : 20,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

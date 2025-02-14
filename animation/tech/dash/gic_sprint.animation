@@ -1,0 +1,36 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "dashing" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+          "on" : {
+              "properties" : {
+//                "persistentSound" : "/sfx/tech/tech_sprint_loop2.ogg",
+//                "immediateSound" : "/sfx/tech/gic_bloodborne_movement2.wav"
+              }
+          }
+        }
+      }
+    }
+  },
+
+  "particleEmitters" : {
+    "dashParticles" : {
+      "emissionRate" : 20.0,
+      "particles" : [
+        {
+          "particle" : "gic_sprint",
+          "flip" : true,
+          "offset" : [0, 0.0]
+        },
+        {
+          "particle" : "gic_sprint",
+          "flip" : true,
+          "offset" : [0, -0.75]
+        }
+      ]
+    }
+  }
+}

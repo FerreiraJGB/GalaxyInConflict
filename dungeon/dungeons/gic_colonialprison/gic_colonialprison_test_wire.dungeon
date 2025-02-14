@@ -1,0 +1,49 @@
+{
+  "metadata" : {
+    "name" : "gic_colonialprison_test_wire",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_colonialprison_exitright_test" ],
+    //"gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 18,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+    {
+      "name" : "gic_colonialprison_smallcell1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_colonialprison_smallcell1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_colonialprison_smallcell1.json" ],
+      "chance" : 1
+    },
+	
+  
+
+    {
+      "name" : "gic_colonialprison_exitleft_test",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_colonialprison_exitleft_test.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_colonialprison_exitright_test",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_colonialprison_exitright_test.json" ] ],
+      "chance" : 0
+    }
+  ]
+}

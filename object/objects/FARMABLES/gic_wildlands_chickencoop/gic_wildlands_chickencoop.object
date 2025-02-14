@@ -1,0 +1,67 @@
+{
+  "objectName" : "gic_wildlands_chickencoop",
+  "colonyTags" : ["outdoor","light"],
+  "printable" : false,
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 110,
+  "tooltipKind" : "gic_largebase",
+  "description" : "Allows one to harvest European Eggs.",
+  "shortdescription" : "Euro Chicken Coop",
+  "race" : "generic",
+
+  "inventoryIcon" : "gic_wildlands_chickencoop_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_wildlands_chickencoop.png:1",
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-8, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "gic_wildlands_chickencoop.png:1",
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-8, 0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_wildlands_chickencoop.animation",
+  "animationParts" : {
+    "light" : "gic_wildlands_chickencoop_lit.png",
+    "post" : "gic_wildlands_chickencoop.png"
+  },
+
+  "scripts" : [ "/objects/scripts/gic_harvestable.lua" ],
+  "scriptDelta" : 60,
+
+  "activeTimeRange" : [0.01, 1.0],
+  "activeAnimationStates" : {
+    "light" : "off"
+  },
+  "inactiveAnimationStates" : {
+    "light" : "off"
+  },
+
+  "itemDropOffset" : [1.5, 2.5],
+  "stages" : [
+    {
+      "duration" : [600, 900]
+    },
+    {
+      "duration" : [600, 900]
+    },
+    {
+      "harvestPool" : "gic_chickencoopHarvest"
+    }
+  ]
+}

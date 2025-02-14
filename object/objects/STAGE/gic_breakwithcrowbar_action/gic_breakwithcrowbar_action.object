@@ -1,0 +1,46 @@
+{
+  "objectName" : "gic_breakwithcrowbar_action",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "[Perform a ''break'' action | Crowbar required in inventory to function]",
+  "shortdescription" : "Crowbar Action Prompt",
+  "race" : "human",
+  "category" : "wire",
+  "price" : 20,
+
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+	{
+      "dualImage" : "gic_breakwithcrowbar_action.png:<color>.off",
+      "imagePosition" : [0, 0],
+	  "fullbright" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+    }
+  ],
+
+  "scripts" : [
+    "/objects/gic_passswitch.lua"
+  ],
+  "scriptDelta" : 5,
+  "requiredItem" : "gic_crowbar_player",
+  "activeTime" : 9999999.0,
+
+  "animation" : "/objects/wired/switch/switchtoggle2lit.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/metalbarrel_break1.ogg" ],
+      "off" : [  ]
+    }
+  },
+
+  "animationParts" : {
+    "fg" : "gic_breakwithcrowbar_action.png"
+  },
+  "animationPosition" : [0, 0],
+
+  "outputNodes" : [ [1, 1] ]
+}

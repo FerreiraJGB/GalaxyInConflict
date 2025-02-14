@@ -1,0 +1,73 @@
+{
+  "name": "action-gic_chainactions",
+  "description": "",
+  "scripts": [
+    "/scripts/actions/builders.lua",
+    "/scripts/actions/animator.lua",
+    "/scripts/actions/time.lua"
+  ],
+  "parameters": {
+    "windupState": "chainwindup",
+    "winddownState": "chainwinddown",
+    "windupTime": 0.25,
+    "winddownTime": 0.25,
+    "chainActions": [],
+    "skillName": "",
+    "windupStateType": "body"
+  },
+  "root": {
+    "title": "sequence",
+    "type": "composite",
+    "name": "sequence",
+    "parameters": {},
+    "children": [
+      {
+        "title": "action-windup",
+        "type": "module",
+        "name": "action-windup",
+        "parameters": {
+          "windupState": {"value": "<windupState>"},
+          "windupStateType": {"value": "<windupStateType>"},
+          "skillName": {"value": "<skillName>"}
+        }
+      },
+      {
+        "title": "succeeder",
+        "type": "decorator",
+        "name": "succeeder",
+        "parameters": {},
+        "child": {
+          "title": "chainedActions",
+          "type": "action",
+          "name": "sequenceActions",
+          "parameters": {
+            "actions": {"key": "<chainActions>"}
+          }
+        }
+      },
+      {
+        "title": "succeeder",
+        "type": "decorator",
+        "name": "succeeder",
+        "parameters": {},
+        "child": {
+          "title": "setAnimationState",
+          "type": "action",
+          "name": "setAnimationState",
+          "parameters": {
+            "state": {"value": "<winddownState>"},
+            "type": {"value": "body"}
+          }
+        }
+      },
+      {
+        "title": "timer",
+        "type": "action",
+        "name": "timer",
+        "parameters": {
+          "time": {"value": "<winddownTime>"}
+        }
+      }
+    ]
+  }
+}

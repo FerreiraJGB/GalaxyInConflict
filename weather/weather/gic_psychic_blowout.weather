@@ -1,0 +1,60 @@
+{
+  "name" : "gic_psychic_blowout",
+
+  "particles" : [
+    {
+
+      "density" : 0.06,
+      "autoRotate" : true,
+
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/gic_blackfog/2.png",
+        "velocity" : [0, -15],
+        "approach" : [0, 0],
+        "angularVelocity" : 0,
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : true
+      }
+    },
+    {
+
+      "density" : 0.06,
+      "autoRotate" : true,
+
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/gic_blackfog/2.png",
+        "velocity" : [0, -15],
+        "approach" : [0, 0],
+        "angularVelocity" : 0,
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : true
+      }
+    },
+    {
+      "density" : 0.15,
+      "particle" : {
+        "type" : "ember",
+        "color" : [246, 250, 250],
+        "size" : 1.0,
+        "velocity" : [0, -14],
+        "timeToLive" : 20,
+        "collidesForeground" : true,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    }
+  ],
+
+  "statusEffects" : [ "gic_psychicbleeding_blowout" ],
+  
+  
+  "duration" : [60, 60],
+  "maximumWind" : 22.0,
+  "weatherNoises" : [ "/sfx/ambience/gic_STALKER_MISERY_blowout_ambience_84s.ogg" ]
+}

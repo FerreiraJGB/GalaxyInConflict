@@ -1,0 +1,189 @@
+{
+  "muteSfx" : true,
+  "muteMusic" : true,
+  "skippable" : true,
+//  "letterbox" : true,
+//  "backgroundColor" : [0, 0, 0, 200],
+//  "backgroundFadeTime" : 0.5,
+
+  "panels" : [
+  
+	
+	// --- --- ---
+	
+	
+  //Character Chatbox
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Character.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 33.5,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 34,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        }
+      ]
+    },
+	
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Textbox.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 33.5,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 34,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        }
+      ]
+    },
+
+
+// ----------------- dialogue: Initial Meeting
+    {
+      "drawables" : [
+      ],
+      "text" : "Still here? Good. We're going to pay a visit to Bradley's house and see if there's anything I can find there. It's still a pretty weak lead but it's all I have at the moment.
+
+I spent some time compiling his mail and whatever was stashed in that basement dates all the way back to a few months ago. He's been missing for a few months and not a single courier reported on his disappearance. It's pretty sketchy, all of this, and I should know.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 1.0,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 21,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 24,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 24.5,
+          "alpha" : 0.0
+        }
+      ]
+    },
+
+
+    {
+      "drawables" : [
+      ],
+      "text" : "Whenever you're ready to go, I'll take you there. Mind though, I'm not stopping for fast food on the way.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 24.5,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 28.5,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 33.5,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 34,
+          "alpha" : 0.0
+        }
+      ]
+    }
+
+
+  ],
+  "audio" : [
+  
+    {
+      "timecode" : 1,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    },
+	
+    {
+      "timecode" : 26.5,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    }	  
+	
+	
+  ]
+}

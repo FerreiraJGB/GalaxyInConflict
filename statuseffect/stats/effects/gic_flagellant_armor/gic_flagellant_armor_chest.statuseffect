@@ -1,0 +1,20 @@
+{
+  "name" : "gic_flagellant_armor_chest",
+  "blockingStat" : "gic_flagellant_armor_chestStatusImmunity",
+
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 10,
+    "triggerDamageThreshold" : 50
+  },
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "gic_flagellant_armor_chest.lua"
+  ],
+
+  "animationConfig" : "gic_flagellant_armor.animation",
+  
+  "label" : "Flagellant [CHEST] - When taking 50HP+ damage: Heal 50HP over 5s | 10s cooldown.",
+  "icon" : "/interface/statuses/gic_flagellant_armor_chest.png"
+}

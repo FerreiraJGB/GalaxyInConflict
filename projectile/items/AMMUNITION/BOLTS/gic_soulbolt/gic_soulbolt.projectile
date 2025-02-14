@@ -1,0 +1,58 @@
+{
+  "projectileName" : "gic_soulbolt",
+  "physics" : "laser",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_bluetracer_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+  
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_soulbolt_drop",
+      "fuzzAngle" : 0,
+      "inheritSpeedFactor" : 1.0,
+      "inheritDamageFactor" : 0.1,
+      "angleAdjust" : 0
+    }	
+  ],
+  "image" : "gic_soulbolt.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 1,
+  "pointLight" : false,
+  "fullbright" : true,
+  "power" : 5.0,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "speed" : 35
+}

@@ -1,0 +1,281 @@
+{
+  "type" : "gic_platform_m3_combatdrone",
+
+  "persistent" : true,
+
+  "categories" : [ "gic_platform_m3_combatdrone" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_platform_m3_combatdrone.animation",
+
+  "dropPools" : [ "gic_vehiclesalvagedroneTreasure" ],
+
+  "baseParameters" : {
+    "scripts" : [
+      "/monsters/monster.lua"
+    ],
+
+    "behavior" : "monster",
+
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 120,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 500,
+      "targetOutOfSightTime" : 50,
+
+      "hostileActions" : [
+        {
+          "name" : "action-fire",
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 120,
+            "minimumRange" : 0,
+            "windupState" : "",
+            "windupTime" : 20.0,
+
+            "projectileCount" : 2,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.1,
+            "inaccuracy" : 0.01,
+
+            "projectileType" : "gic_utilinrocket_stage2",
+			
+            "projectileParameters" : {
+              "speed" : 90,
+              "power" : 80
+            },
+			
+            "fireOffsets" : [[1.5, 1.5]],
+            "aimAtTarget" : false,
+            "aimDirection" : [3, 0.0],
+
+            "fireState" : "",
+            "fireSound" : "fire",
+            "fireParticleBurst" : "muzzleFlash",
+
+            "winddownTime" : 0.0,
+            "winddownState" : ""
+          }
+        }
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : false
+          }
+        }
+      ],
+
+      "concurrentHostileActions" : [
+        {
+          "name" : "action-fire",
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 120,
+            "minimumRange" : 0,
+            "windupState" : "",
+            "windupTime" : 1.0,
+
+            "projectileCount" : 50,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.1,
+            "inaccuracy" : 0.1,
+
+            "projectileType" : "gic_redtracerbullet",
+			
+            "projectileParameters" : {
+              "speed" : 160,
+              "power" : 10
+            },
+			
+            "fireOffsets" : [[2.4, 1.9]],
+            "aimAtTarget" : false,
+            "aimDirection" : [3, 0.0],
+
+            "fireState" : "",
+            "fireSound" : "fire_mg",
+            "fireParticleBurst" : "",
+
+            "winddownTime" : 4.0,
+            "winddownState" : ""
+          }
+        }
+      ],
+	  
+      "wanderActions" : [
+        {
+          "name" : "wander-walk",
+          "cooldown" : 10.0,
+          "parameters" : {
+            "wanderTime" : [10, 50]
+          }
+        }
+      ] 
+
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-1.5, -1.0], [1.5, -1.0], [1.5, 1.7], [-1.5, 1.7] ],
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "slash",
+      "knockback" : 75,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-10, -10, 12, 12],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-1.5, -1.0], [1.5, -1.0], [1.5, 1.7], [-1.5, 1.7],                      [-1.3125, 0.10], [-0.8125, -0.40], [-1.3125, 0.75], [-0.8125, 1.25] ],
+
+      "mass" : 4.0,
+      "walkSpeed" : 125,
+      "runSpeed" : 145,
+
+      "airFriction" : 15,
+
+      "airJumpProfile" : {
+        "jumpSpeed" : 10.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.0
+      }
+    },
+
+    "bodyMaterialKind" : "robotic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "robotic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/monster_primary.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+        "knockbackStunTime" : {
+          "baseValue" : 0.0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 99999
+        },
+        "maxHealth" : {
+          "baseValue" : 200
+        },
+        "protection" : {
+          "baseValue" : 1.0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 5.5
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.2
+        },
+        "fireResistance" : {
+          "baseValue" : 0.9
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.9
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.9
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.9
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "gic_suppressedProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }
+		
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false
+  }
+}

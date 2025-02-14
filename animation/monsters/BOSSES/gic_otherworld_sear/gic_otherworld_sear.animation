@@ -1,0 +1,743 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+		
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop",
+            "properties" : {
+			   "particleEmittersOff" : [ "magicfield" ]
+            }
+          },
+		  
+          "idlepassive" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+
+          "walk" : {
+            "frames" : 8,
+            "cycle" : 0.65,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.25
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "", "", "/sfx/npc/gic_bloodborne_foot-soil-r2.wav", "", "", "", "/sfx/npc/gic_bloodborne_foot-soil-r4.wav"]
+            }
+          },
+		  
+          "jump" : {
+            "frames" : 3,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "fall" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "land" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  
+          "aggro" : {
+            "frames" : 2,
+            "cycle" : 0.15,
+            "properties" : {
+             "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-01.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+			
+          },
+		  
+		  
+		  
+          "hop" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "hopfull",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/gleap_hop.ogg" ]
+            }
+          },
+          "hopfull" : {
+            "frames" : 3,
+            "cycle" : 0.325
+          },		  
+
+		  
+		  
+
+
+
+
+
+
+
+
+
+
+
+//general rule of thumb is 0.07 per frame, remember?
+
+
+
+
+
+		  
+          "crossbowbashwindup" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "properties" : {
+            }
+          },
+		  
+          "crossbowbash" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "crossbowbashwinddown",
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_remnantfromtheashes_buri_contaminator_swoosh4.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "crossbowbashwinddown" : {
+            "frames" : 1,
+            "cycle" : 0.5
+          },
+
+
+
+
+
+
+
+
+
+
+
+
+          "crouchedcrossbowwindup" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_kari_slinger_rifle-03.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "crouchedcrossbowfire" : {
+            "frames" : 1,
+            "cycle" : 0.5,
+            "mode" : "transition",
+            "transition" : "crossbowreload",
+            "properties" : {
+              "immediateSound" : "/sfx/bow/gic_bloodborne_bowgun-shot.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+	  
+		  
+		  
+		  
+
+          "firecrossbowwindup" : {
+            "frames" : 5,
+            "cycle" : 0.32,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_kari_slinger_rifle-05.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "firecrossbowfire" : {
+            "frames" : 1,
+            "cycle" : 0.75,
+            "mode" : "transition",
+            "transition" : "crossbowreload",
+            "properties" : {
+              "immediateSound" : "/sfx/bow/gic_bloodborne_bowgun-shot.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+	  
+		  		  
+	
+
+
+
+
+
+
+
+          "electriccrossbowwindup" : {
+            "frames" : 5,
+            "cycle" : 0.32,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_kari_slinger_rifle-04.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "electriccrossbowfire" : {
+            "frames" : 1,
+            "cycle" : 0.75,
+            "mode" : "transition",
+            "transition" : "crossbowreload",
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-08.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+
+
+
+
+
+		  
+          "dash" : {
+            "frames" : 1,
+            "cycle" : 1.0,
+            "mode" : "transition",
+            "transition" : "idle",
+            "properties" : {
+              "immediateSound" : "/sfx/armor/gic_bloodborne_body-lobe-rolling.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },		
+		  
+		 
+		 
+          "dash_alt" : {
+            "frames" : 1,
+            "cycle" : 1.0,
+            "mode" : "transition",
+            "transition" : "idle",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/gic_bloodborne_movement1.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },		
+
+		 
+
+		  
+          "crossbowreload" : {
+            "frames" : 5,
+            "cycle" : 1.0,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-06.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },		  
+		  
+		  
+		  
+		  
+
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+
+          "chargedknifewindup" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-03.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "chargedknifethrow" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-04.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+		  
+		  
+
+
+
+
+          "knifewindup" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-07.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "knifethrow" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-01.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+
+          "ballisticshield" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-06.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "ballisticshieldwinddown" : {
+            "frames" : 1,
+            "cycle" : 0.75,
+            "properties" : {
+            }
+          },		  
+		  	
+
+
+
+			
+		  
+		  
+		  
+		  
+		  
+          "block" : {
+            "frames" : 1,
+            "cycle" : 0.5,
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_remnantfromtheashes_buri_contaminator-01.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          }
+
+
+
+
+
+
+
+
+
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 5.6]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+			
+            "idlepassive" : {
+              "properties" : {
+                "image" : "<partImage>:idlepassive.<frame>"
+              }
+            },
+			
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "<partImage>:fall.<frame>"
+              }
+            },
+            "land" : {
+              "properties" : {
+                "image" : "<partImage>:land.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:aggro.<frame>"
+              }
+            },
+		
+			
+            "hop" : {
+              "properties" : {
+                "image" : "<partImage>:prep.<frame>"
+              }
+            },
+            "hopfull" : {
+              "properties" : {
+                "image" : "<partImage>:hop.<frame>"
+              }
+            },
+			
+
+            "dash" : {
+              "properties" : {
+                "image" : "<partImage>:dash.<frame>"
+              }
+            },
+	
+
+            "dash_alt" : {
+              "properties" : {
+                "image" : "<partImage>:dash.<frame>"
+              }
+            },	
+		
+
+            "crossbowbashwindup" : {
+              "properties" : {
+                "image" : "<partImage>:crossbowbashwindup.<frame>"
+              }
+            },
+            "crossbowbash" : {
+              "properties" : {
+                "image" : "<partImage>:crossbowbash.<frame>",
+              "damageArea" : [ [0.5, -4.0], [4.0, -4.0], [4.0, -7.0], [0.5, -7.0] ]
+              }
+            },
+            "crossbowbashwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:crossbowbashwinddown.<frame>"
+              }
+            },	
+			
+			
+			
+			
+			
+			
+			
+			
+            "crouchedcrossbowwindup" : {
+              "properties" : {
+                "image" : "<partImage>:crouchedcrossbowwindup.<frame>"
+              }
+            },
+            "crouchedcrossbowfire" : {
+              "properties" : {
+                "image" : "<partImage>:crouchedcrossbowfire.<frame>"
+              }
+            },
+
+			
+			
+            "firecrossbowwindup" : {
+              "properties" : {
+                "image" : "<partImage>:firecrossbowwindup.<frame>"
+              }
+            },
+            "firecrossbowfire" : {
+              "properties" : {
+                "image" : "<partImage>:firecrossbowfire.<frame>"
+              }
+            },
+
+
+            "electriccrossbowwindup" : {
+              "properties" : {
+                "image" : "<partImage>:electriccrossbowwindup.<frame>"
+              }
+            },
+            "electriccrossbowfire" : {
+              "properties" : {
+                "image" : "<partImage>:electriccrossbowfire.<frame>"
+              }
+            },			
+			
+			
+			
+			
+			
+			
+            "chargedknifewindup" : {
+              "properties" : {
+                "image" : "<partImage>:chargedknifewindup.<frame>"
+              }
+            },
+            "chargedknifethrow" : {
+              "properties" : {
+                "image" : "<partImage>:chargedknifethrow.<frame>"
+              }
+            },			
+			
+
+
+
+
+
+            "knifewindup" : {
+              "properties" : {
+                "image" : "<partImage>:knifewindup.<frame>"
+              }
+            },
+            "knifethrow" : {
+              "properties" : {
+                "image" : "<partImage>:knifethrow.<frame>"
+              }
+            },			
+						
+			
+			
+
+            "ballisticshield" : {
+              "properties" : {
+                "image" : "<partImage>:ballisticshield.<frame>"
+              }
+            },
+            "ballisticshieldwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:ballisticshieldwinddown.<frame>"
+              }
+            },				
+			
+			
+			
+            "crossbowreload" : {
+              "properties" : {
+                "image" : "<partImage>:crossbowreload.<frame>"
+              }
+            },
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+            "block" : {
+              "properties" : {
+                "image" : "<partImage>:block.<frame>"
+              }
+            }
+			
+
+
+			
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+	}
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+  
+  "lights" : {
+    "glow" : {
+      "active" : false,
+      "position" : [0, 0],
+      "color" : [0, 0, 0], //255, 160, 160
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+  
+    "magicfield" : {
+      "enabled" : false,
+      "emissionRate" : 5.0,
+      "particles" : [
+        { "particle" : "barriericeaura" },
+        { "particle" : "gic_smallsmoke_ground+3" },
+        { "particle" : "gic_smallsmoke_ground+2" },
+        { "particle" : "gic_smallsmoke_ground+1" }
+      ]
+    }, 
+  
+  
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+
+        { "particle" : "deathfizz1left" },
+        { "particle" : "deathfizz1right" },
+        { "particle" : "deathfizz2left" },
+        { "particle" : "deathfizz2right" },
+        { "particle" : "deathfizz3left" },
+        { "particle" : "deathfizz3right" },
+        { "particle" : "deathfizz4left" },
+        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+    "throw" : {
+      "pool" : [ 
+	  "/sfx/npc/gic_remnantfromtheashes_buri_contaminator_throw-01.ogg",
+	  "/sfx/npc/gic_remnantfromtheashes_buri_contaminator_throw-02.ogg",
+	  "/sfx/npc/gic_remnantfromtheashes_buri_contaminator_throw-03.ogg",
+	  "/sfx/npc/gic_remnantfromtheashes_buri_contaminator_throw-04.ogg",
+	  "/sfx/npc/gic_remnantfromtheashes_buri_contaminator_throw-05.ogg",
+	  "/sfx/npc/gic_remnantfromtheashes_buri_contaminator_throw-06.ogg",
+	  "/sfx/npc/gic_remnantfromtheashes_buri_contaminator_throw-07.ogg"
+	  ],
+      "rangeMultiplier" : 1.0
+    },
+
+    "fireshot" : {
+      "pool" : [ "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-04.ogg", "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-05.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "heavyoverheadswing" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_charge-comboattack.wav" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "punch" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_sude_double0.wav" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+  
+    "wallCrash" : [ "/sfx/melee/gic_bloodborne_sude_double0.wav" ],
+    "aggroHop" : [  ],
+    "deathPuff" : {
+      "pool" :	["/music/RemnantFromTheAshes/gic_remnantfromtheashes_yaeshaminiboss_deathtune.ogg"],
+      "rangeMultiplier" : 6.0
+	}
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_stoneshoes",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Leg Trinket^reset;",
+  "inventoryIcon" : "gic_stoneshoes.png",
+  "maxStack" : 1,    
+  "description" : 
+  
+"''What.''
+
+^green;+100% Knockback Resistance.^reset;
+^red;-50% Movement Speed.^reset;",
+
+
+
+  "shortdescription" : "Stone Shoes",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_stoneshoes",
+    "displayName" : "Stone Shoes",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_stoneshoes.png",
+    "effects" : [ {"stat" : "grit", "amount" : 1.0}, "gic_stoneshoes" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_legwear_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

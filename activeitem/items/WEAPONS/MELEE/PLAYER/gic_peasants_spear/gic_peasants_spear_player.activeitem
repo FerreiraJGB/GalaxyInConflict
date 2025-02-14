@@ -1,0 +1,159 @@
+{
+  "itemName" : "gic_peasants_spear_player",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  
+  "description" : "An otherwise unremarkable spear of standard-make. The Clacton Spear found in England and the Schöningen spears found in Terran-Germany documents that wooden spears have been used for hunting since at least 400 000 years ago.
+  
+^#D1C8BF;+25 TRUE DMG for standard attacks.
+
+^#D6DFFF;Press [SHIFT] to initiate a charged thrust, dashing forward and dealing additional damage against [GiC] bosses.^white;",
+
+  "shortdescription" : "Peasant's Spear",
+  "tooltipKind" : "gic_largebase_sword",
+  "tooltipFields" : {
+	"objectImage" : "/items/weapons/melee/player/gic_peasants_spear/gic_peasants_spear_icon2.png"
+  },
+  "category" : "^#D6DFFF;Formation Spear^white;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_peasants_spear_icon.png",
+
+  "animation" : "gic_peasants_spear.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_peasants_spear.png"
+  },
+  
+  "animationCustom" : { "sounds" : {
+ 
+      "heavyAttack" : ["/sfx/melee/gic_bloodborne_nokonata_tenkai.wav"],
+      "heavyAttackSwing" : ["/sfx/melee/gic_bloodborne_swing-stab-charge.wav"],
+      "heavyAttackHit" : ["/sfx/melee/gic_bloodborne_iron-cut-iron2.wav"],
+
+      "shing" : ["/sfx/melee/gic_bloodborne_nokonata_tojiru.wav"],
+  
+          "fire" : ["/sfx/melee/gic_bloodborne_nokonata_nata1.wav", "/sfx/melee/gic_bloodborne_nokonata_nata2.wav", "/sfx/melee/gic_bloodborne_nokonata_nata3.wav"]
+        } },
+ 
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua", "/abilities/weapons/gic_base_formation_weapon.lua"],
+  "scriptDelta" : 1,
+  
+  "elementalType" : "ews_melee",
+
+  //"aimOffset" : -2.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+	"scripts" : ["/items/active/weapons/melee/abilities/gic_spearstab.lua"],
+    "fireTime" : 1.0,
+    "baseDps" : 85,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [ {"effect" : "gic_unblockableDamage_flat", "duration" : 25.0} ],
+      "knockbackRange" : 2,
+	  "knockback" : 15,
+	  "damageType" : "IgnoresDef"
+    },
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -90,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.1],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 0.3,
+        "armRotation" : -110,
+        "weaponRotation" : 20,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.1],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.4,
+        "armRotation" : -20,
+        "weaponRotation" : -70,
+        "twoHanded" : false,
+        "weaponOffset" : [0.1, 2.6],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "hold" : {
+        "armRotation" : -30,
+        "weaponRotation" : -60,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.1],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+	}
+  },
+  
+
+  "altAbilityType" : "spin",
+  "altAbility" : {
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [{"effect":"gic_boss_melee_primer","duration":2}],
+      "baseDamage" : 300,
+      "knockback" : 0, //50
+      "timeout" : 0.15,
+      "timeoutGroup" : "alt"
+    },
+	"scripts" : ["/items/weapons/melee/player/gic_protectorate_knight_spear/gic_charge.lua"],
+	"class" : "Charge",
+	
+	"cooldownTime" : 1.0,
+	
+	"name" : "Spear Charge",
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -70,
+        "weaponRotation" : -20,
+		"aimAngle" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.5],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 1.0,
+		"aimAngle" : 0,
+        "armRotation" : -115,
+        "weaponRotation" : 12.5,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.5],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.25,
+        "armRotation" : -20,
+        "weaponRotation" : -70,
+        "twoHanded" : false,
+        "weaponOffset" : [0.1, 3.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

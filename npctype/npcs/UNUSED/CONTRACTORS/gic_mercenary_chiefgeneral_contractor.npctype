@@ -1,0 +1,128 @@
+{
+  "type" : "gic_mercenary_chiefgeneral_contractor",
+  "baseType" : "base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ "gic_spacecolonistTreasure" ],
+  
+  "scriptConfig" : {
+    "behavior" : "villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 0.85,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "questGenerator" : {
+      "pools" : ["gic_mercenary_lawenforcement"],
+      "enableParticipation" : false,
+      "timeLimit" : 1,
+      "nearbyQuestLimit" : 1,
+      "nearbyQuestRange" : 500,
+      "questCountRange" : [1, 4],
+      
+      "graduation" : {
+        "nextNpcType" : [
+          []
+        ]
+      }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [5.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+      "converse" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_converse.config:converse",
+	  
+      "greeting" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_converse.config:converse",
+
+      "attack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cantReach",
+
+      "hail" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard.config:hail",
+
+      "accuse" : "/dialog/thief.config:accuse"
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "soldierhead", "parameters" : { "colorIndex" : [3] } } ],
+            "chest" : [ { "name" : "gic_redstarsoldierchest", "parameters" : { "colorIndex" : [3] } } ],
+            "legs" : [ { "name" : "gic_redstarsoldierpants", "parameters" : { "colorIndex" : [3] } } ],
+            "back" : [ { "name" : "gic_redstarsoldierback", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [ "gic_syberm4" ]
+          },
+
+          {
+            "head" : [ { "name" : "gic_prisonguard_riothelmethead", "parameters" : { "colorIndex" : [3] } } ],
+            "chest" : [ { "name" : "gic_prisonguardchest", "parameters" : { "colorIndex" : [3] } } ],
+            "legs" : [ { "name" : "gic_prisonguardlegs", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [  "gic_stunbaton" ],
+            "alt" : [ "gic_securityriotshield" ]
+          },
+		  
+          {
+            "head" : [ { "name" : "gic_prisonguard_spearmanhelmethead", "parameters" : { "colorIndex" : [3] } } ],
+            "chest" : [ { "name" : "gic_prisonguardchest", "parameters" : { "colorIndex" : [3] } } ],
+            "legs" : [ { "name" : "gic_prisonguardlegs", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [  "gic_stunspear" ]
+//            "alt" : [ "gic_securityriotshield" ]
+          }
+
+        ] ]
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "gic_smallarmsResistance" : {
+        "baseValue" : 0.2
+      },
+      "gic_explosiveResistance" : {
+        "baseValue" : -0.2
+      },
+      "gic_antitankResistance" : {
+        "baseValue" : -1.0
+      }
+	  
+    }
+  }
+}

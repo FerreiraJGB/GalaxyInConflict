@@ -1,0 +1,38 @@
+{
+  "id" : "gic_khurtovyna_rundown_mobiletaskforcequest",
+  "prerequisites" : [ "gic_khurtovyna_rundown_eternalquest" ],
+  "title" : "^#7AA8E0;RUNDOWN: MOBILE TASK FORCE",
+  "text" : "[Obtain 3x Void Cores from RUNDOWN: MTF (faster) or ETERNAL (easier)]
+//:Hey you! You're alive aren't you? Well I've got something you might want. Void Core shipments! Left out in trains at the lowest depths! Your objective is to refuel and extract with those trains, nothing else! Be fast, since they'll know you're coming!",  //SECURITY SYSTEM MALFUNCTION - ILLEGAL INSTRUCTION AT 893CH72R3J95F4LY - ALARM - D_FE#####D VO_____ID C05E//SHIPMENT
+
+  "completionText" : "//:ERR _U#65: SECURITY SYSTEM MALFUNCTION - ILLEGAL INSTRUCTION AT 893CH72R3J95F4LY - ALARM - VO_____ID C05E//SHIPMENT S3___####ED",
+  "moneyRange" : [500, 2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_khurtovyna_mobiletaskforce-codex", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_voidcore_artifact",
+        "count" : 3,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}
+
+
+

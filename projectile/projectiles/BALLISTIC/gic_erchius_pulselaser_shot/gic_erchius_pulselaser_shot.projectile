@@ -1,0 +1,70 @@
+{
+  "projectileName" : "gic_erchius_pulselaser_shot",
+  "image" : "gic_erchius_pulselaser_shot.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "physics" : "laser",
+  "renderLayer" : "Monster+10",
+  "actionOnReap" : [
+  ],
+  
+  
+  
+  
+  
+  
+  "actionOnHit" : [  
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.003125,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.003125,
+      "fuzzAngle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 180,
+      "inheritDamageFactor" : 0.003125,
+      "directional" : "true"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 45,
+      "inheritDamageFactor" : 0.003125,
+      "directional" : "true"
+    }  
+  ],  
+  
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_erchius_pulselaser_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 1.0,
+        "destructionTime" : 0.5,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+  
+  "power" : 200,
+  "projectileSpeed": 300,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "IgnoresDef"
+}

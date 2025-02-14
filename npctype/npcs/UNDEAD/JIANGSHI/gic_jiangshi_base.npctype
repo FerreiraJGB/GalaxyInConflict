@@ -1,0 +1,247 @@
+{
+  "type" : "gic_jiangshi_base",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeam" : 16,
+  "scriptConfig" : {
+
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/gic_generic_combat_panic.config:attack",
+      "reattack" : "/dialog/gic_generic_combat_panic.config:reattack",
+      "killedTarget" : "/dialog/gic_generic_combat_panic.config:killedTarget",
+      "lostTarget" : "/dialog/gic_generic_combat_panic.config:lostTarget",
+      "outOfSight" : "/dialog/gic_generic_combat_panic.config:outOfSight",
+      "cheerOn" : "/dialog/gic_generic_combat_panic.config:cheerOn",
+      "cantReach" : "/dialog/gic_generic_combat_panic.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "caphead", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "caphead", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "caphead", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "caphead", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, 
+              "",
+              { "name" : "fancaphead", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "fancaphead", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "fancaphead", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "fancaphead", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "glasses1head", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "glasses4head", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "glasses4head", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "glasses5head", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "scientisthead", "parameters" : { "colorIndex" : 0 } }, { "name" : "scientisthead", "parameters" : { "colorIndex" : 0 } },
+              { "name" : "winterscarfhead", "parameters" : { "colorIndex" : 4 } }, { "name" : "winterscarfhead", "parameters" : { "colorIndex" : 5 } }, { "name" : "winterscarfhead", "parameters" : { "colorIndex" : 6 } }, { "name" : "winterscarfhead", "parameters" : { "colorIndex" : 7 } }, { "name" : "winterscarfhead", "parameters" : { "colorIndex" : 8 } }
+            ],
+            "chest" : [
+              { "name" : "conceptchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "coolchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "tshirtchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "hoodiechest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 8 } }
+            ],
+            "sheathedprimary" : ["gic_emcp19"]
+          },
+          {
+            "head" : [
+              ""
+            ],
+            "chest" : [
+              { "name" : "conceptchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "coolchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "tshirtchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "hoodiechest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 8 } }
+            ],
+            "sheathedprimary" : ["gic_emcp19"]
+          },
+          {
+            "head" : [
+              ""
+            ],
+            "chest" : [
+              { "name" : "workoutchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "tshirtchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 8 } },
+              { "name" : "conceptlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "conceptlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "conceptlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "conceptlegs", "parameters" : { "colorIndex" : 8 } }
+            ],
+            "sheathedprimary" : [ "gic_emcp19"]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+        "knockbackStunTime" : {
+          "baseValue" : 0.25
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 9
+        },
+        "maxHealth" : {
+          "baseValue" : 2000
+        },
+        "protection" : {
+          "baseValue" : 0.0
+        },
+        "healthRegen" : {
+          "baseValue" : 50.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1.0
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+		
+      "novaResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 1
+				},
+				"cosmicResistance": {
+					"baseValue": 1
+				},
+				"radioactiveResistance": {
+					"baseValue": 1
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 1
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 1
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 1
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.95
+				}	  
+	  
+	  
+    }
+  }
+}

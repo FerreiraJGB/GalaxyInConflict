@@ -1,0 +1,141 @@
+{
+  "globalTagDefaults" : {
+	"directives" : ""
+  },
+  "animatedParts" : {
+    "stateTypes" : {
+      "attack" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : { 
+            "properties" : {
+              "particleEmittersOff" : ["swoosh"]
+            }
+          },
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.095,
+            "mode" : "transition",
+            "transition" : "idle",
+            "properties" : {
+              "particleEmittersOn" : ["swoosh"]
+            }
+          },
+		  "slash" : {
+            "frames" : 3,
+            "cycle" : 0.095,
+            "mode" : "transition",
+            "transition" : "idle",
+            "properties" : {
+              "particleEmittersOn" : ["swoosh"]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "weapon" : {
+        "properties" : {
+          "transformationGroups" : ["weapon"],
+          "rotationCenter" : [-1, 0],
+          "centered" : true,
+          "image" : "<partImage>:<hand><directives>"
+        }
+      },
+	  "counterShield" : {
+		"properties" : {
+            "zLevel" : -1,
+            "centered" : true,
+            "offset" : [0, 0],
+            //"transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0],
+            "shieldPoly" : [[-1, -1.4], [1.0, -0.9], [1.0, 1.0], [-1, 1.7]]
+        }
+	  },
+      "swoosh" : {
+        "properties" : {
+          "transformationGroups" : ["weapon","swoosh"],
+          "centered" : true,
+          "offset" : [0.5, 0.125],
+          "zLevel" : 1
+        },
+
+        "partStates" : {
+          "attack" : {
+            "idle" : { },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:<frame><directives>",
+                "damageArea" : [[-1, -1.1], [1.0, -0.6], [1.0, 0.8], [-1, 1.3]]
+              }
+            }
+          }
+        }
+      },
+	  "slash" : {
+        "properties" : {
+          "transformationGroups" : ["weapon","swoosh"],
+          "centered" : true,
+          "offset" : [0.5, 0.125],
+          "zLevel" : 1
+        },
+
+        "partStates" : {
+          "attack" : {
+            "idle" : { },
+            "slash" : {
+              "properties" : {
+                "image" : "<partImage>:<frame><directives>",
+                "damageArea" : [[-1, -1.1], [1.0, -0.6], [1.0, 0.8], [-1, 1.3]]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "weapon" : {},
+    "swoosh" : {}
+  },
+
+  "particleEmitters" : {
+    "swoosh" : {
+      "particles" : [] 
+    }
+  },
+  "sounds" : {
+    "fire" : [ ],
+	
+	"hiltSmash" : ["/sfx/block/gic_darksouls_parry2.ogg"],
+	"hiltSmashHit" : ["/sfx/melee/gic_bloodborne_hammer-hit2.wav"],
+	
+	"guard" : [ "/sfx/melee/sword_guard.ogg" ],
+      "break" : [ "/sfx/melee/shield_break_metal.ogg" ],
+      "parry" : [
+	  "/sfx/block/gic_sekiro_meleedeflect1.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect2.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect3.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect4.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect5.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect6.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect7.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect8.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ],
+	  
+	  "perfectBlock" : [
+		"/sfx/block/gic_sekiro_meleedeflect1.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect2.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect3.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect4.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect5.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect6.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect7.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect8.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ]
+  }
+}

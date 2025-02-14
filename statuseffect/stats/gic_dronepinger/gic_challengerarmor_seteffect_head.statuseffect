@@ -1,0 +1,34 @@
+{
+  "name" : "gic_challengerarmor_seteffect_head",
+  "blockingStat" : "gic_challengerarmor_seteffect_coreStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_challengerarmor_head", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_challengerarmor_head", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 20,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 2.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_challengerarmor_seteffect_core.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_challengerarmor_seteffect_core.animation",
+   
+   "label" : "Challenger Armor [HEAD] - Enemies closer than 20 blocks and within the bearer's vision are marked. Marked enemies have -20% reduced ATK power, take 1.2x damage, and -20% EWS accuracy and hit chance stats | Stacks for each piece.",
+  "icon" : "/interface/statuses/gic_challengerarmor_seteffect_head.png"
+}

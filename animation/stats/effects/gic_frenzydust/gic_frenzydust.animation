@@ -1,0 +1,85 @@
+{
+
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"body" : {
+				"properties" : {
+					"image" : "gic_frenzydust.png<facingDirection>",
+					"zLevel" : -10,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0, 3.0]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"body" : {}
+	},
+
+  "particleEmitters" : {
+    "sparks" : {
+      "enabled" : true,
+      "emissionRate" : 5.0, //25
+      "burstCount" : 5,
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "ember",
+            "layer" : "back",
+            "size" : 1.0,
+            "color" : [159, 159, 159, 255],
+            "fade" : 0.5,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.8,
+            "position" : [0.0, 0.0],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [1.5, 1.5],
+            "timeToLive" : 0.3,
+            "variance" : {
+                "initialVelocity" : [6, 6]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "ember",
+            "layer" : "back",
+            "size" : 1.0,
+            "color" : [159, 159, 159, 255],
+            "fade" : 0.5,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.8,
+            "position" : [0.0, 0.0],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [1.5, 1.5],
+            "timeToLive" : 0.3,
+            "variance" : {
+                "initialVelocity" : [6, 6]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "lights" : {
+    "glow" : {
+      "active" : true,
+      "position" : [1.5, 0.8],
+      "color" : [30, 0, 0]
+    },
+    "beam" : {
+      "active" : true,
+      "position" : [0.2, 1.0],
+      "color" : [70, 0, 0],
+      "pointLight" : true,
+      "pointAngle" : 0,
+      "pointBeam" : 5.5 //4.4, slightly less than ranger headlamp
+    }
+  }
+}

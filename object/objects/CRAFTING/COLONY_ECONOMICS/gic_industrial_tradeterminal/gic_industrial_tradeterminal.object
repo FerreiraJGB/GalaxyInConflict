@@ -1,0 +1,523 @@
+{
+  "objectName" : "gic_industrial_tradeterminal",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "description" : "Trade Terminal for Industrial Economies.",
+  "shortdescription" : "^orange;Trade Terminal: Industrial [GIC]^white;",
+  "race" : "generic",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_generic_economy_3tab.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+	  
+        "title" : "  Economy Terminal: Industrial
+
+
+
+
+
+
+
+",
+		
+//"''Do not act as if you were going to live 10,000 years. Death hangs over you. While it is in your power, be good.''		
+        "subtitle" : 
+" This station or settlement is geared towards the production of Industrial Metals and Machinery, and relies
+ on the import of Refined Metals to maintain consistent exports of Trade Goods towards other settlements.
+ Industrial Economies also produce Consumer Goods, but are unavailable to independent adventurers.
+
+
+ Imports: Refined Metals
+
+ Exports: Industrial Equipment
+",
+
+        "icon" : {
+          "file" : "/interface/crafting/gic_tradeterminal_industrial.png"
+        }
+      }
+    },
+	"recipes" : [
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":9,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_industrialequipmentcargo"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_industrial_tradeterminal", "gic_trade_buy" ]
+		},
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":6,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_rawmineralscargo"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_industrial_tradeterminal", "gic_trade_buy" ]
+		},
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":12,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_refinedmetalscargo"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_industrial_tradeterminal", "gic_trade_buy" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_industrialequipmentcargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_industrial_tradeterminal", "gic_trade_sell" ]
+		},
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":6,
+				"name":"gic_rawmineralscargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_industrial_tradeterminal", "gic_trade_sell" ]
+		},
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_refinedmetalscargo"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":6,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_industrial_tradeterminal", "gic_trade_sell" ]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":60,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":180,
+				"name":"paper"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},	
+	
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"syntheticmaterial"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},	
+
+
+
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"stickofram"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},	
+
+
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":15,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"syringe"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},	
+
+
+
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":2,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"siliconboard"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},	
+
+
+
+
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":30,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"fabric"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},	
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":16,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"string"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},	
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":40,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"cottonwool"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":30,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"platinumdrill"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":70,
+				"name":"gic_physicalmicrocredit"
+				},
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_gasanalyzer"
+				},
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_wirelesssignaltransmitter"
+				},
+				{
+				"parameters":{},
+				"count":2,
+				"name":"gic_uhfrfidreader"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_wiringtoolset"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":170,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_wrench"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":200,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_entrenchingtool"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_subsurfacedisplacement_missile_miningstand"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},
+		
+
+		
+
+		
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":200,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"oredetector"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		},
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":200,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"cavedetector"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_services" ]
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_industrial_tradeterminal" ]
+  },
+  "printable" : false,
+  "price" : 300,
+  
+  "inventoryIcon" : "gic_industrial_tradeterminal.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_industrial_tradeterminal.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+
+}

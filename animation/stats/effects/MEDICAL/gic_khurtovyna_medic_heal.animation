@@ -1,0 +1,63 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"body" : {
+				"properties" : {
+					"image" : "gic_khurtovyna_medic_heal.png<facingDirection>",
+					"zLevel" : -10,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0, 3.0]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [],
+		"reload" : []
+	},
+	"particleEmitters" : {
+    "healing" : {
+      "enabled" : true,
+      "emissionRate" : 3.0,
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "mode" : "LoopForever",
+            "animation" : "/animations/statuseffects/heal/heal.animation",
+            "size" : 0.8,
+            "position" : [0.0, 0.0],
+            "offsetRegion" : [0, 0, 0, 0],
+            "initialVelocity" : [0, 1.0],
+            "finalVelocity" : [0, 5.0],
+            "approach" : [0, 10],
+            "timeToLive" : 0.85,
+            "variance" : {
+              "initialVelocity" : [0.5, 1.0],
+              "size" : 0.3
+            }
+          }
+        }
+      ]
+    },
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+        ],
+		"transformationGroups" : []
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+        ],
+		"transformationGroups" : []
+      }
+	}
+}

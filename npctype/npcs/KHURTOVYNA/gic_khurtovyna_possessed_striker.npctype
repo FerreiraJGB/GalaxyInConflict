@@ -1,0 +1,161 @@
+{
+  "type" : "gic_khurtovyna_possessed_striker",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeam" : 2,
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "behavior" : "gic_hostileguard", //Will switch to sheathedprimary when in close range.
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+          {
+            "head" : [ { "name" : "gic_mindcontrolledhead" } ],
+            "chest" : [ { "name" : "gic_khurtovyna_peoplesarmy_conscriptchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_khurtovyna_peoplesarmy_conscriptlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+			  "gic_soldiers_sword_npc",
+			  "gic_bandit_cleaver_npc",
+			  "gic_peasants_battleaxe_npc",
+			  "gic_miners_pickaxe_npc"
+			],
+            "alt" : [
+			  ""
+			]
+          },
+		  
+          {
+            "head" : [ { "name" : "gic_mindcontrolledhead" } ],
+            "chest" : [ { "name" : "gic_khurtovyna_peoplesarmy_conscriptchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_khurtovyna_peoplesarmy_conscriptlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+			  "gic_soldiers_sword_npc",
+			  "gic_bandit_cleaver_npc",
+			  "gic_peasants_battleaxe_npc",
+			  "gic_miners_pickaxe_npc"
+			],
+            "alt" : [
+			  "gic_soldiers_sword_npc",
+			  "gic_bandit_cleaver_npc",
+			  "gic_peasants_battleaxe_npc",
+			  "gic_miners_pickaxe_npc"
+			]
+          },
+		  
+		  
+          {
+            "head" : [ { "name" : "gic_mindcontrolledhead" } ],
+            "chest" : [ { "name" : "gic_khurtovyna_peoplesarmy_conscriptchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_khurtovyna_peoplesarmy_conscriptlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+			  "gic_warriors_battleaxe_npc",
+			  "gic_peasants_battleaxe_npc"
+			]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 66.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "gic_infantry_panicProtection" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_moldc1_infectionProtection" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : -0.4
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+	  
+    }
+  }
+  
+}

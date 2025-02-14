@@ -1,0 +1,106 @@
+{
+  "type" : "gic_militaryprisoner",
+  "baseType" : "hostile",
+
+  "persistent" : true,
+
+  "damageTeam" : 8,
+
+  "dropPools" : [ "basicTreasure" ],
+
+  "scriptConfig" : {
+    "behavior" : "hostileguard",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 0.50,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [3.0, "sit", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/prisons/gic_prisoner_combat.config:attack",
+      "reattack" : "/dialog/prisons/gic_prisoner_combat.config:reattack",
+      "killedTarget" : "/dialog/prisons/gic_prisoner_combat.config:killedTarget",
+      "lostTarget" : "/dialog/prisons/gic_prisoner_combat.config:lostTarget",
+      "outOfSight" : "/dialog/prisons/gic_prisoner_combat.config:outOfSight",
+      "cheerOn" : "/dialog/prisons/gic_prisoner_combat.config:cheerOn",
+      "cantReach" : "/dialog/prisons/gic_prisoner_combat.config:cantReach"
+    },
+
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0.05,
+        "broadsword" : 0.45,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 0.6,
+        "shortsword" : 0.35,
+        "spear" : 0.55
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.02,
+        "broadsword" : 1.7,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 2.0,
+        "shortsword" : 1.0,
+        "spear" : 1.4
+      }
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "chest" : [ { "name" : "apexofficerjacket", "parameters" : { "colorIndex" : [2] } } ],
+            "legs" : [ { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [2] } } ],
+            "sheathedprimary" : [
+			  "gic_pipe_npc",
+			  "gic_machete_npc",
+			  "gic_hatchet_npc"
+			]
+          }
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 20,
+    "statusEffects" : [ ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 110.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 0.1
+      }
+    }
+  }
+}

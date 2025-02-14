@@ -1,0 +1,59 @@
+{
+  "id" : "gic_esther_chapter_0_1_arkbeyondquest",
+  "title" : "^yellow;[GiC]: Chapter 0 - Ark Beyond",
+  "prerequisites" : [ "gic_esther_chapter_0_1_revelationsquest" ],
+  
+  //QUEST 2
+  
+  //No cutscene, just text. Esther will teleport player to Ark Beyond. Optional, as it can be skipped via going to SAIL and warping directly to ship.
+  
+  "text" : "",
+  
+  //Plays the "escape" cutscene where the crew leave the Ark Anomalous Zone.
+  
+  "completionText" : "",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+  "rewards" : [
+//    [ [ "", 1 ], [ "", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance.lua", //Same as original variant. Enables cutscenes when starting and finishing.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;[LEGACY] Esther^reset; to travel to ^orange;Esther's Vessel^reset;.",
+      "findGoal" : "Traverse the area to find Esther's Vessel.",
+      "turnIn" : "Speak to ^orange;[LEGACY] Esther^reset;."
+    },
+
+    "warpEntityUid" : "gic_legacystoryline_statue",
+    "warpAction" : "instanceworld:gic_esther_chapter_0_1_arkbeyond",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_esther_chapter_0_1_arkbeyond_confirmation",
+	
+	"associatedMission" : "gic_esther_chapter_0_2_esthersresearchvessel",
+	
+    "gic_missionUnlockedCinema" : "/cinematics/gic_coordinates.cinematic",
+    "gic_missionCompleteCinema" : "/cinematics/ESTHER_STORY/gic_esther_arkbeyond/gic_esther_arkbeyond.cinematic",	 //leave as coordinates if no need for secondary
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 10,
+
+    "goalEntityUid" : "gic_esthership",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "gic_esthership"
+  }
+  
+}

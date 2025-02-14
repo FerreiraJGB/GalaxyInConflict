@@ -1,0 +1,188 @@
+{
+  "metadata" : {
+    "name" : "gic_khurtovyna_tombofthesatori_alt",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_khurtovyna_tombofthesatori_start_alt" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 30,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+
+  
+  
+
+	
+
+  //Behemoth Train
+  
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_bridge",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_bridge" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_bridge.json" ]
+    },  
+  
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_start_alt",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_start_alt" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_start_alt.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_chasm",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_chasm" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_chasm.json" ]
+    },
+  
+  
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_elevatedright",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_elevatedright" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_elevatedright.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_intersect",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_intersect" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_intersect.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_largesplit",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_largesplit" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_largesplit.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_mining",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_mining" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_mining.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_rise",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_rise" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_rise.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_roadway",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_roadway" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_roadway.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_split",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_split" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_split.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_standard",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_standard" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_standard.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_thetree",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_thetree" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_thetree.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_tunnel",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_tombofthesatori_tunnel" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_tunnel.json" ]
+    },
+	
+	
+    {
+      "name" : "gic_khurtovyna_tombofthesatori_end_alt",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_tombofthesatori_end_alt.json" ],
+      "chance" : 0
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

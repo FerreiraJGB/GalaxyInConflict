@@ -1,0 +1,25 @@
+{
+  "name" : "gic_nonnutritivesubstanceconsumption",
+  "blockingStat" : "gic_nonnutritivesubstanceconsumptionImmunity",
+
+  "effectConfig" : {
+//    "directives" : "fade=AAAAFF=0.3",
+    "movementModifiers" : {
+      "speedModifier" : 0.6,
+      "airJumpModifier" : 0.8
+    },
+    "tickRate" : 40,
+    "energyCost" : 1,
+    "healthDamage" : 2
+  },
+  "defaultDuration" : 60,
+
+  "scripts" : [
+    "gic_nonnutritivesubstanceconsumption.lua"
+  ],
+
+  "animationConfig" : "gic_nonnutritivesubstanceconsumption.animation",
+
+  "label" : "Non-Nutritive Substance Consumption [GiC] - Your body will pay its price.",
+  "icon" : "/interface/statuses/poison.png"
+}

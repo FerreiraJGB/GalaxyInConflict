@@ -1,0 +1,86 @@
+{
+  "metadata" : {
+    "name" : "gic_debrisfield",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [
+      "gic_debrisfield_start"
+    ],
+    "breathable" : false,	
+    "gravity" : 0,
+    "extendSurfaceFreeSpace" : 100,
+    "maxRadius" : 1000000,
+    "maxParts" : 6,
+    "protected" : false
+  },
+
+  "parts" : [
+
+	
+	
+	
+
+    {
+      "name" : "gic_debrisfield_start",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+        [ "doNotConnectToPart", [ "gic_debrisfield_start" ] ]
+      ],
+      "def" : [ "tmx", "gic_debrisfield_start.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_debrisfield_1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_debrisfield_1" ] ]
+      ],
+      "def" : [ "tmx", "gic_debrisfield_1.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_debrisfield_2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_debrisfield_2" ] ]
+      ],
+      "def" : [ "tmx", "gic_debrisfield_2.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_debrisfield_3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_debrisfield_3" ] ]
+      ],
+      "def" : [ "tmx", "gic_debrisfield_3.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_debrisfield_4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_debrisfield_4" ] ]
+      ],
+      "def" : [ "tmx", "gic_debrisfield_4.json" ],
+      "chance" : 1
+    },
+	
+	
+    {
+      "name" : "gic_debrisfield_end",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+        [ "doNotConnectToPart", [ "gic_debrisfield_end" ] ]
+      ],
+      "def" : [ "tmx", "gic_debrisfield_end.json" ],
+      "chance" : 1
+    }
+	
+
+	
+  ]
+}

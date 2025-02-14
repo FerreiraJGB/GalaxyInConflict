@@ -1,0 +1,52 @@
+{
+  "itemName" : "gic_reactiveheatshroud",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Barrel Attachment^white;",
+  "inventoryIcon" : "gic_reactiveheatshroud_icon.png",
+  
+  
+  "description" : "''To cease the search for the colonies lost to The Zone was not an option. We had to keep going, keep pushing. For a civilization in stasis, standing still, going nowhere - is a civilization dead.''
+ 
+^orange;On taking damage whilst a weapon with this attachment is equipped, gain +30% [EWS] HIT CHANCE and ACCURACY for 10s. Duration cannot be refreshed while the buff is active.^reset;
+
+Supports attachment on most firearms that can attach a barrel.",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Reactive Heat Shroud",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_reactiveheatshroud", //name of attachment
+	
+	"attachmentTag" : [ "gic_reactiveheatshroud", "gic_barrel" ],     //if target item has one or more of these tags, then this attachment will be applicable to the item
+	
+	"attachmentId" : "gic_reactiveheatshroud", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_reactiveheatshroud.png", //determines what image is displayed on the resulting gun
+	
+	"specialAttachmentConfig" : {
+		"type" : "statusEffect", //this can be applied to any attachment of type "sight", "barrel", "stock", or "underbarrel".
+		"statusEffects" : ["gic_reactiveheatshroud"], //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+		
+		"projectileConfig" : {
+		}
+		
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1.0,1.0,1.0], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

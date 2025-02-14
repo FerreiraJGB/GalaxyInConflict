@@ -1,0 +1,174 @@
+{
+  "objectName" : "gic_extraction_merchantterminal",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "description" : "Merchant Terminal for Extractions.",
+  "shortdescription" : "^orange;Merchant Terminal: Extraction [GIC]^white;",
+  "race" : "generic",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_tradeterminal_economicfacility.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Merchant Terminal: Extraction",
+        "subtitle" : "  Purchase of raw mineral resources for hobbyist purposes.",
+        "icon" : {
+          "file" : "/interface/crafting/gic_merchantterminal_extraction.png"
+        }
+      }
+    },
+	"recipes" : [
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":40,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"copperore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_function" ]
+		},
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"corefragmentore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_function" ]
+		},
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"goldore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_function" ]
+		},
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"silverore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_function" ]
+		},
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":40,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"ironore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_function" ]
+		},
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"titaniumore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_function" ]
+		},
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"tungstenore"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_extraction_merchantterminal", "gic_trade_function" ]
+		}
+		
+		
+		
+	],
+    "filter" : [ "gic_extraction_merchantterminal" ],
+	"requiresBlueprint" : false
+  },
+  "printable" : false,
+  "price" : 300,
+  
+  "inventoryIcon" : "gic_extraction_merchantterminal.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_extraction_merchantterminal.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+
+}

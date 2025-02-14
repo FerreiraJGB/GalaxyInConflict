@@ -1,0 +1,43 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "shield" : {
+        "priority" : 2,
+        "default" : "off",
+        "states" : {
+          "off" : {
+          },
+          "hit" : {
+            "frames" : 2,
+            "cycle" : 0.5,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_darksouls3_counterhit.wav"
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {      
+      "shield" : {
+        "properties" : {
+          "zLevel" : 5,
+          "centered" : true,
+          "offset" : [0, -0.5]
+        },
+
+        "partStates" : {
+          "shield" : {
+            "hit" : {
+              "properties" : {
+                "image" : "gic_invisible_hit.png:hit.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

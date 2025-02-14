@@ -1,0 +1,39 @@
+{
+  "name" : "gic_moldc1_shooter",
+  "effectConfig" : {
+	"projectileType" : "gic_bloodbranch_spiritbullet_mold", //does not accept arrays
+	"projectileTypeMiss" : "gic_bloodbranch_spiritbullet_mold", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	"missChance" : 10,
+	
+	"offset" : [-1.5,0.5],
+	
+	"muzzleOffset" : [0, 0.3],
+	
+	"muzzleOffset2" : [0, 0.2],
+	
+	"trackingDistance" : 200,
+	"trackingAngle" : 181, //181
+	"fireRate" : 0.25,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 5,
+	"projectileCount" : 1,
+	"ammoCountMax" : 20,
+	"reloadTimer" : 2.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_moldc1_shooter.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_moldc1_shooter.animation"
+}

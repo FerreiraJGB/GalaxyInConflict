@@ -1,0 +1,79 @@
+{
+  "projectileName" : "gic_mk483smaw_hedp_stage2",
+  "bounces" : 0,
+  "image" : "gic_mk483smaw_hedp.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  
+  "persistentAudio" : "/sfx/gic_cod4_flare_loop.ogg",  
+  
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bombblockexplosion/bombblockexplosion.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.003125,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.003125,
+      "fuzzAngle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 180,
+      "inheritDamageFactor" : 0.003125,
+      "directional" : "true"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 45,
+      "inheritDamageFactor" : 0.003125,
+      "directional" : "true"
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+      "image" : "/animations/gic_mediumsteamcloud/gic_mediumsteamcloud.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.2,
+        "destructionTime" : 2,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+],
+  
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 250,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 200.0,
+  "acceleration" : 40,
+  "timeToLive" : 10,
+  "physics" : "gic_cannonfall"
+}

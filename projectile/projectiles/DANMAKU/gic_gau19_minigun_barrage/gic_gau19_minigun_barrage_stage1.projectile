@@ -1,0 +1,42 @@
+{
+  "projectileName" : "gic_gau19_minigun_barrage_stage1",
+  "physics" : "gic_beaconlaser",
+  "actionOnReap" : [
+
+    {
+      "action" : "projectile",
+      "type" : "gic_gau19_minigun_barrage_stage2",
+      "inheritDamageFactor" : 1,
+      "inheritSpeedFactor" : 0,
+	  "angle" : 0,
+	  "fuzzAngle" : 0,
+      "angleAdjust" : 0
+    }
+	
+//    {
+//      "action" : "projectile",
+//      "type" : "gic_gau19_minigun_barrage_stage1_whoosh_effect",
+//      "inheritDamageFactor" : 1,
+//	  "angle" : -90,
+//	  "fuzzAngle" : 0,
+//     "angleAdjust" : 0
+//    }
+	
+	
+  ],
+  "image" : "gic_gau19_minigun_barrage_stage1.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 10,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "fullbright" : true,
+  "timeToLive" : 4.0,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

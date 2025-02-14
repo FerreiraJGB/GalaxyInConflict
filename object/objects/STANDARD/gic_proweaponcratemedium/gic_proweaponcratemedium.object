@@ -1,0 +1,53 @@
+{
+  "objectName" : "gic_proweaponcratemedium",
+  "colonyTags" : ["storage"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "price" : 45,
+  "description" : "A metallic-blue weapon crate used by the Protectorate.",
+  "shortdescription" : "Pro Medium Weapon Crate",
+  "race" : "generic",
+  "health" : 1.5,
+
+
+
+  "inventoryIcon" : "gic_icon_proweaponcratemedium.png",
+  "orientations" : [
+    {
+      "image" : "gic_proweaponcratemedium.png",
+      "direction" : "left",
+      "flipImages" : true,
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+      "image" : "gic_proweaponcratemedium.png",
+      "direction" : "right",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/gunchest_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/gunchest_close.ogg" ],
+  "slotCount" : 9, //2
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

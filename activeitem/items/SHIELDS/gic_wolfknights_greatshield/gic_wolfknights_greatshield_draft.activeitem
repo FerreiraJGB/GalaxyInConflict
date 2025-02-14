@@ -1,0 +1,93 @@
+{
+  "itemName" : "gic_wolfknights_greatshield_draft",
+  "fixedLevel" : true,
+  "price" : 600,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "^#D6DFFF;Greatshield^white;",
+  "description" : "The White Wolves seldom used Greatshields, reserving the heavier equipment for the protection and rescue of lone pups, and to push back against threats to whatever new home they've found among humans.
+
+^#B24A5A;Abyss-Walker: +0.5% HP regeneration when equipped in either hand | 600hp blocking power.^white;  
+^#D6DFFF;Shield Bash: Moving at great speeds and colliding with an enemy will deal damage based on the speed of the user.^white;",
+
+  "shortdescription" : "Wolf-Knight's Scutum",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield", "greatshield"],
+
+  "inventoryIcon" : "gic_wolfknights_greatshield.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_wolfknights_greatshield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/armor/gic_bloodborne_body-armor-6.wav" ],
+      "perfectBlock" : [ "/sfx/melee/gic_bloodborne_shield-iron1.wav" ],
+      "block" : [ "/sfx/melee/gic_bloodborne_shield-iron1.wav" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  
+	  "shieldBash" : [ "/sfx/melee/gic_bloodborne_shieldpress.wav" ]
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_shieldbash.lua", "/abilities/weapons/gic_wolfknights_greatshield.lua", "/abilities/weapons/gic_base_greatshield_limiter.lua"  ],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : true,
+  "baseShieldHealth" : 600,
+  "cooldownTime" : 0.05,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 0.0,
+
+  "knockback" : 10, //15
+  
+  "handGrip" : "wrap",  
+  
+  // CUSTOM SHIELD BASH PARAMS
+  "minVelocity" : 15, //10
+  "accelKnockback" : 10, //30
+  "accelMaxKnockback" : 35, //45
+  
+  "accelDamage" : 10, //20
+  "accelMaxDamage" : 50, //100
+  
+  "minDamageTimeout" : 0.25,
+  "maxDamageTimeout" : 1.0,
+  // CUSTOM SHIELD BASH PARAMS  
+  
+  
+  
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+       "twoHanded" : false,	  
+	    "frontArmFrame" : "jump.5",
+	    "backArmFrame" : "jump.5",
+	  
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+        "twoHanded" : false,	  
+	    "frontArmFrame" : "jump.2",
+	    "backArmFrame" : "jump.2",
+	  
+      "allowRotate" : true, //false
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

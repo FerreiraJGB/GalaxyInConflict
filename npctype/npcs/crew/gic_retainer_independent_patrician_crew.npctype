@@ -1,0 +1,335 @@
+{
+  "type" : "gic_retainer_independent_patrician_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ ],
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0} ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "crewmember", //gic_noinspectcrew
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  //------------
+	  
+ //Retainer Add-on - Had to concede with the default popup.  
+      "interactAction" : "ShowPopup", //ScriptPane
+	  
+      "interactData" : {
+      "uiConfig" : "/interface/windowconfig/gic_retainerpopup.config", //-- This doesn't work, the bastards!
+	  
+//	  "gui" : "/interface/windowconfig/gic_retainerpopup.config",
+	  
+        "icon" : {
+          "file" : "/interface/crafting/gic_undercolonyworkshopmerchant.png"
+        },
+	  
+      "title" : "^#52A8DD;Independent Patrician Retainer^reset;",	  
+      "subtitle" : "^#E0C200;''Three senatorial visits in one month! They noticed!''^reset;",
+
+    "paneLayoutOverride" : { //This doesn't work either!
+      "windowtitle" : {
+        "icon" : {
+          "file" : "/interface/crafting/gic_undercolonyworkshopmerchant.png"
+        }
+      }
+    },
+	  
+      "message" : 
+"^#E0C200;+50HP^reset;
+
+^#52A8DD;As the face of the ship's crew, a patrician can serve to source ''exotic'' personal goods to better one's lifestyle. Whilst seemingly meager, the quality of air and sustenance can make a difference in one's longevity.^reset;"
+      },
+
+
+
+//----------------------
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "retainer",
+        "name" : "Patrician",
+        "field" : "Patrician",
+        "uniformColorIndex" : 1,
+		
+        "benefits" : [
+          {
+            // Ephemeral effects gained upon leaving the ship.
+            "type" : "EphemeralEffect",
+            "effect" : "gic_maxhealthboost_patrician_50",
+            "duration" : 3600 //1hr
+          }
+        ]
+		
+      },
+
+      "ranks" : [
+		"Equites",
+		"Class V",
+		"Class IV",
+		"Class III",
+		"Class II",
+		"Class I"
+		
+      ],
+
+      "defaultUniform" : {
+	    "head" : "berethead",
+        "chest" : "gic_moonrabbitchest", //soldierchest
+        "legs" : "smartpants", //soldierpants
+		"back" : ""
+      },
+      "uniformSlots" : [] //"chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"
+    },
+	
+
+	
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "You look like you need someone good with money. Why don't you take me aboard?",
+			  "You look like you need someone to act the face. Yours is quite terrible to be frank.",
+			  "You there, have you kept your ship organized? Maybe you're too poor. Hire me, and I'll fix that up.",
+			  "Have you got any noble blood in you? Surely you must be from a well-off family to own a ship!"
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "I'll be here then.",
+              "I'll be here."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "A sorry excuse for a crew.",
+			  "You call this well-kept?",
+			  "I want a crew check, right now.",
+			  "You need better living conditions!"
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+	    },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy."
+          ]
+        }
+      }
+	
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "converse" : {
+        "default" : {
+          "default" : [
+			"I got nothin' for you lad.",
+			"Sorry lad, nothing for you.",
+			"Nothing here lad."
+          ]
+        }
+      }
+
+
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player = 18
+    "runSpeed" : 12
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+	  
+          {
+            "head" : [ { "name" : "berethead", "parameters" : { "colorIndex" : [1,2,3,4,5,6,7,8,9,10,11] } } ],
+            "chest" : [ { "name" : "gic_moonrabbitchest", "parameters" : { "colorIndex" : [1,2,3,4,5,6,7,8,9,10,11] } } ],
+            "legs" : [ { "name" : "smartpants", "parameters" : { "colorIndex" : [1,2,3,4,5,6,7,8,9,10,11] } } ]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

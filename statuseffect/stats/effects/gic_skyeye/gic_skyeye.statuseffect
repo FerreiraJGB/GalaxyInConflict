@@ -1,0 +1,21 @@
+{
+  "name" : "gic_skyeye",
+  "blockingStat" : "gic_skyeyeStatusImmunity",
+
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 1,
+    "triggerDamageThreshold" : 1,
+    "explosionDamageAmount" : 0
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "gic_skyeye.lua"
+  ],
+
+  "animationConfig" : "gic_skyeye.animation",
+  
+  "label" : "Sky Eye - 10HP/s when out of combat. On taking damage, buff is disabled for 7s.",
+  "icon" : "/interface/statuses/gic_skyeye_artifact.png"
+}

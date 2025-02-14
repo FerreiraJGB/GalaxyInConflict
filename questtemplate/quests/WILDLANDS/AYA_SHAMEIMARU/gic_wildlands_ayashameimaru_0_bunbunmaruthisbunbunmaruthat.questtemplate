@@ -1,0 +1,62 @@
+{
+  "id" : "gic_wildlands_ayashameimaru_0_bunbunmaruthisbunbunmaruthatquest",
+  "title" : "^#F0523C;[???-0] Rival Scoop",
+  "prerequisites" : [ ],
+  
+  //No cutscene, just messenger text.
+  
+  "text" : "aaaaaa",
+  
+  //Quest ends. Play cutscene at end that is reminiscent of VNs.
+  
+  "completionText" : "aaaa",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+  "rewards" : [
+    [ [ "gic_unitan_saif_player", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_character.lua", //Same as original variant. Enables cutscene on accepting the quest, as well as when the turn-in conditions are met (but not when actually turned-in.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver", //"questGiver",
+      "questComplete" : "questReceiver" //questReceiver
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Find Aya.",
+      "findGoal" : "Speak to Aya.",
+      "turnIn" : "Speak to the ^orange;''weird woman''^reset;."
+    },
+
+    "warpEntityUid" : "gic_romancecharacter_ayashameimaru_progress_island",
+    "warpAction" : "instanceworld:gic_wildlands_ayashameimaru_office_hubworld",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_wildlands_island_rivalnewsreporter_ayashameimaru_starter_confirmation",
+	
+    "gic_missionUnlockedCinema" : "/cinematics/gic_coordinates.cinematic", //???
+    "gic_missionCompleteCinema" : "/cinematics/characters/AYA_SHAMEIMARU/gic_ayashameimaru_bunbunmaruthis.cinematic",	 //leave as coordinates if no need for secondary
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 17,
+    "requireTurnIn" : true,
+    "goalEntityUid" : "gic_romancecharacter_ayashameimaru_office_hubworld",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+	
+//    "showTech" : [
+//      "gic_mortalshell"
+//    ],
+//    "equipTech" : [
+//      "gic_mortalshell"
+//    ],
+
+    "turnInEntityUid" : "gic_romancecharacter_ayashameimaru_office_hubworld"
+  }
+  
+}

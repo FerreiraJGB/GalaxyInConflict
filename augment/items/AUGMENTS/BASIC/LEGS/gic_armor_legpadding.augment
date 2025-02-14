@@ -1,0 +1,30 @@
+{
+  "itemName" : "gic_armor_legpadding",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Leg Equipment^reset;",
+  "inventoryIcon" : "gic_armor_legpadding.png",
+  
+  "description" : 
+  
+"''Had to scrape my knees real bad over gravel once. Had to get into cover as some skirmishers began to open up on us. Potshots here and there, don't think anyone died that day. Fight's over in a few minutes and a mate freaks out and asks if I'm alright. I look down and see this river of blood just coming out of my legs. Doc was around to throw disinfectant on, but I learnt from there on to cover my skin.''
+Basic spec leg pads common to most soldiers of the modern day.
+^green;+5% MELEE and PHYSICAL Resistance.^reset;",
+
+
+
+  "shortdescription" : "Leg Padding",
+
+  "augment" : {
+    "type" : "gic_basiclegs",
+    "name" : "gic_armor_legpadding",
+    "displayName" : "Leg Padding",
+    "displayIcon" : "/items/augments/basic/legs/gic_armor_legpadding.png",
+    "effects" : [ {"stat" : "ews_meleeResistance", "amount" : 0.05}, {"stat" : "physicalResistance", "amount" : 0.05}, "gic_armor_legpadding" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_legwear_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

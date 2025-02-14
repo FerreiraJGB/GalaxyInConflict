@@ -1,0 +1,119 @@
+{
+  "type" : "gic_floranliberationfront_introstory_alliedsapper_talker",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+
+  "identity" : {
+    "gender" : "male"
+  },
+  
+  "persistent" : true,
+
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+    "behavior" : "speaker",
+
+    "behaviorConfig" : {
+      "alwaysRun" : false,
+      "wanderWaitTime" : [6.0, 10.0],
+      "wanderTime" : [0.0, 0.0],
+      "wanderDistance" : 0,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ]
+    },
+
+	
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+			"You're up in time. The villagers are ready to hit back at the Protectorate.",
+			"Some of our folk trained with firearms have 'em ready.",
+			"The ones not trained we gave our best gear for close-quarters.",
+			"Elders want you to sound the attack. You come from the sky and all.",
+			"Just pick up your gear. I've left it by the door.",
+			"They've left your guns in the building on the far-end of the village.",
+			"Yes, go get your gear. Other advisors say it's good to have a backup.",
+			"Again, your ''melee'' equipment is just there, by the door-",
+			"-and your guns are in the far-end of the village. Just take the tunnels.",
+			"The attack will sound once you pick up your firearms.",
+			"No, sod off. I'm not going to stress the 's' like those barbarians.",
+			"Go on, don't keep 'em waiting. Or do I need Bishamonten to come down here and woop your ass?",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"[Dialogue repeat]"
+          ]
+        }
+      },
+      "speak" : {
+        "default" : {
+          "default" : [
+            "Hey! Need to talk to you!"
+          ]
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "gic_colonialsurvivorhead", "parameters" : { "colorIndex" : [5] } }
+            ],
+            "chest" : [
+              { "name" : "gic_colonialsurvivorchest", "parameters" : { "colorIndex" : [5] } }
+            ],
+            "legs" : [
+              { "name" : "gic_colonialsurvivorlegs", "parameters" : { "colorIndex" : [5] } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

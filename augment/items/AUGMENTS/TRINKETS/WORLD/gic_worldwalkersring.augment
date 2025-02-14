@@ -1,0 +1,68 @@
+{
+  "itemName" : "gic_worldwalkersring",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_worldwalkersring.png",
+  "maxStack" : 1,  
+  "description" :
+
+"''I can say I've walked across countless worlds and it wouldn't be entirely incorrect. The truth however is that I've only walked small parts of these countless worlds. There is simply never enough time.''
+
+^green;Immunity to Suspicious Sensations and Standard Medium Bleed.^reset;
+^green;Immunity to standard radiation, scorching, freezing, and oxygenless environments.^reset;",
+
+
+
+  
+  
+  
+  "shortdescription" : "World Walker's Ring",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_worldwalkersring",
+    "displayName" : "World Walker's Ring",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_worldwalkersring.png",
+    "effects" : [ 
+	
+	"gic_worldwalkersring",
+	
+	"gic_worldwalkers_planet_earth",
+	
+	"gic_psychicbleeding_lightStatusImmunity",
+	
+	"gic_bleeding_mediumStatusImmunity",
+	
+    {
+      "stat" : "biomeheatImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "biomecoldImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "biomeradiationImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "breathProtection",
+      "amount" : 1.0
+    }
+
+
+
+
+
+
+
+	
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_rig_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

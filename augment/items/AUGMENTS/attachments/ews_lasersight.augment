@@ -1,0 +1,45 @@
+{
+  "itemName" : "ews_lasersight",
+  "price" : 5000,
+  "rarity" : "Common",
+  "category" : "Attachment",
+  "inventoryIcon" : "ews_lasersight.png",
+  "description" : "Provides a 20% buff to hit chance and accuracy.",
+  "shortdescription" : "Laser Sight (EWS)",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "ews_lasersight", //name of attachment
+	"attachmentTag" : ["ews_rifle","ews_lasersight"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/attachments/ews_lasersight.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "ews_lasersight", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "lasersight", //works for sights, underbarrels
+		
+		"transformationGroupWeapon" : true,		//if enabled, then the laser sight will properly align with the weapon transformation group
+		"lasersightConfig" : {
+			"originalOffset" : [0.675, 0.125],		//original offset
+			"offset" : [0,0],					//mostly set dynamically by scripts if transformationGroupWeapon is true
+			"color" : [255, 0, 0, 150],
+			"length" : 60,
+			"segments" : 20,
+			"angle" : 0
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [0.8,0.8,0.8,0.8,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [0.8,0.8,0.8,0.8] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

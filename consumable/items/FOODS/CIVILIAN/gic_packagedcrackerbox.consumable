@@ -1,0 +1,22 @@
+{
+  "itemName" : "gic_packagedcrackerbox",
+  "rarity" : "Common",
+  "price" : 0,
+  "category" : "food",
+  "inventoryIcon" : "gic_packagedcrackerbox.png",
+  "description" : "A small box of bread-based crackers. The first cracker was made in 1792 by John Pearson in Newburyport, Massachusetts. Pearson was looking to make a type of biscuit that would last longer than traditional sailor's biscuits without spoiling.",
+  "shortdescription" : "Packaged Cracker Box",
+
+  "foodValue" : 8,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "effects" : [ [
+  "gic_foodbuff_human_primer"
+    ] ],
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 10,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

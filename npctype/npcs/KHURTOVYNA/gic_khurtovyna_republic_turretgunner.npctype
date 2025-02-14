@@ -1,0 +1,138 @@
+{
+  "type" : "gic_khurtovyna_republic_turretgunner",
+  "baseType" : "gic_soldierbase",
+  
+  "scripts" : [
+    "/npcs/gic_bmain.lua",
+	"/npcs/gic_turretlounge.lua"
+  ],
+
+  "damageTeam" : 85,
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    },
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}],
+        [1.0, "wander"]
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_frostrepublic_infantryhead" } ],   
+            "chest" : [ { "name" : "gic_frostrepublic_infantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_frostrepublic_infantrylegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_uscm4"
+            ]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion", "gic_dialogue_metro2033_commonsoldier_voice1", "gic_rally_khurtovyna_republic_primer", "gic_rally_khurtovyna_republic_medic_primer"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : -0.4
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.25
+      }
+	  
+	  
+    }
+  }
+  
+}

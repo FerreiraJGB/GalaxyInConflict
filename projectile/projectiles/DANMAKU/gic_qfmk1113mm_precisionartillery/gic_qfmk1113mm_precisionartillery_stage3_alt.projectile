@@ -1,0 +1,43 @@
+{
+  "projectileName" : "gic_qfmk1113mm_precisionartillery_stage3_alt",
+  "physics" : "rocket",
+  
+  
+  "periodicActions" : [
+    {
+      "time" : 0.4,
+      "action" : "sound",
+      "rangeMultiplier" : 4.0,
+      "options" : [
+        "/sfx/WorldAtWar/gic_naval_gun5.ogg"
+      ]
+    },  		
+    {
+      "time" : 0.4,
+      "action" : "projectile",
+      "type" : "gic_qfmk1113mm_precisionartillery_stage4_alt",
+      "inheritDamageFactor" : 1,
+	  "angle" : 90,
+	  "fuzzAngle" : 360,
+      "angleAdjust" : 0
+    }
+  ],
+  
+  
+  "image" : "gic_qfmk1113mm_precisionartillery_stage3.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+ 
+  
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 3,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 1.3,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

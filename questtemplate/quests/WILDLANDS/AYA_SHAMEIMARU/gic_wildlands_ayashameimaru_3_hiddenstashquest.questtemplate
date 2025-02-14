@@ -1,0 +1,28 @@
+{
+  "id" : "gic_wildlands_ayashameimaru_3_hiddenstashquest",
+  "title" : "^#D1FFDE;[AYA-3] Hidden Stash",
+  "prerequisites" : [  ],
+  "text" : "The note reveals something interesting: There's a hidden stash of goods somewhere in the Port District.",
+  "completionText" : "Opening the cabinet you notice that there's less space inside than it appears. You slide your fingers around to find the handle to open the hidden compartment.",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_spiritualremedy", 5 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+	
+    "turnInEntityUid" : "",
+    "conditions" : [
+    ]
+  }
+}

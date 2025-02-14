@@ -1,0 +1,82 @@
+{
+  "projectileName" : "gic_maku_rocketshot_muzzle",
+  "image" : "gic_maku_rocketshot_muzzle.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : true,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnTimeout" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "inheritDamageFactor" : 1
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_maku_rocketshot",
+      "inheritDamageFactor" : 1
+    },
+
+
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame_maku",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 165
+    },		
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame_maku",
+      "inheritDamageFactor" : 0.1,
+	  "angleAdjust" : 170
+    },	
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame_maku",
+      "inheritDamageFactor" : 0.1,
+	  "angleAdjust" : 175
+    }	,
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame_maku",
+      "inheritDamageFactor" : 0.1,
+	  "angleAdjust" : 180
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame_maku",
+      "inheritDamageFactor" : 0.1,
+	  "angleAdjust" : 185
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame_maku",
+      "inheritDamageFactor" : 0.1,
+	  "angleAdjust" : 190
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame_maku",
+      "inheritDamageFactor" : 0.1,
+	  "angleAdjust" : 195
+    }
+  ],
+  
+  "actionOnCollide" : [
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

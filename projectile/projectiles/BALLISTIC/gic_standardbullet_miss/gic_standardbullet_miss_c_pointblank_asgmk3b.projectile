@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_standardbullet_miss_c_pointblank_asgmk3b",
+  "image" : "/projectiles/ballistic/gic_standardbullet/gic_standardbullet_c.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 0.05,
+  "actionOnHit" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    }
+  ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_miss_c",
+      "fuzzAngle" : 0.0,
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    }
+  ],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium" ],
+  "speed" : 200,
+  
+  "damageTeam" : { "type" : "indiscriminate" },
+  
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

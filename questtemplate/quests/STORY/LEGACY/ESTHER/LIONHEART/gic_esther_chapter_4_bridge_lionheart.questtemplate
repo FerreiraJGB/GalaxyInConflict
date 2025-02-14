@@ -1,0 +1,42 @@
+{
+  "id" : "gic_esther_chapter_4_bridge_lionheartQuest",
+  "title" : "^#D1FFDE;The Replacement Yama", //Met at the final bridge before fighting the Yama.
+  "prerequisites" : [ ],
+  
+  "text" : "",
+  
+  "completionText" : "",
+  
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_newlondiniumknighthead", 1 ], [ "gic_newlondiniumknightchest", 10 ], [ "gic_newlondiniumknightlegs", 1 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      }
+    },
+
+
+    "descriptions" : {
+      "turnIn" : "Speak to ^orange;Lionheart^reset;."
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_4_final_lionheart",
+    "conditions" : [
+    ],
+  "setUniverseFlags" : ["gic_esther_chapter_1_hubworld_dockingbay75_attachment_brigandluteplayer"] 	
+
+  }
+}

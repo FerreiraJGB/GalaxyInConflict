@@ -1,0 +1,136 @@
+{
+  "type" : "gic_khurtovyna_spartanranger_train_defense",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeamType" : "friendly",
+  "damageTeam" : 1,
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "behavior" : "gic_hostileguard_advanced", //Will switch to sheathedprimary when in close range.
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    },
+	
+    "reactions" : {
+      "spontaneous" : [
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_frostrepublic_infantryhead" } ],   
+            "chest" : [ { "name" : "gic_frostrepublic_infantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_frostrepublic_infantrylegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_uscm4"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_npcbayonet_m16a3", "parameters" : { "backupWeapon" : true }  }
+			]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion", "gic_dialogue_metro2033_commonsoldier_voice1", "gic_rally_khurtovyna_republic_primer", "gic_rally_khurtovyna_republic_medic_primer"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1111.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.5
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.75
+      }
+	  
+	  
+    }
+  }
+  
+}

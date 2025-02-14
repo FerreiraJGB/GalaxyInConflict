@@ -1,0 +1,58 @@
+{
+  "id" : "gic_esther_chapter_0_2_armsofgazringquest",
+  "title" : "^yellow;[GiC]: Chapter 0 - Arms of Gazring",
+  "prerequisites" : [ "gic_esther_chapter_0_1_arkbeyondquest" ],
+  
+  //QUEST 3
+  
+  //No cutscene, just messenger text before the warp to the Gazring Airlock.
+  
+  "text" : "---",
+  
+  //?
+  
+  "completionText" : "---",
+    
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : false,
+  "rewards" : [
+//    [ [ "", 1 ], [ "", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_unlockonly.lua", //Same as original variant. Enables cutscenes only when unlocked.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_keine_hubworld/gic_esther_keine_hubworld_portrait.png"} ],
+        "title" : "Kamish"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;Esther^reset; to travel to the ^orange;Gazring^reset;.",
+      "findGoal" : "Traverse the area to find Kamish.",
+      "turnIn" : "Talk to ^orange;Kamish^reset;."
+    },
+
+    "warpEntityUid" : "gic_esthership",
+    "warpAction" : "instanceworld:gic_esther_chapter_1_hubworld_dockingbay75",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_esther_chapter_1_hubworld_dockingbay75_confirmation",
+	
+    "gic_missionUnlockedCinema" : "/cinematics/gic_coordinates.cinematic", //Use GiC Coordinates variant that only states mission obtained.
+//    "gic_missionCompleteCinema" : "/cinematics/gic_missingcutscene.cinematic",	 //Needs cutscene, which will need its own primer and a shitload of time.
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 10,
+
+    "goalEntityUid" : "gic_esther_keine_hubworld",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "gic_esther_keine_hubworld"
+  }
+  
+}

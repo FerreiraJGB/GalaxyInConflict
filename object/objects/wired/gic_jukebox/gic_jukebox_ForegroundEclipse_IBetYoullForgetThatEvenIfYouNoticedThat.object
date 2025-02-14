@@ -1,0 +1,80 @@
+{
+  "objectName" : "gic_jukebox_ForegroundEclipse_IBetYoullForgetThatEvenIfYouNoticedThat",
+  "colonyTags" : ["human","musical","pretty","light"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 200,
+  "lightColor" : [153, 140, 76],
+  "lightPosition" : [0, 1],
+
+  "description" : "[JUKEBOX - Foreground Eclipse - I Bet You'll Forget That Even If You Noticed That]",
+  "shortdescription" : "Jukebox",
+  "race" : "human",
+
+  "inventoryIcon" : "gic_jukeboxicon.png",
+  "orientations" : [
+    {
+      "image" : "gic_jukeboxleft.png:<color>.<frame>",
+      "imagePosition" : [-12, 0],
+      "animationPosition" : [-12, 0],
+      "animationParts" : {
+        "bg" : "gic_jukeboxleft.png",
+        "fg" : "gic_jukeboxleftlit.png"
+      },
+      "direction" : "left",
+      "flipImages" : true,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "gic_jukebox.png:<color>.<frame>",
+      "imagePosition" : [-12, 0],
+      "animationPosition" : [-12, 0],
+      "animationParts" : {
+        "bg" : "gic_jukebox.png",
+        "fg" : "gic_jukeboxlit.png"
+      },
+      "direction" : "right",
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_jukebox.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/recordscratch2.ogg" ],
+      "off" : [ "/sfx/objects/recordscratch1.ogg" ]
+    }
+  },
+
+  "scripts" : [
+    "/objects/wired/light/light.lua",
+    "/scripts/npcToyObject.lua",
+    "/objects/human/jukebox/jukebox.lua"
+  ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [0, 0] ],
+
+  "npcToy" : {
+    "influence" : [
+      "music",
+      "music",
+      "music",
+      "musicFinished"
+    ],
+    "defaultReactions" : {
+      "musicFinished" : [
+        [1.0, "smile"],
+        [1.0, "laugh"]
+      ]
+    },
+    "randomStandXRange" : [-8, 8]
+  },
+
+  "defaultLightState" : false,
+
+  "soundEffect" : "/music/touhou/gic_ForegroundEclipse_IBetYoullForgetThatEvenIfYouNoticedThat.ogg",
+  "soundEffectRangeMultiplier" : 1.0
+}

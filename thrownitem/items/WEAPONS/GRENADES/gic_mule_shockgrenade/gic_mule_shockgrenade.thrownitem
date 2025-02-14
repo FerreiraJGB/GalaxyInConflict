@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_mule_shockgrenade",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase_sword",
+  "category" : "^#14e903;Grenade^reset;",
+  "inventoryIcon" : "gic_mule_shockgrenade.png",
+  "image" : "gic_mule_shockgrenade.png",
+  "shortdescription" : "''Mule'' Shock Grenade",
+  "description" : "A Riot Stun Spear Head cut from the base to form a rudimentary stick grenade. Tuned to overload upon impact with the ground, releasing chaff-like metallic dust which rapidly electrifies to create a potent tasing area of effect.",
+
+  "ammoUsage" : 1,
+
+  "edgeTrigger" : true,
+  "windupTime" : 1,
+  "cooldown" : 0.2,
+
+  "projectileType" : "gic_mule_shockgrenade",
+  "projectileConfig" : {
+    "speed" : 29.8,
+//    "power" : 500.5,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  }
+}

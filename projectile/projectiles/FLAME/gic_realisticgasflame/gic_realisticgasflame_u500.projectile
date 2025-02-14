@@ -1,0 +1,45 @@
+{
+  "projectileName" : "gic_realisticgasflame_u500",
+  "image" : "gic_realisticgasflame.png",
+  "physics" : "gic_realisticflame",
+  "animationCycle" : 0.9,
+  "animationLoops" : false,
+  "frameNumber" : 12,
+  "winddownFrames" : 3,
+  "intangibleWinddown" : true,
+  "power" : 50,
+  "speed" : 35,
+  "timeToLive" : 0.9,
+  "bounces" : 8,
+  "piercing" : true,
+
+  "periodicActions" : [
+    {
+      "time" : 0.09,
+      "action" : "projectile",
+      "type" : "gic_realisticgasflame_u500_spread",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.3,
+      "inheritDamageFactor" : 0.15
+    }
+  ],
+ 
+  "actionOnCollide" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame_short_u500",
+      "fuzzAngle" : 360,
+      "inheritDamageFactor" : 1.00,
+	  "angle" : -90
+    }
+  ],
+  
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "lightColor" : [235, 126, 2],
+  "damageKind" : "ews_explosive",
+  "damageKindImage" : "/interface/statuses/fire.png",
+  "statusEffects" : [
+    "burning", "gic_oilfire_primer", "gic_burn_wounds"
+  ],
+  "hydrophobic" : true
+}

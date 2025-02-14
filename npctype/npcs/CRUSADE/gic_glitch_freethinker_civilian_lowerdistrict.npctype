@@ -1,0 +1,94 @@
+{
+  "type" : "gic_glitch_freethinker_civilian_lowerdistrict",
+  "baseType" : "gic_villagerbase",
+
+  "persistent" : true,
+
+  "damageTeamType" : "enemy",
+//  "damageTeam" : 2,
+
+  "dropPools" : [ ],
+  
+  "scriptConfig" : {
+    "dialog" : {
+	
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+	  
+	  
+	  
+	  
+	  
+	 
+	  
+      "flee" : {
+        "helpme" : "/dialog/GLITCH/gic_glitch_freethinker_civilian_upperdistrict_flee.config:helpme",
+        "safe" : "/dialog/GLITCH/gic_glitch_freethinker_civilian_upperdistrict_flee.config:safe"
+      },
+	  
+	  
+      "breakObject" : "/dialog/GLITCH/gic_glitch_freethinker_civilian_lowerdistrict_converse.config:breakObject",
+	  
+      "greeting" : "/dialog/GLITCH/gic_glitch_freethinker_civilian_lowerdistrict_converse.config:greeting",
+      "converse" : "/dialog/GLITCH/gic_glitch_freethinker_civilian_lowerdistrict_converse.config:converse",
+	  
+      "accuse" : "/dialog/thief.config:accuse",
+      "alert" : "/dialog/thief.config:alert"
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [
+              ""
+            ],
+            "chest" : [
+              { "name" : "peasantchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "craftsmenchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "merchantchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "peasantlegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "craftsmenlegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "merchantlegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ]
+          }
+		  
+        ] ]
+    ]
+
+
+  
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 0.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

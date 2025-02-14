@@ -1,0 +1,93 @@
+{
+  "type" : "gic_tyrantjudge_sinsacksapper_containmentunit",
+  "baseType" : "gic_soldierbase",
+  "damageTeamType" : "friendly",
+  "damageTeam" : 1,
+  
+  "identity" : {
+    "gender" : "male"
+  },
+  
+  "dropPools" : [],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "!"
+          ]
+        }
+      }
+    },
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "patrol", { "timeRange" : [0.1,0.3]}],
+        [2.0, "wander"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_sinsackhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_frostrepublic_raiderchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_frostrepublic_raiderlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_shockbanditcarrierback", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+			  "gic_mp41r_raider_npc"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : [ "gic_npc_death_blood_explosion", "gic_shockbanditcarrier_light", "gic_dialogue_metro2033_commonsoldier_voice3_gasmask"],    
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 5555.5
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.001
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+
+      "ews_npcfirerate" : {
+        "baseValue" : 0
+      },
+	  
+      "gic_suppressedProtection" : {
+        "baseValue" : 1
+      },
+	  
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	
+      "fireResistance" : {
+        "baseValue" : 0.8
+      },
+	
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.75
+      }
+	  
+	  
+    }
+  }
+  
+}

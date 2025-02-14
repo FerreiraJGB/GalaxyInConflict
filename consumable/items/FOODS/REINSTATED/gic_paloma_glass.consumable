@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_paloma_glass",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#FFB941;Springfield Bar Custom",
+  "inventoryIcon" : "gic_foods_reinstated.png",
+  
+  
+  
+  "description" : "The paloma is a tequila-based cocktail. This drink is most commonly prepared by mixing tequila, lime juice, and a grapefruit-flavored soda and served on the rocks with a lime wedge. Adding salt to the rim of the glass is also an option.  
+
+^Yellow;- No Effects.^reset;",
+  
+  "shortdescription" : "Paloma",
+  
+  "effects" : [ [
+ //  {
+ //       "effect" : "gic_lowgravity_food_nueale",
+ //       "duration" : 1800
+ //   }
+  ] ],
+  
+  
+  
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

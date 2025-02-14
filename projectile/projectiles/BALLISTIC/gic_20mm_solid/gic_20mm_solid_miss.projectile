@@ -1,0 +1,46 @@
+{
+  "projectileName" : "gic_20mm_solid_miss",
+  "image" : "gic_20mm_solid.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_heavybullet_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.03,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+],
+  
+  "emitters" : [ "rocketsmoke", "rocketsmoke", "rocketsmoke" ],
+  "power" : 5.0,
+  "speed" : 170,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "NoDamage"
+}

@@ -1,0 +1,47 @@
+{
+  "metadata" : {
+    "name" : "gic_unitan_frigate",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [
+      "gic_unitan_frigate"
+    ],
+    "breathable" : false,	
+    "gravity" : 160,
+    "extendSurfaceFreeSpace" : 100,
+    "maxRadius" : 1000000,
+    "maxParts" : 2,
+    "protected" : true
+  },
+
+  "parts" : [
+
+	
+    // SAFE ZONE
+    {
+      "name" : "gic_unitan_frigate_safe-empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "/dungeons/SPACE_ENCOUNTERS/gic_unitan_frigate_safe-empty.json" ],
+      "chance" : 0,
+      "markDungeonId" : false
+    },	
+	
+
+    {
+      "name" : "gic_unitan_frigate",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+        [ "doNotConnectToPart", [ "gic_unitan_frigate" ] ]
+      ],
+      "def" : [ "tmx", "gic_unitan_frigate.json" ],
+      "chance" : 1
+    }
+	
+
+	
+  ]
+}

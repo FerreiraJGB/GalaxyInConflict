@@ -1,0 +1,32 @@
+{
+  "itemName" : "gic_armor_spikestabplate",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Armor Plate^reset;",
+  "inventoryIcon" : "gic_armor_spikestabplate.png",
+  "maxStack" : 1,  
+  "description" :
+
+"The Spike-Stab Plate is a combination of Stab and Spike armor plating. Resistant to both heavy stabs from large knives and slashing strikes by the likes of machetes, the modern Spike-Stab plate offers a highly resistant form of defense against most forms of close-combat criminal weaponry. The stab-resistant plate has no recognized anti-ballistic performance which allows the item to be sold to most civilian population centers without legal troubles.
+^green;+30% MELEE Resistance | +25% PHYSICAL Resistance.^reset;",
+
+
+
+  
+  
+  
+  "shortdescription" : "Spike-Stab Plate",
+
+  "augment" : {
+    "type" : "gic_basicchest",
+    "name" : "gic_armor_spikestabplate",
+    "displayName" : "Spike-Stab Plate",
+    "displayIcon" : "/items/augments/basic/chest/gic_armor_spikestabplate.png",
+    "effects" : [ {"stat" : "ews_meleeResistance", "amount" : 0.3}, {"stat" : "physicalResistance", "amount" : 0.25}, "gic_armor_spikestabplate" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_armorplate_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

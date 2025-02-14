@@ -1,0 +1,39 @@
+{
+  "name" : "gic_patron_ak202_darkness",
+  "effectConfig" : {
+	"projectileType" : "gic_null", //does not accept arrays
+	"projectileTypeMiss" : "gic_null", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	"missChance" : 10,
+	
+	"offset" : [-0.8,0.5],
+	
+	"muzzleOffset" : [0, -0.0],
+	
+	"muzzleOffset2" : [0, 0.0],
+	
+	"trackingDistance" : 0,
+	"trackingAngle" : 1,
+	"fireRate" : 99999999.0,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 199999990,
+	"reloadTimer" : 99999999.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_patron_ak202_darkness.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_patron_ak202_darkness.animation"
+}

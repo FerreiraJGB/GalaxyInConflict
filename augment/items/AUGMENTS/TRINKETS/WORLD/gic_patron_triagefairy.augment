@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_patron_triagefairy",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#8B30F0;Patron Trinket",
+  "inventoryIcon" : "gic_patron_triagefairy.png",
+  "maxStack" : 1,
+  "description" : 
+  
+"''Am I strong enough? Do I need more power?
+Should I kneel and pray for the day where I can face them all?
+Should I give it up? Should I run and cower?
+Or should I go on anyway and hope that I don't fall?''
+
+^green;Active Protection: 200HP over 3s health regeneration when receiving 75 or more damage^reset; | ^red;-50% ATK power and -50% EWS stats when under the fairy's healing.^reset;",
+
+
+
+  "shortdescription" : "Patron: Triage Fairy",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_patron_triagefairy",
+    "displayName" : "Patron: Triage Fairy",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_patron_triagefairy.png",
+    "effects" : [ "gic_patron_triagefairy", "gic_bulletshot_triagefairy_bonusheal_primer" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_patron_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

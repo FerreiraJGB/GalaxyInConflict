@@ -1,0 +1,64 @@
+{
+  "itemName" : "gic_floran_axe",
+  "price" : 500,
+  "level" : 6,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A bandit's axe. Useful for breaking posture.",
+  "shortdescription" : "Axe",
+  "tooltipKind" : "base",
+  "category" : "Axe",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","axe"],
+ 
+  "inventoryIcon" : "gic_floran_axe.png",
+
+  "animation" : "/items/active/weapons/melee/axe/axe.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_floran_axe.png"
+  },
+  "animationCustom" : { "sounds" : {
+          "fire" : [ "/sfx/melee/gic_sekiro_ichimonji_16speed.ogg" ]
+        } },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "axecleave",
+  "primaryAbility" : {
+    "fireTime" : 0.70,
+    "baseDps" : 6,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "knockbackRange" : 15,
+	  "damageType" : "IgnoresDef",
+      "statusEffects" : [ "gic_guardbreak" ]
+    },
+	
+    "allowHold" : false,
+    "stances" : {
+      "idle" : {
+        "allowRotate" : false
+      },
+      "windup" : {
+        "hold" : true,
+        "duration" : 0.55,
+
+        "allowRotate" : false
+      },
+      "fire" : {
+        "allowRotate" : false
+      },
+      "hold" : {
+        "allowRotate" : false
+      }
+    }
+	
+  },
+
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

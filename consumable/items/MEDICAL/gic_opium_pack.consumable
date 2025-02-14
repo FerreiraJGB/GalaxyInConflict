@@ -1,0 +1,52 @@
+{
+  "itemName" : "gic_opium_pack",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_opium_pack.png",
+  
+  "itemTags" : ["gic_syringerifle_ammo"],
+  
+  "maxStack" : 6,
+  "description" : "A relatively mild opioid. Most commonly used to manufacture Morphine. Can be used in a pinch, but as it has not been processed into Morphine it will take far longer to apply than normal.
+
+^green;- Restores 150 health, costing 15 seconds.
+^red;- Causes Opiate Addiction for unskilled or unprepared users.^white;
+^red;- Can cause an overdose.^white;",
+
+  "shortdescription" : "^Orange;Opium",
+  "effects" : [ [
+      {
+        "effect" : "gic_opium_medkitheal",
+        "duration" : 15
+      },
+      {
+        "effect" : "gic_opiate_addiction"
+      },
+	  {
+        "effect" : "gic_applyopiate_addiction"
+      },
+	  
+      {
+        "effect" : "gic_trait_drugaddict_primer"
+      },	  
+	  
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 15
+      },
+	  
+	  {
+        "effect" : "gic_opiate_overdose_smalldelay"
+      },	  
+	  {
+        "effect" : "gic_opiate_overdose_active_check"
+      }
+	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_medkit_use" ],
+  "blockingEffects" : [
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "metadata" : {
+    "name" : "gic_wreckedsolarshuttle",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [
+      "gic_wreckedsolarshuttle_typhon1",
+      "gic_wreckedsolarshuttle_typhon1_infested",
+      "gic_wreckedsolarshuttle_duffel",
+      "gic_wreckedsolarshuttle_duffel_infested",
+      "gic_wreckedsolarshuttle_carol",
+      "gic_wreckedsolarshuttle_carol_infested",
+      "gic_wreckedsolarshuttle_typhon2",
+      "gic_wreckedsolarshuttle_typhon2_infested"
+    ],
+	
+    "gravity" : 0,
+    "maxRadius" : 1000000,
+    "maxParts" : 1,
+    "protected" : true
+  },
+
+  "parts" : [
+
+    // SAFE ZONE
+    {
+      "name" : "safe-empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "/dungeons/space/hazards/safe-empty.json" ],
+      "chance" : 0,
+      "markDungeonId" : false
+    },
+	
+	
+	//FIGHTER-CLASS
+	{
+      "name" : "gic_wreckedsolarshuttle_typhon1",
+      "rules" : [],
+      "def" : [ "tmx", "gic_wreckedsolarshuttle_typhon1.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_wreckedsolarshuttle_typhon1_infested",
+      "rules" : [],
+      "def" : [ "tmx", "gic_wreckedsolarshuttle_typhon1_infested.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_wreckedsolarshuttle_typhon2",
+      "rules" : [],
+      "def" : [ "tmx", "gic_wreckedsolarshuttle_typhon2.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_wreckedsolarshuttle_typhon2_infested",
+      "rules" : [],
+      "def" : [ "tmx", "gic_wreckedsolarshuttle_typhon2_infested.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_wreckedsolarshuttle_duffel",
+      "rules" : [],
+      "def" : [ "tmx", "gic_wreckedsolarshuttle_duffel.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_wreckedsolarshuttle_duffel_infested",
+      "rules" : [],
+      "def" : [ "tmx", "gic_wreckedsolarshuttle_duffel_infested.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_wreckedsolarshuttle_carol",
+      "rules" : [],
+      "def" : [ "tmx", "gic_wreckedsolarshuttle_carol.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_wreckedsolarshuttle_carol_infested",
+      "rules" : [],
+      "def" : [ "tmx", "gic_wreckedsolarshuttle_carol_infested.json" ],
+      "chance" : 1
+    }
+	
+	
+	
+	
+  ]
+}

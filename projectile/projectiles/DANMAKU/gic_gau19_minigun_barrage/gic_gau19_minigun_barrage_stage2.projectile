@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_gau19_minigun_barrage_stage2",
+  "physics" : "rocket",
+  "periodicActions" : [
+
+	
+    {
+      "time" : 0.05,
+      "action" : "projectile",
+      "type" : "gic_gau19_minigun_barrage_stage3",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0,
+	  "fuzzAngle" : 360,
+      "angleAdjust" : 0
+    }
+	
+  ],
+  "image" : "gic_gau19_minigun_barrage_stage2.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 70,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 2.0,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

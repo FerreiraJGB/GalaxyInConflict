@@ -1,0 +1,32 @@
+{
+  "id" : "gic_ec01_identitycacheQuest",
+  "title" : "^#D1FFDE;Protectorate Identity Card Cache",
+//  "prerequisites" : [ "gic_springfieldbar_introQuest" ],
+  "text" : "",
+  "completionText" : "",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_ark_katana_player", 1 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_1_springfield_bartender",
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_ec01_identitycache",
+        "count" : 1,
+        "consume" : true
+      }
+    ]
+  }
+}

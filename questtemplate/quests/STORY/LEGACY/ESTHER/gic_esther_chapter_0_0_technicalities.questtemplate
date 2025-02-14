@@ -1,0 +1,40 @@
+{
+  "id" : "gic_esther_chapter_0_0_technicalitiesQuest",
+  "title" : "^#D1FFDE;Protectorate Technicalities",
+//  "prerequisites" : [ "gic_springfieldbar_introQuest" ],
+  "text" : "---",
+  "completionText" : "---",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalmicrocredit", 500 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_archivist_tradeterminal",
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_technicalities_vol6-codex",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find an Archive on a ^yellow;Colonized Barren.^reset; ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_technicalities_vol11-codex",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Archivists can be located at the main commercial hub of a spaceport. ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

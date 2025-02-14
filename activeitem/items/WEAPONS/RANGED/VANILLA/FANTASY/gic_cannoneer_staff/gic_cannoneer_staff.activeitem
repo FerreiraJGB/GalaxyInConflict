@@ -1,0 +1,92 @@
+{
+  "itemName" : "gic_cannoneer_staff",
+  "price" : 1200,
+  "inventoryIcon" : "gic_cannoneer_staff.png",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "The arcane magic of bullet-craft.",
+  "shortdescription" : "Cannoneer's Staff",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "Battle Rifle",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_cannoneer_staff.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/ranged/gic_heavymachinegun_muzzleflash.png"
+  },
+  "animationCustom" : {
+  
+    "sounds" : {
+    "fire" : {
+      "pool" : [ "/sfx/gun/gic_57mm_type97.ogg" ],
+      "rangeMultiplier" : 5.0
+    }
+   }
+	
+
+
+  },
+
+  "baseOffset" : [0.75, 0.0],
+  "muzzleOffset" : [2.0, 0.18],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.135,
+    "baseDps" : 386,
+    "energyUsage" : 180,
+    "inaccuracy" : 0.006,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "gic_magicshot_napalm",
+    "projectileParameters" : {
+      "knockback" : 10,
+	  "speed" : 40
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.1, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.1, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+  "aimOffset" : -4,
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_triballevy_javelin",
+  "physics" : "arrow",
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "gic_triballevy_javelin.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "damageKindImage" : "icon.png",
+  "power" : 40,
+  "onlyHitTerrain" : false,
+  "knockback" : 2,
+  "knockbackDirectional" : true,
+  "statusEffects" : [ {"effect":"gic_boss_melee_primer","duration":5}, "gic_bulletshot" ],
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "damagePoly" : [ [12, -0.2], [12.5, -0.2], [12.5, 0.2], [12, 0.2] ]
+}

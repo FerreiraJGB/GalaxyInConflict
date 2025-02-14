@@ -1,0 +1,190 @@
+{
+  "type" : "gic_surfacecityspacecolonist_undercoverguard",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ "gic_surfacecityspacecolonist_undercoverguardTreasure" ],
+  
+  "scriptConfig" : {
+    "behavior" : "gic_villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 0.85,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "questGenerator" : {
+      "pools" : ["guard"],
+      "enableParticipation" : false,
+      "timeLimit" : 30,
+      "nearbyQuestLimit" : 1,
+      "nearbyQuestRange" : 500,
+      "questCountRange" : [1, 4],
+      
+      "graduation" : {
+        "nextNpcType" : [
+          []
+        ]
+      }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "patrol", { "timeRange" : [0.6,0.2]}],
+        [5.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+      "converse" : "/dialog/space_colony/gic_surfacecityspacecolonist_converse.config:converse",
+	  
+      "greeting" : "/dialog/space_colony/gic_surfacecityspacecolonist_converse.config:converse",
+
+      "attack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cantReach",
+
+      "hail" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard.config:hail",
+
+      "accuse" : "/dialog/thief.config:accuse"
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [
+              "",
+              { "name" : "gic_glasses5head", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "gic_glasses5head", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "gic_glasses5head", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "gic_glasses5head", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+
+              { "name" : "winterscarfhead", "parameters" : { "colorIndex" : 4 } }, { "name" : "winterscarfhead", "parameters" : { "colorIndex" : 5 } }, { "name" : "winterscarfhead", "parameters" : { "colorIndex" : 6 } }, { "name" : "winterscarfhead", "parameters" : { "colorIndex" : 7 } }, { "name" : "winterscarfhead", "parameters" : { "colorIndex" : 8 } }
+            ],
+            "chest" : [
+              { "name" : "conceptchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "coolchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "tshirtchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "hoodiechest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "coollegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 8 } }
+            ],
+			"sheathedprimary" : [
+			"gic_emcp19",
+            "gic_vich515",
+			"gic_ashot"
+			]
+          },
+
+          {
+            "head" : [
+              ""
+            ],
+            "chest" : [
+              { "name" : "conceptchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "coolchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "tshirtchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "hoodiechest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "coollegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 8 } }
+            ],
+			"sheathedprimary" : [
+			"gic_emcp19",
+            "gic_vich515",
+			"gic_ashot"
+			]
+          },
+
+          {
+            "head" : [
+              ""
+            ],
+            "chest" : [
+              { "name" : "workoutchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "tshirtchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "coollegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 8 } },
+              { "name" : "conceptlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "conceptlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "conceptlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "conceptlegs", "parameters" : { "colorIndex" : 8 } }
+            ],
+			"sheathedprimary" : [
+			"gic_emcp19",
+            "gic_vich515",
+			"gic_ashot"
+			]
+          }
+
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.2
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.4
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : -100.0
+      }	
+	  
+    }
+  }
+}

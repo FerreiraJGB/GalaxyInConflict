@@ -1,0 +1,71 @@
+{
+  "projectileName" : "gic_smokegrenade_concealment_zone_nogrenade",
+  "physics" : "laser",
+  "timeToLive" : 40,
+  "image" : "gic_smokegrenade_concealment_zone_nogrenade.png",
+  "animationCycle" : 0.8,
+  "frameNumber" : 12,
+  "windupFrames" : 3,
+  "winddownFrames" : 3,
+  "periodicActions" : [
+  
+  
+ 	{
+      "time" : 3,
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 2
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_smokegrenade/1.png",
+			"fullbright":true,"size":1.3,
+			"destructionAction":"fade",
+			"destructionTime":6.0
+		}
+	}, 
+	{
+      "time" : 1,
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 2
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_smokegrenade/1.png",
+			"fullbright":true,"size":1.3,
+			"destructionAction":"fade",
+			"destructionTime":4.0
+		}
+	}
+	
+	
+  ],
+  "actionOnReap" : [],
+  "speed" : 0,
+  "power" : 0,
+
+  "onlyHitTerrain" : false,
+  "persistentStatusEffects" : ["gic_smokegrenade_concealment" ],
+  "statusEffectArea" : [ [-12.0, 0], [-12.0, -12.0], [0, -12.0], [12.0, -12.0], [12.0, 0], [12.0, 12.0], [0, 12.0], [-12.0, 12.0] ],
+
+  "renderLayer" : "Player+1",
+  "orientationLocked" : true,
+  "fullbright" : true,
+  "emitters" : [],
+  
+  "damagePoly" : [ [-74, 0], [-56, -56], [0, -74], [56, -56], [74, 0], [56, 56], [0, 74], [-56, 56] ],
+  "statusEffects" : [{"effect":"gic_infantry_panic","duration":5.0}],
+  "damageKind" : "hidden",
+
+  "piercing" : true,
+  "bounces" : -1,
+
+  "scripts" : ["gic_smokegrenade_concealment_zone.lua"],
+  
+  "persistentAudio" : "/sfx/Battlefield5/gic_BFV_SmokeFizzle_SFX.ogg" //gic_cod4_flare_loop_alt
+}

@@ -1,0 +1,295 @@
+{
+  "objectName" : "gic_spaceport_tradeterminal",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "description" : "Planetside supply operations and Galactic Standard equipment.",
+  "shortdescription" : "^orange;Trade Terminal: Spaceport [GIC]^white;",
+  "race" : "generic",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_spaceport_tradeterminal.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Trade Terminal: Spaceport",
+        "subtitle" : "  Planetside supply operations and Galactic Standard equipment.",
+        "icon" : {
+          "file" : "/interface/crafting/gic_tradeterminal.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+	
+	
+	
+	//"gic_spaceport_vehicles" - Handles purchasable vehicles.
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":3600, //360 000 full creds for 36 million usd worth if you want the actual price of a hind.
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_sika_license"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_colonial_sika_spawnerobject_licensed"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_vehicles" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":900, //half price of colonial sika; "economical" option
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_sika_license"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_sika_mg_spawnerobject_licensed"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_vehicles" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":550, //$550,000 for price of a M4 Sherman;
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_partisan_license"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_unitan_partisan_spawnerobject_licensed"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_vehicles" ]
+		},
+			
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":125,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_namazu_hovertruckcontroller"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_vehicles" ]
+		},	
+	
+	
+
+		
+	
+	//"gic_spaceport_supply" - For field equipment. Slightly cheaper than Embassy counterparts but more expensive than economy counterparts.
+	
+	
+	
+	
+	
+	
+
+			
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":20,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_shockbanditcarrierback"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_supply" ]
+		},
+					
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":50,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_jumptrooperkitback"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_supply" ]
+		},
+				
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":200,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_at7packback"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_supply" ]
+		},
+			
+		
+		
+
+	
+	
+	
+	
+	
+	
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":90,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_koloniya50_medkit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_supply" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":250,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_spefak_medkit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_supply" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":40,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_erchiusfuelrod"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_supply" ]
+		},
+
+	
+
+	
+	
+	//"gic_spaceport_sell" - Does not buy any cargo type except for consumer goods.
+	
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_consumergoods"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":8, //8
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_spaceport_tradeterminal", "gic_spaceport_sell" ]
+		}
+	
+	
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_spaceport_tradeterminal" ]
+  },
+  "printable" : false,
+  "price" : 0,
+  
+  "inventoryIcon" : "gic_spaceport_tradeterminal.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_spaceport_tradeterminal.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+
+}

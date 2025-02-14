@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_psychicshot_defenderdoll",
+  //Touhou: Imperishable Night, Alice's not-doll attack
+  "image" : "gic_psychicshot_defenderdoll.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 50,
+  "timeToLive" : 10,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  "power" : 80.0,
+  "knockback" : 10,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "statusEffects" : [ "gic_frostburn" ],
+//  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

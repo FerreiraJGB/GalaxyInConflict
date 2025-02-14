@@ -1,0 +1,72 @@
+{
+  "type" : "gic_undercolonyabandonedsector_lurker",
+  "baseType" : "gic_soldierbase",
+
+  "dropPools" : [ "gic_undercolonyarmorymagsspawnTreasure" ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Light'em!",
+			"Sparks will fly!",
+			"Hey!",
+			"Over here!",
+			"Huh!?",
+			"Target spotted!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  
+	  
+          {
+            "chest" : [ { "name" : "gic_oldadventurersarmorchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "peasantlegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+			"gic_scumbagpistol_onehanded"
+			],
+            "alt" : [
+              "gic_heiandefender_greatshield_npc"
+            ]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],   
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      }
+	  
+	  
+	  
+    }
+  }
+  
+}

@@ -1,0 +1,173 @@
+{
+  "type" : "gic_protectorate_traumatized",
+  "baseType" : "gic_banditbase_altfire",
+
+  "dropPools" : [ "gic_traumatizedprotectorTreasure" ],
+  "identity" : {
+//    "gender" : "male"
+  },  
+  
+  
+  
+  
+  "movementParameters" : {
+    "runSpeed" : 30,
+    "walkSpeed" : 10,
+	
+    "airJumpProfile" : {
+      "jumpSpeed" : 80.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.2
+    }
+	
+  },  
+  
+  
+  
+  
+  "scriptConfig" : {
+//    "behavior" : "gic_combat_default",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.01,
+      "rangedAimTime" : 0.01,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "patrol", { "timeRange" : [0.1,0.1]}]
+      ]
+    },
+	
+
+    "dialog" : {
+      "attack" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:attack",
+      "reattack" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:reattack",
+      "killedTarget" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:killedTarget",
+      "lostTarget" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:lostTarget",
+      "outOfSight" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:outOfSight",
+      "cheerOn" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:cheerOn",
+      "cantReach" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:cantReach"
+    },
+	
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0.052,
+        "broadsword" : 0.02,
+        "dagger" : 0.02,
+        "axe" : 0.02,
+        "hammer" : 0.02,
+        "shortsword" : 0.02,
+        "spear" : 0.02
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.2,
+        "broadsword" : 0.2,
+        "dagger" : 0.2,
+        "axe" : 0.2,
+        "hammer" : 0.2,
+        "shortsword" : 0.2,
+        "spear" : 0.2
+      }
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+
+		  
+		  
+
+		  
+		  
+		  
+		  
+          {
+            "chest" : [ { "name" : "protectoratechest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "protectoratepants", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+			  "ironbroadsword", "gic_brokenprotectoratebroadsword_flipslash"
+			  ],
+	        "sheathedprimary" : ["commonspear"]
+          }
+		  
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_commandingofficer_phylake_rally"],    
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 166.6666 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+	
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_heavyarmsResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+    }
+  }
+}

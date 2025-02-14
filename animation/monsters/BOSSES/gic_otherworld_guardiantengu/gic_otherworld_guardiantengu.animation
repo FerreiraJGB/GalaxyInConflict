@@ -1,0 +1,719 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+		
+
+
+          "idle" : {
+            "properties" : {
+            },
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+	
+          "jump" : {
+            "frames" : 3,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "fall" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "land" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "transition",
+            "transition" : "idle",
+			
+            "properties" : {
+
+            }
+			
+          },
+		  
+          "aggro_phase2" : {
+            "frames" : 15,
+            "cycle" : 1.5,
+            "mode" : "transition",
+            "transition" : "idle",		  
+            "properties" : {
+            "particleEmittersOn" : [],	
+              "immediateSound" : "/cinematics/esther_story/gic_esther_enitmeeting/gic_siren_11s.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },		  
+
+
+          "aggro_phase4" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "transition",
+            "transition" : "idle",
+			
+            "properties" : {
+              "immediateSound" : "/cinematics/esther_story/gic_esther_enitmeeting/gic_siren_11s.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+			
+          },
+
+
+	
+		  
+          "hop" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "hopfull",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/gleap_hop.ogg" ]
+            }
+          },
+          "hopfull" : {
+            "frames" : 3,
+            "cycle" : 0.325
+          },		  
+		  
+		  
+		  
+		  
+          "darkenergywindup" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_claviger-07.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+          "darkenergy" : {
+            "frames" : 1,
+            "cycle" : 4,
+            "properties" : {
+            }
+          },
+	
+
+
+		  
+          "lightenergywindup" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_claviger-06.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+          "lightenergy" : {
+            "frames" : 1,
+            "cycle" : 4,
+            "properties" : {
+            }
+          },
+
+
+
+
+          "onbashirawindup" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_claviger-01.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+          "onbashira" : {
+            "frames" : 1,
+            "cycle" : 4,
+            "properties" : {
+            }
+          },
+
+
+
+
+
+
+          "fanwindup" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_claviger-09.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+          "fan" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_claviger-03.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+
+
+
+
+
+
+          "summonwindup" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_remnantfromtheashes_claviger-09.ogg",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          },
+          "summon" : {
+            "frames" : 4,
+            "cycle" : 0.25,
+            "properties" : {
+            }
+          },
+
+
+
+
+
+
+
+
+
+
+
+		  
+          "backdash" : {
+            "frames" : 3,
+            "cycle" : 1,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/gic_bloodborne_movement2.wav",
+              "immediateSoundRangeMultiplier" : 4.0
+            }
+          }
+
+
+
+
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.6]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "<partImage>:fall.<frame>"
+              }
+            },
+            "land" : {
+              "properties" : {
+                "image" : "<partImage>:land.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+
+            "aggro_phase2" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+		
+			
+            "hop" : {
+              "properties" : {
+                "image" : "<partImage>:prep.<frame>"
+              }
+            },
+            "hopfull" : {
+              "properties" : {
+                "image" : "<partImage>:hop.<frame>"
+              }
+            },
+			
+
+			
+            "onbashirawindup" : {
+              "properties" : {
+                "image" : "<partImage>:onbashirawindup.<frame>"
+              }
+            },	
+            "onbashira" : {
+              "properties" : {
+                "image" : "<partImage>:onbashira.<frame>"
+              }
+            },	
+
+
+
+            "fanwindup" : {
+              "properties" : {
+                "image" : "<partImage>:fanwindup.<frame>"
+              }
+            },	
+            "fan" : {
+              "properties" : {
+                "image" : "<partImage>:fan.<frame>"
+              }
+            },	
+
+			
+			
+            "summonwindup" : {
+              "properties" : {
+                "image" : "<partImage>:summonwindup.<frame>"
+              }
+            },	
+            "summon" : {
+              "properties" : {
+                "image" : "<partImage>:summon.<frame>"
+              }
+            },	
+			
+			
+			
+            "darkenergywindup" : {
+              "properties" : {
+                "image" : "<partImage>:darkenergywindup.<frame>"
+              }
+            },	
+            "darkenergy" : {
+              "properties" : {
+                "image" : "<partImage>:darkenergy.<frame>"
+              }
+            },	
+			
+			
+
+            "lightenergywindup" : {
+              "properties" : {
+                "image" : "<partImage>:lightenergywindup.<frame>"
+              }
+            },	
+            "lightenergy" : {
+              "properties" : {
+                "image" : "<partImage>:lightenergy.<frame>"
+              }
+            },	
+		
+
+			
+            "backdash" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },				
+
+            "chargewinddown" : {
+              "properties" : {
+                "image" : "<partImage>:chargewinddown.<frame>"
+              }
+            }			
+			
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+	}
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+  
+  "lights" : {
+    "glow" : {
+      "active" : true,
+      "position" : [0, 0],
+      "color" : [100, 100, 100], //255, 255, 107    2550, 160, 160
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+  
+  
+    "chargeupstars" : {
+      "enabled" : false,
+      "emissionRate" : 6.0,
+      "particles" : [
+        { "particle" : "redcartoonstar" },
+        { "particle" : "greencartoonstar" },
+        { "particle" : "bluecartoonstar" }
+      ]
+    },
+  
+  
+    "deathPoof" : {
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/puff2c/puff2c.animation",
+            "size" : 1,
+            "angularVelocity" : 35,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [1, 1],
+            "timeToLive" : 0.4,
+            "layer" : "middle"
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz1/fizz1.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz1/fizz1.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz2/fizz2.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz2/fizz2.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz3/fizz3.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz3/fizz3.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz4/fizz4.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [-8, 8],
+            "finalVelocity" : [-3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [-4, 2],
+              "finalVelocity" : [-3, -4]
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/fizz4/fizz4.animation",
+            "size" : 1,
+            "angularVelocity" : 20,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [8, 8],
+            "finalVelocity" : [3, -4],
+            "approach" : [15, 15],
+            "timeToLive" : 3.45,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [4, 2],
+              "finalVelocity" : [3, -4]
+            }
+          }
+        }
+      ]
+    },
+	
+	
+    "coresmoke" : {
+      "emissionRate" : 10.0,
+      "offsetRegion" : [-8, -4, 8, 8],
+      "particles" : [
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" },
+        { "particle" : "dust4" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+    "fire_bow" : {
+      "pool" : [ "/sfx/gun/bow_loose_perfect.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "fire_gun" : {
+      "pool" : [ "/sfx/gun/gic_r8_1.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "laser" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_se_tan00-15db.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "heal" : {
+      "pool" : [ "/sfx/statuseffects/gic_powerup_+10db.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "timefreeze" : {
+      "pool" : [ "/sfx/tech/gic_dishonored_blink_aim_1.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "danmaku" : {
+      "pool" : [ "/sfx/gic_remnantfromtheashes_claviger-02.ogg" ],
+      "rangeMultiplier" : 1.0
+    },
+	
+    "danmaku_energybeam" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_se_nep00.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	
+    "danmaku2" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_se_tan00-15db.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+
+    "wallCrash" : [ "/sfx/npc/monsters/peblit_drop1.ogg" ],
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+//    "deathPuff" : [ "/sfx/touhou/gic_touhou_se_enep01-15db.ogg" ]
+	
+    "deathPuff" : {
+      "pool" : [ "/music/RemnantFromTheAshes/gic_remnantfromtheashes_claviger_deathtune.ogg" ],
+      "rangeMultiplier" : 4.0
+    }
+	
+  }
+}

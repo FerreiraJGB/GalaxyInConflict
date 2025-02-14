@@ -1,0 +1,25 @@
+{
+  "kind" : "gic_weathersmoke",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/gic_weathersmoke/gic_weathersmoke.animation",
+    "position" : [0, 0],
+    "finalVelocity" : [0, 3],
+    "approach" : [5, 5],
+    "destructionAction" : "shrink",
+    "destructionTime" : 1.0,
+    "fade" : 1,
+
+        "ignoreWind" : false,
+        "collidesForeground" : true,
+    "collidesLiquid" : true,
+    "size" : 1,
+    "layer" : "middle",
+    "timeToLive" : 2.0,
+    "variance" : {
+      "initialVelocity" : [0.1, 0.1],
+    "finalVelocity" : [0.5, 3.5],
+      "rotation" : 30
+    }
+  }
+}

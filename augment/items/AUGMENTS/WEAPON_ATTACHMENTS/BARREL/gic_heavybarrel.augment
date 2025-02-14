@@ -1,0 +1,42 @@
+{
+  "itemName" : "gic_heavybarrel",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Barrel Attachment^white;",
+  "inventoryIcon" : "gic_heavybarrel_icon.png",
+  
+  
+  
+  "description" : "Replaces the firearm's barrel with a heavier and longer barrel, which allows the gun to build up more heat in a burst until its performance begins to deteriorate. This makes the gun more suitable for suppressive machinegun roles.
+^green;-40% Recoil Recovery Time | -50% High Recoil Miss Chance Multiplier^reset;
+^yellow;2x Recoil Steps (additional shots until at high-recoil state).^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Heavy Barrel Attachment",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_heavybarrel", //name of attachment
+	"attachmentTag" : ["gic_heavybarrel","gic_barrel"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_heavybarrel.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_heavybarrel", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,2,0.50,0.60,0.50], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

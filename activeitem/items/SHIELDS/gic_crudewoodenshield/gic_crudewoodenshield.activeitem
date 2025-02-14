@@ -1,0 +1,68 @@
+{
+  "itemName" : "gic_crudewoodenshield",
+  "fixedLevel" : false,
+  "price" : 0,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "^#D6DFFF;Parry Shield^white;",
+  
+  "description" : "Little more than shoddy piece of wood, the fact this shield exists implies somebody actually used this. But then the question must be asked: Who is the one truly shamed? The bearer of this shield, or an enemy who loses to the individual wielding this shield?
+
+^yellow;Flowing Water: 1.5s PARRY WINDOW | 5HP BLOCK.^white;",
+  
+  
+  "shortdescription" : "Crude Wooden Shield",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_crudewoodenshield.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_crudewoodenshield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ ],
+      "perfectBlock" : [ "/sfx/block/gic_darksouls_parry1.ogg", "/sfx/block/gic_darksouls_parry2.ogg" ], //"/sfx/melee/shield_block_ice_perfect.ogg"
+      "block" : [ "/sfx/melee/gic_bloodborne_shield-wood.wav" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ]
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_bucklershield.lua"],
+
+  "minActiveTime" : 0.1,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 5,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.5,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 1.5,
+
+  "knockback" : 1,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

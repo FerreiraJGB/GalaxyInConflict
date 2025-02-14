@@ -1,0 +1,74 @@
+{
+  "objectName" : "gic_spacestationslidingverticaldoor_dark",
+  "colonyTags" : ["human","gic_spacecolony", "door"],
+  "rarity" : "Common",
+
+  "category" : "door",
+  "price" : 95,
+  "description" : "Bulkhead type doors in the event of a breach. Remotely controlled.",
+  "shortdescription" : "Dark Airtight Sliding Door",
+  "race" : "apex",
+
+  "apexDescription" : "These doors were built to seal off areas whether it's to keep in or out.",
+  "avianDescription" : "Such novel architecture.",
+  "floranDescription" : "Door hisss like sserpent.",
+  "glitchDescription" : "Intimidated. This sliding door makes loud clangs on opening.",
+  "humanDescription" : "These sliding doors make a satisfying industrially loud noise. Hey, it's a bulkhead, not a mansion door.",
+  "hylotlDescription" : "This door has no lock or handle. It's remotely controlled by another device.",
+  "novakidDescription" : "An impressive doorway. These sure don't come cheap. But the humans make'em cheap anyways.",
+
+  "avaliDescription" : "Your average boring human door. Nothing special.",
+  "avikanDescription" : "A simple airtight door.",
+  "trinkDescription" : "A functional door for separating atmospheres.",
+  "drodenDescription" : "Airtight bulkhead sliding door.",
+  "aegiDescription" : "Airtight doors with no grace to them. A sore sight for eyes.",
+  
+  "inventoryIcon" : "gic_spacestationslidingverticaldoor_darkicon.png",
+  "orientations" : [
+    {
+      "image" : "gic_spacestationslidingverticaldoor_dark.png:default",
+      "imagePosition" : [-16, 0],
+      "renderLayer" : "Object+5",
+      "animationPosition" : [-16, 0],
+      "flipImages" : true,
+      "direction" : "left",
+
+      "spaces" : [[-2,0],[-1,0],[0,0],[1,0],[2,0]],
+      "anchors" : [ "left", "right" ]
+    },
+    {
+      "image" : "gic_spacestationslidingverticaldoor_dark.png:default",
+      "imagePosition" : [-16, 0],
+      "renderLayer" : "Object+5",
+      "animationPosition" : [-16, 0],
+      "direction" : "right",
+
+      "spaces" : [[-2,0],[-1,0],[0,0],[1,0],[2,0]],
+      "anchors" : [ "left", "right" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/gic_6frame_1_5door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "open" : {
+        "pool" : [ "/sfx/objects/gic_DoorOpen3.ogg" ],
+        "rangeMultiplier" : 0.8
+      },
+      "close" : {
+        "pool" : [ "/sfx/objects/gic_DoorClose3.ogg" ],
+        "rangeMultiplier" : 0.8
+      }
+    }
+  },
+  "animationParts" : {
+    "door" : "gic_spacestationslidingverticaldoor_dark.png"
+  },
+  "animationPosition" : [0, 0],
+
+  "inputNodes" : [ [-2, 0] ],
+  "outputNodes" : [ [2, 0] ]
+}

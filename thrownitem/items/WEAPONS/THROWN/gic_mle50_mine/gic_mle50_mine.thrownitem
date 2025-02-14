@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_mle50_mine",
+  "price" : 50,
+  "rarity" : "Rare",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_mle50_mine.png",
+  "image" : "gic_mle50_mine.png",
+  "shortdescription" : "Modèle 50 Mine",
+  "description" : "''BIOSCAN COMPLETED. DOOR UNLOCKED. *BANG*''
+
+Throwable mine that can be attached to walls to act as traps for unwary attackers. The mine explodes forward from its top, sending a hailstorm of shrapnel in that direction. The mine also has a near-instantaneous arming time, making it suitable as both a regular trap and as a makeshift grenade.",
+  "tooltipKind" : "gic_largebase",
+  "ammoUsage" : 1,
+  "maxStack" : 3,
+  "edgeTrigger" : true,
+  "windupTime" : 0.0,
+  "cooldown" : 0.5,
+
+  "projectileType" : "gic_mle50_mine_arming",
+  "projectileConfig" : {
+    "speed" : 30,
+    "power" : 0,
+    "knockback" : 0,
+
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  }
+
+}

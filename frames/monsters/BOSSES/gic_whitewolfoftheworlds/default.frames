@@ -1,0 +1,102 @@
+{
+  "frameGrid" : {
+    "size" : [164, 126],
+    "dimensions" : [8, 17],
+
+    "names" : [
+      ["idlepassive.1", "idlecrossbow.1", "crossbowaim.1", "crossbowdash.1", null, null, null, null],
+	  ["crossbowaim.2", "crossbowfire.1", "revolveraim.1", "revolveraim.2", "revolveraim.3", "revolveraim.4", "revolverfire.1", "revolverfire.2"],
+	  [ "crossbowreload.1", "crossbowreload.2", "crossbowreload.3", "idlepunch.1", "aggro_phase3.1", "aggro_phase3.2", "crossbowcrouchaim.1", "crossbowcrouchfire.1" ],
+	  
+	  ["crossbowwalk.1", "crossbowwalk.2", "crossbowwalk.3", "crossbowwalk.4", "crossbowwalk.5", "crossbowwalk.6", "crossbowwalk.7", "crossbowwalk.8"],
+	  
+	  ["punchwalk.1", "punchwalk.2", "punchwalk.3", "punchwalk.4", "punchwalk.5", "punchwalk.6", "punchwalk.7", "punchwalk.8"],
+	  
+	  ["dualswordwalk.1", "dualswordwalk.2", "dualswordwalk.3", "dualswordwalk.4", "dualswordwalk.5", "dualswordwalk.6", "dualswordwalk.7", "dualswordwalk.8"],
+	  
+	  ["punchwindup.1", "punch.1", "punch.2", "punch.3", "punch.4", null, null, null],
+	  ["clawwindup.1", "clawstrike.1", "clawstrike.2", "clawstrike.3", "clawstrike.4", null, null, null],
+	  ["doublewindup.1", "doublestrike.1", "doublestrike.2", "doublestrike.3", "doublestrike.4", null, "dualswordwindup.1", "dualswordwindup.2" ],
+	  
+	  
+	  [ "idledualsword.1", "dualswordwindup.3", "dualswordslash.1", "dualswordslash.2", "dualswordslash.3", "dualswordwinddown.1", "dualsworddoublestrikedownslash.2", "dualsworddoublestrikedownslash.3" ],
+	  
+	  
+	  [ "dualswordswingwindup.1", "dualswordswing.1", "dualswordswing.2", "dualswordswing.3", "dualswordswingwinddown.1", "dualswordswingwindup.2", "dualswordswingwindup.3", "dualsworddoublestrikesharpen.4" ],
+	  
+	  
+	  [ "dualsworddoublestrikesharpen.1", "dualsworddoublestrikesharpen.2", "dualsworddoublestrikesharpen.3", "dualsworddoublestrikeupslashwindup.1", "dualsworddoublestrikeupslash.1", "dualsworddoublestrikeupslash.2", "dualsworddoublestrikedownslash.1", "dualsworddoublestrikedownslash.4" ],
+	  
+	  [ "dualswordcombostrikeswingwindup.1", "dualswordcombostrikeswingdownslash.1", "dualswordcombostrikeswingdownslash.2", "dualswordcombostrikeswingdownslash.3", "dualswordcombostrikethrustwindup.1", "dualswordcombostrikethrust.1", "dualswordcombostrikethrust.2", "dualswordcombostrikethrust.3" ],
+
+	  [ "dualswordupperstrikewindup.1", "dualswordupperstrikedash.1", "dualswordupperstrike.1", "dualswordupperstrike.2", "dualswordupperstrike.3", "dualswordupperstrike.4", "dualswordcombostrikeswingwindup.2", "dualswordcombostrikeswingwindup.3" ],
+	  
+	  [ "dualswordonestrikewindup.1", "dualswordonestrike.1", "dualswordonestrike.2", "dualswordonestrike.3", "dualswordonestrike.4", "dualswordonestrikewindup.2", "dualswordonestrikewindup.3", "dualswordcombostrikethrustwindup.2"],
+	  
+	  ["dashthrustwindup.1", "dashthrustwindup.2", "dashthrust.1", "magicwindup.1", "magicwindup.2", "magicwindup.3", "magicwindup.4", "dualswordcombostrikethrustwindup.3"],
+	  
+	  ["jumpstabwindup.1", "jumpstab.1", "jumpstab.2", "jumpstab.3", "jumpstab.4", "jumpstabdown.1", "jumpstabdown.2", "jumpstabwinddown.1"]
+	  
+    ]
+  },
+  
+  "aliases" : {
+	
+	//stun frames; stun.1 is initial state, stun.1 is first phase, stun.2 is second phase
+	"stun.1" : "idlecrossbow.1",
+	"stun.2" : "punchwindup.1",
+	"stun.3" : "idledualsword.1",
+	
+    "hop.1" : "dash.1",
+    "hop.2" : "dash.1",
+    "hop.3" : "dash.1",
+    "prep.1" : "idle.1",
+    "land.1" : "idle.1",
+    "fall.1" : "dash.1",
+    "aggro.1" : "idle.1",
+    "jump.1" : "dash.1",
+	
+    "chargewindup.1" : "idle.1",
+    "charge.1" : "idle.1",	
+    "chargewinddown.1" : "idle.1",
+
+    "punchwinddown.1" : "punch.4",
+    "clawwinddown.1" : "clawstrike.4",		
+    "doublewinddown.1" : "doublestrike.4",
+    "dashclawwinddown.1" : "clawstrike.4",
+	
+    "idle.1" : "idlepassive.1",
+
+    "dash.1" : "punchwalk.1",	
+	
+    "dualsworddash.1" : "dualswordwalk.1",
+
+    "punchdash.1" : "punchwalk.1",
+	
+    "crossbowwinddown.1" : "crossbowfire.1",
+	
+    "dualswordupperstrikewinddown.1" : "dualswordupperstrike.4",
+	
+    "dualswordslash.4" : "dualswordwinddown.1",
+    "dualswordswing.4" : "dualswordswingwinddown.1",
+	
+    "dualsworddoublestrikewinddown.1" : "dualsworddoublestrikedownslash.4",
+	
+    "dualswordcombostrikeswingwinddown.1" : "idledualsword.1",
+	
+    "magicfire.1" : "magicwindup.4",
+
+	
+    "dualswordonestrikewinddown.1" : "dualswordonestrike.4",
+	
+    "dualswordcombostrikethrustwinddown.1" : "dualswordcombostrikethrust.3",
+
+    "dashthrustwinddown.5" : "dashthrust.1",
+    "dashthrustwinddown.4" : "dashthrust.1",
+    "dashthrustwinddown.3" : "dashthrust.1",
+    "dashthrustwinddown.2" : "dashthrustwindup.1",
+    "dashthrustwinddown.1" : "dashthrustwindup.2"	
+	
+	
+  }
+}

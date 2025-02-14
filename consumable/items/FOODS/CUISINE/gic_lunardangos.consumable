@@ -1,0 +1,26 @@
+{
+  "itemName" : "gic_lunardangos",
+  "rarity" : "Common",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_lunardangos.png",
+  "description" : "A stick of dangos produced from exotic ingredients originating from the Lunarians. The dangos always feel cooler than the room temperature, no matter what.",
+  "shortdescription" : "Lunar Dangos",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 20,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

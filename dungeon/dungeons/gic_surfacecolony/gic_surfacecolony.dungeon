@@ -1,0 +1,526 @@
+{
+  "metadata" : {
+    "name" : "gic_surfacecolony",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_surfacecolony_rightwall" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 50,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+  
+  
+  
+  
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  //-------------
+  
+  
+  
+  
+  
+
+  
+	
+	
+    {
+      "name" : "gic_surfacecolony_bioengineerclinic",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_needletower"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_bioengineerclinic.json" ] ],
+      "chance" : 1.0
+    },	
+	
+    {
+      "name" : "gic_surfacecolony_needletower",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_bioengineerclinic"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_needletower.json" ] ],
+      "chance" : 1
+    },
+	
+	
+	
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  //HALLWAYS
+	
+	
+    {
+      "name" : "gic_surfacecolony_genericbuilding3_extraction",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_refinery", "gic_surfacecolony_industrial"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_genericbuilding3_extraction.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_genericbuilding3_refinery",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_extraction","gic_surfacecolony_industrial"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_genericbuilding3_refinery.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_surfacecolony_genericbuilding3_industrial",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_extraction", "gic_surfacecolony_refinery"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_genericbuilding3_industrial.json" ] ],
+      "chance" : 1
+    },	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    {
+      "name" : "gic_surfacecolony_bulkhead_extraction",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_bulkhead_extraction", "gic_surfacecolony_rightwall" ] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_refinery", "gic_surfacecolony_industrial"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_bulkhead_extraction.json" ] ],
+      "chance" : 1.0
+    },
+	
+	
+    {
+      "name" : "gic_surfacecolony_bulkhead_refinery",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_bulkhead_refinery", "gic_surfacecolony_rightwall" ] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_extraction","gic_surfacecolony_industrial"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_bulkhead_refinery.json" ] ],
+      "chance" : 1.0
+    },
+	
+    {
+      "name" : "gic_surfacecolony_bulkhead_industrial",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_bulkhead_industrial", "gic_surfacecolony_rightwall" ] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_extraction", "gic_surfacecolony_refinery"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_bulkhead_industrial.json" ] ],
+      "chance" : 1.0
+    },
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+
+    {
+      "name" : "gic_surfacecolony_spaceport",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_surfacecolony_spaceport"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_spaceport.json" ] ],
+      "chance" : 1
+    },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    //Independent - Standard
+	
+    {
+      "name" : "gic_surfacecolony_embassy_independent",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_embassy_unitedsystems", "gic_surfacecolony_embassy_allianceofindependentstations", "gic_surfacecolony_embassy_occasus"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_embassy_independent.json" ] ],
+      "chance" : 1
+    },
+	
+	
+	
+	
+	
+	
+	//United Systems - Standard
+	
+    {
+      "name" : "gic_surfacecolony_embassy_unitedsystems",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_embassy_allianceofindependentstations", "gic_surfacecolony_embassy_independent", "gic_surfacecolony_embassy_occasus"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_embassy_unitedsystems.json" ] ],
+      "chance" : 1
+    },
+	
+
+	
+	
+	
+	
+	//Alliance of Independent Stations - Standard
+
+    {
+      "name" : "gic_surfacecolony_embassy_allianceofindependentstations",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_embassy_unitedsystems", "gic_surfacecolony_embassy_independent", "gic_surfacecolony_embassy_occasus"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_embassy_allianceofindependentstations.json" ] ],
+      "chance" : 1
+    },
+
+
+
+
+
+
+
+    //Occasus - Prevents Warehouse and Mineshaft Battle pieces from spawning.
+	
+    {
+      "name" : "gic_surfacecolony_embassy_occasus",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_embassy_unitedsystems", "gic_surfacecolony_embassy_independent", "gic_surfacecolony_embassy_allianceofindependentstations"] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_embassy_occasus.json" ] ],
+      "chance" : 1
+    },	
+
+
+		
+	
+	
+	
+	
+	
+	
+
+	
+  
+
+    {
+      "name" : "gic_surfacecolony_leftwall",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_leftwall.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_surfacecolony_rightwall",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_rightwall.json" ] ],
+      "chance" : 0
+    },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//UNDERCOLONY PIECES GODDAMNIT
+	
+	
+	
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_surfacecheckpoint_2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_surfacecheckpoint_2" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_surfacecheckpoint_2.json" ],
+      "chance" : 1
+    },
+
+	
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_garbageprocessing",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_garbageprocessing" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_garbageprocessing.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_serviceroom1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_serviceroom1" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_serviceroom1.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_serviceroom2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_serviceroom2" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_serviceroom2.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_serviceroom3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_serviceroom3" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_serviceroom3.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_mineshaftbattle",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_mineshaftbattle", "gic_surfacecolony_undercolony_warehousebattle", "gic_surfacecolony_undercolony_myourenbrewery", "gic_surfacecolony_undercolony_surfacecheckpoint_2" ] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_embassy_occasus"] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_mineshaftbattle.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_warehousebattle",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_warehousebattle", "gic_surfacecolony_undercolony_mineshaftbattle", "gic_surfacecolony_undercolony_myourenbrewery", "gic_surfacecolony_undercolony_surfacecheckpoint_2" ] ],
+	    [ "doNotCombineWith", [ "gic_surfacecolony_embassy_occasus"] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_warehousebattle.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_cavein",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_cavein" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_cavein.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_servicehallway",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_servicehallway" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_servicehallway.json" ],
+      "chance" : 1
+    },
+	
+	
+	
+	
+	//Undercolony Services
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_merchanthackers",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+//	    [ "doNotCombineWith", [ "gic_surfacecolony_undercolony_workshop"] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_warehousebattle", "gic_surfacecolony_undercolony_mineshaftbattle" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_merchanthackers.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_workshop",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+//	    [ "doNotCombineWith", [ "gic_surfacecolony_undercolony_merchanthackers"] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_warehousebattle", "gic_surfacecolony_undercolony_mineshaftbattle" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_workshop.json" ],
+      "chance" : 1
+    },
+	
+	
+	
+	
+	
+	
+	
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_residentialblock",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+//        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_residentialblock" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_residentialblock.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_leftstairs",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+//        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_leftstairs" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_leftstairs.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_rightstairs",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+//        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_rightstairs" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_rightstairs.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_leftscaffolding",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+//        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_leftscaffolding" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_leftscaffolding.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_rightscaffolding",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+//        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_rightscaffolding" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_rightscaffolding.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_myourenbrewery",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+//        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_myourenbrewery" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_undercolony_myourenbrewery.json" ],
+      "chance" : 1
+    },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+    {
+      "name" : "gic_surfacecolony_undercolony_endleft",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_undercolony_endleft.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_surfacecolony_undercolony_endright",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_undercolony_endright.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

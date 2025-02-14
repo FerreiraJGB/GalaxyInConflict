@@ -1,0 +1,82 @@
+{
+  "itemName" : "gic_beasthunters_spear_chargepose",
+  "price" : 10,
+  "level" : 6,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "Still charging huh?",
+  "shortdescription" : "Beast Hunter's Spear Charge Pose",
+  "tooltipKind" : "base",
+  "category" : "broadsword",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","broadsword"],
+
+  "inventoryIcon" : "gic_beasthunters_spear_chargepose.png",
+
+  "animation" : "gic_beasthunters_spear_chargepose.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_beasthunters_spear_chargepose.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+  "aimOffset" : -1.0,
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+    "fireTime" : 0.1,
+    "baseDps" : 80,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "knockbackRange" : [25, 35]
+    },
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : -10,
+        "weaponRotation" : -80,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.6],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 0.1,
+        "armRotation" : -20,
+        "weaponRotation" : -80,
+        "twoHanded" : true,
+        "weaponOffset" : [0, -0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire" : {
+        "duration" : 0.3,
+        "armRotation" : 10,
+        "weaponRotation" : -100,
+        "twoHanded" : true,
+        "weaponOffset" : [0.1, 1.7],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "hold" : {
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.6],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+	
+  },
+  "fireSounds" : [ "/sfx/melee/swing_spear.ogg" ],
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

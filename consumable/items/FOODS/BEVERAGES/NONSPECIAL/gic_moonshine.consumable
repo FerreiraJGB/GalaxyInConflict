@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_moonshine",
+  "rarity" : "Common",
+  "price" : 700,
+  "category" : "drink",
+  "inventoryIcon" : "gic_moonshine.png",
+  "description" : "Distilled moonshine. Consumption will result in 4 minutes of intoxication.",
+  "shortdescription" : "Moonshine",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 240
+    },
+    {
+        "effect" : "gic_drunk",
+        "duration" : 270
+    },
+    {
+        "effect" : 	"gic_drunk_vulnerability",
+        "duration" : 270
+    }
+  ] ],
+  "foodValue" : 4,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

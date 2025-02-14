@@ -1,0 +1,118 @@
+{
+  "type" : "gic_greenfingerguard_standardbearer",
+  "baseType" : "gic_greenfingerguard_base",
+
+  "dropPools" : [ "gic_greenfingerguardsoldierTreasure" ],
+  "damageTeam" : 18,
+  "persistent" : true,
+  
+  "scriptConfig" : {
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [5.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:attack",
+      "reattack" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:reattack",
+      "killedTarget" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:killedTarget",
+      "lostTarget" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:lostTarget",
+      "outOfSight" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:outOfSight",
+      "cheerOn" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:cheerOn",
+      "cantReach" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:cantReach"
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "default" : [
+      [0, [
+	      
+          {
+            "head" : [ { "name" : "gic_jingasahead", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "gic_ashigaruchest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "gic_ashigarulegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+              "gic_peasants_battleaxe_npc_razed"
+            ],
+            "alt" : [
+              { "name" : "gic_greenfingerguard_ashigaru_standard_npc" }
+            ]
+          }
+		  
+		  
+        ] ]
+		
+
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_commandingofficer_vikingwarhorn_rally_greenfingerguard", "gic_parryshield_heavymetalarmor_hit"],    
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 777.777 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5 //0.5 for default. 0.1 effectively 20% of base damage
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0
+      },
+        "fireResistance" : {
+          "baseValue" : 0.25
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.35
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.4
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

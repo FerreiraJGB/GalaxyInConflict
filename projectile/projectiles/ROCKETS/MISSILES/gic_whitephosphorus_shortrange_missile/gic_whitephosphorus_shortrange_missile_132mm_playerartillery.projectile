@@ -1,0 +1,69 @@
+{
+  "projectileName" : "gic_whitephosphorus_shortrange_missile_132mm_playerartillery",
+
+  "bounces" : 0,
+  "image" : "gic_whitephosphorus_shortrange_missile.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_missile_thrustertrail/trail.png",
+        "position" : [-3, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "position" : [-3, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+  
+  "power" : 400,
+  "damageKind" : "ews_explosive",
+  "damageType" : "ignoresdef",
+  "damageTeam" : { "type" : "indiscriminate" },
+
+  "maxSpeed" : 200,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 80.0,
+  "acceleration" : 10,
+  "timeToLive" : 2,
+  "physics" : "gic_cannonfall",
+  
+
+  
+  "rotationRate" : 0.2,
+  "trackingLimit" : 1
+}

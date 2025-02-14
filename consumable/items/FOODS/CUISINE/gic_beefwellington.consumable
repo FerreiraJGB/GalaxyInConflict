@@ -1,0 +1,28 @@
+{
+  "itemName" : "gic_beefwellington",
+  "rarity" : "Common",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_beefwellington.png",
+  "description" : "Beef Wellington is a steak dish of English origin, made out of fillet steak coated with pâté (often pâté de foie gras) and duxelles, wrapped in puff pastry, then baked.
+
+Historians generally believe the dish to be named after Arthur Wellesley, the first Duke of Wellington, though the precise origin of the name still remains unclear as no definite connection between the dish and the duke have been found.",
+  "shortdescription" : "Beef Wellington",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 30,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

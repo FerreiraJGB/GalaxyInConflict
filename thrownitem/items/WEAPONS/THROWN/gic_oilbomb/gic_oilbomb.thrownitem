@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_oilbomb",
+  "price" : 100,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_oilbomb.png",
+  "image" : "gic_oilbomb.png",
+  "shortdescription" : "Molotov",
+  "description" : "A Molotov. The fires this molotov emits last far longer than normal, and can be used to deny access points.",
+  "tooltipKind" : "gic_largebase_ammogun",
+  "ammoUsage" : 1,
+
+  "edgeTrigger" : true,
+  "windupTime" : 0.65,
+  "cooldown" : 0.15,
+  "elementalType" : "ews_explosive",
+  "projectileType" : "gic_oilbomb",
+  "projectileConfig" : {
+
+    "speed" : 41.5,
+    "power" : 17.5,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  }
+}

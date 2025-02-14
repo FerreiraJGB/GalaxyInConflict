@@ -1,0 +1,127 @@
+{
+  "type" : "gic_khurtovyna_possessed_mold",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeam" : 2,
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "behavior" : "gic_hostileguard", //Will switch to sheathedprimary when in close range.
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_mold_shooterhead" } ],   
+            "chest" : [ { "name" : "gic_s6b702chest", "parameters" : { "colorIndex" : [3] } } ],
+            "legs" : [ { "name" : "gic_sdkplegs", "parameters" : { "colorIndex" : [3] } } ],
+            "back" : [ { "name" : "gic_cbrnsuitback", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+              "gic_peasants_battleaxe_player"
+            ]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion", "gic_npc_death_mold_shrapnel_explosion"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+      "gic_moldc1_infectionProtection" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_infantry_panicProtection" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : -0.4
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+	  
+    }
+  }
+  
+}

@@ -1,0 +1,241 @@
+{
+  "muteSfx" : true,
+  "muteMusic" : true,
+  "skippable" : true,
+//  "letterbox" : true,
+//  "backgroundColor" : [0, 0, 0, 200],
+//  "backgroundFadeTime" : 0.5,
+
+  "panels" : [
+  
+
+	
+	// --- --- ---
+	
+	
+  //Character Chatbox
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Character.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 54.5,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 55,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        }
+      ]
+    },
+	
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Textbox.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 54.5,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 55,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        }
+      ]
+    },
+
+
+
+// ----------------- dialogue: Initial Meeting
+    {
+      "drawables" : [
+      ],
+      "text" : "So you are interested, huh? Welcome to Bunbunmaru.
+
+I know the details must be boring to you but if it's anything I've learnt over the years, it's that there's no way I can write a story without knowing at least some context. People have been disappearing and not even the other couriers know anything about this. Buuuuut-",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 1.0,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 14,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 17,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 17.5,
+          "alpha" : 0.0
+        }
+      ]
+    },
+
+    {
+      "drawables" : [
+      ],
+      "text" : "I caught wind of something that might help with a good story if anything. There was a store in the city that was meant to be renovated, but the owner never came back to open it up again. I'm thinking that maybe there's something there that could be useful.
+
+The owner could've been murdered while he was away and nobody would know of any happenings in this quiet city. There could be something going on in the store!... or you know, there's nothing there and it's just drug addicts and homeless people. You never know.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 17.5,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 40.5,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 43.5,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 44,
+          "alpha" : 0.0
+        }
+      ]
+    },
+	
+	
+
+    {
+      "drawables" : [
+      ],
+      "text" : "Just ask and I'll drive you there. It's not worth the wait at the Department of Motor Transport if you don't have your local license.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 44,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 49,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 54,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 54.5,
+          "alpha" : 0.0
+        }
+      ]
+    }
+
+
+  ],
+  "audio" : [
+  
+    {
+      "timecode" : 1,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    },
+	
+    {
+      "timecode" : 17.5,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    },
+	
+    {
+      "timecode" : 49,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    }	  
+	
+	
+  ]
+}

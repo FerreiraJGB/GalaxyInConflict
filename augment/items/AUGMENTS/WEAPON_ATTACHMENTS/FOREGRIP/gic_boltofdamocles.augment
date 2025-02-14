@@ -1,0 +1,68 @@
+{
+  "itemName" : "gic_boltofdamocles",
+  "price" : 500,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Underbarrel Attachment^white;",
+  "inventoryIcon" : "gic_boltofdamocles_icon.png",
+  
+  "tooltipKind" : "gic_largebase",    
+  
+  
+  
+  
+  
+  "description" : "''In Unitan myth, Damocles was a superb duellist. In accordance with the Unitan Code of Honor, he was challenged to a sword duel. However, his cowardly opponent had shot him with a firearm, and Damocles was slain. The Goddess of Beyond, enraged at how he was treated, allowed Damocles to return as a vengeful spirit to hunt down the man who had wronged him.''
+^yellow;Reloads using Healing Flasks.^reset;
+^orange;Tap Right-Click to Fire/Reload the Bolt of Damocles.^reset;
+^yellow;Holds three shots.^reset;",
+  
+  
+  "shortdescription" : "Bolt of Damocles",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_boltofdamocles", //name of attachment
+	"attachmentTag" : ["ews_grenadelauncher", "gic_grenadelauncher"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/WEAPON_ATTACHMENTS/FOREGRIP/gic_boltofdamocles.png", //determines what image is displayed on the resulting gun. For grenade launchers/under barrel launchers, do NOT add a frame identifier. Keep this as "[...].png".
+		
+	"attachmentId" : "gic_boltofdamocles", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "grenadelauncher",
+		"grenadelauncherConfig" : {	//requires some part anims stuff in the main activeitem and some particle stuff. also needs some stances built in too.
+			"altFireTime" : 0.25,
+			"altAmmoMax" : 3,
+			"altAmmo" : 0,			//default starting ammo value
+			"altMagazine" : "gic_healingflask",				//the magazine item the alt fire needs to reload
+			"projectileTypeGrenade" : "gic_boltofdamocles", //grenadeimpact
+			"projectileTypeGrenadeCount" : 1,
+			"projectileTypeGrenadeConfig" : {
+				"power" : 70,		//damage for projectile
+				"speed" : 300,
+				"knockback" : 30,
+                "damageTeam" : { "type" : "indiscriminate" },
+                "statusEffects" : [ "gic_stun_1" ]
+			},
+			
+			"fireSFX" : "/sfx/bow/gic_bloodborne_bowgun-shot.wav", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("soundEffectGrenade")
+			"reloadSFX" : "/sfx/bow/gic_bloodborne_bowgun-stance.wav", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("switchAmmoAlt")
+			
+			"altInaccuracy" : 0,
+			"grenadeMuzzleOffset" : [1.2,-0.25]		//not the same thing as a muzzle offset; this is an offset offsetted off the main muzzleOffset
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

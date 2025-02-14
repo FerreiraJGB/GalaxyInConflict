@@ -1,0 +1,64 @@
+{
+  "id" : "gic_independent_chapter_0_1_uncooperativequest",
+  "title" : "^yellow;Ashen Graveyard",
+  "prerequisites" : [ "bootship" ],
+  
+  //QUEST 3
+  
+  //No cutscene, just messenger text.
+  
+  "text" : "I have received coordinates from that Traveler's Meter for a disabled ship in orbit of this world. I can teleport you there to begin an investigation.",
+  
+  //Quest ends.
+  
+  "completionText" : "Useful tools have been left by the meter. Nobody could've been around to leave this behind, yet you have a feeling it was meant for you.",
+  
+  
+  
+  
+  "moneyRange" : [2000, 2000],
+  "canBeAbandoned" : false,
+  "rewards" : [
+    [ [ "gic_unitan_saif_player", 1 ], [ "gic_hollowprotectorateknight_shield", 1 ], [ "gic_recondrone_controller", 1 ], [ "gic_munitionsworkbench_mortalshell_hadern_guide-codex", 1 ], [ "gic_trinket_extractor", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/instance.lua", //Same as original variant. Enables cutscenes when starting and finishing.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "sail", //"questGiver",
+      "questComplete" : "sail" //questReceiver
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Check the ^orange;Bandit's Meter^reset; to travel to ^orange;Ground Zero^reset;.",
+      "findGoal" : "Locate any clues on other Protectorate Survivors.",
+      "turnIn" : "Wrap up the operation and return to the ^orange;Bandit's Meter^reset;."
+    },
+
+    "warpEntityUid" : "gic_independent_chapter_0_tutorial",
+    "warpAction" : "instanceworld:gic_independent_chapter_0_1_derelictship",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_independent_chapter_0_1_missionstart_confirmation",
+	
+//    "gic_missionUnlockedCinema" : "",
+//    "gic_missionCompleteCinema" : "",	 //leave as coordinates if no need for secondary
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 15,
+    "requireTurnIn" : true,
+    "goalEntityUid" : "gic_independent_chapter_0_2_end",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+	
+    "showTech" : [
+      "gic_mortalshell"
+    ],
+//    "equipTech" : [
+//      "gic_mortalshell"
+//    ],
+
+    "turnInEntityUid" : "gic_independent_chapter_0_tutorial"
+  }
+  
+}

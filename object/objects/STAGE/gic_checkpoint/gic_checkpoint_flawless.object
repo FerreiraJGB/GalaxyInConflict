@@ -1,0 +1,59 @@
+{
+  "objectName" : "gic_checkpoint_flawless",
+  "colonyTags" : [],
+  "rarity" : "Legendary",
+  "description" : "This occult effigy is alerted to my presence. Scans say it will interfere with my emergency teleportation algorithm.", //I hear whispers near it; They keep saying something: "Death is not an escape."
+  "shortdescription" : "Mission Checkpoint (Flawless Detector)",
+  "race" : "generic",
+  "category" : "teleporter",
+  "price" : 0,
+  "printable" : false,
+  "lightColor" : [218, 83, 2],
+  "lightPosition" : [-1, 0],
+
+  "inventoryIcon" : "gic_checkpoint_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_checkpoint.png:inactive",
+      "imagePosition" : [-16, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+//      "collision" : "solid",
+//      "collisionSpaces" : [ [-1,0], [0,0] ]
+    },
+    {
+      "image" : "gic_checkpoint.png:inactive",
+      "imagePosition" : [-16, 0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+//      "collision" : "solid"
+//      "collisionSpaces" : [ [-1,0], [0,0] ]
+    }
+  ],
+
+  "health" : 10,
+
+  "animation" : "gic_checkpoint.animation",
+  "animationParts" : {
+    "bg" : "gic_checkpoint.png",
+    "fg" : "gic_checkpointlit.png"
+  },
+  "animationPosition" : [-16, 0],
+
+//  "soundEffect" : "/sfx/gic_bloodborne_torch.wav",
+
+  "scripts" : [ "/objects/stage/gic_checkpoint/gic_checkpoint_flawless.lua" ],
+
+  "queryArea" : [-10, -10, 10, 10],
+  "queryInterval" : 0.5,
+  "spawnOffset" : [0, 2.0],
+  
+  "outputNodes" : [ [-1, 0] ]
+}

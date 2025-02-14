@@ -1,0 +1,44 @@
+{
+  "id" : "gic_tylian_planetincentive_6_wartornquest",
+  "title" : "^#CC7970;Tylian: Wartorn",
+  "text" : "I've got kill-orders for two dangerous entities: A duo renegade Coin-Lady with a Cowboy, and an agent of the ''Ruin''-Class entity trying to launch a few nukes. Clear them out.",
+
+  "prerequisites" : [ "gic_tylian_planetincentive_5_khurtovynaquest" ],
+  "canBeAbandoned" : false,
+  
+  "completionText" : "These materials... It's like... Hmm... I once again appreciate your role in this. Just be careful out there.",
+  
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 25 ], [ "gic_tylian_fleetingthoughts_3-codex", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questGiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_voidring",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Wartorn Planet^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_ruinsvestigialeye",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Wartorn Planet^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

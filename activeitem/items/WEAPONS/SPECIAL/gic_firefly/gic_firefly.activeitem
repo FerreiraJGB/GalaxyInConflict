@@ -1,0 +1,531 @@
+{
+  "itemName" : "gic_firefly",
+  "price" : 1000,
+  "inventoryIcon" : "gic_firefly_icon.png",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "^red;Standard (10.9x33mm) - Standard shot. No MISS CHANCE.^reset;
+^orange;Homing Shot (10.9x33mm AP) - Deals more damage and homes in on targets.^reset;
+^yellow;Warrior Shot (Cracked Red Sun) - Deals MELEE DMG, at a slight cost to damage.^reset;
+^#E2006D;Detonation^reset;: Hostiles killed by this weapon will explode. The explosion deals 150 DMG and enemies killed by the blast will generate additional explosions.
+^orange;Loader: Auto-reloads when empty.^reset;",
+
+
+//\"THE SUN SHALL RISE AGAIN\" - a message left for those brave enough to find it.
+
+//^red;Ignition-Tracking^reset;: Enemies are ignited when hit | HIT CHANCE is replaced with CRIT CHANCE, which gives the shot homing properties (no damage increase).
+//''Only humans know how much knowledge has been lost. But much can still be made of this withered, wartorn galaxy.''
+
+  "shortdescription" : "Firefly | ^#E2006D;''Chaos, Inferno, Serenity.''",
+  "level" : 1,
+  "tooltipKind" : "gic_largebase_ammogun",//custom tooltip, values set by the .lua (the code is spread to gunammo.lua, ammo.lua and reloadammo.lua)
+  
+  "tooltipFields" : {
+	"objectImage" : "/items/weapons/special/gic_firefly/gic_firefly.png:armed.1"
+  },
+  
+  "category" : "^#E2006D;''Your time is promised when nothing is foretold.''^white;", //Otherworldly Magnum
+  "itemTags" : ["weapon","ranged","pistol","gic"],
+  "twoHanded" : false,
+  
+  
+  "emptyCasingSpawn" : [-0.5,-0.1],
+  "emptyCasingProjectile" : "gic_null",
+  "emptyCasingProjectileConfig" : {
+	"timeToLive" : 0,
+	"actionOnReap" : [
+		{
+			"action" : "projectile",
+			"type" : "gic_shellcasing",
+			"fuzzAngle" : 20,
+			"directional" : "true",
+			"angle" : -90,
+			"config" : {
+				"speed" : 2
+			}
+		}
+	]
+  },
+  
+  "fireShellProjectile" : "gic_gunfirenoise_standardknockback",		//shell projectile that spawns at muzzleOffset every time user fires
+  
+  
+  "consumeAmmoOrderedInventory" : true,						//if enabled, gun will search for ammo in order as placed in the player's inventory! allows for players to better control what ammo they want to use
+  "consumeAmmoTag" : "gic_1090x33mm_bullet",						//must be defined with consumeAmmoOrderedInventory is enabled! any item with this itemTag will be considered as a possible ammo item; will only be used as an ammo item if the tagged item's name matches with something from consumeAmmoType!
+  
+  
+  "consumeAmmoModule" : true,
+  "defaultAmmoIndexValue" : 3,								//when item is effected by inf. spare ammo/is an npcGun, then item #1 in consumeAmmoType will be loaded in, etc. Think of it as the "default loaded ammo", also determines loaded ammo on item spawn. Defaults to 1 if not stated.
+  "consumeAmmoType" : ["gic_crackedredsun", "gic_1090x33mm_bullet_ap","gic_1090x33mm_bullet"],
+  "magazineDamageValues" : [75, 120, 75],		//[75, 155, 109], 					//first mag deals first listed value, etc. Can be a single value to set as for all different mag types. Only needed if "consumeAmmoType" is an array
+  //"ammoMaxValues" : 7,									//will not function if consumeAmmoType is a table and "singleBulletLoad" is enabled.
+  "ammoProjectileType" : ["gic_fireorb_firefly_redsun", "gic_fireorb_homing_firefly","gic_fireorb_firefly"],		//ammo types for mags, same ordering as above. this array cannot contain arrays.
+  "ammoProjectileTypeMiss" : ["gic_fireorb_firefly_redsun", "gic_fireorb_homing_firefly","gic_fireorb_firefly"],	//ammo types miss for mags, same ordering as above. this array cannot contain arrays.
+  
+  
+  "singleBulletLoad" : true,
+  
+  "singleBulletLoadPreAnims" : true,					//Adds an additional animation before "singleBulletLoad" triggers its special reload. Requires stances "prereload1", "prereload2", "prereload3", and requires sfx "reloadPre" (plays before "prereload1" triggers). Will trigger gunState "reloadPre".
+  "singleBulletLoadAfterAnims" : true,					//Adds an additional animation after "singleBulletLoad" finishes its special reload. Will go through stances "reload3", "reload4", "reload5", and "reload6", and requires sfx "reloadFinal" (plays before "prereload1" triggers). Will trigger gunState "reloadFinal".
+  
+  "ammoMax" 		: 6,			//Specifies how big the guns' magazine is.
+  "magazineProjectile": "gic_null", //Projectile dropped when reloading, basically a dummy projectile (Gnio)
+  "ammoAmount" 		: 6,			//Holds the current amount of ammo. Mostly set dynamically
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_firefly.png",
+	"fullbright" : "fullbright.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+	"animatedParts":{
+      "stateTypes" : {
+        "gunState" : {
+          "default" : "empty",
+          "states" : {
+			"firing" :{
+			  "frames" : 3,
+			  "cycle" : 0.2,
+			  "mode" : "transition",
+			  "transition" : "armed"
+			},
+            "armed" : {
+              "frames" : 1,
+			  "mode":"end"
+            },
+            "empty" : {
+              "frames" : 1,
+			  "mode":"end"
+            },
+			"reloading" : {
+			  "frames" : 1,
+			  "mode" : "end"
+			},
+			"reloadPre" : {
+			  "frames" : 1,
+			  "cycle" : 0.2,
+			  "mode" : "transition",
+			  "transition" : "reloading"
+			},
+			"reloadFinal" : {
+			  "frames" : 1,
+			   "cycle" : 0.2,
+			  "mode" : "transition",
+			  "transition" : "armed"
+			}
+          }
+        }
+      },
+
+      "parts" : {
+        "middle" : {
+          "properties" : {
+            "image" : null
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<partImage>:firing.<frame><paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<partImage>:firing.3<paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<partImage>:reload.<frame><paletteSwaps>"
+				}
+			  },
+			  "reloadPre" : {
+			    "properties" : {
+				  "image" : "<partImage>:reloadPre.1<paletteSwaps>"
+				}
+			  },
+			  "reloadFinal" : {
+			    "properties" : {
+				  "image" : "<partImage>:reload.1<paletteSwaps>"
+				}
+			  }
+            }
+          }
+        },
+		"fullbright" : {
+          "properties" : {
+            "image" : null,
+			"zLevel" : 10,
+			"fullbright" : true,
+			"offset" : [0.6, 0.2],
+			"transformationGroups":["weapon"]
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<partImage>:firing.<frame><paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.1<paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<partImage>:reload.1<paletteSwaps>"
+				}
+			  },
+			  "reloadPre" : {
+			    "properties" : {
+				  "image" : "<partImage>:reloadPre.1<paletteSwaps>"
+				}
+			  },
+			  "reloadFinal" : {
+			    "properties" : {
+				  "image" : "<partImage>:reload.2<paletteSwaps>"
+				}
+			  }
+            }
+          }
+        }
+      }
+	},
+	"particleEmitters" : {
+      "muzzleFlash" : {
+        "burstCount" : 2,
+		"transformationGroups" : ["muzzle"],
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [1.6, -0.4], "count" : 2 }
+        ]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+		"transformationGroups" : ["muzzle"],
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [1.6, -0.4], "count" : 3 }
+        ]
+      }
+    },
+    "sounds" : {
+      "fire" 		: [ "/sfx/gun/gic_m2hb_fire_0.ogg", "/sfx/gun/gic_m2hb_fire_1.ogg", "/sfx/gun/gic_m2hb_fire_2.ogg" ],
+	  "spin" 		: [ "/sfx/projectiles/spinning_throw.ogg" ],
+	  
+      "hammerCock" 	: [ "/sfx/gic_ultrakill_slabvolver_hammer+4db.ogg" ],
+	  
+	  "empty"		: [ "/sfx/gun/reload/machinepistol_reload_clip1.ogg" ],
+      "switchAmmo" 	: [ "/sfx/gic_remnantfromtheashes_kari_slinger_rifle-02.ogg" ],
+	  "reloadPre" 	: [ "/sfx/gic_uscm4_reload_partial.ogg" ],
+	  "reloadFinal" 	: [ "/sfx/gun/reload/machinepistol_reload_clip3.ogg" ]
+    }
+  },
+
+	
+  "animationScripts" : [
+    "/items/active/effects/laserbeam.lua"
+  ],
+
+
+
+  "baseOffset" : [0.6, 0.2],
+  "muzzleOffset" : [-0.35, 0.6],
+
+  "scripts" : ["/items/active/weapons/ranged/ews_weaponcore.lua","/abilities/weight/gic_light_weapon.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/weapons/special/gic_firefly/ews_weapon_revolver_autoreload_firefly.lua"],
+    "class" : "BigIron",
+	
+	"missChance" : 40, //out of 100
+	"missChanceCrouch" : 20, //missChanceCrouch is automatically 60% less than missChance, but placed this here for reference.
+	"dynamicRecoilTemplate" : "PISTOL",
+	"dynamicRecoilTickDuration" : 1.0,
+	"dynamicRecoilMaxSteps" : 1,
+
+
+    "fireTime" : 0.45, //RPM to RPS: 1/(RPM/60)
+	"baseDamage" : 109,
+    //"baseDps" : 550, //Damage Per Bullet: (baseDps*fireTime)*(1+0.5*level-1) sounds like a long equation, but blame the SB leveling system for adding a retarded step. just default to level:1 for ease. To find baseDps from bullet damage and fire time, (damagePerShot/fireTime)=baseDps
+	"bonusDps" : 0,					//the parameter responsible for extra per-shot damage, introduced by ammo. Per shot damage gets spread over all the projectiles
+    "energyUsage" : false,
+    "inaccuracy" : 0.025,
+	"crouchInaccuracy" : 0.01,
+
+    "projectileCount" : 1,
+    "fireType" : "semi",
+
+	"projectileTypeMiss" : "gic_fireorb_firefly",
+    "projectileType" : "gic_fireorb_homing_firefly",
+    "projectileParameters" : {
+      "knockback" : 20,
+	  //"piercing" : true,
+	  "speed" : 200,
+	  "statusEffects" : ["gic_firefly","burning"]//,
+	  //"damageKind" : "ews_smallarms"
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		"weaponOffset" : [0,0.4],
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.3"
+      },
+      "fire" : {   //Activates muzzle flash.
+        "duration" : 0.1,
+        "armRotation" : 3,
+        "weaponRotation" : 5,
+        "twoHanded" : false,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		"weaponOffset" : [0,0.4],
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.3"
+      },
+	  "motion1" : {
+        "duration" : 0.2,
+        "armRotation" : 2,
+        "weaponRotation" : 4,
+        "twoHanded" : false,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		"weaponOffset" : [0,0.4],
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.3"
+      },
+ 
+      "motion2" : {
+	    "duration" : 0.1,
+        "armRotation" : 1,
+        "weaponRotation" : 3,
+        "twoHanded" : false,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		
+		"weaponOffset" : [0,0.4],
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.3"
+      },
+      "motion3" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 2,
+        "twoHanded" : false,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		"playSounds" : ["hammerCock"],
+		
+		"weaponOffset" : [0,0.4],
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.3"
+      },
+      "motion4" : {
+        "duration" : 0.2,
+        "armRotation" : 0,
+        "weaponRotation" : 1,
+        "twoHanded" : false,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		"weaponOffset" : [0,0.4],
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.3"
+      },
+      "motion5" : {
+	    "duration" : 0.0
+		
+      },
+      "motion6" : {
+        "duration" : 0
+      },
+	  
+	  
+	  
+	  
+	  "prereload1" : {
+		"duration" : 0.25,
+		"aimAngle" : 0,
+        "armRotation" : 0,
+        "weaponRotation" : 50,
+        "twoHanded" : false,
+  
+        "allowRotate" : false,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "rotation",
+        "backArmFrame" : "jump.4"
+      },
+	  "prereload2" : {
+		"duration" : 0.25,
+		"aimAngle" : 0,
+        "armRotation" : -10,
+        "weaponRotation" : 60,
+        "twoHanded" : false,
+  
+        "allowRotate" : false,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "rotation",
+        "backArmFrame" : "jump.4"
+      },
+	  "prereload3" : {
+		"duration" : 0.25,
+		"aimAngle" : 0,
+        "armRotation" : -25,
+        "weaponRotation" : 40,
+		"weaponOffset" : [0.0,0.2],
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.1",
+        "backArmFrame" : "jump.4"
+	  },
+	  
+	  
+	  
+      "reload" : {
+		"aimAngle" : 0,
+        "duration" : 0.25,
+        "armRotation" : -40,
+        "weaponRotation" : -20,
+		"weaponOffset" : [-0.6,0.1],
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "jump.3"
+      },
+
+	  
+	  
+	  //RELOAD LOOP
+      "reload1" : {
+        "duration" : 0.1,
+		"aimAngle" : 0,
+        "armRotation" : -40,
+        "weaponRotation" : -20,
+		"weaponOffset" : [-0.6,0.1],
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true,
+		
+		"frontArmFrame" : "run.1",
+        "backArmFrame" : "jump.3"
+      },
+      "reload2" : {
+		"aimAngle" : 0,
+        "duration" : 0.07,
+        "armRotation" : -42,
+        "weaponRotation" : -22,
+		"weaponOffset" : [-0.6,0.1],
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true,
+		
+		"frontArmFrame" : "run.1", //run.2
+        "backArmFrame" : "jump.3"
+      },
+	  //END LOOP
+	  
+	  "reload3" : {
+		"duration" : 0.1,
+        "armRotation" : -10,
+        "weaponRotation" : 20,
+		"weaponOffset" : [-0.5,0.1],
+        "twoHanded" : false,
+  
+        "allowRotate" : false,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.2",
+        "backArmFrame" : "jump.3"
+	  },
+      "reload4" : {
+        "duration" : 0.1,
+        "armRotation" : -10,
+        "weaponRotation" : 22,
+		"weaponOffset" : [-0.5,0.1],
+        "twoHanded" : false,
+  
+        "allowRotate" : false,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.1",
+        "backArmFrame" : "jump.3"
+      },
+      "reload5" : {
+        "duration" : 0.1,
+        "armRotation" : -5,
+        "weaponRotation" : 7,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		"weaponOffset" : [0,0.4],
+		"frontArmFrame" : "run.1",
+        "backArmFrame" : "jump.3"
+      },
+      "reload6" : {
+        "duration" : 0.15,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		"weaponOffset" : [0,0.4],
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "run.5"
+      },
+	  
+	  
+	  
+      "cooldown" : {
+		"duration" : 0,
+	    "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		"weaponOffset" : [0,0.4],
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.3"
+      }
+    }
+  },
+  "builder" : "/items/buildscripts/ews_buildunrandweapon.lua"
+}

@@ -1,0 +1,114 @@
+{
+  "type" : "gic_afflictedcolony_afflictedheavygunner",
+  "baseType" : "gic_soldierbase",
+
+  "dropPools" : [ "basicTreasure" ],
+//  "scale" : 2.0,
+  "scriptConfig" : {
+  
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0.05,
+        "broadsword" : 0.45,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 0.6,
+        "shortsword" : 0.35,
+        "spear" : 0.55
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.02,
+        "broadsword" : 1.7,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 2.0,
+        "shortsword" : 1.0,
+        "spear" : 1.4
+      }
+    },
+  
+    "dialog" : {
+      "attack" : "/dialog/infected/gic_overgrown_undead_combat.config:attack",
+      "reattack" : "/dialog/infected/gic_overgrown_undead_combat.config:reattack",
+      "killedTarget" : "/dialog/infected/gic_overgrown_undead_combat.config:killedTarget",
+      "lostTarget" : "/dialog/infected/gic_overgrown_undead_combat.config:lostTarget",
+      "outOfSight" : "/dialog/infected/gic_overgrown_undead_combat.config:outOfSight",
+      "cheerOn" : "/dialog/infected/gic_overgrown_undead_combat.config:cheerOn",
+      "cantReach" : "/dialog/infected/gic_overgrown_undead_combat.config:cantReach"
+    }
+  },
+
+  "movementParameters" : {
+    "crouchingPoly" : [ [-0.75, -2.0], [-0.35, -2.5], [0.35, -2.5], [0.75, -2.0], [0.75, -0.5], [0.35, 0], [-0.35, 0], [-0.75, -0.5] ],
+    "mass" : 5.0
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 400.0
+        },
+        "protection" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 0.5
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.5
+      },	  
+	  
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.4
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+	  
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_erchiusgrowthhead", "parameters" : { "colorIndex" : [0] } } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_occasusinfantrypants", "parameters" : { "colorIndex" : [0] } } ],
+			
+            "primary" : [
+			  "gic_mhp45"
+            ]
+          }
+        ] ]
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_occasus_energydisruptor",
+  "physics" : "gic_grenadenormal",
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "timeToLive" : 5,
+  "speed" : 50,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [0, 0, 0],
+  "image" : "gic_occasus_energydisruptor.png",
+  "frameNumber" : 1,
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/grenade/gic_anm14_bounce_01.ogg"
+      ]
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/melee/gic_bloodborne_electrical_s000000880.wav"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_plasmaimpact_large/gic_plasmaimpact_large_energydisruptor.config"
+    }
+  ],
+  "power" : 0,
+  "damageKind" : "ews_explosive",
+  "damagePoly" : [ [-4.5, 0], [-3, -3], [0, -4.5], [3, -3], [4.5, 0], [3, 3], [0, 4.5], [-3, 3] ]
+}

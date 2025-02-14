@@ -1,0 +1,34 @@
+{
+  "name" : "gic_burdenofthedivine_pinger",
+  "blockingStat" : "gic_burdenofthedivine_pingerStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_burdenofthedivine", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_burdenofthedivine", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 60,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 4.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_burdenofthedivine_pinger.animation",
+   
+   "label" : "Burden of the Divine - Enemies killed within approximately 60 blocks restore 4% HP/s for 3s for all bearers with the ring worn | Counts as a 0-damage effect, also proccing ON-DAMAGE effects on a kill | -10% MAX HP.",
+  "icon" : "/interface/statuses/gic_burdenofthedivine.png"
+}

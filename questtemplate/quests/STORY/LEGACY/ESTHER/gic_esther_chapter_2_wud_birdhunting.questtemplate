@@ -1,0 +1,63 @@
+{
+  "id" : "gic_esther_chapter_2_wud_birdhuntingQuest",
+  "title" : "^yellow;[GiC]: Gazri - Eye of the Sun",
+  "prerequisites" : [ "gic_esther_chapter_2_0_thekinlessquest" ],
+  
+  //QUEST 3
+  
+  //The text before warping to mission. ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  "text" : "---",
+  
+  "completionText" : "---",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : false,
+  "rewards" : [
+    [ [ "gic_augmentyr_smg", 1 ], [ "gic_fieldbattery_ilws", 2 ], [ "gic_fieldbattery_ilws", 2 ], [ "gic_fieldbattery_ilws", 2 ], [ "gic_fieldbattery_ilws", 2 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_noassociatedmission_noendcutscene.lua", //Same as original variant. Enables cutscenes when starting and finishing.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/CRAFTING/gic_gazri_wastelandmerchant/gic_gazri_wastelandmerchant_icon.png"} ],
+        "title" : "Wasteland Merchant"
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/CRAFTING/gic_gazri_wastelandmerchant/gic_gazri_wastelandmerchant_icon.png"} ],
+        "title" : "Wasteland Merchant"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;The Wasteland Merchant^reset; to travel to ^orange;Gazri (Sun Goddess)^reset;.",
+      "findGoal" : "Search and Destroy the Synthetic Sun Goddess.",
+      "turnIn" : "Speak to ^orange;The Wasteland Merchant^reset;."
+    },
+
+    "warpEntityUid" : "gic_gazri_wastelandmerchant",
+    "warpAction" : "instanceworld:gic_esther_chapter_2_1c_birdhunting",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_esther_chapter_2_1c_birdhunting_confirmation",
+	
+    "gic_missionUnlockedCinema" : "/cinematics/gic_coordinates.cinematic", //???
+	
+//    "gic_missionCompleteCinema" : "/cinematics/gic_coordinates.cinematic",	 //leave as coordinates if no need for secondary
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 150,
+
+    "goalEntityUid" : "gic_esther_chapter_2_wud_birdhunting_goal",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "gic_gazri_wastelandmerchant"
+	
+  }
+  
+}

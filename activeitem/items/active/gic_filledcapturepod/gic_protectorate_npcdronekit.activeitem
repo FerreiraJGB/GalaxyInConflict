@@ -1,0 +1,63 @@
+{
+  "itemName" : "gic_protectorate_npcdronekit",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "description" : "Contains a sentry gun.",
+  "shortdescription" : "NPC's Drone  Pod",
+  "tooltipKind" : "filledcapturepod",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","ranged"],
+
+  "inventoryIcon" : "gic_filledcapturepodicon.png",
+  "animation" : "gic_filledcapturepod.animation",
+  "animationParts" : {
+    "filledcapturepod" : "gic_filledcapturepod.png"
+  },
+  "animationCustom" : { },
+  "scripts" : ["gic_npcpetcapturepod.lua"],
+
+  "icons" : {
+    "healthy" : "/items/active/unsorted/filledcapturepod/filledcapturepodicon.png",
+    "dead" : "/items/active/unsorted/filledcapturepod/filledcapturepodicondead.png"
+  },
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -20,
+      "animationState" : {
+        "weapon" : "visible"
+      },
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "windup" : {
+      "duration" : 0.1,
+      "transitionFunction" : "fire",
+      "armRotation" : 70,
+      "animationState" : {
+        "weapon" : "visible"
+      },
+      "allowRotate" : false,
+      "allowFlip" : false
+    },
+    "throw" : {
+      "armRotation" : 0,
+      "animationState" : {
+        "weapon" : "hidden"
+      },
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  },
+
+  "projectileType" : "filledcapturepod",
+  "projectileParameters" : {
+    "speed" : 25,
+    "level" : 1
+  },
+
+  "pets" : [
+	"gic_protectorate_swarmerdrone_pacifier"
+  ]
+}

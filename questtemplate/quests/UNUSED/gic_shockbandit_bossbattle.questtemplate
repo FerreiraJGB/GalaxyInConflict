@@ -1,0 +1,44 @@
+{
+  "id" : "gic_shockbandit_bossbattlequest",
+  "title" : "^yellow;Shock Bandit Boss",
+  "prerequisites" : [ "gic_huntgeneral_engineerquest" ],
+  "text" : "Shock Bandits are not dangerous to any prepared or violent individual, but they tend to prey on individuals who lack the abilities to defend themselves. Bring the fight to one of their generals!",
+  "completionText" : "Nano Ship Repair Kit obtained. Return to the Engineer.",
+//  "completionCinema" : "/cinematics/upgrading/shipupgrade.cinematic",
+  "moneyRange" : [0, 0],
+
+  "canBeAbandoned" : true,
+
+
+  "rewards" : [
+    [ [ "gic_nanoshiprepairkit_uncalibrated", 1 ], [ "gic_factioninformation_shockbandits-codex", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/instance.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "default" : "questGiver"
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Use the ^orange;Radio Tower Phone^reset; to travel to the ^orange;Shock Bandit Arena^reset;.",
+      "findGoal" : "Liberate the Gate.",
+      "turnIn" : "Return to a ^orange;Radio Tower Phone^reset;."
+    },
+
+    "warpEntityUid" : "gic_radiotower_phone",
+    "warpAction" : "instanceworld:gic_shockbanditboss_ancientarena",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_shockbandit_teleporter",
+
+    "goalTrigger" : "proximity",
+    "proximityRange" : 10,
+
+    "goalEntityUid" : "gic_shockbanditboss_exit",
+    "indicateGoal" : false,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "gic_radiotower_phone"
+  }
+}

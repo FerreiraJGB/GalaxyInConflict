@@ -1,0 +1,24 @@
+{
+  "itemName" : "gic_schokakola",
+  "rarity" : "Common",
+  "price" : 300,
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_schokakola.png",
+  "description" : "Chocolate and coffee mixed into one to increase alertness. Perfect for the daring aviator.",
+  "shortdescription" : "Scho-ka-kola",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 240
+    }
+  ] ],
+  "foodValue" : 8,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 9.2,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

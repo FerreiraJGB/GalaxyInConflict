@@ -1,0 +1,61 @@
+{
+  "projectileName" : "gic_magicshot_meteor_stage2",
+  "image" : "gic_magicshot_meteor_stage1.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : true,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 3.3,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_meteor_stage3",
+      "inheritDamageFactor" : 2,
+      "angle" : -50
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_meteor_stage3",
+      "inheritDamageFactor" : 2,
+      "angle" : -70
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_meteor_stage3",
+      "inheritDamageFactor" : 2,
+      "angle" : -90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_meteor_stage3",
+      "inheritDamageFactor" : 2,
+      "angle" : -110
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_meteor_stage3",
+      "inheritDamageFactor" : 2,
+      "angle" : -130
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "astraltear",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    }
+
+
+  ],
+  "statusEffects" : [ ],
+  "power" : 500.0,
+  "speed" : 30,
+  "knockback" : 18
+}

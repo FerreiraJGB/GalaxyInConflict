@@ -1,0 +1,120 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_dialogue_metro2033_commonsoldier.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : {
+      "pool" : [
+        "/sfx/Metro2033/Digger/voice_3/combat/attack_1.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/attack_2.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/attack_3.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/attack_4.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/attack_5.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/attack_6.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/attack_7.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/attack_8.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/attack_9.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/attack_10.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/attack_11.ogg",
+
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_0.ogg",	
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_1.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_2.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_3.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_4.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_5.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_6.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_7.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_8.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_9.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_10.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/combat_idle_11.ogg",
+
+		"/sfx/Metro2033/Digger/voice_3/combat/cover_fire_1.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/cover_fire_2.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/cover_fire_3.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/cover_fire_4.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/cover_fire_5.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/cover_fire_6.ogg",
+
+		"/sfx/Metro2033/Digger/voice_3/combat/detour_1.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/detour_2.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/detour_3.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/detour_4.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/detour_5.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/detour_6.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/detour_7.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/detour_8.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/detour_9.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/detour_10.ogg",
+		
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_1.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_2.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_3.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_4.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_5.ogg",
+//		"/sfx/Metro2033/Digger/voice_3/combat/enemy_6.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_7.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_8.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_9.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_10.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_11.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_12.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_13.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_14.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_15.ogg",
+		"/sfx/Metro2033/Digger/voice_3/combat/enemy_16.ogg"
+		
+		],
+      "rangeMultiplier" : 4.0
+		},
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

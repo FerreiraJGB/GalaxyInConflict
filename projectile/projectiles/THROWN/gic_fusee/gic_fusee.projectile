@@ -1,0 +1,34 @@
+{
+  "projectileName" : "gic_fusee",
+  "physics" : "grenadenobounce",
+  "bounces" : -1,
+  "timeToLive" : 20,
+  "image" : "gic_fusee.png",
+  "animationCycle" : 0.25,
+  "lightColor" : [255, 0, 0],
+  "frameNumber" : 2,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smoke/smoke.config"
+    }
+  ],
+  "power" : 0,
+  "onlyHitTerrain" : false,
+  "damageType" : "IgnoresDef", //NoDamage
+  "damageKind" : "fire",
+  
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  
+  "piercing" : true,
+
+  "statusEffects" : [
+    "gic_oilfire_primer"
+  ],
+  
+  "damageTeam" : { "type" : "indiscriminate" },
+
+"periodicActions" : [
+]
+
+}

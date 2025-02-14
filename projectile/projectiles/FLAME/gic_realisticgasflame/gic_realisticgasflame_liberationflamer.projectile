@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_realisticgasflame_liberationflamer",
+  "image" : "gic_realisticgasflame.png",
+  "physics" : "laser",
+  "animationCycle" : 3,
+  "animationLoops" : false,
+  "frameNumber" : 12,
+  "winddownFrames" : 3,
+  "intangibleWinddown" : true,
+  "power" : 50,
+  "speed" : 70,
+  "timeToLive" : 3,
+  "bounces" : 8,
+  "piercing" : true,
+  
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/fireexplosion/fireexplosion.config"
+    }
+  ],
+  
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "lightColor" : [235, 126, 2],
+  "damageKind" : "ews_explosive",
+  "damageKindImage" : "/interface/statuses/fire.png",
+  "statusEffects" : [
+    "burning", "gic_oilfire_primer", "gic_burn_wounds"
+  ],
+  "hydrophobic" : true
+}

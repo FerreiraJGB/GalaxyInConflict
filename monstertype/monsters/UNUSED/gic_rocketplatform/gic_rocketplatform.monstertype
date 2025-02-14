@@ -1,0 +1,200 @@
+{
+  "type" : "gic_rocketplatform",
+
+  "persistent" : true,
+
+  "categories" : [ "gic_rocketplatform" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_rocketplatform.animation",
+
+  "dropPools" : [ ],
+
+  "baseParameters" : {
+    "scripts" : [
+      "/monsters/monster.lua"
+    ],
+
+    "behavior" : "monster",
+
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 150,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 15,
+
+      "hostileActions" : [
+        {
+          "name" : "action-fire",
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 150,
+            "minimumRange" : 0,
+            "windupState" : "windup",
+            "windupTime" : 3.0,
+
+            "projectileCount" : 24,
+            "fireDelay" : 0.05,
+            "projectileInterval" : 0.1667,
+            "inaccuracy" : 0.2,
+
+            "projectileType" : "gic_utilinrocket_stage1",
+            "fireOffset" : [3.4, 4.3],
+            "aimAtTarget" : false,
+            "aimDirection" : [3, -0.3],
+
+            "fireState" : "fire",
+            "fireSound" : "fire",
+            "fireParticleBurst" : "muzzleFlash",
+
+            "fireArc": true,
+            "projectileSpeed": 400,
+            "gravityMultiplier": 0.7,
+
+            "winddownTime" : 8.0,
+            "winddownState" : ""
+          }
+        }
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : false
+          }
+        }
+      ],
+
+      "wanderActions" : [
+        {
+          "name" : "wander-walk",
+          "cooldown" : 3.0,
+          "parameters" : {
+            "wanderTime" : [10, 20]
+          }
+        }
+      ]
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-7.5, -5.20], [7.5, -5.20], [6.5, 4.25], [-6.5, 4.25] ],
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "slash",
+      "knockback" : 60,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-10, -10, 13, 13],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-7.5, -5.20], [7.5, -5.20], [6.5, 4.25], [-6.5, 4.25], [-1.3125, 0.10], [-0.8125, -0.40], [-1.3125, 0.75], [-0.8125, 1.25] ],
+
+      "mass" : 70.0,
+      "walkSpeed" : 20,
+      "runSpeed" : 30,
+
+      "airFriction" : 20,
+
+      "airJumpProfile" : {
+        "jumpSpeed" : 10.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.0
+      }
+    },
+
+    "bodyMaterialKind" : "robotic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "robotic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/monster_primary.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+        "knockbackStunTime" : {
+          "baseValue" : 0.0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 99999
+        },
+        "maxHealth" : {
+          "baseValue" : 1450
+        },
+        "protection" : {
+          "baseValue" : 1.0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 2.5
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.2
+        },
+        "fireResistance" : {
+          "baseValue" : 0.7
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.7
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.7
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.7
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        }
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false
+  }
+}

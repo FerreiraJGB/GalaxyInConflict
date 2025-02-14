@@ -1,0 +1,240 @@
+{
+  "type" : "gic_militia_partisan_gunner_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  }, 
+  
+  "scripts" : [
+    "/npcs/gic_bmain.lua",
+	"/npcs/gic_gunnerlounge.lua"
+  ],
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0}, "gic_rally_player_primer" ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "gic_noinspectcrew",
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "soldier",
+        "name" : "Partisan Gunner",
+        "field" : "Specialist",
+        "uniformColorIndex" : 3,
+		
+        "benefits" : [
+        ]
+		
+      },
+
+      "ranks" : [
+	    "Vehicle Specialist"
+      ],
+
+      "defaultUniform" : {
+	    //"head" : "gic_militiatankerhead",
+        "chest" : "gic_militiarigchest", //soldierchest
+        "legs" : "gic_hscplegs", //soldierpants
+		"back" : ""
+      },
+      "uniformSlots" : []
+    },
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "Get me out of here and I can be a [GUNNER] for your Partisan Tanks!"
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Standing by."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "Standing by."
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "Holding position."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "Gunner! Following!"
+            ]
+          }
+        },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy.",
+			"Move it!"
+          ]
+        }
+      },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "Give me a moment!"
+            ]
+          }
+	}
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+      "converse" : "/dialog/space_colony/gic_surfacecityspacecolonist_converse.config:converse",
+
+      "attack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cantReach"
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player
+    "runSpeed" : 18
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_militiatankerhead", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_militiarigchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_hscplegs", "parameters" : { "colorIndex" : [1] }  } ],
+            "primary" : [
+			  "gic_fal_npc_crew_vehiclegunner"
+            ]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 300.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+	  "ews_npcfirerate" : { //if in an engagement, copilot should panic fire (pilot should only rarely see combat)
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.25
+      },
+	  
+      "gic_crewmember_stat" : {
+        "baseValue" : 1.0
+      },
+	  
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.75
+      },
+
+      "gic_suppressedProtection" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+	  
+    }
+  }
+}

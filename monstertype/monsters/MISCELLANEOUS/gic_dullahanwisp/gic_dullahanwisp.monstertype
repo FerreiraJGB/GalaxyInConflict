@@ -1,0 +1,215 @@
+{
+  "type" : "gic_dullahanwisp",
+
+  "categories" : [ "gic_dullahanwisp" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_dullahanwisp.animation",
+
+  "dropPools" : [],
+  "damageTeam" : { "type" : "friendly", "team" : 0},
+  
+  "baseParameters" : {
+	"clientEntityMode" : "ClientMasterAllowed",
+	
+    "scripts" : [
+      "/monsters/MISCELLANEOUS/gic_dullahanwisp/gic_dullahanwisp.lua"
+    ],
+	
+	"behavior" : "monster",
+	
+    "deathBehavior" : "monster-death",
+
+    "behaviorConfig" : {
+      "damageOnTouch" : false,
+
+      "targetQueryRange" : 20,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 50,
+      "targetOutOfSightTime" : 5.0,
+
+      "swoopVelocity" : 30,
+
+      "foundTargetActions" : [ ],
+
+      "fleeActions" : [ ],
+
+      "hostileActions" : [ ],
+
+      "periodicActions" : [ ],
+
+      "approachActions" : [
+      ],
+
+      "followActions" : [
+      ],
+
+      "wanderActions" : [
+      ],
+
+      "concurrentActions" : [ ],
+
+      "concurrentHostileActions" : [ ],
+	  
+	  "deathActions" : [
+	  
+//        {
+//          "name" : "action-projectile",
+//          "parameters" : {
+//            "projectileCount" : 1,
+//            "projectileType" : "gic_fireexplosion",
+//            "projectileParameters" : {
+//              "power" : 0, //1200
+//              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+//              "damageKind" : "ews_explosive",
+//			  "ignoresDef" : true,
+//			  "timeToLive" : 0.25
+//            },
+//            "aimDirection" : [0, 0],
+//            "inaccuracy" : 0,
+//            "fireOffset" : [0, 0.0]
+//          }
+//        },
+//        {
+//          "name" : "action-projectile",
+//          "parameters" : {
+//            "projectileCount" : 1,
+//            "projectileType" : "gic_suppression_mediumknockback",
+//            "projectileParameters" : {
+//              "power" : 0, //1200
+//              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+//              "damageKind" : "ews_explosive",
+//			  "ignoresDef" : true,
+//			  "timeToLive" : 0.25,
+//              "statusEffects" : [ "gic_suppressed", "gic_suppressed_vulnerability" ]
+//            },
+//            "aimDirection" : [0, 0],
+//            "inaccuracy" : 0,
+//            "fireOffset" : [0, 0.0]
+//          }
+//        }
+
+      ]
+	  
+    },
+
+	
+    "metaBoundBox" : [-2.5, -2.5, 2.5, 2.5],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "gravityEnabled" : false,
+      "collisionPoly" : [ [0.625, 0.9375], [0.9, 0.4375], [0.9, -0.4375], [0.625, -0.9375], [-0.625, -0.9375], [-0.9, -0.4375], [-0.9, 0.4375], [-0.625, 0.9375] ],
+	  "ignorePlatformCollision" : true,
+	  
+      "mass" : 1.0,
+      "flySpeed" : 16,
+      "airFriction" : 0.25,
+      "airForce" : 25.0
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.1,
+    "knockoutEffect" : "blink",
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+
+    "touchDamage" : {
+      "poly" : [ [0.625, 0.9375], [0.9, 0.4375], [0.9, -0.4375], [0.625, -0.9375], [-0.625, -0.9375], [-0.9, -0.4375], [-0.9, 0.4375], [-0.625, 0.9375] ],
+      "damage" : 10,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "lash",
+      "knockback" : 20,
+      "statusEffects" : [ "electrified" ]
+    },
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/monster_primary.lua"
+      ],
+      "primaryScriptDelta" : 1,
+
+      "stats" : {
+        "knockbackStunTime" : {
+          "baseValue" : 0.25
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 9
+        },
+		"grit" : {
+          "baseValue" : 0.5
+        },
+        "maxHealth" : {
+          "baseValue" : 100
+        },
+        "protection" : {
+          "baseValue" : 0.0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1.0
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : -0.5
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.75
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.5
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.5
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        }
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : true,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

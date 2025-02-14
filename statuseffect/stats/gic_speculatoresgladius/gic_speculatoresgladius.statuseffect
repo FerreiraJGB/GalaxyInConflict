@@ -1,0 +1,53 @@
+{
+  "name" : "gic_speculatoresgladius",
+  "effectConfig" : {
+	"projectileType" : "gic_speculatoresgladius_precisionartillery_object", //does not accept arrays
+	"projectileTypeMiss" : "gic_speculatoresgladius_precisionartillery_object", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.4,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^red;Launching^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+	},
+	"missChance" : 10,
+	
+	"offset" : [-1.5,0.5],
+	
+	"muzzleOffset" : [-1.5, 0.1],
+	
+	"muzzleOffset2" : [-1.3, 0.0],
+	
+	"trackingDistance" : 40,
+	"trackingAngle" : 181, //181
+	"fireRate" : 0.25,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 4,
+	"reloadTimer" : 2.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_speculatoresgladius.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_speculatoresgladius.animation"
+}

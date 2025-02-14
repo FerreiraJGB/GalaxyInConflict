@@ -1,0 +1,83 @@
+{
+  "type" : "gic_occasus_advisor",
+  "baseType" : "gic_occasus_base",
+  "damageTeam" : 14,
+  "dropPools" : [ "gic_occasusadvisorTreasure" ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/occasus/gic_occasus_combat_advisor.config:attack",
+      "reattack" : "/dialog/occasus/gic_occasus_combat_advisor.config:reattack",
+      "killedTarget" : "/dialog/occasus/gic_occasus_combat_advisor.config:killedTarget",
+      "lostTarget" : "/dialog/occasus/gic_occasus_combat_advisor.config:lostTarget",
+      "outOfSight" : "/dialog/occasus/gic_occasus_combat_advisor.config:outOfSight",
+      "cheerOn" : "/dialog/occasus/gic_occasus_combat_advisor.config:cheerOn",
+      "cantReach" : "/dialog/occasus/gic_occasus_combat_advisor.config:cantReach"
+    },
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}],
+        [5.0, "wander"]
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_stahlhelmhead", "parameters" : { "colorIndex" : [9] }  } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_occasusinfantrypants", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_wolfpackback", "parameters" : { "colorIndex" : [2] } } ],
+            "primary" : [
+              "gic_usm60_occasus", //Superior stats.
+              "gic_kh44",
+              "gic_usm47a2_flashbang_riflegrenade_npc"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_commandingofficer_usmarine_rally_insurgent", "gic_npc_death_blood_explosion"],    
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 133.3333 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.8
+      },
+	  
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      }
+    }
+  }
+  
+}

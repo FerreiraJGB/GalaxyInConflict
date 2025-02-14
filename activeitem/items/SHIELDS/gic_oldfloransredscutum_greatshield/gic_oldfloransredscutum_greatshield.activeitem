@@ -1,0 +1,91 @@
+{
+  "itemName" : "gic_oldfloransredscutum_greatshield",
+  "fixedLevel" : true,
+  "price" : 600,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "^#D6DFFF;Anti-Missile Greatshield^white;",
+  "description" : "''Empires wither away
+As heroes will blossom
+But after this final crusade
+We will have lost them.''
+
+^orange;Dying Empire: Cannot parry | 1250HP STABILITY | 60% DEF.^reset;
+^#D6DFFF;Shield Bash: Moving at great speeds and colliding with an enemy will deal damage based on the speed of the user.^white;",
+
+  "shortdescription" : "Old Floran's Red Scutum",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield", "greatshield"],
+
+  "inventoryIcon" : "gic_oldfloransredscutum_greatshield_icon.png",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_oldfloransredscutum_greatshield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-1.0, -1.5], [-1.0, 1.3], [0.55, 1.3], [0.55, -1.5] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/armor/gic_bloodborne_body-armor-6.wav" ],
+      "perfectBlock" : [ "/sfx/block/gic_demonssoulsremake_parry_shieldquiet.wav" ],
+      "block" : [ "/sfx/melee/gic_bloodborne_shield-wood.wav" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  
+	  "shieldBash" : [ "/sfx/melee/gic_bloodborne_shieldpress.wav" ]
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_shieldbash.lua", "/abilities/weapons/gic_base_greatshield_limiter.lua"  ],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : true,
+  "baseShieldHealth" : 1250,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.5,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 0.0,
+
+  "knockback" : 10, //15
+  
+  "damageBleedthroughEnabled" : true,
+  "damageBleedthroughAmount" : 0.4, //at 0.1, 10% of all damage received by the shield will bleed through and etc - unless the shield was broken on the hit.
+  //also note that as of the initial version, bleedthrough damage is dealt as "default"/physical damage; there is no way to pull the actual damage type received, as of my testing so far.      
+  
+  // CUSTOM SHIELD BASH PARAMS
+  "minVelocity" : 15, //10
+  "accelKnockback" : 10, //30
+  "accelMaxKnockback" : 70, //45
+  
+  "accelDamage" : 10, //20
+  "accelMaxDamage" : 50, //100
+  
+  "minDamageTimeout" : 0.25,
+  "maxDamageTimeout" : 1.0,
+  // CUSTOM SHIELD BASH PARAMS  
+  
+  
+  
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -80, //25
+      "shieldRotation" : 0,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

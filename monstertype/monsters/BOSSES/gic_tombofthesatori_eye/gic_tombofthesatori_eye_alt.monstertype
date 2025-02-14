@@ -1,0 +1,1105 @@
+{
+  "type" : "gic_tombofthesatori_eye_alt",
+  "shortdescription" : "[Eye of the Satori]",
+  "description" : "Some sort of anomaly.",
+  "persistent" : true,
+  "categories" : [ "gic_tombofthesatori_eye" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_tombofthesatori_eye.animation",
+
+  "dropPools" : [ "gic_generic_commoneliteTreasure" ],
+
+  "baseParameters" : {
+    "scripts" : [
+      "/monsters/gic_base_monster_dualboss_adaptive.lua" 
+    ],
+	
+	//ADAPTIVE HEALTH STUFF
+	"adaptiveTrackingRange" : 200, //should be range in blocks
+	"adaptiveHealthBonus" : 4500, //flat max health stat
+	
+	//EXTRA DROP POOLS, DROPS ONE LOOT POOL PER EXTRA PLAYER
+	"extraDropPools" : ["gic_generic_commoneliteTreasure"],
+	
+	
+	//DUAL BOSS UNIQUE STUFF
+	"targetEntity" : "gic_tombofthesatori_vessel_alt", //looks for an entity of this typeName; keep with monsters for now, not 100% sure how typeName interacts with NPCs; likely refers to their npcType, but haven't tested yet.
+	//when this entity is dead, switch to targetPhase
+	
+	
+	
+	"trackingDistance" : 200, //valid tracking distance; when targetEntity is outside of this range, it is considered "dead" and will cause this boss to switch to its targetPhase
+	"targetPhase" : "behaviorConfig2", //name of phase to switch to when targetEntity is lost/died
+	
+    "damageBar" : "Special",
+
+    "facingMode" : "transformation",
+
+    "behavior" : "monster",
+    "deathBehavior" : "monster-death",
+    "seeThroughLiquid" : false,
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 190,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 60.0,
+
+      "hurtWaitForGround" : false,
+
+      "foundTargetActions" : [
+
+      ],
+
+      "periodicActions" : [
+       ],
+
+      "concurrentHostileActions" : [
+
+	  //Homing Orbs
+       {
+          "name" : "action-fire",
+          "cooldown" : 0,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 300,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "",
+            "windupTime" : 0.0,
+            "projectileCount" : 40,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 2.0,
+            "inaccuracy" : 0.1,
+            "projectileType" : "gic_magicbullet_ruinorb_3pattern_satorieye",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 60,
+			  "knockback" : 20,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[2.0, 0.1]],
+            "rotationCenter" : [0.0, 0],
+            "aimDirection" : [0, 3],
+            "aimAtTarget" : true,
+			
+            "faceTarget" : true,
+            "rotateAim" : true,
+            "holdAim" : false,
+            "damageRepeatGroup" : "",
+			
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 0.0
+          }
+        },
+		
+	  //Summon Ammo Carrier Adds - Specialist undead that drops ammo packs that can be picked up by the player. These grant infinite ammo for a short time.
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 300,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "",
+            "windupTime" : 5.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.5,
+            "projectileType" : "gic_tombofthesatori_eye_summon_undead_soldier_messenger",
+            "projectileParameters" : {
+              "speed" : 200,
+              "timeToLive" : 4,
+			  "power" : 40,
+			  "knockback" : 20,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0.0, 0.0]],
+            "aimDirection" : [0, 3],
+            "aimAtTarget" : false,
+			
+            "damageRepeatGroup" : "",
+			
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 5.0
+          }
+        },
+		
+	  //Shotgun Blast
+       {
+          "name" : "action-fire",
+          "cooldown" : 0,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 300,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "",
+            "windupTime" : 8.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.1,
+            "projectileType" : "gic_magicbullet_ruinorb_6pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 40,
+			  "knockback" : 20,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[2.0, 0.1]],
+            "aimDirection" : [0, 3],
+            "aimAtTarget" : true,
+			
+            "damageRepeatGroup" : "",
+			
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 0.0
+          }
+        },
+		
+        {
+          "name" : "gic_approach-fly",
+          "parameters" : {
+            "flyState": "idle",
+//    "maxAngle": 0,
+//    "approachAngle": 0,
+            "minRange" : 10, //10
+            "maxRange" : 30 //30
+          }
+        },
+		
+        {
+          "name" : "action-globaltag",
+          "parameters" : {
+            "tagName" : "aggro",
+            "tag" : ".aggro"
+          }
+        }
+
+	
+		
+      ],
+
+      "hostileActions" : [
+
+
+
+		
+      ],
+
+      "damageTakenActions" : [
+
+      ],
+
+      "fleeActions" : [ ],
+
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion_npc",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        },
+		
+		//Gib 1
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_tombofthesatori_eye_gib_1",
+            "projectileParameters" : {
+              "power" : 0,
+			  "speed" : 25
+            },
+            "aimDirection" : [1, 0],
+            "inaccuracy" : 1,
+            "fireOffset" : [0, 0.0]
+          }
+        },
+		
+		//Gib 2
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_tombofthesatori_eye_gib_2",
+            "projectileParameters" : {
+              "power" : 0,
+			  "speed" : 25
+            },
+            "aimDirection" : [1, 0],
+            "inaccuracy" : 1,
+            "fireOffset" : [0, 0.0]
+          }
+        },
+		
+		//Gib 3
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_tombofthesatori_eye_gib_3",
+            "projectileParameters" : {
+              "power" : 0,
+			  "speed" : 25
+            },
+            "aimDirection" : [1, 0],
+            "inaccuracy" : 1,
+            "fireOffset" : [0, 0.0]
+          }
+        },
+		
+		//Gib 4
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_tombofthesatori_eye_gib_4",
+            "projectileParameters" : {
+              "power" : 0,
+			  "speed" : 25
+            },
+            "aimDirection" : [1, 0],
+            "inaccuracy" : 1,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+		
+      ],
+	  
+
+      "wanderActions" : [
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "gic_approach-fly",
+          "parameters" : {
+            "flyState": "idle",
+//    "maxAngle": 0,
+//    "approachAngle": 0,
+            "minRange" : 10, //10
+            "maxRange" : 30 //30
+          }
+        }
+      ],
+	  
+      "concurrentActions" : [
+        {
+          "name" : "action-globaltag",
+          "parameters" : {
+            "tagName" : "aggro",
+            "tag" : ""
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+            "flyState": "idle"
+          }
+        },
+        {
+          "name" : "approach-fly",
+          "parameters" : {
+            "flyState": "idle"
+          }
+        }
+      ]
+    },
+
+
+
+
+
+
+
+
+
+
+//PHASE 2
+
+
+    "behaviorConfig2" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 190,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 20.0,
+
+      "hurtWaitForGround" : false,
+
+      "foundTargetActions" : [
+
+       {
+          "name" : "action-fire",
+          "cooldown" : 2000,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 300,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "idle",
+            "windupTime" : 0.25,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.1,
+            "projectileType" : "gic_blood_explosion",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 40,
+			  "knockback" : 20,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+			  "onlyHitTerrain" : true,
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[2.0, 0.1]],
+            "aimDirection" : [0, 3],
+            "aimAtTarget" : true,
+			
+            "faceTarget" : false,
+            "rotateAim" : false,
+            "holdAim" : false,
+            "damageRepeatGroup" : "",
+			
+            "onGround" : false,
+            "fireState" : "transition",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 0.0
+          }
+        }
+		
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlephase2",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "concurrentHostileActions" : [
+
+
+	  //Summon Ammo Carrier Adds - Specialist undead that drops ammo packs that can be picked up by the player. These grant infinite ammo for a short time.
+       {
+          "name" : "action-fire",
+          "cooldown" : 4,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 300,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "",
+            "windupTime" : 3.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.5,
+            "projectileType" : "gic_tombofthesatori_eye_summon_undead_soldier_messenger",
+            "projectileParameters" : {
+              "speed" : 200,
+              "timeToLive" : 4,
+			  "power" : 40,
+			  "knockback" : 20,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0.0, 0.0]],
+            "aimDirection" : [0, 3],
+            "aimAtTarget" : false,
+			
+            "damageRepeatGroup" : "",
+			
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 3.0
+          }
+        },
+
+
+	  //Direct Stalactite Strike
+       {
+          "name" : "action-fire",
+          "cooldown" : 15,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0, //8
+            "windupStopForce" : 10,
+            "windupState" : "",
+            "windupTime" : 2,
+            "projectileCount" : 20,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.025, //0.05
+            "inaccuracy" : 1.0,
+            "projectileType" : "gic_magicshot_stalactitestrike_messenger", //meleeslash
+            "projectileParameters" : {
+              "speed" : 30,
+              "timeToLive" : 2.0,
+			  "power" : 455,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[0.0, 6.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "",
+            "aimDirection" : [0, 2],
+            "winddownState" : "",
+            "winddownTime" : 5
+          }
+        },
+
+
+	  //Homing Orbs
+       {
+          "name" : "action-fire",
+          "cooldown" : 0,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 300,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "",
+            "windupTime" : 0.0,
+            "projectileCount" : 40,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 2.0,
+            "inaccuracy" : 0.1,
+            "projectileType" : "gic_magicbullet_ruinorb_3pattern_satorieye",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 60,
+			  "knockback" : 20,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[2.0, 0.1]],
+            "rotationCenter" : [0.0, 0],
+            "aimDirection" : [0, 3],
+            "aimAtTarget" : true,
+			
+            "faceTarget" : true,
+            "rotateAim" : true,
+            "holdAim" : false,
+            "damageRepeatGroup" : "",
+			
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 0.0
+          }
+        },
+		
+	  //Shotgun Blast
+       {
+          "name" : "action-fire",
+          "cooldown" : 0,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 300,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "",
+            "windupTime" : 6.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.1,
+            "projectileType" : "gic_magicbullet_ruinorb_6pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 40,
+			  "knockback" : 20,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[2.0, 0.1]],
+            "aimDirection" : [0, 3],
+            "aimAtTarget" : true,
+			
+            "damageRepeatGroup" : "",
+			
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 0.0
+          }
+        },
+
+	  //Sniper Fire
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 300,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "preaim_windup",
+            "windupTime" : 7.84,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_khurtovyna_snipershot_stage1",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 100,
+			  "knockback" : 20,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[-1.0, -1.5], [1.0, -1.5]],
+            "aimDirection" : [0, 3],
+            "aimAtTarget" : true,
+
+            "damageRepeatGroup" : "",
+			
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "fire",
+            "winddownState" : "",
+            "winddownTime" : 0.0
+          }
+        },
+		
+        {
+          "name" : "gic_approach-fly",
+          "parameters" : {
+            "flyState": "idlephase2",
+//    "maxAngle": 0,
+//    "approachAngle": 0,
+            "minRange" : 10, //10
+            "maxRange" : 30 //30
+          }
+        },
+		
+        {
+          "name" : "action-globaltag",
+          "parameters" : {
+            "tagName" : "aggro",
+            "tag" : ".aggro"
+          }
+        }
+		
+		
+      ],
+
+      "hostileActions" : [
+		
+      ],
+
+      "damageTakenActions" : [
+
+      ],
+
+      "fleeActions" : [ ],
+
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion_npc",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        },
+		
+		//Gib 1
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_tombofthesatori_eye_gib_1",
+            "projectileParameters" : {
+              "power" : 0,
+			  "speed" : 25
+            },
+            "aimDirection" : [1, 0],
+            "inaccuracy" : 1,
+            "fireOffset" : [0, 0.0]
+          }
+        },
+		
+		//Gib 2
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_tombofthesatori_eye_gib_2",
+            "projectileParameters" : {
+              "power" : 0,
+			  "speed" : 25
+            },
+            "aimDirection" : [1, 0],
+            "inaccuracy" : 1,
+            "fireOffset" : [0, 0.0]
+          }
+        },
+		
+		//Gib 3
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_tombofthesatori_eye_gib_3",
+            "projectileParameters" : {
+              "power" : 0,
+			  "speed" : 25
+            },
+            "aimDirection" : [1, 0],
+            "inaccuracy" : 1,
+            "fireOffset" : [0, 0.0]
+          }
+        },
+		
+		//Gib 4
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_tombofthesatori_eye_gib_4",
+            "projectileParameters" : {
+              "power" : 0,
+			  "speed" : 25
+            },
+            "aimDirection" : [1, 0],
+            "inaccuracy" : 1,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+	  
+
+      "wanderActions" : [
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "gic_approach-fly",
+          "parameters" : {
+            "flyState": "idlephase2",
+//    "maxAngle": 0,
+//    "approachAngle": 0,
+            "minRange" : 10, //10
+            "maxRange" : 30 //30
+          }
+        }
+      ],
+	  
+      "concurrentActions" : [
+        {
+          "name" : "action-globaltag",
+          "parameters" : {
+            "tagName" : "aggro",
+            "tag" : ""
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+            "flyState": "idlephase2"
+          }
+        },
+        {
+          "name" : "approach-fly",
+          "parameters" : {
+            "flyState": "idlephase2"
+          }
+        }
+      ]
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "touchDamage" : {
+      "poly" : [ [-2.5, -1.05], [2.5, -1.05], [2.5, 3.0], [-2.5, 3.0] ],
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_psychic",
+      "knockback" : 0,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-2.5, -1.05], [2.5, -1.05], [2.5, 3.0], [-2.5, 3.0] ],
+
+      "mass" : 0.1,
+      "walkSpeed" : 4,
+      "runSpeed" : 12,
+      "gravityEnabled" : false,
+
+      "airFriction" : 0.025,
+      "airForce" : 5,
+      "flySpeed" : 30
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+        "knockbackStunTime" : {
+          "baseValue" : 0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 90
+        },
+        "maxHealth" : {
+          "baseValue" : 30000
+        },
+        "grit" : {
+          "baseValue" : 1.0
+        },
+        "protection" : {
+          "baseValue" : 1.0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.8
+        },
+        "fireResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.5
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 1
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.9
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+		
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -3.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : -0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.0
+      },
+	 
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+
+      "novaResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 1
+				},
+				"cosmicResistance": {
+					"baseValue": 1
+				},
+				"radioactiveResistance": {
+					"baseValue": 1
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 1
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 1
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 1
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.7
+				} 
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

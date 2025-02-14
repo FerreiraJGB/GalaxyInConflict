@@ -1,0 +1,112 @@
+{
+  "type" : "gic_banditcaptureinfantry",
+  "baseType" : "gic_banditbase",
+
+  "dropPools" : [ "techTreasure" ],
+
+  "scriptConfig" : {
+  
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 1.00
+    },
+
+  
+    "dialog" : {
+	  "attack" : "/dialog/bandits/gic_capturebandit_combat.config:attack",
+      "reattack" : "/dialog/bandits/gic_capturebandit_combat.config:reattack",
+      "killedTarget" : "/dialog/bandits/gic_capturebandit_combat.config:killedTarget",
+      "lostTarget" : "/dialog/bandits/gic_capturebandit_combat.config:lostTarget",
+      "outOfSight" : "/dialog/bandits/gic_capturebandit_combat.config:outOfSight",
+      "cheerOn" : "/dialog/bandits/gic_capturebandit_combat.config:cheerOn",
+      "cantReach" : "/dialog/bandits/gic_capturebandit_combat.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  
+//Hastati
+          {
+            "head" : [
+              "gic_colonialsurvivorhead"
+            ],
+            "chest" : [
+              { "name" : "gic_colonialsurvivorchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 8 } }
+            ],
+            "primary" : ["gic_soldiers_sword_npc"],
+            "alt" : [ "gic_ovalscutum_greatshield_npc_raised" ]
+          },
+		  
+//Socii
+          {
+
+            "head" : [
+              "", "", "gic_glasses5head"
+            ],
+            "chest" : [
+              { "name" : "conceptchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "coolchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "tshirtchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "hoodiechest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "workoutlegs", "parameters" : { "colorIndex" : 8 } }
+            ],
+			
+            "primary" : ["gic_riot_stun_spear_directthrow"],
+            "alt" : [ "gic_ovalscutum_greatshield_npc_raised" ]
+          }
+
+
+
+
+		  
+        ] ]
+    ]
+  },
+  
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.25
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.1
+      }
+	  
+	  
+	  
+    }
+  }
+  
+}

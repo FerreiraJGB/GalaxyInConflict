@@ -1,0 +1,357 @@
+{
+  "itemName" : "gic_warriors_battleaxe_player",
+  "price" : 45,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : 
+
+"An axe that's been designed for adaptive combat, resembling a miniature poleaxe with a spike for thrusting and an axe-head for heavy cleaves. A cunning weapon for a cunning lot, this axe makes up for its poor range with its fast quickstep ability and decent striking speed.
+^orange;Back, foul beast!: 2x damage on first strike. Heavy knockback on final attack. Inflicts BOSS-BLEED.^white;
+^#D6DFFF;Quickstep: [SHIFT] to initiate a rapid double-dash forwards to get around targets or make a quick escape | 1s cooldown.",
+
+
+
+  "shortdescription" : "Warrior's Battle Axe",
+  "tooltipKind" : "gic_largebase_sword",
+  "tooltipFields" : {
+	"objectImage" : "/items/weapons/melee/player/gic_warriors_battleaxe/gic_warriors_battleaxe_icon2.png"
+  },
+  "category" : "^#D6DFFF;Heavy Axe^white;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","axe"],
+
+  "inventoryIcon" : "gic_warriors_battleaxe_icon.png",
+
+  "animation" : "/items/active/weapons/melee/broadsword/combobroadsword.animation",
+  "animationParts" : {
+    "handle": "",
+    "blade" : "gic_warriors_battleaxe.png"
+  },
+  "animationCustom" : {
+	"sounds" : {
+      "fire" : [ "/sfx/melee/gic_sekiro_ichimonji_16speed.ogg" ],
+      "fire2" : [ "/sfx/melee/gic_bloodborne_swing-stab2.wav" ], //swing_spear
+      "fire3" : [ "/sfx/melee/gic_bloodborne_swing-sword.wav" ], //swing_broadsword
+	  
+      "heavyAttack" : [],
+      "heavyAttackSwing" : ["/sfx/tech/gic_bloodborne_movement1.wav", "/sfx/tech/gic_bloodborne_movement2.wav", "/sfx/tech/gic_bloodborne_movement3.wav"],
+      "heavyAttackHit" : ["/sfx/melee/gic_bloodborne_iron-cut-iron2.wav"],
+
+      "shing" : ["/sfx/tech/gic_bloodborne_movement1.wav", "/sfx/tech/gic_bloodborne_movement2.wav", "/sfx/tech/gic_bloodborne_movement3.wav"], 
+	  
+      "guard" : [ "/sfx/melee/sword_guard.ogg" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+      "parry" : [
+		"/sfx/block/gic_sekiro_meleeblock1.ogg",
+		"/sfx/block/gic_sekiro_meleeblock2.ogg",
+		"/sfx/block/gic_sekiro_meleeblock3.ogg",
+		"/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ]
+    },
+	"animatedParts" : {
+	"stateTypes" : {
+      "swoosh" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+          },
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire2" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire3" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          }
+        }
+      }
+    },
+	"parts" : {
+	  "parryShield" : {
+          "properties" : {
+            "zLevel" : 5,
+            "centered" : true,
+            "offset" : [-0.5, 0.5],
+            "transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0],
+            "shieldPoly" : [ [1.0, -1.6], [1.0, 2.0], [0.75, 2.10], [0.75, -1.5] ] //[-0.25, -2.5], [-0.25, 2.0], [1.0, 2.75], [1.0, -1.0]
+        }
+	  },
+      "swoosh" : {
+        "properties" : {
+          "zLevel" : -1,
+          "centered" : true,
+          "transformationGroups" : ["swoosh"],
+          "rotationCenter" : [0, 0]
+        },
+        "partStates" : {
+          "swoosh" : {
+            "idle" : {
+              "properties" : {
+                "image" : ""
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh/<elementalType>swoosh.png:<frame>?scalenearest=0.6;1.0", //1h axe overhead-downwards swing
+                "offset" : [0, 2.5],
+                "damageArea" : [[-3, 2], [-2.5, 3], [1, 3], [1.9, 1.75], [2.25, -0.25], [2.5, -2.25], [1.9, -3.25], [0, -2.5]]
+              }
+            },
+            "fire2" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh3/<elementalType>swoosh.png:<frame>?scalenearest=0.75;1.0", //1h jab
+                "offset" : [2, 0.0],
+                "damageArea" : [[-1.25, 0.3], [1.7, 0.3], [1.7, -0.4], [-1.25, -0.4]]
+              }
+            },
+			"fire3" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh/<elementalType>swoosh.png:<frame>?flipy?scalenearest=0.75;1.0", //1h upswing
+                "offset" : [0.0, -2.5],
+                "damageArea" : [[-3.75, 2.5], [-3.25, 5.0], [-2.5, 5.5], [-1.0, 2.8], [3.0, 2.8], [3.5, 1.4], [3.0, 0], [2.0, -1.0], [0.5, -1.5], [-2.0, -1.0], [-3.0, -0.0]]
+              }
+            }
+          }
+        }
+      }
+    }
+	},
+	"particleEmitters" : {
+	 "ews_meleeswoosh" : {
+	  "active" : false,
+      "transformationGroups" : ["swoosh"],
+      "emissionRate" : 1,
+      "burstCount" : 1,
+      "particles" : [
+//        { "particle" : "gic_meleeswoosh1"},
+//        { "particle" : "gic_meleeswoosh2"},
+//        { "particle" : "gic_meleeswoosh3"}
+	  ]
+	 }
+	}
+  },
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "gic_broadswordcombo",
+  "primaryAbility" : {
+    "fireTime" : 1.0,
+    "baseDps" : 50.0,
+	//"damageKind" : "IgnoresDef",
+	//"damageType" : "IgnoresDef",
+	"comboSteps" : 3,
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [ {"effect" : "gic_boss_melee_primer", "duration" : 1.0}],
+      "knockbackMode" : "facing",
+	  //"damageKind" : "IgnoresDef",
+	  "damageType" : "IgnoresDef",
+      "timeout" : 0.5
+    },
+	"swooshOffsetRegions" : [
+      [0.75, 0.0, 4.25, 5.0],
+      [1.5, -1.0, 5.5, 1.0],
+	  [0.75, 0.0, 4.25, 5.0]
+    ],
+	"stepDamageConfig" : [
+      {
+        "baseDamageFactor" : 2.0,
+        "knockback" : 8
+      },
+      {
+        "baseDamageFactor" : 1.5,
+        "knockback" : 8
+      },
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 30
+      }
+    ],
+	"comboSpeedFactor" : 0.6,
+	"stances" : {
+      "idle" : {
+        "armRotation" : -45,
+        "weaponRotation" : -13,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"weaponOffset" : [ -0.1, 0.05 ]
+      },
+	  
+	  
+	  
+      "windup1" : {
+        "duration" : 0.5,
+        "armRotation" : 90,
+        "weaponRotation" : -10,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "preslash1" : {
+        "duration" : 0.025,
+        "armRotation" : 55,
+        "weaponRotation" : -45,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : false
+      },
+      "fire1" : {
+        "duration" : 0.6,
+        "armRotation" : -45,
+        "weaponRotation" : -55,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : false
+      },
+      "wait1" : {
+        "duration" : 0.5,
+        "armRotation" : -45,
+        "weaponRotation" : -55,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : false
+      },
+	  
+	  
+      "windup2" : {
+        "duration" : 0.3,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire2" : {
+        "duration" : 0.6,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "wait2" : {
+        "duration" : 0.6,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  
+	  
+	  
+	  "windup3" : {
+        "duration" : 0.15,
+        "armRotation" : -100,
+        "weaponRotation" : -45,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "preslash3" : {
+        "duration" : 0.025,
+        "armRotation" : 15,
+        "weaponRotation" : -45,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire3" : {
+        "duration" : 0.4,
+        "armRotation" : 55,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"weaponOffset" : [0.0,0]
+      },
+      "wait3" : {
+        "duration" : 0.5,
+        "armRotation" : 55,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"weaponOffset" : [0.0,0]
+      }
+    }
+  },
+  
+  "altAbilityType" : "spin",
+  "altAbility" : {
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [],
+      "baseDamage" : 20,
+      "knockback" : 5, //50
+      "timeout" : 0.15,
+      "timeoutGroup" : "alt"
+    },
+	"scripts" : ["/items/weapons/melee/player/gic_warriors_battleaxe/gic_warriors_battleaxe_charge.lua"],
+	"class" : "Charge",
+	
+	"cooldownTime" : 1.0,
+	
+	"name" : "Quickstep",
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -70,
+        "weaponRotation" : -20,
+		"aimAngle" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 0.15,
+		"aimAngle" : 0,
+        "armRotation" : -135,
+        "weaponRotation" : 12.5,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : -20,
+        "weaponRotation" : -65, //-70
+        "twoHanded" : false,
+        "weaponOffset" : [0.0, 0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

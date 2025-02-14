@@ -1,0 +1,85 @@
+{
+  "itemName" : "gic_knifehell_throw",
+  "price" : 3260,
+  "inventoryIcon" : "gic_knifehell_throw.png",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "Did we make that?",
+  "shortdescription" : "Knifer Throw",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "Battle Arm",
+  "itemTags" : ["weapon","ranged","rifle"],
+  "twoHanded" : true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_knifehell_throw.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/projectiles/throw_item.ogg" ]
+    }
+  },
+
+  "baseOffset" : [0.95, 0.3],
+  "muzzleOffset" : [0.0, 0.14],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.009,
+    "baseDps" : 1600,
+    "energyUsage" : 24,
+    "inaccuracy" : 0.06,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : ["gic_magicshot_knife"],
+    "projectileParameters" : {
+      "knockback" : 15
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+	    "frontArmFrame" : "run.2",
+	    "backArmFrame" : "run.2",
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.05,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

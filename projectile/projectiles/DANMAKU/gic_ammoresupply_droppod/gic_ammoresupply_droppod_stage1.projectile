@@ -1,0 +1,55 @@
+{
+  "projectileName" : "gic_ammoresupply_droppod_stage1",
+  "physics" : "gic_beaconlaser",
+  
+  "actionOnReap" : [
+	
+	
+  ],
+  
+  "actionOnHit" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_ammoresupply_droppod_stage2",
+      "inheritDamageFactor" : 1,
+//	  "angle" : 180,
+	  "fuzzAngle" : 0,
+      "angleAdjust" : 180
+    }
+	
+	
+  ],
+  
+  "actionOnTimeout" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_ammoresupply_droppod_stage2_altrocket",
+      "inheritDamageFactor" : 1,
+//	  "angle" : 180,
+	  "fuzzAngle" : 0,
+      "angleAdjust" : 180
+    }
+	
+	
+  ],
+  
+  
+  
+  "image" : "gic_ammoresupply_droppod_stage1.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 60,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "fullbright" : true,
+  "timeToLive" : 1.0,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

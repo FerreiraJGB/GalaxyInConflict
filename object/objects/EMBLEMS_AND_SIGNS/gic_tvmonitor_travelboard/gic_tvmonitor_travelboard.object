@@ -1,0 +1,43 @@
+{
+  "objectName" : "gic_tvmonitor_travelboard",
+  "colonyTags" : ["station","electronic","space"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "description" : "A screen displaying a table of arrivals, departures and identification numbers.",
+  "shortdescription" : "TV Monitor Travel Board",
+  "race" : "generic",
+
+  
+  "lightColor" : [75, 75, 75],
+
+  "inventoryIcon" : "gic_tvmonitor_travelboardicon.png",
+  "orientations" : [
+    {
+      "image" : "gic_tvmonitor_travelboard.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "animation" : "gic_tvmonitor_travelboard.animation",
+  "animationParts" : {
+    "bg" : "gic_tvmonitor_travelboard.png",
+    "fg" : "gic_tvmonitor_travelboardlit.png"
+  },
+  "animationPosition" : [-8, -0],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [-1, -0] ],
+
+  "interactive" : false,
+
+  "soundEffect" : "/sfx/objects/bunkerdisplay.ogg",
+  "soundEffectRangeMultiplier" : 0.25
+
+}

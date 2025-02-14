@@ -1,0 +1,84 @@
+{
+  "itemName" : "gic_autogun",
+  "price" : 1200,
+  "inventoryIcon" : "gic_autogun.png",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "The rifle for the low-tech gangs of the underworld.",
+  "shortdescription" : "Autogun",
+  "level" : 6,
+  "tooltipKind" : "gun",
+  "category" : "Battle Rifle",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_autogun.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/gun/ue_plasmariflefire.ogg" ]
+    }
+  },
+
+  "baseOffset" : [0.85, 0.3],
+  "muzzleOffset" : [1.0, 0.18],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.135,
+    "baseDps" : 50,
+    "energyUsage" : 180,
+    "inaccuracy" : 0.006,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "gic_magicbullet_fire", //gic_magicbullet_fire
+    "projectileParameters" : {
+      "knockback" : 0
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.2, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.2, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

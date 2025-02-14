@@ -1,0 +1,517 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+	
+	
+	
+      "body" : {
+        "priority" : 1,
+        "default" : "idle",
+        "states" : {
+		
+		
+		
+          "idle" : {
+            "frames" : 3,
+            "cycle" : 0.05,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_helicopterrotorloop.ogg",
+              "persistentSoundRangeMultiplier" : 5.35, //5
+              "persistentSoundStopTime" : 0.0
+            }
+          },
+          "fly" : {
+            "frames" : 3,
+            "cycle" : 0.05,
+            "mode" : "loop",
+			
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_helicopterrotorloop.ogg",
+              "persistentSoundRangeMultiplier" : 5.35,
+              "persistentSoundStopTime" : 0.0
+            }
+          }
+		  
+		  
+		  
+        }
+      },
+	  
+
+	  
+	  
+	  
+	  
+	  
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 3,
+            "cycle" : 0.10,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ ]
+            }
+          }
+        }
+      },
+	  
+	  
+	  
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+	
+	
+	
+	
+	
+	
+
+    "parts" : {
+	
+	
+	
+	
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [-4.65, 0.15], //0.25, -0.25
+          "zLevel" : 2
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+	  
+	  
+      "fullbright" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [-4.65, 0.15], //0.25, -0.25
+          "zLevel" : 3,
+		  "fullbright" : true
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+	  
+      "rotor" : {
+        "properties" : {
+          "centered" : true,
+          "transformationGroups" : [ "rotor" ],
+          "offset" : [0.0, 5.0],
+          "zLevel" : 4
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },	  
+	  
+	  
+	  
+      "frontgun" : {
+        "properties" : {
+          "centered" : true,
+          "transformationGroups" : [ "aim", "body", "facing" ],
+          "offset" : [7.3, -4.8],
+          "rotationCenter" : [6.0, -4.8],
+          "zLevel" : 5,
+          "fullbright" : false
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "frontturret" : {
+        "properties" : {
+          "centered" : true,
+          "transformationGroups" : [ "body" ],
+          "offset" : [5.9, -4.8],
+          "rotationCenter" : [6.0, -6],
+          "zLevel" : 6,
+          "fullbright" : false
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+	  
+	  
+      "reargun" : {
+        "properties" : {
+          "centered" : true,
+          "transformationGroups" : [ "aim2", "body", "facing" ],
+          "offset" : [8.675, -4.8],
+          "rotationCenter" : [7.675, -4.8],
+          "zLevel" : 1,
+          "fullbright" : false
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "rearturret" : {
+        "properties" : {
+          "centered" : true,
+          "transformationGroups" : [ "body" ],
+          "offset" : [8.0, -4.8],
+          "zLevel" : 0,
+          "fullbright" : false
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+    }
+  },
+  
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+  "transformationGroups" : {
+    "rotor" : { "interpolated" : false },
+    "body" : { "interpolated" : true },
+    "facing" : { "interpolated" : true },
+    "aim" : { "interpolated" : true },
+    "aim2" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+  
+  "lights" : {
+    "engineglow" : {
+      "active" : false,
+      "position" : [0, 0],
+      "color" : [70, 70, 40], //255, 255, 107
+      "pointLight" : true
+    },
+    "frontlightleft" : {
+      "active" : false,
+      "position" : [-4.2, 3.1],
+      "color" : [255, 255, 107],
+      "pointLight" : true,
+	  "pointAngle" : 0.00,
+	  "pointBeam" : 5
+    },
+    "frontlightright" : {
+      "active" : false,
+      "position" : [2, 3.1],
+      "color" : [255, 255, 107],
+      "pointLight" : true,
+	  "pointAngle" : 0.00,
+	  "pointBeam" : 5
+    },
+    "searchlight" : {
+      "active" : false,
+      "position" : [4.8, -2.3],
+      "color" : [255, 255, 255],
+	  "transformationGroups" : ["aim", "facing", "body"],
+      "pointLight" : true,
+	  "pointAngle" : 0.00,
+	  "pointBeam" : 10,
+      "beamLevel" : 1,
+      "beamAmbience" : 0.1
+    }
+  },
+
+  "particleEmitters" : {
+    "deathPoof" : {
+      "particles" : [
+	  
+	  
+	  
+	  
+//            { "particle" : {
+    //            "type" : "textured",
+    //            "image" : "/projectiles/WRECKS/ue_lighthelicopterwreck/ue_lighthelicopterwreck.png",
+    //            "position" : [0, 0],
+    //            "size" : 1.0,
+ //               "color" : [255, 255, 255, 255],
+   //             "fade" : 0,
+  //              "initialVelocity" : [0.0, 10.0],
+ //               "bounces" : -1,
+   //             "finalVelocity" : [0, -75],
+  //              "approach" : [0, 50],
+   //             "rotation" : 0,
+   //             "flippable" : false,
+   //             "angularVelocity" : 0,
+  //              "timeToLive" : 8,
+   //             "layer" : "middle",
+  //              "variance" : {
+  //                "initialVelocity" : [0, 5],
+ //                 "timeToLive" : 8
+ //               }
+//              } },  
+	
+	  
+        { "particle" : "monstersplosion" },
+        { "particle" : "poisondust" },
+        { "particle" : "poisondust" },
+        { "particle" : "poisondust" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathfizz1left" },
+        { "particle" : "deathfizz1right" },
+        { "particle" : "deathfizz2left" },
+        { "particle" : "deathfizz2right" },
+        { "particle" : "deathfizz3left" },
+        { "particle" : "deathfizz3right" },
+        { "particle" : "deathfizz4left" },
+        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    },
+	
+	
+	
+    "muzzleFlash" : {
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "looping" : true,
+            "animation" : "/animations/gic_foreground_muzzle/gic_foreground_muzzle.animation",
+            "position" : [0, -4.7],
+            "layer" : "front",
+            "timeToLive" : 0.07,
+			"fullbright" : true,
+            "rotation" : 0.0
+          }
+        }
+		
+      ]
+    }
+	
+  },
+
+
+  
+  
+  
+  "sounds" : {
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/npc/gic_tankdie.ogg" ],
+
+    "rocketfire" : {
+      "pool" : [ "/sfx/gun/gic_at4_fire.ogg" ],
+      "rangeMultiplier" : 8.0
+    },
+
+    "fire" : {
+      "pool" : [ "/sfx/Battlefield5/gic_BFV_M1919.ogg" ],
+      "rangeMultiplier" : 3.0
+    },
+	
+	"fire_mg" : {
+      "pool" : [ "/sfx/gun/gic_glock_01.ogg" ],
+      "rangeMultiplier" : 1.0
+    }
+  }
+}

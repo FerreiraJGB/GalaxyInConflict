@@ -1,0 +1,126 @@
+{
+  "itemName" : "gic_augmentyr_arm_mg_ballistic",
+  "price" : 1500,
+  "inventoryIcon" : "gic_augmentyr_arm_mg_ballistic.png",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "oh hecc",
+  "shortdescription" : "Augmentyr Arm Machinegun NPC",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "It's a minigun",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : false,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_augmentyr_arm_mg_ballistic.png",
+    "barrel" : "",
+    "muzzleFlash" : "items/WEAPONS/ranged/gic_heavymachinegun_muzzleflash.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/gun/gic_mp7_01.ogg", "/sfx/gun/gic_mp7_02.ogg", "/sfx/gun/gic_mp7_03.ogg" ]
+    },
+	
+	"particleEmitters" : {
+      "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [0.97, 0.4], "count" : 2 }
+        ]
+      },
+      "hotsmoke" : {
+        "burstCount" : 1,
+        "particles" : [
+		  { "particle" : "gic_smallarmsmuzzle", "offset" : [1.4, 0.8], "count" : 3 },
+            { "particle" : {
+                "type" : "textured",
+                "image" : "/projectiles/CASINGS/gic_shellcasing_pistol/gic_shellcasing_pistol.png:0",
+                "position" : [-0.9, 0.2],
+                "size" : 1.0,
+                "color" : [255, 255, 255, 255],
+                "fade" : 0,
+                "initialVelocity" : [-5.0, 6.5],
+                "finalVelocity" : [0, -60],
+                "approach" : [5, 50],
+                "rotation" : -90,
+                "flippable" : true,
+                "angularVelocity" : 0,
+                "timeToLive" : 3,
+                "destructionAction" : "fade",
+                "destructionTime" : 1,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [3, 1],
+                  "timeToLive" : 0.1
+                }
+              } }
+        ]
+      }
+ 
+	
+
+    }
+	
+	
+  },
+
+  "baseOffset" : [1.31, -0.6],
+  "muzzleOffset" : [1.3, 0.2],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.005,
+    "baseDps" : 5000,
+    "energyUsage" : 80,
+    "inaccuracy" : 0.09,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : ["gic_standardbullet_d", "gic_standardbullet_miss_d", "gic_standardbullet_miss_d", "gic_standardbullet_miss_d", "gic_standardbullet_miss_d"],
+    "projectileParameters" : {
+      "knockback" : 2
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.07,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [-0.0, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.0,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [-0.0, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

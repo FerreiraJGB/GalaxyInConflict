@@ -1,0 +1,121 @@
+{
+  "type" : "gic_gazringscavenger_heavy",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 14,
+
+  "dropPools" : [ "gic_wartorninsurgentTreasure" ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Bandit!",
+            "Opening fire!",
+			"Holy shit!",
+			"Who the hell is that?!",
+			"That's gotta be a Bandit!",
+			"Shoot that Bandit!",
+			"Shit! Bandit!",
+			"It's a Bandit!",
+			"Hey! Stop!"
+          ]
+        }
+      }
+    },
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}]
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Gatherer
+          {
+            "head" : [ { "name" : "gic_bandithood", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_fsm2pcchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_iagplegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+			  "gic_usm12"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 150.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0
+      },
+	 
+        "physicalResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireResistance" : {
+          "baseValue" : 0.2
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.7
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.7
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.7
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+	  
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.7
+      }
+	  
+	  
+    }
+  }
+  
+}

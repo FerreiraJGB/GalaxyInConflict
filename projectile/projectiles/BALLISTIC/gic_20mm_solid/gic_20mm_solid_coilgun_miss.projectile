@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_20mm_solid_coilgun_miss",
+  "image" : "gic_20mm_solid_coilgun.png",
+  
+  "physics" : "gic_void_coilgun",
+  
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    }
+  ],
+  
+"periodicActions" : [
+],
+  
+  "emitters" : [ "rocketsmoke", "rocketsmoke", "rocketsmoke" ],
+  "power" : 700.0,
+  "speed" : 130,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "NoDamage"
+}

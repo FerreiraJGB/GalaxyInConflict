@@ -1,0 +1,255 @@
+{
+  "objectName" : "gic_myourenbrewery_bar",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "Crafting Station",
+  "price" : 0,
+  "description" : "[Myouren Brewery Bar]",
+  "shortdescription" : "Myouren Brewery Bar",
+  "race" : "generic",
+  "printable" : false,
+  
+  "turnInQuests" : [
+  ],  
+  
+  "offeredQuests" : [
+  ],
+  
+  
+  "lightColor" : [0, 0, 0],
+
+  "inventoryIcon" : "gic_myourenbrewery_barportrait.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_myourenbrewery_bar.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+
+      "spaceScan" : 0.0,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+
+
+
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_myourenbrewery_bar.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Myouren Brewery Bar",
+        "subtitle" : "  ''Irrashaimase!''",
+        "icon" : {
+          "file" : "/interface/crafting/gic_myourenbrewery_bar.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":350,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bandits_heartystew"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_myourenbrewery_bar", "gic_myourenbrewery_bar_drinks" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":250,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_brashbrandy_glass"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_myourenbrewery_bar", "gic_myourenbrewery_bar_drinks" ]
+		},
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":750,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_chirumiru_glass"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_myourenbrewery_bar", "gic_myourenbrewery_bar_drinks" ]
+		},			
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":350,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_nueale_glass"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_myourenbrewery_bar", "gic_myourenbrewery_bar_drinks" ]
+		},		
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":250,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_tengutango"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_myourenbrewery_bar", "gic_myourenbrewery_bar_drinks" ]
+		},		
+	
+	
+	
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":150,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_tunnelrat_glass"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_myourenbrewery_bar", "gic_myourenbrewery_bar_drinks" ]
+		},		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":30,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_lettylager_glass"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_myourenbrewery_bar", "gic_myourenbrewery_bar_drinks" ]
+		},		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":5,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bottledwater"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_myourenbrewery_bar", "gic_myourenbrewery_bar_drinks" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":4,
+				"name":"gic_physicalmicrocredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_cannedmineralwater"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_myourenbrewery_bar", "gic_myourenbrewery_bar_drinks" ]
+		}
+	
+	
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_myourenbrewery_bar" ]
+  },
+
+
+
+
+
+  "animation" : "gic_myourenbrewery_bar.animation",
+  "animationParts" : {
+    "bg" : "gic_myourenbrewery_bar.png",
+    "fg" : "gic_myourenbrewery_bar_lit.png"
+  },
+  "animationPosition" : [-8, -0],
+
+  "uniqueId" : "gic_myourenbrewery_bar",
+  "interactive" : true,
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  "scripts" : [ "gic_springfield_talk.lua" ],
+  "scriptDelta" : 20,
+
+  "chatRadius" : 20,
+  "chatCooldown" : 25,
+  "chatOptions" : [
+    "Irrashaimase~"
+  ]
+  
+  
+  
+
+}

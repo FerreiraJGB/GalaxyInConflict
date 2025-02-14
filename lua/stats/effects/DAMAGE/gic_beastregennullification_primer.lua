@@ -1,0 +1,15 @@
+function init()
+   effect.addStatModifierGroup({{stat = "gic_beastregennullification_primer", amount = 1}})
+end
+
+local duration = 5
+function update()
+	if status.stat("burning") == 1 then
+		status.addEphemeralEffect("gic_armor_beastStatusImmunity",600); -- this function can config effect duration
+		--status.addEphemeralEffect("gic_oilburning"); -- if this function is specified w/o duration, will default to base duration of effect
+		effect.expire(); --kills off primer effect. hopefully will avoid any crashes w primer running out of duration. Note from Med: Confirmed working. Doesn't cause crashes.
+    end
+end
+
+function uninit()
+end

@@ -1,0 +1,284 @@
+{
+  "type" : "gic_colonial_egoisticadventurer_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ ],
+  
+  "identity" : {
+    "gender" : "male"
+  },  
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0} ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "gic_noinspectcrew",
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "soldier",
+        "name" : "Egoistic Adventurer",
+        "field" : "Companion",
+        "uniformColorIndex" : 1,
+		
+        "benefits" : [
+          {
+            // Ephemeral effects gained upon leaving the ship - Grants Psychic Light Bleeding immunity.
+            "type" : "EphemeralEffect",
+            "effect" : "gic_maxenergyscalingboost_egoisticadventurer",
+            "duration" : 2400 //10 minutes at 600 units
+          }
+        ]
+		
+      },
+
+      "ranks" : [
+	    "Easygoing"
+      ],
+
+      "defaultUniform" : {
+	    "head" : "",
+        "chest" : "neckruffle", //soldierchest
+        "legs" : "steamgreylegs", //soldierpants
+		"back" : "gic_shockbanditcarrierback"
+      },
+      "uniformSlots" : ["chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"]
+    },
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+			"They just can't cater to my kind, you know? Although, I could work for you if you wanted.",
+			"Hey, take me up on a job. I could probably help more than you think.",
+			  "I can't stand this place.",
+			  "Hey, take me with you.",
+			  "I'm up for jobs. Not like there's anything for me here.",
+			  "I'll work for you just to see something."
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Aight, I'll be here then.",
+			  "How much food do we have on the ship?",
+              "I'll be here.",
+			  "Rightio, I'll be here then.",
+			  "This is your ship? Could be better.",
+			  "Not the best ship I've been on.",
+			  "This'll do. Ugh.",
+			  "Well, not like I asked about how the ship looked..."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "Hmmm..."
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "I'll just stay here.",
+              "I'll stay here.",
+              "Alright, I'll guard this area.",
+              "I'll stay here for now, then.",
+              "I'll stay here.",
+              "Aight, I'll be here then.",
+              "I'll be here."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "Aye, I'm here.",
+			  "We going?",
+              "Hey, following.",
+              "What's the mission?",
+			  "Alright, going.",
+			  "Alright alright, I'm going."
+            ]
+          }
+        },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy.",
+			"Move it!"
+          ]
+        }
+      },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "Slow down! I can't run that fast!",
+              "You're too far!",
+              "Hey, wait up! Bastard!",
+              "I can't catch up! Slow the hell down!",
+              "Let me catch up!",
+			  "Slow the hell down!",
+			  "Slow down!",
+			  "I can't run that fast!",
+			  "Agile bastard! Come back!"
+            ]
+          }
+	}
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+      "converse" : "/dialog/space_colony/gic_surfacecityspacecolonist_converse.config:converse",
+
+
+        "attack" : {
+          "default" : {
+            "default" : [
+              "Yeah! That one's mine!",
+			  "Got him!",
+              "I'm opening up!",
+              "That's my kill!",
+			  "You'll be kissing my boots after this!",
+			  "Yeah! I'm going!",
+			  "All on me, baby!",
+			  "This is my time!",
+			  "All mine!",
+			  "Don't steal my glory!"
+            ]
+          }
+        },
+
+        "reattack" : {
+          "default" : {
+            "default" : [
+              "Yeah! That one's mine!",
+			  "Got him!",
+              "I'm opening up!",
+              "That's my kill!",
+			  "You'll be kissing my boots after this!",
+			  "Yeah! I'm going!",
+			  "All on me, baby!",
+			  "This is my time!",
+			  "All mine!",
+			  "Don't steal my glory!"
+            ]
+          }
+        },
+
+      "killedTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cantReach"
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player
+    "runSpeed" : 16
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "chest" : [ { "name" : "neckruffle", "parameters" : { "colorIndex" : [0] } }   ],
+            "legs" : [ { "name" : "steamgreylegs", "parameters" : { "colorIndex" : [0] } }  ],
+            "back" : [ { "name" : "gic_shockbanditcarrierback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [ "gic_fanofknives_bandolier" ],
+            "alt" : [ "gic_duellers_rapier_player" ]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 700.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+	  
+    }
+  }
+}

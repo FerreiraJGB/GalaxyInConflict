@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_standardbullet_a_asgmk1",
+  "image" : "icon.png",
+  "animationCycle" : 0.0,
+  "physics" : "laser",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "timeToLive" : 0.05,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [64, 64, 13],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c_asgmk1",
+      "directional" : "true"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_heavybulletimpact/gic_heavybulletimpact.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_gunfirenoise_standard",
+      "inheritDamageFactor" : 0
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "noDamage",
+  "damageKind" : "ews_smallarms"
+}

@@ -1,0 +1,127 @@
+{
+  "objectName" : "gic_colonial_bioengineer",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "printable" : false,
+  "price" : 0,
+  "description" : "''The cost of preparedness. Measured now in currency. Later, in blood.''",
+  "shortdescription" : "Colonial Bioengineer",
+  "race" : "generic",
+
+
+  
+  
+  
+  
+  
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_colonial_bioengineer.config",
+    "paneLayoutOverride" : {
+	
+
+      "windowtitle" : {
+	  
+	  
+        "title" : 
+"  Colonial Bioengineer
+
+
+
+
+
+
+
+",
+		
+		
+//''Do not act as if you were going to live 10,000 years. Death hangs over you. While it is in your power, be good.''		
+        "subtitle" : 
+
+
+"''The cost of preparedness. Measured now in currency. Later, in blood.''
+
+ Thanks to subsidies from colonial governments and certain administrators, engineers like these 
+ only require that clients have previously experienced physiological and psychological changes. 
+ Replication and manifestation of these changes is achieved through technological means.
+
+",	 		
+		
+		
+		
+		
+		
+		
+        "icon" : {
+          "file" : "/interface/crafting/gic_colonial_bioengineer.png"
+        }
+		
+      }
+    },
+    "filter" : [ "gic_colonial_bioengineer" ]
+  },
+
+
+  
+  
+
+  
+  
+  "lightColor" : [0, 0, 0],
+
+  "inventoryIcon" : "gic_colonial_bioengineericon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_colonial_bioengineer.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_colonial_bioengineer.animation",
+  "animationParts" : {
+    "bg" : "gic_colonial_bioengineer.png",
+    "fg" : "gic_colonial_bioengineer_lit.png"
+  },
+  "animationPosition" : [-8, -0],
+
+  "interactive" : true,
+
+
+
+
+  
+  "scripts" : [ "/objects/missions/gic_esther_chapter_1_springfield_bartender/gic_springfield_talk.lua" ],
+  "scriptDelta" : 20,
+
+  "chatRadius" : 10,
+  "chatCooldown" : 15,
+  "chatOptions" : [
+    "Your enemies won't know what hit them.",
+	"The galaxy already has enough people exploiting military tech to step over the less fortunate.",
+	"Need something?",
+	"I'm happy to take a look at anything on your body you want to improve.",
+	"Make sure you use your gear responsibly.",
+	"If you're looking for someone more exotic, an Undercolony Workshop Merchant might be the person you want.",
+	"I'm just another Bio-Engineer. I can take care of standard gear.",
+	"If you need a little spice in your adventures, I can fix that.",
+	"This galaxy needs less exploitative adventurers...",
+	
+	"I only handle your traits, and maybe some other basic gear. I won't deal with the exotic.",
+	"If you want better lightyear jump range on your ship, I'd recommend a different colony.",
+	"Sorry, I don't work with ship weapons. I can work with your body, however."
+	
+	
+	
+  ]
+  
+
+
+
+
+
+}

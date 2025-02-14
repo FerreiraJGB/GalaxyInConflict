@@ -1,0 +1,98 @@
+{
+  "itemName" : "gic_shattershot",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Barrel Attachment^white;",
+  "inventoryIcon" : "gic_shattershot_icon.png",
+  
+  
+  "description" : "''The grand majority of Celestials aren't the actual engineers responsible for many of their superweapons. Just be glad that these things work at all.''
+ 
+^orange;Splits the initial projectile into 6 pellets, spread-out for a total of 120% BASE DMG | Completely replaces the original projectile, ignoring EWS stats, with a fixed 60% hit chance per pellet.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Shatter Shot",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_reactiveheatshroud", //name of attachment
+	
+	"attachmentTag" : [ "gic_shattershot", "gic_barrel" ],     //if target item has one or more of these tags, then this attachment will be applicable to the item
+	
+	"attachmentId" : "gic_shattershot", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_shattershot.png", //determines what image is displayed on the resulting gun
+	
+	"specialAttachmentConfig" : {
+		
+		"projectileConfig" : {
+//--- --- ---			
+  "timeToLive" : 0,
+  "actionOnTimeout" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_laserimpact/gic_laserimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact_small/gic_energyimpact_small.config"
+    },
+    {
+	  "action" : "projectile",
+      "type" : "gic_standardbullet_shotgun_miss_primer",
+	  "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 20
+    },
+    {
+	  "action" : "projectile",
+      "type" : "gic_standardbullet_shotgun_miss_primer",
+	  "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 20
+    },
+    {
+	  "action" : "projectile",
+      "type" : "gic_standardbullet_shotgun_miss_primer",
+	  "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 20
+    },
+    {
+	  "action" : "projectile",
+      "type" : "gic_standardbullet_shotgun_miss_primer",
+	  "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 20
+    },
+    {
+	  "action" : "projectile",
+      "type" : "gic_standardbullet_shotgun_miss_primer",
+	  "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 20
+    },
+    {
+	  "action" : "projectile",
+      "type" : "gic_standardbullet_shotgun_miss_primer",
+	  "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 20
+    }
+  ]
+			
+//--- --- ---			
+		}
+		
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1.0,1.0,1.0], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

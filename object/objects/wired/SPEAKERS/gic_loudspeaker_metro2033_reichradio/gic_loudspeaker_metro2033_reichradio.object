@@ -1,0 +1,63 @@
+{
+  "objectName" : "gic_loudspeaker_metro2033_reichradio",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+
+  "description" : "A loudspeaker of some sort.",
+  "shortdescription" : "Loudspeaker",
+  "race" : "human",
+
+
+  "lightColor" : [0, 0, 0],
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_loudspeaker_metro2033_reichradio.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+      "lightPosition" : [-1, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [  ]
+
+    },
+    {
+      "image" : "gic_loudspeaker_metro2033_reichradio.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+
+      "direction" : "right",
+      "lightPosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [  ]
+    }
+  ],
+
+  "animation" : "gic_loudspeaker_metro2033_reichradio.animation",
+  "animationParts" : {
+    "bg" : "gic_loudspeaker_metro2033_reichradio.png",
+    "fg" : "gic_loudspeaker_metro2033_reichradio_lit.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/alerts/gic_dishonored_Wall_of_Light_Beep_1.ogg" ],
+      "off" : [ "/sfx/alerts/gic_dishonored_Wall_of_Light_Beep_1.ogg" ]
+    }
+  },
+  "animationPosition" : [-8, 0],
+
+  "scripts" : [
+    "/objects/wired/light/light.lua"
+  ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [0, 1] ],
+
+  "soundEffect" : "/sfx/ambience/gic_metro2033_reich_megaphone.ogg",
+  "soundEffectRangeMultiplier" : 2.0
+}

@@ -1,0 +1,47 @@
+{
+  "objectName" : "gic_humantechstationTier0",
+  "colonyTags" : ["human"],
+  "printable" : false,
+  "rarity" : "Common",
+
+  "interactAction" : "OpenAiInterface",
+
+  "category" : "decorative",
+  "lightColor" : [77, 111, 128],
+  "lightPosition" : [-1, 0],
+  
+  "flickerDistance" : 1.0,
+  "flickerStrength" : 0.05,
+  "flickerTiming" : 8,
+
+  "description" : "Something about this SAIL bothers me...",
+  "shortdescription" : "S.A.I.L",
+  "race" : "human",
+
+  "inventoryIcon" : "gic_humantechstationiconTier0.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_humantechstationTier0.png:<color>.<frame>", "fullbright" : true }, { "image" : "gic_humantechstationlitTier0.png:<color>.<frame>" } ],
+      "imagePosition" : [-16, -8],
+      "frames" : 8,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ],
+  
+  "soundEffect" : "/sfx/soma/gic_soma_splice_techstation.ogg",
+  "soundEffectRangeMultiplier" : 1.0,  
+  
+  "scripts" : [ "/objects/ship/gic_humantechstationTier0/gic_humantechstationTier0.lua" ],
+  "scriptDelta" : 20,
+
+  "chatRadius" : 30,
+  "chatCooldown" : 5,
+  "chatOptions" : [
+    "The world is on fire... It's unbelievable."
+  ]
+  
+}

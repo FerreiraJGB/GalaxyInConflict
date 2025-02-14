@@ -1,0 +1,22 @@
+{
+  "itemName" : "gic_cannedwhalemeat",
+  "rarity" : "Common",
+  "price" : 10,
+  "category" : "food",
+  "inventoryIcon" : "gic_cannedwhalemeat.png",
+  "description" : "Sometimes referred to as a ''Tin of Potted Whale Meat''. The meat is a byproduct of the extraction of Whale Oil from, well, whales. Whale oil had similar uses to regular oil, being used in lamps and to make soap. Whale oil fell out of favor on Terra in the 19th and 20th century due to the development of the petroleum industry and vegetable oils.",
+  "shortdescription" : "Canned Whale Meat",
+
+  "foodValue" : 60,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "effects" : [ [
+  "gic_foodbuff_human_primer"
+    ] ],
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 25,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

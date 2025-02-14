@@ -1,0 +1,96 @@
+{
+  "projectileName" : "gic_heavyhandcannon_b_homing_close",
+  "bounces" : 1,
+  "image" : "gic_heavyhandcannon_b.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.1,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.1,
+      "fuzzAngle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 180,
+      "inheritDamageFactor" : 0.1,
+      "directional" : "true"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 45,
+      "inheritDamageFactor" : 0.1,
+      "directional" : "true"
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_missile_thrustertrail/trail.png",
+        "position" : [-1.3, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+      "image" : "/animations/gic_mediumsteamcloud/gic_mediumsteamcloud.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.2,
+        "destructionTime" : 2,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+],
+  
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+  "fullbright" : true,
+  "maxSpeed" : 90,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 90.0,
+  "acceleration" : 0,
+  "timeToLive" : 20,
+  "physics" : "gic_grenadenormal",
+  
+  "statusEffects" : [ "gic_bleeding_heavy", "gic_bulletshot", "gic_fracture_injury" ],    
+  
+
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  "rotationRate" : 0.5,
+  "trackingLimit" : 300 
+}

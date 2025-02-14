@@ -1,0 +1,87 @@
+{
+  "itemName" : "gic_crusader_longbow_pose",
+  "fixedLevel" : false,
+  "price" : 0,
+  "inventoryIcon" : "gic_crusader_longbowicon.png",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#D6484F;Longbow^reset;",
+  
+  
+  "description" : "''An arrow does not hate its target.''
+  
+^red;Energy Systems Overload: Energy regeneration is crippled whilst the bow is equipped.^reset;
+
+^yellow;Fire Arrows: Regular shots coat afflicted targets in oil | Charged shots that are not overcharged apply ignition to oil granting heightened fire burning on oil-coated targets, but do not coat targets in oil.^reset;",
+  
+  
+  "shortdescription" : "Champion's Warbow POSE",
+  "twoHanded" : true,
+  "itemTags" : ["weapon", "ranged"],
+
+  "radioMessagesOnPickup" : [ "pickupbow" ],
+
+  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animationParts" : {
+    "bow" : "gic_crusader_longbow_solid.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "bow" : { "properties" : {
+      "offset" : [0.25, 0]
+    }}}},
+    "sounds" : {
+      "draw" : [ "/sfx/bow/gic_bloodborne_bow-stance1.wav" ],
+      "release" : [ "/sfx/bow/gic_bloodborne_bow-shot1.wav", "/sfx/bow/gic_bloodborne_bow-shot2.wav", "/sfx/bow/gic_bloodborne_bow-shot3.wav" ],
+      "perfectRelease" : [ "/sfx/bow/gic_bloodborne_bow-shot1.wav", "/sfx/bow/gic_bloodborne_bow-shot2.wav", "/sfx/bow/gic_bloodborne_bow-shot3.wav" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/bow/bow.lua", "/abilities/weapons/gic_crusader_longbow.lua"],
+  "scriptDelta" : 2,
+
+  "primaryAbilityType" : "bowshot",
+  "primaryAbility" : {
+  
+    "fireOffset" : [0.0, 0.12],
+  
+    "projectileType" : "gic_crusader_arrow_oil",
+    "powerProjectileType" : "gic_crusader_arrow_fire",
+    "projectileParameters" : {
+      "speed" : 100,
+      "power" : 20
+    },
+	
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : -30,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "draw" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true,
+
+        "frontArmFrame" : "idle.3"
+      }
+    }
+	
+	
+  },
+
+  "builder" : "/items/buildscripts/buildbow.lua"
+}

@@ -1,0 +1,50 @@
+{
+  "projectileName" : "gic_handcannon_immediate_hunterspistol_miss_a_knockbackrevision_noshot",
+  "bounces" : 0,
+  "image" : "gic_handcannon_a.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback_pulsemine_knockbackonly.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+	  "fuzzAngle": 0,
+      "angle" : 0
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 20.0,
+        "destructionTime" : 10,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+  ],
+  "power" : 0,
+  "damageKind" : "hidden",
+  "statusEffects" : [
+"gic_stun_1"
+  ],
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.0,
+  "physics" : "laser"
+}

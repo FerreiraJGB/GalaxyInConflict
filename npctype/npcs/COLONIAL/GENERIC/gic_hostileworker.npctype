@@ -1,0 +1,221 @@
+{
+  "type" : "gic_hostileworker",
+  "baseType" : "gic_soldierbase",
+
+  "persistent" : true,
+
+  "damageTeam" : 2,
+  
+  "movementParameters" : {
+    "runSpeed" : 10
+  },
+
+  "scriptConfig" : {
+
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "!"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "Mutti... mutti...",
+            "This gun won't save me...",
+            "Hey! Watch your fire!",
+            "Why?",
+			"Why me!?",
+			"No! Get away from me!",
+			"This pistol ain't gonna save my life!",
+			"Oh god oh god oh god!",
+			"I'm not a soldier!",
+			"Oh god!",
+			"I wasn't ready for this!",
+			"No no no!",
+			"Oh no!",
+			"Oh fuck!"
+          ]
+        }
+      },
+
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "!?"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "Oh fuck!",
+			"Oh shit!",
+			"Oh god!",
+			"Oh god oh god oh god!",
+			"He's back...",
+			"I don't want to die!"
+          ]
+        }
+      },
+
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "!?"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "Holy fuck!",
+			"Oh shit!",
+			"Oh god!",
+			"Oh god oh god oh god!",
+			"*panting*",
+			"No way..."
+          ]
+        }
+      },
+
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "!?"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "Lost sight of hostile.",
+			"*sigh*",
+			"I'm a worker, not a soldier..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "!?"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "...",
+			"*sigh*",
+			"Radio to workers, regroup."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "!?"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "!",
+			"!?",
+			"!!!"
+          ]
+        }
+      },
+	  
+      "outOfReach" : {
+        "default" : {
+          "default" : [
+            "!?"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "...",
+			"Just get out of here!",
+			"!!!"
+          ]
+        }
+      }
+
+    },
+
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0.05,
+        "broadsword" : 0.45,
+        "dagger" : 0.3,
+        "axe" : 0.45,
+        "hammer" : 0.6,
+        "shortsword" : 0.35,
+        "spear" : 0.55
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.2,
+        "broadsword" : 1.7,
+        "dagger" : 0.7,
+        "axe" : 1.4,
+        "hammer" : 2.0,
+        "shortsword" : 1.0,
+        "spear" : 1.4
+      }
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_hardhathead" } ],
+            "chest" : [ { "name" : "foundrychest" } ],
+            "legs" : [ { "name" : "foundrylegs" } ],
+            "primary" : [
+			"gic_rsp61"
+			]
+          }
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 20,
+    "statusEffects" : [ ]
+  },
+
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"], 
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1
+      },
+      "protection" : {
+        "baseValue" : 0.2
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

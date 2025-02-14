@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_magicbullet_ruinorb_homing_05s",
+  "fullbright" : true,
+  "bounces" : 0,
+  "image" : "gic_magicbullet_ruinorb.png",
+  "animationCycle" : 0.1,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "time" : 0.1,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ruinorb",
+      "inheritDamageFactor" : 1,
+      "inheritSpeedFactor" : 1
+    }
+  ],
+  "power" : 20,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef",
+
+  "maxSpeed" : 10,
+  "ignoredef" : true,
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 20.0,
+  "acceleration" : 30,
+  "timeToLive" : 0.5,
+  "physics" : "rocket",
+  
+  "rotationRate" : 6,
+  "trackingLimit" : 300
+}

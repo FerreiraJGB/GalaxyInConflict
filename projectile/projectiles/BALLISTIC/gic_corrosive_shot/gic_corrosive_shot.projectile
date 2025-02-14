@@ -1,0 +1,193 @@
+{
+  "projectileName" : "gic_corrosive_shot",
+  "bounces" : 0,
+  "image" : "gic_corrosive_shot.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+	
+	
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/poisonexplosionknockback.config"
+    },	
+	
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/elementimpact/poisonimpact.config"
+    },	
+		
+	
+
+	
+	
+	
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 20
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 40
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 60
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 80
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 100
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 120
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 140
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 160
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 180
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 200
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 220
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 240
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 260
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 280
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 300
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 320
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_corrosive_shot_projectile",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 340
+    }	
+	
+	
+
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+      "image" : "/animations/gic_mediumsteamcloud/gic_mediumsteamcloud.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.2,
+        "destructionTime" : 2,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+],
+  
+  "power" : 390,
+  "damageKind" : "ews_smallarms",
+  "fullbright" : true,
+  "maxSpeed" : 150,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 150.0,
+  "acceleration" : 0,
+  "timeToLive" : 10,
+  "physics" : "gic_grenadenormal"
+}

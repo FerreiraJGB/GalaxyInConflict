@@ -1,0 +1,38 @@
+{
+  "projectileName" : "gic_40x46mm_lv_flare_grenade",
+  "bounces" : -1,
+  "image" : "gic_40x46mm_lv_flare_grenade.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [255, 0, 0],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+  
+  
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smoke/smoke.config"
+    }
+	
+	
+  ],
+  
+  "statusEffects" : [
+    "gic_oilfire_primer"
+  ],
+  
+  
+  
+  
+  
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  
+  "power" : 0,
+  "damageKind" : "fire",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 150.0, //180
+  "timeToLive" : 40,
+  "physics" : "gic_grenadenormal",
+  "onlyHitTerrain" : false
+}

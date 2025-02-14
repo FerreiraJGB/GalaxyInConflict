@@ -1,0 +1,191 @@
+{
+  "type" : "gic_glitch_freethinker_lowerdistrictguard",
+  "baseType" : "gic_base",
+
+  
+  "identity" : {
+    "gender" : "male"
+  },  
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ ],
+  
+  "scriptConfig" : {
+    "behavior" : "gic_villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 0.85,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "questGenerator" : {
+      "pools" : ["guard"],
+      "enableParticipation" : false,
+      "timeLimit" : 30,
+      "nearbyQuestLimit" : 1,
+      "nearbyQuestRange" : 500,
+      "questCountRange" : [1, 4],
+      
+      "graduation" : {
+        "nextNpcType" : [
+          []
+        ]
+      }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [5.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+      "converse" : "/dialog/GLITCH/gic_glitch_freethinker_civilian_lowerdistrict_converse.config:converse",
+	  
+      "greeting" : "/dialog/GLITCH/gic_glitch_freethinker_civilian_lowerdistrict_converse.config:converse",
+
+      "attack" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:attack",
+      "reattack" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:reattack",
+      "killedTarget" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:cheerOn",
+      "cantReach" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:cantReach",
+
+      "hail" : "/dialog/GLITCH/gic_glitch_freethinker_civilian_lowerdistrict_converse.config:greeting",
+
+      "accuse" : "/dialog/thief.config:accuse"
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "default" : [
+      [0, [
+		  
+		  
+		  
+		  //Militia
+          {
+            "head" : [ { "name" : "", "parameters" : { "colorIndex" : [3] } }, { "name" : "gic_kettlehelmethead", "parameters" : { "colorIndex" : [3] } }, { "name" : "gic_cityguardhead", "parameters" : { "colorIndex" : [3] } } ],
+			
+            "chest" : [
+              { "name" : "craftsmenchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "peasantchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "craftsmenlegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }, { "name" : "peasantlegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+			
+            "primary" : [ 
+			"gic_duellers_rapier_npc", "gic_peasants_battleaxe_npc", "gic_peasants_spear_npc", "gic_steelguardpercussionpistol"
+			],
+            "alt" : [ 
+			"gic_bucklershield", "gic_crudewoodenshield", "", "", "", ""
+			]
+          },
+		  
+		  
+		  //Rifleman
+          {
+            "head" : [ { "name" : "gic_militarytricornehead", "parameters" : { "colorIndex" : [0] } } ],
+			
+            "chest" : [
+              { "name" : "craftsmenchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "craftsmenlegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+			
+            "primary" : [ 
+			"gic_steelguardpercussionrifle_npc"
+			]
+          },
+		  
+		  
+		  //Thug
+          {
+            "head" : [ { "name" : "gic_bowlerhathead", "parameters" : { "colorIndex" : [3] } }, { "name" : "gic_tophathead", "parameters" : { "colorIndex" : [3] } } ],
+			
+            "chest" : [
+              { "name" : "craftsmenchest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "craftsmenlegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+			
+            "primary" : [ 
+			"gic_firebreathbottle"
+			],
+            "alt" : [
+              "gic_bandit_cleaver_npc"
+            ]
+          }
+
+        ] ]
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.4
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.7
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

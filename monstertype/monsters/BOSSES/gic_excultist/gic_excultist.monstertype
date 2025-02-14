@@ -1,0 +1,1686 @@
+{
+  "type" : "gic_excultist",
+  "shortdescription" : "[Ex-Cultist]",
+  "description" : "What does it mean?",
+
+  "categories" : [ "gic_excultist" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_excultist.animation",
+
+  "dropPools" : ["gic_excultistTreasure"], //{ "default" : "banditTreasure", "bow" : "banditTreasure" }
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster_phases_music_laststand_adaptive.lua" //gic_base_monster_phases_music_laststand
+    ],
+	
+	"music" : ["/music/independent/gic_dungeonfightersonline_WeAreDesperado.ogg"],
+  
+	"range" : 160,			//measured in blocks, default val is 50 blocks
+	"fadeOutTime" : 2.0,	//measured in seconds, default val is 2.0 seconds
+	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+	
+	
+	//LAST STAND MUSIC
+	"finalStandThreshold" : 0.4, 	//when health % reaches this value, music played will be permanently swapped to this.
+	"finalStandMusic" : ["/music/touhou/gic_magnumopus_nowuntilthemomentyoudie.ogg"],
+	
+	
+    "damageBar" : "Special",
+    "deathBehavior" : "monster-death",
+    "behavior" : "monster",
+
+    "seeThroughLiquid" : false,
+	
+	
+	//ADAPTIVE HEALTH STUFF
+	"adaptiveTrackingRange" : 100, //should be range in blocks
+	"adaptiveHealthBonus" : 13500, //flat max health stat	
+	
+	//EXTRA DROP POOLS, DROPS ONE LOOT POOL PER EXTRA PLAYER
+	"extraDropPools" : ["gic_excultistTreasure"],
+	
+	
+	
+	"phaseTriggerCount" : 2, //how many indices should the monster consider for phases
+	"healthThresholdTriggers" : [0.8, 0.4], //determines health threshhold for phase trigger [0.66,0.33]
+	"regressPhases" : false, //if enabled, monster will regress to its prior phase if the monster's health increases above its current threshold.
+	
+	"phaseTriggerIds" : ["behaviorConfigInjured1", "behaviorConfigInjured2"], //configs to correspond to once the corresponding healthThresholdTrigger has been reached. ["behaviorConfigInjured1","behaviorConfigInjured2"]
+	//configs correspond to healthThresholdTriggers via index, ie index 1 of healthThresholdTrigger corresponds to index 1 of phaseTrigger
+	
+	
+	
+	
+	
+	
+	
+	//--- Phase 1 - Western Spaghetti
+	
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 160,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 120,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro_phase1",
+            "animationTime" : 1
+          }
+        }
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "hostileActions" : [
+
+		
+		
+	  //Rocket Jump - Jump into the air and fire an actual rocket at the player.
+//       {
+//          "name" : "action-fire",
+//          "cooldown" : 10,
+//          "parameters" : {
+//            "requireLineOfSight" : true,
+//            "maximumRange" : 95,
+//            "minimumRange" : 40,
+//            "windupStopForce" : 10,
+//            "windupState" : "rocketjumpwindup",
+//            "windupTime" : 1,
+//            "projectileCount" : 1,
+//            "fireDelay" : 0.0,
+//            "projectileInterval" : 0.0,
+//            "inaccuracy" : 0.0,
+//            "projectileType" : "gic_rg8_heat_rocket",
+//            "projectileParameters" : {
+//              "speed" : 200,
+//              "timeToLive" : 5.0,
+//			  "power" : 5000,
+//              "piercing" : false,
+//			  "knockback" : 0,			  
+//              "damageKind" : "ews_antitank",
+//              "damageType" : "IgnoresDef"
+//			  
+//            },
+//            "fireOffsets" : [[1.6, 7.8]], //x, 1.0 for accurate fire
+//            "aimAtTarget" : false,
+//            "onGround" : false,
+//            "aimDirection" : [1, -0.15],
+//            "fireState" : "rocketjumpfire",
+//            "fireSound" : "rocketfire",
+//            "winddownState" : "rocketjumpwinddown",
+//            "winddownTime" : 1
+//          }
+//        },
+		
+		
+		
+
+
+	  //Standard Coach Gun Fire
+       {
+          "name" : "action-fire",
+          "cooldown" : 2,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 95,
+            "minimumRange" : 10, //8
+            "windupStopForce" : 10,
+            "windupState" : "coachgunwindup",
+            "windupTime" : 0.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.3,
+            "inaccuracy" : 0.3,
+            "projectileType" : "gic_redtracerbullet_c_nobleed",
+            "projectileParameters" : {
+              "speed" : 200,
+              "timeToLive" : 5.0,
+			  "power" : 100,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_smallarms",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3]], //x, 1.0 for accurate fire
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "coachgunfire",
+            "fireSound" : "coachgunfire",
+            "winddownState" : "",
+            "winddownTime" : 1
+          }
+        },
+
+
+
+		
+		
+		
+		
+		
+		
+		
+	  //Double Punch - Simple melee combo strike.
+      {
+        "name" : "action-charge",
+        "cooldown" : 1.0,
+        "parameters" : {
+          "maximumRange" : 7,
+          "minimumRange" : 0,
+          "windupTime" : 0.85,
+          "chargeTime" : 0.1, //0.165
+          "chargeSpeed" : 2400, //2400
+          "chargeControlForce" : 400, //200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "doublepunch_left_fire",
+          "windupState" : "doublepunch_right_windup",
+          "winddownTime" : 0.3,
+          "winddownState" : ""
+        }
+      },
+	
+
+
+	  //Punch-Gun Combo
+       {
+          "name" : "action-fire",
+          "cooldown" : 2,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 10,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "punchcoachgun_punch_windup",
+            "windupTime" : 1.25,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.3,
+            "projectileType" : "gic_redtracerbullet_c_nobleed",
+            "projectileParameters" : {
+              "speed" : 200,
+              "timeToLive" : 5.0,
+			  "power" : 100,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_smallarms",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3], [2.6, 0.3]], //x, 1.0 for accurate fire
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "punchcoachgun_gun_fire",
+            "fireSound" : "coachgunfire",
+            "winddownState" : "",
+            "winddownTime" : 2
+          }
+        },
+	
+		
+		
+		
+	  //Forward Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 0.2,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 500, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "coachgundash",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 12,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 0.2,
+          "chargeSpeed" : -5600, //18
+          "chargeControlForce" : 500, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "coachgundash",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      }
+		
+
+
+
+
+
+
+
+
+
+
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "idlecoachgun",
+            "fallState": "idlecoachgun",
+            "moveState": "coachgunwalk",
+            "run": false,
+            "idleState": "idlecoachgun"
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "idlecoachgun",
+            "fallState": "idlecoachgun",
+            "moveState": "coachgunwalk",
+            "run": false,
+            "idleState": "idlecoachgun"
+          }
+        }
+      ],
+	  
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_strelok_realityanchor_grenade",
+            "projectileParameters" : {
+			  "timeToLive" : 0.01,
+              "power" : 0,
+              "damageTeam" : { "type" : "enemy", "team" : 0 },
+              "damageKind" : "ews_psychic",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        }
+      ],	
+	  
+      "damageTakenActions" : [
+      ],
+
+      "wanderActions" : [
+      ]
+	  
+    },
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//--- Phase 2 - Fall of the Samurai
+	
+	
+    "behaviorConfigInjured1" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 160,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 120,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro_phase2",
+            "animationTime" : 2
+          }
+        }
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idleswordandgun",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "hostileActions" : [
+
+
+
+
+
+	  //Generic Revolver Shot
+       {
+          "name" : "action-fire",
+          "cooldown" : 4,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 10, //8
+            "windupStopForce" : 10,
+            "windupState" : "swordandgun_revolverwindup",
+            "windupTime" : 0.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.3,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_redtracerbullet_c",
+            "projectileParameters" : {
+              "speed" : 200,
+              "timeToLive" : 15.0,
+			  "power" : 200,
+              "piercing" : false,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_attackpowernullification_3", "gic_energynullification_3" ]	
+            },
+            "fireOffsets" : [[2.6, 0.7]], //x, 1.0 for accurate fire
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "swordandgun_revolverfire",
+            "fireSound" : "revolverfire",
+            "winddownState" : "",
+            "winddownTime" : 0.25
+          }
+        },
+
+
+
+
+
+	  //Double-Swing - Two swings in a row. Very simple.
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 7, //18
+          "minimumRange" : 0, //13
+          "windupTime" : 0.75,
+          "chargeTime" : 0.2, //0.165
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 600, //300
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "swordandgun_lightswing_secondstrike",
+          "windupState" : "swordandgun_lightswingwindup",
+          "winddownTime" : 1.0,
+          "winddownState" : "idleswordandgun"
+        }
+      },
+	  
+	  
+	  //Slash-Thrust - Performs a slash, then thrusts.
+      {
+        "name" : "action-charge",
+        "cooldown" : 10.0,
+        "parameters" : {
+          "maximumRange" : 15,
+          "minimumRange" : 2, 
+          "windupTime" : 0.5,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 1000, //500
+          "chargeControlForce" : 500, //250
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "swordandgun_slashthrust2",
+          "windupState" : "swordandgun_slashthrustwindup",
+          "winddownTime" : 1.0,
+          "winddownState" : "idleswordandgun"
+        }
+      },	  
+
+
+	  //Heavy Strikes - Overhead Swing, Thrust, then Slash.
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 2, 
+          "windupTime" : 0.75,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 2000, //1000
+          "chargeControlForce" : 1000, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "swordandgun_thrust",
+          "windupState" : "swordandgun_heavyswingwindup",
+          "winddownTime" : 1.0,
+          "winddownState" : "swordandgun_slashwindup"
+        }
+      },
+
+
+
+
+
+
+
+
+
+	  //Double-Slash - Up-down slash
+      {
+        "name" : "action-charge",
+        "cooldown" : 10.0,
+        "parameters" : {
+          "maximumRange" : 8,
+          "minimumRange" : 1,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.5, //0.165
+          "chargeSpeed" : 440,
+          "chargeControlForce" : 300, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "swordandgun_doublestrikeupslash",
+          "windupState" : "swordandgun_doublestrikeupslashwindup",
+          "winddownTime" : 1.0,
+          "winddownState" : "idleswordandgun"
+        }
+      },
+
+
+
+
+	  //Heaven Strike - Fire into the air to allow for danmaku to rain down.
+       {
+          "name" : "action-fire",
+          "cooldown" : 30,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 30,
+            "windupStopForce" : 10,
+            "windupState" : "swordandgun_heavenstrikewindup",
+            "windupTime" : 0.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_heavenstrike_stage1",
+            "projectileParameters" : {
+			  "power" : 200,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_smallarms",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[0.2, 2.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "aimDirection" : [0, 1],
+            "fireState" : "swordandgun_heavenstrikefire",
+            "fireSound" : "revolverfire",
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },
+
+
+
+
+
+
+
+
+
+	  //Mini-Hakkero - Not very love-colored...
+       {
+          "name" : "action-fire",
+          "cooldown" : 30,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 35,
+            "windupStopForce" : 10,
+            "windupState" : "swordandgun_minihakkerowindup",
+            "windupTime" : 2.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_energybeam_horizontal_stage1_spawner",
+            "projectileParameters" : {
+//              "speed" : 0,
+//              "timeToLive" : 0.0,
+			  "power" : 0, //5
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_attackpowernullification_3", "gic_energynullification_3" ]	 
+            },
+            "fireOffsets" : [[1.5, -0.6]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "aimDirection" : [1, 0],
+            "fireState" : "swordandgun_minihakkerofire",
+            "fireSound" : "minihakkerofire",
+            "winddownState" : "",
+            "winddownTime" : 5.0
+          }
+        },
+
+
+
+
+
+
+
+
+
+
+
+	  //Forward Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 0.15, //0.2
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1000, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "swordandgundashwindup",
+          "chargeState" : "swordandgundash",
+          "winddownTime" : 0.25,
+          "winddownState" : "idleswordandgun"
+        }
+      },
+	  
+	  
+
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 12,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 0.15, //0.2
+          "chargeSpeed" : -5600, //18
+          "chargeControlForce" : 1000, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "swordandgundashwindup",
+          "chargeState" : "swordandgundash",
+          "winddownTime" : 0.25,
+          "winddownState" : "idleswordandgun"
+        }
+      },
+	  
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 12,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 0.15, //0.2
+          "chargeSpeed" : -5600, //18
+          "chargeControlForce" : 1000, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "swordandgundashwindup",
+          "chargeState" : "swordandgundash",
+          "winddownTime" : 0.25,
+          "winddownState" : "idleswordandgun"
+        }
+      }
+
+
+
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "idleswordandgun",
+            "fallState": "idleswordandgun",
+            "moveState": "swordandgunwalk",
+            "run": true,
+            "idleState": "idleswordandgun"
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "idleswordandgun",
+            "fallState": "idleswordandgun",
+            "moveState": "swordandgunwalk",
+            "run": true,
+            "idleState": "idleswordandgun"
+          }
+        }
+      ],
+	  
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_strelok_realityanchor_grenade",
+            "projectileParameters" : {
+			  "timeToLive" : 0.01,
+              "power" : 0,
+              "damageTeam" : { "type" : "enemy", "team" : 0 },
+              "damageKind" : "ews_psychic",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        }
+      ],	
+	  
+      "damageTakenActions" : [
+      ],
+
+      "wanderActions" : [
+      ]
+	  
+    },
+
+
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//--- Phase 3 - Hesitation is Defeat
+	
+	
+    "behaviorConfigInjured2" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 160,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 120,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro_phase3",
+            "animationTime" : 2
+          }
+        }
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idleswordandspear",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "hostileActions" : [
+
+
+
+
+
+	  //Sword Thrust - Thrusts, then slashes with the spear.
+      {
+        "name" : "action-charge",
+        "cooldown" : 7.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 10, 
+          "windupTime" : 0.35,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 4000, //4000
+          "chargeControlForce" : 2400, //2000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "swordandspear_swordthrust",
+          "windupState" : "swordandspear_swordthrustwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : "swordandspear_retreatingsweep"
+        }
+      },
+	  
+
+
+	  //Projected Force - Strike with the sword, and project a secondary damaging force.
+       {
+          "name" : "action-fire",
+          "cooldown" : 9,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 50,
+            "minimumRange" : 2,
+            "windupStopForce" : 10,
+            "windupState" : "swordandspear_projectedforcewindup",
+            "windupTime" : 1,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_teartravelingswoosh_messenger",
+            "projectileParameters" : {
+			  "power" : 250,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "electric",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[0.2, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "aimDirection" : [1, 0],
+            "fireState" : "swordandspear_projectedforcewinddown",
+            "fireSound" : "projectedforce",
+            "winddownState" : "",
+            "winddownTime" : 1.5
+          }
+        },
+
+
+
+
+	  //Heavy Spear Strike - Don't get hit, fool.
+       {
+          "name" : "action-fire",
+          "cooldown" : 4,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 5,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "swordandspear_heavyspearstrikewindup",
+            "windupTime" : 0.35,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "hugemeleeslash", //meleeslash
+            "projectileParameters" : {
+              "speed" : 120,
+              "timeToLive" : 0.025,
+			  "power" : 300,
+			  "knockback" : 50,
+              "damageKind" : "ews_smallarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_stun_3", "gic_attackpowernullification_3", "gic_energynullification_3" ]	  
+            },
+            "fireOffsets" : [[0.5, 0.2]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "swordandspear_heavyspearstrike",
+            "fireSound" : "heavyspearstrike",
+            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 0.75
+          }
+        },
+
+
+
+	  //Spear Thrust - A simple thrust attack.
+      {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "maximumRange" : 25,
+          "minimumRange" : 5, 
+          "windupTime" : 0.35,
+          "chargeTime" : 0.10,
+          "chargeSpeed" : 3000, //4000
+          "chargeControlForce" : 2000, //2000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "swordandspear_spearthrust",
+          "windupState" : "swordandspear_spearthrustwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  //Spear Thrust - A simple thrust attack.
+      {
+        "name" : "action-charge",
+        "cooldown" : 40.0,
+        "parameters" : {
+          "maximumRange" : 90,
+          "minimumRange" : 5, 
+          "windupTime" : 0.35,
+          "chargeTime" : 0.10,
+          "chargeSpeed" : 3000, //4000
+          "chargeControlForce" : 3000, //2000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "swordandspear_spearthrust",
+          "windupState" : "swordandspear_spearthrustwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : ""
+        }
+      },
+	  
+
+
+	  //Sariel's Strike - Highly Responsive to Prayers.
+       {
+          "name" : "action-fire",
+          "cooldown" : 40,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 30,
+            "windupStopForce" : 10,
+            "windupState" : "swordandspear_sarielsstrikewindup",
+            "windupTime" : 0.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_sarielsstrike_stage1",
+            "projectileParameters" : {
+			  "power" : 200,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_smallarms",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[0.2, 2.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "aimDirection" : [0, 1],
+            "fireState" : "swordandspear_sarielsstrike",
+            "fireSound" : "sarielsstrike",
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },
+
+	  //Hakkero - Now in spear form.
+       {
+          "name" : "action-fire",
+          "cooldown" : 30,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 40,
+            "windupStopForce" : 10,
+            "windupState" : "swordandspear_hakkerowindup",
+            "windupTime" : 2.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_energybeam_horizontal_stage0_spawner_alt_hakkerolasersystem",
+            "projectileParameters" : {
+//              "speed" : 0,
+//              "timeToLive" : 0.0,
+			  "power" : 15,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_attackpowernullification_3", "gic_energynullification_3" ]	 
+            },
+            "fireOffsets" : [[5.5, 0.3]], //5.5, -0.1
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "aimDirection" : [1, 0],
+            "fireState" : "swordandspear_hakkerofire",
+            "fireSound" : "minihakkerofire",
+            "winddownState" : "",
+            "winddownTime" : 4.5
+          }
+        },
+
+
+
+
+
+
+	  //Revolver Barrage - Unleash 6 rapid shots, annihilating anything in its path.
+       {
+          "name" : "action-fire",
+          "cooldown" : 12,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 15,
+            "windupStopForce" : 10,
+            "windupState" : "swordandspear_revolverbarragewindup",
+            "windupTime" : 0.75,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_handcannon_immediate_revolverbarrage_messenger",
+            "projectileParameters" : {
+			  "power" : 70,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[2.6, -0.3]], //x, 1.0 for accurate fire
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "swordandspear_revolverbarragefire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.3,
+			
+
+    "damageRepeatGroup": ""
+			
+          }
+        },
+
+
+
+
+
+	  //Retreating Sweep - Make distance for moving attacks whilst also attacking.
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 12,
+          "minimumRange" : 0,
+          "windupTime" : 0.35,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : -5600, //18
+          "chargeControlForce" : 1500, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "swordandspear_retreatingsweepwindup",
+          "chargeState" : "swordandspear_retreatingsweep",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+
+
+
+	  //Forward Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 2000, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "swordandspeardashwindup",
+          "chargeState" : "swordandspeardash",
+          "winddownTime" : 0.25,
+          "winddownState" : "swordandspeardashwinddown"
+        }
+      },
+	  
+	  
+	  //Retreating Sweep - Make distance for moving attacks whilst also attacking.
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 12,
+          "minimumRange" : 0,
+          "windupTime" : 0.35,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : -5600, //18
+          "chargeControlForce" : 1500, //500
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "swordandspear_retreatingsweepwindup",
+          "chargeState" : "swordandspear_retreatingsweep",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  
+	  //Border of Life - Rapidly closes the gap.
+      {
+        "name" : "action-charge",
+        "cooldown" : 14, //12
+        "parameters" : {
+          "maximumRange" : 90,
+          "minimumRange" : 40,
+          "windupTime" : 0.1,
+         "power" : 300,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 5600, //4500
+          "chargeControlForce" : 4800, //2400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "swordandspear_retreatingsweepwindup",
+          "chargeState" : "swordandspear_retreatingsweep",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      }
+
+
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "idleswordandspear",
+            "fallState": "idleswordandspear",
+            "moveState": "swordandspearwalk",
+            "run": true,
+            "idleState": "idleswordandspear"
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "idleswordandspear",
+            "fallState": "idleswordandspear",
+            "moveState": "swordandspearwalk",
+            "run": true,
+            "idleState": "idleswordandspear"
+          }
+        }
+      ],
+	  
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_strelok_realityanchor_grenade",
+            "projectileParameters" : {
+			  "timeToLive" : 0.01,
+              "power" : 0,
+              "damageTeam" : { "type" : "enemy", "team" : 0 },
+              "damageKind" : "ews_psychic",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        }
+      ],	
+	  
+      "damageTakenActions" : [
+      ],
+
+      "wanderActions" : [
+      ]
+	  
+    },
+
+
+	
+		
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    "damageParts" : {
+      "body" : {
+        "damage" : 200, //150
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.4, //0.25
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 40,
+        "statusEffects" : [ ],
+        "damageRepeatGroup": ""
+      }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.15], [0.5, -2.15], [0.5, 1.7], [-0.5, 1.7] ],             // [-0.5, -2.15], [0.5, -2.15], [0.5, 2.6], [-0.5, 2.6],    [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375] 
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.75], [-0.35, -2.05], [0.35, -2.05], [0.75, -1.75], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ], 
+
+      "mass" : 1,
+      "walkSpeed" : 6,
+      "runSpeed" : 18,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 1
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 200
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 60000 //60 000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.5 //0.5x fire damage intake
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -3.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

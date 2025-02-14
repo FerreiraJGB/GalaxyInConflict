@@ -1,0 +1,35 @@
+{
+  "name" : "gic_gazrian_augmentyr_dialogue_attack_summon_serviceskull",
+  "effectConfig" : {
+	"projectileType" : "gic_summon_augmentyr_serviceskull", //does not accept arrays
+	"projectileTypeMiss" : "gic_summon_augmentyr_serviceskull", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	"missChance" : 0,
+	"offset" : [-0.0,-0.5],
+	"muzzleOffset" : [0.2, 1.2],
+	"muzzleOffset2" : [0.2, 0.3],
+	"trackingDistance" : 50,
+	"trackingAngle" : 181,
+	"fireRate" : 1.0,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 15.0
+  },
+  "defaultDuration" : 40,
+
+  "scripts" : [
+    "gic_gazrian_augmentyr_dialogue_attack.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_gazrian_augmentyr_dialogue_attack.animation"
+}

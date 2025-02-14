@@ -1,0 +1,50 @@
+{
+  "objectName" : "gic_flawlessbossdoor",
+  "colonyTags" : ["door"],
+  "printable" : false,
+  "rarity" : "Common",
+
+  "category" : "door",
+  "price" : 1000,
+  "description" : "[Unlocks additional unique boss drops if the boss was killed without a player dying or leaving the instance world]",
+  "shortdescription" : "Flawless Boss Door",
+  "race" : "generic",
+
+
+  "inventoryIcon" : "gic_flawlessbossdooricon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_flawlessbossdoor.png:closed",
+      "imagePosition" : [0, 0],
+      "renderLayer" : "Object+5",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "open" : {
+        "pool" : [ "/sfx/objects/bunkerslidingdoor_open.ogg" ],
+        "rangeMultiplier" : 0.5
+      },
+      "close" : {
+        "pool" : [ "/sfx/objects/bunkerslidingdoor_close.ogg" ],
+        "rangeMultiplier" : 0.5
+      }
+    }
+  },
+
+  "animationParts" : {
+    "door" : "gic_flawlessbossdoor.png"
+  },
+  "animationPosition" : [0, 0],
+
+  "inputNodes" : [ [0, 1] ],
+  "outputNodes" : [ [0, 0] ]
+}

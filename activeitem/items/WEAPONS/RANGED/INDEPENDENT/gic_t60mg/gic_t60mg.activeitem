@@ -1,0 +1,694 @@
+{
+   "itemName" : "gic_t60mg",
+   "price" : 0,
+   "inventoryIcon" : "/items/weapons/ranged/independent/gic_t60mg/gic_t60mg.png:armed.1",
+   "maxStack" : 1,
+   "rarity" : "Uncommon",
+   "description" : "A heavy, somehow usable 12.70x108mm cartridge Heavy Machine Gun light enough to be carried around by hand without immediately crippling the user. This weapon provides tremendous fire support but is ^red;indiscriminate^reset; in its damage. Only accepts the custom T60 HMG 12.7x108mm 40rnd Box Magazine.",
+   
+   "shortdescription" : "T60 \"Tabor\" HMG",
+   "level" : 1,
+   "tooltipKind" : "gic_largebase_ammogun",
+   "category" : "^orange;Heavy Machine Gun^reset;",
+   "itemTags" : ["weapon", "ranged", "rifle", "gic", "lightmachinegun", "assaultrifle"],
+   "twoHanded":true,
+   
+   "ewsBetterUpdatingTooltipIcon" : true, //if set to true, then the tooltip's inventory icon will update better! i.e. the tooltip's icon will update properly when reloading a weapon, so magazine in tooltip will be updated to properly display current loaded magazine. Read more about this in EWS's official documentation or example weapons.
+   
+   "weaponDeterioration" : true,
+   "weaponDurability" : [6000, 7000],
+   "weaponDurabilityMax" : 7000,
+   "weaponDurabilityEffectMultiplier" : 0.7,
+   
+   "weaponAcceptRepairs" : true,
+   "weaponRepairAcceptTags" : ["gic_repair"],
+   
+   "consumeAmmoModule" : true,
+   "consumeAmmoType" : "gic_t60mg_1270x108mm_box_mag",
+   "alwaysUseAmmo" : true,
+   
+   
+   "fireShellProjectile" : "gic_gunfirenoise_standardknockback",
+   "fireShellProjectileConfig" : {
+	  "timeToLive" : 0,
+      "actionOnReap" : [
+         {
+            "repeat" : false,
+            "action" : "projectile",
+            "angle" : 90,
+            "type" : "gic_shellcasing_heavy",
+            "fuzzAngle" : 20,
+            "time" : 0
+         },
+         {
+            "type" : "gic_case_belt_link",
+            "fuzzAngle" : 20,
+            "action" : "projectile",
+            "angle" : 90
+         }
+      ]      
+   },
+   
+   "underbarrelAttachment" : {
+	"attachmentImage" : "/items/augments/weapon_attachments/foregrip/gic_bipod.png",
+	"attachmentBonusesAlt" : [1.3,1.3,1.3,1.3],
+	"attachedName" : "gic_bipod",
+	"attachmentBonusType" : "multiplicative",
+	"attachmentBonuses" : [1.3,1.3,1.3,1.3,1,1,1,1],
+	"attachmentAttached" : true,
+	
+	"specialAttachmentConfig" : {
+		"type" : "bipod",
+		"bipodConfig" : {
+			//vertex of the bipod, ie the part thats attached to the gun. is an offset.
+			"bipodVertex" : [0.45,0.1],
+			
+			//these are offsets (not offsetted from the vertex, however) that dictate the bottom position of each bipod leg.
+			//if a block is detected anywhere in between the bipod vertex and these leg positions, then the bipod is considered "grounded"
+			"legPos1" : [0.45,-0.625],
+			"legPos2" : [0.6,-0.625],
+			
+			
+			//once bipod is "grounded", these bonuses kick in (multiplier only at the moment). overrides any other bonuses whenever bipod is enabled, ie crouching won't increase benefits of bipod bonuses.
+			//these bonuses are calculated off of standing inaccuracy/miss chance values, so be sure to account for this when balancing!
+			"bipodBonuses" : [0.2,0.2] //inaccuracy, missChance. currently doesn't support recoil modifs because that shit can get *really* funky. until i find nicer way to implement recoil modifs, they ain't happening.
+		}
+	}
+   },
+   
+   "usesAttachments" : true, //enables usage of attachments
+  "attachmentsAvailable" : ["sight","underbarrel", "barrel"], //allows attachments of these types
+  "attachmentTags" : ["gic_foregrip","gic_sight", "gic_grenadelauncher", "gic_barrel"], //allows attachments with these tags
+   
+   "ammoAmount" : 40,
+   "magazineProjectile" : "gic_t60mg_1270x108mm_box_mag_magreload",
+   "ammoMax" : 40,
+   
+   "animation":"/items/active/weapons/ranged/gun.animation",
+   "animationParts" : {
+      "muzzleFlash" : "",
+      "middle" : "gic_t60mg.png",
+      "barrel" : "",
+      "butt" : ""
+   },
+   "animationCustom":{
+      "globalTagDefaults":{
+         "barrelImage":"",
+         "underbarrelImage":"",
+         "sightImage":"",
+         "stockImage":"",
+         "magazineImage":""
+      },
+      "animatedParts":{
+         "stateTypes":{
+            "gunState":{
+               "states":{
+                  "empty":{
+                     "mode":"end",
+                     "frames":1
+                  },
+                  "reloadinbetween":{
+                     "mode":"transition",
+                     "cycle":0.87,
+                     "frames":1,
+                     "transition":"armed"
+                  },
+                  "armed":{
+                     "mode":"end",
+                     "frames":1
+                  },
+                  "reloading":{
+                     "mode":"transition",
+                     "cycle":2,
+                     "frames":6,
+                     "transition":"reloadinbetween"
+                  },
+                  "firing":{
+                     "mode":"transition",
+                     "cycle":0.125,
+                     "frames":4,
+                     "transition":"armed"
+                  }
+               },
+               "default":"empty"
+            },
+			"grenadeLauncher" : {				//required for grenade launcher stuff
+			  "default" : "idle",
+			  "states" : {						//animations are designated by gunfireammonreload
+				"idle" : {						//default state for normal under barrel attachments
+				  "frames" : 1,
+				  "mode":"end"
+				},
+				"armed" : {						//"armed" state is the default idle state if the gun still has ammo
+				  "frames" : 1,
+				  "mode":"end"
+				},
+				"reloading" : {					//reloading animation. For this weapon's reload, the player resets the bolt of the gun. I've added extra states because of this. Normally "transition" would be set to "empty". (Echo)
+				  "frames" : 3,
+				  "mode" : "transition",
+				  "transition" : "armed"
+				}
+			  }
+			}
+         },
+         "parts":{
+            "middle":{
+               "properties":{
+				  "zLevel" : 0,
+                  "offset":[0.5,0.4]
+               },
+               "partStates":{
+                  "gunState":{
+                     "reloadinbetween":{
+                        "properties":{
+                           "image":"<partImage>:armed.1<paletteSwaps>",
+                           "centered":true
+                        }
+                     },
+                     "reloadingp2":{
+                        "properties":{
+                           "image":"<partImage>:reload.3<paletteSwaps>"
+                        }
+                     },
+                     "empty":{
+                        "properties":{
+                           "image":"<partImage>:empty.1<paletteSwaps>"
+                        }
+                     },
+                     "armed":{
+                        "properties":{
+                           "image":"<partImage>:armed.<frame><paletteSwaps>"
+                        }
+                     },
+                     "reloading":{
+                        "properties":{
+                           "image":"<partImage>:reload.<frame><paletteSwaps>"
+                        }
+                     },
+                     "firing":{
+                        "properties":{
+                           "image":"<partImage>:firing.<frame><paletteSwaps>"
+                        }
+                     }
+                  }
+               }
+            },
+            "sight":{
+               "properties":{
+                  "zLevel":10,
+                  "image":"<sightImage>",
+                  "transformationGroups":[
+                     "weapon"
+                  ],
+                  "centered":true,
+                  "offset":[ 1.245,0.022]
+               }
+            },
+            "magazine":{
+               "properties":{
+                  
+               }
+            },
+            "underbarrel":{
+               "properties":{
+                  "zLevel":10,
+                  "image":"<underbarrelImage>",
+                  "transformationGroups":[
+                     "weapon"
+                  ],
+                  "centered":true,
+                  "offset":[0.625,-0.19]
+               },
+			   
+			   "partStates" : {					//required for grenade launcher stuff
+				"grenadeLauncher" : {
+				  "idle" : {
+					"properties" : {
+					  "image" : "<underbarrelImage>:<paletteSwaps>"
+					}
+				  },
+				  "firing" : {
+					"properties" : {
+					  "image" : "<underbarrelImage>:firing.<frame><paletteSwaps>"
+					}
+				  },
+				  "armed" : {
+					"properties" : {
+					  "image" : "<underbarrelImage>:armed.<frame><paletteSwaps>"
+					}
+				  },
+				  "empty" : {
+					"properties" : {
+					  "image" : "<underbarrelImage>:firing.3<paletteSwaps>"
+					}
+				  },
+				  "reloading" : {
+					"properties" : {
+					  "image" : "<underbarrelImage>:reload.<frame><paletteSwaps>"
+					}
+				  }
+				}
+			  }
+            },
+            "stock":{
+               "properties":{
+                  
+               }
+            },
+            "barrel":{
+               "properties":{
+                  "zLevel":10,
+                  "image":"<barrelImage>",
+                  "transformationGroups":[
+                     "weapon"
+                  ],
+                  "centered":true,
+                  "offset":[ 1.62,0.022]
+               }
+            }
+         }
+      },
+	  "lights" : {
+		"flashlightAttachment" : {			//ABSOLUTELY REQUIRED if this weapon accepts a flashlight attachment unless you want a CRASHED GAME
+			"active" : false
+		}
+	  },
+      "particleEmitters":{
+         "muzzleFlash":{
+            "particles":[
+               {
+                  "particle":"gic_tinyvehicledustysmoke",
+                  "count":2,
+                  "offset":[0.25,0]
+               }
+            ],
+            "transformationGroups":[
+               "muzzle"
+            ],
+            "burstCount":2
+         },
+         "hotsmoke":{
+            "particles":[
+               {
+                  "particle":"gic_riflemuzzle",
+                  "count":3,
+                  "offset":[0.25,0]
+               }
+            ],
+            "transformationGroups":[
+               "muzzle"
+            ],
+            "burstCount":3
+         },
+		 "altMuzzleFlash" : {						//alt muzzle flash particles for the grenade attachment
+			"burstCount" : 2,
+			"particles" : [
+			  { "particle" : "ews_riflesmoke", "offset" : [1.6, -0.6], "count" : 2 },
+			  { "particle" : "ews_riflemuzzle", "offset" : [1.8, 0.2], "count" : 3 }
+			]
+		  }
+      },
+	  "sounds":{
+         "switchAmmo" : ["/sfx/gic_mg42_reload.ogg"],
+         "empty" : ["/sfx/gun/reload/machinepistol_reload_clip1.ogg"],
+         "fire" : ["/sfx/gun/gic_ppsh.ogg"],
+		 "suppressedFire" : ["/sfx/gun/gic_ppsh.ogg"],
+		 "switchAmmoAlt" : [ "/sfx/gic_mg_reload.ogg" ],
+		 "soundEffectGrenade" : [ "/sfx/gun/gic_grenadelauncher.ogg" ]
+      }
+   },
+   
+   "animationScripts":[
+      "/items/active/effects/ews_lasersight.lua"
+   ],
+   "scriptedAnimationParameters" : {},
+   
+   "baseOffset":[0.5,0.4],
+   "muzzleOffset":[1.75,0.1],
+   "shellOffset":[-0.3,0.1],
+   
+   "scripts":["/items/active/weapons/ranged/ews_weaponcore.lua","/abilities/weight/gic_heavy_weapon.lua"],
+   
+   "elementalType":"ews_smallarms",
+   
+   "paletteSwaps":"",
+   
+   
+   
+   "primaryAbility":{
+	  "scripts":["/items/active/weapons/ranged/ews_weapon_10stance.lua"],
+	  "class":"GunFire10",
+	  
+	  "dynamicRecoilTemplate":"MACHINEGUN",
+      "dynamicRecoilMaxSteps":6,
+      "dynamicRecoilMultiplier":0.3, // 0.5
+      "dynamicRecoilTickDuration":0.3, // 0.3
+      "dynamicRecoilMissMultiplier":0.35, // 0.5
+	  
+	  
+	  "missChance":80,
+	  "missChanceCrouch":50,
+	  
+	  "fireTime":0.09,
+	  "baseDamage":185,
+	  "bonusDps":0,
+	  "energyUsage":false,
+	  "inaccuracy":0.018,
+	  
+      "projectileCount":1,
+	  "fireType":"auto",
+	  
+      
+      "projectileTypeMiss":"gic_redtracerbullet_heavy_miss_c_pointblank",
+      "projectileType":"gic_redtracerbullet_heavy_c",
+      "projectileParameters":{
+         "damageTeam":{
+            "type":"indiscriminate"
+         }
+      },
+	  
+      "stances":{
+         "cooldown":{
+            "frontArmFrame":"run.2",
+            "weaponRotation":5,
+            "allowFlip":false,
+            "allowRotate":false,
+            "armRotation":-2,
+            "twoHanded":true,
+            "duration":0,
+            "backArmFrame":"run.5"
+         },
+		 "idle":{
+            "frontArmFrame":"run.2",
+            "weaponRotation":2,
+            "allowFlip":true,
+            "allowRotate":true,
+            "armRotation":-2,
+            "twoHanded":true,
+            "backArmFrame":"run.5"
+         },
+		 "fire":{
+			"duration" : 0.05, // one frame for firing
+            "frontArmFrame":"run.2",
+            "weaponRotation":2,
+            "allowFlip":true,
+            "allowRotate":true,
+            "armRotation":-2,
+            "twoHanded":true,
+            "backArmFrame":"run.5"
+         },
+		 "motion1":{
+            "frontArmFrame":"run.2",
+            "allowFlip":false,
+            "weaponRotation":2,
+            "allowRotate":false,
+            "armRotation":-2,
+            "weaponOffset":[
+               -0.3,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.08,
+            "backArmFrame":"run.5"
+         },
+         "motion2":{
+            "frontArmFrame":"run.2",
+            "allowFlip":false,
+            "weaponRotation":4,
+            "allowRotate":false,
+            "armRotation":-2.5,
+            "weaponOffset":[
+               -0.1,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.05,
+            "backArmFrame":"run.5"
+         },
+         "motion3":{
+            "duration":0
+         },
+         "motion4":{
+            "duration":0
+         },
+         "motion5":{
+            "duration":0
+         },
+         "motion6":{
+            "duration":0
+         },
+	  "altFire" : {
+        "frontArmFrame":"run.2",
+            "allowFlip":false,
+            "weaponRotation":2,
+            "allowRotate":false,
+            "armRotation":-2,
+            "weaponOffset":[
+               -0.2,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.11,
+            "backArmFrame":"run.5"
+      },
+ 
+      "altFire1" : {
+        "duration" : 0
+      },
+	  
+	  "altFire2" : {
+        "duration" : 0
+      },
+	  
+	  "altReload" : {
+        "duration" : 0.55,
+        "armRotation" : 10,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [0.02, 0.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.1",
+        "backArmFrame" : "swim.3"
+      },
+ 
+      "altReload1" : {
+        "duration" : 0.25,
+        "armRotation" : 5,
+        "weaponRotation" : 10,
+        "twoHanded" : true,
+        "weaponOffset" : [0.02, 0.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.1",
+        "backArmFrame" : "swim.3"
+      },
+      "altReload2" : {
+        "duration" : 0.15,
+        "armRotation" : -5,
+        "weaponRotation" : 25,
+        "twoHanded" : true,
+        "weaponOffset" : [0.02, 0.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.1",
+        "backArmFrame" : "swim.2"
+      },
+      "altReload3" : {
+        "duration" : 0.15,
+        "armRotation" : -5,
+        "weaponRotation" : 20,
+        "twoHanded" : true,
+        "weaponOffset" : [0.02, 0.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.1",
+        "backArmFrame" : "swim.3"
+      },
+      "altReload4" : {
+        "duration" : 0.15,
+        "armRotation" : -5,
+        "weaponRotation" : 20,
+        "twoHanded" : true,
+        "weaponOffset" : [0.02, 0.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.1",
+        "backArmFrame" : "swim.3"
+      },
+      "altReload5" : {
+       "duration" : 0
+      },
+      "altReload6" : {
+        "duration" : 0
+      },
+         "reload":{
+            "frontArmFrame":"run.1",
+            "allowFlip":false,
+            "weaponRotation":30,
+            "allowRotate":false,
+            "armRotation":-20,
+            "weaponOffset":[
+               -0.1,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.25,
+            "backArmFrame":"swim.3"
+         },
+		 "reload1":{
+            "frontArmFrame":"swim.3",
+            "allowFlip":false,
+            "weaponRotation":45,
+            "allowRotate":false,
+            "armRotation":-20,
+            "weaponOffset":[
+               -0.1,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.35,
+            "backArmFrame":"swim.3"
+         },
+         "reload2":{
+            "frontArmFrame":"idle.2",
+            "allowFlip":true,
+            "weaponRotation":45,
+            "allowRotate":true,
+            "armRotation":-10,
+            "weaponOffset":[
+               -0.3,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.2,
+            "backArmFrame":"run.5"
+         },
+         "reload3":{
+            "frontArmFrame":"swim.5",
+            "allowFlip":true,
+            "weaponRotation":45,
+            "allowRotate":true,
+            "armRotation":-10,
+            "weaponOffset":[
+               -0.3,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.3,
+            "backArmFrame":"run.5"
+         },
+         "reload4":{
+            "frontArmFrame":"swim.4",
+            "allowFlip":false,
+            "weaponRotation":45,
+            "allowRotate":false,
+            "armRotation":-15,
+            "weaponOffset":[
+               -0.3,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.25,
+            "backArmFrame":"swim.3"
+         },
+         "reload5":{
+            "frontArmFrame":"swim.3",
+            "allowFlip":false,
+            "weaponRotation":30,
+            "allowRotate":false,
+            "armRotation":-20,
+            "weaponOffset":[
+               -0.3,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.3,
+            "backArmFrame":"swim.3"
+         },
+         "reload6":{
+            "frontArmFrame":"swim.2",
+            "allowFlip":false,
+            "weaponRotation":32,
+            "allowRotate":false,
+            "armRotation":-20,
+            "weaponOffset":[
+               -0.5,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.25,
+            "backArmFrame":"swim.3"
+         },
+         "reload7":{
+            "frontArmFrame":"swim.4",
+            "allowFlip":false,
+            "weaponRotation":28,
+            "allowRotate":false,
+            "armRotation":-20,
+            "weaponOffset":[
+               -0.45,
+               0
+            ],
+            "twoHanded":true,
+            "duration":0.4,
+            "backArmFrame":"swim.3"
+         },
+         "reload8":{
+            "frontArmFrame":"run.1",
+            "allowFlip":true,
+            "weaponRotation":14,
+            "allowRotate":true,
+            "armRotation":-10,
+            "weaponOffset":[
+               -0.1,
+               0.1
+            ],
+            "twoHanded":true,
+            "duration":0.12,
+            "backArmFrame":"swim.3"
+         },
+         "reload9":{
+            "frontArmFrame":"run.2",
+            "allowFlip":true,
+            "weaponRotation":9,
+            "allowRotate":true,
+            "armRotation":-4,
+            "weaponOffset":[
+               -0.1,
+               0.0
+            ],
+            "twoHanded":true,
+            "duration":0.25,
+            "backArmFrame":"swim.3"
+         },
+		 "reload10":{
+            "frontArmFrame":"run.2",
+            "allowFlip":true,
+            "weaponRotation":7,
+            "allowRotate":true,
+            "armRotation":-5,
+            "weaponOffset":[
+               0,
+               0.0
+            ],
+            "twoHanded":true,
+            "duration":0.2,
+            "backArmFrame":"swim.3"
+         }
+      }
+   },
+   
+   "builder":"/items/buildscripts/ews_buildunrandweapon.lua"
+   // "damageLevelMultiplier":1
+}

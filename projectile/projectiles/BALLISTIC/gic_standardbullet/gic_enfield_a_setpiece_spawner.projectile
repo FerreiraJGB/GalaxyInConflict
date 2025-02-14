@@ -1,0 +1,40 @@
+{
+  "projectileName" : "gic_enfield_a_setpiece_spawner",
+  "bounces" : 0,
+  "image" : "icon.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [0, 0, 0],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+
+  ],
+  
+"periodicActions" : [
+
+    {
+      "time" : 1.95,
+      "action" : "projectile",
+      "type" : "gic_standardbullet_a_grimchaplain",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 5,
+	  "directional" :true,
+        "config" : {
+          "damageTeam" : { "type" : "friendly" }
+        }
+    }
+
+],
+  
+  "power" : 100,
+  "damageKind" : "ews_smallarms",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 10.1,
+  "physics" : "gic_nohitlaser"
+}

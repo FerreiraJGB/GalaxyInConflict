@@ -1,0 +1,216 @@
+{
+  "metadata" : {
+    "name" : "gic_psychicrealm",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_psychicrealm_battlefield_spawn" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 30,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+  
+
+	
+	
+	
+	
+	//Combat Zones - Ghosts eternally firing and usually has higher level of combatants.
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_combatzone1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_battlefield_combatzone1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_battlefield_combatzone1.json" ]
+    },
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_combatzone2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_battlefield_combatzone2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_battlefield_combatzone2.json" ]
+    },
+	
+	
+	
+	
+	
+	
+	
+	
+	//Buildings - General filler pieces, but may include some soldiers.
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_building1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_battlefield_building1", "gic_psychicrealm_battlefield_building2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_battlefield_building1.json" ]
+    },
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_building2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_battlefield_building1", "gic_psychicrealm_battlefield_building2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_battlefield_building2.json" ]
+    },
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_building3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_battlefield_building3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_battlefield_building3.json" ]
+    },
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_spawn",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_battlefield_spawn" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_battlefield_spawn.json" ]
+    },
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_leftend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_psychicrealm_battlefield_leftend.json" ] ],
+      "chance" : 0
+    },
+	
+	
+	
+	//Terrain - More filler.
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_terrain1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_battlefield_terrain1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_battlefield_terrain1.json" ]
+    },
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_terrain2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_battlefield_terrain2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_battlefield_terrain2.json" ]
+    },
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_terrain3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_battlefield_terrain3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_battlefield_terrain3.json" ]
+    },
+	
+	
+	//Transitions to spire pieces.
+	
+    {
+      "name" : "gic_psychicrealm_battlefield_transition",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_psychicrealm_battlefield_transition.json" ] ],
+      "chance" : 0
+    },
+	
+	
+	
+	
+	
+	
+	
+	//Spire - Tower climbing section.
+	
+    {
+      "name" : "gic_psychicrealm_spire_blasted",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_spire_blasted" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_spire_blasted.json" ]
+    },	
+	
+    {
+      "name" : "gic_psychicrealm_spire_shot",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_spire_shot" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_spire_shot.json" ]
+    },	
+	
+    {
+      "name" : "gic_psychicrealm_spire_empty",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_spire_empty" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_spire_empty.json" ]
+    },	
+	
+    {
+      "name" : "gic_psychicrealm_spire_apartment",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_spire_apartment" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_spire_apartment.json" ]
+    },	
+	
+	
+    {
+      "name" : "gic_psychicrealm_spire_top",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_psychicrealm_spire_top.json" ] ],
+      "chance" : 0
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

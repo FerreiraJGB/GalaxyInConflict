@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_electricenergyshot_namazu",
+  "physics" : "bullet",
+  "bounces" : 0,
+  "image" : "gic_electricenergyshot.png",
+  "animationCycle" : 1,
+  "lightColor" : [0, 0, 128],
+  "frameNumber" : 1,
+  "power" : 150,
+  "speed" : 200,
+  "damageKind" : "fire",
+  "damageType" : "IgnoresDef",
+//  "statusEffects" : [ "gic_electricaldamage" ],
+  "fullbright" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ]
+  
+}

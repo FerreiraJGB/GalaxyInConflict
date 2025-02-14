@@ -1,0 +1,37 @@
+{
+  "projectileName" : "gic_magicshot_atomicfire_stage1_relay_explosionsign_pre",
+  "image" : "gic_magicshot_atomicfire_null.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_heavyarmsthermal",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.25,
+  "emitters" : [ "fireplasma" ],
+  "damagePoly" : [ [-32, 0], [-22, -22], [0, -32], [22, -22], [32, 0], [22, 22], [0, 32], [-22, 22]  ],
+  "actionOnReap" : [
+    {
+      "time" : 1.0,
+      "action" : "sound",
+      "options" : [
+        "/sfx/touhou/gic_touhou_se_tan00-15db.ogg"
+      ]
+    }, 
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1_relay_explosionsign",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 0 //180
+    }
+  ],
+  "statusEffects" : [ ],
+  "power" : 50.0,
+  "speed" : 80,
+  "acceleration" : 0,
+  "knockback" : 10
+}

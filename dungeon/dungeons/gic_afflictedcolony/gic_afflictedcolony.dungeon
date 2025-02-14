@@ -1,0 +1,217 @@
+{
+  "metadata" : {
+    "name" : "gic_afflictedcolony",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_afflictedcolony_leftwall" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 65,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+  
+  //Tower
+  
+  
+    {
+      "name" : "gic_afflictedcolony_tower_medical",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_tower_medical.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_afflictedcolony_tower_armory",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_tower_armory.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_afflictedcolony_tower_celestial",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_tower_celestial.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_afflictedcolony_tower_privateroom",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_tower_privateroom.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_afflictedcolony_tower_trait",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_tower_trait.json" ] ],
+      "chance" : 0.2
+    },
+
+    {
+      "name" : "gic_afflictedcolony_tower_antiair",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_tower_antiair.json" ] ],
+      "chance" : 0
+    },	
+  
+  
+  //HALLWAYS
+	
+	
+    {
+      "name" : "gic_afflictedcolony_habblock1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_habblock1.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_afflictedcolony_habblock2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_habblock2.json" ] ],
+      "chance" : 1
+    },
+	
+	
+    {
+      "name" : "gic_afflictedcolony_habblock3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_habblock3.json" ] ],
+      "chance" : 1
+    },
+		
+		
+		
+    {
+      "name" : "gic_afflictedcolony_habblock4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_habblock4.json" ] ],
+      "chance" : 1
+    },		
+		
+    {
+      "name" : "gic_afflictedcolony_shotgunner",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_shotgunner.json" ] ],
+      "chance" : 1
+    },				
+	
+    {
+      "name" : "gic_afflictedcolony_landingpad",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_landingpad.json" ] ],
+      "chance" : 1
+    },
+	
+	
+    {
+      "name" : "gic_afflictedcolony_loadingbay",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_loadingbay.json" ] ],
+      "chance" : 1
+    },
+		
+	
+    {
+      "name" : "gic_afflictedcolony_bridge",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_afflictedcolony_bridge" ] ],
+	    [ "doNotCombineWith", [ "gic_afflictedcolony_bridge_damaged"] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_bridge.json" ] ],
+      "chance" : 1
+    },
+		
+    {
+      "name" : "gic_afflictedcolony_bridge_damaged",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_afflictedcolony_bridge_damaged" ] ],
+	    [ "doNotCombineWith", [ "gic_afflictedcolony_bridge"] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_bridge_damaged.json" ] ],
+      "chance" : 1
+    },		
+		
+		
+		
+    {
+      "name" : "gic_afflictedcolony_research",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_research.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_afflictedcolony_agrifab",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_agrifab.json" ] ],
+      "chance" : 1
+    },	
+	
+	
+	
+
+	
+  
+
+    {
+      "name" : "gic_afflictedcolony_leftwall",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_leftwall.json" ] ],
+      "chance" : 0
+    },
+
+
+    {
+      "name" : "gic_afflictedcolony_rightwall",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_rightwall.json" ] ],
+      "chance" : 0
+    }
+	
+	
+	
+  ]
+}

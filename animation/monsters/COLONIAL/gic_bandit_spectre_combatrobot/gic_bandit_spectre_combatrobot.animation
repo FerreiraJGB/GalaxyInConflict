@@ -1,0 +1,497 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+		
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+
+          "walk" : {
+            "frames" : 1,
+            "cycle" : 0.75,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+            }
+          },
+		  
+          "jump" : {
+            "frames" : 3,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "fall" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "land" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "loop",
+			
+            "properties" : {
+             "immediateSound" : "/sfx/npc/gic_Bluezone_BC0287_annihilation_mech_mechanical_texture_sequence_002.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+			
+          },
+		  
+		  
+		  
+          "hop" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "hopfull",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/gleap_hop.ogg" ]
+            }
+          },
+          "hopfull" : {
+            "frames" : 3,
+            "cycle" : 0.325
+          },		  
+		  
+		  
+		  
+		  
+		  
+
+		  
+		  
+		  
+          "dash" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/tech/gic_bloodborne_movement3.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+          "slidewindup" : {
+            "frames" : 5,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_Bluezone_BC0287_annihilation_mech_mechanical_texture_002.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "slide" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "slidewinddown",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/gic_blackops3_thrust_jump.ogg",
+              "immediateSoundRangeMultiplier" : 1.0,
+              "particleEmittersOn" : [ "spearcharge" ]
+            }
+          },	  
+
+          "slidewinddown" : {
+            "frames" : 5,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "slidewinddown2",
+            "properties" : {
+            }
+          },	
+
+          "slidewinddown2" : {
+            "frames" : 1,
+            "cycle" : 0.5,
+            "properties" : {
+              "particleEmittersOff" : [ "spearcharge" ]
+            }
+          },
+
+
+
+
+
+          "cannonwindup" : {
+            "frames" : 5,
+            "cycle" : 0.25,
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_Bluezone_BC0287_annihilation_mech_mechanical_texture_sequence_011.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "cannonfire" : {
+            "frames" : 7,
+            "cycle" : 0.5,
+            "mode" : "transition",
+            "transition" : "cannonwinddown"
+          },	  
+
+          "cannonwinddown" : {
+            "frames" : 5,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "cannonreload"
+          },	
+
+
+
+
+
+
+	
+		  
+
+		  
+          "cannonreload" : {
+            "frames" : 1,
+            "cycle" : 1.0,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_reloadmedium_shell.ogg",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          }	  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 4.6]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "<partImage>:fall.<frame>"
+              }
+            },
+            "land" : {
+              "properties" : {
+                "image" : "<partImage>:land.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+		
+			
+            "hop" : {
+              "properties" : {
+                "image" : "<partImage>:prep.<frame>"
+              }
+            },
+            "hopfull" : {
+              "properties" : {
+                "image" : "<partImage>:hop.<frame>"
+              }
+            },
+			
+
+
+
+			
+			
+			
+			
+			
+			
+
+            "slidewindup" : {
+              "properties" : {
+                "image" : "<partImage>:slidewindup.<frame>"
+              }
+            },
+            "slide" : {
+              "properties" : {
+                "image" : "<partImage>:slide.<frame>"
+              }
+            },
+            "slidewinddown" : {
+              "properties" : {
+                "image" : "<partImage>:slidewinddown.<frame>"
+              }
+            },
+            "slidewinddown2" : {
+              "properties" : {
+                "image" : "<partImage>:slidewinddown2.<frame>"
+              }
+            },			
+			
+			
+
+
+
+
+
+            "cannonwindup" : {
+              "properties" : {
+                "image" : "<partImage>:cannonwindup.<frame>"
+              }
+            },
+            "cannonfire" : {
+              "properties" : {
+                "image" : "<partImage>:cannonfire.<frame>"
+              }
+            },
+            "cannonwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:cannonwinddown.<frame>"
+              }
+            },
+
+
+
+
+
+
+            "cannonreload" : {
+              "properties" : {
+                "image" : "<partImage>:cannonreload.<frame>"
+              }
+            },
+			
+			
+            "dash" : {
+              "properties" : {
+                "image" : "<partImage>:dash.<frame>"
+              }
+            }
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+	}
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+  
+  "lights" : {
+    "lightbar" : {
+      "active" : true,
+      "position" : [-0.6, 0.5],
+      "color" : [250, 0, 0],
+      "pointLight" : true,
+	  "pointAngle" : 0.00,
+	  "pointBeam" : 10,
+      "beamAmbience" : 0.1
+    }
+  },
+
+  "particleEmitters" : {
+  
+    "spearcharge" : {
+      "enabled" : false,
+      "emissionRate" : 10.0,
+      "particles" : [
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" },
+        { "particle" : "gic_smallsmoke_excultist" }
+      ]
+    }, 
+  
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+
+        { "particle" : "deathfizz1left" },
+        { "particle" : "deathfizz1right" },
+        { "particle" : "deathfizz2left" },
+        { "particle" : "deathfizz2right" },
+        { "particle" : "deathfizz3left" },
+        { "particle" : "deathfizz3right" },
+        { "particle" : "deathfizz4left" },
+        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+
+    "grenadefire" : {
+      "pool" : [ "/sfx/gun/gic_glfire.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "fire" : {
+      "pool" : [ "/sfx/gun/gic_57mm_type97.ogg" ],
+      "rangeMultiplier" : 4.0
+    },
+	    "fire_coaxial_mg" : {
+      "pool" : [ "/sfx/gun/gic_dshk_fire_0.ogg", "/sfx/gun/gic_dshk_fire_1.ogg", "/sfx/gun/gic_dshk_fire_2.ogg" ],
+      "rangeMultiplier" : 1.0
+    },
+	    "fire_mg" : {
+      "pool" : [  "/sfx/gun/gic_dshk_fire_0.ogg", "/sfx/gun/gic_dshk_fire_1.ogg", "/sfx/gun/gic_dshk_fire_2.ogg" ],
+      "rangeMultiplier" : 1.0
+    },
+  
+    "wallCrash" : [ "/sfx/npc/gic_Bluezone_BC0287_annihilation_mech_mechanical_texture_002.ogg" ],
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/hit/gic_cache_explode.ogg" ] //npc/gic_tankdie
+  }
+}

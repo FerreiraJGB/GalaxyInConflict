@@ -1,0 +1,34 @@
+{
+  "itemName" : "gic_cyanide_pack",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_cyanide_pack.png",
+  "maxStack" : 4,
+  
+  "itemTags" : ["gic_syringerifle_ammo"],
+  
+  "description" : "A highly powerful neurotoxin capable of killing most beings in a short amount of time. Cyanide is typically used in mining to dissolve silver and gold so as to separate them from other metals. It's also commonly used for pest control.
+  
+^red;- Causes Cyanide Poisoning.",
+
+  "shortdescription" : "^orange;Cyanide Pack",
+  "effects" : [ [
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 1
+      },
+	  
+      {
+        "effect" : "gic_cyanide_poisoning"
+      }
+	  
+	  
+	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_bandage_use" ],
+  "blockingEffects" : [
+  ]
+}

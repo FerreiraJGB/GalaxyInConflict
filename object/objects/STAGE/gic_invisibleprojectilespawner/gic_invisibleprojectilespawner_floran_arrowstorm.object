@@ -1,0 +1,62 @@
+{
+  "objectName" : "gic_invisibleprojectilespawner_floran_arrowstorm",
+  "colonyTags" : ["trap", "evil"],
+  "printable" : false,
+  "rarity" : "Legendary",
+  "description" : "Hot!",
+  "shortdescription" : "Invisible Projectile Spawner - Arrow Storm",
+  "race" : "ancient",
+  "scannable" :false,
+  "category" : "trap",
+  "price" : 0,
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_invisibleprojectilespawner_floran_arrowstorm.png:<frame>.off",
+      "imagePosition" : [0, 0],
+      "projectileDirection" : [0, -1],
+      "projectilePosition" : [0.5, 0.0],
+      "spaceScan" : 0.1,
+      "anchors" : []
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/projectiletrap/projectiletrap.lua" ],
+  "scriptDelta" : 2,
+
+  "animation" : "/objects/wired/projectiletrap/projectiletrap.animation",
+  "animationParts" : {
+    "bg" : "blank.png",
+	"fg" : "blank.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+
+      "shoot" : [
+	  ],
+	  
+      "on" : [ "/sfx/objects/flametrap_on.ogg" ],
+      "off" : [ "/sfx/objects/flametrap_off.ogg" ]
+    }
+  },
+
+  "soundEffect" : "",
+
+  "inputNodes" : [ [0, 0] ],
+
+  "inactiveLightColor" : [0, 0, 0], // light color to emit when the object is 'off'
+  "activeLightColor" : [0, 0, 0], // light color to emit when the object is 'on'
+
+  "fireTime" : 14, // rate of fire 14 originally. Used value of 10 in testing stage.
+  "fireTimeVariance" : 0, // variation in rate of fire
+  "projectile" : "gic_floran_arrowstorm_object", // name of projectile (required)
+  "projectileConfig" : { // extra configuration overrides for projectile
+  },
+  
+  "health" : 5,
+
+  "smashOnBreak" : true,
+  "smashSounds" : [ "/sfx/objects/rock_break1.ogg", "/sfx/objects/rock_break2.ogg", "/sfx/objects/rock_break3.ogg", "/sfx/objects/rock_break4.ogg", "/sfx/objects/rock_break5.ogg", "/sfx/objects/rock_crumble1.ogg", "/sfx/objects/rock_crumble2.ogg", "/sfx/objects/rock_crumble3.ogg", "/sfx/objects/rock_crumble4.ogg", "/sfx/objects/rock_crumble5.ogg" ],
+  "smashParticles" : [ { "count" : 6, "particle" : "greystoneshard" } ]
+}

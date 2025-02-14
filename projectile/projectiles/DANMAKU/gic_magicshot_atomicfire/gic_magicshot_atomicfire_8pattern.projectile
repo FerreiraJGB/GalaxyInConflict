@@ -1,0 +1,152 @@
+{
+  "projectileName" : "gic_magicshot_atomicfire_8pattern",
+  "image" : "gic_magicshot_atomicfire_null.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : -135
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : -90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : -45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 135
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 180
+    },
+	
+	
+	
+	
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+      "angleAdjust" : -135
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ice",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+      "angleAdjust" : -90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+      "angleAdjust" : -45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ice",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+      "angleAdjust" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ice",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+      "angleAdjust" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+      "angleAdjust" : 135
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ice",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+      "angleAdjust" : 180
+    }
+	
+  ],
+  
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 50.0,
+  "speed" : 0,
+  "acceleration" : -10,
+  "knockback" : 18
+}

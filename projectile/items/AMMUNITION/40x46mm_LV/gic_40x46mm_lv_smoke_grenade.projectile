@@ -1,0 +1,107 @@
+{
+  "projectileName" : "gic_40x46mm_lv_smoke_grenade",
+  "bounces" : 0,
+  "image" : "gic_40x46mm_lv_he_grenade.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+
+
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/Battlefield5/gic_BFV_Smokegrenade_FullSFX.ogg"
+      ]
+    },
+	{
+      "time" : 1,
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 2
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_smokegrenade/1.png",
+			"fullbright":true,"size":1.3,
+			"destructionAction":"fade",
+			"destructionTime":4.0
+		}
+	},
+	{
+      "time" : 1,
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 2
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_smokegrenade/1.png",
+			"fullbright":true,"size":1.3,
+			"destructionAction":"fade",
+			"destructionTime":4.0
+		}
+	},	
+	{
+      "time" : 1,
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 2
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_smokegrenade/1.png",
+			"fullbright":true,"size":1.3,
+			"destructionAction":"fade",
+			"destructionTime":4.0
+		}
+	},
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_smokegrenade_concealment_zone_nogrenade",
+      "inheritDamageFactor" : 0.0
+//	  "fuzzAngle": 0,
+//      "angle" : 0
+    }
+	
+	
+  ],
+  
+  
+  "periodicActions" : [  
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_usoa50_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "fade", //shrink
+        "fullbright" : false
+      }
+    }
+  ], 
+  
+  "power" : 50,
+  "damageKind" : "ews_explosive",
+  //"maxSpeed" : 250,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 180.0,
+  //"acceleration" : 40,
+  "timeToLive" : 15,
+  "physics" : "gic_grenadenormal"
+}

@@ -1,0 +1,48 @@
+{
+  "objectName" : "gic_ancientvault_protectoratefactory_portal",
+  "colonyTags" : ["human"],
+  "rarity" : "Legendary",
+  "category" : "other",
+  "price" : 0,
+  "printable" : false,
+
+  "description" : "[This console will disappear after six hours once entered]",
+  "shortdescription" : "Modified Ancient Vault Entrance",
+  "race" : "human",
+
+  "lightColor" : [76, 60, 86],
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_ancientvault_protectoratefactory_portal.png:<color>.<frame>", "fullbright" : true }, { "image" : "gic_ancientvault_protectoratefactory_portal_lit.png:<color>.<frame>" } ],
+      "imagePosition" : [-16, 0],
+      "animationPosition" : [-16, 0],
+      "spaceScan" : 0.1,
+
+      "anchors" : [ "bottom" ],
+      "direction" : "right",
+
+      "lightPosition" : [0, 3],
+
+      "detectArea" : [ [-3, 0], [3, 5] ]
+    }
+  ],
+
+  "animation" : "/objects/gic_ancientvault_protectoratefactory_portal/gic_ancientvault_protectoratefactory_portal.animation",
+  "animationParts" : {
+    "bg" : "gic_ancientvault_protectoratefactory_portal.png",
+    "fg" : "gic_ancientvault_protectoratefactory_portal_lit.png"
+  },
+
+  "scripts" : [ "/objects/gic_ancientvault_protectoratefactory_portal/gic_ancientvault_protectoratefactory_portal.lua" ],
+  "scriptDelta" : 20,
+
+  "vanishTime" : 21600,
+
+  "messagePlayerInterval" : 0.5,
+  "messagePlayerRange" : 30,
+
+  "health" : 10,
+  "smashOnBreak" : true
+}

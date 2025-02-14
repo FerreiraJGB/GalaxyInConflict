@@ -1,0 +1,141 @@
+{
+  "muteSfx" : true,
+  "muteMusic" : true,
+  "skippable" : true,
+//  "letterbox" : true,
+//  "backgroundColor" : [0, 0, 0, 200],
+//  "backgroundFadeTime" : 0.5,
+
+  "panels" : [
+  
+	
+	// --- --- ---
+	
+	
+  //Character Chatbox
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Character.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 22,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 22.5,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        }
+      ]
+    },
+	
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Textbox.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 22,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 22.5,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        }
+      ]
+    },
+
+
+// ----------------- dialogue: Initial Meeting
+    {
+      "drawables" : [
+      ],
+      "text" : "I think we're clear, for now. I don't have much to work with anymore, but I'll... I can work with this. I won't be stopped. If you still have any reservations about all this, I won't keep you here any more. But... If you're still interested, then...
+
+I have a plan. An old associate of mine left this car for me. I have a new place to work with.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 1.0,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 17,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 22,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 22.5,
+          "alpha" : 0.0
+        }
+      ]
+    }
+
+
+  ],
+  "audio" : [
+  
+    {
+      "timecode" : 1,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    } 
+	
+	
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "projectileName" : "gic_energybeam_groundwave_stage1_danmaku",
+  "image" : "gic_energybeam_groundwave_stage1.png",
+  "physics" : "laser",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 2,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_energy_large",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 179,
+      "angle" : -90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_energy_large",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 179,
+      "angle" : -90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_energy_large",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 179,
+      "angle" : -90
+    }
+
+
+  ],
+  
+  
+  "periodicActions" : [
+	
+    {
+      "time" : 0.5,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+      "fuzzAngle" : 180
+    },
+    {
+      "time" : 0.5,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+      "fuzzAngle" : 180
+    }	
+	
+
+  ], 
+ 
+  
+  "statusEffects" : [ ],
+  "power" : 500.0,
+  "speed" : 30,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef",
+  "knockback" : 18
+}

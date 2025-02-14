@@ -1,0 +1,49 @@
+{
+  "projectileName" : "gic_hylotlgunbai_playersummon_stage2_spearman",
+  "image" : "gic_hylotlgunbai_playersummon_null.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 20,
+  "timeToLive" : 0.23, //0.46
+  "onlyHitTerrain" : true,
+  
+"actionOnReap" : [
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_floran_yariashigaru_playersummon",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : { "damageTeam" : 1, "damageTeamType" : "friendly" }
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "angle" : 90
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_remnantfromtheashes_claviger-08.ogg"
+      ]
+    },
+	
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_remnantfromtheashes_claviger-08.ogg"
+      ]
+    }
+	
+],
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

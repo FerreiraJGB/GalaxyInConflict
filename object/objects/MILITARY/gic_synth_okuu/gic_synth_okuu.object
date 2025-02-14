@@ -1,0 +1,50 @@
+{
+  "objectName" : "gic_synth_okuu",
+  "colonyTags" : ["ancient","storage"],
+  "rarity" : "Legendary",
+  "tooltipKind" : "base",
+  "race" : "ancient",
+  "health" : 1.5,
+
+  "category" : "storage",
+  "price" : 0,
+  "printable" : false,
+  "description" : "[Bureaucratically-Isolated Rectification Bot]",
+  "shortdescription" : "B.I.R.B",
+
+  "inventoryIcon" : "icon.png",
+
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_synth_okuu.png:default", "fullbright" : true }, { "image" : "gic_synth_okuu_lit.png:default" } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "gic_synth_okuu.png:default", "fullbright" : true }, { "image" : "gic_synth_okuu_lit.png:default" } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_synth_okuu.animation",
+  "animationPosition" : [-16, 0],
+
+  "scripts" : ["/objects/scripts/treasureburst.lua"],
+  "scriptDelta" : 0,
+
+  "burstTreasurePool" : "gic_synth_okuu_podTreasure",
+  "burstItemVelocityRange" : [5, 10],
+  "burstAngleVariance" : 0.5,
+  "burstOffset" : [0.5, 0],
+  "burstIntangibleTimeRange" : [0.25, 0.5]
+}

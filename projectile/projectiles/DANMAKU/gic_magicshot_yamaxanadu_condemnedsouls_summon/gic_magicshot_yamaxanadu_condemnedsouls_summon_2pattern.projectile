@@ -1,0 +1,41 @@
+{
+  "projectileName" : "gic_magicshot_yamaxanadu_condemnedsouls_summon_2pattern",
+  "image" : "gic_magicshot_yamaxanadu_condemnedsouls_summon.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "onlyHitTerrain" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_yamaxanadu_condemnedsouls_summon_stage1_oda",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_yamaxanadu_condemnedsouls_summon_stage1_takeda",
+      "inheritDamageFactor" : 1,
+	  "angle" : 180
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_plasmaimpact_stormruler",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

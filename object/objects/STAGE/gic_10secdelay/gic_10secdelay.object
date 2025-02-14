@@ -1,0 +1,41 @@
+{
+  "objectName" : "gic_10secdelay",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "A circuit that relays signals after 10 seconds.",
+  "shortdescription" : "Delay Gate",
+  "race" : "generic",
+
+  "category" : "wire",
+  "price" : 10,
+
+  "floranDescription" : "A circuit that relays signalsss after a sset delay.",
+  "glitchDescription" : "Neutral. A circuit that relays signals after a set delay.",
+
+  "inventoryIcon" : "gic_10secdelay.png:default.1",
+  "orientations" : [
+    {
+      "image" : "gic_10secdelay.png:<color>.off",
+      "imagePosition" : [-8, -8],
+
+      "spaceScan" : 0.1,
+      "anchors" : []
+    }
+  ],
+
+  "scripts" : [ "/objects/STAGE/gic_10secdelay/gic_10secdelay.lua" ],
+  "scriptDelta" : 1,
+
+  "animation" : "/objects/wired/logic/logic.animation",
+
+  "animationParts" : {
+    "switch" : "gic_10secdelay.png"
+  },
+  "animationPosition" : [-8, -8],
+
+  "inputNodes" : [ [-1, 0] ],
+  "outputNodes" : [ [0, -1] ],
+
+  "delay" : 10
+}

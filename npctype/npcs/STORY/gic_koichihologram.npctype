@@ -1,0 +1,162 @@
+{
+  "type" : "gic_koichihologram",
+  "baseType" : "base",
+
+  "npcname" : "Koichi",
+  "identity" : {
+    "imagePath" : "koichihologram",
+    "gender" : "male",
+    "hairGroup" : "hair",
+    "hairType" : "1"
+  },
+  "humanoidConfig" : "/npcs/story/koichioid.config",
+  
+  "damageTeamType" : "assistant",
+  "damageTeam" : 1,
+
+  "innateStatusEffects" : [ "hologramglow" ],
+
+  "persistent" : true,
+
+  "dropPools" : [],
+
+  "scriptConfig" : {
+    "behavior" : "koichihologram",
+
+    "behaviorConfig" : {
+      "dialogWaitTime" : 8,
+      "dialogEndWait" : 6
+    },
+
+    "chatPortrait" : "/interface/chatbubbles/koichihologram.png:<frame>",
+
+    "chatSounds" : {
+      "avian" : {
+        "male" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ]
+      },
+      "apex" : {
+        "male" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ]
+      },
+      "floran" : {
+        "male" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ]
+      },
+      "glitch" : {
+        "male" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ]
+      },
+      "human" : {
+        "male" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ]
+      },
+      "hylotl" : {
+        "male" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ]
+      },
+      "default" : {
+        "male" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/hylotl_chatter_male2.ogg"
+        ]
+      }
+    },
+
+    "dialog" : {
+      "koichihologram" : {
+        "1" : {
+          "default" : {
+            "default" : [
+              "Somebody there? Please tell me you're part of the relief team!",
+              "I'm sorry.. My name is ^orange;Koichi^white;; Occasus troops raided the area and I have no way out! Security forces have been murdered!",
+              "Occasus! I'm barricaded in here with an artifact that they seem to want to steal.",
+              "I've fled to the basement! Please, rescue me!"
+            ]
+          }
+        },
+        "2" : {
+          "default" : {
+            "default" : [
+              "The place is in severe neglect. The unified Hylotl Government failed to maintain the repairs on this facility.",
+              "But I can still assist you! I can monitor the library through these old holographic projection displays."
+            ]
+          }
+        },
+        "3" : {
+          "default" : {
+            "default" : [
+              "Occasus have been ransacking the place! Tripped up a few safety fuses."
+            ]
+          }
+        },
+        "4" : {
+          "default" : {
+            "default" : [
+              "I know this library is in disrepair, but isn't it still wondrous? So many resources!",
+              "Thousands of years of literature, art and essay in this single facility.",
+              "These texts predate the Floran Invasion of our homeworlds. These books are resources that could be saved before its destruction."
+            ]
+          }
+        },
+        "5" : {
+          "default" : {
+            "default" : [
+              "Heavy movement below your current location!",
+              "The Occasus have no qualms with murder!",
+			  "They are listed as a Foreign Terror Organization by the United Systems and Protectorate!"
+            ]
+          }
+        },
+        "6" : {
+          "default" : {
+            "default" : [
+              "Room's flooded up ahead. I had to swim through it."
+            ]
+          }
+        },
+        "7" : {
+          "default" : {
+            "default" : [
+              "[Unintelligible]"              
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "protection" : {
+        "baseValue" : 100.0
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_crusader_war_standard_playersummon_stage1_crusaderknight",
+  "image" : "gic_crusader_war_standard_playersummon_null.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 100,
+  "timeToLive" : 0.075,
+  "onlyHitTerrain" : true,
+  
+"actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_crusader_war_standard_playersummon_stage2_crusaderknight",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : 180
+    }
+],
+  
+  "power" : 0.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

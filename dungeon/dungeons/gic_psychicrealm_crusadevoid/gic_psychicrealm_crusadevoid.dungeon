@@ -1,0 +1,83 @@
+{
+  "metadata" : {
+    "name" : "gic_psychicrealm_crusadevoid",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_psychicrealm_crusadevoid_start" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 30,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+  
+
+    {
+      "name" : "gic_psychicrealm_crusadevoid_start",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_crusadevoid_start" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_crusadevoid_start.json" ]
+    },
+		
+	
+	
+	
+	
+	//Arenas - Basic combat segments.
+	
+    {
+      "name" : "gic_psychicrealm_crusadevoid_building1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_crusadevoid_building1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_crusadevoid_building1.json" ]
+    },
+    {
+      "name" : "gic_psychicrealm_crusadevoid_building2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_crusadevoid_building2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_crusadevoid_building2.json" ]
+    },	
+    {
+      "name" : "gic_psychicrealm_crusadevoid_building3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_psychicrealm_crusadevoid_building3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_psychicrealm_crusadevoid_building3.json" ]
+    },
+
+	
+	
+    {
+      "name" : "gic_psychicrealm_crusadevoid_end",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_psychicrealm_crusadevoid_end.json" ] ],
+      "chance" : 0
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

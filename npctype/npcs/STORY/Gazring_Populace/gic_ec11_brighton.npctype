@@ -1,0 +1,116 @@
+{
+  "type" : "gic_ec11_brighton",
+  "baseType" : "gic_villagerbase",
+  "npcname" : "Brighton",    
+  "identity" : {
+    "gender" : "male",
+    "hairGroup" : "hair",
+    "hairType" : "male5",
+    "hairColor" : "2"
+  },  
+
+  "damageTeam" : 1,
+  "damageTeamType" : "friendly",
+  
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      "greetingChance" : 0.0
+    },
+    "questGenerator" : {
+      "enableParticipation" : false
+    },
+    "offeredQuests" : [ "gic_ec11_deadplanetletterQuest" ],
+    "turnInQuests" : [ "gic_ec11_deadplanetletterQuest" ],
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],	
+
+  "uniqueId" : "gic_ec11_brighton",
+	
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+		    "When the planet was firebombed into oblivion, the children were taken first.",
+            "I was one of those children, taken aboard an evacuation ship.",
+            "I don't remember why they did it. Why they firebombed the planet.",
+            "I remember clearly the faces of my parents as the doors closed, and the screams outside.",
+            "Now the station won't let us return to the surface, not even to mourn for the dead.",
+            "They say the planet's unbreathable now, but...",
+			"The others say they can still see lights from the planet, when it's dark.",
+			"Military ships still leave surface-bound towards the planet.",
+			"I hope to return to the surface in my final days."
+          ]
+        }
+      },
+	  
+      "speak" : {
+        "default" : {
+          "default" : [
+            "How's it going?",
+			"Seen anything lately?",
+			"What's the deal with you?"
+          ]
+        }
+      }
+	  
+    },
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}]
+      ]
+    }
+	
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "chest" : [ { "name" : "buccaneerchest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "buccaneerlegs", "parameters" : { "colorIndex" : [1] } } ]
+          }
+        ] ]
+    ]
+  },
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 3.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.9
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.9
+      }
+	  
+	  
+    }
+  }
+  
+}

@@ -1,0 +1,37 @@
+{
+  "id" : "gic_tylian_planetincentive_7_protectedcolonyquest",
+  "title" : "^#CC7970;Tylian: Protected Colony",
+  "text" : "This is the last kill-order I have for you. We're looking at a dangerous Youkai Hell-Raven who's overstepped her authority on the planet. Look, I have my orders. Maybe there'll be another way in the future, but not this time.",
+
+  "prerequisites" : [ "gic_tylian_planetincentive_6_wartornquest" ],
+  "canBeAbandoned" : false,
+  
+  "completionText" : "They're in more places than we thought... I don't have any more jobs for you. I'll keep buying any artifacts you got, but it's all I can do. Till next time, friend.",
+  
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 50 ], [ "gic_tylian_fleetingthoughts_4-codex", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_fusioncannonfuelrod",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Protected Colony^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

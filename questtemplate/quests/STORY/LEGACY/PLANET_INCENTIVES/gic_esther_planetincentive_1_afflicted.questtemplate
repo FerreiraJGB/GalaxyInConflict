@@ -1,0 +1,36 @@
+{
+  "id" : "gic_esther_planetincentive_1_afflictedquest",
+  "title" : "^orange;Letheia Lunacy: Affliction",
+  "text" : "",
+
+  "prerequisites" : [ "gic_esther_planetincentive_0_introquest", "human_mission1" ],
+  "canBeAbandoned" : true,
+  "completionText" : "",
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 50 ], [ "floranhunterpainting", 1 ], [ "floranspinneret", 1 ], [ "championspeardisplay", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_livingerchiussample",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on an ^orange;Afflicted Colony^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}
+

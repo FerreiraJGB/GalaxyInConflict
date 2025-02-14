@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_fire_energyshot_a_pointblank",
+  "image" : "icon.png",
+  "animationCycle" : 0.0,
+  "physics" : "laser",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "timeToLive" : 0.05,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [64, 64, 13],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_fire_energyshot_miss_c_pointblank",
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact_muzzle.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_gunfirenoise_standard",
+      "inheritDamageFactor" : 0
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "noDamage",
+  "damageKind" : "ews_smallarmsthermal"
+}

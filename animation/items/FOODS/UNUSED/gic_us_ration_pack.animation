@@ -1,0 +1,42 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "firing" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "properties" : {
+            }
+          },
+          "fire" : {
+            "frames" : 2,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "invisible",
+            "properties" : {
+              "immediateSound" : "/sfx/objects/florancrate_open.ogg"
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, 0], [0, 0] ]
+            }
+          },
+          "invisible" : {
+            "cycle" : 0.2,
+            "mode" : "transition",
+            "transition" : "off"
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "gun" : {
+        "properties" : {
+          "centered" : true,
+          "image" : "gic_us_ration_pack.png",
+          "offset" : [0.0, 0.0]
+          }
+        }
+      }
+    }

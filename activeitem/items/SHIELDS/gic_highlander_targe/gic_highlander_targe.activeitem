@@ -1,0 +1,106 @@
+{
+  "itemName" : "gic_highlander_targe",
+  "fixedLevel" : false,
+  "price" : 0,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "^#D6DFFF;Parry Shield^white;",
+  
+  "description" : "''If I were to pick up this cowering-plate, I would have to put down my second sword,'' a Scotsman thinks. ''And surely that is madness.''
+
+^yellow;Knightly Demolitionist: 0.5s PARRY WINDOW | 5HP BLOCK.^reset;
+^#D6DFFF;+50% fire damage resistance on wearer.^white;
+^#D6DFFF;+30% explosive damage resistance on wearer.^reset;
+^#orange;Moving at great speeds and colliding with an enemy will deal heightened damage based on the speed of the user.^reset;",
+  
+  
+  "shortdescription" : "Highlander Targe",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_highlander_targe.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_highlander_targe.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/armor/gic_bloodborne_body-armor-6.wav" ],
+      "perfectBlock" : [
+ 	  "/sfx/block/gic_sekiro_meleedeflect1.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect2.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect3.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect4.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect5.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect6.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect7.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect8.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ], //shield_block_ice_perfect
+	  
+	  "shieldBash" : [ "/sfx/melee/gic_teamfortress2_Demo_charge_hit_flesh1.wav" ],
+	  
+      "block" : [
+	  "/sfx/block/gic_sekiro_meleeblock1.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock2.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock3.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ],
+	  
+      "break" : [
+	  "/sfx/melee/gic_bloodborne_ShieldBreak00.wav"
+	  ] //shield_block_ice
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_shieldbash_nostun.lua", "/abilities/weapons/gic_highlander_targe.lua"],
+
+  "minActiveTime" : 0.1,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 5,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.5,
+  
+  
+  // CUSTOM SHIELD BASH PARAMS
+  "minVelocity" : 15, //10
+  "accelKnockback" : 10, //30
+  "accelMaxKnockback" : 35, //45
+  
+  "accelDamage" : 10, //20
+  "accelMaxDamage" : 150, //50
+  
+  "minDamageTimeout" : 1.0, //0.25
+  "maxDamageTimeout" : 2.0, //1.0
+  // CUSTOM SHIELD BASH PARAMS  
+  
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 0.5,
+
+  "knockback" : 1,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

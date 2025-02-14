@@ -1,0 +1,54 @@
+{
+  "projectileName" : "gic_waspfirestorm_micromissile",
+//  "renderLayer" : "Monster+10",
+  "bounces" : 0,
+  "image" : "gic_waspfirestorm_micromissile.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [218, 83, 2],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_bulletimpact/gic_bulletimpact.config"
+    }
+  ],
+  
+  "periodicActions" : [  
+    {
+      "time" : 0.02,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_spiritbullet_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "fade", //shrink
+        "fullbright" : false
+      }
+    }
+  ], 
+  
+  "power" : 15,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+
+  "maxSpeed" : 250,
+
+  "rotationRate" : 3, //10
+  "trackingLimit" : 300,
+
+  "statusEffects" : [ "gic_bulletshot"],
+
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  
+  "flippable" : true,
+  "speed" : 50.0,
+  "acceleration" : 5,
+  "timeToLive" : 5,
+  "physics" : "rocket"
+}

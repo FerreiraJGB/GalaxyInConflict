@@ -1,0 +1,164 @@
+{
+  "type" : "gic_khurtovyna_redarmy_spetsnaz",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeam" : 84,
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "behavior" : "gic_hostileguard_advanced", //Will switch to sheathedprimary when in close range.
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    }
+	
+  },
+
+
+
+
+
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [{ "name" : "gic_spetsnaz_beret_1head", "parameters" : { "colorIndex" : [0] } } ],
+            "chest" : [ { "name" : "gic_khurtovyna_peoplesarmy_paratrooperchest", "parameters" : { "colorIndex" : [0] } } ],
+            "legs" : [ { "name" : "gic_khurtovyna_peoplesarmy_paratrooperlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_at7packback", "parameters" : { "colorIndex" : [0] } }, { "name" : "gic_radiopackback", "parameters" : { "colorIndex" : [0] } }  ],
+            "primary" : [
+              "gic_ak74m_spetsnaz_npc"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_imperial_infantryspade_npc", "parameters" : { "backupWeapon" : true }  }
+			]
+          },
+		  
+          {
+            "head" : [{ "name" : "gic_spetsnaz_beret_2head", "parameters" : { "colorIndex" : [0] } },  { "name" : "gic_s6b710_nvgfoldedhead", "parameters" : { "colorIndex" : [0] } },  { "name" : "gic_s6b710_nvghead", "parameters" : { "colorIndex" : [0] } }, { "name" : "gic_s6b710_balaclavahead", "parameters" : { "colorIndex" : [0] } } ],
+            "chest" : [ { "name" : "gic_khurtovyna_peoplesarmy_mvdchest", "parameters" : { "colorIndex" : [0] } } ],
+            "legs" : [ { "name" : "gic_khurtovyna_peoplesarmy_mvdlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_at7packback", "parameters" : { "colorIndex" : [0] } }, { "name" : "", "parameters" : { "colorIndex" : [0] } }  ],
+            "primary" : [
+              "gic_ak74m_spetsnaz_npc"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_imperial_infantryspade_npc", "parameters" : { "backupWeapon" : true }  }
+			]
+          },
+		  
+          {
+            "head" : [  { "name" : "gic_s6b710_nvgfoldedhead", "parameters" : { "colorIndex" : [0] } },  { "name" : "gic_s6b710_nvghead", "parameters" : { "colorIndex" : [0] } }, { "name" : "gic_s6b710_balaclavahead", "parameters" : { "colorIndex" : [0] } } ],
+            "chest" : [ { "name" : "gic_khurtovyna_peoplesarmy_tacticalchest", "parameters" : { "colorIndex" : [0] } } ],
+            "legs" : [ { "name" : "gic_khurtovyna_peoplesarmy_tacticallegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_at7packback", "parameters" : { "colorIndex" : [0] } }, { "name" : "", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_ak74m_spetsnaz_npc"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_imperial_infantryspade_npc", "parameters" : { "backupWeapon" : true }  }
+			]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion", "gic_dialogue_metro2033_commonsoldier_voice1", "gic_rally_khurtovyna_redarmy_primer"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "gic_infantry_panicProtection" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      }
+	  
+	  
+    }
+  }
+  
+}

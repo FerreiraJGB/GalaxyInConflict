@@ -1,0 +1,139 @@
+{
+  "type" : "gic_khurtovyna_immortal",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 2,
+  "dropPools" : [ ],
+  
+  "identity" : {
+    "gender" : "male",
+    "hairGroup" : "hair",
+    "hairType" : "male15",
+    "hairColor" : "26"
+  },  
+  
+  "movementParameters" : {
+    "walkSpeed" : 9,
+    "runSpeed" : 9
+  },
+
+  "scriptConfig" : {
+  
+    "behaviorConfig" : {
+      "leapWindup" : 30
+    },
+
+    "pathing" : {
+      "forceWalkingBackwards" : false,
+      "canOpenDoors" : true
+    },
+	
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 20.05,
+        "broadsword" : 20.45,
+        "dagger" : 20.1,
+        "axe" : 20.4,
+        "hammer" : 20.6,
+        "shortsword" : 20.35,
+        "spear" : 20.55
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.02,
+        "broadsword" : 0.5,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 0.5,
+        "shortsword" : 0.5,
+        "spear" : 0.5
+      }
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol"],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/gic_generic_combat_blank.config:attack",
+      "reattack" : "/dialog/gic_generic_combat_blank.config:reattack",
+      "killedTarget" : "/dialog/gic_generic_combat_blank.config:killedTarget",
+      "lostTarget" : "/dialog/gic_generic_combat_blank.config:lostTarget",
+      "outOfSight" : "/dialog/gic_generic_combat_blank.config:outOfSight",
+      "cheerOn" : "/dialog/gic_generic_combat_blank.config:cheerOn",
+      "cantReach" : "/dialog/gic_generic_combat_blank.config:cantReach"
+    }
+	
+	
+  },
+  "items" : {
+    "override" : [
+      [1, [
+		  
+          {
+            "head" : [ { "name" : "gic_otherworld_swamphunterhead", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "gic_oldshinobichest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "gic_oldassassinlegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+			  "gic_whirligig_saw_npc"
+			]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : [ "gic_otherworld_swamphunter_dialogue_attack", "gic_khurtovyna_immortal_stun_primer", "gic_npc_death_blood_explosion" ],    
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 50000 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+	  
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.25
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : -100.0
+      }	
+    }
+  }
+}

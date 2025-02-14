@@ -1,0 +1,38 @@
+{
+  "itemName" : "gic_ds1fc_combatstimulant",
+  "rarity" : "Common",
+  "price" : 0,
+  "category" : "medicine",
+  "inventoryIcon" : "gic_ds1fc_combatstimulant.png",
+  "maxStack" : 10,
+  "description" : "Dry Sap's origins are murky and unclear, with the Protectorate having quarantined information on an otherwise common substance.
+
+^green;+10% EWS Hit Chance and Accuracy for 5 minutes.^white;",
+
+  "shortdescription" : "DS-1FC 'Dry Sap Field-Crafted' Combat Stimulant",
+  "foodValue" : 0,
+  "tooltipKind" : "gic_largebase_hybrid",
+  "builder" : "/items/buildscripts/buildfood.lua",
+
+  "effects" : [ [
+//      {
+//        "effect" : "gic_drysap_cardiacarrest",
+//        "duration" : 300
+//      },
+      {
+        "effect" : "gic_floran_drysap_boost",
+        "duration" : 300 //5m
+      }
+    ] ],
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1,
+  "emitters" : [ "bandageuse" ],
+  "blockingEffects" : [
+  ],
+  
+//A small dose of impure Floran Combat Stimulants, named 'Dry Sap' by ancestral Greenfingers. 
+  
+  "tooltipFields" : {
+	"smallDescriptionLabel" : "^red;Only [GiC] Florans can use this combat stimulant without heart attacks!^reset; Provides unique medical buffs."
+  }
+}

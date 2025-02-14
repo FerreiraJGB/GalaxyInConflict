@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_mle50_minebundle",
+  "price" : 50,
+  "rarity" : "Rare",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_mle50_minebundle.png",
+  "image" : "gic_mle50_minebundle.png",
+  "shortdescription" : "Modèle 50 Mine Bundle",
+  "description" : "''Try me.''
+  
+4 MLE-50 Mines strapped to each other. Splits apart on throwing, allowing for the user to quickly set up a mine field.",
+  "tooltipKind" : "gic_largebase",
+  "ammoUsage" : 1,
+  "maxStack" : 1,
+  "edgeTrigger" : true,
+  "windupTime" : 0.0,
+  "cooldown" : 0.5,
+
+  "projectileType" : "gic_mle50_minebundle_throw",
+  "projectileConfig" : {
+    "speed" : 30,
+    "power" : 0,
+    "knockback" : 0,
+
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  }
+
+}

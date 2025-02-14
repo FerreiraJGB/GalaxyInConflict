@@ -1,0 +1,28 @@
+{
+  "projectileName" : "gic_wolfsoldier_arrow_electric_parried_stage1",
+  "physics" : "gic_arrowlaser",
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_wolfsoldier_arrow_electric_parried_stage2",
+      "directional" : "true",
+      "inheritDamageFactor" : 1
+    }
+  ],
+  "image" : "gic_wolfsoldier_arrow_electric.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "electric",
+  "statusEffects" : [ ],
+  "emitters" : [ "electricplasma" ],
+  "lightColor" : [ 143, 174, 211 ],
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 0.05,
+  "onlyHitTerrain" : true,
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 20,
+  "damageTeam" : { "type" : "indiscriminate" },
+  "knockbackDirectional" : true,
+  "speed" : 100
+}

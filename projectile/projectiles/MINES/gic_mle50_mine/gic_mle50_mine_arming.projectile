@@ -1,0 +1,39 @@
+{
+  "projectileName" : "gic_mle50_mine_arming",
+  "physics" : "gic_deployablemine",
+  "actionOnCollide" : [
+  ],
+  "bounces" : -1,
+  "image" : "gic_mle50_mine_arming.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "speed" : 0,
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 0,
+  "lightColor" : [100, 0, 0],
+  "knockback" : 15,
+  "knockbackDirectional" : true,
+  "timeToLive" : 0.2,
+  "pointLight" : false,
+  "onlyHitTerrain" : true,
+  "damageKind" : "noDamage",
+  
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/objects/cropshipper_box_lock1.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_mle50_mine",
+	  "inheritSpeedFactor" : 1.0
+    } 
+	
+  ]
+  
+  
+  
+}

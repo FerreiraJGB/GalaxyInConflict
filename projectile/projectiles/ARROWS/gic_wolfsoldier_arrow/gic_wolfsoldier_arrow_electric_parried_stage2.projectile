@@ -1,0 +1,34 @@
+{
+  "projectileName" : "gic_wolfsoldier_arrow_electric_parried_stage2",
+  "physics" : "gic_arrowlaser",
+  "actionOnTimeout" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/electricexplosionknockbackstatus.config"
+    }
+  ],
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "gic_wolfsoldier_arrow_electric.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "electric",
+  "statusEffects" : ["electrified", {"effect":"gic_advancedmunition_overcharged","duration":5.0}, {"effect":"gic_boss_melee_primer","duration":10} ],
+  "emitters" : [ "electricplasma" ],
+  "lightColor" : [ 143, 174, 211 ],
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 3,
+  "onlyHitTerrain" : false,
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "damageTeam" : { "type" : "indiscriminate" },
+  "speed" : 100
+}

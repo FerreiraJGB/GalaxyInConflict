@@ -1,0 +1,3134 @@
+{
+  "type" : "gic_greenfingeracclaimeddaimyo_bossrush",
+  "shortdescription" : "[Last Man Standing]",
+  "description" : "Last of their kind.",
+
+  "categories" : [ "gic_greenfingertruedaimyo" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_greenfingeracclaimeddaimyo.animation",
+
+  "dropPools" : [], //{ "default" : "banditTreasure", "bow" : "banditTreasure" }
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster_phases_music_laststand_adaptive.lua"
+    ],
+	
+	"music" : ["/music/ForHonor/gic_ForHonor_Breach_SamuraiAttack-01.ogg"],
+  
+	"range" : 210,			//measured in blocks, default val is 50 blocks
+	"fadeOutTime" : 2.0,	//measured in seconds, default val is 2.0 seconds
+	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+	
+	
+	
+	//ADAPTIVE HEALTH STUFF
+	"adaptiveTrackingRange" : 300, //should be range in blocks
+	"adaptiveHealthBonus" : 15000, //flat max health stat
+	
+	//EXTRA DROP POOLS, DROPS ONE LOOT POOL PER EXTRA PLAYER
+	"extraDropPools" : ["gic_greenfingerdaimyoTreasure"],
+	
+	
+	//LAST STAND MUSIC
+	"finalStandThreshold" : 0.33, 	//when health % reaches this value, music played will be permanently swapped to this. may code in last stand regression later?
+	"finalStandMusic" : ["/music/ForHonor/gic_ForHonor_Breach_SamuraiAttack-02.ogg"],
+	
+	
+	
+    "damageBar" : "Special",
+
+    "behavior" : "gic_monster", //MUST BE "gic_monster" to function with parry system
+
+    "seeThroughLiquid" : false,
+	
+	
+	"phaseTriggerCount" : 2, //how many indices should the monster consider for phases
+	"healthThresholdTriggers" : [0.66, 0.33], //determines health threshhold for phase trigger [0.66,0.33]
+	"regressPhases" : false, //if enabled, monster will regress to its prior phase if the monster's health increases above its current threshold.
+	
+	"phaseTriggerIds" : ["behaviorConfigInjured1", "behaviorConfigInjured2"], //configs to correspond to once the corresponding healthThresholdTrigger has been reached. ["behaviorConfigInjured1","behaviorConfigInjured2"]
+	//configs correspond to healthThresholdTriggers via index, ie index 1 of healthThresholdTrigger corresponds to index 1 of phaseTrigger
+	
+	
+	
+	"initialScriptDelta" : 1,
+	
+	//BLOCKING/PARRYING RELEVANT STUFF:
+	"behaviorUpdateDelta" : 1, //SET THIS TO ONE SO MONSTER CAN "REACT" AS FAST AS POSSIBLE!!! also recommended to reduce value "primaryScriptDelta"
+	"blockMax" : 5, //how many "blocks" the mob can hold at a time (keep as an integer!)
+	"blockRechargeTime" : 2.0, //in seconds; when this amount of time passes, blocks can recharge back to full capacity. every time entity blocks, block timer resets to this
+	"blockStatusEffect" : "gic_parryshield", //status effect that is applied to mob when blocking are possible
+	"blockEffectBufferTime" : 0.2, //in seconds; refers to the amount of time before the blocking status effect is gutted after running out of blocks, try to match with blockedActions action duration
+	
+	"blockingGuardBreakEnabled" : true, //if enabled, once monster blocks last available block, trigger "guardBroken" action(s)
+	"blockingGuardBreakDuration" : 5.0, //unable to block or react to damage for this duration (unable to recharge blocks for this duration or to trigger damageTakenActions). actual duration of guard break animation depends on action in "guardBroken"
+	
+	"blockingAnimationWhitelist" : true, //enables a whitelist of animationStates where blocking is functional
+	"blockableAnimationStateType" : "body", //states what animationStateType to listen too
+	"blockableAnimationStates" : [	//valid animation states where blocking/parrying is triggerable
+//		"idle",
+		"parry",
+		"walk",
+		"overheadWindup1",
+		"overheadWindup2",
+		"swipe1Windup",
+		"swipe2Windup",
+		"fireOverheadWindup1",
+		"fireOverheadWindup2",
+		"shortHiltbashWindup",
+		"hiltbashWindup",
+		"electric_overheadWindup1",
+		"electric_overheadWindup1_shing",
+		"electric_overheadWindup2",
+		"electric_swipe1Windup",
+		"electric_swipe2Windup"
+	],
+	
+	// second caveat: if attacks are interrupted (in windup, activation, or winddown!) //
+	// action will not go on cooldown, causing monster to spam some attacks if repeatedly interrupted via blocking //
+	// keep this in mind when giving monsters the ability to parry or block //
+	
+	
+	//dialogue stuff (unused)
+	//"chatPortrait" : "/interface/chatbubbles/gic_static.png:0",
+    "dialog" : {
+      "intro" : {
+        "default" : {
+          "default" : [
+            "I will NOT be defeated! I cannot!",
+			"l + ratio"
+          ]
+        }
+      },
+      "death" : {
+        "default" : {
+          "default" : [
+            "- todo -"
+          ]
+        }
+      }
+    },
+	
+	
+	
+	//Standard melees, use firecrackers (this is a lie: no firecrackers here for acclaimed)
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 100,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 80,
+      "targetOutOfSightTime" : 15,
+
+      "foundTargetActions" : [
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : 9999,
+          "parameters" : {
+            "windupTime" : 0.1,
+            "windupState" : "aggro",
+            "winddownTime" : 0.1,
+            "winddownState" : "idle",
+
+            "invulnerableTime" : 1.9,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+				//dialogue
+				//{
+					//"name" : "sequentialdialognoskip",
+					//"cooldown" : 999,
+					//"parameters" : {
+						//"dialogWaitTime": 0.5,
+						//"dialogEndWait": 0.5,
+						//"dialogKey": "dialog.intro",
+						//"dialogTarget": false
+					//}
+				//},
+				{
+					"name" : "action-fire",
+					"cooldown" : 999,
+					"parameters" : {
+						"requireLineOfSight" : true,
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						"windupStopForce" : 10,
+						"windupState" : "",
+						"windupTime" : 0.1,
+						"projectileCount" : 1,
+						"fireDelay" : 0.0,
+						"projectileInterval" : 0,
+						"inaccuracy" : 0.0,
+						"projectileType" : "gic_null",
+						"projectileParameters" : {
+							"speed" : 0,
+							"timeToLive" : 0.8,
+							"actionOnReap": [
+								{
+									"action" : "projectile",
+									"type" : "gic_katanasword_sheathe_discard"
+								}
+							]
+						},
+						"fireOffsets" : [[-2.0, -2.0]],
+						"aimAtTarget" : false,
+						"onGround" : false,
+						"fireState" : "intro",
+						"fireSound" : "",
+						"aimDirection" : [0, -1],
+						"winddownState" : "",
+						"winddownTime" : 1.9
+					}
+				}
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+      ],
+
+      "damageTakenActions" : [
+		//shield parry
+        //{
+          //"name" : "action-invulnerable",
+          //"cooldown" : 5.0,
+          //"parameters" : {
+            //"windupTime" : 0.0,
+            //"windupState" : "idle",
+            //"winddownTime" : 0.2,
+            //"winddownState" : "idle",
+
+            //"invulnerableTime" : 0.45,
+
+            //"invulnerableState": "parry",
+            //"invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			//],
+            //"invulnerableEffect": "gic_parryshield_counter_light"//"gic_parryshield_counter"
+			
+          //}
+        //}
+      ],
+	  
+	  "guardBrokenActions" : [
+		//shield parry
+		/*
+        {
+		  "name" : "action-invulnerable",
+          "cooldown" : 0.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "idle",
+            "winddownTime" : 1.0,
+            "winddownState" : "idle",
+
+            "invulnerableTime" : 1.0,
+
+            "invulnerableState": "parry",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": ""//"gic_parryshield_counter_light"//"gic_parryshield_counter"
+			
+          }
+        }
+		*/
+      ],
+	  
+	  "blockedActions" : [
+		//shield parry
+        { //first parry
+		  "name" : "action-invulnerable",
+          "cooldown" : 4.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.3,
+            "winddownState" : "parry",
+
+            "invulnerableTime" : 0.2,
+
+            "invulnerableState": "parry",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "invulnerable"//"gic_parryshield_counter_light"//"gic_parryshield_counter"
+			
+          }
+        },
+		{ //second parry
+		  "name" : "action-invulnerable",
+          "cooldown" : 4.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.3,
+            "winddownState" : "parry",
+
+            "invulnerableTime" : 0.2,
+
+            "invulnerableState": "parry",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "invulnerable"
+			
+          }
+        },
+		{ //third parry
+		  "name" : "action-invulnerable",
+          "cooldown" : 4.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.3,
+            "winddownState" : "parry",
+
+            "invulnerableTime" : 0.2,
+
+            "invulnerableState": "parry",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "invulnerable"
+			
+          }
+        },
+		{ //fourth parry
+		  "name" : "action-invulnerable",
+          "cooldown" : 4.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.3,
+            "winddownState" : "parry",
+
+            "invulnerableTime" : 0.2,
+
+            "invulnerableState": "parry",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "invulnerable"
+			
+          }
+        },
+		{ //fifth parry (counter-attack)
+		  "name" : "action-invulnerable",
+          "cooldown" : 0.0,
+          "parameters" : {
+			"maximumRange" : 9,
+			"minimumRange" : 2,
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.0,
+            "winddownState" : "idle",
+
+            "invulnerableTime" : 1.4,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+				//hilt bash
+				{
+					"name" : "action-gic_bufferedcharge",
+					"cooldown" : 1.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						
+						"windupTime" : 0.4,
+						"windupBufferTime" : 0.0,
+						
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 400, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "hiltbash",
+						"windupState" : "shortHiltbashWindup",
+						"winddownTime" : 0.0,
+						"winddownState" : "hiltbashWinddown"
+					}
+				},
+				{
+					"name" : "action-charge",
+					"cooldown" : 1.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "overheadSwing",
+						"windupState" : "overheadWindup2",
+						"winddownTime" : 0.8,
+						"winddownState" : "overheadWinddown"
+					}
+				}
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+      ],
+	  
+	  
+
+      "hostileActions" : [		
+		//ashina cross
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 7,
+		  "parameters" : {
+			"maximumRange" : 15,
+			"minimumRange" : 10,
+			
+			"windupState": "crossWindup",
+			"winddownState": "",
+			"windupTime": 0.8,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//backstep
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.1,
+						"chargeTime" : 0.1, //0.165
+						"chargeSpeed" : -50, //2400
+						"chargeControlForce" : 400, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "",
+						"windupState" : "crossPreSlash",
+						"winddownTime" : 0.0,
+						"winddownState" : ""
+					}
+				},
+				//ashina cross attack
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.1,
+						"chargeTime" : 0.2, //0.165
+						"chargeSpeed" : 50, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "cross1",
+						"windupState" : "crossPreSlash",
+						"winddownTime" : 0.6,
+						"winddownState" : ""
+					}
+				}
+			]
+		  }
+		},
+		
+		//hilt bash into a short-ranged shot
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 10,
+		  "parameters" : {
+			"maximumRange" : 4,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//hilt bash
+				{
+					"name" : "action-gic_bufferedcharge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						
+						"windupTime" : 0.4,
+						"windupBufferTime" : 0.3,
+						
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 800, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "hiltbash",
+						"windupState" : "hiltbashWindup",
+						"winddownTime" : 0.4,
+						"winddownState" : "hiltbashWinddown"
+					}
+				},
+				//short fire
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "gunShortWindup",
+					"windupTime" : 0.4,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0,
+					"inaccuracy" : 0.01,
+					"projectileType" : "gic_handcannon_a_floran_boss",
+					"projectileParameters" : {
+					  "speed" : 0,
+					  "timeToLive" : 0,
+					  "power" : 200
+					},
+					"fireOffsets" : [[2.7, -1.325]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "gunShortFire",
+					"fireSound" : "fire_gun",
+					"aimDirection" : [1, 0],
+					"winddownState" : "gunShortFire",
+					"winddownTime" : 0.4
+				  }
+				}
+			]
+		  }
+		},
+		
+		//overhead strike 1
+		{
+			"name" : "action-charge",
+			"cooldown" : 3.0,
+			"parameters" : {
+				"maximumRange" : 9,
+				"minimumRange" : 2,
+				"windupTime" : 0.4,
+				"chargeTime" : 0.15, //0.165
+				"chargeSpeed" : 1500, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "overheadSwing",
+				"windupState" : "overheadWindup1",
+				"winddownTime" : 0.4,
+				"winddownState" : "overheadWinddown"
+			}
+		},
+		//overhead strike 2
+		{
+			"name" : "action-charge",
+			"cooldown" : 3.0,
+			"parameters" : {
+				"maximumRange" : 9,
+				"minimumRange" : 2,
+				"windupTime" : 0.4,
+				"chargeTime" : 0.15, //0.165
+				"chargeSpeed" : 1500, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "overheadSwing",
+				"windupState" : "overheadWindup2",
+				"winddownTime" : 0.4,
+				"winddownState" : "overheadWinddown"
+			}
+		},
+		
+		//swipe 1
+		{
+			"name" : "action-charge",
+			"cooldown" : 3.0,
+			"parameters" : {
+				"maximumRange" : 8,
+				"minimumRange" : 0,
+				"windupTime" : 0.4,
+				"chargeTime" : 0.15, //0.165
+				"chargeSpeed" : 1300, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "swipe1",
+				"windupState" : "swipe1Windup",
+				"winddownTime" : 0.4,
+				"winddownState" : "swipe1Winddown"
+			}
+		},
+		//swipe 2
+		{
+			"name" : "action-charge",
+			"cooldown" : 3.0,
+			"parameters" : {
+				"maximumRange" : 8,
+				"minimumRange" : 0,
+				"windupTime" : 0.4,
+				"chargeTime" : 0.15, //0.165
+				"chargeSpeed" : 1300, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "swipe2",
+				"windupState" : "swipe2Windup",
+				"winddownTime" : 0.4,
+				"winddownState" : "swipe2Winddown"
+			}
+		},
+		
+		
+		//thrust-charge
+		{
+			"name" : "action-charge",
+			"cooldown" : 9.0,
+			"parameters" : {
+				"maximumRange" : 15,
+				"minimumRange" : 3,
+				"windupTime" : 0.8,
+				"chargeTime" : 0.2, //0.165
+				"chargeSpeed" : 2000, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "thrust",
+				"windupState" : "thrustWindup",
+				"winddownTime" : 0.4,
+				"winddownState" : "thrustWinddown"
+			}
+		},
+		
+		//long range fire
+        {
+          "name" : "action-fire",
+          "cooldown" : 3,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 999,
+            "minimumRange" : 15,
+            "windupStopForce" : 10,
+            "windupState" : "gunWindup",
+            "windupTime" : 0.6,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0,
+            "inaccuracy" : 0.01,
+            "projectileType" : "gic_handcannon_a_floran_boss",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 200
+            },
+            "fireOffsets" : [[3.2, -0.25]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "gunFire",
+            "fireSound" : "fire_gun",
+            "aimDirection" : [1, 0],
+            "winddownState" : "gunFire",
+            "winddownTime" : 0.4
+          }
+        }
+		
+      ],
+
+      "periodicActions" : [],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : false,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 12,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 12,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "wanderActions" : [
+      ]
+    },
+	
+	
+	//Standard melees with slight combo variations, use flame projectile attacks including the "One-Mind" attack (fire var.)
+	"behaviorConfigInjured1" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 100,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 80,
+      "targetOutOfSightTime" : 15,
+
+      "foundTargetActions" : [
+		{
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro_phase2",
+            "animationTime" : 5
+          }
+        }
+      ],
+
+      "damageTakenActions" : [
+      ],
+	  
+	  "blockedActions" : [
+		//shield parry
+        { //first parry
+		  "name" : "action-invulnerable",
+          "cooldown" : 3.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.3,
+            "winddownState" : "parry",
+
+            "invulnerableTime" : 0.2,
+
+            "invulnerableState": "parry",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "invulnerable"//"gic_parryshield_counter_light"//"gic_parryshield_counter"
+			
+          }
+        },
+		{ //second parry
+		  "name" : "action-invulnerable",
+          "cooldown" : 3.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.3,
+            "winddownState" : "parry",
+
+            "invulnerableTime" : 0.2,
+
+            "invulnerableState": "parry",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "invulnerable"
+			
+          }
+        },
+		{ //third parry
+		  "name" : "action-invulnerable",
+          "cooldown" : 3.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.3,
+            "winddownState" : "parry",
+
+            "invulnerableTime" : 0.2,
+
+            "invulnerableState": "parry",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "invulnerable"
+			
+          }
+        },
+		{ //fourth parry (counter-attack)
+		  "name" : "action-invulnerable",
+          "cooldown" : 0.0,
+          "parameters" : {
+			"maximumRange" : 9,
+			"minimumRange" : 2,
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.0,
+            "winddownState" : "idle",
+
+            "invulnerableTime" : 1.4,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+				//hilt bash
+				{
+					"name" : "action-gic_bufferedcharge",
+					"cooldown" : 1.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						
+						"windupTime" : 0.4,
+						"windupBufferTime" : 0.0,
+						
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 400, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "hiltbash",
+						"windupState" : "shortHiltbashWindup",
+						"winddownTime" : 0.0,
+						"winddownState" : "hiltbashWinddown"
+					}
+				},
+				{
+					"name" : "action-charge",
+					"cooldown" : 1.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "overheadSwing",
+						"windupState" : "overheadWindup2",
+						"winddownTime" : 0.8,
+						"winddownState" : "overheadWinddown"
+					}
+				}
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+      ],
+	  
+
+      "hostileActions" : [
+		
+		//Close Range - One-mind - Complete arena clear.
+       {
+          "name" : "action-fire",
+          "cooldown" : 20,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 80,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "fireAoeWindup",
+            "windupTime" : 0.8, //0.8
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_firetravelingswoosh_360pattern", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.05,
+			  "power" : 65,
+			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[0, 1]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "fireUnderhead",
+            "fireSound" : "",
+            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 1.2 //0.8
+          }
+        },
+		
+		//double-slice into a double shoot (long-short)
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 15,
+		  "parameters" : {
+			"maximumRange" : 15,
+			"minimumRange" : 0,
+			
+			"windupState": "",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//swipe 1
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "swipe1",
+						"windupState" : "swipe1Windup",
+						"winddownTime" : 0.2,
+						"winddownState" : "swipe1Winddown"
+					}
+				},
+				//overhead strike 1
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1500, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "overheadSwing",
+						"windupState" : "overheadWindup1",
+						"winddownTime" : 0.2,
+						"winddownState" : "overheadWinddown"
+					}
+				},
+				//long fire
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "gunWindup",
+					"windupTime" : 0.6,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0,
+					"inaccuracy" : 0.01,
+					"projectileType" : "gic_handcannon_a_floran_boss",
+					"projectileParameters" : {
+					  "speed" : 0,
+					  "timeToLive" : 0,
+					  "power" : 200
+					},
+					"fireOffsets" : [[3.2, -0.25]],
+					"aimAtTarget" : false,
+					"onGround" : false,
+					"fireState" : "gunFire",
+					"fireSound" : "fire_gun",
+					"aimDirection" : [1, 0],
+					"winddownState" : "gunFire",
+					"winddownTime" : 0.4
+				  }
+				},
+				//short fire
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "gunShortWindup",
+					"windupTime" : 0.4,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0,
+					"inaccuracy" : 0.01,
+					"projectileType" : "gic_handcannon_a_floran_boss",
+					"projectileParameters" : {
+					  "speed" : 0,
+					  "timeToLive" : 0,
+					  "power" : 200
+					},
+					"fireOffsets" : [[2.7, -1.325]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "gunShortFire",
+					"fireSound" : "fire_gun",
+					"aimDirection" : [1, 0],
+					"winddownState" : "gunShortFire",
+					"winddownTime" : 0.4
+				  }
+				}
+			]
+		  }
+		},
+		
+		//force push/shove into a thrust
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 11,
+		  "parameters" : {
+			"maximumRange" : 6,
+			"minimumRange" : 0,
+			
+			"windupState": "",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//shove
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						"windupTime" : 0.01,
+						"chargeTime" : 0.1, //0.165
+						"chargeSpeed" : 50, //2400
+						"chargeControlForce" : 400, //400
+						"wallCrashSound" : "",
+						"wallCrashEmitter" : "",
+						"chargeState" : "forcePush",
+						"windupState" : "",
+						"winddownTime" : 0.6,
+						"winddownState" : ""
+					}
+				},
+				//thrust with lower windup
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						"windupTime" : 0.6,
+						"chargeTime" : 0.2, //0.165
+						"chargeSpeed" : 2000, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "thrust",
+						"windupState" : "thrustWindup",
+						"winddownTime" : 0.4,
+						"winddownState" : "thrustWinddown"
+					}
+				}
+			]
+		  }
+		},
+		
+		//ashina cross into force push into double fire (short-long)
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 7,
+		  "parameters" : {
+			"maximumRange" : 15,
+			"minimumRange" : 10,
+			
+			"windupState": "crossWindup",
+			"winddownState": "gunShortWinddown",
+			"windupTime": 0.8,
+			"winddownTime": 0.4,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//backstep
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.1,
+						"chargeTime" : 0.1, //0.165
+						"chargeSpeed" : -50, //2400
+						"chargeControlForce" : 400, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "",
+						"windupState" : "crossPreSlash",
+						"winddownTime" : 0.0,
+						"winddownState" : ""
+					}
+				},
+				//ashina cross attack
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.1,
+						"chargeTime" : 0.2, //0.165
+						"chargeSpeed" : 50, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "cross1",
+						"windupState" : "crossPreSlash",
+						"winddownTime" : 0.8,
+						"winddownState" : ""
+					}
+				},
+				
+				//shove
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 20,
+						"minimumRange" : 0,
+						"windupTime" : 0.01,
+						"chargeTime" : 0.125, //0.165
+						"chargeSpeed" : 300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "",
+						"wallCrashEmitter" : "",
+						"chargeState" : "forcePushShort",
+						"windupState" : "",
+						"winddownTime" : 0.075,
+						"winddownState" : ""
+					}
+				},
+				//short fire
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "gunShortWindup",
+					"windupTime" : 0.6,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0,
+					"inaccuracy" : 0.01,
+					"projectileType" : "gic_handcannon_a_floran_boss",
+					"projectileParameters" : {
+					  "speed" : 0,
+					  "timeToLive" : 0,
+					  "power" : 200
+					},
+					"fireOffsets" : [[2.7, -1.325]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "gunShortFire",
+					"fireSound" : "fire_gun",
+					"aimDirection" : [1, 0],
+					"winddownState" : "gunShortFire",
+					"winddownTime" : 0.4
+				  }
+				},
+				//long fire (burst)
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "gunWindup",
+					"windupTime" : 0.6,
+					"projectileCount" : 3,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.1,
+					"inaccuracy" : 0.01,
+					"projectileType" : "gic_handcannon_a_floran_boss",
+					"projectileParameters" : {
+					  "speed" : 0,
+					  "timeToLive" : 0,
+					  "power" : 200
+					},
+					"fireOffsets" : [[3.2, -0.25]],
+					"aimAtTarget" : false,
+					"onGround" : false,
+					"fireState" : "gunFire",
+					"fireSound" : "fire_gun",
+					"aimDirection" : [1, 0],
+					"winddownState" : "gunFire",
+					"winddownTime" : 0.6
+				  }
+				}
+			]
+		  }
+		},
+		
+		//hiltbash into overhead strike 2
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 8,
+		  "parameters" : {
+			"maximumRange" : 7,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//hilt bash
+				{
+					"name" : "action-gic_bufferedcharge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						
+						"windupTime" : 0.4,
+						"windupBufferTime" : 0.3,
+						
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 400, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "hiltbash",
+						"windupState" : "hiltbashWindup",
+						"winddownTime" : 0.0,
+						"winddownState" : "hiltbashWinddown"
+					}
+				},
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "overheadSwing",
+						"windupState" : "overheadWindup2",
+						"winddownTime" : 0.4,
+						"winddownState" : "overheadWinddown"
+					}
+				}
+			]
+		  }
+		},
+		
+		//overhead strike 1
+		{
+			"name" : "action-charge",
+			"cooldown" : 3.0,
+			"parameters" : {
+				"maximumRange" : 9,
+				"minimumRange" : 2,
+				"windupTime" : 0.4,
+				"chargeTime" : 0.15, //0.165
+				"chargeSpeed" : 1500, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "overheadSwing",
+				"windupState" : "overheadWindup1",
+				"winddownTime" : 0.4,
+				"winddownState" : "overheadWinddown"
+			}
+		},
+				
+		//swipe 1 into a hiltbash
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 8,
+		  "parameters" : {
+			"maximumRange" : 7,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "swipe1",
+						"windupState" : "swipe1Windup",
+						"winddownTime" : 0.0,
+						"winddownState" : "swipe1Winddown"
+					}
+				},
+				//hilt bash
+				{
+					"name" : "action-gic_bufferedcharge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						
+						"windupTime" : 0.4,
+						"windupBufferTime" : 0.4,
+						
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 400, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "hiltbash",
+						"windupState" : "hiltbashWindup",
+						"winddownTime" : 0.4,
+						"winddownState" : "hiltbashWinddown"
+					}
+				}
+			]
+		  }
+		},
+				
+		//swipe 2
+		{
+			"name" : "action-charge",
+			"cooldown" : 2.0,
+			"parameters" : {
+				"maximumRange" : 8,
+				"minimumRange" : 0,
+				"windupTime" : 0.4,
+				"chargeTime" : 0.15, //0.165
+				"chargeSpeed" : 1300, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "swipe2",
+				"windupState" : "swipe2Windup",
+				"winddownTime" : 0.4,
+				"winddownState" : "swipe2Winddown"
+			}
+		},
+		
+				
+		//thrust-charge
+		{
+			"name" : "action-charge",
+			"cooldown" : 15.0,
+			"parameters" : {
+				"maximumRange" : 15,
+				"minimumRange" : 13,
+				"windupTime" : 0.8,
+				"chargeTime" : 0.2, //0.165
+				"chargeSpeed" : 2000, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "thrust",
+				"windupState" : "thrustWindup",
+				"winddownTime" : 0.4,
+				"winddownState" : "thrustWinddown"
+			}
+		},
+		
+		//fire swooshes
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 10,
+		  "parameters" : {
+			"maximumRange" : 999,
+			"minimumRange" : 20,
+			
+			"windupState": "idle",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//fire underhead swing
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 3,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 20,
+					"windupStopForce" : 10,
+					"windupState" : "fireUnderheadWindup",
+					"windupTime" : 0.4,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_firetravelingswoosh", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 150,
+					  "timeToLive" : 20,
+					  "power" : 80,
+					  "knockback" : 15,			  
+					  "damageKind" : "fire",
+					  "damageType" : "IgnoresDef",
+					  "damageRepeatTimeout" : 0.15,
+					  "statusEffects" : [ ]	
+					  
+					},
+					"fireOffsets" : [[0.75, -1.0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "fireUnderhead",
+					"fireSound" : "",
+					"winddownState" : "",
+					"winddownTime" : 0.4
+				  }
+				},
+				
+				//fire overhead sweep 1
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 3,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 20,
+					"windupStopForce" : 10,
+					"windupState" : "fireOverheadWindup1",
+					"windupTime" : 0.2,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_firetravelingswoosh", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 150,
+					  "timeToLive" : 20,
+					  "power" : 80,
+					  "knockback" : 15,	  
+					  "damageKind" : "fire",
+					  "damageType" : "IgnoresDef",
+					  "damageRepeatTimeout" : 0.15,
+					  "statusEffects" : [ ]	
+					  
+					},
+					"fireOffsets" : [[0.75, -1.0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "fireOverheadSwing",
+					"fireSound" : "",
+					"winddownState" : "",
+					"winddownTime" : 0.6
+				  }
+				},
+				
+				//fire underhead super swing
+				//heavy punish is player is still in range
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 3,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 25,
+					"windupStopForce" : 10,
+					"windupState" : "fireSuperUnderheadWindup",
+					"windupTime" : 0.6,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_big_firetravelingswoosh", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 150,
+					  "timeToLive" : 20,
+					  "power" : 200,
+					  "knockback" : 15,			  
+					  "damageKind" : "fire",
+					  "damageType" : "IgnoresDef",
+					  "damageRepeatTimeout" : 0.15,
+					  "statusEffects" : [ "gic_stun_05", "gic_stun_1", "burning" ]	
+					  
+					},
+					"fireOffsets" : [[0.75, -1.0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "fireUnderhead",
+					"fireSound" : "",
+					"winddownState" : "",
+					"winddownTime" : 0.4
+				  }
+				}
+			]
+		  }
+		}
+      
+	  ],
+
+      "periodicActions" : [],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : false,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 12,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 12,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "wanderActions" : [
+      ]
+    },
+	
+	
+	//Electric melees with more combo variations, decreased winddowns, use "One-Mind" attack (electric var.) and fire attacks
+	"behaviorConfigInjured2" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 100,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 80,
+      "targetOutOfSightTime" : 15,
+
+      "foundTargetActions" : [
+		{
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro_phase3",
+            "animationTime" : 5
+          }
+        }
+      ],
+
+      "damageTakenActions" : [
+      ],
+	  
+	  "blockedActions" : [
+		//shield parry
+        { //first parry
+		  "name" : "action-invulnerable",
+          "cooldown" : 2.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.3,
+            "winddownState" : "parry",
+
+            "invulnerableTime" : 0.2,
+
+            "invulnerableState": "parry",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "invulnerable"//"gic_parryshield_counter_light"//"gic_parryshield_counter"
+			
+          }
+        },
+		{ //second parry
+		  "name" : "action-invulnerable",
+          "cooldown" : 2.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.3,
+            "winddownState" : "parry",
+
+            "invulnerableTime" : 0.2,
+
+            "invulnerableState": "parry",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "invulnerable"
+			
+          }
+        },
+		{ //third parry (counter-attack)
+		  "name" : "action-invulnerable",
+          "cooldown" : 0.0,
+          "parameters" : {
+			"maximumRange" : 9,
+			"minimumRange" : 2,
+            "windupTime" : 0.0,
+            "windupState" : "parry",
+            "winddownTime" : 0.0,
+            "winddownState" : "idle",
+
+            "invulnerableTime" : 1.4,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+				//hilt bash
+				{
+					"name" : "action-gic_bufferedcharge",
+					"cooldown" : 1.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						
+						"windupTime" : 0.4,
+						"windupBufferTime" : 0.0,
+						
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 400, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "hiltbash",
+						"windupState" : "shortHiltbashWindup",
+						"winddownTime" : 0.0,
+						"winddownState" : "hiltbashWinddown"
+					}
+				},
+				{
+					"name" : "action-charge",
+					"cooldown" : 1.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "overheadSwing",
+						"windupState" : "overheadWindup2",
+						"winddownTime" : 0.8,
+						"winddownState" : "overheadWinddown"
+					}
+				}
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+      ],
+	  
+
+      "hostileActions" : [
+		//Close Range - One-mind - Complete arena clear, electric variant.
+       {
+          "name" : "action-fire",
+          "cooldown" : 20,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 80,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "aoeWindup",
+            "windupTime" : 0.8, //0.8
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_electrictravelingswoosh_360pattern", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.05,
+			  "power" : 65,
+			  "statusEffects" : [ "gic_tazed_1"],//, "electrified" ],
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[0, 1]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "aoe",
+            "fireSound" : "",
+            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 1.2 //0.8
+          }
+        },	
+		
+		//extended electric/fire combo
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 25,
+		  "parameters" : {
+			"maximumRange" : 9,
+			"minimumRange" : 0,
+			
+			"windupState": "electric_swipe1Windup",
+			"winddownState": "gunShortWinddown",
+			"windupTime": 0.2,
+			"winddownTime": 0.4,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//swipe 1
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.2,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "electric_swipe1",
+						"windupState" : "electric_swipe1Windup",
+						"winddownTime" : 0.0,
+						"winddownState" : "electric_swipe1Winddown"
+					}
+				},
+				//hilt bash
+				{
+					"name" : "action-gic_bufferedcharge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						
+						"windupTime" : 0.4,
+						"windupBufferTime" : 0.3,
+						
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 400, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "hiltbash",
+						"windupState" : "hiltbashWindup",
+						"winddownTime" : 0.4,
+						"winddownState" : "hiltbashWinddown"
+					}
+				},
+				//swipe 2 into immediate overhead
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "electric_swipe2",
+						"windupState" : "electric_swipe2Windup",
+						"winddownTime" : 0.8,//0.8,
+						"winddownState" : "electric_overheadWindup1"
+					}
+				},
+				//Close Range - One-mind - Complete arena clear.
+			    {
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 80,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "fireAoeWindup",
+					"windupTime" : 0.6, //0.8
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_firetravelingswoosh_360pattern", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 0,
+					  "timeToLive" : 0.05,
+					  "power" : 10,//65,
+					  
+					  "damageKind" : "ews_melee",
+					  "damageType" : "IgnoresDef"
+					  
+					},
+					"fireOffsets" : [[0, 1]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "fireUnderhead",
+					"fireSound" : "",
+					"aimDirection" : [0, 0],
+					"winddownState" : "",
+					"winddownTime" : 0.6
+				  }
+				},
+				//backstep
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.1,
+						"chargeTime" : 0.1, //0.165
+						"chargeSpeed" : -50, //2400
+						"chargeControlForce" : 400, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "",
+						"windupState" : "",
+						"winddownTime" : 0.0,
+						"winddownState" : ""
+					}
+				},
+				//long range fire
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "gunWindup",
+					"windupTime" : 0.6,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0,
+					"inaccuracy" : 0.01,
+					"projectileType" : "gic_handcannon_a_floran_boss",
+					"projectileParameters" : {
+					  "speed" : 0,
+					  "timeToLive" : 0,
+					  "power" : 200
+					},
+					"fireOffsets" : [[3.2, -0.25]],
+					"aimAtTarget" : false,
+					"onGround" : false,
+					"fireState" : "gunFire",
+					"fireSound" : "fire_gun",
+					"aimDirection" : [1, 0],
+					"winddownState" : "gunFire",
+					"winddownTime" : 0.4
+				  }
+				},
+				//forward slice
+				/*
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "electric_overheadSwing",
+						"windupState" : "electric_overheadWindup2",
+						"winddownTime" : 0.4,
+						"winddownState" : "electric_overheadWinddown"
+					}
+				},
+				*/
+				//forward momentum
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.2,
+						"chargeTime" : 0.1, //0.165
+						"chargeSpeed" : 500, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "",
+						"windupState" : "fireUnderheadWindup",
+						"winddownTime" : 0.0,
+						"winddownState" : ""
+					}
+				},
+				//fire underhead swing
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "",
+					"windupTime" : 0.1,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_firetravelingswoosh", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 150,
+					  "timeToLive" : 20,
+					  "power" : 80,
+					  "knockback" : 15,			  
+					  "damageKind" : "fire",
+					  "damageType" : "IgnoresDef",
+					  "damageRepeatTimeout" : 0.15,
+					  "statusEffects" : [ ]	
+					  
+					},
+					"fireOffsets" : [[0.75, -1.0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "fireUnderhead",
+					"fireSound" : "",
+					"winddownState" : "",
+					"winddownTime" : 0.4
+				  }
+				},
+				//forward momentum
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.2,
+						"chargeTime" : 0.1, //0.165
+						"chargeSpeed" : 500, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "",
+						"windupState" : "electric_overheadWindup1_shing",
+						"winddownTime" : 0.0,
+						"winddownState" : ""
+					}
+				},
+				//electric overhead sweep 1
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "",
+					"windupTime" : 0.1,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_electrictravelingswoosh", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 150,
+					  "timeToLive" : 20,
+					  "power" : 100,
+					  "knockback" : 15,
+					  "damageRepeatTimeout" : 0.15,
+					  "damageKind" : "electric",
+					  "damageType" : "IgnoresDef",
+					  "statusEffects" : []//[ "electrified" ]	
+					  
+					},
+					"fireOffsets" : [[0.75, -1.0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "electric_overheadSwing",
+					"fireSound" : "",
+					"winddownState" : "",
+					"winddownTime" : 0.4
+				  }
+				},
+				//ashina cross attack
+				/*
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.2, //0.165
+						"chargeSpeed" : 50, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "cross1",
+						"windupState" : "crossPreSlash",//"crossWindup",
+						"winddownTime" : 0.6,//0.6,
+						"winddownState" : ""
+					}
+				},
+				*/
+				//thrust with lower windup
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						"windupTime" : 0.6,
+						"chargeTime" : 0.2, //0.165
+						"chargeSpeed" : 2000, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "electric_thrust",
+						"windupState" : "electric_thrustWindup",
+						"winddownTime" : 0.4,
+						"winddownState" : "electric_thrustWinddown"
+					}
+				},
+				//backstep
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.0,
+						"chargeTime" : 0.2, //0.165
+						"chargeSpeed" : -200, //2400
+						"chargeControlForce" : 400, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "",
+						"windupState" : "gunShortWindup",
+						"winddownTime" : 0.0,
+						"winddownState" : ""
+					}
+				},
+				//short fire
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "gunShortWindup",
+					"windupTime" : 0.8,
+					"projectileCount" : 6,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.1,
+					"inaccuracy" : 0.01,
+					"projectileType" : "gic_handcannon_a_floran_boss",
+					"projectileParameters" : {
+					  "speed" : 0,
+					  "timeToLive" : 0,
+					  "power" : 200
+					},
+					"fireOffsets" : [[2.7, -1.325]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "gunShortFire",
+					"fireSound" : "fire_gun",
+					"aimDirection" : [1, 0],
+					"winddownState" : "gunShortFire",
+					"winddownTime" : 0.8
+				  }
+				}
+			]
+		  }
+		},
+		
+		//force push/shove into a thrust into a fire projectile
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 11,
+		  "parameters" : {
+			"maximumRange" : 6,
+			"minimumRange" : 0,
+			
+			"windupState": "",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//shove
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						"windupTime" : 0.01,
+						"chargeTime" : 0.1, //0.165
+						"chargeSpeed" : 50, //2400
+						"chargeControlForce" : 400, //400
+						"wallCrashSound" : "",
+						"wallCrashEmitter" : "",
+						"chargeState" : "forcePush",
+						"windupState" : "",
+						"winddownTime" : 0.6,
+						"winddownState" : ""
+					}
+				},
+				//thrust with lower windup
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						"windupTime" : 0.6,
+						"chargeTime" : 0.2, //0.165
+						"chargeSpeed" : 2000, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "electric_thrust",
+						"windupState" : "electric_thrustWindup",
+						"winddownTime" : 0.6,
+						"winddownState" : "electric_thrustWinddown"
+					}
+				},
+				//backstep
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.0,
+						"chargeTime" : 0.2, //0.165
+						"chargeSpeed" : -200, //2400
+						"chargeControlForce" : 400, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "",
+						"windupState" : "fireUnderheadWindup",
+						"winddownTime" : 0.0,
+						"winddownState" : ""
+					}
+				},
+				//fire underhand swing
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "",
+					"windupTime" : 0.2,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_firetravelingswoosh", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 150,
+					  "timeToLive" : 20,
+					  "power" : 80,
+					  "knockback" : 15,			  
+					  "damageKind" : "fire",
+					  "damageType" : "IgnoresDef",
+					  "damageRepeatTimeout" : 0.15,
+					  "statusEffects" : [ ]	
+					  
+					},
+					"fireOffsets" : [[0.75, -1.0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "fireUnderhead",
+					"fireSound" : "",
+					"winddownState" : "",
+					"winddownTime" : 0.6
+				  }
+				}
+			]
+		  }
+		},
+		
+		
+		//Firecracker 2 into electric combo
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 15,
+		  "parameters" : {
+			"maximumRange" : 15,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//Firecracker throw 2
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 35,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "fireCrackerWindup2",
+					"windupTime" : 0.4,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_magicshot_firecrackers_stage1", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 0,
+					  "timeToLive" : 0.0,
+					  "power" : 10,
+					  
+					  "damageKind" : "ews_melee",
+					  "damageType" : "IgnoresDef"
+					  
+					},
+					"fireOffsets" : [[-1, 0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "",
+					"fireSound" : "",
+					"aimDirection" : [0, 0],
+					"winddownState" : "fireCracker",
+					"winddownTime" : 0.4
+				  }
+				},
+				
+				//Electric Overhead 1
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 12,
+						"minimumRange" : 0,
+						"windupTime" : 0.2,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 700, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "electric_overheadSwing",
+						"windupState" : "electric_overheadWindup1",
+						"winddownTime" : 0.1,
+						"winddownState" : ""
+					}
+				},
+				
+				//Electric Overhead 2
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 12,
+						"minimumRange" : 0,
+						"windupTime" : 0.2,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 700, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "electric_overheadSwing",
+						"windupState" : "electric_overheadWindup2",
+						"winddownTime" : 0.1,
+						"winddownState" : ""
+					}
+				}
+			]
+		  }
+		},
+		
+		//ashina cross into force push into fire projectile
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 7,
+		  "parameters" : {
+			"maximumRange" : 15,
+			"minimumRange" : 10,
+			
+			"windupState": "crossWindup",
+			"winddownState": "",
+			"windupTime": 0.8,
+			"winddownTime": 0.1,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//backstep
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.1,
+						"chargeTime" : 0.1, //0.165
+						"chargeSpeed" : -50, //2400
+						"chargeControlForce" : 400, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "",
+						"windupState" : "crossPreSlash",
+						"winddownTime" : 0.0,
+						"winddownState" : ""
+					}
+				},
+				//ashina cross attack
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.1,
+						"chargeTime" : 0.2, //0.165
+						"chargeSpeed" : 50, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "cross1",
+						"windupState" : "crossPreSlash",
+						"winddownTime" : 0.8,
+						"winddownState" : ""
+					}
+				},
+				
+				//shove
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 20,
+						"minimumRange" : 0,
+						"windupTime" : 0.01,
+						"chargeTime" : 0.125, //0.165
+						"chargeSpeed" : 300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "",
+						"wallCrashEmitter" : "",
+						"chargeState" : "forcePush",
+						"windupState" : "",
+						"winddownTime" : 0.075,
+						"winddownState" : ""
+					}
+				},
+				
+				//Firecracker throw 1
+				/*
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 0,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 35,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "fireCrackerWindup",
+					"windupTime" : 0.4,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_magicshot_firecrackers_stage1", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 0,
+					  "timeToLive" : 0.0,
+					  "power" : 10,
+					  
+					  "damageKind" : "ews_melee",
+					  "damageType" : "IgnoresDef"
+					  
+					},
+					"fireOffsets" : [[-1, 0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "",
+					"fireSound" : "",
+					"aimDirection" : [0, 0],
+					"winddownState" : "fireCracker",
+					"winddownTime" : 0.6
+				  }
+				}
+				*/
+				
+				//fire overhead sweep 1
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 3,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 0,
+					"windupStopForce" : 10,
+					"windupState" : "fireOverheadWindup1",
+					"windupTime" : 0.4,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_firetravelingswoosh", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 150,
+					  "timeToLive" : 20,
+					  "power" : 80,
+					  "knockback" : 15,	  
+					  "damageKind" : "fire",
+					  "damageType" : "IgnoresDef",
+					  "damageRepeatTimeout" : 0.15,
+					  "statusEffects" : [ ]	
+					  
+					},
+					"fireOffsets" : [[0.75, -1.0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "fireOverheadSwing",
+					"fireSound" : "",
+					"winddownState" : "",
+					"winddownTime" : 0.8
+				  }
+				}
+			]
+		  }
+		},
+		
+		//hiltbash into overhead strike 2
+		/*
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 8,
+		  "parameters" : {
+			"maximumRange" : 7,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//hilt bash
+				{
+					"name" : "action-gic_bufferedcharge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						
+						"windupTime" : 0.4,
+						"windupBufferTime" : 0.3,
+						
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 400, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "hiltbash",
+						"windupState" : "hiltbashWindup",
+						"winddownTime" : 0.0,
+						"winddownState" : "hiltbashWinddown"
+					}
+				},
+				{
+					"name" : "action-charge",
+					"cooldown" : 0.0,
+					"parameters" : {
+						"maximumRange" : 99,
+						"minimumRange" : 0,
+						"windupTime" : 0.4,
+						"chargeTime" : 0.15, //0.165
+						"chargeSpeed" : 1300, //2400
+						"chargeControlForce" : 800, //400
+						"wallCrashSound" : "wallCrash",
+						"wallCrashEmitter" : "",
+						"chargeState" : "electric_overheadSwing",
+						"windupState" : "electric_overheadWindup2",
+						"winddownTime" : 0.4,
+						"winddownState" : "electric_overheadWinddown"
+					}
+				}
+			]
+		  }
+		},
+		*/
+		//overhead strike 1 into overheadstrike 2
+		{
+			"name" : "action-charge",
+			"cooldown" : 3.0,
+			"parameters" : {
+				"maximumRange" : 9,
+				"minimumRange" : 1,
+				"windupTime" : 0.4,
+				"chargeTime" : 0.15, //0.165
+				"chargeSpeed" : 1500, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "electric_overheadSwing",
+				"windupState" : "electric_overheadWindup1",
+				"winddownTime" : 1.0,
+				"winddownState" : "electric_overheadWindup2"
+			}
+		},
+		
+		//overhead strike 2 into swipe 2
+		/*
+		{
+			"name" : "action-charge",
+			"cooldown" : 3.0,
+			"parameters" : {
+				"maximumRange" : 9,
+				"minimumRange" : 1,
+				"windupTime" : 0.4,
+				"chargeTime" : 0.15, //0.165
+				"chargeSpeed" : 1500, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "electric_overheadSwing",
+				"windupState" : "electric_overheadWindup2",
+				"winddownTime" : 1.0,
+				"winddownState" : "electric_swipe2Windup"
+			}
+		},
+		*/
+		
+		//swipe 2 into overhead
+		{
+			"name" : "action-charge",
+			"cooldown" : 3.0,
+			"parameters" : {
+				"maximumRange" : 8,
+				"minimumRange" : 0,
+				"windupTime" : 0.4,
+				"chargeTime" : 0.15, //0.165
+				"chargeSpeed" : 1300, //2400
+				"chargeControlForce" : 800, //400
+				"wallCrashSound" : "wallCrash",
+				"wallCrashEmitter" : "",
+				"chargeState" : "electric_swipe2",
+				"windupState" : "electric_swipe2Windup",
+				"winddownTime" : 1.0,
+				"winddownState" : "electric_overheadWindup1"
+			}
+		},
+		
+		//electric swooshes into punish fire swoosh
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 10,
+		  "parameters" : {
+			"maximumRange" : 999,
+			"minimumRange" : 20,
+			
+			"windupState": "idle",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.2,
+			
+			//place any actions in here; note that it should be possible to chain into another chainactions, although i don't know why you would do that...
+			"chainActions": [
+				//electric overhead sweep 1
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 4,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 20,
+					"windupStopForce" : 10,
+					"windupState" : "electric_overheadWindup1_shing",
+					"windupTime" : 0.4,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_electrictravelingswoosh", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 150,
+					  "timeToLive" : 20,
+					  "power" : 100,
+					  "knockback" : 15,
+					  "damageRepeatTimeout" : 0.15,
+					  "damageKind" : "electric",
+					  "damageType" : "IgnoresDef",
+					  "statusEffects" : []//[ "electrified" ]	
+					  
+					},
+					"fireOffsets" : [[0.75, -1.0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "electric_overheadSwing",
+					"fireSound" : "",
+					"winddownState" : "",
+					"winddownTime" : 0.4
+				  }
+				},
+				
+				//electric overhead sweep 2
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 4,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 20,
+					"windupStopForce" : 10,
+					"windupState" : "electric_overheadWindup1_shing",
+					"windupTime" : 0.4,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_electrictravelingswoosh", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 150,
+					  "timeToLive" : 20,
+					  "power" : 100,
+					  "knockback" : 15,
+					  "damageRepeatTimeout" : 0.15,
+					  "damageKind" : "electric",
+					  "damageType" : "IgnoresDef",
+					  "statusEffects" : []//[ "electrified" ]	
+					  
+					},
+					"fireOffsets" : [[0.75, -1.0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "electric_overheadSwing",
+					"fireSound" : "",
+					"winddownState" : "",
+					"winddownTime" : 0.4
+				  }
+				},
+				
+				//fire underhead super swing
+				//heavy punish if player is still in range
+				{
+				  "name" : "action-fire",
+				  "cooldown" : 3,
+				  "parameters" : {
+					"requireLineOfSight" : true,
+					"maximumRange" : 999,
+					"minimumRange" : 25,
+					"windupStopForce" : 10,
+					"windupState" : "fireSuperUnderheadWindup",
+					"windupTime" : 0.6,
+					"projectileCount" : 1,
+					"fireDelay" : 0.0,
+					"projectileInterval" : 0.0,
+					"inaccuracy" : 0,
+					"projectileType" : "gic_big_firetravelingswoosh", //meleeslash
+					"projectileParameters" : {
+					  "speed" : 150,
+					  "timeToLive" : 20,
+					  "power" : 200,
+					  "knockback" : 15,			  
+					  "damageKind" : "fire",
+					  "damageType" : "IgnoresDef",
+					  "damageRepeatTimeout" : 0.15,
+					  "statusEffects" : [ "gic_stun_05", "gic_stun_1", "burning" ]	
+					  
+					},
+					"fireOffsets" : [[0.75, -1.0]],
+					"aimAtTarget" : true,
+					"onGround" : false,
+					"fireState" : "fireUnderhead",
+					"fireSound" : "",
+					"winddownState" : "",
+					"winddownTime" : 0.4
+				  }
+				}
+			]
+		  }
+		}
+      
+      ],
+
+      "periodicActions" : [],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : false,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 12,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 12,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "wanderActions" : [
+      ]
+    },
+	
+	
+	
+    "damageParts" : {
+      "body" : {
+        "damage" : 150,//100,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.2,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 15,
+        "statusEffects" : [ ]
+      },
+	  "ashinaCrossDamage" : {
+        "damage" : 200,//150,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.2,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 37,
+        "statusEffects" : [ {"effect" : "gic_unblockableDamage", "duration" : 5.0} ] //duration value (out of 100) represents % of health that will be dealt
+      },
+	  "electricDamage" : {
+        "damage" : 175,//125,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.2,
+        "damageSourceKind" : "electric",
+        "knockback" : 15,
+        "statusEffects" : []//[ "electrified" ]
+      },
+	  "hiltbashDamage" : {
+        "damage" : 50,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.2,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 20,
+        "statusEffects" : [ "gic_stun_05", "gic_stun_1-5", "gic_energynullification_1", "gic_attackpowernullification_1" ]
+      },
+	  "forcePushDamage" : {
+        "damage" : 0,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.4,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 55,
+        "statusEffects" : [ "gic_stun_1" ]
+      },
+	  "thrustDamage" : {
+        "damage" : 300,//250,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.2,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 10,
+        "statusEffects" : [ "gic_stun_05", "gic_stun_2", "gic_stun_3", "gic_energynullification_3", "gic_attackpowernullification_3" ]
+      },
+	  "electricThrustDamage" : {
+        "damage" : 350,//300,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.2,
+        "damageSourceKind" : "electric",
+        "knockback" : 10,
+        "statusEffects" : [ "gic_stun_05", "gic_stun_2", "gic_stun_3", "gic_energynullification_3", "gic_attackpowernullification_3"]//, "electrified" ]
+      },
+	  "fireDamage" : {
+        "damage" : 150,//125,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.2,
+        "damageSourceKind" : "fire",
+        "knockback" : 15,
+        "statusEffects" : [ ]
+      }
+    },
+	
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -3.15], [0.5, -3.15], [0.5, 0.9], [-0.5, 0.9] ],
+      "damage" : 0,
+      "damageRepeatTimeout" : 0.1,
+      "teamType" : "enemy",
+      "damageSourceKind" : "noDamage",
+	  "timeoutGroup" : "touchDamage",
+      "knockback" : 0,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.5, -3.15], [0.5, -3.15], [0.5, 0.9], [-0.5, 0.9] ],
+
+      "mass" : 1,
+      "walkSpeed" : 10,
+      "runSpeed" : 14,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200,	//if received damage reaches above this number, damage will be reset to this value.
+		"damageAllow" : "ews_melee"	//only this damage type will deal any damage to the entity
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap_immune.lua"
+      ],
+      "primaryScriptDelta" : 3, //5
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 0.1
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 600
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 35000//40000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+      "gic_stunProtection" : {
+        "baseValue" : 1.0
+      },			
+		
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },		
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+		
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -3.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

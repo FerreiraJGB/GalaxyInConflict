@@ -1,0 +1,50 @@
+{
+  "objectName" : "gic_synth_cirno",
+  "colonyTags" : ["ancient","storage"],
+  "rarity" : "Legendary",
+  "tooltipKind" : "base",
+  "race" : "ancient",
+  "health" : 1.5,
+
+  "category" : "storage",
+  "price" : 0,
+  "printable" : false,
+  "description" : "Colonial Infrastructure Rectification & Non-compliance Ostracizer.",
+  "shortdescription" : "C.I.R.N.O",
+
+  "inventoryIcon" : "icon.png",
+
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_synth_cirno.png:default", "fullbright" : true }, { "image" : "gic_synth_cirno_lit.png:default" } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "gic_synth_cirno.png:default", "fullbright" : true }, { "image" : "gic_synth_cirno_lit.png:default" } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_synth_cirno.animation",
+  "animationPosition" : [-16, 0],
+
+  "scripts" : ["/objects/scripts/treasureburst.lua"],
+  "scriptDelta" : 0,
+
+  "burstTreasurePool" : "gic_synth_cirno_podTreasure",
+  "burstItemVelocityRange" : [5, 10],
+  "burstAngleVariance" : 0.5,
+  "burstOffset" : [0.5, 0],
+  "burstIntangibleTimeRange" : [0.25, 0.5]
+}

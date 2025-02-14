@@ -1,0 +1,43 @@
+{
+  "objectName" : "gic_tvmonitor_large_afflicted",
+  "colonyTags" : ["station","electronic","space"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "description" : "A screen displaying surprisingly motivational media.",
+  "shortdescription" : "TV Monitor Afflicted",
+  "race" : "generic",
+
+  
+  "lightColor" : [145, 145, 145],
+
+  "inventoryIcon" : "gic_tvmonitor_large_afflictedicon.png",
+  "orientations" : [
+    {
+      "image" : "gic_tvmonitor_large_afflicted.png:<color>.<frame>",
+      "imagePosition" : [-48, -16],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "animation" : "gic_tvmonitor_large_afflicted.animation",
+  "animationParts" : {
+    "bg" : "gic_tvmonitor_large_afflicted.png",
+    "fg" : "gic_tvmonitor_large_afflictedlit.png"
+  },
+  "animationPosition" : [-48, -16],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [-6, -2] ],
+
+  "interactive" : false,
+
+  "soundEffect" : "/sfx/objects/bunkerdisplay.ogg",
+  "soundEffectRangeMultiplier" : 0.25
+
+}

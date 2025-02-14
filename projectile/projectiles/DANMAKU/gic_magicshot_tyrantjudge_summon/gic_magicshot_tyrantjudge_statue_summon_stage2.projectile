@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_magicshot_tyrantjudge_statue_summon_stage2",
+  "image" : "gic_magicshot_tyrantjudge_summon_null.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "lightColor" : [0, 255, 137],
+  "pointLight" : false,
+  "speed" : 0,
+  "timeToLive" : 0,
+  "fullbright" : true,
+  "onlyHitTerrain" : true,
+  
+"actionOnReap" : [
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_yamaxanadu_tyrantjudge_statue",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : { "damageTeam" : 16 }
+    }
+],
+
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

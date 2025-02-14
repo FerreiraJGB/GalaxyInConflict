@@ -1,0 +1,53 @@
+{
+  "projectileName" : "gic_frostjavelin_thrownspawner",
+  "physics" : "laser",
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.05,
+      "action" : "projectile",
+      "type" : "gic_frostjavelin_thrown",
+      "inheritDamageFactor" : 1,
+      "fuzzAngle" : 20
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_bluetracer_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+  
+  "image" : "gic_frostjavelin_thrown.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "damageKindImage" : "icon.png",
+  "power" : 40,
+  "onlyHitTerrain" : false,
+  "knockback" : 2,
+  "knockbackDirectional" : true,
+  "statusEffects" : [ {"effect":"gic_boss_melee_primer","duration":3}, "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot" ],
+  "timeToLive" : 1.5,
+  "pointLight" : false,
+  "damagePoly" : [ [12, -0.2], [12.5, -0.2], [12.5, 0.2], [12, 0.2] ]
+}

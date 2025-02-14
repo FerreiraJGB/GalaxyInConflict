@@ -1,0 +1,32 @@
+{
+  "itemName" : "gic_frostmoon_artifact",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#8B30F0;Trinket",
+  "inventoryIcon" : "gic_frostmoon_artifact.png",
+  "maxStack" : 1,
+  "description" : 
+  
+"''It's getting dark. If you get lost it's alright, for now. I hope you enjoy the shooting stars. Rest in peace.''
+
+^green;+50HP.^reset;
+^yellow;-50HP/s when ABOVE 50% HP | -50HP/s when ABOVE 75% HP.^reset;
+^orange;+100% DMG absorption when active. On taking damage, the Frost Moon DMG RES enters cooldown for 7s.^reset;",
+
+
+
+  "shortdescription" : "Transcendent Frost Moon",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_frostmoon_artifact",
+    "displayName" : "Transcendent Frost Moon",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_frostmoon_artifact.png",
+    "effects" : [ "gic_frostmoon_healthboost", "gic_frostmoon_50", "gic_frostmoon_75", "gic_frostmoon" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_artifact_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

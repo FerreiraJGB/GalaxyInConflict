@@ -1,0 +1,56 @@
+{
+  "name" : "gic_smartmissile_marker",
+  "effectConfig" : {
+	"projectileType" : "gic_huntersmarkbolt_rapidtargetcoordinator_pointblank", //does not accept arrays
+	"projectileTypeMiss" : "gic_huntersmarkbolt_rapidtargetcoordinator_pointblank", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.4,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^red;Marking^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+	},
+	"missChance" : 10,
+	
+	"offset" : [0.5,2.5],
+	
+	"muzzleOffset" : [0.5,2.5],
+	
+	"muzzleOffset2" : [0.5,2.5],
+	
+	"trackingDistance" : 60,
+	"trackingAngle" : 181, //181
+	"fireRate" : 1.0,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 0.5
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_smartmissile_mk2.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_smartmissile_marker.animation",
+ 
+  "label" : "Rapid Target Coordinator - When within 60 blocks and in line of sight of an enemy, the Target Coordinator will constantly attempt to mark the nearest target with LOCKED-ON (reduce target DMG RES by -100%).",
+  "icon" : "/interface/statuses/gic_rapidtargetcoordinator.png"
+}

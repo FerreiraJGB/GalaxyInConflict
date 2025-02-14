@@ -1,0 +1,40 @@
+{
+  "projectileName" : "gic_crystal_sidehoverfire_stage1",
+  "image" : "gic_crystal_sidehoverfire.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 25,
+  "timeToLive" : 8,
+  "actionOnReap" : [
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.2,
+      "action" : "projectile",
+      "type" : "gic_crystal_areashockwave_stage1",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 0,
+      "angle" : 90
+    },
+    {
+      "time" : 0.2,
+      "action" : "projectile",
+      "type" : "gic_crystal_areashockwave_stage1",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 0,
+      "angle" : -90
+    }
+],
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

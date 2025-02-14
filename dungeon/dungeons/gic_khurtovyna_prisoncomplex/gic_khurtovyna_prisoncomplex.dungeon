@@ -1,0 +1,399 @@
+{
+  "metadata" : {
+    "name" : "gic_khurtovyna_prisoncomplex",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_khurtovyna_prisoncomplex_building3" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 70,
+    "extendSurfaceFreeSpace" : 10,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+
+  
+//Buildings
+
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_shaft",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_shaft" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_shaft.json" ]
+    },	
+
+
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_panopticon",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_panopticon" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_panopticon.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_courtyard",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_courtyard" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_courtyard.json" ]
+    },	
+  
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_building1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_building1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_building1.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_building2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_building2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_building2.json" ]
+    },	
+  
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_building3",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_building3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_building3.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_building4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_building4" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_building4.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_building5",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_building5" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_building5.json" ]
+    },	
+
+//Medium Rooms
+
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_mediumroom_blasted",
+      "rules" : [
+        [ "maxSpawnCount", [3] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_mediumroom_blasted" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_mediumroom_blasted.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_mediumroom_cafeteria",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_mediumroom_cafeteria" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_mediumroom_cafeteria.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_mediumroom_guardbarracks",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_mediumroom_guardbarracks" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_mediumroom_guardbarracks.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_mediumroom_medicalward",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_mediumroom_medicalward" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_mediumroom_medicalward.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_mediumroom_storage",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_mediumroom_storage" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_mediumroom_storage.json" ]
+    },	
+	
+//Small Rooms
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_shrine",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_shrine" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_shrine.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_headofsecurity",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_headofsecurity" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_headofsecurity.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_headofmaintenance",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_headofmaintenance" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_headofmaintenance.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_chiefmedicalofficer",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_chiefmedicalofficer" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_chiefmedicalofficer.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_workshop",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_workshop" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_workshop.json" ]
+    },		
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_blasted",
+      "rules" : [
+        [ "maxSpawnCount", [3] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_blasted" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_blasted.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_electrical",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_electrical" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_electrical.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_fireexit",
+      "rules" : [
+        [ "maxSpawnCount", [3] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_fireexit" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_fireexit.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_medicalstorage",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_medicalstorage" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_medicalstorage.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_office1",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_office1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_office1.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_office2",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_office2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_office2.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_private",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_private" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_private.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_securityroom",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_securityroom" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_securityroom.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_stafflockers",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_stafflockers" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_stafflockers.json" ]
+    },		
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_storage",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_storage" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_storage.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_ratspawn",
+      "rules" : [
+        [ "maxSpawnCount", [3] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_ratspawn" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_ratspawn.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_patrol",
+      "rules" : [
+        [ "maxSpawnCount", [5] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_patrol" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_patrol.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_patrol_mvd",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_prisoncomplex_smallroom_patrol_mvd" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_patrol_mvd.json" ]
+    },	
+
+
+
+
+
+	
+	
+//End
+
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_leftend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_leftend.json" ],
+      "chance" : 0
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_rightend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_rightend.json" ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_mediumroom_empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_mediumroom_empty.json" ],
+      "chance" : 0
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_prisoncomplex_smallroom_empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_prisoncomplex_smallroom_empty.json" ],
+      "chance" : 0
+    }		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

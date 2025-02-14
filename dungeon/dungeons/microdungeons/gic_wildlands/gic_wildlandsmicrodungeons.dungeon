@@ -1,0 +1,54 @@
+{
+  "metadata" : {
+    "name" : "gic_wildlandsmicrodungeons",
+    "species" : "human",
+    "rules" : [
+    ],
+
+    "anchor" : [ 
+	"gic_wildlands_abandonedhouse1",	
+	"gic_wildlands_abandonedhouse2",
+	"gic_wildlands_abandonedhouse3",
+	"gic_wildlands_watchtower"
+
+	
+	],
+
+
+    "maxRadius" : 1000000,
+    "maxParts" : 100,
+    "protected" : false
+  },
+
+  "parts" : [
+    {
+      "name" : "gic_wildlands_abandonedhouse1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "gic_wildlands_abandonedhouse1.json" ]
+    },
+    {
+      "name" : "gic_wildlands_abandonedhouse2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "gic_wildlands_abandonedhouse2.json" ]
+    },
+    {
+      "name" : "gic_wildlands_abandonedhouse3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "gic_wildlands_abandonedhouse3.json" ]
+    },
+    {
+      "name" : "gic_wildlands_watchtower",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "gic_wildlands_watchtower.json" ]
+    }
+
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name" : "gic_aggressorsbane",
+  "blockingStat" : "gic_aggressorsbaneStatusImmunity",
+
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 1,
+    "triggerDamageThreshold" : 1,
+    "explosionDamageAmount" : 0
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "gic_aggressorsbane.lua"
+  ],
+
+  "animationConfig" : "gic_aggressorsbane.animation",
+  
+  "label" : "Aggressor's Bane - On taking damage, heal for 4% of MAX HP for 2s (refreshes upon taking further damage). Once the healing buff expires, all incoming damage to wearer is increased by 15% for 5s, blocking the next proc of the defensive buff.",
+  "icon" : "/interface/statuses/gic_aggressorsbane.png"
+}

@@ -1,0 +1,54 @@
+{
+  "objectName" : "gic_glitch_industrialceilinglight",
+  "colonyTags" : ["light"],
+  "rarity" : "Common",
+  "description" : "Industrial Ceiling Light.",
+  "shortdescription" : "Industrial Ceiling Light",
+  "race" : "generic",
+  "category" : "light",
+  "price" : 30,
+  "printable" : false,
+  "lightColor" : [204, 204, 188],
+  "pointLight" : true,
+  "pointBeam" : 3,
+  "beamAmbience" : 0.7, //0.4
+  "tooltipKind" : "gic_largebase",
+  "inventoryIcon" : "gic_glitch_industrialceilinglight_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_industrialceilinglight.png:<color>.<frame>",
+      "imagePosition" : [-4, -8],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ],
+      "lightPosition" : [0, -0],
+      "beamAngle" : 270
+    },
+    {
+      "image" : "gic_glitch_industrialceilinglight.png:<color>.<frame>",
+      "imagePosition" : [-4, -8],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ],
+      "lightPosition" : [0, -0],
+      "beamAngle" : 270
+    }
+  ],
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "gic_glitch_industrialceilinglight.png",
+    "fg" : "gic_glitch_industrialceilinglight_lit.png"
+  },
+  "animationPosition" : [-4, -8],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+}

@@ -1,0 +1,45 @@
+{
+  "objectName" : "gic_blackjack_humancaptainschair",
+  "colonyTags" : ["human"],
+  "itemTags" : ["captainschair"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "loungeable",
+
+  "description" : "[Captain's Chair]",
+  "shortdescription" : "Captain's Chair",
+  "race" : "human",
+  "category" : "furniture",
+
+  "inventoryIcon" : "gic_blackjack_humancaptainschair_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_blackjack_humancaptainschair.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "flipImages" : false,
+      "direction" : "left",
+      "sitPosition" : [1.6, 22]
+    },
+    {
+      "image" : "gic_blackjack_humancaptainschair.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "direction" : "right",
+      "sitPosition" : [1.6, 22]
+    }
+  ],
+
+  "interactAction" : "ScriptPane",
+  "interactData" : "/interface/cockpit/cockpit.config",
+
+  "sitFlipDirection" : false
+}

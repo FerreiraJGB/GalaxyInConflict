@@ -1,0 +1,48 @@
+{
+  "itemName" : "gic_floran_yari_spear",
+  "price" : 0,
+  "level" : 6,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A primitive's surprisingly advanced combat weapon.",
+  "shortdescription" : "Yari Spear",
+  "tooltipKind" : "sword",
+  "category" : "spear",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_floran_yari_spear.png",
+
+  "animation" : "gic_floran_yari_spear.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_floran_yari_spear.png"
+  },
+  "animationCustom" : { "sounds" : {
+          "fire" : ["/sfx/melee/swing_spear.ogg"]
+        } },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+  "scriptDelta" : 2,
+  
+  "elementalType" : "ews_melee",
+
+  "aimOffset" : -4.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+    "fireTime" : 1.11,
+    "baseDps" : 20,
+    "damageConfig" : {
+      "damageType" : "IgnoresDef",
+      "damageSourceKind" : "ews_melee",
+      "knockbackRange" : 25
+    }
+	
+
+  },
+
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

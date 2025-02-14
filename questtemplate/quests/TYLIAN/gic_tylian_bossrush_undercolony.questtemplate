@@ -1,0 +1,44 @@
+{
+  "id" : "gic_tylian_bossrush_undercolonyquest",
+  "title" : "^orange;Boss Rush: Undercolony",
+  
+  "prerequisites" : [ "gic_tylian_planetincentive_0_introquest" ],
+  
+  "text" : "Obtain: Sicario's Kill-List and Undefined Fantastic Object Earring (kill Scatter-Spear Sicario and Occasus Assassin).
+
+^orange;[Upon completion: Unlocks the Scatter-Spear Sicario and Occasus Assassin Boss-Rush Replays at the Bazaar]",
+  "completionText" : "[Scatter-Spear Sicario and Occasus Assassin can now be replayed via the Bazaar]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_sicarioskilllist",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_undefinedfantasticobjectearring",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

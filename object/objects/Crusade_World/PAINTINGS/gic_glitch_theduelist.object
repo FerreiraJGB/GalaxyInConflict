@@ -1,0 +1,35 @@
+{
+  "objectName" : "gic_glitch_theduelist",
+  "colonyTags" : [],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "A portrait painting reminiscent of 19th century human artwork, though a closer inspection reveals brushstrokes which are slightly too uniform for a human hand. It depicts a well dressed Glitch whose face is covered in the dings and scratches which are typical of an experienced duelist. Seemingly the work of a skilled artist, it may fetch a good price if you can find someone who's interested.
+
+                                                                                        ^gray;- Beltsasar^reset;",
+  "shortdescription" : "The Duelist",
+  "race" : "generic",  
+  "category" : "furniture",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase_glitchpainting",
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "smashSounds" : [ "/sfx/gic_dishonored_paintingacquired.ogg" ],  
+  
+  "breakDropOptions" : [
+    [ [ "gic_glitch_theduelist", 1, { } ] ]
+  ],
+
+  "inventoryIcon" : "gic_glitch_theduelist_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_theduelist.png",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

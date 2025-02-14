@@ -1,0 +1,37 @@
+{
+  "projectileName" : "gic_infiniteammo_zone",
+  "physics" : "laser",
+  "timeToLive" : 15,
+  "image" : "gic_infiniteammo_zone.png",
+  "animationCycle" : 0.8,
+  "frameNumber" : 12,
+  "windupFrames" : 3,
+  "winddownFrames" : 3,
+  "periodicActions" : [
+    {
+      "time" : 14.7,
+      "repeat" : false,
+      "action" : "sound",
+      "options" : [ "/sfx/melee/gic_bloodborne_energy.wav" ]
+    }
+  ],
+  "actionOnReap" : [],
+  "speed" : 0,
+  "power" : 0,
+
+  "onlyHitTerrain" : true,
+  "persistentStatusEffects" : ["gic_infiniteammo"],
+  "statusEffectArea" : [ [-6.0, 0], [-4.0, -4.0], [0, -6.0], [4.0, -4.0], [6.0, 0], [4.0, 4.0], [0, 6.0], [-4.0, 4.0] ],
+
+  "renderLayer" : "Player+1",
+  "orientationLocked" : true,
+  "fullbright" : true,
+  "emitters" : [],
+
+  "piercing" : true,
+  "bounces" : -1,
+
+  "scripts" : ["gic_infiniteammo_zone.lua"],
+  
+  "persistentAudio" : "/sfx/melee/gic_bloodborne_magic_defence.wav"
+}

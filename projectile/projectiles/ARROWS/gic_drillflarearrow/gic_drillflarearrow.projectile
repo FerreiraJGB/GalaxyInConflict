@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_drillflarearrow",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "gic_drillflarearrow.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_melee",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 20,
+  "lightColor" : [255, 255, 255],
+  "knockback" : 15,
+  "knockbackDirectional" : true,
+  "statusEffects" : ["gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot", "gic_stun_1", {"effect":"gic_boss_melee_primer","duration":1} ],
+  "timeToLive" : 105,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

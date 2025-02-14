@@ -1,0 +1,84 @@
+{
+  "itemName" : "gic_augmentyr_arm_mg",
+  "price" : 1500,
+  "inventoryIcon" : "gic_augmentyr_arm_mg.png",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "oh hecc",
+  "shortdescription" : "Augmentyr Arm Machinegun NPC",
+  "level" : 6,
+  "tooltipKind" : "gun",
+  "category" : "It's a fucking minigun",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : false,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_augmentyr_arm_mg.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/ranged/gic_heavymachinegun_muzzleflash.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/gun/gic_p90_01.ogg", "/sfx/gun/gic_p90_02.ogg", "/sfx/gun/gic_p90_03.ogg" ]
+    }
+  },
+
+  "baseOffset" : [1.31, -0.7],
+  "muzzleOffset" : [1.2, 0.0],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.005,
+    "baseDps" : 600,
+    "energyUsage" : 80,
+    "inaccuracy" : 0.02,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "gic_standardlaser",
+    "projectileParameters" : {
+      "knockback" : 5
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.011,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [-0.0, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.0,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [-0.0, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

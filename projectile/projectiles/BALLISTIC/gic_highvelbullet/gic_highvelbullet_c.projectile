@@ -1,0 +1,76 @@
+{
+  "projectileName" : "gic_highvelbullet_c",
+  "image" : "gic_highvelbullet_c.png",
+  "physics" : "gic_bulletfall_highvel",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  
+  "fullbright" : true,
+  "lightColor" : [63, 54, 14],
+
+  "timeToLive" : 6,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+	{
+		"action" : "projectile",
+		"type" : "gic_null_ignorewalls",
+		"inheritDamageFactor" : 1.0,
+		"config" : {
+			"timeToLive" : 0.0,
+			"speed" : 75,
+			"actionOnReap" : [
+//    {
+//      "action" : "config",
+//      "file" : "/projectiles/explosions/gic_heavybulletimpact/gic_heavybulletimpact.config"
+//    },
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_miss_c_pointblank_indiscriminate", //gic_standardbullet_miss_c_shotgun_pointblank_indiscriminate
+      "inheritDamageFactor" : 0.75, //0.20 //0.35
+	  "fuzzAngle" : 5, //15
+      "directional" : "true"
+    }
+			]
+		}
+	}
+  ],
+  
+  "periodicActions" : [  
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_usoa50_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "fade", //shrink
+        "fullbright" : false
+      }
+    }
+  ], 
+  
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bulletshot"],
+  "speed" : 200,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

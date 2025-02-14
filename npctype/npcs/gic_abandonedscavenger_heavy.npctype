@@ -1,0 +1,94 @@
+{
+  "type" : "gic_abandonedscavenger_heavy",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 14,
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Bandit!",
+            "Opening fire!",
+			"Holy shit!",
+			"Who the hell is that?!",
+			"That's gotta be a Bandit!",
+			"Shoot that Bandit!",
+			"Shit! Bandit!",
+			"Bandit! Blyad!",
+			"Hey! Stop!"
+          ]
+        }
+      }
+    },
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}]
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Gatherer
+          {
+            "head" : [ { "name" : "gic_sarh14thead", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_fsm2pcchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_iagplegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+			  "gic_ppsh2600"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 222.2222 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+      "physicalResistance" : {
+        "baseValue" : 0.6
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      }
+	  
+	  
+    }
+  }
+  
+}

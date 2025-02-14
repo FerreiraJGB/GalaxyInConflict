@@ -1,0 +1,79 @@
+{
+  "projectileName" : "gic_mk483smaw_hedp",
+  "image" : "gic_mk483smaw_hedp.png",
+  "physics" : "gic_cannonfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  
+  "persistentAudio" : "/sfx/gic_cod4_flare_loop.ogg",  
+  
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 6,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback.config"
+    },
+	{
+		"action" : "projectile",
+		"type" : "gic_null_ignorewalls",
+		"inheritDamageFactor" : 1.0,
+		"config" : {
+			"timeToLive" : 0.0,
+			"speed" : 75,
+			"actionOnReap" : [
+//    {
+//      "action" : "config",
+//      "file" : "/projectiles/explosions/gic_heavybulletimpact/gic_heavybulletimpact.config"
+//    },
+    {
+      "action" : "projectile",
+      "type" : "gic_mk483smaw_hedp_stage2",
+      "inheritDamageFactor" : 0.5,
+	  "fuzzAngle" : 15,
+      "directional" : "true"
+    }
+			]
+		}
+	}
+  ],
+  
+  "periodicActions" : [  
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+      "image" : "/animations/gic_mediumsteamcloud/gic_mediumsteamcloud.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.2,
+        "destructionTime" : 2,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+  ], 
+  
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot"],
+  "speed" : 200,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

@@ -1,0 +1,42 @@
+{
+  "id" : "gic_workshop_protected_mechdealerQuest",
+  "title" : "^#D1FFDE;Workshop: Volt Coilgun Mk.II Spitzer",
+  "prerequisites" : [  ],
+  "text" : "A Volt Coilgun hangs from the ceiling of the hastily-assembled mech workshop. It looks nearly complete. It just needs a few more parts...",
+  "completionText" : "The weapon's lights flicker as the internal Protectorate Ammo Replicator whirrs to life. It's ready to be equipped onto a mech.",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_volt_rotary_coilgun_mk2_spitzer", 1 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+	
+    "turnInEntityUid" : "gic_hanging_voltcoilgunmk2spitzer",
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_militarycircuitboard",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_groundvehiclebattery",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

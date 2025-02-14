@@ -1,0 +1,46 @@
+{
+  "itemName" : "gic_koloniya_770_flashsuppressor",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Barrel Attachment^white;",
+  "inventoryIcon" : "gic_koloniya_770_flashsuppressor_icon.png",
+  
+  
+  
+  "description" : "^yellow;Hides muzzle flash and significantly reduces smoke when attached to the muzzle of a firearm.^white; Threading only supports standard Koloniya-type 7.7mm caliber width barrels.
+
+^green;+5% standing accuracy | -5% standing miss chance.^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Koloniya-Type 7.7 Flash Suppressor (GiC)",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_koloniya_770_flashsuppressor", //name of attachment
+	"attachmentTag" : ["gic_koloniya_770_flashsuppressor","gic_barrel_koloniya_770"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_koloniya_770_flashsuppressor.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_koloniya_770_flashsuppressor", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "flashhider"			//prevents any muzzle-flash related items from occuring, normal sound plays, normal smoke occurs.
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [0.95,1,0.95,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [0.95,1,0.95,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

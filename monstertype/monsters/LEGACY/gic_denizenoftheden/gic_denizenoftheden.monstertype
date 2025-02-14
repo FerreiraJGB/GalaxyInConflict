@@ -1,0 +1,598 @@
+{
+  "type" : "gic_denizenoftheden",
+  "shortdescription" : "[Denizen of the Den]",
+  "description" : "What does it mean?",
+
+  "categories" : [ "gic_denizenoftheden" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_denizenoftheden.animation",
+
+  "dropPools" : ["gic_denizenofthedenTreasure"], //{ "default" : "banditTreasure", "bow" : "banditTreasure" }
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster.lua" //gic_base_monster_phases_music
+    ],
+	
+//	"music" : ["/music/touhou/gic_ssh&aether_reverseideology.ogg"],
+  
+//	"range" : 70,			//measured in blocks, default val is 50 blocks
+//	"fadeOutTime" : 2.0,	//measured in seconds, default val is 2.0 seconds
+//	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+	
+//    "damageBar" : "None",
+
+    "behavior" : "monster",
+
+    "seeThroughLiquid" : false,
+	
+	
+	
+	
+	
+	
+//	"phaseTriggerCount" : 1, //how many indices should the monster consider for phases
+//	"healthThresholdTriggers" : [0.60], //determines health threshhold for phase trigger [0.66,0.33]
+//	"regressPhases" : false, //if enabled, monster will regress to its prior phase if the monster's health increases above its current threshold.
+	
+//	"phaseTriggerIds" : ["behaviorConfigInjured1"], //configs to correspond to once the corresponding healthThresholdTrigger has been reached. ["behaviorConfigInjured1","behaviorConfigInjured2"]
+	//configs correspond to healthThresholdTriggers via index, ie index 1 of healthThresholdTrigger corresponds to index 1 of phaseTrigger
+	
+	
+	
+	
+	
+	
+	
+	//--- Standard moveset.
+	
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 200,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 150,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+      ],
+
+      "hostileActions" : [
+	  
+	  
+	  
+	 
+	  
+
+	  //Mid-range - Dash Claw
+      {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "maximumRange" : 13, //18
+          "minimumRange" : 6, //13
+          "windupTime" : 0.4,
+          "chargeTime" : 0.2, //0.165
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 600, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "dashclawwindup",
+          "windupState" : "dashwindup",
+          "winddownTime" : 1.0,
+          "winddownState" : "dashclawwinddown"
+        }
+      },
+	
+	  	
+	  
+
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 8.0,
+        "parameters" : {
+          "maximumRange" : 20,
+          "minimumRange" : 5,
+          "windupTime" : 0.1,
+//         "power" : 300,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : -4800, //18
+          "chargeControlForce" : 500, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "dash",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      },		
+		
+		
+		
+	
+	  //Mid-range - Short Claw
+      {
+        "name" : "action-charge",
+        "cooldown" : 1.0,
+        "parameters" : {
+          "maximumRange" : 6, //18
+          "minimumRange" : 0, //13
+          "windupTime" : 0.2,
+          "chargeTime" : 0.1, //0.165
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 200, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "clawstrike",
+          "windupState" : "clawwindup",
+          "winddownTime" : 0.25,
+          "winddownState" : "clawwinddown"
+        }
+      },
+		
+		
+	  //Mid-range - Punch
+      {
+        "name" : "action-charge",
+        "cooldown" : 1.0,
+        "parameters" : {
+          "maximumRange" : 7, //18
+          "minimumRange" : 0, //13
+          "windupTime" : 0.2,
+          "chargeTime" : 0.1, //0.165
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 200, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "punch",
+          "windupState" : "punchwindup",
+          "winddownTime" : 0.25,
+          "winddownState" : "punchwinddown"
+        }
+      },
+	  
+	  //Mid-range - Double-strike
+      {
+        "name" : "action-charge",
+        "cooldown" : 1.0,
+        "parameters" : {
+          "maximumRange" : 7, //18
+          "minimumRange" : 0, //13
+          "windupTime" : 0.2,
+          "chargeTime" : 0.1, //0.165
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 300, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "doublestrike",
+          "windupState" : "doublewindup",
+          "winddownTime" : 0.75,
+          "winddownState" : "doublewinddown"
+        }
+      },
+	  
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 10.0,
+        "parameters" : {
+          "maximumRange" : 20,
+          "minimumRange" : 5,
+          "windupTime" : 0.1,
+//         "power" : 300,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : -4800, //18
+          "chargeControlForce" : 500, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "dash",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      },
+		
+		
+//Close Range - Hop Forward - Hop slightly forward.
+		
+        {
+          "name" : "action-hop",
+          "cooldown" : 15.0,
+          "parameters" : {
+            "maximumRange" : 5,
+            "minimumRange" : 0,
+            "minXRange" : 10,
+            "verticalSpeed" : 60,
+            "horizontalSpeed" : 30,
+            "hopSequence" : 1,
+            "timeBetweenHops" : 0.0,
+            "windupTime" : 0.1,
+            "landTime" : 0.1,
+            "hopAwayFromWall" : false,
+            "wallVerticalSpeed" : 35
+          }
+        }		
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+      "damageTakenActions" : [
+      ],
+
+      "periodicActions" : [],
+      "wanderActions" : [
+      ]
+	  
+    },
+
+	
+	
+	
+	
+	
+
+    "damageParts" : { //Pouncing or dashing attack
+      "body" : {
+        "damage" : 70,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 30,
+        "statusEffects" : [ ]
+      }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.15], [0.5, -2.15], [0.5, 2.0], [-0.5, 2.0] ],             // [-0.5, -2.15], [0.5, -2.15], [0.5, 2.6], [-0.5, 2.6],    [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375] 
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.05,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.75], [-0.35, -2.05], [0.35, -2.05], [0.75, -1.75], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ], 
+
+      "mass" : 1,
+      "walkSpeed" : 18,
+      "runSpeed" : 18,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 3
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 0
+        },
+		
+        "gic_denizen_beast" : {
+          "baseValue" : 1
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 2000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : -3.0 //4x fire damage intake
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -3.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

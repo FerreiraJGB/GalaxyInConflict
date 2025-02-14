@@ -1,0 +1,14 @@
+{
+  "name" : "gic_psychicbleeding_blowout",
+  "blockingStat" : "gic_psychicbleeding_lightStatusImmunity",
+
+  "effectConfig" : {
+    "tickDamagePercentage" : 0.00625, //0.00625 original value for light bleeding
+    "rampUpPerTick" : 0.05 //this % value is added to initialTickDamagePercentage every damage tick
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "gic_psychicbleeding_light.lua"
+  ]
+}

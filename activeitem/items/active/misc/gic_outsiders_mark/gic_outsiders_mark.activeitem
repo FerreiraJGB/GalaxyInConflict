@@ -1,0 +1,44 @@
+{
+  "itemName" : "gic_outsiders_mark",
+  "level" : 1,
+  "price" : 0,
+  "rarity" : "Legendary",
+  "category" : "^#A14AE0;Mark of the Outsider^reset;",
+  "description" : "That the Glitch were able to bore a hole toward the realm of spirits (by virtue of their strife and suffering, as humans did), will be profoundly upsetting news to religious organic races. But after all the things Unitans have seen in the Exclusion Zone, this is probably just another item on a list. If paired with special ^#D6DFFF;Telescopic Blades^reset;, this sigil can perform a unique assassination maneuver while teleporting toward targets.
+^green;50 energy per Blink^reset;
+^yellow;Requires line-of-sight to destination^reset; so try crouching.",
+  "shortdescription" : "Blink",
+  "twoHanded" : false,
+  "maxStack" : 1,
+  "itemTags" : [],
+
+  "animation" : "gic_outsiders_mark.animation",
+  "scripts" : ["gic_outsiders_mark.lua"],
+  "animationScripts" : ["gic_outsiders_mark_cursor.lua"],
+  "filled" : true,
+  "tooltipKind" : "gic_largebase",
+  //"largeImage" : "/items/active/misc/gic_outsiders_mark/red.png",
+  
+  "tooltipFields" : {
+	"objectImage" : "/items/active/misc/gic_outsiders_mark/gic_highres_outsiders_mark.png" //high-res image
+  },
+
+  //"respawnTime" : 1.0,
+
+  //yes i did base this script off vanilla vehicle scripts wtf you gon do about it
+  //:vibecheck:
+  
+  //"vehicleType" : "sportscar",
+  "standBoundingBox" : [-1, -2.5, 1, 1],
+  "crouchBoundingBox" : [-1, -2.5, 1, 0.25],
+  
+  "teleportPreviewImage" : "/items/active/misc/gic_outsiders_mark/gic_player_outline.png",
+  "teleportCrouchingPreviewImage" : "/items/active/misc/gic_outsiders_mark/gic_player_outline_crouching.png",
+  "teleportLimitOutlineImage" : "/items/active/misc/gic_outsiders_mark/gic_outsiders_mark_outline.png",
+
+  "animationParts" : {
+    "casing" : "gic_outsiders_mark_hand.png"
+  },
+
+  "inventoryIcon" : "gic_outsiders_mark.png"
+}

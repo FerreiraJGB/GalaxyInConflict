@@ -1,0 +1,39 @@
+{
+  "itemName" : "gic_armor_tacticalvisor",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#4797D8;Advanced Helmet Equipment^reset;",
+  "inventoryIcon" : "gic_armor_tacticalvisor.png",
+  
+  "description" : 
+  
+"An advanced ballistic visor with an embedded high-tech micro-computer. Sight is fed through a specialized camera which protects against flashbangs. Equipped with advanced computer imagery that assists with the aiming of firearms, allowing one to better track hostile targets. Users are warned that this does not auto-aim the gun for them, and that they must still actually move the gun and fire it.
+^green;+15% [EWS] Hit Chance.^reset;
+^green;Immunity to Flashbangs.^reset;",
+
+
+
+  "shortdescription" : "Tactical Visor",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_armor_tacticalvisor",
+    "displayName" : "Tactical Visor",
+    "displayIcon" : "/items/augments/trinkets/UNUSED/gic_armor_tacticalvisor.png",
+    "effects" : [
+	
+	"gic_armor_tacticalvisor",
+	
+	{"stat" : "gic_flashbangProtection", "amount" : 1.0},
+	
+    {"stat" : "ews_misschance_mult", "amount" : -0.15},
+	
+	{"stat" : "ews_holovisor", "amount" : 1.0}
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_helmet_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

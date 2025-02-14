@@ -1,0 +1,25 @@
+{
+  "name" : "gic_foodpoisoning",
+  "blockingStat" : "gic_foodpoisoningImmunity",
+
+  "effectConfig" : {
+//    "directives" : "fade=AAAAFF=0.3",
+    "movementModifiers" : {
+      "speedModifier" : 0.6,
+      "airJumpModifier" : 0.8
+    },
+    "tickRate" : 40,
+    "energyCost" : 1,
+    "healthDamage" : 5
+  },
+  "defaultDuration" : 60,
+
+  "scripts" : [
+    "gic_foodpoisoning.lua"
+  ],
+
+  "animationConfig" : "gic_foodpoisoning.animation",
+
+  "label" : "Food Poisoning [GiC] - Your body will pay its price in blood.",
+  "icon" : "/interface/statuses/poison.png"
+}

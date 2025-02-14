@@ -1,0 +1,75 @@
+{
+  "itemName" : "gic_hotshot_barrel",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Barrel Attachment^white;",
+  "inventoryIcon" : "gic_hotshot_barrel_icon.png",
+  
+  
+  "description" : "Firearm barrel that ^orange;imbues ammunition with flames,^reset; converting its base element into ^orange;FIRE.^reset; Shots afflict ^orange;standard burning^reset; and can also ^orange;ignite oil-coated targets,^reset; setting them ablaze for significant damage. ^yellow;Bullets retain their original power and bleed effects.^reset;
+^red;+25% miss chance.^reset;
+Supports attachment on most firearms that can attach a barrel.
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Hot Shot",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_hotshot_barrel", //name of attachment
+	
+	"attachmentTag" : [ "gic_hotshot_barrel", "gic_barrel" ],     //if target item has one or more of these tags, then this attachment will be applicable to the item
+	
+	"attachmentId" : "gic_hotshot_barrel", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_hotshot_barrel.png", //determines what image is displayed on the resulting gun
+	
+	"specialAttachmentConfig" : {
+//		"type" : "flashhider",			//will require the main activeitem file to have "suppressedFire" sfx
+//		"fireShellProjectile" : "ews_null",		//exists mostly for GiC's "noise" system.
+		"projectileConfig" : {
+//--- --- ---		
+"statusEffects" : [ "burning", "gic_oilfire_primer" ],
+//"speed" : 100,
+//"power" : 20,
+"damageKind" : "fire",		
+"emitters" : [ "arrowflames" ],
+"periodicActions" : [
+    {
+      "time" : 0.005,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_heavybullet_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.005,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+]	
+//--- --- ---			
+		}
+		
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1.25,1.25,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

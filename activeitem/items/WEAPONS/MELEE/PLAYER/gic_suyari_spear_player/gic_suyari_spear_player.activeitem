@@ -1,0 +1,89 @@
+{
+  "itemName" : "gic_suyari_spear_player",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "Spiky pointy bit on the end of a stick. Useful for hitting foes at longer ranges.",
+  "shortdescription" : "Su Yari",
+  "tooltipKind" : "gic_largebase_sword",
+  "category" : "^#D6DFFF;Spear^white;",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_suyari_spear_player.png",
+
+  "animation" : "gic_suyari_spear_player.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_suyari_spear_player.png"
+  },
+  
+  "animationCustom" : { "sounds" : {
+          "fire" : ["/sfx/melee/swing_spear.ogg"]
+        } },
+ 
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua"],
+  "scriptDelta" : 2,
+  
+  "elementalType" : "ews_melee",
+
+  "aimOffset" : -2.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+	"scripts" : ["/items/active/weapons/melee/abilities/gic_spearstab.lua"],
+    "fireTime" : 1.11,
+    "baseDps" : 70,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [ ],
+      "knockbackRange" : 2,
+	  "damageType" : "IgnoresDef"
+    }
+
+  },
+
+  "altAbilityType" : "flurry",
+  "altAbility" : {
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [ ],
+      "baseDamage" : 55,
+      "knockback" : 20,
+      "timeout" : 0.15,
+      "timeoutGroup" : "alt"
+    },
+	
+	"cooldownResetTime" : 0.25,
+    "maxCooldownTime" : 0.25,
+    "minCooldownTime" : 0.17,
+    "cooldownSwingReduction" : 0.04,
+	
+	"cycleRotationOffsets" : [0, 3.0, -3.0],
+	"stances" : {
+	  "idle" : {
+	    "armRotation" : -90,
+	    "weaponRotation" : 0,
+	    "twoHanded" : false,
+	    "weaponOffset" : [0, 0.5],
+
+	    "allowRotate" : true,
+	    "allowFlip" : true
+	  },
+      "swing" : {
+        "duration" : 0.15,
+        "armRotation" : -15,
+        "weaponRotation" : -75,
+        "twoHanded" : true,
+        "weaponOffset" : [0.0, 2.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

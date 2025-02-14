@@ -1,0 +1,48 @@
+{
+  "itemName" : "gic_floran_katana_boss",
+  "price" : 1000,
+  "level" : 6,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "Exactly.",
+  "shortdescription" : "Floran Boss Sword",
+  "tooltipKind" : "sword",
+  "category" : "broadsword",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","broadsword"],
+
+  "inventoryIcon" : "gic_floran_katana_boss.png",
+
+  "animation" : "gic_floran_katana_boss.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_floran_katana_boss.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua", "/abilities/gic_parry_boss.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "gic_posturebroadswordcombo",
+  "primaryAbility" : {
+    "fireTime" : 0.6,
+    "baseDps" : 17,
+  "damageConfig" : { "damageType" : "IgnoresDef" }
+  },
+
+  "altAbilityType" : "",
+  
+    "stances" : {
+      "idle" : {
+        "armRotation" : -2,
+        "weaponRotation" : -7,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.3, 0],
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+  },
+  
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

@@ -1,0 +1,78 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_wildlands_beastman_dialogue_attack.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [
+		
+        "/sfx/npc/gic_bloodborne_nightmarehunter-01.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-02.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-03.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-04.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-05.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-06.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-07.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-08.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-09.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-10.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-11.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-12.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-13.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-14.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-15.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-16.ogg",
+        "/sfx/npc/gic_bloodborne_nightmarehunter-17.ogg"
+		
+		],
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 1,
+        "particles" : [
+
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 1,
+        "particles" : [
+
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

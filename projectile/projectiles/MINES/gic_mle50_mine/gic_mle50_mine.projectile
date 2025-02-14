@@ -1,0 +1,130 @@
+{
+  "projectileName" : "gic_mle50_mine",
+  "physics" : "gic_deployablemine",
+  "actionOnCollide" : [
+  ],
+  "bounces" : -1,
+  "image" : "gic_mle50_mine.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "speed" : 0,
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 0,
+  "lightColor" : [125, 53, 23],
+  "knockback" : 15,
+  "knockbackDirectional" : true,
+  "timeToLive" : 300, //5 minutes
+  "pointLight" : false,
+  
+  "damageKind" : "noDamage",
+  
+//  "damageTeam": { "type" : "indiscriminate" }, 
+  
+  "damagePoly" : [ [-70, -1], [0.25, -1], [0.25, 0], [-70, 0] ],
+
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_grenadeexplosion/gic_grenadeexplosionknockback_lf2.config"
+    },
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    }, 
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    },  
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    },  
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    }, 
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    },  
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    },  
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    }, 
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    },  
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    },   
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    }, 
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    },  
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      
+	  "fuzzAngle": 20,
+	  "angleAdjust" : 180
+    }
+  ]
+  
+  
+}

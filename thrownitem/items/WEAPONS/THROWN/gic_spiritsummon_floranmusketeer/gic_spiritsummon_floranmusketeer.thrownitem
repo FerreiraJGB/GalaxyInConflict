@@ -1,0 +1,34 @@
+{
+  "itemName" : "gic_spiritsummon_floranmusketeer",
+  "price" : 100,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_spiritsummon_floranmusketeer.png",
+  "image" : "gic_spiritsummon_floranmusketeer.png",
+  "shortdescription" : "Spirit Summon - Floran Musketeer",
+  "description" : "A spirit summon beckons its undying soul, shackled to the mortal realm.
+  
+^yellow;Throw at a location to summon a Floran Musketeer to fight for you. Does not follow you, nor attempt to move. Best used against bosses as a supporting unit or as a static defensive sniper.
+^red;Despawns if chunk is unloaded.",
+  "tooltipKind" : "gic_largebase",
+  "ammoUsage" : 1,
+
+  "edgeTrigger" : true,
+  "windupTime" : 0.65,
+  "cooldown" : 0.15,
+  "elementalType" : "ews_psychic",
+  "projectileType" : "gic_spiritsummon_floranmusketeer",
+  "projectileConfig" : {
+
+    "speed" : 41.5,
+    "power" : 0.5,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  }
+}

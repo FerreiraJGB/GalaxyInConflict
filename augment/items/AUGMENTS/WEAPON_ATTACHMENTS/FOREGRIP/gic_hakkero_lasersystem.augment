@@ -1,0 +1,67 @@
+{
+  "itemName" : "gic_hakkero_lasersystem",
+  "price" : 500,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Foregrip Attachment^white;",
+  "inventoryIcon" : "gic_hakkero_lasersystem_icon.png",
+  
+  "tooltipKind" : "gic_largebase",    
+  
+  
+  
+  
+  
+  "description" : "The 'Hakkero' Laser System is a device that attaches to a rifle with underbarrel rails. When activated, the Hakkero will emit a small orb which will then continue to fire a laser in a singular direction for a short period of time. ^yellow;Reloads using Cracked Red Suns.^reset;
+^green;Tap Right-Click to Fire/Reload the Hakkero Laser System^reset;
+^red;Laser is indiscriminate!^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  
+  
+  "shortdescription" : "'Hakkero' Laser System",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_hakkero_lasersystem", //name of attachment
+	"attachmentTag" : ["ews_grenadelauncher", "gic_grenadelauncher" ], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/WEAPON_ATTACHMENTS/FOREGRIP/gic_hakkero_lasersystem.png", //determines what image is displayed on the resulting gun. For grenade launchers/under barrel launchers, do NOT add a frame identifier. Keep this as "[...].png".
+		
+	"attachmentId" : "gic_hakkero_lasersystem", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "grenadelauncher",
+		"grenadelauncherConfig" : {	//requires some part anims stuff in the main activeitem and some particle stuff. also needs some stances built in too.
+			"altFireTime" : 0.25,
+			"altAmmoMax" : 1,
+			"altAmmo" : 0,			//default starting ammo value
+			"altMagazine" : "gic_crackedredsun",				//the magazine item the alt fire needs to reload
+			"projectileTypeGrenade" : "gic_energybeam_horizontal_stage0_spawner_alt_hakkerolasersystem", //grenadeimpact
+			"projectileTypeGrenadeCount" : 1,
+			"projectileTypeGrenadeConfig" : {
+				"power" : 10,		//damage for projectile
+				//"speed" : 150,
+				"bounces" : 0
+			},
+			
+			"fireSFX" : "/sfx/melee/gic_bloodborne_magic-fireball-14db.wav", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("soundEffectGrenade")
+			"reloadSFX" : "/sfx/melee/gic_bloodborne_magic-powerup.wav", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("switchAmmoAlt")
+			
+			"altInaccuracy" : 0,
+			"grenadeMuzzleOffset" : [1.2,-0.15]		//not the same thing as a muzzle offset; this is an offset offsetted off the main muzzleOffset
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

@@ -1,0 +1,140 @@
+{
+  "type" : "gic_phalanxdoll_mech",
+
+  "categories" : [ "gic_phalanxdoll_mech" ],
+  "parts" : [ "body" ],
+  
+  "damageTeamType" : "friendly",
+
+  "animation" : "gic_phalanxdoll_mech.animation",
+
+  "dropPools" : [
+    {
+      "default" : "empty"
+    }
+  ],
+
+  "baseParameters" : {
+    "clientEntityMode" : "ClientMasterAllowed",
+
+    "scripts" : [
+      "/monsters/mechdrone/drone.lua"
+    ],
+    "initialScriptDelta" : 2,
+
+    "deathBehavior" : "monster-death",
+
+    "behaviorConfig" : {
+	
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_explosionknockback",
+            "projectileParameters" : {
+              "power" : 1200,
+//              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+	]
+	  
+    },
+
+
+    "level" : 6,
+
+    "damageParts" : { //Regular Attacks
+      "body" : {
+        "damage" : 80,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.25,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 10,
+        "statusEffects" : [ ]
+      }
+    },
+
+    "metaBoundBox" : [-5, -5, 5, 5],
+    "scale" : 1.0,
+
+    "touchDamage" : {
+      "poly" : [ [6, 0], [-3, 0], [-3, -1], [6, -1] ],
+      "damage" : 20,
+	  "damageRepeatTimeout" : 0.5,
+      "teamType" : "friendly",
+      "damageSourceKind" : "hammer",
+      "knockback" : 10,
+      "statusEffects" : [ {"effect" : "gic_unblockableDamage_flat", "duration" : 20.0} ]
+    },
+	
+    "movementSettings" : {
+      "collisionEnabled" : false,
+      "collisionPoly" : [ [-1, 2], [-3, 2], [-3, -2], [-1, -2] ],
+
+      "gravityEnabled" : false,
+
+      "mass" : 0.5,
+      "flySpeed" : 140,
+      "airForce" : 300,
+
+      "airFriction" : 0,
+
+      "physicsEffectCategories" : []
+    },
+
+    "bodyMaterialKind" : "",
+
+    "knockoutTime" : 0.1,
+    "knockoutEffect" : "",
+    "deathParticles" : "deathPoof",
+
+    "damageTeamType" : "friendly",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : ""
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : false,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/monsters/mechdrone/drone_status.lua"
+      ],
+      "primaryScriptDelta" : 1,
+
+      "stats" : {
+        "flatMaxHealth" : {
+          "baseValue" : 2000 //2
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        }
+      },
+
+      "resources" : {
+        "health" : {
+          "maxStat" : "flatMaxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "relocatable" : false
+  }
+}

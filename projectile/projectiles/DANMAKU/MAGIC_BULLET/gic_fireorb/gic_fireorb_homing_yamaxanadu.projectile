@@ -1,0 +1,39 @@
+{
+  "projectileName" : "gic_fireorb_homing_yamaxanadu",
+  "fullbright" : true,
+  "bounces" : 0,
+  "image" : "gic_fireorb.png",
+  "animationCycle" : 0.1,
+  "lightColor" : [40, 0, 0],
+  "frameNumber" : 1,
+
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+
+  "actionOnReap" : [
+
+  ],
+  
+  
+"periodicActions" : [
+
+],
+  
+  "power" : 20,
+  "damageKind" : "fire",
+  "damageType" : "IgnoresDef",
+
+  "maxSpeed" : 10,
+  "ignoredef" : true,
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 100.0,
+  "acceleration" : 300,
+  "timeToLive" : 10,
+  "physics" : "rocket",
+  
+  "rotationRate" : 100,
+  "trackingLimit" : 300
+}

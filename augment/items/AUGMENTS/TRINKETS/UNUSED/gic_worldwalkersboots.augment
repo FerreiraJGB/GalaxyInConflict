@@ -1,0 +1,60 @@
+{
+  "itemName" : "gic_worldwalkersboots",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Leg Trinket^reset;",
+  "inventoryIcon" : "gic_worldwalkersboots.png",
+  "maxStack" : 1,    
+  "description" : 
+  
+"''The children of humanity weren't meant to leave Earth, nor meant to know of those beyond it, but there are no rules left that Xenos have not broken. Perhaps in breaking order, order can be restored.''
+
+^yellow;No additional benefit if combined with the World Walker's Ring.^reset;
+^green;Immunity to Suspicious Sensations and Standard Medium Bleed.^reset;
+^green;Immunity to standard radiation, scorching, freezing, and oxygenless environments.^reset;",
+
+
+
+  "shortdescription" : "World Walker's Boots",
+
+  "augment" : {
+    "type" : "gic_basiclegs",
+    "name" : "gic_worldwalkersboots",
+    "displayName" : "World Walker's Boots",
+    "displayIcon" : "/items/augments/advanced/legs/gic_worldwalkersboots.png",
+    "effects" : [
+	
+	"gic_worldwalkersboots",
+	
+	"gic_worldwalkers_planet_earth",
+	
+	"gic_psychicbleeding_lightStatusImmunity",
+	
+	"gic_bleeding_mediumStatusImmunity",
+	
+    {
+      "stat" : "biomeheatImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "biomecoldImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "biomeradiationImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "breathProtection",
+      "amount" : 1.0
+    }
+
+	
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_legwear_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

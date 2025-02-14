@@ -1,0 +1,68 @@
+{
+  "id" : "gic_esther_chapter_4_0_eldestabodequest",
+  "title" : "^yellow;[GiC]: Chapter 4 - The Eldest Abode",
+  "prerequisites" : [ "gic_esther_chapter_3_0_theotherworldquest" ],
+  
+  //QUEST 3
+  
+  //The text before warping to mission.
+  
+  "text" : "", //MAX
+  
+  //Returning after goal trigger.
+  
+  "completionText" : "", //MAX
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : false,
+  "rewards" : [
+    [ [ "gic_m100h", 1 ], [ "gic_762x63mm_enblocclip", 10 ], [ "gic_762x63mm_enblocclip", 10 ], [ "gic_762x63mm_enblocclip", 10 ], [ "gic_762x63mm_enblocclip", 10 ], [ "gic_762x63mm_enblocclip", 10 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_noassociatedmission.lua", //Same as original variant. Enables cutscenes when starting and finishing.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_keine_hubworld/gic_esther_keine_hubworld_portrait.png"} ],
+        "title" : "Kamish"
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_keine_hubworld/gic_esther_keine_hubworld_portrait.png"} ],
+        "title" : "Kamish"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;Lionheart^reset; to travel to ^orange;The Other World^reset;.",
+      "findGoal" : "Explore the local area for anything important.",
+      "turnIn" : "Return to ^orange;Kamish^reset;."
+    },
+
+    "warpEntityUid" : "gic_esther_chapter_1_lionheart",
+    "warpAction" : "instanceworld:gic_esther_chapter_4_1_crimsonfortress",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_esther_chapter_4_1_crimsonfortress_confirmation",
+	
+    "gic_missionUnlockedCinema" : "/cinematics/gic_coordinates.cinematic", //???
+    "gic_missionCompleteCinema" : "/cinematics/gic_coordinates.cinematic",	 //literally crashes if you don't give it a 2nd cutscene
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 40,
+
+    "goalEntityUid" : "gic_esther_chapter_4_7_TheOldChaos_Goal",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "gic_esther_keine_hubworld",
+	
+	
+  "setUniverseFlags" : ["gic_esther_chapter_2_hubworld_portallab_attachment_chapter3cohort"] 
+	
+	
+  }
+  
+}

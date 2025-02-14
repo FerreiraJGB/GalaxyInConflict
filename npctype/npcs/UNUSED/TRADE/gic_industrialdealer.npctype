@@ -1,0 +1,61 @@
+{
+  "type" : "gic_industrialdealer",
+  "baseType" : "outpostcivilian",
+
+  "scripts" : [
+    "/npcs/bmain.lua",
+    "/npcs/goodstrader.lua"
+  ],
+
+  "scriptConfig" : {
+    "behavior" : "wanderSimple",
+
+    "behaviorConfig" : {
+      "wanderTime" : [0.25, 0.4],
+      "wanderWaitTime" : [10, 20]
+    },
+
+    "baseBuyFactor" : 0.9,
+    "baseSellFactor" : 2,
+
+    "buyExponent" : 1,
+    "sellExponent" : 1,
+
+    "factorRecoveryTime" : 86400,
+
+    "guiConfig" : {
+      "baseConfig" : "/interface/scripted/goodstrader/goodstradergui.config",
+      "buyItem" : "gic_industrialequipmentcargo",
+      "gui" : {
+        "windowtitle" : {
+          "title" : "Refinery Dealer",
+          "subtitle" : "Further refines metals into goods."
+        }
+      }
+    },
+
+    "sellRotationTime" : 86400,
+    "sellOptions" : [
+      "gic_refinedmetalscargo"
+    ]
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "foundryhardhathead" }
+            ],
+            "chest" : [
+              { "name" : "foundrychest", "parameters" : { "colorIndex" : 0 } }
+            ],
+            "legs" : [
+              { "name" : "foundrylegs", "parameters" : { "colorIndex" : 0 } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

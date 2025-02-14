@@ -1,0 +1,136 @@
+{
+  "type" : "gic_khurtovyna_spartanranger_chamberofthesatori",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeamType" : "friendly",
+  "damageTeam" : 1,
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "behavior" : "gic_hostileguard_advanced", //Will switch to sheathedprimary when in close range.
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_frostrepublic_infantryhead" }, { "name" : "gic_khurtovyna_republic_brodie_1head" }, { "name" : "gic_khurtovyna_republic_brodie_2head" }, { "name" : "gic_khurtovyna_republic_brodie_3head" } ],  
+            "chest" : [ { "name" : "gic_frostrepublic_infantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_frostrepublic_infantrylegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_uscm4_republic_npc"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_npcbayonet_m16a3", "parameters" : { "backupWeapon" : true }  }
+			]
+          },
+		  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_frostrepublic_sapperhead" } ],   
+            "chest" : [ { "name" : "gic_frostrepublic_sapperchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_frostrepublic_infantrylegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_uscm4_republic_npc"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_npcbayonet_m16a3", "parameters" : { "backupWeapon" : true }  }
+			]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 222.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.5
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.25
+      }
+	  
+	  
+    }
+  }
+  
+}

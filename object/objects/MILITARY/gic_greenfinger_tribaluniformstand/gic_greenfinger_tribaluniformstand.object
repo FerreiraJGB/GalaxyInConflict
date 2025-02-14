@@ -1,0 +1,50 @@
+{
+  "objectName" : "gic_greenfinger_tribaluniformstand",
+  "colonyTags" : ["floran","storage"],
+  "rarity" : "Legendary",
+  "tooltipKind" : "base",
+  "race" : "ancient",
+  "health" : 1.5,
+
+  "category" : "storage",
+  "price" : 0,
+  "printable" : false,
+  "description" : "[Interact to drop a Floran Greenfinger Headress, required for the Shinobi Katana]",
+  "shortdescription" : "Greenfinger Tribal Uniform Stand.",
+
+  "inventoryIcon" : "icon.png",
+
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_greenfinger_tribaluniformstand.png:default", "fullbright" : true }, { "image" : "gic_greenfinger_tribaluniformstand_lit.png:default" } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "gic_greenfinger_tribaluniformstand.png:default", "fullbright" : true }, { "image" : "gic_greenfinger_tribaluniformstand_lit.png:default" } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_greenfinger_tribaluniformstand.animation",
+  "animationPosition" : [-16, 0],
+
+  "scripts" : ["/objects/scripts/treasureburst.lua"],
+  "scriptDelta" : 0,
+
+  "burstTreasurePool" : "gic_greenfinger_tribaluniformstandTreasure",
+  "burstItemVelocityRange" : [5, 10],
+  "burstAngleVariance" : 0.5,
+  "burstOffset" : [0.5, 0],
+  "burstIntangibleTimeRange" : [0.25, 0.5]
+}

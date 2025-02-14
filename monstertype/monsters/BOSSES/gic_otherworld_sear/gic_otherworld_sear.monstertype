@@ -1,0 +1,1327 @@
+{
+  "type" : "gic_otherworld_sear",
+  "shortdescription" : "[The Questing Quarreler]",
+  "description" : "Knights of old.",
+
+  "categories" : [ "gic_otherworld_sear" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_otherworld_sear.animation",
+
+  "dropPools" : [ "gic_otherworld_searTreasure" ],
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster_music_adaptive.lua"
+    ],
+	
+
+	//ADAPTIVE HEALTH STUFF
+	"adaptiveTrackingRange" : 200, //should be range in blocks
+	"adaptiveHealthBonus" : 15000, //flat max health stat
+	
+	//EXTRA DROP POOLS, DROPS ONE LOOT POOL PER EXTRA PLAYER
+	"extraDropPools" : ["gic_otherworld_searTreasure"],	
+
+
+	"music" : ["/music/RemnantFromTheAshes/gic_remnantfromtheashes_yaeshaminiboss.ogg"],
+  
+	"range" : 115,			//measured in blocks, default val is 50 blocks
+	"fadeOutTime" : 2.0,	//measured in seconds, default val is 2.0 seconds
+	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+
+
+    "damageBar" : "Special",
+
+    "behavior" : "monster",
+    "deathBehavior" : "monster-death",
+    "seeThroughLiquid" : false,
+	
+	
+	
+	
+	
+	
+
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 150,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 150,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro",
+            "animationTime" : 2
+          }
+        }
+      ],
+
+      "hostileActions" : [
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+		
+	  
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 30,
+		  "parameters" : {
+			"maximumRange" : 90,
+			"minimumRange" : 20,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+		
+
+		
+	 //Create Shield
+       {
+          "name" : "action-fire",
+          "cooldown" : 8,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 90,
+            "minimumRange" : 20,
+            "windupStopForce" : 0,
+            "windupState" : "ballisticshield",
+            "windupTime" : 0.25,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_shieldprojector_zone_alt",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 7,
+			  "knockback" : 0,
+			  "power" : 0,
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[0, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "",
+            "aimDirection" : [1, 0.0],
+            "winddownState" : "",
+            "winddownTime" : 0.1,
+            "damageRepeatGroup": ""
+          }
+        },
+
+
+
+		
+	 //Wildfire Wild Fire
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 90,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "",
+            "windupTime" : 0.25,
+            "projectileCount" : 16,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.25,
+            "inaccuracy" : 0.5,
+            "projectileType" : "gic_wildfire_shot_sear",
+            "projectileParameters" : {
+              "speed" : 40,
+              "timeToLive" : 15,
+			  "knockback" : 50,
+			  "power" : 50,
+              "damageKind" : "fire",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[0, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "fireshot",
+            "aimDirection" : [0, 2.0],
+            "winddownState" : "ballisticshieldwinddown",
+            "winddownTime" : 2.0,
+            "damageRepeatGroup": ""
+          }
+        }
+
+		
+				
+				
+			]
+		  }
+		},	 		
+		
+		
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 15.0,
+        "parameters" : {
+          "onGround" : false,
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.0,
+          "chargeTime" : 0.05,
+          "chargeSpeed" : -1000, //18
+          "chargeControlForce" : 1000, //400
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "dash",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      },	  
+	  
+	  
+	  
+	  //Quad Crossbow Shot
+	  
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 4,
+		  "parameters" : {
+			"maximumRange" : 200,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+
+	 //Crouched Crossbow Bolt
+       {
+          "name" : "action-fire",
+          "cooldown" : 3,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 30,
+            "windupStopForce" : 0,
+            "windupState" : "crouchedcrossbowwindup",
+            "windupTime" : 0.75,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.05,
+            "projectileType" : "gic_soul_arrow",
+            "projectileParameters" : {
+              "speed" : 150,
+              "timeToLive" : 15,
+			  "knockback" : 10,
+			  "power" : 50,
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[2.5, -0.2]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "crouchedcrossbowfire",
+            "fireSound" : "",
+            "aimDirection" : [1, 0.0],
+            "winddownState" : "",
+            "winddownTime" : 0.05,
+            "damageRepeatGroup": ""
+          }
+        },
+		
+		
+		
+	 //Crouched Crossbow Bolt
+       {
+          "name" : "action-fire",
+          "cooldown" : 3,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 30,
+            "windupStopForce" : 0,
+            "windupState" : "crouchedcrossbowwindup",
+            "windupTime" : 0.05,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.05,
+            "projectileType" : "gic_soul_arrow",
+            "projectileParameters" : {
+              "speed" : 150,
+              "timeToLive" : 15,
+			  "knockback" : 10,
+			  "power" : 50,
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[2.5, -0.2]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "crouchedcrossbowfire",
+            "fireSound" : "",
+            "aimDirection" : [1, 0.0],
+            "winddownState" : "",
+            "winddownTime" : 0.05,
+            "damageRepeatGroup": ""
+          }
+        },
+		
+		
+		
+		
+	 //Crouched Crossbow Bolt
+       {
+          "name" : "action-fire",
+          "cooldown" : 3,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 30,
+            "windupStopForce" : 0,
+            "windupState" : "crouchedcrossbowwindup",
+            "windupTime" : 0.05,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.05,
+            "projectileType" : "gic_soul_arrow",
+            "projectileParameters" : {
+              "speed" : 150,
+              "timeToLive" : 15,
+			  "knockback" : 10,
+			  "power" : 50,
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[2.5, -0.2]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "crouchedcrossbowfire",
+            "fireSound" : "",
+            "aimDirection" : [1, 0.0],
+            "winddownState" : "",
+            "winddownTime" : 0.05,
+            "damageRepeatGroup": ""
+          }
+        },
+		
+		
+
+	 //Crouched Crossbow Bolt
+       {
+          "name" : "action-fire",
+          "cooldown" : 1,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 10,
+            "windupStopForce" : 0,
+            "windupState" : "crouchedcrossbowwindup",
+            "windupTime" : 0.05,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.05,
+            "projectileType" : "gic_soul_greatarrow",
+            "projectileParameters" : {
+              "speed" : 150,
+              "timeToLive" : 15,
+			  "knockback" : 50,
+			  "power" : 200,
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[2.5, -0.2]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "crouchedcrossbowfire",
+            "fireSound" : "",
+            "aimDirection" : [1, 0.0],
+            "winddownState" : "",
+            "winddownTime" : 2.0,
+            "damageRepeatGroup": ""
+          }
+        }
+				
+				
+			]
+		  }
+		},	
+	  
+	  
+	  
+
+
+
+
+	  //Dash - Will close the gap.
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 90,
+          "minimumRange" : 20,
+          "windupTime" : 0.25,
+         "power" : 300,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 1200,
+          "chargeState" : "dash_alt",
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Dash Short - Will close the gap.
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 20,
+          "minimumRange" : 5,
+          "windupTime" : 0.25,
+         "power" : 300,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 1200,
+          "chargeState" : "dash",
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "winddownTime" : 0.05,
+          "winddownState" : "idle"
+        }
+      },
+	  
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+	  
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 6,
+		  "parameters" : {
+			"maximumRange" : 20,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+		
+	  //Forward Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "onGround" : false,
+          "maximumRange" : 20,
+          "minimumRange" : 0,
+          "windupTime" : 0.0,
+          "chargeTime" : 0.05,
+          "chargeSpeed" : 3000, //18
+          "chargeControlForce" : 3000, //400
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "dash_alt",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      },
+		
+		
+	 //Fire Crossbow Bolt
+       {
+          "name" : "action-fire",
+          "cooldown" : 8,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 70,
+            "minimumRange" : 10,
+            "windupStopForce" : 0,
+            "windupState" : "firecrossbowwindup",
+            "windupTime" : 0.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_firebolt",
+            "projectileParameters" : {
+              "speed" : 180,
+              "timeToLive" : 15,
+			  "knockback" : 50,
+			  "power" : 50,
+              "damageKind" : "fire",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[2.5, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "firecrossbowfire",
+            "fireSound" : "",
+            "aimDirection" : [1, 0.0],
+            "winddownState" : "",
+            "winddownTime" : 0.1,
+            "damageRepeatGroup": ""
+          }
+        },
+		
+		
+	 //Fire Crossbow Bolt
+       {
+          "name" : "action-fire",
+          "cooldown" : 8,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 70,
+            "minimumRange" : 10,
+            "windupStopForce" : 0,
+            "windupState" : "firecrossbowwindup",
+            "windupTime" : 0.05,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_firebolt",
+            "projectileParameters" : {
+              "speed" : 180,
+              "timeToLive" : 15,
+			  "knockback" : 50,
+			  "power" : 50,
+              "damageKind" : "fire",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[2.5, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "firecrossbowfire",
+            "fireSound" : "",
+            "aimDirection" : [1, 0.0],
+            "winddownState" : "",
+            "winddownTime" : 0.05,
+            "damageRepeatGroup": ""
+          }
+        },
+		
+		
+	 //Fire Crossbow Bolt
+       {
+          "name" : "action-fire",
+          "cooldown" : 8,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 70,
+            "minimumRange" : 10,
+            "windupStopForce" : 0,
+            "windupState" : "firecrossbowwindup",
+            "windupTime" : 0.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_crusader_arrow_fire",
+            "projectileParameters" : {
+              "speed" : 190,
+              "timeToLive" : 15,
+			  "knockback" : 50,
+			  "power" : 200,
+              "damageKind" : "fire",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[2.5, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "firecrossbowfire",
+            "fireSound" : "",
+            "aimDirection" : [1, 0.0],
+            "winddownState" : "",
+            "winddownTime" : 2.0,
+            "damageRepeatGroup": ""
+          }
+        }
+		
+				
+				
+			]
+		  }
+		},	 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	 //Electric Crossbow Bolt - Special variant that bounces back if the player parries/tanks the hit.
+       {
+          "name" : "action-fire",
+          "cooldown" : 10,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 50,
+            "minimumRange" : 10,
+            "windupStopForce" : 0,
+            "windupState" : "electriccrossbowwindup",
+            "windupTime" : 0.75,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_wolfsoldier_arrow_electric_sear",
+            "projectileParameters" : {
+              "speed" : 100,
+              "timeToLive" : 15,
+			  "knockback" : 50,
+			  "power" : 300,
+              "damageKind" : "electric",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[2.5, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "electriccrossbowfire",
+            "fireSound" : "",
+            "aimDirection" : [1, 0.0],
+            "winddownState" : "",
+            "winddownTime" : 2.0,
+            "damageRepeatGroup": ""
+          }
+        },
+		
+
+
+
+
+
+
+
+
+
+
+	  
+	  //Rifle Bash
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 6,
+          "minimumRange" : 0,
+          "windupTime" : 0.33,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 40,
+          "chargeControlForce" : 400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "crossbowbash",
+          "windupState" : "crossbowbashwindup",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+
+
+
+
+
+
+
+
+
+
+//Charged Knife Throw - Special variant that spins and makes wooshy noises. Throws upwards. The shots then home in on the player.
+       {
+          "name" : "action-fire",
+          "cooldown" : 10,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 25,
+            "windupStopForce" : 0,
+            "windupState" : "chargedknifewindup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.05,
+            "projectileType" : "gic_magicshot_spinningknife_3pattern_sear",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 200
+            },
+            "fireOffsets" : [[0.5, 0.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "chargedknifethrow",
+            "fireSound" : "",
+            "aimDirection" : [0, 2],
+            "winddownState" : "",
+            "winddownTime" : 3
+          }
+        },
+		
+		
+		
+		
+		
+
+
+	  
+	  //Forward Reposition - At close range, immediately charge forward to reposition.
+      {
+        "name" : "action-charge",
+        "cooldown" : 0.20,
+        "parameters" : {
+          "maximumRange" : 6,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 1.5,
+          "chargeSpeed" : 30, //18
+          "chargeControlForce" : 300,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "walk",
+          "winddownTime" : 0.025,
+          "winddownState" : "idle"
+        }
+      }		
+		
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "damageTakenActions" : [
+	  
+	  
+	  
+	  
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 15,
+		  "parameters" : {
+			"maximumRange" : 6,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	
+
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 7.0,
+        "parameters" : {
+          "onGround" : false,
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.0,
+          "chargeTime" : 0.05,
+          "chargeSpeed" : -1000, //18
+          "chargeControlForce" : 1000, //400
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "dash",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  
+
+//Knife Throw - Throws a shot right at the player. Very fast speed.
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 80,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "knifewindup",
+            "windupTime" : 0.33,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_spinningknife",
+            "projectileParameters" : {
+              "speed" : 60,
+              "timeToLive" : 10,
+			  "power" : 200
+            },
+            "fireOffsets" : [[0.5, 0.0]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "knifethrow",
+            "fireSound" : "",
+            "aimDirection" : [1, -0.5],
+            "winddownState" : "",
+            "winddownTime" : 0.5
+          }
+        }
+
+
+				
+				
+				
+			]
+		  }
+		},	
+	  
+	  
+	  
+	  
+	  
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 7,
+		  "parameters" : {
+			"maximumRange" : 6,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	
+
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 7.0,
+        "parameters" : {
+          "onGround" : false,
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.0,
+          "chargeTime" : 0.05,
+          "chargeSpeed" : -1000, //18
+          "chargeControlForce" : 1000, //400
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "dash",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  
+
+//Knife Throw - Throws a shot right at the player. Very fast speed.
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 80,
+            "minimumRange" : 0,
+            "windupStopForce" : 0,
+            "windupState" : "knifewindup",
+            "windupTime" : 0.33,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_spinningknife",
+            "projectileParameters" : {
+              "speed" : 60,
+              "timeToLive" : 10,
+			  "power" : 200
+            },
+            "fireOffsets" : [[0.5, 0.0]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "knifethrow",
+            "fireSound" : "",
+            "aimDirection" : [1, -0.5],
+            "winddownState" : "",
+            "winddownTime" : 0.5
+          }
+        }
+
+
+				
+				
+				
+			]
+		  }
+		}	  
+	  
+	  
+
+      ],
+	  
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+	  
+	  
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+
+	
+	
+	
+	
+	
+
+    "damageParts" : { //Greed
+      "body" : {
+        "damage" : 200,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.35,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 20,
+        "statusEffects" : [ "gic_stun_3", "gic_energynullification_3", "gic_attackpowernullification_3" ]
+      }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.15], [0.5, -2.15], [0.5, 2.0], [-0.5, 2.0] ], // [-0.5, -2.15], [0.5, -2.15], [0.5, 2.6], [-0.5, 2.6],    [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375] 
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.10,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.75], [-0.35, -2.0], [0.35, -2.0], [0.75, -1.75], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ],                 //[ [-0.5, -2.15], [0.5, -2.15], [0.5, 1.8], [-0.5, 1.8],      [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375]  ], //1.8 > 2.0
+
+      "mass" : 1,
+      "walkSpeed" : 18,
+      "runSpeed" : 18,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 50
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 40000 //30 000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.5
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.5
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -2.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.25
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.75
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

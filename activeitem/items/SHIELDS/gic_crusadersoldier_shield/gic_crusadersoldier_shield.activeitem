@@ -1,0 +1,73 @@
+{
+  "itemName" : "gic_crusadersoldier_shield",
+  "fixedLevel" : true,
+  "price" : 600,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "^#D6DFFF;Parry Shield^white;",
+  "description" : "''The Glitch Gestalt for all of its hivemind moniker still retained a large degree of independence upon its subject hosts. All lived their stable and unchanging lives, with any social or technological development simply ceasing. Would it be shocking to tell you that I am still part of the Gestalt?''
+
+^#D6DFFF;Venerable Ancient Battlefield: 1.25s PARRY WINDOW | 500HP STABILITY | 40% DEF.^white;",
+
+  "shortdescription" : "Crusader Soldier Shield",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_crusadersoldier_shield.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_crusadersoldier_shield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/armor/gic_bloodborne_body-armor-6.wav" ],
+      "perfectBlock" : [ "/sfx/block/gic_demonssoulsremake_parry_shieldquiet.wav" ],
+      "block" : [ "/sfx/melee/gic_bloodborne_shield-wood.wav" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  
+	  "shieldBash" : [ "/sfx/melee/gic_bloodborne_shieldpress.wav" ]
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_bucklershield.lua"  ],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 500,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.5,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 1.25,
+
+  "knockback" : 1, //15
+  
+  "damageBleedthroughEnabled" : true,
+  "damageBleedthroughAmount" : 0.6, //at 0.1, 10% of all damage received by the shield will bleed through and etc - unless the shield was broken on the hit.
+  //also note that as of the initial version, bleedthrough damage is dealt as "default"/physical damage; there is no way to pull the actual damage type received, as of my testing so far.    
+  
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -80, //25
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

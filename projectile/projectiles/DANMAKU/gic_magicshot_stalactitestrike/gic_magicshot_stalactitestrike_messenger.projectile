@@ -1,0 +1,46 @@
+{
+  "projectileName" : "gic_magicshot_stalactitestrike_messenger",
+  "image" : "gic_magicshot_stalactitestrike_null.png",
+  "physics" : "gic_beaconlaser",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 3.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnTimeout" : [
+ 
+	
+  ],
+  
+"actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_stalactitestrike_stage1",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+	  "angle" : -90
+    }
+],
+  
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 20,
+  "acceleration" : 0,
+  "knockback" : 18
+}

@@ -1,0 +1,24 @@
+{
+  "projectileName" : "gic_electricenergyshot_buffer",
+  "physics" : "bullet",
+  "bounces" : 0,
+  "image" : "gic_electricenergyshot.png",
+  "animationCycle" : 1,
+  "lightColor" : [0, 0, 128],
+  "frameNumber" : 1,
+  "power" : 150,
+  "timeToLive" : 0.00001,
+  "speed" : 140,
+  "damageKind" : "default",
+  "statusEffects" : [ ],
+  
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_electricenergyshot",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    }
+  ]
+  
+}

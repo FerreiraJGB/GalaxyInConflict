@@ -1,0 +1,23 @@
+{
+  "name" : "gic_superheavy_weight_drain",
+  "blockingStat" : "gic_superheavy_weight_drainImmunity",
+  
+  "effectConfig" : {
+    "movementModifiers" : {
+	  "groundMovementModifier" : 0.6,
+      "speedModifier" : 0.5,
+      "airJumpModifier" : 0.7
+    },
+    "tickRate" : 50,
+    "energyCost" : 5,
+    "healthDamage" : 5
+  },
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "gic_superheavy_weight_drain.lua"
+  ],
+
+  "label" : "Super Heavy Weapon - Holding this weapon strains your own physiology. You can only hold on for so long before it begins to twist your strangling grip.",
+  "icon" : "/interface/statuses/gic_superheavy_weight.png"
+}

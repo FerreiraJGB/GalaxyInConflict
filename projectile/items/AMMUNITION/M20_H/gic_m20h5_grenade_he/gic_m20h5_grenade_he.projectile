@@ -1,0 +1,52 @@
+{
+  "projectileName" : "gic_m20h5_grenade_he",
+  "bounces" : 0,
+  "image" : "gic_m20h5_grenade_he.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45,
+      "directional" : true
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 90,
+      "directional" : true
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+	  "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 180,
+      "directional" : true
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+	  "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45,
+      "directional" : true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+  //"maxSpeed" : 250,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 180.0,
+  //"acceleration" : 40,
+  "timeToLive" : 10,
+  "physics" : "grenade"
+}

@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_heavyweaponsdoctrine",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_heavyweaponsdoctrine.png",
+  "maxStack" : 1,  
+  "description" :
+
+"''More experienced machine gun crews had a strong understanding of their weapon's 'tactical competencies' and were able to site their weapon more effectively.''
+^orange;Negate LIGHT/MEDIUM/HEAVY WEAPON WEIGHT PENALTY. When under GUNFIRE NOISE, disable the support buff during and for a duration after leaving GUNFIRE NOISE^reset; | ^orange;When under GUNFIRE NOISE, become IMMUNE to SUPPRESSION, but become SUPPRESSED once leaving GUNFIRE NOISE.
+^green;+10% [EWS] Hit Chance and Accuracy.",
+
+
+
+  
+  
+  
+  "shortdescription" : "Heavy Weapons Doctrine",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_heavyweaponsdoctrine",
+    "displayName" : "Heavy Weapons Doctrine",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_heavyweaponsdoctrine.png",
+    "effects" : [ "gic_heavyweaponsdoctrine", "gic_heavyweaponsdoctrine_primer", "gic_heavyweaponsdoctrine_bonus", "gic_original_assaultdoctrine_primer" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_rig_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

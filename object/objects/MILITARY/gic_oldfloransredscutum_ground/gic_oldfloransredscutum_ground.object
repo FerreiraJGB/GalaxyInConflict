@@ -1,0 +1,35 @@
+{
+  "objectName" : "gic_oldfloransredscutum_ground",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "breakable",
+  "price" : 5,
+  "description" : "A shield on the ground.",
+  "shortdescription" : "Old Floran's Red Scutum Shield",
+  "race" : "human",
+  "maxStack" : 3,
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "smashSounds" : [ "/sfx/objects/gic_ammopickup.ogg" ],
+  "scriptDelta" : 0,  
+  "breakDropOptions" : [
+    [ [ "gic_oldfloransredscutum_greatshield", 1, { } ] ]
+  ],
+  
+  "inventoryIcon" : "gic_oldfloransredscutum_ground.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_oldfloransredscutum_ground.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+
+
+}

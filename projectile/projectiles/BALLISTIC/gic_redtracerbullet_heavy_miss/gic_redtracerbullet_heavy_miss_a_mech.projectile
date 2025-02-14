@@ -1,0 +1,35 @@
+{
+  "projectileName" : "gic_redtracerbullet_heavy_miss_a_mech",
+  "bounces" : 0,
+  "image" : "/projectiles/CORE_CODE/gic_null/gic_null.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/gun/gic_m2hb_fire_0.ogg", "/sfx/gun/gic_m2hb_fire_1.ogg", "/sfx/gun/gic_m2hb_fire_2.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_redtracerbullet_heavy_miss_c_mech",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 5,
+	  "directional" :true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.0,
+  "physics" : "laser"
+}

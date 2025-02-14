@@ -1,0 +1,25 @@
+{
+  "itemName" : "gic_bandits_heartystew",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^red;Preserved Stew",
+  "inventoryIcon" : "gic_bandits_heartystew.png",
+  "description" : "''Have a sip, kid. Ain't no problem in this galaxy that an old mudder's stew can't fix.''
+
+^green;Increases health by 100HP for 30 minutes.",
+  "shortdescription" : "^orange;Bandit's Hearty Stew",
+  "maxStack" : 1,
+  "foodValue" : 20,
+  "tooltipKind" : "gic_largebase_food",
+  "effects" : [ [
+    {
+      "effect" : "gic_maxhealthboost_bandits_heartystew",
+      "duration" : 1800
+    }
+  ] ],
+  "blockingEffects" : [
+    "bottledwaterheal"
+  ],
+  "emote" : "",
+  "emitters" : [ "drinking" ]
+}

@@ -1,0 +1,75 @@
+{
+  "type" : "gic_militarytrader",
+  "baseType" : "merchant",
+  
+  "damageTeamType" : "enemy",
+
+  "scriptConfig" : {
+    "questGenerator" : { "pools" : [], "enableParticipation" : false },
+
+    "dialog" : {
+      "merchant" : {
+        "start" : "/dialog/gic_spacemerchant.config:merchantStart",
+        "end" : "/dialog/gic_spacemerchant.config:merchantEnd",
+        "follow" : "/dialog/gic_spacemerchant.config:follow",
+        "welcome" : "/dialog/gic_spacemerchant.config:welcome",
+        "tout" : "/dialog/gic_spacemerchant.config:tout"
+      },
+      "flee" : {
+        "helpme" : "/dialog/gic_civilianflee.config:helpme",
+        "safe" : "/dialog/gic_civilianflee.config:safe"
+      },
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/merchant.config:tagCriteria",
+          "enclosedArea" : "/dialog/merchant.config:enclosedArea",
+          "otherDeed" : "/dialog/merchant.config:otherDeed",
+          "severe" : "/dialog/merchant.config:severe",
+          "final" : "/dialog/merchant.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/merchant.config:beacon",
+          "rent" : "/dialog/merchant.config:rent"
+        }
+      },
+      "accuse" : "/dialog/thief.config:accuse",
+      "alert" : "/dialog/thief.config:alert"
+    },
+
+    "merchant" : {
+      "waitTime" : 10,
+      "storeRadius" : -1,
+      "poolsFile" : "/npcs/merchant/gic_spacetrader.config",
+      "categories" : {
+        "override" : [ "gic_spacetrade1" ]
+      },
+      "buyFactorRange" : [ 0.8, 2.0 ],
+      "sellFactorRange" : [ 0.2, 0.8 ],
+      "numItems" : 5,
+      "paneLayoutOverride" : {
+        "windowtitle" : {
+          "title" : "  Redyan Dealer",
+          "subtitle" : "  Deals military supplies."
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "back" : [
+              { "name" : "survivalgearback", "parameters" : { "colorIndex" : [1] } }
+            ],
+            "chest" : [
+              { "name" : "soldierchest", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "legs" : [
+              { "name" : "soldierpants", "parameters" : { "colorIndex" : [0] } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

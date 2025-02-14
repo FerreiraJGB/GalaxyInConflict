@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_summon_crystalsentinel",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_summon_crystalsentinel.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 3,
+  "timeToLive" : 10,
+  "power" : 0,
+  "speed" : 100,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+  
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_erchius_crystalsentinel_dying",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : {}
+    }
+
+  ]
+}

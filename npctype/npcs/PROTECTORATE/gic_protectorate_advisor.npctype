@@ -1,0 +1,82 @@
+{
+  "type" : "gic_protectorate_advisor",
+  "baseType" : "gic_protectorate_base",
+  "damageTeam" : 13,
+  "dropPools" : [ "gic_federalsoldierTreasure" ],
+  
+  "movementParameters" : {
+    "runSpeed" : 30,
+    "walkSpeed" : 10
+  },  
+  
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/protectorate/gic_protectorate_combat_advisor.config:attack",
+      "reattack" : "/dialog/protectorate/gic_protectorate_combat_advisor.config:reattack",
+      "killedTarget" : "/dialog/protectorate/gic_protectorate_combat_advisor.config:killedTarget",
+      "lostTarget" : "/dialog/protectorate/gic_protectorate_combat_advisor.config:lostTarget",
+      "outOfSight" : "/dialog/protectorate/gic_protectorate_combat_advisor.config:outOfSight",
+      "cheerOn" : "/dialog/protectorate/gic_protectorate_combat_advisor.config:cheerOn",
+      "cantReach" : "/dialog/protectorate/gic_protectorate_combat_advisor.config:cantReach"
+    },
+    "reactions" : {
+      "spontaneous" : [
+        [2.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+//        [1.0, "patrol", { "timeRange" : [0.1,0.3]}],
+        [20.0, "wander"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "chest" : [ { "name" : "peacekeeperchest", "parameters" : { "colorIndex" : [11] }  } ],
+            "legs" : [ { "name" : "peacekeeperpants", "parameters" : { "colorIndex" : [11] }  } ],
+            "back" : [ { "name" : "gic_wolfpackback", "parameters" : { "colorIndex" : [11] } } ],
+            "primary" : [ "gic_protectorate_npcdronekit" ],
+            "sheathedprimary" : [
+			  "gic_copsc_laserrifle"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 666.6666 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.1
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+  
+}

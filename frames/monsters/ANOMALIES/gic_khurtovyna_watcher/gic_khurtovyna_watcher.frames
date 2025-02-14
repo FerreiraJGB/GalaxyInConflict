@@ -1,0 +1,22 @@
+{
+  "frameGrid" : {
+    "size" : [164, 126],
+    "dimensions" : [8, 5],
+
+    "names" : [
+	  [ "idle.1", "idlephase2.1", null, null, null, null, null, null ],
+	  [ "transition.1", "transition.2", "transition.3", "transition.4", null, null, null, null ],
+	  [ "preaim.1", "preaim.2", "preaim.3", "preaim.4", null, null, null, null ],
+	  [ null, null, null, null, null, null, null, null ],
+	  [ null, null, null, null, null, null, null, null ]
+    ]
+  },
+
+  "aliases" : {
+    "aggroidle.1" : "idle.1",
+	
+	//stun frames; stun.1 is initial state, stun.1 is first phase, stun.2 is second phase
+	"stun.1" : "idle.1",
+	"stun.2" : "idlephase2.1"
+  }
+}

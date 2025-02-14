@@ -1,0 +1,230 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 1.0,
+            "mode" : "loop",
+            "properties" : {
+            }			
+          },
+          "fly" : {
+            "frames" : 1,
+            "mode" : "loop",
+            "cycle" : 2.0,
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "", "/sfx/gic_remnantfromtheashes_pan_slink_wing-01.ogg", "", "", "", "/sfx/gic_remnantfromtheashes_pan_slink_wing-02.ogg", "", "", "", "/sfx/gic_remnantfromtheashes_pan_slink_wing-03.ogg", "", "", "", "/sfx/gic_remnantfromtheashes_pan_slink_wing-04.ogg", ""]
+            }
+          },
+		  
+          "dash" : {
+            "frames" : 1,
+            "cycle" : 1.0,
+            "mode" : "loop",
+            "properties" : {
+            }			
+          },
+		  
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_remnantfromtheashes_pan_slink_snarl.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }	
+          }
+		  
+		  
+		  
+		  
+
+
+
+
+
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+			
+            "dash" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>",
+              "damageArea" : [ [-0.5, -3.05], [0.5, -3.05], [0.5, 1.0], [-0.5, 1.0] ]		
+              }
+            },
+						
+			
+			
+			
+				
+			
+			
+			
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+
+  "lights" : {
+    "glow" : {
+      "active" : false,
+      "position" : [0, 0],
+      "color" : [50, 50, 150], //255, 255, 107
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+    "stars" : {
+      "enabled" : true,
+      "emissionRate" : 3.0,
+      "particles" : [
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" }
+      ]
+    },
+    "deathPoof" : {
+      "particles" : [
+	 
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+    "throw" : {
+      "pool" : [ "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-01.ogg", "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-02.ogg", "/sfx/gic_remnantfromtheashes_pan_thundertusk_equipment-03.ogg" ],
+      "rangeMultiplier" : 1.0
+    },
+  
+    "laser" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_magic-fireball-14db.wav" ],
+      "rangeMultiplier" : 3.0
+    },
+  
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/gic_bloodborne_kill1.wav", "/sfx/gic_bloodborne_kill2.wav" ]
+  }
+}

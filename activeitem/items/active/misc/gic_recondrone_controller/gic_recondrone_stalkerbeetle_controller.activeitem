@@ -1,0 +1,49 @@
+{
+  "itemName" : "gic_recondrone_stalkerbeetle_controller",
+  "level" : 1,
+  "price" : 0,
+  "rarity" : "Legendary",
+  "category" : "^#DBC5A6;Beast Controller",
+  "description" : "Bred to hunt and track prey, these relatively oversized insects commune directly with their host through unknown means, giving hunters a view of the battlefield. While fragile compared to a proper Drone, it afflicts ^#6FB55F;RAPID CORROSION^reset; ^red;indiscriminately^reset; upon death.
+^#DBC5A6;[MOUSE1] to spawn/despawn Beetle.
+HOLD [SHIFT] to increase the Beetle's speed at cost of handling.
+[MOUSE2] to emit a terrain-detecting ping at the Beetle's location which can also detect neutral or hostile entities.^reset;",
+  
+  "shortdescription" : "Stalker Beetle",
+  "twoHanded" : true,
+  "maxStack" : 1,
+  "itemTags" : [],
+
+  "animation" : "gic_recondrone_stalkerbeetle_controller.animation",
+  "scripts" : ["gic_recondrone_stalkerbeetle_controller.lua"],
+  
+  "animationScripts" : ["/items/active/misc/gic_recondrone_controller/gic_detector.lua"],
+  "animationDelta" : 5,
+  "pingDetectConfig" : {
+    "type" : "entity",
+    "image" : "/items/active/unsorted/oredetector/detectnoise.png:<variant>",
+    "variants" : 4,
+    "colors" : {
+      "empty" : [0, 180, 0, 255],
+      "solid" : [120, 160, 120, 50],
+	  "hostile" : [255,0,0,255],
+	  "neutral" : [255,255,0,255]
+    }
+  },
+
+  "pingRange" : 50,
+  "pingBandWidth" : 8,
+  "pingDuration" : 3.0,
+  "pingCooldown" : 0.5,
+  
+  
+  "tooltipKind" : "gic_largebase",
+
+  "boundingBox" : [-1, -1, 1, 1],
+  
+  "animationParts" : {
+    "controller" : "gic_recondrone_stalkerbeetle_controller.png"
+  },
+
+  "inventoryIcon" : "gic_recondrone_stalkerbeetle_controller_icon.png"
+}

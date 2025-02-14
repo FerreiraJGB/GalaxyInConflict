@@ -1,0 +1,34 @@
+{
+  "id" : "gic_chapter2_bossrush_astraltemplequest",
+  "title" : "^orange;Boss Rush: Astral Temple",
+  "text" : "Obtain: Wolf-Knight's Sign-Spear (kill Knight of Nights).
+
+^orange;[Upon completion: Unlocks the Knight of Nights Boss-Rush Replays at the Portal Lab]",
+  "completionText" : "[Knight of Nights can now be replayed via the Portal Lab]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 100 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_wolfknights_spear_player",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

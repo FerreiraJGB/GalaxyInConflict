@@ -1,0 +1,38 @@
+{
+  "projectileName" : "gic_fire_energyshot_miss_c_pointblank",
+  "image" : "/projectiles/ballistic/gic_fire_energyshot/gic_fire_energyshot_c.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "fullbright" : true,
+//  "pointLight" : false,
+  "timeToLive" : 0.05,
+  "actionOnHit" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact_muzzle.config"
+    }
+  ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_fire_energyshot_miss_c",
+      "fuzzAngle" : 0.0,
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    }
+  ],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bulletshot" ],
+  "speed" : 200,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef"
+}

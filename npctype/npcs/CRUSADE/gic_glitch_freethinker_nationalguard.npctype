@@ -1,0 +1,112 @@
+{
+  "type" : "gic_glitch_freethinker_nationalguard",
+  "baseType" : "gic_glitch_freethinker_base",
+
+  "damageTeam" : 29,
+  
+  "dropPools" : [ "gic_glitchfreethinker_nationalguardsoldierTreasure" ],
+  
+  "scriptConfig" : {
+//    "behavior" : "gic_combat_default",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [10.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:attack",
+      "reattack" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:reattack",
+      "killedTarget" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:attack",
+      "cantReach" : "/dialog/GLITCH/gic_glitch_freethinker_cityguard_combat.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_cityguardhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_freethinkernationalguardchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_citysapperlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [ "gic_steelguardpercussionrifle_npc" ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_rally_freethinker_primer"],
+  
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+        "fireResistance" : {
+          "baseValue" : -0.25
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	,
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

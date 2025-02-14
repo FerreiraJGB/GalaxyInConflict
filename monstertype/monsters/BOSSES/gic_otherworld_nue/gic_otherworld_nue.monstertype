@@ -1,0 +1,2024 @@
+{
+  "type" : "gic_otherworld_nue",
+  "shortdescription" : "[Hero of the Heian Era]",
+  "description" : "Knights of old.",
+
+  "categories" : [ "gic_otherworld_nue" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_otherworld_nue.animation",
+
+  "dropPools" : [ ],
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster_dualboss_adaptive.lua"
+    ],
+	
+
+	"music" : ["/music/RemnantFromTheAshes/gic_remnantfromtheashes_reisumminiboss_extended.ogg"],
+  
+	"range" : 95,			//measured in blocks, default val is 50 blocks
+	"fadeOutTime" : 2.0,	//measured in seconds, default val is 2.0 seconds
+	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+	
+	
+	//ADAPTIVE HEALTH STUFF
+	"adaptiveTrackingRange" : 200, //should be range in blocks
+	"adaptiveHealthBonus" : 13500, //flat max health stat
+	
+	
+	
+	
+	//EXTRA DROP POOLS, DROPS ONE LOOT POOL PER EXTRA PLAYER
+	"extraDropPools" : ["basicTreasure"],
+	
+	
+	
+	
+	//DUAL BOSS UNIQUE STUFF
+	"targetEntity" : "gic_otherworld_seija", //looks for an entity of this typeName; keep with monsters for now, not 100% sure how typeName interacts with NPCs; likely refers to their npcType, but haven't tested yet.
+	//when this entity is dead, switch to targetPhase
+	
+	
+	
+	"trackingDistance" : 150, //valid tracking distance; when targetEntity is outside of this range, it is considered "dead" and will cause this boss to switch to its targetPhase
+	"targetPhase" : "behaviorConfig2", //name of phase to switch to when targetEntity is lost/died
+
+
+
+
+    "damageBar" : "Special",
+    "behavior" : "monster",
+    "deathBehavior" : "monster-death",
+    "seeThroughLiquid" : false,
+	
+	
+
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 220,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+
+      ],
+
+      "hostileActions" : [
+
+
+
+
+
+	  //Delayed Explosive Arrow - Explodes after a certain time - SHORT - DIALOGUE
+       {
+          "name" : "action-fire",
+          "cooldown" : 99999,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 20,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "standardbow_windup_alt",
+            "windupTime" : 3.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.3,
+            "projectileType" : "gic_crusader_arrow_fire_homing_nohit_nue",
+            "projectileParameters" : {
+			  "speed" : 40,
+			  "power" : 100,
+			  "knockback" : 30,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[1.0, 2.0], [1.0, 2.0], [1.0, 2.0], [1.0, 2.0], [1.0, 2.0]],
+            "aimDirection" : [1, 3],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "standardbow_fire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },	  
+	
+
+	  
+//PHASE 1 STUFF	  
+
+	  //Delayed Explosive Arrow - Explodes after a certain time - SHORT
+       {
+          "name" : "action-fire",
+          "cooldown" : 2,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 30,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "standardbow_windup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.3,
+            "projectileType" : "gic_crusader_arrow_fire_homing_nohit_nue",
+            "projectileParameters" : {
+			  "speed" : 40,
+			  "power" : 100,
+			  "knockback" : 30,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[1.0, 2.0], [1.0, 2.0], [1.0, 2.0], [1.0, 2.0], [1.0, 2.0]],
+            "aimDirection" : [1, 3],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "standardbow_fire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },	  
+	
+
+
+
+	  //Delayed Explosive Arrow - Explodes after a certain time - MEDIUM
+       {
+          "name" : "action-fire",
+          "cooldown" : 2,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 30,
+            "windupStopForce" : 10,
+            "windupState" : "standardbow_windup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.3,
+            "projectileType" : "gic_crusader_arrow_fire_homing_nohit_nue",
+            "projectileParameters" : {
+			  "speed" : 60,
+			  "power" : 100,
+			  "knockback" : 30,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[1.0, 2.0], [1.0, 2.0], [1.0, 2.0], [1.0, 2.0], [1.0, 2.0]],
+            "aimDirection" : [1, 3],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "standardbow_fire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },	  	
+
+
+
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 15,
+		  "parameters" : {
+			"maximumRange" : 200,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+
+
+	  //Trifork Volley (Bolt) - Splits after a certain amount of time - SHORT
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "specialbow_windup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_triforkvolleybolt_cup_nue",
+            "projectileParameters" : {
+			  "speed" : 30,
+			  "power" : 100,
+			  "knockback" : 30,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[1.0, 2.0]],
+            "aimDirection" : [1, 3],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "specialbow_fire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },	  
+
+	  //Trifork Volley (Bolt) - Splits after a certain amount of time - MEDIUM
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "specialbow_windup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_triforkvolleybolt_cup_nue",
+            "projectileParameters" : {
+			  "speed" : 40,
+			  "power" : 100,
+			  "knockback" : 30,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[1.0, 2.0]],
+            "aimDirection" : [1, 3],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "specialbow_fire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },	 
+
+	  //Trifork Volley (Bolt) - Splits after a certain amount of time - LONG
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "specialbow_windup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_triforkvolleybolt_cup_nue",
+            "projectileParameters" : {
+			  "speed" : 50,
+			  "power" : 300,
+			  "knockback" : 30,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[1.0, 2.0]],
+            "aimDirection" : [1, 3],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "specialbow_fire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },
+		
+	  //Trifork Volley (Bolt) - Splits after a certain amount of time - LONG
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "specialbow_windup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_triforkvolleybolt_cup_nue",
+            "projectileParameters" : {
+			  "speed" : 60,
+			  "power" : 300,
+			  "knockback" : 30,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[1.0, 2.0]],
+            "aimDirection" : [1, 3],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "specialbow_fire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },
+		
+	  //Trifork Volley (Bolt) - Splits after a certain amount of time - LONG
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "specialbow_windup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_triforkvolleybolt_cup_nue",
+            "projectileParameters" : {
+			  "speed" : 70,
+			  "power" : 300,
+			  "knockback" : 30,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[1.0, 2.0]],
+            "aimDirection" : [1, 3],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "specialbow_fire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 5.0
+          }
+        }
+				
+				
+			]
+		  }
+		}
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+      ],
+
+      "approachActions" : [
+
+      ],
+
+      "followActions" : [
+ 
+      ],
+	  
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "damageTakenActions" : [
+	 
+
+      ],
+	  
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+	  
+	  
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+
+
+	
+	
+	
+	
+	
+	
+
+
+	
+    "behaviorConfig2" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 220,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : 9999,
+          "parameters" : {
+            "windupTime" : 0.05,
+            "windupState" : "",
+            "winddownTime" : 0.05,
+            "winddownState" : "idle_phase2",
+
+            "invulnerableTime" : 6,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+			
+	  //Phase Change
+       {
+          "name" : "action-fire",
+          "cooldown" : 99999,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "phase2_stepdown_transition",
+            "windupTime" : 3.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_soldierslayerloop_explosion",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.4,
+			  "power" : 0,
+			  "knockback" : 200,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 1]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "phase2_spearswoosh_transition",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 3
+          }
+        }
+
+			],
+            "invulnerableEffect": "gic_boss_selfheal_10000_1"
+          }
+        }
+      ],
+
+      "hostileActions" : [
+	  
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  //Impertinent CUR!
+       {
+          "name" : "action-fire",
+          "cooldown" : 99999,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 15,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "ground_stab_windup_alt",
+            "windupTime" : 1.1,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_electrictravelingswoosh_360pattern", //gic_plasmaimpact_crusaderchampion
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 40,
+			  "knockback" : 90,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1", "gic_stun_2",  "gic_stun_3", "gic_attackpowernullification_3", "gic_energynullification_3" ]	  
+            },
+            "fireOffsets" : [[0, -0.5]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "ground_stab",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 2
+          }
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Snowscreen Cover into Thrusts, and back.
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 40,
+		  "parameters" : {
+			"maximumRange" : 30,
+			"minimumRange" : 0,
+			
+			"windupState": "idle_phase2",
+			"winddownState": "idle_phase2",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+
+	  //Snowscreen
+       {
+          "name" : "action-fire",
+          "cooldown" : 14,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 30,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "snowscreen_upperslash_windup",
+            "windupTime" : 1,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_snowscreen",
+            "projectileParameters" : {
+			  "power" : 20,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ice",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[0.2, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "aimDirection" : [1, 0],
+            "fireState" : "snowscreen_upperslash",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.5
+          }
+        },
+		
+		//Snowscreen Long Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.015,
+          "chargeSpeed" : 4800,
+          "chargeControlForce" : 2400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "snowscreen_thrust_windup",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Backdash
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 0,
+          "windupTime" : 0.05,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800,
+          "chargeControlForce" : -2400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "backdash",
+          "windupState" : "",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      }
+				
+			]
+		  }
+		},
+
+				
+
+
+
+
+
+
+
+//Stun Bash into Upper Slash
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 17,
+		  "parameters" : {
+			"maximumRange" : 6,
+			"minimumRange" : 0,
+			
+			"windupState": "idle_phase2",
+			"winddownState": "idle_phase2",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  
+	  //Bash
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 6,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 100,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "bash",
+          "windupState" : "bash_windup",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Upper Slash
+      {
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 15,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 800, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "bash_followup_upperslash_windup",
+          "chargeState" : "bash_followup_upperslash",
+          "winddownTime" : 1.0,
+          "winddownState" : ""
+        }
+      }
+	  
+				
+				
+				
+			]
+		  }
+		},
+
+				
+				
+		
+
+
+
+
+
+//Snowscreen Cover into Projected Strike
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 24,
+		  "parameters" : {
+			"maximumRange" : 30,
+			"minimumRange" : 0,
+			
+			"windupState": "idle_phase2",
+			"winddownState": "idle_phase2",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+
+	  //Snowscreen
+       {
+          "name" : "action-fire",
+          "cooldown" : 14,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 40,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "snowscreen_upperslash_windup",
+            "windupTime" : 1,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_snowscreen",
+            "projectileParameters" : {
+			  "power" : 20,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "ice",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[0.2, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "aimDirection" : [1, 0],
+            "fireState" : "snowscreen_upperslash",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.5
+          }
+        },
+		
+		
+		
+
+	  //Projected Force - Strikes with a massive energy blade.
+       {
+          "name" : "action-fire",
+          "cooldown" : 12,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "snowscreen_projectedstrike_windup",
+            "windupTime" : 1,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_teartravelingswoosh_messenger",
+            "projectileParameters" : {
+			  "power" : 250,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "electric",
+              "damageType" : "IgnoresDef"
+			  
+            },
+            "fireOffsets" : [[0.2, 1.0]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "aimDirection" : [1, 0],
+            "fireState" : "snowscreen_projectedstrike",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 1.5
+          }
+        }
+	  
+				
+				
+				
+			]
+		  }
+		},
+
+				
+
+
+
+		
+
+	 
+	  
+
+	  //Siege Command - Summons an arrow storm.
+       {
+          "name" : "action-fire",
+          "cooldown" : 30,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 40,
+            "minimumRange" : 10,
+            "windupStopForce" : 10,
+            "windupState" : "siegecommand_windup",
+            "windupTime" : 1.0,
+            "projectileCount" : 3,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 2.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_siegecommand_messenger",
+            "projectileParameters" : {
+			  "power" : 100,
+			  "knockback" : 30,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[3.3, 4.0]],
+            "aimDirection" : [1, 3],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "siegecommand",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 3.0
+          }
+        },
+		
+		
+		
+		
+		
+		
+
+
+//Relentless Sweep
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 40,
+		  "parameters" : {
+			"maximumRange" : 15,
+			"minimumRange" : 0,
+			
+			"windupState": "idle_phase2",
+			"winddownState": "idle_phase2",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  
+	  //Relentless Sweep Start
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 15,
+          "minimumRange" : 0,
+          "windupTime" : 1.0,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 1600,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "relentless_sweep",
+          "windupState" : "relentless_sweep_windup",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Relentless Sweep Follow-Up
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1600, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "relentless_sweep_followup_windup",
+          "chargeState" : "relentless_sweep",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+	  
+		  //Relentless Sweep Follow-Up Short
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1600, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "relentless_sweep_followup_windup",
+          "chargeState" : "relentless_sweep",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Relentless Sweep Follow-Up
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1600, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "relentless_sweep_followup_windup",
+          "chargeState" : "relentless_sweep",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Relentless Sweep Follow-Up Short
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1600, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "relentless_sweep_followup_windup",
+          "chargeState" : "relentless_sweep",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Relentless Sweep Follow-Up
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1600, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "relentless_sweep_followup_windup",
+          "chargeState" : "relentless_sweep",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Relentless Sweep Follow-Up Short
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1600, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "relentless_sweep_followup_windup",
+          "chargeState" : "relentless_sweep",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Relentless Sweep Final
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1600, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "relentless_sweep_followup_windup",
+          "chargeState" : "relentless_sweep_final",
+          "winddownTime" : 2.5,
+          "winddownState" : ""
+        }
+      }
+	  
+				
+				
+				
+			]
+		  }
+		},
+
+		
+		
+		
+		
+		
+		
+		
+		
+	  //Blood Swords - Summons swords, then launches them. Synchronised.
+       {
+          "name" : "action-fire",
+          "cooldown" : 20,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 90,
+            "minimumRange" : 10,
+            "windupStopForce" : 10,
+            "windupState" : "",
+            "windupTime" : 0.25,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_bloodsword_7pattern",
+            "projectileParameters" : {
+			  "power" : 100,
+			  "knockback" : 30,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0.0, 0.0]],
+            "aimDirection" : [1, 0],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "bloodswords_windup",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 3.0
+          }
+        },
+		
+		
+		
+		
+		
+
+
+
+//Shove into Overhead
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 7,
+		  "parameters" : {
+			"maximumRange" : 8,
+			"minimumRange" : 0,
+			
+			"windupState": "idle_phase2",
+			"winddownState": "idle_phase2",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  
+	  //Shove
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 8,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 200,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "shove",
+          "windupState" : "",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Overhead
+      {
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 14,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1600, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "overhead_windup",
+          "chargeState" : "overhead_swing",
+          "winddownTime" : 1.25,
+          "winddownState" : ""
+        }
+      }
+	  
+				
+				
+				
+			]
+		  }
+		},
+
+				
+		
+		
+		
+		
+
+
+//Thrust into BackSweep
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 7,
+		  "parameters" : {
+			"maximumRange" : 10,
+			"minimumRange" : 0,
+			
+			"windupState": "idle_phase2",
+			"winddownState": "idle_phase2",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  
+	  //Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrust_windup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Back-Sweep
+      {
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 14,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : -1600, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "sweep_windup",
+          "chargeState" : "sweep",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      }
+	  
+				
+				
+				
+			]
+		  }
+		},
+
+		
+		
+		
+		
+
+
+//Thrust into Backdash into Perilous Thrust
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 15,
+		  "parameters" : {
+			"maximumRange" : 10,
+			"minimumRange" : 0,
+			
+			"windupState": "idle_phase2",
+			"winddownState": "idle_phase2",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  
+	  //Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.015,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 300,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrust_windup",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Backdash
+      {
+        "name" : "action-charge",
+        "cooldown" : 2.0,
+        "parameters" : {
+          "maximumRange" : 25,
+          "minimumRange" : 0,
+          "windupTime" : 0.05,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : -1600,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "backdash",
+          "windupState" : "",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Perilous Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 50,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 2400, //1000
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "perilous_thrust_windup",
+          "chargeState" : "perilous_thrust",
+          "winddownTime" : 1.25,
+          "winddownState" : ""
+        }
+      }
+	  
+				
+				
+				
+			]
+		  }
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+//Overhead Ground Stab 3x
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 45,
+		  "parameters" : {
+			"maximumRange" : 35,
+			"minimumRange" : 0,
+			
+			"windupState": "idle_phase2",
+			"winddownState": "idle_phase2",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+		
+		
+		
+	  //Ground Stab - First batch
+       {
+          "name" : "action-fire",
+          "cooldown" : 7,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 35,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "ground_stab_windup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_electrictravelingswoosh_360pattern", //gic_plasmaimpact_crusaderchampion
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 40,
+			  "knockback" : 90,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1", "gic_stun_2",  "gic_stun_3", "gic_attackpowernullification_3", "gic_energynullification_3" ]	  
+            },
+            "fireOffsets" : [[0, -0.5]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "ground_stab",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 2
+          }
+        },
+	  
+	  //Ground Stab - Rapid 2nd batch.
+       {
+          "name" : "action-fire",
+          "cooldown" : 7,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "ground_stab_windup",
+            "windupTime" : 0.25,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_electrictravelingswoosh_360pattern", //gic_plasmaimpact_crusaderchampion
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 40,
+			  "knockback" : 90,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1", "gic_stun_2",  "gic_stun_3", "gic_attackpowernullification_3", "gic_energynullification_3" ]	  
+            },
+            "fireOffsets" : [[0, -0.5]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "ground_stab",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 0.05
+          }
+        },
+		
+	  //Ground Stab - Rapid 2nd batch.
+       {
+          "name" : "action-fire",
+          "cooldown" : 7,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "ground_stab_windup",
+            "windupTime" : 0.2,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_electrictravelingswoosh_360pattern", //gic_plasmaimpact_crusaderchampion
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 40,
+			  "knockback" : 90,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1", "gic_stun_2",  "gic_stun_3", "gic_attackpowernullification_3", "gic_energynullification_3" ]	  
+            },
+            "fireOffsets" : [[0, -0.5]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "ground_stab",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 3.0
+          }
+        }
+				
+				
+				
+			]
+		  }
+		},
+
+				
+		
+
+
+
+
+
+	  //Backdash
+      {
+        "name" : "action-charge",
+        "cooldown" : 10.0,
+        "parameters" : {
+          "maximumRange" : 2,
+          "minimumRange" : 0,
+          "windupTime" : 0.05,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 4800,
+          "chargeControlForce" : -3200,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "backdash",
+          "windupState" : "",
+          "winddownTime" : 1.5,
+          "winddownState" : ""
+        }
+      }		
+		
+
+
+
+
+
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "walk",
+            "fallState": "walk",
+            "moveState": "walk",
+            "run": true,
+            "idleState": "walk"
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "walk",
+            "fallState": "walk",
+            "moveState": "walk",
+            "run": true,
+            "idleState": "walk"
+          }
+        }
+		
+		
+      ],
+	  
+      "periodicActions" : [
+//        {
+//          "name" : "action-animate",
+//          "parameters" : {
+//            "stateType" : "body",
+//            "state" : "walk",
+//            "animationTime" : 600
+//          }
+//        }
+	  ],
+
+      "damageTakenActions" : [
+	 
+
+      ],
+	  
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+	  
+	  
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    "damageParts" : {
+      "body" : {
+        "damage" : 150, //Standard Damage
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.35,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 12,
+        "statusEffects" : [ ]
+      },
+      "shoveDamage" : {
+        "damage" : 0,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.35,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 70,
+        "statusEffects" : [ ]	  
+      },
+      "bashDamage" : {
+        "damage" : 20,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.35,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 60,
+        "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_stun_3", "gic_attackpowernullification_3", "gic_energynullification_3" ]	
+      },
+      "piercingDamage" : {
+        "damage" : 150,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.35,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 20,
+        "statusEffects" : [ {"effect" : "gic_unblockableDamage", "duration" : 25.0} ] //duration value (out of 100) represents % of health that will be dealt
+      }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.15], [0.5, -2.15], [0.5, 2.0], [-0.5, 2.0] ], // [-0.5, -2.15], [0.5, -2.15], [0.5, 2.6], [-0.5, 2.6],    [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375] 
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.75], [-0.35, -2.05], [0.35, -2.05], [0.75, -1.75], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ],                 //[ [-0.5, -2.15], [0.5, -2.15], [0.5, 1.8], [-0.5, 1.8],      [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375]  ], //1.8 > 2.0
+
+      "mass" : 1,
+      "walkSpeed" : 200, //20
+      "runSpeed" : 200, //20
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 290
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 30000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireResistance" : {
+          "baseValue" : 0.25
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.8
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.8
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.25
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -2.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.75
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.95
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : -0.2
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 25
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

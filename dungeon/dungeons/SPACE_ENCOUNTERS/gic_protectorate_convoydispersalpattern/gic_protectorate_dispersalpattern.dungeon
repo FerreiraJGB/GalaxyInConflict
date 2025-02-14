@@ -1,0 +1,47 @@
+{
+  "metadata" : {
+    "name" : "gic_protectorate_dispersalpattern",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [
+      "gic_protectorate_dispersalpattern"
+    ],
+    "breathable" : false,	
+    "gravity" : 160,
+    "extendSurfaceFreeSpace" : 100,
+    "maxRadius" : 1000000,
+    "maxParts" : 2,
+    "protected" : true
+  },
+
+  "parts" : [
+
+	
+    // SAFE ZONE
+    {
+      "name" : "gic_unitan_strongpsychicemissions_safe-empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "/dungeons/SPACE_ENCOUNTERS/gic_unitan_strongpsychicemissions_safe-empty.json" ],
+      "chance" : 0,
+      "markDungeonId" : false
+    },	
+	
+
+    {
+      "name" : "gic_protectorate_dispersalpattern",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+        [ "doNotConnectToPart", [ "gic_protectorate_dispersalpattern" ] ]
+      ],
+      "def" : [ "tmx", "gic_protectorate_dispersalpattern.json" ],
+      "chance" : 1
+    }
+	
+
+	
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "projectileName" : "gic_genecultist_agricola_pitchfork",
+  "physics" : "gic_genecultist_javelin_arrow",
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "gic_genecultist_agricola_pitchfork.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "IgnoresDef",
+  "damageKindImage" : "icon.png",
+  "power" : 40,
+  "onlyHitTerrain" : false,
+  "knockback" : 2,
+  "knockbackDirectional" : true,
+  "statusEffects" : [ {"effect":"gic_boss_melee_primer","duration":5},"gic_bulletshot" ],
+  "timeToLive" : 5,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  
+  "speed" : 100,
+  "emitters" : [ "arrowflames" ],  
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  "rotationRate" : 1.0,
+  "trackingLimit" : 300 
+  
+}

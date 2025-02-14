@@ -1,0 +1,62 @@
+{
+  "id" : "gic_razed_kojiro_swordsaintQuest",
+  "title" : "^orange;Kojiro, The Sword Saint",
+  "prerequisites" : [ "gic_razed_kojiro_gathermaterialsQuest" ],
+  
+  
+  "text" : "Only one of you will make it out of the approaching duel. ^orange;He can only be hurt through MELEE.^reset; Either you take his sword and his head, or he takes your life over and over until you lose your will to fight...",
+  
+  "completionText" : "''Reap the eternal from the mind, and see the water fall. Cast all the suffering aside, lest it cover all.''",
+  
+  
+  
+  
+  "moneyRange" : [30000, 30000],
+  "canBeAbandoned" : false,
+  "rewards" : [
+    [ ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_noassociatedmission_nocutscene.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/UNITED_SYSTEMS/gic_razed_venerableancientbattlefield_statue/gic_razed_venerableancientbattlefield_statue.png"} ],
+        "title" : "Daimyo Statue"
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/UNITED_SYSTEMS/gic_razed_venerableancientbattlefield_statue/gic_razed_venerableancientbattlefield_statue.png"} ],
+        "title" : "Rebirth"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Interact with the ^orange;Daimyo Statue^reset; to travel to ^orange;Duel the Acclaimed Daimyo^reset;.",
+      "findGoal" : "Duel the Acclaimed Daimyo.",
+      "turnIn" : "Return to the ^orange;Daimyo Statue^reset; once the duel is completed..."
+    },
+
+    "warpEntityUid" : "gic_razed_venerableancientbattlefield_statue_quest",
+    "warpAction" : "instanceworld:gic_razed_mountainsiegelines_venerableancientbattlefield",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_razed_kojiro_swordsaint_confirmation",
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 200,
+
+    "goalEntityUid" : "gic_razed_kojiro_swordsaint_goal",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "requireTurnIn" : true,
+
+    "turnInEntityUid" : "gic_razed_venerableancientbattlefield_statue_quest",
+	
+	
+  "setUniverseFlags" : [] 
+	
+	
+  }
+  
+}

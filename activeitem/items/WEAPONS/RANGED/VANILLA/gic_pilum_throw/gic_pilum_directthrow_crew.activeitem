@@ -1,0 +1,91 @@
+{
+  "itemName" : "gic_pilum_directthrow_crew",
+  "price" : 3260,
+  "inventoryIcon" : "gic_pilum_throw.png",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "Did we make that?",
+  "shortdescription" : "Spear Throw",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "Battle Arm",
+  "itemTags" : ["weapon","ranged","rifle"],
+  "twoHanded" : false,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_pilum_throw.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/projectiles/throw_item.ogg" ]
+    }
+  },
+
+  "baseOffset" : [0.95, 0.3],
+  "muzzleOffset" : [-1.0, -0.14],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+    "damageConfig" : { "statusEffects" : [ "gic_tazed", "gic_tazed_1", "electrified" ] },
+    "fireTime" : 5,
+    "baseDps" : 10,
+    "energyUsage" : 24,
+    "inaccuracy" : 0.04,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : ["gic_pilum_thrown_npc"],
+    "projectileParameters" : {
+      "knockback" : 1,
+      "speed" : 90
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 65, //90
+        "weaponRotation" : -65,
+        "twoHanded" : false,
+	    "frontArmFrame" : "run.2",
+	    "backArmFrame" : "jump.3",
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "weaponOffset" : [-1.6, -0.7]
+      },
+      "fire" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+		
+        "weaponOffset" : [-1.6, -0.7],
+		
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.3,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+		
+        "weaponOffset" : [0, 0],
+		
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  "aimOffset" : 0,
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

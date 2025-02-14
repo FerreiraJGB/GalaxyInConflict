@@ -1,0 +1,48 @@
+{
+  "objectName" : "gic_khurtovyna_bunkercomplex_trainescape_voidcoreshipment_portal",
+  "colonyTags" : ["human"],
+  "rarity" : "Legendary",
+  "category" : "other",
+  "price" : 0,
+  "printable" : false,
+
+  "description" : "[SHIPMENT SECURED | RUNDOWN ESCAPE]",
+  "shortdescription" : "Rundown ESCAPE",
+  "race" : "human",
+
+  "lightColor" : [76, 60, 86],
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_khurtovyna_bunkercomplex_trainescape_voidcoreshipment_portal.png:<color>.<frame>", "fullbright" : true }, { "image" : "gic_khurtovyna_bunkercomplex_trainescape_voidcoreshipment_portal_lit.png:<color>.<frame>" } ],
+      "imagePosition" : [-16, 0],
+      "animationPosition" : [-16, 0],
+      "spaceScan" : 0.1,
+
+      "anchors" : [ "bottom" ],
+      "direction" : "right",
+
+      "lightPosition" : [0, 3],
+
+      "detectArea" : [ [-3, 0], [3, 5] ]
+    }
+  ],
+
+  "animation" : "/objects/gic_khurtovyna_bunkercomplex_trainescape_voidcoreshipment/gic_khurtovyna_bunkercomplex_trainescape_voidcoreshipment_portal.animation",
+  "animationParts" : {
+    "bg" : "gic_khurtovyna_bunkercomplex_trainescape_voidcoreshipment_portal.png",
+    "fg" : "gic_khurtovyna_bunkercomplex_trainescape_voidcoreshipment_portal_lit.png"
+  },
+
+  "scripts" : [ "/objects/gic_khurtovyna_bunkercomplex_trainescape_voidcoreshipment/gic_khurtovyna_bunkercomplex_trainescape_voidcoreshipment_portal.lua" ],
+  "scriptDelta" : 20,
+
+  "vanishTime" : 12,
+
+  "messagePlayerInterval" : 0.5,
+  "messagePlayerRange" : 30,
+
+  "health" : 10,
+  "smashOnBreak" : true
+}

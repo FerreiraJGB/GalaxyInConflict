@@ -1,0 +1,345 @@
+{
+  "type" : "gic_retainer_moonrabbit_matriarch_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "fem11",
+    "hairColor" : "15"
+  },  
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0} ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "crewmember", //gic_noinspectcrew
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  //------------
+	  
+ //Retainer Add-on - Had to concede with the default popup.  
+      "interactAction" : "ShowPopup", //ScriptPane
+	  
+      "interactData" : {
+      "uiConfig" : "/interface/windowconfig/gic_retainerpopup.config", //-- This doesn't work, the bastards!
+	  
+//	  "gui" : "/interface/windowconfig/gic_retainerpopup.config",
+	  
+        "icon" : {
+          "file" : "/interface/crafting/gic_undercolonyworkshopmerchant.png"
+        },
+	  
+      "title" : "^#52A8DD;Moon-Rabbit Matriarch Retainer^reset;",	  
+      "subtitle" : "^#E0C200;''Gold is more powerful than steel, for steel obeys gold.''^reset;",
+
+    "paneLayoutOverride" : { //This doesn't work either!
+      "windowtitle" : {
+        "icon" : {
+          "file" : "/interface/crafting/gic_undercolonyworkshopmerchant.png"
+        }
+      }
+    },
+	  
+      "message" : 
+"Grants a ^#E0C200;credit-giving white rabbit^reset; that drops 10 microcredits every 10 seconds when closer than 40 blocks and facing valid enemy target | Fortune can be slowly earnt from neutral colonists.
+
+^#52A8DD;Her sheer presence radiates an unmistakable aura of fortune and luck.^reset;"
+      },
+
+
+
+//----------------------
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "retainer",
+        "name" : "Matriarch",
+        "field" : "Matriarch",
+        "uniformColorIndex" : 1,
+		
+        "benefits" : [
+          {
+            // Ephemeral effects gained upon leaving the ship.
+            "type" : "EphemeralEffect",
+            "effect" : "gic_whiterabbitsblessing",
+            "duration" : 3600 //1hr
+          }
+        ]
+		
+      },
+
+      "ranks" : [
+		"Defense Corps",
+		"Assault Corps"
+		
+      ],
+
+      "defaultUniform" : {
+	    "head" : "gic_rabbitearshead",
+        "chest" : "gic_moonrabbitchest", //soldierchest
+        "legs" : "gic_moonrabbitlegs", //soldierpants
+		"back" : ""
+      },
+      "uniformSlots" : [] //"chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"
+    },
+	
+
+	
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "Hello!",
+			  "Have you thought about it?",
+			  "Come on, hire me.",
+			  "Come on, hire me!",
+			  "Are you perhaps maidenless? Then I can play the role of maiden.",
+			  "Are you perhaps maidenless? Then I can play the role of maiden!",
+			  "Have you entertained the thought of a mistress?",
+			  "Anything to get me off this rock!",
+			  "Sick of their tough-talk. Time to get off this rock!",
+			  "I got your emotional ticket, you give me my ticket outta here!",
+			  "Come on, surely you'd entertain the notion of a maiden.",
+			  "You'd like a maiden, wouldn't you?"
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "I'll be here then.",
+              "I'll be here."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "Lovely stuff really.",
+			  "Dear oh dear...",
+			  "What's shiny these days?"
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+	    },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy."
+          ]
+        }
+      }
+	
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "converse" : {
+        "default" : {
+          "default" : [
+			"...Well, what do you want?",
+			"I'm not much for you, unless you have the legal paperwork.",
+			"Bring me the legal paperwork, then we can talk."
+          ]
+        }
+      }
+
+
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player = 18
+    "runSpeed" : 12
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+	  
+          {
+            "head" : [ { "name" : "gic_rabbitearshead", "parameters" : { "colorIndex" : [0] } }, { "name" : "gic_droopedrabbitearshead", "parameters" : { "colorIndex" : [0] } } ],
+            "chest" : [ { "name" : "gic_moonrabbitchest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "gic_moonrabbitlegs", "parameters" : { "colorIndex" : [3] } } ]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

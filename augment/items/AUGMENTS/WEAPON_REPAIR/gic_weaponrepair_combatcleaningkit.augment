@@ -1,0 +1,20 @@
+{
+  "itemName" : "gic_weaponrepair_combatcleaningkit",
+  "price" : 0,
+  "rarity" : "Essential",
+  "category" : "^#E0EAFF;Weapon Repair Kit^white;",
+  "inventoryIcon" : "gic_weaponrepair_combatcleaningkit.png",
+  "description" : "Small universal weapon cleaning kit often packed with most guns by default. Essentially consists of varying ramrod sizes and modular brushes to quickly remove carbon buildup from the barrel and receiver. ^Yellow;Repairs most firearms by 10% if durability is above 70%^reset;",
+  "shortdescription" : "Combat Cleaning Kit [EWS]",
+  "maxStack" : 4,
+  "tooltipKind" : "gic_largebase",
+  "config" : {
+	"tags" : ["gic_repair"],	//main activeitem needs to have this tag under "weaponRepairAcceptTags"
+	"limit" : 0.7,	//if main item's weaponDurability/weaponDurabilityMax is greater/equal, then this "augment" can apply.
+	"repairAmount" : 0.10  //how much the weapon repairs (1.0 is 100%)
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/repairItems/ews_repairitem.lua" ]
+}

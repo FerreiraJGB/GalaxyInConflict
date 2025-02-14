@@ -1,0 +1,63 @@
+{
+  "projectileName" : "gic_honeybee_missile_stubby_stage1",
+
+  "bounces" : 0,
+  "image" : "gic_honeybee_missile_stubby.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_honeybee_missile_stubby_stage2",
+      "inheritDamageFactor" : 1
+    }
+  ],
+  "power" : 8000,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+
+  "maxSpeed" : 250,
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_missile_thrustertrail/trail.png",
+        "position" : [-2, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "position" : [-1, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 100.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.7,
+  "physics" : "gic_demongravityshotup"
+}

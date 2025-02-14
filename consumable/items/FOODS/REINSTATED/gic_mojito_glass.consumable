@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_mojito_glass",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#FFB941;Springfield Bar Custom",
+  "inventoryIcon" : "gic_foods_reinstated.png",
+  
+  
+  
+  "description" : "A traditional Terra-Cuban highball. The cocktail often consists of five ingredients: white rum, sugar (traditionally sugar cane juice), lime juice, soda water, and mint. Its combination of sweetness, citrus, and herbaceous mint flavors is intended to complement the rum.
+  
+^Yellow;- No Effects.^reset;",
+  
+  "shortdescription" : "Mojito",
+  
+  "effects" : [ [
+ //  {
+ //       "effect" : "gic_lowgravity_food_nueale",
+ //       "duration" : 1800
+ //   }
+  ] ],
+  
+  
+  
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

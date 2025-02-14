@@ -1,0 +1,65 @@
+{
+  "projectileName" : "gic_shiningneedle_rapier_thrown",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/melee/gic_bloodborne_hammer-hit2.wav"
+      ]
+    },
+	{
+      "action" : "loop",
+      "count" : 10,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/gic_vehicledustysmoke/gic_vehicledustysmoke.animation",
+                "approach" : [20, 20],
+                "timeToLive" : 2.0,
+				"fade": 0.5,
+                "finalVelocity" : [0.5, 0],
+                "initialVelocity" : [2, 1],
+        "ignoreWind" : false,
+        "collidesForeground" : true,
+    "collidesLiquid" : true,
+				"size": 0.15,
+                "variance" : {
+                  "initialVelocity" : [-0.5, 0],
+                "finalVelocity" : [-2, 1],
+				"size": 0.35,
+                  "timeToLive" : 2.5,
+                  "rotation" : 360
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "image" : "gic_shiningneedle_rapier_thrown.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_melee",
+  "damageType" : "IgnoresDef",
+  "power" : 40,
+  "onlyHitTerrain" : false,
+  "knockback" : 2,
+  "speed" : 70,
+  "recallSpeed" : 100,
+  "knockbackDirectional" : true,
+  "statusEffects" : [ "gic_bleeding_light", "gic_stun_3" ],
+  "timeToLive" : 7,
+  "bounces" : -1,
+  
+  "piercing" : true,
+  "flippable" : true,
+  "scripts" : [ "/scripts/projectiles/gic_boomerangprojectile.lua" ],
+  "damagePoly" : [ [12, -0.25], [13, -0.25], [13, 0.75], [12, 0.75] ]
+}

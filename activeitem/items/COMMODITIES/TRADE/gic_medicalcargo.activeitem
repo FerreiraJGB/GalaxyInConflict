@@ -1,0 +1,39 @@
+{
+  "itemName" : "gic_medicalcargo",
+  "rarity" : "Common",
+  "category" : "^#697D98;Freight Goods",
+  "inventoryIcon" : "gic_medicalcargo.png",
+  "description" : "A sealed container of medical supplies.
+
+^#775526;Best not to be opened unless you don't mind being wasteful.^reset;",
+  "shortdescription" : "Medical Cargo",
+  "tooltipKind" : "gic_largebase",
+  "price" : 250,
+  "maxStack" : 1,
+  
+  "twoHanded" : true,  
+  
+  "animation" : "gic_openablecargo.animation",
+  "animationCustom" : {
+	"animatedParts" : {
+		"parts" : {
+			"gun" : {
+				"properties" : {
+					"centered" : true,
+					"image" : "gic_medicalcargo.png",
+					"offset" : [0.0, 0.0]
+				}
+			}	
+		}
+	}
+  },
+  "scripts" : ["gic_openablecargo.lua"],
+
+  "fireTime" : 5.0,
+  "fireOffset" : [1.0, 0.0],	
+	
+  "treasure" : {
+    "pool" : "gic_medicalcargo_randomTreasure",
+    "level" : 1
+  }  
+}

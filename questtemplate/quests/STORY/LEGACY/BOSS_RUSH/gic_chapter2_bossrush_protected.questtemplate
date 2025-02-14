@@ -1,0 +1,41 @@
+{
+  "id" : "gic_chapter2_bossrush_protectedquest",
+  "title" : "^orange;Boss Rush: Protected",
+  "text" : "Obtain: Armored Protector's Pistol and PSF Admin-Protocol Module (kill Armored Protector and B.I.R.B).
+
+^orange;[Upon completion: Unlocks the Armored Protector and B.I.R.B Boss-Rush Replays at the Portal Lab]",
+  "completionText" : "[Armored Protector and B.I.R.B can now be replayed via the Portal Lab]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 100 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_armoredprotectorspistol",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_protectorate_administrativeprotocolmodule-codex",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

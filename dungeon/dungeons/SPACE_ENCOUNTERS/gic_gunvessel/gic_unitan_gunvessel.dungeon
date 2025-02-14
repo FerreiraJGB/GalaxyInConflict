@@ -1,0 +1,65 @@
+{
+  "metadata" : {
+    "name" : "gic_unitan_gunvessel",
+  "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_unitan_gunvessel_front1"],
+    "gravity" : 0,
+    "maxRadius" : 1000000,
+    "maxParts" : 8,
+    "protected" : true
+},
+
+  "parts" : [
+
+    // SAFE ZONE
+    {
+      "name" : "safe-empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "/dungeons/space/hazards/safe-empty.json" ],
+      "chance" : 0,
+      "markDungeonId" : false
+    },
+
+    // MERCHANT SHIP
+
+    {
+      "name" : "gic_unitan_gunvessel_front1",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_unitan_gunvessel_front1" ] ]
+      ],
+      "def" : [ "tmx", "gic_unitan_gunvessel_front1.json" ],
+      "chance" : 0.3
+    },
+	
+	
+	
+	
+	
+	
+    {
+      "name" : "gic_unitan_gunvessel_middleturret",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_unitan_gunvessel_middleturret" ] ]
+      ],
+      "def" : [ "tmx", "gic_unitan_gunvessel_middleturret.json" ],
+      "chance" : 0.3
+    },	
+	
+
+	
+	
+    {
+      "name" : "gic_unitan_gunvessel_back1",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_unitan_gunvessel_back1" ] ]
+      ],
+      "def" : [ "tmx", "gic_unitan_gunvessel_back1.json" ],
+      "chance" : 0.3
+    }
+	
+  ]
+}

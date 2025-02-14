@@ -1,0 +1,41 @@
+{
+  "projectileName" : "gic_goshawk_skyraider_strafe_stage3",
+  "physics" : "rocket",
+  
+  
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "rangeMultiplier" : 4.0,
+      "options" : [
+        "/sfx/WorldAtWar/gic_naval_gun5.ogg"
+      ]
+    },  		
+    {
+      "action" : "projectile",
+      "type" : "gic_goshawk_skyraider_strafe_stage5",
+      "inheritDamageFactor" : 1,
+	  "angle" : -60,
+	  "fuzzAngle" : 0,
+      "angleAdjust" : 0
+    }
+  ],
+  
+  
+  "image" : "gic_goshawk_skyraider_strafe_stage3.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+ 
+  
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 110,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 0.38,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

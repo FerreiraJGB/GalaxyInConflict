@@ -1,0 +1,90 @@
+{
+  "type" : "gic_gaian_cannoneer",
+  "baseType" : "gic_soldierbase",
+
+  "identity" : {
+    "gender" : "male"
+  },  
+  "persistent" : true,
+
+  "movementParameters" : {
+    "runSpeed" : 10,
+    "walkSpeed" : 10,
+    "airFriction" : 0.05,
+    "airJumpProfile" : {
+      "jumpSpeed" : 5.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 3,
+
+  "forceWalk" : true
+    }
+  },
+	
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/fantasy/gic_demon_combat.config:attack",
+      "reattack" : "/dialog/fantasy/gic_demon_combat.config:reattack",
+      "killedTarget" : "/dialog/fantasy/gic_demon_combat.config:killedTarget",
+      "lostTarget" : "/dialog/fantasy/gic_demon_combat.config:lostTarget",
+      "outOfSight" : "/dialog/fantasy/gic_demon_combat.config:outOfSight",
+      "cheerOn" : "/dialog/fantasy/gic_demon_combat.config:cheerOn",
+      "cantReach" : "/dialog/fantasy/gic_demon_combat.config:cantReach"
+    },
+	  "damageBar" : "special"
+  },
+  
+  "damageTeam" : 2,
+
+  "dropPools" : [ "basicTreasure" ],
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "hylotltier1head", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "hylotltier1chest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "hylotltier1pants", "parameters" : { "colorIndex" : [1] } } ],
+//            "back" : [ { "name" : "demonwingsback", "parameters" : { "colorIndex" : [1] } } ],
+            "sheathedprimary" : ["gic_cannoneer_staff_melee"],
+            "primary" : [
+              "gic_cannoneer_staff"
+            ]
+          }
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 20,
+    "statusEffects" : [ ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 450.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+      "fireResistance" : {
+        "baseValue" : 1.0
+      },
+      "fireStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

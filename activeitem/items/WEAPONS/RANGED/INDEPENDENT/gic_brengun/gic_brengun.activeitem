@@ -1,0 +1,637 @@
+{
+  "itemName" : "gic_brengun",	//this is an example weapon. Copy the folder to your mod (in appropriate location) and change "examplerifle" for the name you want to use
+  "price" : 0,
+  "inventoryIcon" : "gic_brengun.png:armed.1",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "''If you fire a burst at oncoming troops, all the rounds will go through one man... and only leave one hole!''
+
+Fires 7.7x56mm ammunition loaded into Bren 30rnd Magazines.
+
+^orange;The Digger: 0.6s PARRY WINDOW | 100HP STABILITY^reset;",
+
+  "shortdescription" : "Bren Gun",
+  "level" : 1,
+  "tooltipKind" : "gic_largebase_ammogun_highres_base",//custom tooltip, values set by the .lua
+  "highResImg" : "/items/weapons/ranged/independent/gic_brengun/gic_brengun_highres.png",
+  "category" : "^orange;Squad Automatic Weapon^reset;",
+  "itemTags" : ["weapon","ranged","rifle","assaultrifle","gic"],
+  "twoHanded" : true,
+  
+  
+  "weaponDeterioration" : true,				//weapon deterioration module enabler; when enabled, the gun will lose one "durability" with every single shot. the lower the durability, the worse the performance.
+  "weaponDurability" : [3000,6500],					//how much total durability the weapon has. will be set dynamically by scripts, this reps. default value. Can be set as an array to randomize initial durability. 1600-2000
+  "weaponDurabilityMax" : 6500,				//max durability for weapon
+  "weaponDurabilityEffectMultiplier" : 0.8,		//negative effects of wep. deterioration are multiplied by this. For context by default at 0.0% durability, weapon will have 100% worse stats.
+  
+  "weaponAcceptRepairs" : true,		//if enabled, then accepts repair items
+  "weaponRepairAcceptTags" : ["gic_repair"],	//repair item tags that this weapon can accept. repair items function like vanilla augments/attachments
+  
+  "alwaysUseAmmo" : false, //if enabled, the gun will ignore the ews_infammo stat  
+  
+  "switchFireModeAttachment" : false,					//When enabled, the user can hold down alt fire to change the weapons fire mode to the alternate fire mode listed under "primaryAbility". Will require an additional SFX ("switch") and an additional stance ("switchfiremodes").
+  
+  "consumeAmmoModule" : true,
+  "consumeAmmoType" : "gic_bren_770x56mm_mag",
+  
+  "magazineProjectilePartial" : "gic_bren_770x56mm_mag_magreload",
+  "partialReloadsEnabled" : true,
+  
+  "fireShellProjectile" : "gic_gunfirenoise_standardknockback",		//shell projectile that spawns at muzzleOffset every time user fires
+  "fireShellProjectileConfig" : {			//config to actually "spawn" the shell projectile in a upwards manner so it looks more realistic.
+	"timeToLive" : 0,
+	"actionOnReap" : [
+		{
+			"time" : 0,
+			"repeat" : false,
+			"action" : "projectile",
+			"type" : "gic_shellcasing_heavy",
+			"fuzzAngle" : 10,
+			"angle" : -90
+		}
+	]
+  },
+  
+  "ammoMax" 		: 30,			//Specifies how big the guns' magazine is.
+  "magazineProjectile": "gic_stormstubber_1270x108mm_mag_magreload", //Projectile dropped when reloading, basically a dummy projectile (Gnio)
+  "ammoAmount" 		: 30,			//Holds the current amount of ammo. Mostly set dynamically
+  
+  "usesAttachments" : true, 							//enables usage of attachments
+  "attachmentsAvailable" : ["sight", "barrel"], //allows attachments of these types
+  "attachmentTags" : ["gic_sight","gic_barrel"], //allows attachments with these tags
+  
+  "sightAttachment" : {									//demo of having a default "attachment" built in. ironsights in this case
+	"attachmentImage" : "/items/augments/weapon_attachments/sight/gic_ladder_sight.png", //determines what image is displayed on the resulting gun
+	"attachmentBonusesAlt" : [0, 0, 0, 0],
+	"attachedName" : "ironsights",
+	"attachmentBonusType" : "additive",
+	"attachmentBonuses" : [0, 0, 0, 0, 0, 0, 0, 0],
+	"attachmentAttached" : true,
+	"attachmentId" : "gic_ladder_sight",
+	"removable" : true,
+	
+	"specialAttachmentConfig" : {
+		"type" : "scopeStatusEffect",
+		
+		"statusEffects" : ["gic_ews_attachment_sight"], //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+		
+		//"scopeIn" : "/cursors/ews_scopeIn.cursor",
+		//"scopeInTime" : 0.5,						//seconds, aka the animationCycle from the cursor
+		//"scopeOut" : "/cursors/ews_scopeOut.cursor",
+		//"scopeOutTime" : 0.25,						//seconds, aka the animationCycle from the cursor
+		
+		"scopedIn" : "/cursors/gic_ladder_sight_aim.cursor"	//only parameter absolutely needed for the scope function to work. Scope in and scope out stuff are optional.
+	}
+	
+   },  
+  
+  "underbarrelAttachment" : {
+	"attachmentImage" : "/items/augments/weapon_attachments/foregrip/gic_bipod.png",
+	"attachmentBonusesAlt" : [1.5,1.5,1.5,1.5],
+	"attachedName" : "gic_bipod",
+	"attachmentBonusType" : "multiplicative",
+	"attachmentBonuses" : [1.5,1.5,1.5,1.5,1,1,1,1],
+	"attachmentAttached" : true,
+	
+	"specialAttachmentConfig" : {
+		"type" : "bipod",
+		"bipodConfig" : {
+			//vertex of the bipod, ie the part thats attached to the gun. is an offset.
+			"bipodVertex" : [0.45,0.3],
+			
+			//these are offsets (not offsetted from the vertex, however) that dictate the bottom position of each bipod leg.
+			//if a block is detected anywhere in between the bipod vertex and these leg positions, then the bipod is considered "grounded"
+			"legPos1" : [0.45,-0.825],
+			"legPos2" : [0.6,-0.825],
+			
+			
+			//once bipod is "grounded", these bonuses kick in (multiplier only at the moment). overrides any other bonuses whenever bipod is enabled, ie crouching won't increase benefits of bipod bonuses.
+			//these bonuses are calculated off of standing inaccuracy/miss chance values, so be sure to account for this when balancing!
+			"bipodBonuses" : [0.2,0.2] //inaccuracy, missChance. currently doesn't support recoil modifs because that shit can get *really* funky. until i find nicer way to implement recoil modifs, they ain't happening.
+		}
+	}
+   },
+  
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_brengun.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+  
+	"globalTagDefaults" : {
+		"magazineImage" : "",	//optional, required for "magazineImages" to function (to prevent error msgs)
+		"sightImage" : "", //required for attachments (to prevent error msgs)
+		"barrelImage" : "", //required for attachments (to prevent error msgs)
+		"underbarrelImage" : "", //required for attachments (to prevent error msgs)
+		"stockImage" : "" //required for attachments (to prevent error msgs)
+	}, 
+  
+	"animatedParts":{
+      "stateTypes" : {
+        "gunState" : {
+          "default" : "empty",
+          "states" : {					//animations are handled by both gunammo.lua (ammo states) and gunfireammo.lua (firing state). If you want to change those, make a copy and work with that.
+			"firing" :{					//gun will transition to "firing" state each time you pull the trigger
+			  "frames" : 3,
+			  "cycle" : 0.08, //0.08
+			  "mode" : "transition",
+			  "transition" : "armed"	//transition mode and animation is set up for the crossbow. may not work for everything
+			},
+            "armed" : {					//gun transitions to "armed" state if it has ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+            "empty" : {					//gun transitions to "empty" if it has no ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+			"reloading" : {				//reloading animation, placeholder here but can be useful if reloadejects is set to false
+			  "frames" : 3,
+			  "cycle" : 1.9,
+			  "mode" : "transition",
+			  "transition" : "empty"
+			},
+			"reloadingPartial" : {				//reloading animation, placeholder here but can be useful if reloadejects is set to false
+			  "frames" : 3,
+			  "cycle" : 1.5,
+			  "mode" : "transition",
+			  "transition" : "empty"
+			}
+          }
+        }
+      },
+
+      "parts" : {
+	  
+		"parryShield" : {
+			"properties" : {
+				"zLevel" : 10,
+				"centered" : true,
+				"offset" : [0.75, 0],
+				"transformationGroups" : ["weapon"],
+				"rotationCenter" : [0, 0],
+				"shieldPoly" : [ [-2.7, -0.25], [2.5, -0.25], [2.5, 0.75], [-2.7, 0.75] ]
+			},
+		
+			"partStates" : {
+				"parryShield" : {
+				  "inactive" : {
+					"properties" : {
+					  "image" : ""
+					}
+				  },
+				  "active" : {
+					"properties" : {
+					  "image" : "/items/weapons/ranged/gic_gunparryshield.png:active?scalenearest=0.75;1.0"
+					}
+				  },
+				  "block" : {
+					"properties" : {
+					  "image" : "/items/weapons/ranged/gic_gunparryshield.png:block?scalenearest=0.75;1.0"
+					}
+				  }
+				}
+			}
+		},	
+
+	
+		"sight" : {							//sight attachment placeholder. Required for the sight attachment to be displayed. Due to the tag, the image will only display when an augment is attached.
+		  "properties" : {
+			"centered" : true,
+			"image" : "<sightImage>",
+			"zLevel" : 10,
+			"offset" : [-0.535,0.0625],
+			"transformationGroups" : ["weapon"]
+		  }
+		},
+		
+		
+		"barrel" : {
+		  "properties" : {
+			"centered" : true,
+			"image" : "<barrelImage>",
+			"zLevel" : 10,
+			"offset" : [-0.1,0.185], //075
+			"transformationGroups" : ["weapon"]
+		  }
+		},
+	  
+
+		"underbarrel" : {							//underbarrel attachment placeholder. Required for the underbarrel attachment to be displayed. Due to the tag, the image will only display when an augment is attached.
+		  "properties" : {
+			"centered" : true,
+			"image" : "<underbarrelImage>",
+			"zLevel" : 10,
+			"offset" : [0.245,0.315],
+			"transformationGroups" : ["weapon"]
+		  }
+		},
+
+        "middle" : {
+          "properties" : {
+            "image" : null
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<partImage>:firing.<frame><paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<partImage>:firing.2<paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<partImage>:reload.<frame><paletteSwaps>"
+				}
+			  },
+			  "reloadingPartial" : {
+			    "properties" : {
+				  "image" : "<partImage>:reload.<frame><paletteSwaps>"
+				}
+			  }
+            }
+          }
+        }
+      }
+	},
+	
+	"lights" : {
+		"flashlightAttachment" : {			//ABSOLUTELY REQUIRED if this weapon accepts a flashlight attachment unless you want a CRASHED GAME
+			"active" : false
+		}
+	},
+	
+	"particleEmitters" : {
+      "muzzleFlash" : {
+        "burstCount" : 2,
+		"transformationGroups" : ["muzzle"],
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [1.7, 0.6], "count" : 2 }
+        ]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+		"transformationGroups" : ["muzzle"],
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [1.7, 0.6], "count" : 3 }
+        ]
+      }
+    },
+    "sounds" : { 
+      "suppressedFire" 		: [ "/sfx/WorldAtWar/gic_ptrs_mn_shot.ogg" ],
+      "fire" 		: [ "/sfx/Battlefield5/gic_BFV_Brengun.ogg" ],
+	  "empty"		: [ "/sfx/gun/reload/machinepistol_reload_clip1.ogg" ],
+      "switchAmmo" 	: [ ], //gic_mg_reload
+	  "switchAmmoPartial" 	: [  ],
+	  "switch" 	: [ "/sfx/gun/reload/shotgun_reload_clip2.ogg" ],				//REQUIRED FOR THE SWITCH FIRE MODE MODULE
+
+	  "removemag" 	: [ "/sfx/WorldAtWar/gic_ptrs_open.ogg" ],
+	  "insertmag" 	: [ "/sfx/WorldAtWar/gic_ptrs_clip_in.ogg" ],
+	  
+	  "cyclerelease" 	: [ "/sfx/WorldAtWar/gic_ptrs_release.ogg" ],
+	  "releasemag" 	: [ "/sfx/WorldAtWar/gic_ptrs_close.ogg" ],
+	  
+	  "guard" : [ "/sfx/melee/sword_guard.ogg" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+      "parry" : [
+		"/sfx/block/gic_sekiro_meleeblock1.ogg",
+		"/sfx/block/gic_sekiro_meleeblock2.ogg",
+		"/sfx/block/gic_sekiro_meleeblock3.ogg",
+		"/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ],
+	  
+	  "perfectBlock" : [
+		"/sfx/block/gic_sekiro_meleedeflect1.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect2.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect3.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect4.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect5.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect6.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect7.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect8.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ]
+	  
+    }
+  },
+
+	
+  "animationScripts" : [
+    "/items/active/effects/ews_lasersight.lua"
+  ],
+
+
+  "baseOffset" : [-0.06, 0.5],
+  "muzzleOffset" : [-0.1, -0.55],
+  "shellOffset" : [-0.1, -0.9],
+
+  "scripts" : ["/items/active/weapons/ranged/ews_weaponcore.lua", "/abilities/weight/gic_heavy_weapon.lua"], //gic_superheavy_weapon_drain
+
+  "elementalType" : "ews_heavyarms",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/ews_weapon.lua"],
+    "class" : "GunFire",
+	
+	"missChance" : 45, //out of 100
+	"missChanceCrouch" : 40, //missChanceCrouch is automatically 60% less than missChance, but placed this here for reference.
+	//"dynamicRecoilTemplate" : "ASSAULTRIFLE", uneeded as dynamicRecoilTemplate for assault rifles are present by default unless otherwise specified
+
+
+    "fireTime" : 0.17,
+    "baseDamage" : 83, //185
+	"bonusDps" : 0,					//the parameter responsible for extra per-shot damage, introduced by ammo. Per shot damage gets spread over all the projectiles
+    "energyUsage" : false,
+    "inaccuracy" : 0.015,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+	
+	//switch fire modes related configs
+	"altFireType" : "semi",
+	"altMissChance" : 25, //defaults to "missChance" if not stated
+	"altMissChanceCrouch" : 20, //defaults to "missChanceCrouch" if not stated
+	"altInaccuracy" : 0.12, //defaults to "inaccuracy" if not stated
+	"altCrouchInaccuracy" : 0.015, //defaults to "crouchInaccuracy" if not stated
+
+	"projectileTypeMiss" : "gic_highvelbullet_miss_c_pointblank",
+    "projectileType" : "gic_highvelbullet_c",
+    "projectileParameters" : {
+      "knockback" : 5
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : -2,
+        "weaponRotation" : 2,
+        "twoHanded" : true,
+        "weaponOffset" : [0.0, -0.6],  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.3", //run.2
+        "backArmFrame" : "fall.1" //run.5
+      },
+	  "switchfiremodes" : {				//REQUIRED FOR THE SWITCH FIRE MODE MODULE
+        "duration" : 0.35,
+        "armRotation" : -2,
+        "weaponRotation" : 2,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "swim.3",
+        "backArmFrame" : "run.5"
+      },
+      "fire" : {
+        "duration" : 0.05,
+        "armRotation" : -1,
+        "weaponRotation" : 3.75,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.05, -0.6], 
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "run.3", //run.2
+        "backArmFrame" : "fall.1" //run.5
+      },
+ 
+      "motion1" : {
+        "duration" : 0
+      },
+      "motion2" : {
+        "duration" : 0
+      },
+      "motion3" : {
+        "duration" : 0
+      },
+      "motion4" : {
+        "duration" : 0
+      },
+      "motion5" : {
+        "duration" : 0
+      },
+      "motion6" : {
+        "duration" : 0
+      },
+	  
+	  
+      "partreload" : {
+        "duration" : 0.5, //0.25
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+        "weaponOffset" : [0.3, 0.0],
+
+		"playSounds" : ["removemag"],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "fall.2"
+      },
+ 
+      "partreload1" : {
+        "duration" : 0.5, //0.25
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+        "weaponOffset" : [0.3, 0.0],
+		
+		"playSounds" : ["releasemag"],
+		
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "idle.2"
+      },
+      "partreload2" : {
+        "duration" : 0.5, //0.25
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+        "weaponOffset" : [0.3, 0.0],
+
+		"playSounds" : ["removemag"],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "idle.2"
+      },
+      "partreload3" : {
+        "duration" : 0
+      },
+      "partreload4" : {
+        "duration" : 0.56, //0.28
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+        "weaponOffset" : [0.3, 0.0],
+
+		"playSounds" : ["insertmag"],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "fall.3"
+      },
+      "partreload5" : {
+        "duration" : 0.56, //0.28
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+        "weaponOffset" : [0.3, 0.0],
+
+		"playSounds" : ["cyclerelease"],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "fall.2"
+      },
+      "partreload6" : {
+        "duration" : 0
+      },
+	  
+	  
+      "reload" : {
+        "duration" : 0.5, //0.25
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+        "weaponOffset" : [0.3, 0.0],
+
+		"playSounds" : ["releasemag"],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "fall.2"
+      },
+ 
+      "reload1" : {
+        "duration" : 0.5, //0.25
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+        "weaponOffset" : [0.3, 0.0],
+		
+		"playSounds" : ["removemag"],
+		
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "idle.2"
+      },
+      "reload2" : {
+        "duration" : 0.5, //0.25
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+        "weaponOffset" : [0.3, 0.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "idle.2"
+      },
+      "reload3" : {
+        "duration" : 0
+      },
+      "reload4" : {
+        "duration" : 0.56, //0.25
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+        "weaponOffset" : [0.3, 0.0],
+		
+		"playSounds" : ["insertmag"],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "swim.4",
+        "backArmFrame" : "run.5"
+      },
+      "reload5" : {
+        "duration" : 0.56, //0.25
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+        "weaponOffset" : [0.3, 0.0],
+
+		"playSounds" : ["cyclerelease"],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.2",
+        "backArmFrame" : "fall.2"
+      },
+      "reload6" : {
+        "duration" : 0
+      },
+      "cooldown" : {
+        "duration" : 0.0,
+        "armRotation" : -2,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.1, -0.6],   
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "run.3", //run.2
+        "backArmFrame" : "fall.1" //run.5
+      }
+    }
+  },
+  
+  "altAbilityType" : "parry",
+  "altAbility" : {
+	"scripts" : ["/items/weapons/ranged/gic_bayonetparry.lua"],
+	"class" : "Parry",
+	"name" : "Perfect Parry",
+	
+	"parryTime" : 1.5,
+	"cooldownTime" : 0.25,
+	"shieldHealth" : 100,
+	"perfectBlockTime" : 0.6,
+	
+	"stances":{
+		"parry" : {
+			"armRotation" : -15,
+			"weaponRotation" : 80,
+			"allowRotate" : true,
+			"allowFlip" : true,
+			"twoHanded" : true,
+			"weaponOffset" : [ 1.0, -0.1 ],
+			
+			"frontArmFrame" : "swim.3"
+		}
+	}
+  },
+  
+  "builder" : "/items/buildscripts/ews_buildunrandweapon_highres.lua"
+}

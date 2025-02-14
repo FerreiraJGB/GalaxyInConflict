@@ -1,0 +1,35 @@
+{
+  "id" : "gic_ancientgate_choice_mercenaryquest",
+//  "mainQuest" : true,
+  "prerequisites" : [ ],
+  "title" : "Mercenary Choice",
+  "text" : "This path leads to the ^orange;Galaxy in Conflict Storyline^reset;! This makes it impossible to play the default storylines or access the outpost traditionally!",
+  "completionText" : "Galaxy in Conflict Storyline unlocked. Vanilla path no longer available.",
+  "moneyRange" : [0, 0],
+  "rewards" : [],
+  "speaker" : "questGiver",
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questGiver"
+    },
+
+    "requireTurnIn" : false,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_ancientgate_choicetoken",
+        "count" : 1,
+        "consume" : true
+      }
+    ]
+  }
+}
+
+
+

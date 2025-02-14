@@ -1,0 +1,24 @@
+{
+  "projectileName" : "gic_summon_arrowstorm_stage1",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_summon_arrowstorm_stage1.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 3,
+  "timeToLive" : 0.1,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+  
+    {
+      "action" : "projectile",
+      "type" : "gic_summon_arrowstorm_stage2",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 0
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "type" : "gic_tyrantjudge_sinsack",
+  "baseType" : "gic_soldierbase",
+  "damageTeamType" : "enemy",
+  "damageTeam" : 1,
+  "dropPools" : [],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "!"
+          ]
+        }
+      }
+    },
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "patrol", { "timeRange" : [0.1,0.3]}],
+        [2.0, "wander"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_sinsackhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+			  "gic_peasants_battleaxe_npc_sinsack"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : [ "gic_npc_death_blood_explosion", "gic_yamaxanadu_tyrantjudge_sinsack", "gic_otherworld_swamphunter_dialogue_attack" ],    
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.001
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+        "gic_gasmask_filterProtection" : {
+          "baseValue" : 1.0
+        },
+	  
+        "gic_moldc1_infectionProtection" : {
+          "baseValue" : 1.0
+        },
+	  
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : -5
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.75
+      }
+	  
+	  
+    }
+  }
+  
+}

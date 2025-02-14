@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_waspfirestorm_micromissile_90degreespawn",
+  "image" : "gic_waspfirestorm_micromissile.png",
+  "animationCycle" : 0.0,
+  "physics" : "laser",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "timeToLive" : 0.1,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [0, 0, 0],
+  "pointLight" : true,
+  "onlyHitTerrain" : true,
+  "periodicActions" : [
+    {
+	  "time" : 0.03,
+      "action" : "projectile",
+      "type" : "gic_waspfirestorm_micromissile",
+      "fuzzAngle" : 15,
+      "angle" : 90
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "noDamage",
+  "damageKind" : "ews_smallarms"
+}

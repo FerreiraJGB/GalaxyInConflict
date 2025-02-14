@@ -1,0 +1,107 @@
+{
+  "projectileName" : "gic_magicshot_spinninghammer",
+  "image" : "gic_magicshot_spinninghammer.png",
+  "physics" : "laser",
+  "animationCycle" : 0.4, //0.46
+  "onlyHitTerrain" : false,
+  "bounces" : 0,
+  "frameNumber" : 8,
+  "damageKind" : "ews_melee",
+  "damageType" : "IgnoresDef",
+  "fullbright" : false,
+  "flippable" : true,
+  "timeToLive" : 8,
+  "emitters" : [ ],
+  "actionOnTimeout" : [
+  ],
+  
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/melee/gic_bloodborne_hammer-hit2.wav"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 2.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 2.0,
+        "destructionTime" : 10,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 2.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 2.0,
+        "destructionTime" : 10,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+  ],
+  
+"periodicActions" : [
+
+],
+
+  "damagePoly" : [ [-18, 0], [-12, -12], [0, -18], [12, -12], [18, 0], [12, 12], [0, 18], [-12, 12] ],
+
+  "persistentAudio" : "/sfx/gic_remnantfromtheashes_pan_glaivethrower_equipment-05.ogg",
+  "statusEffects" : [ "gic_bulletshot", "gic_stun_1", "gic_stun_2", "gic_stun_3", "gic_energynullification_3", "gic_attackpowernullification_3" ],
+  "power" : 50.0,
+  "speed" : 80,
+  "acceleration" : 10,
+  "knockback" : 10
+}

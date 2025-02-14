@@ -1,0 +1,80 @@
+{
+  "itemName" : "gic_unitan_compositebucklershield",
+  "fixedLevel" : false,
+  "price" : 0,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "^#D6DFFF;Parry Shield^white;",
+  
+  "description" : "-blank-
+
+^yellow;Martial Warfare: 1.5 second perfect block time.^white;
+^yellow;All or Nothing: 5hp blocking power.^white;",
+  
+  
+  "shortdescription" : "Unitan Composite Buckler",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_unitan_compositebucklershield.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_unitan_compositebucklershield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/melee/sword_guard.ogg" ], //sword_guard
+	  
+      "perfectBlock" : [
+	  "/sfx/melee/gic_bloodborne_shield-iron1_large.wav",
+	  "/sfx/melee/gic_bloodborne_shieldpress.wav"
+	  ], //shield_block_ice_perfect
+	  
+      "block" : [
+	  "/sfx/melee/gic_bloodborne_shield-iron1.wav",
+	  "/sfx/melee/gic_bloodborne_shield-iron2.wav"
+	  ],
+	  
+      "break" : [
+	  "/sfx/melee/gic_bloodborne_ShieldBreak00.wav"
+	  ] //shield_block_ice
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_bucklershield.lua"],
+
+  "minActiveTime" : 0.1,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 5,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.5,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 1.5,
+
+  "knockback" : 1,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

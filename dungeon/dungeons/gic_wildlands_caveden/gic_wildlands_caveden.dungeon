@@ -1,0 +1,40 @@
+{
+  "metadata" : {
+    "name" : "gic_wildlands_caveden",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_wildlands_caveden_start"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 10,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_wildlands_caveden_start",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_wildlands_caveden_start.json" ] ],
+      "chance" : 0
+    },
+	
+	
+
+    {
+      "name" : "gic_wildlands_caveden_end",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_wildlands_caveden_end.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

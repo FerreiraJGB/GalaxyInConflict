@@ -1,0 +1,39 @@
+{
+  "itemName" : "gic_lightweight_conversion_kit",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Foregrip Attachment^white;",
+  "inventoryIcon" : "gic_lightweight_conversion_kit_icon.png",
+  "description" : "Perform a full conversion of your firearm to be as light as possible, shaving off every bit of weight. While this can help with mobility and boost DODGE, weapon performance will suffer overall.
+^orange;Forces firearm to be of the LIGHTWEIGHT class, negating MEDIUM and HEAVYWEIGHT designations.^reset;
+^red;+100% RECOIL MISS CHANCE Multiplier, RECOIL STAGE DURATION, and RECOIL INACCURACY Multiplier.^reset;
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  "shortdescription" : "Lightweight Conversion Kit",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_lightweight_conversion_kit", //name of attachment
+	"attachmentTag" : ["gic_foregrip","gic_lightweight_conversion_kit"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/foregrip/gic_lightweight_conversion_kit.png", //determines what image is displayed on the resulting gun
+		
+	"attachmentId" : "gic_lightweight_conversion_kit", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "statusEffect", //this can be applied to any attachment of type "sight", "barrel", "stock", or "underbarrel".
+		"statusEffects" : ["gic_light_weight", "gic_lightweight_conversion_kit"] //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,2,2,2], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

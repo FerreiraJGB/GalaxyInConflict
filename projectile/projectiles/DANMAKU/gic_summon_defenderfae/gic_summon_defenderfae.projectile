@@ -1,0 +1,23 @@
+{
+  "projectileName" : "gic_summon_defenderfae",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_summon_defenderfae.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 3,
+  "timeToLive" : 0.5,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_magical_defenderfae",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : {"damageTeam" : 16}
+    }
+  ]
+}

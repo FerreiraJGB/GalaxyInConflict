@@ -1,0 +1,117 @@
+{
+  "type" : "gic_magicalhunter",
+  "baseType" : "gic_soldierbase",
+  "identity" : {
+    "gender" : "female"
+  },  
+  "persistent" : true,
+  "level" : 1,
+  "movementParameters" : {
+    "runSpeed" : 90,
+    "walkSpeed" : 40,
+    "airFriction" : 0.2,
+    "airJumpProfile" : {
+      "jumpSpeed" : 80.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.2
+    }
+  },
+	
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/HUNTERS/gic_hunter_combat.config:attack",
+      "reattack" : "/dialog/HUNTERS/gic_hunter_combat.config:reattack",
+      "killedTarget" : "/dialog/HUNTERS/gic_hunter_combat.config:killedTarget",
+      "lostTarget" : "/dialog/HUNTERS/gic_hunter_combat.config:lostTarget",
+      "outOfSight" : "/dialog/HUNTERS/gic_hunter_combat.config:outOfSight",
+      "cheerOn" : "/dialog/HUNTERS/gic_hunter_combat.config:cheerOn",
+      "cantReach" : "/dialog/HUNTERS/gic_hunter_combat.config:cantReach"
+    },
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "wander"]
+      ]
+    }
+	
+  },
+  
+  "damageTeam" : 2,
+
+  "dropPools" : [ "valuableTreasure" ],
+
+  "items" : {
+    "default" : [
+      [0, [
+	  
+	     //ay mistr00s
+          {
+            "chest" : [ { "name" : "hylotltier1chest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "soldierpants", "parameters" : { "colorIndex" : [1] } } ],
+            "back" : [ { "name" : "demonwingsback", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : ["gic_weeb_edgesword"],
+            "sheathedprimary" : ["gic_knifehell_throw_fast", "gic_grenadethrow_npc"]
+          },
+		  
+		  //Speed Cannoneer
+          {
+            "head" : [ { "name" : "gic_bandithood", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "hylotltier1chest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "hylotltier1pants", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : ["gic_cannoneer_staff_melee"],
+            "sheathedprimary" : [
+              "gic_cannoneer_staff"
+            ]
+          },
+		  
+		  //Wizard
+          {
+            "head" : [ { "name" : "wizardhead", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "wizardchest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "wizardlegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : ["gic_weeb_greatsword"],
+            "sheathedprimary" : [
+              "gic_hinata_wand"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 20,
+    "statusEffects" : [ ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 2000.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.7
+        }
+	  
+    }
+  }
+}

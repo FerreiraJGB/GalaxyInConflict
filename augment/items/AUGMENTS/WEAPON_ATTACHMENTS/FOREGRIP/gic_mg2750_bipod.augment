@@ -1,0 +1,57 @@
+{
+	//NOTE- THIS BIPOD HITBOX HAS BEEN TUNED SPECIFICALLY FOR MACHINEGUNS ONLY, SO IT'S NOT AVAILABLE AS A STANDARD FOREGRIP FOR THAT REASON.
+	//Med here, did not actually read the above before making this. Woop-de-doo.
+	//the bipod hitboxes can be a real bitch to deal with ngl.
+  "itemName" : "gic_mg2750_bipod",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Heavy Foregrip Attachment^white;",
+  "inventoryIcon" : "gic_mg2750_bipod_icon.png",
+  "description" : "A traditional bipod for the MG2750 designed to greatly increase accuracy of large weapons when properly grounded. ^yellow;The bipod must be physically resting on a block for the bonuses to take effect.^reset;
+  
+^green;+50% accuracy and hit chance when grounded.^reset;
+^red;-30% accuracy and hit chance when NOT grounded on the bipod.^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  "shortdescription" : "MG2750 Bipod",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_mg2750_bipod", //name of attachment
+	"attachmentTag" : ["gic_foregrip", "gic_mg2750_bipod"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/foregrip/gic_mg2750_bipod.png", //determines what image is displayed on the resulting gun
+		
+	"attachmentId" : "gic_mg2750_bipod", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "bipod",
+		"bipodConfig" : {
+			//vertex of the bipod, ie the part thats attached to the gun. is an offset.
+			"bipodVertex" : [0.5,0.5],
+			
+			//these are offsets (not offsetted from the vertex, however) that dictate the bottom position of each bipod leg.
+			//if a block is detected anywhere in between the bipod vertex and these leg positions, then the bipod is considered "grounded"
+			"legPos1" : [-0.4,-0.4], //[-0.0,-0.4],
+			"legPos2" : [0.6,-0.4], //[1.0,-0.4],
+			
+			
+			//once bipod is "grounded", these bonuses kick in (multiplier only at the moment). overrides any other bonuses whenever bipod is enabled, ie crouching won't increase benefits of bipod bonuses.
+			//these bonuses are calculated off of standing inaccuracy/miss chance values, so be sure to account for this when balancing!
+			"bipodBonuses" : [0.5,0.5] //inaccuracy, missChance. currently doesn't support recoil modifs because that shit can get *really* funky. until i find nicer way to implement recoil modifs, they ain't happening.
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1.3,1.3,1.3,1.3,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1.3,1.3,1.3,1.3] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

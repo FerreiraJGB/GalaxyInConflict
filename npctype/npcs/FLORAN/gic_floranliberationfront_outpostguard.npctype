@@ -1,0 +1,106 @@
+{
+  "type" : "gic_floranliberationfront_outpostguard",
+  "baseType" : "gic_floranliberationfront_base",
+
+  "damageTeam" : 17,
+  "scriptConfig" : {
+//    "behavior" : "gic_combat_default",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [5.0, "patrol"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:attack",
+      "reattack" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:reattack",
+      "killedTarget" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:killedTarget",
+      "lostTarget" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:lostTarget",
+      "outOfSight" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:outOfSight",
+      "cheerOn" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:cheerOn",
+      "cantReach" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+		  
+          {
+            "head" : [ { "name" : "gic_operatorcaphead", "parameters" : { "colorIndex" : [0] }  }, { "name" : "", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "coolchest", "parameters" : { "colorIndex" : [0] }  }, { "name" : "gic_wt1pcchest", "parameters" : { "colorIndex" : [0] }  }, { "name" : "", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_hscplegs", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+			  "gic_usm47a2_special_spotter",
+			  "gic_usm47a2",
+			  "gic_m89"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 222.2222 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.1
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	,
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

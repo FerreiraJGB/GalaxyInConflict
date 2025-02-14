@@ -1,0 +1,33 @@
+{
+  "objectName" : "gic_glitch_crowssword_blueprint",
+  "colonyTags" : [],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "A blueprint design of a folding sword. Perhaps a certain Black Market dealer might have use for this blueprint.",
+  "shortdescription" : "Crow's Sword Blueprint",
+  "race" : "generic",  
+  "category" : "furniture",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "smashSounds" : [ "/sfx/objects/locker_open.ogg" ],  
+  
+  "breakDropOptions" : [
+    [ [ "gic_glitch_crowssword_blueprint", 1, { } ] ]
+  ],
+
+  "inventoryIcon" : "gic_glitch_crowssword_blueprint_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_glitch_crowssword_blueprint.png",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

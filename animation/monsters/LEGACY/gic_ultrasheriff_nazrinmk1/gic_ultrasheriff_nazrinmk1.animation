@@ -1,0 +1,297 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 1.0,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_01.wav",
+              "persistentSoundRangeMultiplier" : 4.35,
+              "persistentSoundStopTime" : 0.0
+            }				
+          },
+          "fly" : {
+            "frames" : 1,
+            "mode" : "loop",
+            "cycle" : 1.0
+          },  
+          "aggro" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+          "aim" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "properties" : {
+              "particleEmittersOn" : [ ]
+            }	
+          },		  
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "properties" : {
+              "particleEmittersOff" : [ ]
+            }	
+          }  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+
+
+
+
+
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "aim", "facing", "body" ],
+          "offset" : [0, 1]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+			
+            "aim" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+
+			
+			
+			
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+	  
+      "thruster" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+		  "zLevel" : -1,
+		  "fullbright" : true,
+          "offset" : [0, 1]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+			
+            "aim" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+
+			
+			
+			
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+	  
+    }
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true },
+    "facing" : { "interpolated" : false },
+    "aim" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+
+  "lights" : {
+    "engineglow" : {
+      "active" : true,
+      "position" : [0, 0],
+      "color" : [140, 140, 80], //255, 255, 107
+      "pointLight" : true
+    },
+    "searchlight" : {
+      "active" : true,
+      "position" : [9, 1],
+      "color" : [255, 255, 255],
+	  "transformationGroups" : ["aim", "facing", "body"],
+      "pointLight" : true,
+	  "pointAngle" : 0.00,
+	  "pointBeam" : 10,
+      "beamLevel" : 1,
+      "beamAmbience" : 0.1
+    }
+  },
+
+  "particleEmitters" : {
+    "stars" : {
+      "enabled" : true,
+      "emissionRate" : 3.0,
+      "particles" : [
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" },
+        { "particle" : "redcartoonstar" }
+      ]
+    },
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "burningvehiclesmokefront" },
+        { "particle" : "burningvehiclesmokemiddle" },
+        { "particle" : "burningvehiclesmokeback" },
+        { "particle" : "redgas" },
+        { "particle" : "burningdust" },
+        { "particle" : "burningvehicleflamesback" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+    "fire" : {
+      "pool" : [ "/sfx/gic_highfleet_shell_in_med_01_delay_05s.ogg" ],
+      "rangeMultiplier" : 1.0
+    },
+	
+    "rocket" : {
+      "pool" : [ "/sfx/gun/gic_calliopefire_01.ogg" ],
+      "rangeMultiplier" : 1.0
+    },
+  
+    "aggroHop" : [ ],
+    "deathPuff" : {
+      "pool" :	[],
+      "rangeMultiplier" : 1.0
+	}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_magicshot_firecrackers_stage3",
+  "bounces" : 0,
+  "image" : "gic_magicshot_firecrackers_stage3.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/fireexplosionknockbackstatus.config"
+    }
+  ],
+"periodicActions" : [
+],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+  "fullbright" : true,
+  "maxSpeed" : 250,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 2,
+  "physics" : "gic_dustlaser"
+}

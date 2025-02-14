@@ -1,0 +1,37 @@
+{
+  "id" : "gic_esther_planetincentive_5_protectedcolonyquest",
+  "title" : "^orange;[GiC] Into the Breach: Protected",
+  "text" : "",
+
+  "prerequisites" : [ "gic_esther_planetincentive_0_introquest", "apex_mission2" ],
+  "canBeAbandoned" : true,
+  
+  "completionText" : "",
+  
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 50 ], [ "glitchbaronfigure", 1 ], [ "glitchhorndisplay", 1 ], [ "glitchdecree", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_protectorate_administrativeprotocolmodule-codex",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Protected Colony^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

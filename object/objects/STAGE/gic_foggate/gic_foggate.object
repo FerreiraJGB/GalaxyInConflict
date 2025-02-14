@@ -1,0 +1,68 @@
+{
+  "objectName" : "gic_foggate",
+  "colonyTags" : ["door"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "physics",
+
+  "category" : "door",
+  "price" : 15,
+  "description" : "[Traverse the mist?]",
+  "shortdescription" : "Fog Gate",
+  "race" : "generic",
+
+  "inventoryIcon" : "gic_foggate.png:closed",
+  "orientations" : [
+    {
+      "dualImage" : "gic_foggate.png:closed",
+      "imagePosition" : [-8, 0],
+
+      "renderLayer" : "Player+10",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom", "top" ]
+    }
+  ],
+
+  "animation" : "gic_foggate.animation",
+  "animationParts" : {
+    "door" : "gic_foggate.png",
+    "doorlit" : "gic_foggatelit.png"
+  },
+  "animationPosition" : [0, 20],
+
+  "scripts" : [ "/objects/stage/gic_foggate/gic_foggate.lua" ],
+  "scriptDelta" : 5,
+
+  "physicsCollisions" : {
+    "wall" : {
+      "collision" : [ [-1, 0], [-1, 5], [1, 5], [1, 0] ],
+      "collisionKind" : "slippery",
+      "position" : [0, 0],
+      "categoryBlacklist" : [ "player" ]
+    }
+  },
+
+  "physicsForces" : {
+    "right" : {
+      "type" : "DirectionalForceRegion",
+      "rectRegion" : [-2, 0, 1, 5],
+      "xTargetVelocity" : 1.5, //4
+      "yTargetVelocity" : 0,
+      "controlForce" : 10000,
+      "categoryWhitelist" : [ "player" ],
+      "enabled" : false
+    },
+    "left" : {
+      "type" : "DirectionalForceRegion",
+      "rectRegion" : [-1, 0, 2, 5],
+      "xTargetVelocity" : -1.5,
+      "yTargetVelocity" : 0,
+      "controlForce" : 10000,
+      "categoryWhitelist" : [ "player" ],
+      "enabled" : false
+    }
+  },
+
+  "playerQueryArea" : [-2, 0, 1.0, 5]
+}

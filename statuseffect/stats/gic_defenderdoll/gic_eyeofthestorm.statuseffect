@@ -1,0 +1,47 @@
+{
+  "name" : "gic_eyeofthestorm",
+  "blockingStat" : "gic_eyeofthestormStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_plasmaimpact_eyeofthestorm", //does not accept arrays
+	"projectileTypeMiss" : "gic_plasmaimpact_eyeofthestorm", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.6,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 8,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 1.0,
+	
+	
+	
+	"missChance" : 0,
+	"offset" : [0.0,0.0],
+	"muzzleOffset" : [0.0,0.0],
+	"muzzleOffset2" : [0.0,0.0],
+	"inaccuracyAngle" : 0,
+	"projectileCount" : 1
+	
+	
+	
+	
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_defenderdoll.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_eyeofthestorm.animation",
+   
+   "label" : "Eye of the Storm [Active] - When using a healing flask, emit immense force when enemies are nearby for a short duration.",
+  "icon" : "/interface/statuses/gic_eyeofthestorm_active.png"
+}

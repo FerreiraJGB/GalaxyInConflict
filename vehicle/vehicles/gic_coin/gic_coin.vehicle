@@ -1,0 +1,74 @@
+{
+  "name" : "gic_coin",
+  "script" : "gic_coin.lua",
+  "boundBox" : [-5, -5, 5, 5],
+  "slaveControlTimeout" : 2.0,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : true,
+  "animation" : "gic_coin.animation",
+  
+  "clientEntityMode" : "ClientMasterAllowed",
+
+
+  "animationCustom" : {
+
+    "globalTagDefaults" : {
+        //"colour" : "red"
+      },
+
+
+    "particleEmitters" : {
+      "damageShards" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "burstCount"  : 30,
+        "offsetRegion" : [-3, -1.5, 3, 1],
+        "particles" : [{ "particle" : "hoverbikeredshard"},
+                       { "particle" : "fireshard"}]
+      },
+
+      "wreckage" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "active" : false,
+        "emissionRate" : 0.0,
+        "particles" : [
+                       { "particle" : "hoverbikeredwreck1"},
+                       { "particle" : "hoverbikeredwreck2"},
+                       { "particle" : "hoverbikewreck3"},
+                       { "particle" : "hoverbikeredwreck4"},
+                       { "particle" : "hoverbikewreck5"},
+                       { "particle" : "hoverbikeredwreck6"}]
+      }
+    }
+  },
+
+  "loungePositions" : {
+  },
+
+  //Health and damage
+  "protection" : 0,
+  "maxHealth" : 1,
+  
+  //this bit is *sorta* important, as in I suffered for quite some time until I realized I was missing this tidbit.
+  //just for future reference in case I do any other "experimental crazy shit"
+  "materialKind" : "robotic",
+  "terrainCollisionDamageSourceKind" : "falling",
+
+  "movementSettings" : {
+    //"collisionPoly" : [[-0.5, -0.5], [0.5, -0.5], [0.5, 0.5], [-0.5, 0.5]],
+	"collisionPoly" : [[-1, -1], [1, -1], [1, 1], [-1, 1]],
+    "mass" : 1,
+    "airFriction" : 0,
+    "ignorePlatformCollision" : true,
+    "gravityEnabled" : true,
+    "collisionEnabled" : true
+  },
+
+  "occupiedMovementSettings" : {
+    "collisionPoly" : [[-1.0, 0.0], [1.0, 0.0], [1.0, 1.0], [-1.0, 1.0]],
+    "mass" : 4,
+    "gravityEnabled" : true,
+    "collisionEnabled" : true
+  }
+
+}

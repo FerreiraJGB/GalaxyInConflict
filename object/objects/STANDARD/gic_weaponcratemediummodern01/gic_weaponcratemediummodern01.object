@@ -1,0 +1,53 @@
+{
+  "objectName" : "gic_weaponcratemediummodern01",
+  "colonyTags" : ["storage"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "price" : 45,
+  "description" : "Metallic weapon crate designed for the general use of storing munitions.",
+  "shortdescription" : "Medium Modern Weapon Crate",
+  "race" : "generic",
+  "health" : 1.5,
+
+
+
+  "inventoryIcon" : "gic_weaponcratemediummodern01.png",
+  "orientations" : [
+    {
+      "image" : "gic_weaponcratemediummodern01.png",
+      "direction" : "left",
+      "flipImages" : true,
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+      "image" : "gic_weaponcratemediummodern01.png",
+      "direction" : "right",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/gunchest_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/gunchest_close.ogg" ],
+  "slotCount" : 9, //5
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

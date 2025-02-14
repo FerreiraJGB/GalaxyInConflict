@@ -1,0 +1,283 @@
+{
+  "type" : "gic_division16_fairymaid",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ ],
+  
+  "identity" : {
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "fem11"
+  },  
+  
+  "scriptConfig" : {
+    "behavior" : "protectoratejanitor",
+    "behaviorConfig" : {
+      "greetingChance" : 1,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+	
+      "complain" : {
+        "default" : {
+          "default" : [
+            "Dust, dust, dust...",
+			"Can't ever get a break.",
+			"Not enough cleaning...",
+			"I told them, it wasn't enough.",
+			"Never a chance...",
+			"Would be nice to grow a garden.",
+			"I wonder what's it like out there?",
+			"What manner of sorcery is this?",
+			"Dust everywhere.",
+			
+			"Have any games on your computer?",
+			"I'm bored...",
+			"The men here are no fun!",
+			"No pranks allowed, they said...",
+			"So boring...",
+			"Why do they always have me doing the cleaning?",
+			"Got any games?",
+			"I should recharge my phone soon.",
+			"What are you up to?",
+			"Wanna play some videogames later?"
+          ]
+        }
+      },
+	
+      "converse" : {
+        "default" : {
+          "default" : [
+            "Dust, dust, dust...",
+			"Can't ever get a break.",
+			"Not enough cleaning...",
+			"I told them, it wasn't enough.",
+			"Never a chance...",
+			"Would be nice to grow a garden.",
+			"I wonder what's it like out there?",
+			"What manner of sorcery is this?",
+			"Dust everywhere.",
+			
+			"Have any games on your computer?",
+			"I'm bored...",
+			"The men here are no fun!",
+			"No pranks allowed, they said...",
+			"So boring...",
+			"Why do they always have me doing the cleaning?",
+			"Got any games?",
+			"I should recharge my phone soon.",
+			"What are you up to?",
+			"Wanna play some videogames later?"
+          ]
+        }
+      },
+	  
+      "greeting" : {
+        "default" : {
+          "default" : [
+            "Dust, dust, dust...",
+			"Can't ever get a break.",
+			"Not enough cleaning...",
+			"I told them, it wasn't enough.",
+			"Never a chance...",
+			"Would be nice to grow a garden.",
+			"I wonder what's it like out there?",
+			"What manner of sorcery is this?",
+			"Dust everywhere.",
+			
+			"Have any games on your computer?",
+			"I'm bored...",
+			"The men here are no fun!",
+			"No pranks allowed, they said...",
+			"So boring...",
+			"Why do they always have me doing the cleaning?",
+			"Got any games?",
+			"I should recharge my phone soon.",
+			"What are you up to?",
+			"Wanna play some videogames later?"
+          ]
+        }
+      },
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "hail" : {
+        "default" : {
+          "default" : [
+            "Dust, dust, dust...",
+			"Can't ever get a break.",
+			"Not enough cleaning...",
+			"I told them, it wasn't enough.",
+			"Never a chance...",
+			"Would be nice to grow a garden.",
+			"I wonder what's it like out there?",
+			"What manner of sorcery is this?",
+			"Dust everywhere.",
+			
+			"Have any games on your computer?",
+			"I'm bored...",
+			"The men here are no fun!",
+			"No pranks allowed, they said...",
+			"So boring...",
+			"Why do they always have me doing the cleaning?",
+			"Got any games?",
+			"I should recharge my phone soon.",
+			"What are you up to?",
+			"Wanna play some videogames later?"
+          ]
+        }
+      },
+	  
+      "accuse" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      }
+	  
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_hairbowhead", "parameters" : { "colorIndex" : [0, 1, 2, 3] }  } ],
+            "chest" : [ { "name" : "gic_fairymaidchest", "parameters" : { "colorIndex" : [0, 1, 2, 3] }  } ],
+            "legs" : [ { "name" : "gic_fairymaidlegs", "parameters" : { "colorIndex" : [0, 1, 2, 3] } } ],
+            "back" : [ { "name" : "gic_fairyback", "parameters" : { "colorIndex" : [0, 1, 2, 3] } } ],
+            "primary" : [ "broom", "broom", "gic_unpackedsoyuzcigarettes" ]
+		  }
+        ] ]
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

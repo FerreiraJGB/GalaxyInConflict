@@ -1,0 +1,598 @@
+{
+  "type" : "gic_evolvedswarmerdrone",
+  "shortdescription" : "[Evolved Swarmer Drone]",
+  "description" : "The mastermind of an incursion.",
+
+  "categories" : [ "gic_evolvedswarmerdrone" ],
+  "parts" : [ "body" ],
+  
+  "animation" : "gic_evolvedswarmerdrone.animation",
+
+  "dropPools" : [ { "default" : "gic_erchiuscrystalcoordinatorTreasure", "bow" : "gic_erchiuscrystalcoordinatorTreasure" } ],
+
+  "baseParameters" : {
+    "scripts" : [
+      "/monsters/gic_base_monster_music.lua"
+    ],
+	
+	"music" : ["/music/RemnantFromTheAshes/gic_remnantfromtheashes_earthminiboss_extended_+7db.ogg"],
+  
+	"range" : 70,			//measured in blocks, default val is 50 blocks
+	"fadeOutTime" : 2.0,	//measured in seconds, default val is 2.0 seconds
+	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+	
+    "deathBehavior" : "monster-death",
+    "behavior" : "monster",
+
+    "damageBar" : "Special",
+
+    "seeThroughLiquid" : false,
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 160,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : false,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 20.0,
+
+      "foundTargetActions" : [ ],
+
+      "fleeActions" : [ ],
+	  
+      // Attack specific parameters
+      "swoopVelocity" : 620,
+    "baseSkills" : [ "flyingSwoopAttack" ],
+
+      "hostileActions" : [
+		
+		
+		//Sheer danmaku energy blast
+		
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : 35.0,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupState" : "pinwindup",
+            "windupTime" : 4,
+			
+            "projectileCount" : 15,
+            "projectileInterval" : 0.25,
+            "inaccuracy" : 1.0,
+			
+            "projectileType" : "gic_magicbullet_ice_2pattern",
+            "fireOffsets" : [ [0, 0], [0, 0] ],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireSound" : "fire_mg",
+            "fireDelay" : 0.00,
+			
+            "aimDirection" : [0, -1],
+			
+            "projectileParameters" : {
+              "speed" : 10,
+              "power" : 80
+            },
+
+            "fireArc": false,
+            "gravityMultiplier": 0.0,
+            "fireState" : "pinfire",
+            "winddownState" : "pinwinddown",
+            "winddownTime" : 1
+          }
+        },
+		
+		
+		
+		
+		
+		//Directly aims at players with a controlled impure laser blast.
+		
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : 35.0,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupState" : "laserlightwindup",
+            "windupTime" : 1,
+			
+
+            "projectileCount" : 20,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.25,
+            "inaccuracy" : 0.0,
+
+			
+            "projectileType" : "gic_magicshot_impurelaser_3pattern",
+            "fireOffsets" : [ [0, 0] ],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireSound" : "",
+			
+            "aimDirection" : [0, -1],
+			
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 80
+            },
+
+            "fireArc": false,
+            "gravityMultiplier": 0.0,
+            "fireState" : "laserlightfire",
+            "winddownState" : "",
+            "winddownTime" : 1
+          }
+        },
+		
+		
+		
+		
+		//Randomly fires impure lasers.
+		
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : 35.0,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupState" : "centralpinwindup",
+            "windupTime" : 1,
+			
+
+            "projectileCount" : 20,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.5,
+            "inaccuracy" : 2.0,
+
+			
+            "projectileType" : "gic_magicbullet_ice_2pattern_centralbeam",
+            "fireOffsets" : [ [0, 0.0], [0, 0.0], [0, 0.0], [0, 0.0] ],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireSound" : "",
+			
+            "aimDirection" : [0, -1],
+			
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 80
+            },
+
+            "fireArc": false,
+            "gravityMultiplier": 0.0,
+            "fireState" : "centralpinfire",
+            "winddownState" : "centralpinwinddown",
+            "winddownTime" : 1
+          }
+        },
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+	
+
+		
+		
+		
+		
+		//Crosshair that homes in on players. A fancier version of the delayed red explosion.
+		
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : 35.0,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupState" : "aimbotshotwindup",
+            "windupTime" : 1,
+			
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.5,
+            "inaccuracy" : 0.0,
+			
+            "projectileType" : "gic_magicshot_homingcrosshair",
+            "fireOffsets" : [ [0, 0] ],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireSound" : "fire_crosshair",
+			
+            "aimDirection" : [0, -1],
+			
+            "projectileParameters" : {
+              "speed" : 80,
+              "power" : 80
+            },
+
+            "fireArc": false,
+            "gravityMultiplier": 0.0,
+            "fireState" : "aimbotshotfire",
+            "winddownState" : "pinwinddown",
+            "winddownTime" : 10
+          }
+        },
+		
+		
+		
+		//Duplet bolts fired directly at the player with a central beam. Move carefully.
+		
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : 35.0,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupState" : "boltstreamwindup",
+            "windupTime" : 1,
+			
+
+            "projectileCount" : 70,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.1,
+            "inaccuracy" : 0.0,
+
+			
+            "projectileType" : "gic_magicbullet_ice_2pattern_centralbeam",
+            "fireOffsets" : [ [0, 0] ],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireSound" : "fire_2bolt",
+			
+            "aimDirection" : [0, -1],
+			
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 80
+            },
+
+            "fireArc": false,
+            "gravityMultiplier": 0.0,
+            "fireState" : "boltstreamfire",
+            "winddownState" : "",
+            "winddownTime" : 1
+          }
+        }
+		
+		
+		
+		
+		
+		
+		
+		
+
+	  
+      ],
+
+
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_largeexplosion",
+            "projectileParameters" : {
+              "power" : 500,
+              "damageTeam" : { "type" : "enemy", "team" : 0 },
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        }
+      ],	 
+
+
+      "periodicActions" : [
+       ],
+
+      "approachActions" : [
+      ],
+
+      "followActions" : [
+      ],
+
+      "wanderActions" : [
+      ],
+
+      "concurrentActions" : [ ],
+
+      "concurrentHostileActions" : [
+	  ]
+	  
+    },
+
+    "touchDamage" : {
+      "poly" : [ [0.625, 0.9375], [0.9, 0.4375], [0.9, -0.4375], [0.625, -0.9375], [-0.625, -0.9375], [-0.9, -0.4375], [-0.9, 0.4375], [-0.625, 0.9375] ],
+      "damage" : 50,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 60,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [0.625, 0.9375], [0.9, 0.4375], [0.9, -0.4375], [0.625, -0.9375], [-0.625, -0.9375], [-0.9, -0.4375], [-0.9, 0.4375], [-0.625, 0.9375] ],
+
+      "mass" : 16,
+      "walkSpeed" : 0,
+      "runSpeed" : 0,
+      "gravityEnabled" : false,
+
+      "airFriction" : 0,
+      "airForce" : 0,
+      "flySpeed" : 0
+    },
+
+    "bodyMaterialKind" : "robotic",
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "robotic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/monster_primary.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+        "knockbackStunTime" : {
+          "baseValue" : 0.0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 99999
+        },
+        "maxHealth" : {
+          "baseValue" : 60000 //12000
+        },
+        "grit" : {
+          "baseValue" : 1.0
+        },
+        "protection" : {
+          "baseValue" : 1.0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.2
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.2
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 1
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_ghostshadow_poisonStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0.5
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0.0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 0.0
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0.0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.5
+				} 
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "nametagColor" : [64, 200, 255]
+  }
+}

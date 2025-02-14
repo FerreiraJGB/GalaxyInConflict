@@ -1,0 +1,46 @@
+{
+  "projectileName" : "gic_standardlaser_antitank",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_standardlaser.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "fullbright" : true,
+  "power" : 5.0,
+  "damageKind" : "ews_antitankthermal",
+  "damageType" : "IgnoresDef",
+  "speed" : 50000,
+  "knockback" : 0,
+  "statusEffects" : [ "gic_colonial_energyshieldBreak" ],
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_laserimpact/gic_laserimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact_small/gic_energyimpact_small.config"
+    }
+  ]
+//"periodicActions" : [
+//    {
+//      "time" : 0.002,
+//      "repeat" : true,
+//      "action" : "particle",
+//      "rotate" : true,
+//      "specification" : {
+//        "type" : "textured",
+//        "image" : "/particles/gic_redtracer_longtrail/trail.png",
+//        "position" : [0.5, 0],
+//        "layer" : "back",
+//        "timeToLive" : 0.0,
+//        "destructionTime" : 0.1,
+//        "destructionAction" : "shrink",
+//        "fullbright" : true
+//      }
+//    }
+//]
+
+}

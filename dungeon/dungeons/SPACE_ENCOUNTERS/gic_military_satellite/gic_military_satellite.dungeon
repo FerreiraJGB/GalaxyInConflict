@@ -1,0 +1,124 @@
+{
+  "metadata" : {
+    "name" : "gic_militarysatellite",
+  "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_militarysatellite_quad_thruster"],
+    "gravity" : 0,
+    "maxRadius" : 1000000,
+    "maxParts" : 8,
+    "protected" : true
+},
+
+  "parts" : [
+
+    // SAFE ZONE
+    {
+      "name" : "safe-empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "/dungeons/space/hazards/safe-empty.json" ],
+      "chance" : 0,
+      "markDungeonId" : false
+    },
+
+    // MERCHANT SHIP
+
+    {
+      "name" : "gic_militarysatellite_quad_thruster",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_militarysatellite_quad_thruster" ] ]
+      ],
+      "def" : [ "tmx", "gic_militarysatellite_quad_thruster.json" ],
+      "chance" : 0.3
+    },
+	
+	
+	
+	
+	
+	
+    {
+      "name" : "gic_militarysatellite_hull_body",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_militarysatellite_quad_thruster" ] ]
+      ],
+      "def" : [ "tmx", "gic_militarysatellite_quad_thruster.json" ],
+      "chance" : 0.3
+    },	
+	
+	
+    {
+      "name" : "gic_militarysatellite_thermalpanels_body",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_militarysatellite_thermalpanels_body" ] ]
+      ],
+      "def" : [ "tmx", "gic_militarysatellite_thermalpanels_body.json" ],
+      "chance" : 1
+    },	
+	
+	
+//    {
+//      "name" : "gic_militarysatellite_superheavyweapons_body",
+//      "rules" : [
+//        [ "doNotCombineWith", [ "gic_militarysatellite_superheavyweapons_body" ] ]
+//      ],
+//      "def" : [ "tmx", "gic_militarysatellite_superheavyweapons_body.json" ],
+//      "chance" : 0.3
+//    },	
+	
+	
+    {
+      "name" : "gic_militarysatellite_solarpanels_body",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_militarysatellite_solarpanels_body" ] ]
+      ],
+      "def" : [ "tmx", "gic_militarysatellite_solarpanels_body.json" ],
+      "chance" : 1
+    },	
+	
+	
+    {
+      "name" : "gic_militarysatellite_heavyweapons_body",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_militarysatellite_heavyweapons_body" ] ]
+      ],
+      "def" : [ "tmx", "gic_militarysatellite_heavyweapons_body.json" ],
+      "chance" : 0.3
+    },	
+	
+
+    {
+      "name" : "gic_militarysatellite_fueltanks_body",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_militarysatellite_fueltanks_body" ] ]
+      ],
+      "def" : [ "tmx", "gic_militarysatellite_fueltanks_body.json" ],
+      "chance" : 1
+    },	
+
+    {
+      "name" : "gic_militarysatellite_largefueltank_body",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_militarysatellite_largefueltank_body" ] ]
+      ],
+      "def" : [ "tmx", "gic_militarysatellite_largefueltank_body.json" ],
+      "chance" : 1
+    },	
+	
+	
+	
+	
+    {
+      "name" : "gic_militarysatellite_smalldish_nose",
+      "rules" : [
+        [ "doNotCombineWith", [ "gic_militarysatellite_smalldish_nose" ] ]
+      ],
+      "def" : [ "tmx", "gic_militarysatellite_smalldish_nose.json" ],
+      "chance" : 0.3
+    }
+	
+  ]
+}

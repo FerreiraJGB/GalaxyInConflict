@@ -1,0 +1,31 @@
+{
+  "itemName" : "ews_autofire",
+  "price" : 5000,
+  "rarity" : "Essential",
+  "category" : "Attachment",
+  "inventoryIcon" : "ews_attachment.png",
+  "description" : "Sets a weapon's fire type to \"auto\".",
+  "shortdescription" : "Auto Fire Modification (EWS)",
+
+  "attachment" : {
+	"attachmentType" : "misc", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "ews_autofire", //name of attachment
+	"attachmentTag" : ["ews_rifle","ews_autofire"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	
+	"fireType" : "auto",
+	"notAttachment" : true, //if this is enabled, then only unique misc attachment effects will apply, i.e. the above fireType modifier. If this is enabled, the misc attachment slot will NOT be taken up when applied. Normal attachment bonuses (below) will have no effect if enabled.
+	//this param only works with misc attachments.
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

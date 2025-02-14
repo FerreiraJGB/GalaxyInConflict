@@ -1,0 +1,57 @@
+{
+  "objectName" : "gic_glitch_steamgenerator",
+  "colonyTags" : [],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "description" : "Steam Generator.",
+  "shortdescription" : "Steam Generator",
+  "race" : "generic",
+  "tooltipKind" : "gic_largebase",
+  "lightColor" : [179, 149, 107],
+
+  "flickerPeriod" : 0.3,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+
+  "inventoryIcon" : "gic_glitch_steamgenerator_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_steamgenerator.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "gic_glitch_steamgenerator.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_glitch_steamgenerator.animation",
+  "animationParts" : {
+    "bg" : "gic_glitch_steamgenerator.png",
+    "fg" : "gic_glitch_steamgenerator_lit.png"
+  },
+  "animationPosition" : [-8, -0],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [-1, -0] ],
+
+  "interactive" : false
+
+//  "soundEffect" : "/sfx/vehicles/gic_tank_idle.ogg",
+//  "soundEffectRangeMultiplier" : 0.25
+
+}

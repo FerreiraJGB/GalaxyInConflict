@@ -1,0 +1,32 @@
+{
+  "itemName" : "gic_patron_okuu",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#8B30F0;Patron Trinket",
+  "inventoryIcon" : "gic_patron_okuu.png",
+  "maxStack" : 1,
+  "description" : 
+  
+"''Hold your own, and I'll hold mine!''
+A reconstructed B.I.R.B (the name isn't lost on anyone) complete with proper-colored synthetic skin and sapient AI. Sapient enough anyways. She provides just enough support to assist you with some ailments. You aren't weak, right?
+
+^green;Immune to enemy stun attacks, flashbangs, and all types of bleeding when ABOVE 50% HP.^reset;
+^red;Effects disabled when below 50% HP.^reset;",
+
+
+
+  "shortdescription" : "Patron: Okuu",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_patron_okuu",
+    "displayName" : "Patron: Okuu",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_patron_okuu.png",
+    "effects" : [ "gic_patron_okuu_below50", "gic_patron_okuu_above50", "gic_patron_okuu" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_patron_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

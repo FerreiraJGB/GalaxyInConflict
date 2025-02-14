@@ -1,0 +1,228 @@
+{
+  "muteSfx" : true,
+  "muteMusic" : true,
+  "skippable" : true,
+//  "letterbox" : true,
+//  "backgroundColor" : [0, 0, 0, 200],
+//  "backgroundFadeTime" : 0.5,
+
+  "panels" : [
+  
+	
+	// --- --- ---
+	
+	
+  //Character Chatbox
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Character.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 46.5,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 47,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        }
+      ]
+    },
+	
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Textbox.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 46.5,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 47,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        }
+      ]
+    },
+	
+	
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Mail_ConvenienceStoreBasement.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 26.5,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 270]
+        },
+        {
+          "timecode" : 27.0,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 270]
+        },
+        {
+          "timecode" : 46.5,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 270]
+        },
+        {
+          "timecode" : 47,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 270]
+        }
+      ]
+    },
+
+
+
+// ----------------- dialogue: Initial Meeting
+    {
+      "drawables" : [
+      ],
+      "text" : "
+It's drawers full of mail for someone called Bradley Silverspoon. From the looks of it, it's all business-related. Taxes, bills, license expiries, all that stuff. Now I'd say that wouldn't be such a suspicious thing if it wasn't all stashed down in the basement. What I think is that someone's been throwing the mail down here.
+
+Now, sure, it could be Bradley himself instead of some mystery figure, but why let his business decay like this? I think this might actually be leading to something exciting for once.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 1.0,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 23,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 26,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 26.5,
+          "alpha" : 0.0
+        }
+      ]
+    },
+
+
+    {
+      "drawables" : [
+      ],
+      "text" : "What's weird is that some of this mail was sent for a different address. Judging by what it says on some of it, it looks like his home address. It might be worth visiting his home to see if there's anything I could find for the story.
+
+There's not much else here so I think it's time we get out of here before anyone notices.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 26.5,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 41.5,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 46.5,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 47,
+          "alpha" : 0.0
+        }
+      ]
+    }
+
+
+  ],
+  "audio" : [
+  
+    {
+      "timecode" : 1,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    },
+	
+    {
+      "timecode" : 26.5,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    }	  
+	
+	
+  ]
+}

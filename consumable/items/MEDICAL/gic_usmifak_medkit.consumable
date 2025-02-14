@@ -1,0 +1,43 @@
+{
+  "itemName" : "gic_usmifak_medkit",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_usmifak_medkit.png",
+  "maxStack" : 8,
+  "description" : "A ^white;Medical Kit^white; issued to all standard militaries of the ^green;United Systems^white;. The equipment within the kit is nearly identical those supplied by the Russian Military during World War 3, aside from the addition of improved blood transfusion devices.
+
+^green;- Restores 300 health over 5 seconds, costing 3 seconds.
+^yellow;- Heals Bruising.^white;
+^orange;- Heals Burn Wounds.^white;
+^red;- Heals Blood Loss.^white;",
+
+  "shortdescription" : "^yellow;United Systems Military Individual First Aid Kit",
+  
+  "effects" : [ [
+      {
+        "effect" : "gic_usmifak_medkit"
+      },
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 3
+      },
+	  
+      {
+        "effect" : "gic_medkit_use_messenger",
+        "duration" : 3
+      },	  
+	  
+	  {
+        "effect" : "gic_blood_pack_recovery"
+      },
+      {
+        "effect" : "gic_burn_pack_recovery"
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_medkit_use" ],
+  "blockingEffects" : [
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "projectileName" : "gic_magicshot_artificialsun_stage1_spawner",
+  "image" : "gic_magicshot_artificialsun_stage1_spawner.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : true,
+  "piercing" : true,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 60,
+  "emitters" : [ "fireplasma" ],
+  "periodicActions" : [
+    {
+      "time" : 5.0,
+      "action" : "sound",
+      "options" : [
+        "/sfx/touhou/gic_utsuho_klaxon_+6db.ogg"
+      ],
+	  "rangeMultiplier" : 2.0
+    },
+    {
+      "time" : 0.05,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ice",
+      "inheritDamageFactor" : 1,
+      "fuzzAngle" : 180
+    },
+    {
+      "time" : 1,
+      "action" : "projectile",
+      "type" : "gic_magicshot_artificialsun_3pattern_fusionfire_spawner",
+      "inheritDamageFactor" : 1,
+      "fuzzAngle" : 180
+    },
+    {
+      "time" : 1,
+      "action" : "projectile",
+      "type" : "gic_magicshot_atomicfire_stage1_relay_explosionsign_pre",
+      "inheritDamageFactor" : 1,
+      "fuzzAngle" : 360
+    }
+  ],
+  
+  "actionOnTimeout" : [
+
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    }
+
+  ],
+  
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 50.0,
+  "speed" : 0,
+  "acceleration" : -10,
+  "knockback" : 18
+}

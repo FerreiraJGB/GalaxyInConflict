@@ -1,0 +1,48 @@
+{
+  "hadBlocked": {
+    "type": "action",
+    "name": "hadBlocked",
+    "title": "hadBlocked",
+    "properties": {},
+    "category": "GiCNodes",
+    "script": "/scripts/actions/gic_blocking.lua",
+    "output": {
+      "damageSource": {"type": "json", "key": null}
+    }
+  },
+  "guardBroken": {
+    "type": "action",
+    "name": "guardBroken",
+    "title": "guardBroken",
+    "properties": {},
+    "category": "GiCNodes",
+    "script": "/scripts/actions/gic_blocking.lua",
+    "output": {
+    }
+  },
+  "setScriptDt": {
+    "type": "action",
+    "name": "setScriptDt",
+    "title": "setScriptDt",
+    "category": "GiCNodes",
+    "script": "/scripts/actions/gic_scriptdt.lua",
+	"properties": {
+		"scriptDelta": {"type": "number", "value": null}
+    },
+    "output": {
+    }
+  },
+  "printJson": { //only set up to work with numbers atm
+    "type": "action",
+    "name": "printJson",
+    "title": "printJson",
+    "category": "GiCNodes",
+    "script": "/scripts/actions/gic_printjson.lua",
+	"properties": {
+		"input": {"type": "number", "value": null}
+    },
+    "output": {
+		"text": {"type": "string", "key": null}
+    }
+  }
+}

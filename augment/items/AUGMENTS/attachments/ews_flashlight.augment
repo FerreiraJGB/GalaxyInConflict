@@ -1,0 +1,44 @@
+{
+  "itemName" : "ews_flashlight",
+  "price" : 5000,
+  "rarity" : "Common",
+  "category" : "Attachment",
+  "inventoryIcon" : "ews_flashlight.png",
+  "description" : "-todo-",
+  "shortdescription" : "Flashlight (EWS)",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "ews_flashlight", //name of attachment
+	"attachmentTag" : ["ews_rifle","ews_flashlight"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/attachments/ews_flashlight.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "ews_flashlight", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "light",
+		"lightConfig" : {
+			"active" : true,
+			"offset" : [0.3, -0.1], //offset, not position. Position will be set by the main gun scripts
+			"transformationGroups" : ["weapon"],
+			"color" : [200, 200, 200],
+			"pointLight" : true,
+			"pointAngle" : 0.00,
+			"pointBeam" : 5
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

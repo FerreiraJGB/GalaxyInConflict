@@ -1,0 +1,45 @@
+{
+  "objectName" : "gic_securityeyescanner",
+  "colonyTags" : ["human","humanbunker","electronic","wired"],
+  "rarity" : "Common",
+  "description" : "A device to scan eyeballs and match them to personnel data.",
+  "shortdescription" : "Security Eye Scanner",
+  "race" : "human",
+  "category" : "wire",
+  "price" : 90,
+
+  "lightColor" : [61, 80, 102],
+
+  "apexDescription" : "An eye scanner. This one has 8 different settings for each race.",
+  "avianDescription" : "A device for scanning eyeballs. Why would it need to do that?",
+  "floranDescription" : "Machine wants to ssscan eyes. No.",
+  "glitchDescription" : "Thoughtful. This eye scanner has settings tailored for scanning the eyes for each individual species.",
+  "humanDescription" : "An eye scanner. Sure I can mess around with the settings for each species but ultimately the access is going to be locked behind a specific species type AND the eyeballs.",
+  "hylotlDescription" : "An eye scanner with multiple settings for each species. How thoughtful of the designers.",
+  "novakidDescription" : "An eye scanner with... this one can scan the markings on Nova faces... Cool tech.",
+
+  "inventoryIcon" : "gic_securityeyescannericon.png",
+  "orientations" : [
+    {
+      "image" : "gic_securityeyescanner.png:<color>.off",
+      "imagePosition" : [-8, -8],
+      
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/switch/switch.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/switch/switch4bgfullbright.animation",
+  "animationParts" : {
+    "bg" : "gic_securityeyescanner.png",
+    "fg" : "gic_securityeyescannerlit.png"
+  },
+  "animationPosition" : [-8, -8],
+
+  "outputNodes" : [ [0, -1] ]
+}

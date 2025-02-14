@@ -1,0 +1,31 @@
+{
+  "name" : "gic_armor_stonelegion_pinger_chest",
+  "blockingStat" : "gic_armor_stonelegion_pingerStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_armor_stonelegion_pinger_summon_chest", //does not accept arrays
+	"projectileTypeMiss" : "gic_armor_stonelegion_pinger_summon_chest", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 100,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 30.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 30.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_armor_stonelegion_pinger.animation"
+}

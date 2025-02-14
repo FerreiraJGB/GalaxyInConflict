@@ -1,0 +1,39 @@
+{
+  "itemName" : "gic_lunarherb",
+  "rarity" : "Common",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+//  "category" : "^#FFB941;Izakaya Ingredient",
+  "category" : "^#FFB941;Consumable",
+  "inventoryIcon" : "gic_lunarherb.png",
+  
+  //The Lunarian government have desperately tried to cull the 'illegal' export of these herbs to 'impure humans', but there are many more 'impure' rabbit-youkai willing part ways with these plants for some profit.
+  
+  "description" : "A rare plant that grows only in Gensokyo, absorbing magical energies under a full moon.
+  
+It is sometimes cynically referred to as ''Divine Grass''.
+  
+^orange;Eating as-is recovers 200HP.",
+  "shortdescription" : "Lunar Herbs",
+  "effects" : [ [
+
+      {
+        "effect" : "gic_healingflask_medkitheal",
+        "duration" : 2
+      },
+	  {
+        "effect" : "gic_healing_slowdown_1",
+        "duration" : 2
+      }
+
+  ] ],
+  "foodValue" : 1,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

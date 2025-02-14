@@ -1,0 +1,52 @@
+{
+  "projectileName" : "gic_magicshot_knife_touhou_stage1",
+  "image" : "gic_magicshot_knife_touhou_stage1.png",
+  "physics" : "gic_demongravityshotup",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 1.4,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_knife_touhou_stage2",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_knife_touhou_stage2",
+      "inheritDamageFactor" : 1,
+      "angle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_knife_touhou_stage2",
+      "inheritDamageFactor" : 1,
+      "angle" : 180
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_knife_touhou_stage2",
+      "inheritDamageFactor" : 1,
+      "angle" : 270
+    }
+	
+	
+	
+	
+	
+	
+	
+  ],
+  "statusEffects" : [ ],
+  "power" : 500.0,
+  "speed" : 20,
+  "knockback" : 18
+}

@@ -1,0 +1,60 @@
+{
+  "objectName" : "gic_rusted_landmine",
+  "colonyTags" : ["combat"],
+  "printable" : false,
+  "scannable" : false,
+  "rarity" : "Common",
+  "breakDropOptions" : [],
+
+  "category" : "wire",
+  "price" : 20,
+  "description" : "An RSM-48 Landmine. Extremely deadly and highly likely to maim or even kill upon detonation.",
+  "shortdescription" : "RSM-48",
+  "race" : "generic",
+
+  "apexDescription" : "A land mine. Likely that it's still active.",
+  "avianDescription" : "Some sort of tiny landmine. Judging from its size it shouldn't pose a threat.",
+  "floranDescription" : "Watch your ssstep!",
+  "glitchDescription" : "Cautious. An active land mine. This one in particuler is lethal.",
+  "humanDescription" : "An old Infantry Landmine. More likely to maim than kill but can still finish off less fortunate soldiers.",
+  "hylotlDescription" : "An Old-Earth Infantry Landmine. Spreads fire just like its newer cousin but with a much shorter fuze.",
+  "novakidDescription" : "This thing could still blow!",
+  
+  "avaliDescription" : "A rusted away landmine. Such crude technology.",
+  "avikanDescription" : "A landmine. Quite hard to see if you're not paying attention!",
+  "trinkDescription" : "Human-origin Landmine. Very crude mechanical construction but it has stood the test of time.",
+  "drodenDescription" : "Landmine. Status: Active.",
+  "aegiDescription" : "A very old landmine. Things like these are designed to maim, furthering the suffering.",
+
+  "inventoryIcon" : "gic_rusted_landmine_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_rusted_landmine.png:<color>.off",
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [ "gic_rusted_landmine.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/switch/switchtoggle.animation",
+  "animationParts" : {
+    "switch" : "gic_rusted_landmine.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "on" : ["/sfx/objects/hiddenswitch1.ogg"]
+    }
+  },
+  "animationPosition" : [0, 0],
+
+  "outputNodes" : [ [0, 0] ],
+
+  "firstProjectile" : "smoke",
+  "triggerDelay" : 0.1,
+  "secondProjectile" : "gic_uxo_mortar",
+  "detectArea" : [[-1.0, 0], [1.0, 0.5]]
+}

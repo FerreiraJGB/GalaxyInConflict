@@ -1,0 +1,130 @@
+{
+  "metadata" : {
+    "name" : "gic_crusade_battlefield",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_crusade_battlefield_start"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 30,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_crusade_battlefield_start",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_battlefield_start.json" ] ],
+      "chance" : 0
+    },
+	
+	
+	
+	
+	
+	
+    {
+      "name" : "gic_crusade_battlefield_melee",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_crusade_battlefield_melee" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_battlefield_melee.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_crusade_battlefield_pistoleer",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_crusade_battlefield_pistoleer" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_battlefield_pistoleer.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_crusade_battlefield_river",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_crusade_battlefield_river" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_battlefield_river.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_crusade_battlefield_trenches",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_crusade_battlefield_trenches" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_battlefield_trenches.json" ] ],
+      "chance" : 1
+    },	
+	
+	
+	
+	
+    {
+      "name" : "gic_crusade_battlefield_transition",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_battlefield_transition.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_crusade_warcamp_tents1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_crusade_warcamp_tents1" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_warcamp_tents1.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_crusade_warcamp_tents2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_crusade_warcamp_tents2" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_warcamp_tents2.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_crusade_warcamp_siegeengineconstruction",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_crusade_warcamp_siegeengineconstruction" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_warcamp_siegeengineconstruction.json" ] ],
+      "chance" : 1
+    },
+
+
+
+    {
+      "name" : "gic_crusade_warcamp_arena",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_warcamp_arena.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

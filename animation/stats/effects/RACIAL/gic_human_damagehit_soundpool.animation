@@ -1,0 +1,54 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "shield" : {
+        "priority" : 2,
+        "default" : "off",
+        "states" : {
+          "off" : {
+          },
+          "hit" : {
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {      
+      "shield" : {
+        "properties" : {
+          "zLevel" : 5,
+          "centered" : true,
+          "offset" : [0, -0.5]
+        },
+
+        "partStates" : {
+          "shield" : {
+            "hit" : {
+              "properties" : {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  
+  "sounds" : {
+	  "perfectBlock" : [
+"/sfx/Metro2033/Actor/gic_hurt1.ogg",
+"/sfx/Metro2033/Actor/gic_hurt2.ogg",
+"/sfx/Metro2033/Actor/gic_hurt3.ogg",
+"/sfx/Metro2033/Actor/gic_hurt4.ogg",
+"/sfx/Metro2033/Actor/gic_hurt5.ogg",
+"/sfx/Metro2033/Actor/gic_hurt6.ogg",
+"/sfx/Metro2033/Actor/gic_hurt7.ogg"
+	  ]
+  }
+}

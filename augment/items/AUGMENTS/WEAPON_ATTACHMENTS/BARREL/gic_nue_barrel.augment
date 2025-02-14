@@ -1,0 +1,56 @@
+{
+  "itemName" : "gic_nue_barrel",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Barrel Attachment^white;",
+  "inventoryIcon" : "gic_nue_barrel_icon.png",
+  
+  
+  "description" : "''Fractured skies and acid rain
+Wе are sent unknown
+Templеs high in trails of pain
+For a moonlit throne''
+
+^#B10000;0.5x gravity modifier for the user when attached to a weapon.^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Nue Barrel",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_nue_barrel", //name of attachment
+	
+	"attachmentTag" : [ "gic_nue_barrel", "gic_barrel" ],     //if target item has one or more of these tags, then this attachment will be applicable to the item
+	
+	"attachmentId" : "gic_nue_barrel", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_nue_barrel.png", //determines what image is displayed on the resulting gun
+	
+	"specialAttachmentConfig" : {
+		"type" : "statusEffect", //this can be applied to any attachment of type "sight", "barrel", "stock", or "underbarrel".
+		"statusEffects" : ["gic_nue_barrel"], //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+		
+		"projectileConfig" : {
+			"processing" : "?crop=10;3;10;3"
+		}
+		
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

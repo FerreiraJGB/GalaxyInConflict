@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_hunterspistol_messenger",
+  "image" : "gic_hunterspistol_messenger.png",
+  "animationCycle" : 0.25,
+  "physics" : "grenadenobounce",
+  "piercing" : true,
+  "bounces" : 50,
+  "speed" : 10,
+  "frameNumber" : 1,
+  "timeToLive" : 0,
+  "damageKindImage" : "icon.png",
+  "power" : 0,
+  "damageType" : "NoDamage",
+  "onlyHitTerrain" : true,
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_knife_fanofknives_stage2",
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_hunterspistol_projectile",
+      "inheritDamageFactor" : 0,
+      "angleAdjust" : 0
+    }
+  ],
+  
+  "damageKind" : "default"
+}

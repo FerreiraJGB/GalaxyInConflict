@@ -1,0 +1,63 @@
+{
+  "projectileName" : "gic_magicshot_bouncyexplodingrocket",
+  "bounces" : -1,
+  "image" : "gic_magicshot_bouncyexplodingrocket.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    }
+  ],
+  
+  
+"periodicActions" : [
+    {
+      "time" : 0.5,
+      "action" : "projectile",
+      "type" : "gic_crystal_areashockwave_stage2",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+      "image" : "/animations/gic_mediumsteamcloud/gic_mediumsteamcloud.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.2,
+        "destructionTime" : 2,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+],
+  
+  "power" : 390,
+  "damageKind" : "ews_antitank",
+
+
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  
+  "rotationRate" : 8,
+  "trackingLimit" : 300,
+
+
+  "maxSpeed" : 30,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 30.0,
+  "acceleration" : 0,
+  "timeToLive" : 8,
+  "physics" : "bullet"
+}

@@ -1,0 +1,336 @@
+{
+  "metadata" : {
+    "name" : "gic_protectedcolony",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_protectedcolony_city_capital" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 45,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+
+  
+    {
+      "name" : "gic_protectedcolony_ruined_house1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_ruined_house1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_ruined_house1.json" ],
+      "chance" : 1
+    },  
+
+    {
+      "name" : "gic_protectedcolony_ruined_house2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_ruined_house2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_ruined_house2.json" ],
+      "chance" : 1
+    }, 
+
+    {
+      "name" : "gic_protectedcolony_ruined_house3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_ruined_house3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_ruined_house3.json" ],
+      "chance" : 1
+    }, 
+
+    {
+      "name" : "gic_protectedcolony_ruined_house4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_ruined_house4" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_ruined_house4.json" ],
+      "chance" : 1
+    }, 
+
+    {
+      "name" : "gic_protectedcolony_ruined_house5",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_ruined_house5" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_ruined_house5.json" ],
+      "chance" : 1
+    }, 	
+	
+    {
+      "name" : "gic_protectedcolony_ruined_house6",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_ruined_house6" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_ruined_house6.json" ],
+      "chance" : 1
+    }, 	
+	
+    {
+      "name" : "gic_protectedcolony_ruined_silo",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_ruined_silo" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_ruined_silo.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_protectedcolony_ruined_factory",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_ruined_factory" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_ruined_factory.json" ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_protectedcolony_ruined_staircase",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_ruined_staircase" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_ruined_staircase.json" ],
+      "chance" : 1
+    }, 		
+	
+    {
+      "name" : "gic_protectedcolony_ruined_rightend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_ruined_rightend.json" ] ],
+      "chance" : 0
+    },
+	
+	
+
+  //Central City
+  
+    {
+      "name" : "gic_protectedcolony_city_leftwall",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_city_leftwall.json" ],
+      "chance" : 0
+    },
+  
+    {
+      "name" : "gic_protectedcolony_city_staircase",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_city_staircase" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_city_staircase.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_protectedcolony_city_capital",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_city_capital" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_city_capital.json" ],
+      "chance" : 1
+    },		
+	
+    {
+      "name" : "gic_protectedcolony_city_apartment1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_city_apartment1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_city_apartment1.json" ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_protectedcolony_city_apartment2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_city_apartment2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_city_apartment2.json" ],
+      "chance" : 1
+    },		
+	
+    {
+      "name" : "gic_protectedcolony_city_shop",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_city_shop" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_city_shop.json" ],
+      "chance" : 1
+    },		
+
+    {
+      "name" : "gic_protectedcolony_city_rightwall",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_city_rightwall.json" ],
+      "chance" : 0
+    },	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//Left Side - Agricultural
+
+    {
+      "name" : "gic_protectedcolony_agricultural_leftend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_agricultural_leftend.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_protectedcolony_agricultural_staircase",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_agricultural_staircase" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_agricultural_staircase.json" ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_protectedcolony_agricultural_sugarcanefield",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_agricultural_sugarcanefield" ] ],
+	    [ "doNotCombineWith", [ "gic_protectedcolony_agricultural_sugarcanegreenhouse"] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_agricultural_sugarcanefield.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_protectedcolony_agricultural_sugarcanegreenhouse",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_agricultural_sugarcanegreenhouse" ] ],
+	    [ "doNotCombineWith", [ "gic_protectedcolony_agricultural_sugarcanefield"] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_agricultural_sugarcanegreenhouse.json" ],
+      "chance" : 1
+    },		
+	
+    {
+      "name" : "gic_protectedcolony_agricultural_ricefield",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_agricultural_ricefield" ] ],
+	    [ "doNotCombineWith", [  "gic_protectedcolony_agricultural_ricegreenhouse"] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_agricultural_ricefield.json" ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_protectedcolony_agricultural_ricegreenhouse",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_agricultural_ricegreenhouse" ] ],
+	    [ "doNotCombineWith", [  "gic_protectedcolony_agricultural_ricefield"] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_agricultural_ricegreenhouse.json" ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_protectedcolony_agricultural_house1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_agricultural_house1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_agricultural_house1.json" ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_protectedcolony_agricultural_house2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_agricultural_house2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_agricultural_house2.json" ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_protectedcolony_agricultural_cornfield",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_agricultural_cornfield" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_protectedcolony_agricultural_cornfield.json" ],
+      "chance" : 1
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "objectName" : "gic_wildlands_porttrader",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 160,
+  "description" : "Make haggles and trades with other colonies.",
+  "shortdescription" : "Port Traders",
+  "race" : "human",
+  "health" : 2,
+  
+  "breakDropOptions" : [],
+  
+//  "scriptDelta" : 20,
+
+//  "chatRadius" : 5,
+//  "chatCooldown" : 25,
+//  "chatOptions" : [
+//    "Please state your concern.",
+//	"Yes?",
+//	"What can I do for you, sir?"
+//  ],  
+  
+  "scripts" : [ "/objects/crafting/gic_upgradeablecraftingobject.lua" ],  //, "/objects/missions/gic_esther_chapter_1_springfield_bartender/gic_springfield_talk.lua"
+  
+  "animation" : "gic_wildlands_porttrader.animation",
+  "animationPosition" : [40, 28],  
+  
+  "placementImage" : "gic_wildlands_porttrader.png:default.default",
+  "placementImagePosition" : [-16, 0],      
+  
+  
+  
+  "startingUpgradeStage" : 1,
+  "maxUpgradeStage" : 4,
+
+  "upgradeStages" : [
+  
+  //--- --- ---- FUNDING LEVEL 0
+  
+    {
+      "animationState" : "gic_wildlands_porttrader0",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_wildlands_porttrader_icon.png",
+        "placementImage" : "gic_wildlands_porttrader_tier0.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "Make haggles and trades with other colonies.",
+        "shortdescription" : "^orange;Port Traders | FUNDING: Tier 0^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_wildlands_porttrader.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Port Traders",
+            "subtitle" : "FUNDING: Tier 0",
+            "icon" : {
+              "file" : "/interface/crafting/gic_wildlands_porttrader.png"
+            }
+          }
+        },
+
+	"recipes" : [
+	
+		
+		
+		
+		
+		
+		
+		
+	],
+
+        "filter" : [ "gic_wildlands_porttrader0" ],
+        "upgradeMaterials" : [
+          { "item" : "gic_physicalcredit", "count" : 100 }
+        ]
+      },
+
+      "learnBlueprintsOnPickup" : [],
+
+      "upgradeSoundEffect" : "fanfare",
+      "upgradeParticleEffect" : "dust"
+    },
+
+
+// --- --- --- FUNDING LEVEL 1
+
+
+    {
+      "animationState" : "gic_wildlands_porttrader1",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_wildlands_porttrader_icon.png",
+        "placementImage" : "gic_wildlands_porttrader_tier1.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "Make haggles and trades with other colonies.",
+        "shortdescription" : "^orange;Port Traders | FUNDING: Tier 1^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_wildlands_porttrader.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Port Traders",
+            "subtitle" : "FUNDING: Tier 1",
+            "icon" : {
+              "file" : "/interface/crafting/gic_wildlands_porttrader.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+	
+	
+		
+	],
+	
+	
+        "filter" : [ "gic_wildlands_porttrader1" ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    },
+	
+	
+	
+	
+// --- --- --- FUNDING LEVEL 2
+
+
+    {
+      "animationState" : "gic_wildlands_porttrader2",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_wildlands_porttrader_icon.png",
+        "placementImage" : "gic_wildlands_porttrader_tier2.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "Make haggles and trades with other colonies.",
+        "shortdescription" : "^orange;Port Traders | FUNDING: Tier 2 | CLOSED^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_wildlands_porttrader.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Port Traders",
+            "subtitle" : "FUNDING: Tier 2",
+            "icon" : {
+              "file" : "/interface/crafting/gic_wildlands_porttrader.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+	
+	
+		
+	],
+	
+	
+        "filter" : [ "gic_wildlands_porttrader2" ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    },
+	
+
+// --- --- --- FUNDING LEVEL 3
+
+
+    {
+      "animationState" : "gic_wildlands_porttrader3",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_wildlands_porttrader_icon.png",
+        "placementImage" : "gic_wildlands_porttrader_tier3.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "Make haggles and trades with other colonies.",
+        "shortdescription" : "^orange;Port Traders | FUNDING: Tier 3^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_wildlands_porttrader.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Port Traders",
+            "subtitle" : "FUNDING: Tier 3",
+            "icon" : {
+              "file" : "/interface/crafting/gic_wildlands_porttrader.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+	
+	
+		
+	],
+	
+	
+        "filter" : [ "gic_wildlands_porttrader3" ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    }
+	
+	
+  ],  
+  
+  
+ // --- --- --- 
+  
+  
+  
+  
+  
+  
+  
+  //gic_wildlands_porttrader_weapons
+  //gic_wildlands_porttrader_equipment
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  "inventoryIcon" : "gic_wildlands_porttrader.png:default.1",
+  "orientations" : [
+    {
+      "dualImage" : "gic_wildlands_porttrader.png:<color>.<frame>",
+      "imagePosition" : [-16, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+}

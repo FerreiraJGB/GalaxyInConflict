@@ -1,0 +1,128 @@
+{
+  "type" : "gic_gazrian_enitcrew_ch2_1_villagetalker",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+
+  "identity" : {
+    "gender" : "male"
+  },
+  
+  "persistent" : true,
+
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+  
+  
+    "questGenerator" : {
+      "enableParticipation" : false
+    },
+    "offeredQuests" : [ "gic_esther_chapter_2_1_unitandollarsQuest" ],
+    "turnInQuests" : [ "gic_esther_chapter_2_1_unitandollarsQuest" ],
+  
+    "behavior" : "speaker",
+
+    "behaviorConfig" : {
+      "alwaysRun" : false,
+      "wanderWaitTime" : [6.0, 10.0],
+      "wanderTime" : [0.0, 0.0],
+      "wanderDistance" : 0,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ]
+    },
+
+	
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+			"How was the ride?",
+			"She's not 1st-class, but she'll get you where you need to be.",
+			"That's why they call her a Lightning. Bugger can take out ships 100x her price.",
+			"Anyways, go on ahead. I've already spoken with a few of the locals.",
+			"They'll be handling the search from there on out.",
+			"Enit says she'd prefer to stay back.",
+			"Me? I wouldn't touch the desert with my own two feet!",
+			"I'll be hanging back here though, in case you get yourself in a real spot.",
+			"I don't have much in the way of ground support-",
+			"-but I've taken down plenty of cruisers with just a smick of fuel to spare.",
+			"You should get going. This desert is harsh.",
+			"And don't forget to pack your lunch.",
+			"Plenty of fools starved because they thought they'd be back by afternoon.",
+			"Anyways, good luck out there.",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"[Dialogue repeat]"
+          ]
+        }
+      },
+      "speak" : {
+        "default" : {
+          "default" : [
+            "Hey, <entityname>, over here! I need to speak to you!"
+          ]
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "gic_bedouinhead", "parameters" : { "colorIndex" : [4] } }
+            ],
+            "chest" : [
+              { "name" : "bedouinchest", "parameters" : { "colorIndex" : [4] } }
+            ],
+            "legs" : [
+              { "name" : "bedouinlegs", "parameters" : { "colorIndex" : [4] } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

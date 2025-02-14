@@ -1,0 +1,69 @@
+{
+  "itemName" : "gic_frostfairy_barrel",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Barrel Attachment^white;",
+  "inventoryIcon" : "gic_frostfairy_barrel_icon.png",
+  
+  
+  "description" : "''We didn't expect the fairies to be any smart, but I guess if you've lived for hundreds of years as the embodiment of Nature... you'd pick up a thing or two.''
+Firearm barrel that ^#A3C1FF;imbues ammunition with frost,^reset; converting its base element into ^#A3C1FF;ICE^reset; and afflicting ^#A3C1FF;FROSTBURN^reset; which deals 20 DMG/s and slows by -25%
+^yellow;Bullets retain their original power and bleed effects.^reset; ^green;-75% Recoil Recovery Time.^reset; ^red;+50% High Recoil Miss Chance Multiplier.^reset; ^green;Right-click on a GiC Weapon to attach.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Frost Fairy Barrel",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_frostfairy_barrel", //name of attachment
+	
+	"attachmentTag" : [ "gic_frostfairy_barrel", "gic_barrel" ],     //if target item has one or more of these tags, then this attachment will be applicable to the item
+	
+	"attachmentId" : "gic_frostfairy_barrel", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_frostfairy_barrel.png", //determines what image is displayed on the resulting gun
+	
+	"specialAttachmentConfig" : {
+
+		"projectileConfig" : {
+"damageKind" : "iceplasma",		
+  "statusEffects" : [ "gic_frostburn" ],
+  "emitters" : [ "largeicecloud" ],
+"periodicActions" : [
+    {
+      "time" : 0.005,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_bluetracer_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.005,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+]			
+		}
+		
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,0.25,1.5], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

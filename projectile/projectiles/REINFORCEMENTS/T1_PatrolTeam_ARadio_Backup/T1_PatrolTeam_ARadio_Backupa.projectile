@@ -1,0 +1,29 @@
+{
+  "projectileName" : "T1_PatrolTeam_ARadio_Backupa",
+  "image" : "icon.png",
+  "animationCycle" : 0.0,
+  "physics" : "gas",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "timeToLive" : 5.0,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [120, 120, 120],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "T1_PatrolTeam_ARadio_Backupb",
+      "angle" : -90
+    },
+    {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/ctorhelo/cto_backup_arriving.ogg"
+      ]
+    }
+  ],
+  "power" : 0,
+  "speed" : 1,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

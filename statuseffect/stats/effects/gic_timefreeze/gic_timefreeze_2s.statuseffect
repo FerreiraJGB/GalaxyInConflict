@@ -1,0 +1,20 @@
+{
+  "name" : "gic_timefreeze_2s",
+  "blockingStat" : "gic_timefreezeStatusImmunity",
+  "effectConfig" : {},
+  "defaultDuration" : 2,
+
+  "scripts" : [
+    "gic_timefreeze.lua"
+  ],
+
+  "animationConfig" : "gic_timefreeze.animation",
+
+  "label" : "Time Freeze",
+  "icon" : "/interface/statuses/timefreeze.png",
+
+  "sounds" : {
+    "timefreeze_start" : [ "/sfx/statuseffects/gic_timefreeze_start_alt.ogg" ],
+    "timefreeze_loop" : [ "/sfx/statuseffects/gic_timefreeze_loop_alt.ogg" ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_magicshot_tyrantjudge_summon_stage2",
+  "image" : "gic_magicshot_tyrantjudge_summon_null.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 20,
+  "timeToLive" : 0.5, //0.46
+  "onlyHitTerrain" : true,
+  
+  "scripts" : [  "gic_magicshot_tyrantjudge_summon_stage2.lua" ],
+  
+"actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "angle" : 90
+    }
+	
+],
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

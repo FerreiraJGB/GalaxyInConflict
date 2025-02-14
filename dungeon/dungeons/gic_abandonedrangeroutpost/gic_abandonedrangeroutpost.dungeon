@@ -1,0 +1,113 @@
+{
+  "metadata" : {
+    "name" : "gic_abandonedrangeroutpost",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_abandonedrangeroutpost_campfire"],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 10,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+	
+	
+
+	
+    {
+      "name" : "gic_abandonedrangeroutpost_assemblyhall",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_abandonedrangeroutpost_assemblyhall"] ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedrangeroutpost_assemblyhall.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_abandonedrangeroutpost_radiotower",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_abandonedrangeroutpost_radiotower"] ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedrangeroutpost_radiotower.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_abandonedrangeroutpost_watchtower",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_abandonedrangeroutpost_watchtower"] ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedrangeroutpost_watchtower.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_abandonedrangeroutpost_house3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_abandonedrangeroutpost_house3"] ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedrangeroutpost_house3.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_abandonedrangeroutpost_house2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_abandonedrangeroutpost_house2"] ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedrangeroutpost_house2.json" ] ],
+      "chance" : 1
+    },	
+
+    {
+      "name" : "gic_abandonedrangeroutpost_house1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_abandonedrangeroutpost_house1"] ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedrangeroutpost_house1.json" ] ],
+      "chance" : 1
+    },
+
+
+    {
+      "name" : "gic_abandonedrangeroutpost_campfire",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_abandonedrangeroutpost_campfire"] ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedrangeroutpost_campfire.json" ] ],
+      "chance" : 1
+    },
+
+	
+	
+    {
+      "name" : "gic_abandonedrangeroutpost_rightend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedrangeroutpost_rightend.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_abandonedrangeroutpost_leftend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedrangeroutpost_leftend.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

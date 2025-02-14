@@ -1,0 +1,23 @@
+{
+  // README //
+  
+  // ok not much to say here, but this status does what it says on the tin. not much else to that...
+  
+  
+  "name" : "gic_flat_resource_detector",
+  "effectConfig" : {
+	  "resourceName" : "health",
+	  "flatValue" : 150, // ex: if resourceName == health, flatValue == 150, then if player's health is >= 150, 'statModifiers' is applied to the player.
+	  
+	  "statModifiers" : [
+		{"stat" : "ews_misschance_mult", "amount" : 1.0},
+		{"stat" : "powerMultiplier", "effectiveMultiplier" : -1.0}
+	  ]
+  },
+  "defaultDuration" : 0.5,
+
+  "scripts" : [
+    "/stats/effects/SPECIAL/gic_flat_resource_detector/gic_flat_resource_detector.lua"
+  ],
+  "scriptDelta" : 1
+}

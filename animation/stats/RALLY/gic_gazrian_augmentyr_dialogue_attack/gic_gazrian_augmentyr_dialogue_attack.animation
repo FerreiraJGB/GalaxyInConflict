@@ -1,0 +1,82 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_gazrian_augmentyr_dialogue_attack.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [
+		
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attack-01.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attack-02.ogg",		
+		"/sfx/npc/gic_halflifealyx_combinegrunt_attack-03.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attack-04.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attack-05.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attack-06.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attack-07.ogg",		
+		"/sfx/npc/gic_halflifealyx_combinegrunt_attack-08.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attack-09.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attack-10.ogg",
+		
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attackcover-01.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attackcover-02.ogg",		
+		"/sfx/npc/gic_halflifealyx_combinegrunt_attackcover-03.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attackcover-04.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attackcover-05.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attackcover-06.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attackcover-07.ogg",		
+		"/sfx/npc/gic_halflifealyx_combinegrunt_attackcover-08.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attackcover-09.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_attackcover-10.ogg"
+		
+		],
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 1,
+        "particles" : [
+
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 1,
+        "particles" : [
+
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

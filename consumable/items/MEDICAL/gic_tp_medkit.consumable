@@ -1,0 +1,59 @@
+{
+  "itemName" : "gic_tp_medkit",
+  "rarity" : "Legendary",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_tp_medkit.png",
+  
+  "description" : "Advanced protectorate invention that identifies the person via ^yellow;DNA sampling^white; and attempts to replace ^red;destroyed cells^white; with ^green;nanomachines^white;. It is able to rapidly recover a person from ^red;critical condition^white; straight back into ^green;fighting condition^white; within seconds and can cure even the ^red;most lethal^white; forms of ^red;environmental hazards^white;.
+
+Restores ^green;500 health^white; over 1 second. ^green;Cures most status effects^white;. ^green;Recovers all bleeding ailments^white;. ^green;Provides environmental protection^white; for ^yellow;15 seconds^white;. ^red;Does not 'cure' suffocation^white;.",
+
+  "shortdescription" : "^yellow;Protectorate Medkit",
+  "effects" : [ [
+      {
+        "effect" : "gic_tp_medkitheal"
+      },
+	  {
+        "effect" : "gic_bandaged"
+      },
+      {
+        "effect" : "fireblock",
+        "duration" : 15
+      },
+      {
+        "effect" : "iceblock",
+        "duration" : 15
+      },
+      {
+        "effect" : "electricblock",
+        "duration" : 15
+      },
+      {
+        "effect" : "poisonblock",
+        "duration" : 15
+      },
+	  
+      {
+        "effect" : "gic_bleeding_lightStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_bleeding_mediumStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_bleeding_heavyStatusImmunity",
+        "duration" : 1
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "bandageuse" ],
+  "blockingEffects" : [
+    "salveheal",
+    "bandageheal",
+    "medkitheal",
+    "nanowrapheal"
+  ]
+}

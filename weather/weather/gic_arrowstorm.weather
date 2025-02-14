@@ -1,0 +1,58 @@
+{
+  "name" : "gic_arrowstorm",
+
+  "projectiles" : [
+    {
+      "projectile" : "gic_heavyarrow",
+      "parameters" : {
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "damageTeam" : { "type" : "indiscriminate" },
+        "power" : 20
+      },
+      "velocity" : [30, -30],
+      "gravityMultiplier": 1,
+      "ratePerX" : 0.0120, //0.0040
+      "spawnAboveRegion" : 50,
+      "spawnHorizontalPad" : 20,
+      "windAffectAmount" : 1.0
+    }
+	
+  ],
+
+ "particles" : [
+    {
+      "density" : 0.005,
+      "particle" : {
+        "type" : "animated",
+        "animation" : "/animations/windstorm/windstorm2.animation",
+        "velocity" : [0, 0],
+        "fade" : 0.5,
+        "looping" : true,
+        "destructionTime" : 20,
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+    {
+
+      "density" : 0.0025,
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "velocity" : [0, 0],
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    }
+  ],
+
+  "duration" : [5, 20],
+  "maximumWind" : 20.0,
+  "weatherNoises" : [ ]
+
+}

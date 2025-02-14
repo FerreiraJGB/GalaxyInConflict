@@ -1,0 +1,68 @@
+{
+  "itemName" : "gic_oldflorans_needler",
+  "price" : 500,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Underbarrel Attachment^white;",
+  "inventoryIcon" : "gic_oldflorans_needler_icon.png",
+  
+  "tooltipKind" : "gic_largebase",    
+  
+  
+  
+  
+  
+  "description" : "''I ne'er known Florans to be the quittin' type. I expect it's on account of that time I killed 300 afore breakfast. Ha! 300 of 'em! Afore breakfast!''
+Exotic underbarrel attachment that can be placed on any weapon supporting foregrips. Fires a blast of ^green;5 needler projectiles^reset; that each individually ^green;home in^reset; on enemy targets, dealing ^green;heavy bleeding.^reset; ^yellow;Reloads using Healing Flasks.^reset;
+^orange;Tap Right-Click to Fire/Reload the Needler.^reset;
+^yellow;Holds three shots.^reset;",
+  
+  
+  "shortdescription" : "Old Floran's Needler",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_oldflorans_needler", //name of attachment
+	"attachmentTag" : ["ews_grenadelauncher", "gic_grenadelauncher" ], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/WEAPON_ATTACHMENTS/FOREGRIP/gic_oldflorans_needler.png", //determines what image is displayed on the resulting gun. For grenade launchers/under barrel launchers, do NOT add a frame identifier. Keep this as "[...].png".
+		
+	"attachmentId" : "gic_oldflorans_needler", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "grenadelauncher",
+		"grenadelauncherConfig" : {	//requires some part anims stuff in the main activeitem and some particle stuff. also needs some stances built in too.
+			"altFireTime" : 0.25,
+			"altAmmoMax" : 3,
+			"altAmmo" : 0,			//default starting ammo value
+			"altMagazine" : "gic_healingflask",				//the magazine item the alt fire needs to reload
+			"projectileTypeGrenade" : "gic_floran_needler_5pattern", //grenadeimpact
+			"projectileTypeGrenadeCount" : 1,
+			"projectileTypeGrenadeConfig" : {
+				"power" : 40,		//damage for projectile
+//				"speed" : 300,
+				"knockback" : 0,
+ //               "damageTeam" : { "type" : "indiscriminate" },
+                "statusEffects" : [ "gic_bleeding_heavy" ]
+			},
+			
+			"fireSFX" : "/sfx/gun/gic_12g_sample_2.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("soundEffectGrenade")
+			"reloadSFX" : "/sfx/gic_energyweapon_reload.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("switchAmmoAlt")
+			
+			"altInaccuracy" : 0,
+			"grenadeMuzzleOffset" : [1.2,-0.15]		//not the same thing as a muzzle offset; this is an offset offsetted off the main muzzleOffset
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1.0,1.0,1.0,1.0,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1.0,1.0,1.0,1.0] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

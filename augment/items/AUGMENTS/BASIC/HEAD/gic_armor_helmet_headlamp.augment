@@ -1,0 +1,32 @@
+{
+  "itemName" : "gic_armor_helmet_headlamp",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CCD8B6;Helmet Equipment^reset;",
+  "inventoryIcon" : "gic_armor_helmet_headlamp.png",
+  
+  "description" : 
+  
+"A simple headlamp affixed to the front or side of a helmet. Provides basic illumination where other sources of lighting such as hand-held torches, flashlights, or weapon-attached lighting are unavailable or unfeasible. Why this over night-vision? Well, good luck figuring out how the innards of a fancy night-vision goggle work.
+
+^green;Attaches a light, providing illumination.^reset;",
+
+
+
+  "shortdescription" : "Helmet Headlamp",
+
+  "augment" : {
+    "type" : "gic_basichead",
+    "name" : "gic_armor_helmet_headlamp",
+    "displayName" : "Helmet Headlamp",
+    "displayIcon" : "/items/augments/basic/head/gic_armor_helmet_headlamp.png",
+    "effects" : [ 
+	"gic_helmet_headlamp"
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_helmet_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

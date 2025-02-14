@@ -1,0 +1,46 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "shield" : {
+        "priority" : 2,
+        "default" : "off",
+        "states" : {
+          "off" : {
+          },
+          "hit" : {
+            "frames" : 4,
+            "cycle" : 15,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_bloodborne_blood-ghost.wav"
+            },
+            "frameProperties" : {
+              "immediateSound" : ["/sfx/tech/gic_Dishonored_Whisper_1.ogg", "/sfx/tech/gic_Dishonored_Whisper_2.ogg", "/sfx/tech/gic_Dishonored_Whisper_3.ogg", "/sfx/tech/gic_Dishonored_Whisper_4.ogg"]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {      
+      "shield" : {
+        "properties" : {
+          "zLevel" : 5,
+          "centered" : true,
+          "offset" : [0, -0.5]
+        },
+
+        "partStates" : {
+          "shield" : {
+            "hit" : {
+              "properties" : {
+//                "image" : "gic_invisible_hit.png:hit.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

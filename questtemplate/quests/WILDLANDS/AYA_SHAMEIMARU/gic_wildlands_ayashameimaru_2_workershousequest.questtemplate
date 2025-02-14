@@ -1,0 +1,61 @@
+{
+  "id" : "gic_wildlands_ayashameimaru_2_workershousequest",
+  "title" : "^#F0523C;[AYA-2] Bradley's Residence",
+  "prerequisites" : [ "gic_wildlands_ayashameimaru_1_conveniencestorequest" ],
+  
+//Cutscenes always play first.
+  
+  "text" : "His name's Bradley it seems. Let's go pay a visit to his home.",
+  
+
+  
+  "completionText" : "It's... That's not a good sign of things to come.",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_character.lua", //Same as original variant. Enables cutscenes when starting and finishing.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/interface/MISSION_PORTRAITS/gic_blank_portrait.png"} ],
+        "title" : "Aya"
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/interface/MISSION_PORTRAITS/gic_blank_portrait.png"} ],
+        "title" : "Aya"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;Aya^reset; to travel to ^orange;Bradley's Residence^reset;.",
+      "findGoal" : "Investigate the area for any potential clues.",
+      "turnIn" : "Talk to ^orange;Aya^reset; at her office."
+    },
+    "warpEntityUid" : "gic_romancecharacter_ayashameimaru_office_hubworld",
+    "warpAction" : "instanceworld:gic_wildlands_ayashameimaru_mission_2_1_workershouse",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_wildlands_island_ayashameimaru_2_confirmation",
+
+    "gic_missionUnlockedCinema" : "/cinematics/characters/AYA_SHAMEIMARU/gic_wildlands_ayashameimaru_mission_2_1_workershouse.cinematic", //???
+    "gic_missionCompleteCinema" : "/cinematics/characters/AYA_SHAMEIMARU/gic_wildlands_ayashameimaru_mission_2_3_workershousefight.cinematic",	 //leave as coordinates if no need for secondary
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 20,
+
+    "goalEntityUid" : "gic_wildlands_ayashameimaru_mission_2_3_workershousefight_goal",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "gic_romancecharacter_ayashameimaru_office_hubworld"
+	
+  }
+  
+}

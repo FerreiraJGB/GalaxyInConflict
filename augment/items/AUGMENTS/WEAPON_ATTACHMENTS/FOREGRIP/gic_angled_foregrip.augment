@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_angled_foregrip",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Foregrip Attachment^white;",
+  "inventoryIcon" : "gic_angled_foregrip_icon.png",
+  "description" : "An angled foregrip, more effective at pulling the weapon into the shooters' shoulder while keeping the offhand wrist in a comfortable and manageable position.
+
+^green;+10% Crouch HIT CHANCE.
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  "shortdescription" : "Angled Foregrip ",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_angled_foregrip", //name of attachment
+	"attachmentTag" : ["gic_foregrip","gic_angled_foregrip"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/foregrip/gic_angled_foregrip.png", //determines what image is displayed on the resulting gun
+		
+	"attachmentId" : "gic_angled_foregrip", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,0.9,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,0.9] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

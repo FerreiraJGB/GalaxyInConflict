@@ -1,0 +1,28 @@
+{
+  "id" : "gic_wildlands_island_hermitdeadbagquest",
+  "title" : "^#D1FFDE;Hermit Dead Drop Pt.1",
+  "prerequisites" : [  ],
+  "text" : "I've heard of you, I think. One of my friends... A hermit, he has gone missing. He always carried a case around with him, so maybe you could find it? He is normally near the cliffside, but I'm not sure where. Please, if you find at least his belongings... Anything.",
+  "completionText" : "Opening the case, you notice a hidden compartment within. Sliding your fingers around, you find a latch and open the compartment...",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 1 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+	
+    "turnInEntityUid" : "gic_wildlands_island_hermitdeadbag",
+    "conditions" : [
+    ]
+  }
+}

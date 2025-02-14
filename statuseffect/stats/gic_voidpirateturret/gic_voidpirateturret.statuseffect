@@ -1,0 +1,57 @@
+{
+  "name" : "gic_voidpirateturret",
+  "effectConfig" : {
+	"projectileType" : "gic_electricenergyshot_swarmerdrone", //does not accept arrays
+	"projectileTypeMiss" : "gic_electricenergyshot_miss", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.4,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^red;Recharging^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+	},
+	"missChance" : 0,
+	"offset" : [-0.8,0.5],
+	//"xOffset" : 0.0,
+	//"yOffset" : 0.4,
+	"muzzleOffset" : [-0.8,0.5],
+	"muzzleOffset2" : [-0.75,0.45],
+	//"rotationOffset" : [-0.4,0.3],
+	//"xOffsetRotationPoint" : 0.0,
+	//"yOffsetRotationPoint" : 0.4,
+	"trackingDistance" : 200,
+	"trackingAngle" : 181,
+	"fireRate" : 0.075,
+	"inaccuracyAngle" : 20,
+	"baseDamage" : 25,
+	"projectileCount" : 1,
+	"ammoCountMax" : 10,
+	"reloadTimer" : 5.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_voidpirateturret.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_voidpirateturret.animation",
+ 
+  "label" : "drone turret2 tmp",
+  "icon" : "/interface/statuses/gic_suppressed.png"
+}

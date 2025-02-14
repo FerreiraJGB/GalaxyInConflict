@@ -1,0 +1,26 @@
+{
+  "itemName" : "gic_rumiariceball",
+  "rarity" : "Common",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_rumiariceball.png",
+  "description" : "A simple snack formed of black rice wrapped around a small portion of cooked beef, held together by seaweed. These simple snacks are common in the Unitan Void Navy, as many human crewmembers often learn from the youkai chefs on how to cook.",
+  "shortdescription" : "Rumia Rice Ball",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 20,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

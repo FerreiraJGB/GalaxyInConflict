@@ -1,0 +1,275 @@
+{
+  "type" : "gic_federal_depotsecurity_mindnumbed",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ "gic_spacecolonistTreasure" ],
+  
+  "scriptConfig" : {
+    "behavior" : "gic_villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 0.85,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "questGenerator" : {
+      "pools" : ["guard"],
+      "enableParticipation" : false,
+      "timeLimit" : 30,
+      "nearbyQuestLimit" : 1,
+      "nearbyQuestRange" : 500,
+      "questCountRange" : [1, 4],
+      
+      "graduation" : {
+        "nextNpcType" : [
+          []
+        ]
+      }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [5.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+	  
+      "converse" : {
+        "default" : {
+          "default" : [
+            "Are you one of the replacements?",
+			"Did the surface send you here?",
+			"Headaches...",
+			"Who... are you?",
+			"Who... what's my name?",
+			"Why can't I remember?",
+			"Yes... I will get the papers copied today...",
+			"Containment field... is it still stable?...",
+			"I don't know... I don't know...",
+			"I... do you know who... who are you?",
+			"Feels like my head's about to explode...",
+			"The Old One shall feed upon our souls...",
+			"The Old One shall rid us of our tragic existence...",
+			"Constant headaches...",
+			"No smokes... damn, this headache hurts.",
+			"I can't remember... why can't I remember?",
+			"Are you... supposed to do something?",
+			"Are you... someone? Why are you here?",
+			"Rats...",
+			"Why does it hurt? Why does it hurt so much?"
+          ]
+        }
+      },
+	  
+      "greeting" : {
+        "default" : {
+          "default" : [
+            "Are you one of the replacements?",
+			"Did the surface send you here?",
+			"Headaches...",
+			"Who... are you?",
+			"Who... what's my name?",
+			"Why can't I remember?",
+			"Yes... I will get the papers copied today...",
+			"Containment field... is it still stable?...",
+			"I don't know... I don't know...",
+			"I... do you know who... who are you?",
+			"Feels like my head's about to explode...",
+			"The Old One shall feed upon our souls...",
+			"The Old One shall rid us of our tragic existence...",
+			"Constant headaches...",
+			"No smokes... damn, this headache hurts.",
+			"I can't remember... why can't I remember?",
+			"Are you... supposed to do something?",
+			"Are you... someone? Why are you here?",
+			"Rats...",
+			"Why does it hurt? Why does it hurt so much?"
+          ]
+        }
+      },
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "hail" : {
+        "default" : {
+          "default" : [
+            "Are you one of the replacements?",
+			"Did the surface send you here?",
+			"Headaches...",
+			"Who... are you?",
+			"Who... what's my name?",
+			"Why can't I remember?",
+			"Yes... I will get the papers copied today...",
+			"Containment field... is it still stable?...",
+			"I don't know... I don't know...",
+			"I... do you know who... who are you?",
+			"Feels like my head's about to explode...",
+			"The Old One shall feed upon our souls...",
+			"The Old One shall rid us of our tragic existence...",
+			"Constant headaches...",
+			"No smokes... damn, this headache hurts.",
+			"I can't remember... why can't I remember?",
+			"Are you... supposed to do something?",
+			"Are you... someone? Why are you here?",
+			"Rats...",
+			"Why does it hurt? Why does it hurt so much?"
+          ]
+        }
+      },
+	  
+      "accuse" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      }
+	  
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "default" : [
+      [0, [
+		  
+          {
+            "head" : [ { "name" : "gic_operatorcaphead", "parameters" : { "colorIndex" : [11] }  }, { "name" : "", "parameters" : { "colorIndex" : [11] }  }, { "name" : "", "parameters" : { "colorIndex" : [11] }  } ],
+            "chest" : [ { "name" : "coolchest", "parameters" : { "colorIndex" : [11] }  } ],
+            "legs" : [ { "name" : "gic_hscplegs", "parameters" : { "colorIndex" : [11] }  } ]
+          }
+
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_invadersboots_alpha", "gic_parryshield_psychic_hit_suspicioussensations_ghost", "gic_npc_death_blood_explosion"],
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "projectileName" : "gic_spikeeruption_stage1",
+  "image" : "gic_spikeeruption_stage1.png",
+  "animationCycle" : 1.2,
+  "timeToLive" : 1.2,
+  "animationLoops" : false,
+  "frameNumber" : 3,
+  "fullbright" : true,
+  "lightColor" : [100, 100, 200],
+  "power" : 0.0,
+  "speed" : 0,
+  "orientationLocked" : true,
+  "piercing" : true,
+  "flippable" : true,
+  "damagePoly" : [ [-32, 5], [32, 5], [32, -5], [-32, -5] ],
+  "damageKind" : "ice",
+  "periodicActions" : [
+    {
+      "time" : 0.0,
+      "repeat" : false,
+      "action" : "sound",
+      "options" : [ "/sfx/npc/boss/kluexboss_iceeruption1.ogg", "/sfx/npc/boss/kluexboss_iceeruption2.ogg" ]
+    }
+  ],
+  "actionOnReap" : [
+  ],
+  "onlyHitTerrain" : true,
+
+  "eruptionAction" : {
+    "action" : "projectile",
+    "type" : "gic_spikeeruption_stage2",
+    "inheritDamageFactor" : 1.0,
+    "angleAdjust" : 0,
+    "offset" : [ 0, 3 ]
+  },
+
+  "scripts" : [ "gic_spikeeruption_stage1.lua" ],
+  "scriptDelta" : 1
+}

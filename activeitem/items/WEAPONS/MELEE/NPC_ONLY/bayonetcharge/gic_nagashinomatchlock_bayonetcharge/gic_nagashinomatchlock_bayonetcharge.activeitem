@@ -1,0 +1,82 @@
+{
+  "itemName" : "gic_nagashinomatchlock_bayonetcharge",
+  "price" : 10,
+  "level" : 6,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "Still charging huh?",
+  "shortdescription" : "Nagashino Matchlock Bayonet Charge",
+  "tooltipKind" : "base",
+  "category" : "broadsword",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","broadsword"],
+
+  "inventoryIcon" : "gic_nagashinomatchlock_bayonetcharge.png",
+
+  "animation" : "gic_nagashinomatchlock_bayonetcharge.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_nagashinomatchlock_bayonetcharge.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+  "aimOffset" : -1.0,
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+    "fireTime" : 0.1,
+    "baseDps" : 80,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "knockbackRange" : [25, 35]
+    },
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : -10,
+        "weaponRotation" : -80,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.6],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 0.1,
+        "armRotation" : -20,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.4],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire" : {
+        "duration" : 0.3,
+        "armRotation" : 10,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.7],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "hold" : {
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.6],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+	
+  },
+  "fireSounds" : [ "/sfx/melee/swing_spear.ogg" ],
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

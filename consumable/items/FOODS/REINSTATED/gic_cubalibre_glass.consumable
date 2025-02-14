@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_cubalibre_glass",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#FFB941;Springfield Bar Custom",
+  "inventoryIcon" : "gic_foods_reinstated.png",
+  
+  
+  
+  "description" : "The Cuba libre is a highball cocktail consisting of cola, rum, and in many recipes lime juice on ice. The cocktail originated in the early 20th century in the Terran Nation-State of Cuba, after the country won independence in the Spanish-American War. Many consider the drink mediocre, but it has been noted for its historical significance.
+  
+^Yellow;- No Effects.^reset;",
+  
+  "shortdescription" : "Cuba libre",
+  
+  "effects" : [ [
+ //  {
+ //       "effect" : "gic_lowgravity_food_nueale",
+ //       "duration" : 1800
+ //   }
+  ] ],
+  
+  
+  
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

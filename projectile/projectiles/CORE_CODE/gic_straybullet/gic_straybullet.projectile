@@ -1,0 +1,25 @@
+{
+  "projectileName" : "gic_straybullet",
+  "image" : "gic_straybullet.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 2,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    }
+  ],
+  "statusEffects" : [ "gic_bleeding_light", "gic_bulletshot" ],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "speed" : 30,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageTeam" : { "type" : "indiscriminate" }
+}

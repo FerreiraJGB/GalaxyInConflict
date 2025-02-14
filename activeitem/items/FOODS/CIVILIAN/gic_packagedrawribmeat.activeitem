@@ -1,0 +1,27 @@
+{
+  "itemName" : "gic_packagedrawribmeat",
+  "rarity" : "Common",
+  "price" : 100,
+  "category" : "Packaged Food", //junk
+  "inventoryIcon" : "gic_packagedrawribmeat.png",
+  "tooltipKind" : "gic_largebase_food",
+  "description" : "Raw ribs, vacuum-sealed in a commercial package. Cultural exchanges between the stellar empires almost culminated in war after a xeno non-human diplomat attempted to consume vacuum-sealed raw food whole. Plastic and all.",
+  "shortdescription" : "Packaged Raw Ribs",
+  "maxStack" : 1,
+  "twoHanded" : true,
+
+  "animation" : "gic_packagedrawribmeat.animation",
+  "animationCustom" : {},
+  "scripts" : ["gic_packagedfoodcontainer.lua"],
+
+  "fireTime" : 5.0,
+  "fireOffset" : [1.0, 0.0],
+
+  "treasure" : {
+    "pool" : "gic_packagedrawribmeatTreasure",
+    "level" : 1
+  },
+  
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2
+}

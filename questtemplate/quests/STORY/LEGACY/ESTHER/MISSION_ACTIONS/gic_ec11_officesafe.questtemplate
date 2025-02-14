@@ -1,0 +1,35 @@
+{
+  "id" : "gic_ec11_officesafeQuest",
+  "title" : "^#D1FFDE;Office Safe Audiograph",
+  "prerequisites" : [ "gic_springfieldbar_introQuest" ],
+  "text" : "",
+  "completionText" : "",
+  
+//Is that an Audiograph? An honest-to-God audiograph? Where- What? Oh, I see now. HEY [], LOOK AT WHAT THIS FELLOW FOUND! She's been looking for this for a while now. Here, some Protectorate stuff. Found this in a dumpster.
+
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_namazu_hovertruckcontroller", 1 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_1_springfield_bartender",
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_ec11_officesafe",
+        "count" : 1,
+        "consume" : true
+      }
+    ]
+  }
+}

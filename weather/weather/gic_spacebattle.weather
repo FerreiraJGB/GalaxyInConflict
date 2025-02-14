@@ -1,0 +1,65 @@
+{
+  "name" : "gic_spacebattle",
+
+  "projectiles" : [
+    {
+      "projectile" : "gic_artillerylaser",
+      "parameters" : {
+        "power" : 200
+      },
+      "velocity" : [-60, -60],
+      "gravityMultiplier": 1,
+      "ratePerX" : 0.0060,
+      "spawnAboveRegion" : 0,
+      "spawnHorizontalPad" : 30,
+      "windAffectAmount" : 2.0
+    },
+    {
+      "projectile" : "gic_artillerylaser",
+      "parameters" : {
+        "power" : 200
+      },
+      "velocity" : [-60, 60],
+      "gravityMultiplier": 1,
+      "ratePerX" : 0.0060,
+      "spawnAboveRegion" : 100,
+      "spawnHorizontalPad" : 30,
+      "windAffectAmount" : 2.0
+    },
+	
+	
+	
+    {
+      "projectile" : "gic_artillerylaser",
+      "parameters" : {
+        "power" : 200
+      },
+      "velocity" : [60, 60],
+      "gravityMultiplier": -1,
+      "ratePerX" : 0.0060,
+      "spawnAboveRegion" : 100,
+      "spawnHorizontalPad" : 30,
+      "windAffectAmount" : 2.0
+    },
+    {
+      "projectile" : "gic_artillerylaser",
+      "parameters" : {
+        "power" : 200
+      },
+      "velocity" : [60, -60],
+      "gravityMultiplier": -1,
+      "ratePerX" : 0.0060,
+      "spawnAboveRegion" : 0,
+      "spawnHorizontalPad" : 30,
+      "windAffectAmount" : 2.0
+    }
+  ],
+
+ "particles" : [
+  ],
+
+  "duration" : [360, 640],
+  "maximumWind" : 20.0,
+  "weatherNoises" : [ ]
+
+}

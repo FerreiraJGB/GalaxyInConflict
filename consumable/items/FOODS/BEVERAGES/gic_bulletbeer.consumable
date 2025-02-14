@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_bulletbeer",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#CC8A4D;Rock and Stone Brewers",
+  "inventoryIcon" : "gic_bulletbeer.png",
+  
+  
+  
+  "description" : "''A madman raced an army across the alps...''
+
+^#CC8A4D;+10% HIT CHANCE and ACCURACY | 30 minute duration.^reset;",
+  
+  "shortdescription" : "Bullet Beer",
+  
+  "effects" : [ [
+   {
+        "effect" : "gic_beverage_bulletbeer",
+        "duration" : 1800
+    }
+  ] ],
+  
+  
+  
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

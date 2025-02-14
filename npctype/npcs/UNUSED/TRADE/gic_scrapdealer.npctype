@@ -1,0 +1,55 @@
+{
+  "type" : "gic_scrapdealer",
+  "baseType" : "outpostcivilian",
+
+  "scripts" : [
+    "/npcs/bmain.lua",
+    "/npcs/goodstrader.lua"
+  ],
+
+  "scriptConfig" : {
+    "behavior" : "wanderSimple",
+
+    "behaviorConfig" : {
+      "wanderTime" : [0.25, 0.4],
+      "wanderWaitTime" : [10, 20]
+    },
+
+    "baseBuyFactor" : 0.9,
+    "baseSellFactor" : 2,
+
+    "buyExponent" : 1,
+    "sellExponent" : 1,
+
+    "factorRecoveryTime" : 86400,
+
+    "guiConfig" : {
+      "baseConfig" : "/interface/scripted/goodstrader/goodstradergui.config",
+      "buyItem" : "gic_junkcargo",
+      "gui" : {
+        "windowtitle" : {
+          "title" : "Scrap Dealer",
+          "subtitle" : "Buys Junk Cargo and sells Scrap Metal."
+        }
+      }
+    },
+
+    "sellRotationTime" : 86400,
+    "sellOptions" : [
+      "gic_scrapmetal"
+    ]
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "humantier5ahead", "parameters" : { "colorIndex" : [6] }  } ],
+            "chest" : [ { "name" : "gic_humanspaceinfantrychest", "parameters" : { "colorIndex" : [11] }  } ],
+            "legs" : [ { "name" : "gic_humanspaceinfantrypants", "parameters" : { "colorIndex" : [11] }  } ]
+          }
+        ] ]
+    ]
+  }
+}

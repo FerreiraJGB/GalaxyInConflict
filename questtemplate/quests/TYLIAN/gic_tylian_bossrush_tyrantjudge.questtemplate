@@ -1,0 +1,37 @@
+{
+  "id" : "gic_tylian_bossrush_tyrantjudgequest",
+  "title" : "^orange;Boss Rush: Tyrant Judge",
+  
+  "prerequisites" : [ "gic_tylian_planetincentive_5_khurtovynaquest" ],
+  
+  "text" : "Obtain: Burden of Souls (kill the Tyrant Judge on Khurtovyna).
+
+^orange;[Upon completion: Unlocks the Tyrant Judge Boss-Rush Replays at the Bazaar]",
+  "completionText" : "[Tyrant Judge can now be replayed via the Bazaar]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_burdenofsouls_artifact",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

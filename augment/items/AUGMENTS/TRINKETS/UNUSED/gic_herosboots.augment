@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_herosboots",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Leg Trinket^reset;",
+  "inventoryIcon" : "gic_herosboots.png",
+  "maxStack" : 1,    
+  "description" : 
+  
+"''Only a remnant of us left now. We gotta save who we can, when we can.''
+
+^green;+50hp^reset;
+^red;-25% Knockback Resistance^reset;",
+
+
+
+  "shortdescription" : "Hero's Boots",
+
+  "augment" : {
+    "type" : "gic_basiclegs",
+    "name" : "gic_herosboots",
+    "displayName" : "Hero's Boots",
+    "displayIcon" : "/items/augments/advanced/legs/gic_herosboots.png",
+    "effects" : [ {"stat" : "grit", "amount" : -0.25}, "gic_maxhealthboost_herosboots_50" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_legwear_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

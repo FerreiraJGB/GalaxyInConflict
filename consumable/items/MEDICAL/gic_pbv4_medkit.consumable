@@ -1,0 +1,42 @@
+{
+  "itemName" : "gic_pbv4_medkit",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_pbv4_medkit.png",
+  "maxStack" : 6,
+  "description" : "'Paket Bystrogo Vosstanovleniya' or 'Quick Recovery Package' is a mass-producible medical kit intended to quickly recover life-threatening damage in a combat environment using traditional methods: The equipment within this kit contains a significant amount of hemotherapy paraphernalia.
+^green;- Restores 200 health over 4 seconds, costing 2 seconds.
+^yellow;- Heals Bruising.^white;
+^red;- Heals Blood Loss.^white;
+^gray;- Heals Fractures.^white;",
+
+  "shortdescription" : "^yellow;PBV-4 Medkit",
+  "effects" : [ [
+      {
+        "effect" : "gic_pbv4_medkitheal",
+        "duration" : 4
+      },
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 2
+      },
+	  
+      {
+        "effect" : "gic_medkit_use_messenger",
+        "duration" : 2
+      },	
+	  
+	  {
+        "effect" : "gic_blood_pack_recovery"
+      },
+      {
+        "effect" : "gic_fracture_pack_recovery"
+      }	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_medkit_use" ],
+  "blockingEffects" : [
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_federal_paratrooper_deployment",
+  "physics" : "gic_parachutedeployment_soldier",
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_projectile_spawnnpc_gic_realistichuman_gic_federal_paratrooper",
+      "angle" : 0
+    }
+	
+  ],
+  "image" : "gic_federal_paratrooper_deployment.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 20,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+  "maxspeed":10,
+  "timeToLive" : 20,
+  "pointLight" : false,
+  "collisionPoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [48, 0], [6, 6], [0, 9], [-6, 6] ]
+}

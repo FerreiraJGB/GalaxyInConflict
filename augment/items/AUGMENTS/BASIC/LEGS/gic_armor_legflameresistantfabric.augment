@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_armor_legflameresistantfabric",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Leg Equipment^reset;",
+  "inventoryIcon" : "gic_armor_legflameresistantfabric.png",
+  
+  "description" : 
+  
+"''It's not some fancy energy shield, but it's better than rubbing yourself with mud.''
+
+Nomex, Kevlar, and Modacrylic are common materials used for flame-resistant clothing.
+
+^green;+25% FIRE Resistance.^reset;
+^green;Immune to standard burning status effect.^reset;",
+
+
+
+  "shortdescription" : "Flame Resistant Fabric",
+
+  "augment" : {
+    "type" : "gic_basiclegs",
+    "name" : "gic_armor_legflameresistantfabric",
+    "displayName" : "Flame Resistant Fabric",
+    "displayIcon" : "/items/augments/basic/legs/gic_armor_legflameresistantfabric.png",
+    "effects" : [ {"stat" : "fireResistance", "amount" : 0.25}, {"stat" : "fireStatusImmunity", "amount" : 1.0}, "gic_armor_legflameresistantfabric" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_legwear_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

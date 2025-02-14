@@ -1,0 +1,26 @@
+{
+  "name" : "gic_healthpercentage_primer_demo",
+  "blockingStat" : "gic_validBlockingStat",
+  "effectConfig" : {
+	"healthTriggerPercentage" : 1.0, //what this percentage (in range [0,1.0]) stats and mcontrollerModifiers will trigger, behavior determined by "triggerAtAbove"
+	"triggerAtAbove" : true, //if enabled, then stats/mcontrollerModifiers triggers when ABOVE or AT the percentage above. if disabled, things will trigger BELOW the % threshold
+	
+	"stats" : [
+		{"stat" : "protection", "amount" : 50},
+		{"stat" : "powerMultiplier", "amount" : 1.5},
+		{"stat" : "maxHealth", "baseMultiplier" : 1.5}, //i don't know exactly the difference between baseMultiplier and effectiveMultiplier, but oh well.
+		{"stat" : "maxEnergy", "effectiveMultiplier" : 1.5}
+	],
+	
+  "mcontrollerModifiers" : { //leave empty to disable.
+	  "groundMovementModifier" : 1.4,
+      "speedModifier" : 1.40,
+      "airJumpModifier" : 1.40
+	}
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "/stats/gic_healthpercentage_primer_demo/gic_healthpercentage_primer_demo.lua"
+  ]
+}

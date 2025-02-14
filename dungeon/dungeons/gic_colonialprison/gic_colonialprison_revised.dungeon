@@ -1,0 +1,70 @@
+{
+  "metadata" : {
+    "name" : "gic_colonialprison_revised",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_colonialprison_smallcell1" ],
+    //"gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 18,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+    {
+      "name" : "gic_colonialprison_smallcell1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_colonialprison_smallcell1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_colonialprison_smallcell1.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_colonialprison_smallcell2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_colonialprison_smallcell2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_colonialprison_smallcell2.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_colonialprison_smallcell3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_colonialprison_smallcell3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_colonialprison_smallcell3.json" ],
+      "chance" : 1
+    },
+  
+
+    {
+      "name" : "gic_colonialprison_exitleft",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_colonialprison_exitleft.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_colonialprison_exitright",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_colonialprison_exitright.json" ] ],
+      "chance" : 0
+    }
+  ]
+}

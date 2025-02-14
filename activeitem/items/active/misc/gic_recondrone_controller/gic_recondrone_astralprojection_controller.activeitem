@@ -1,0 +1,46 @@
+{
+  "itemName" : "gic_recondrone_astralprojection_controller",
+  "level" : 1,
+  "price" : 0,
+  "rarity" : "Legendary",
+  "category" : "^#DBC5A6;Astral Projection Tool",
+  "description" : "An occult implement for Astral Projection reserved for extremely spiritual individuals with poor physical constitution. Astral Projections are capable of sapping targets' health at the cost of your own. ^#DBC5A6;[MOUSE1] to spawn/despawn Projection | HOLD [SHIFT] to increase speed. ^orange;Capable of attacking independently | Relatively decent health. ^red;When HELD: Drains user's health | User receives -100% Damage Resistance. ^reset; This was once used to heal, requiring a little too much luck, which often resulted in unintentional hemorrhaging.",
+  
+  "shortdescription" : "Candle Scholar's Skull",
+  "twoHanded" : true,
+  "maxStack" : 1,
+  "itemTags" : [],
+
+  "animation" : "gic_recondrone_astralprojection_controller.animation",
+  "scripts" : ["gic_recondrone_astralprojection_controller.lua", "/abilities/weapons/gic_astralprojection_deterioration_skull.lua"],
+  
+  "animationScripts" : ["/items/active/misc/gic_recondrone_controller/gic_detector.lua"],
+  "animationDelta" : 5,
+  "pingDetectConfig" : {
+    "type" : "entity",
+    "image" : "/items/active/unsorted/oredetector/detectnoise.png:<variant>",
+    "variants" : 4,
+    "colors" : {
+      "empty" : [0, 180, 0, 255],
+      "solid" : [120, 160, 120, 50],
+	  "hostile" : [255,0,0,255],
+	  "neutral" : [255,255,0,255]
+    }
+  },
+
+  "pingRange" : 50,
+  "pingBandWidth" : 8,
+  "pingDuration" : 3.0,
+  "pingCooldown" : 0.5,
+  
+  
+  "tooltipKind" : "gic_largebase",
+
+  "boundingBox" : [-1, -1, 1, 1],
+  
+  "animationParts" : {
+    "controller" : "gic_recondrone_astralprojection_controller.png"
+  },
+
+  "inventoryIcon" : "gic_recondrone_astralprojection_controller_icon.png"
+}

@@ -1,0 +1,23 @@
+{
+  "id" : "gic_ancientgate_warpsurfacegatequest",
+  "title" : "^green;Surface Gate",
+  "text" : "Unlocks an instance world that takes you to an ancient gate. Use to complete the vanilla storyline if the ancient gate did not spawn.",
+  "completionText" : "SAIL UPDATED",
+  "speaker" : "player",
+  "moneyRange" : [0, 0],
+  "rewards" : [
+      [ [ "rewardbag" ] ]
+   ],
+  "canBeAbandoned" : false,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+		"portraits" : {
+		"default" : "player"
+		},
+	"associatedMission" : "gic_vanillastory_ancientgate",
+    "turnInDescription" : "-",
+    "requireTurnIn" : false
+  }
+}

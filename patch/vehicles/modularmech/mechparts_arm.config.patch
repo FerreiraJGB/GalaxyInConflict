@@ -1,0 +1,1714 @@
+[
+    
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		{ 
+	
+      "op": "add",
+		"path": "/gic_palash2aps_mech",
+		"value": {
+    "stats" : { "power" : 4, "energy" : 4},
+
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/dronelauncher.lua",
+      "armClass" : "DroneLauncher",
+
+      "rotationLimits" : [-0.7, 0.6],
+      "fireOffset" : [4, 0],
+
+      "deployTime" : 0.25,
+
+      "launchTiming" : 0.05,
+
+      "cooldownTime" : 1.0,
+
+      "maxDrones" : 20,
+
+      "droneOrbitRate" : 0.5,
+      "droneOrbitDistance" : 14,
+
+      "droneMonsterType" : "gic_palash2aps_mech",
+      "droneParameters" : {
+        "movementMode" : "Orbit",
+
+        "attackMode" : "Target",
+        "targetRange" : 0,
+
+        "duration" : 9999,
+
+        "statusSettings" : { "stats" : {
+          "flatMaxHealth" : { "baseValue" : 200}
+        }},
+
+        "gun" : {
+          "fireDelay" : 9999,
+
+          "fireTime" : 9999,
+          "fireOffset" : [1, 0],
+
+          "projectileType" : "gic_null",
+          "projectileParameters" : {
+            "speed" : 0,
+            "power" : 0
+          },
+
+          "projectileInaccuracy" : 0.0
+        }
+      },
+
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_palash2aps.png",
+        "<armName>Fullbright" : "arm/gic_palash2aps_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_palash2aps.png",
+        "<armName>Fullbright" : "arm/gic_palash2aps_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_palash2aps.png",
+      "<armName>Fullbright" : "arm/gic_palash2aps_fullbright.png"
+    },
+	
+    "defaultPrimaryColors" : ["ffffa7", "e2c344", "a46e06", "642f00"],
+    "defaultSecondaryColors" : ["838383", "555555", "383838", "151515"],
+    "animationCustom" : {
+      "animatedParts" : { "stateTypes" : { "<armName>" : { "states" : {
+        "windup" : {
+          "mode" : "end"
+        }
+      }}}},
+      "sounds" : {
+        "<armName>Activate" : ["/sfx/gun/mech_multidrone1.ogg"],
+        "<armName>Recover" : ["/sfx/gun/mech_shielddrone_recover1.ogg"]
+      }
+    }
+  }
+  },		
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+//Phalanx Doll Controller
+	
+	
+	
+		{ 
+	
+      "op": "add",
+		"path": "/gic_phalanxdollcontroller_mech",
+		"value": {
+    "stats" : { "power" : 4, "energy" : 4},
+
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/dronelauncher.lua",
+      "armClass" : "DroneLauncher",
+
+      "rotationLimits" : [-0.7, 0.6],
+      "fireOffset" : [4, 0],
+
+      "deployTime" : 0.25,
+
+      "launchTiming" : 0.05,
+
+      "cooldownTime" : 3.0,
+
+      "maxDrones" : 10,
+
+      "droneOrbitRate" : 0.0, //0.5
+      "droneOrbitDistance" : 6,
+
+      "droneMonsterType" : "gic_phalanxdoll_mech",
+      "droneParameters" : {
+        "movementMode" : "Orbit",
+
+        "attackMode" : "Target",
+        "targetRange" : 40,
+
+        "duration" : 9999,
+
+        "statusSettings" : { "stats" : {
+          "flatMaxHealth" : { "baseValue" : 2000}
+        }},
+
+        "gun" : {
+          "fireDelay" : 9999,
+
+          "fireTime" : 9999,
+          "fireOffset" : [1, 0],
+
+          "projectileType" : "gic_null",
+          "projectileParameters" : {
+            "speed" : 0,
+            "power" : 0
+          },
+
+          "projectileInaccuracy" : 0.0
+        }
+      },
+
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_phalanxdollcontroller.png",
+        "<armName>Fullbright" : "arm/gic_phalanxdollcontroller_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_phalanxdollcontroller.png",
+        "<armName>Fullbright" : "arm/gic_phalanxdollcontroller_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_phalanxdollcontroller.png",
+      "<armName>Fullbright" : "arm/gic_phalanxdollcontroller_fullbright.png"
+    },
+	
+    "defaultPrimaryColors" : ["ffffa7", "e2c344", "a46e06", "642f00"],
+    "defaultSecondaryColors" : ["838383", "555555", "383838", "151515"],
+    "animationCustom" : {
+      "animatedParts" : { "stateTypes" : { "<armName>" : { "states" : {
+        "windup" : {
+          "mode" : "end"
+        }
+      }}}},
+      "sounds" : {
+        "<armName>Activate" : ["/sfx/gun/mech_multidrone1.ogg"],
+        "<armName>Recover" : ["/sfx/gun/mech_shielddrone_recover1.ogg"]
+      }
+    }
+  }
+  },		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  
+  
+	{ 
+	
+      "op": "add",
+		"path": "/gic_sm180_mech",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 16, "mechMass": 1},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gunarm.lua",
+      "armClass" : "GunArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [7.4, 0.0],
+
+      "extendTime" : 0.25,
+
+      "fireTime" : 1.5,
+
+      "projectileType" : "gic_180mm_flak_mech_stage1", //Should help bypass any mods that attempt to "power scale" the mech.
+      "projectileParameters" : {
+        "power" : 2
+      },
+
+
+      "projectileInaccuracy" : 0.04, //0.06
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_sm180_front.png",
+        "<armName>Fullbright" : ""
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_sm180_back.png",
+        "<armName>Fullbright" : ""
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_sm180_front.png",
+      "<armName>Fullbright" : ""
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+    "animationCustom" : {
+	  
+      "particleEmitters" : {
+        "<armName>Fire" : {
+          "active" : false,
+          "burstCount" : 1,
+          "anchorPart" : "<armName>",
+          "offsetRegion" : [7.125, 2.5, 7.5, 2.625],
+          "particles" : [  
+            { "particle" : {
+                "type" : "ember",
+                "size" : 1.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } }
+          ]
+        }
+      },
+	  
+      "sounds" : {
+        "<armName>Fire" : [ "/sfx/gic_highfleet_shell_in_med_01_delay_025s.wav" ]
+      }
+	  }
+	  }
+      },  
+  
+  
+  
+  
+  	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{ 
+	
+      "op": "add",
+		"path": "/gic_shermantankcannon",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 17, "mechMass": 1},
+      "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gunarm.lua",
+      "armClass" : "GunArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [8.3, 0.1],
+
+      "extendTime" : 3,
+
+      "fireTime" : 8.0,
+	  
+      "projectileInaccuracy" : 0.02,
+
+      "projectileType" : "gic_120mm_ap",
+      "projectileParameters" : {
+        "power" : 400,
+		"speed" : 200
+      },
+
+	 
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_shermantankcannon_front.png",
+        "<armName>Fullbright" : "arm/gic_shermantankcannon_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_shermantankcannon_back.png",
+        "<armName>Fullbright" : "arm/gic_shermantankcannon_back_fullbright.png"
+		}
+      },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_shermantankcannon_front.png",
+      "<armName>Fullbright" : "arm/gic_shermantankcannon_fullbright.png"
+    },
+	 
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+      "animationCustom" : {
+      "particleEmitters" : {
+        "<armName>Fire" : {
+          "active" : false,
+          "burstCount" : 1,
+          "anchorPart" : "<armName>",
+          "offsetRegion" : [7.125, 2.5, 7.5, 2.625],
+          "particles" : [
+            { "particle" : {
+                "type" : "ember",
+                "size" : 1.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } }
+
+          ]
+        }
+      },	  
+
+	  
+	  
+      "sounds" : {
+        "<armName>Fire" : ["/sfx/gun/gic_105mm_type91.ogg"]
+       }
+      }
+		
+		
+
+	
+	
+	
+	
+	
+	  }   
+	
+	},	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+//A-60 Replicator Launcher
+	
+	{ 
+	
+      "op": "add",
+		"path": "/gic_a60_replicator_launcher",
+		"value": { 
+		
+		"stats" : { "power" : 6, "energy" : 6, "mechMass": 1},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gic_missileburstarm.lua",
+      "armClass" : "MissileBurst",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [3.5, -0.25],
+
+      "windupTime" : 0.25,
+      "fireTime" : 0.25,
+      "cooldownTime" : 1.0,
+
+      "projectileType" : "gic_mechmissile",
+      "projectileParameters" : {
+        "power" : 200
+      },
+
+      "projectileCount" : 1,
+      "projectileSpread" : 0.1,
+      "projectileSpacing" : [0, 0.0]
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_a60_replicator_launcher.png",
+      "<armName>Fullbright" : "arm/gic_a60_replicator_launcher_fullbright.png"
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+	  
+	  
+	  
+	  
+	  
+    "animationCustom" : {
+      "animatedParts" : { "stateTypes" : { "<armName>" : { "states" : {
+        "windup" : {
+          "mode" : "end"
+        }
+      }}}},
+      "sounds" : {
+        "<armName>Recover" : ["/sfx/gic_highfleet_gunfire_servo.ogg"],
+        "<armName>Fire" : ["/sfx/gun/gic_highfleet_missile_launch_02.ogg"]
+      }
+      }
+	  }	  
+    },	  
+	  
+	  
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+//Volt Rotary Coilgun
+	
+	{ 
+	
+      "op": "add",
+		"path": "/gic_volt_rotary_coilgun",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 4, "mechMass": 1},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gatlingarm.lua",
+      "armClass" : "GatlingArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [6.4, 0.0], //[3, 0.2]
+
+      "windupTime" : 0.1,
+      "fireTime" : 0.33, //0.1 > 0.075
+
+      "projectileType" : "gic_coilgun_shot_heavy_miss_primer_caseless_mech",
+      "projectileParameters" : {
+        "power" : 1
+      },
+
+      "projectileCount" : 1,
+      "projectileSpacing" : [0, 1],
+
+      "projectileInaccuracy" : 0.01,
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_volt_rotary_coilgun_front.png",
+        "<armName>Fullbright" : "arm/gic_volt_rotary_coilgun_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_volt_rotary_coilgun_front.png",
+        "<armName>Fullbright" : "arm/gic_volt_rotary_coilgun_front_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_volt_rotary_coilgun_front.png",
+      "<armName>Fullbright" : "arm/gic_volt_rotary_coilgun_front_fullbright.png"
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+    "animationCustom" : {
+      "animatedParts" : { "stateTypes" : { "<armName>" : {
+        "states" : {
+          "windup" : {
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_RailgunStart.ogg",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.1
+            }
+          },
+          "active" : {
+            "cycle" : 0.2,
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_RailgunLoop.ogg",
+              "persistentSoundRangeMultiplier" : 1,
+              "persistentSoundStopTime" : 0.0
+            }
+          },
+          "winddown" : {
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_RailgunStop.ogg",
+              "persistentSoundRangeMultiplier" : 1,
+              "persistentSoundStopTime" : 0.1
+            }
+          }
+        }
+      }}},
+	  
+      "particleEmitters" : {
+        "<armName>Fire" : {
+          "active" : false,
+          "burstCount" : 0,
+          "anchorPart" : "<armName>",
+          "offsetRegion" : [7.125, 2.5, 7.5, 2.625],
+          "particles" : [  
+            { "particle" : {
+                "type" : "ember",
+                "size" : 1.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } }
+          ]
+        }
+      },
+	  
+      "sounds" : {
+        "<armName>Fire" : [ ] //"/sfx/gic_highfleet_shell_in_small_01.wav"
+      }
+	  }
+	  }
+  },	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+//Volt Rotary Coilgun Mk.II Spitzer
+	
+	{ 
+	
+      "op": "add",
+		"path": "/gic_volt_rotary_coilgun_mk2_spitzer",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 16, "mechMass": 2},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gatlingarm.lua",
+      "armClass" : "GatlingArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [6.4, 0.0], //[3, 0.2]
+
+      "windupTime" : 0.1,
+      "fireTime" : 0.2, //0.33
+
+      "projectileType" : "gic_coilgun_shot_heavy_miss_primer_caseless_mech",
+      "projectileParameters" : {
+        "power" : 1
+      },
+
+      "projectileCount" : 1,
+      "projectileSpacing" : [0, 1],
+
+      "projectileInaccuracy" : 0.04,
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_volt_rotary_coilgun_front.png",
+        "<armName>Fullbright" : "arm/gic_volt_rotary_coilgun_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_volt_rotary_coilgun_front.png",
+        "<armName>Fullbright" : "arm/gic_volt_rotary_coilgun_front_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_volt_rotary_coilgun_front.png",
+      "<armName>Fullbright" : "arm/gic_volt_rotary_coilgun_front_fullbright.png"
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+    "animationCustom" : {
+      "animatedParts" : { "stateTypes" : { "<armName>" : {
+        "states" : {
+          "windup" : {
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_RailgunStart.ogg",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.1
+            }
+          },
+          "active" : {
+            "cycle" : 0.2,
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_RailgunLoop.ogg",
+              "persistentSoundRangeMultiplier" : 1,
+              "persistentSoundStopTime" : 0.0
+            }
+          },
+          "winddown" : {
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_RailgunStop.ogg",
+              "persistentSoundRangeMultiplier" : 1,
+              "persistentSoundStopTime" : 0.1
+            }
+          }
+        }
+      }}},
+	  
+      "particleEmitters" : {
+        "<armName>Fire" : {
+          "active" : false,
+          "burstCount" : 0,
+          "anchorPart" : "<armName>",
+          "offsetRegion" : [7.125, 2.5, 7.5, 2.625],
+          "particles" : [  
+            { "particle" : {
+                "type" : "ember",
+                "size" : 1.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } }
+          ]
+        }
+      },
+	  
+      "sounds" : {
+        "<armName>Fire" : [ ] //"/sfx/gic_highfleet_shell_in_small_01.wav"
+      }
+	  }
+	  }
+  },	
+
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{ 
+	
+      "op": "add",
+		"path": "/gic_xmg2418",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 16, "mechMass": 1},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gatlingarm.lua",
+      "armClass" : "GatlingArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [7.4, 0.2], //[3, 0.2]
+
+      "windupTime" : 0.25,
+      "fireTime" : 0.065, //0.1 > 0.075
+
+      "projectileType" : "gic_redtracerbullet_miss_primer_caseless_mech",
+      "projectileParameters" : {
+        "power" : 1
+      },
+
+      "projectileCount" : 1,
+      "projectileSpacing" : [0, 1],
+
+      "projectileInaccuracy" : 0.02,
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_xmg2418_front.png",
+        "<armName>Fullbright" : "arm/gic_xmg2418_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_xmg2418_back.png",
+        "<armName>Fullbright" : "arm/gic_xmg2418_back_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_xmg2418_front.png",
+      "<armName>Fullbright" : "arm/gic_xmg2418_front_fullbright.png"
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+    "animationCustom" : {
+      "animatedParts" : { "stateTypes" : { "<armName>" : {
+        "states" : {
+          "windup" : {
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_WEAPONS_chargeUp_alt.ogg",
+              "persistentSoundRangeMultiplier" : 1,
+              "persistentSoundStopTime" : 0.1
+            }
+          },
+          "active" : {
+            "cycle" : 0.2,
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_WEAPONS_chargeUp_alt.ogg",
+              "persistentSoundRangeMultiplier" : 1,
+              "persistentSoundStopTime" : 0.1
+            }
+          },
+          "winddown" : {
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_WEAPONS_chargeUp_alt.ogg",
+              "persistentSoundRangeMultiplier" : 1,
+              "persistentSoundStopTime" : 0.1
+            }
+          }
+        }
+      }}},
+	  
+      "particleEmitters" : {
+        "<armName>Fire" : {
+          "active" : false,
+          "burstCount" : 0,
+          "anchorPart" : "<armName>",
+          "offsetRegion" : [7.125, 2.5, 7.5, 2.625],
+          "particles" : [  
+            { "particle" : {
+                "type" : "ember",
+                "size" : 1.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } }
+          ]
+        }
+      },
+	  
+      "sounds" : {
+        "<armName>Fire" : [ ] //"/sfx/gic_highfleet_shell_in_small_01.wav"
+      }
+	  }
+	  }
+  },	
+
+
+
+	
+	
+	
+	
+
+	
+	
+	
+	{ 
+	
+      "op": "add",
+		"path": "/gic_m2420_incendiary_multicannon",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 16, "mechMass": 1},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gatlingarm.lua",
+      "armClass" : "GatlingArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [7.4, 0.2], //[3, 0.2]
+
+      "windupTime" : 0.25,
+      "fireTime" : 0.065, //0.065
+
+      "projectileType" : "gic_mechincendiarybullet_miss_primer",
+      "projectileParameters" : {
+        "power" : 1
+      },
+
+      "projectileCount" : 1,
+      "projectileSpacing" : [0, 1],
+
+      "projectileInaccuracy" : 0.02,
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_xmg2418_front.png",
+        "<armName>Fullbright" : "arm/gic_xmg2418_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_xmg2418_back.png",
+        "<armName>Fullbright" : "arm/gic_xmg2418_back_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_xmg2418_front.png",
+      "<armName>Fullbright" : "arm/gic_xmg2418_front_fullbright.png"
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+    "animationCustom" : {
+      "animatedParts" : { "stateTypes" : { "<armName>" : {
+        "states" : {
+          "windup" : {
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_WEAPONS_chargeUp_alt.ogg",
+              "persistentSoundRangeMultiplier" : 1,
+              "persistentSoundStopTime" : 0.1
+            }
+          },
+          "active" : {
+            "cycle" : 0.2,
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_WEAPONS_chargeUp_alt.ogg",
+              "persistentSoundRangeMultiplier" : 1,
+              "persistentSoundStopTime" : 0.1
+            }
+          },
+          "winddown" : {
+            "properties" : {
+              "persistentSound" : "/sfx/barotrauma/gic_WEAPONS_chargeUp_alt.ogg",
+              "persistentSoundRangeMultiplier" : 1,
+              "persistentSoundStopTime" : 0.1
+            }
+          }
+        }
+      }}},
+	  
+      "particleEmitters" : {
+        "<armName>Fire" : {
+          "active" : false,
+          "burstCount" : 0,
+          "anchorPart" : "<armName>",
+          "offsetRegion" : [7.125, 2.5, 7.5, 2.625],
+          "particles" : [  
+            { "particle" : {
+                "type" : "ember",
+                "size" : 1.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } }
+          ]
+        }
+      },
+	  
+      "sounds" : {
+        "<armName>Fire" : [ ] //"/sfx/gic_highfleet_shell_in_small_01.wav"
+      }
+	  }
+	  }
+  },	
+
+
+
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{ 
+	
+      "op": "add",
+		"path": "/gic_dualmachinegun",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 12, "mechMass": 1},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gatlingarm.lua",
+      "armClass" : "GatlingArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [7.4, -0.0], //[6.8, -0.3]
+
+      "windupTime" : 0.25,
+      "fireTime" : 0.15,
+
+      "projectileType" : "gic_redtracerbullet_heavy_miss_primer_caseless_mech",
+      "projectileParameters" : {
+        "power" : 12
+		
+//  "actionOnReap" : [
+//    {
+//      "action" : "projectile",
+//      "type" : "gic_redtracerbullet_b",
+//      "inheritDamageFactor" : 1,
+//      "directional" : "true"
+//    },
+//    {
+//      "action" : "projectile",
+//      "type" : "gic_shellcasing",
+//      "fuzzAngle" : 20,
+//      "angle" : 90
+//    }
+//  ]
+		
+      },
+
+      "projectileCount" : 2,
+      "projectileSpacing" : [0, 1],
+
+      "projectileInaccuracy" : 0.025,
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_dualmachinegun_front.png",
+        "<armName>Fullbright" : "arm/gic_dualmachinegun_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_dualmachinegun_back.png",
+        "<armName>Fullbright" : "arm/gic_dualmachinegun_back_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_dualmachinegun_front.png",
+      "<armName>Fullbright" : "arm/gic_dualmachinegun_front_fullbright.png"
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+    "animationCustom" : {
+      "animatedParts" : { "stateTypes" : { "<armName>" : {
+        "states" : {
+          "windup" : {
+            "properties" : {
+              "persistentSound" : "/sfx/gun/mech_gatling_windup.ogg",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.2
+            }
+          },
+          "active" : {
+            "cycle" : 0.2
+          },
+          "winddown" : {
+            "properties" : {
+              "persistentSound" : "/sfx/gun/mech_gatling_winddown.ogg",
+              "persistentSoundRangeMultiplier" : 0.7,
+              "persistentSoundStopTime" : 0.1
+            }
+          }
+        }
+      }}},
+      "sounds" : {
+        "<armName>Fire" : [ ]
+      }
+	  }
+	  }
+  },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+	{ 
+	
+      "op": "add",
+		"path": "/gic_scoutrifle_mech",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 16, "mechMass": 1},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gunarm.lua",
+      "armClass" : "GunArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [6.8, 0.1],
+
+      "extendTime" : 1,
+
+      "fireTime" : 0.6,
+
+      "projectileType" : "gic_20mm_solid",
+      "projectileParameters" : {
+        "power" : 200
+      },
+
+
+      "projectileInaccuracy" : 0.06,
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_scoutrifle_front.png",
+        "<armName>Fullbright" : "arm/gic_scoutrifle_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_scoutrifle_back.png",
+        "<armName>Fullbright" : "arm/gic_scoutrifle_back_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_scoutrifle_front.png",
+      "<armName>Fullbright" : "arm/gic_scoutrifle_front_fullbright.png"
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+    "animationCustom" : {
+	  
+      "particleEmitters" : {
+        "<armName>Fire" : {
+          "active" : false,
+          "burstCount" : 1,
+          "anchorPart" : "<armName>",
+          "offsetRegion" : [7.125, 2.5, 7.5, 2.625],
+          "particles" : [  
+            { "particle" : {
+                "type" : "ember",
+                "size" : 1.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } }
+          ]
+        }
+      },
+	  
+      "sounds" : {
+        "<armName>Fire" : [ "/sfx/gun/gic_20mm_alt_02.ogg" ]
+      }
+	  }
+	  }
+  },	  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+	{ 
+	
+      "op": "add",
+		"path": "/gic_madsen_mech",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 16, "mechMass": 1},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gunarm.lua",
+      "armClass" : "GunArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [7.6, 0.0],
+
+      "extendTime" : 0.25,
+
+      "fireTime" : 0.5,
+
+      "projectileType" : "gic_20mm_he_vt_stage1_mech",
+      "projectileParameters" : {
+        "power" : 20
+      },
+
+
+      "projectileInaccuracy" : 0.06,
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_madsen_front.png",
+        "<armName>Fullbright" : "arm/gic_madsen_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_madsen_back.png",
+        "<armName>Fullbright" : "arm/gic_madsen_back_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_madsen_front.png",
+      "<armName>Fullbright" : "arm/gic_madsen_front_fullbright.png"
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+    "animationCustom" : {
+	  
+      "particleEmitters" : {
+        "<armName>Fire" : {
+          "active" : false,
+          "burstCount" : 1,
+          "anchorPart" : "<armName>",
+          "offsetRegion" : [7.125, 2.5, 7.5, 2.625],
+          "particles" : [  
+            { "particle" : {
+                "type" : "ember",
+                "size" : 1.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } }
+          ]
+        }
+      },
+	  
+      "sounds" : {
+        "<armName>Fire" : [ "/sfx/gic_highfleet_shell_in_small_01.wav" ]
+      }
+	  }
+	  }
+      },    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+	{ 
+	
+      "op": "add",
+		"path": "/gic_madsen_mech_dragonshot",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 16, "mechMass": 1},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gunarm.lua",
+      "armClass" : "GunArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [7.6, 0.0],
+
+      "extendTime" : 0.25,
+
+      "fireTime" : 0.5,
+
+      "projectileType" : "gic_20mm_he_stage1_mech",
+      "projectileParameters" : {
+        "power" : 20
+      },
+
+
+      "projectileInaccuracy" : 0.06,
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_madsen_front.png",
+        "<armName>Fullbright" : "arm/gic_madsen_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_madsen_back.png",
+        "<armName>Fullbright" : "arm/gic_madsen_back_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_madsen_front.png",
+      "<armName>Fullbright" : "arm/gic_madsen_front_fullbright.png"
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+    "animationCustom" : {
+	  
+      "particleEmitters" : {
+        "<armName>Fire" : {
+          "active" : false,
+          "burstCount" : 1,
+          "anchorPart" : "<armName>",
+          "offsetRegion" : [7.125, 2.5, 7.5, 2.625],
+          "particles" : [  
+            { "particle" : {
+                "type" : "ember",
+                "size" : 1.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } }
+          ]
+        }
+      },
+	  
+      "sounds" : {
+        "<armName>Fire" : [ "/sfx/gic_highfleet_shell_in_small_01.wav" ]
+      }
+	  }
+	  }
+      },    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+	{ 
+	
+      "op": "add",
+		"path": "/gic_jetrifle_mech",
+		"value": { 
+		
+		"stats" : { "power" : 1, "energy" : 16, "mechMass": 1},
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/gunarm.lua",
+      "armClass" : "GunArm",
+
+      "rotationLimits" : [-1.75, 1.75],
+      "fireOffset" : [7.4, 0.1],
+
+      "extendTime" : 0.25,
+
+      "fireTime" : 1,
+
+      "projectileType" : "gic_40mm_he_vt_stage1_mech", //Should help bypass any mods that attempt to "power scale" the mech.
+      "projectileParameters" : {
+        "power" : 2
+      },
+
+
+      "projectileInaccuracy" : 0.04, //0.06
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_jetrifle_front.png",
+        "<armName>Fullbright" : "arm/gic_jetrifle_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_jetrifle_back.png",
+        "<armName>Fullbright" : "arm/gic_jetrifle_back_fullbright.png"
+      }
+    },
+    "partImages" : {
+     
+      "<armName>" : "arm/gic_jetrifle_front.png",
+      "<armName>Fullbright" : "arm/gic_jetrifle_front_fullbright.png"
+    },
+
+      "defaultPrimaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+      "defaultSecondaryColors" : ["c0ab5e", "9b7e14", "6b5509", "342804"],
+    "animationCustom" : {
+	  
+      "particleEmitters" : {
+        "<armName>Fire" : {
+          "active" : false,
+          "burstCount" : 1,
+          "anchorPart" : "<armName>",
+          "offsetRegion" : [7.125, 2.5, 7.5, 2.625],
+          "particles" : [  
+            { "particle" : {
+                "type" : "ember",
+                "size" : 1.0,
+                "color" : [255, 200, 0, 255],
+                "light" : [100, 100, 50],
+                "fullbright" : true,
+                "fade" : 0.9,
+                "initialVelocity" : [10.0, 0],
+                "finalVelocity" : [0.0, -50.0],
+                "approach" : [0, 20],
+                "timeToLive" : 0.6,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [5, 5],
+                  "timeToLive" : 0.2
+                }
+              } }
+          ]
+        }
+      },
+	  
+      "sounds" : {
+        "<armName>Fire" : [ "/sfx/gic_highfleet_shell_in_med_01_delay_05s.wav" ]
+      }
+	  }
+	  }
+      },  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+	{ 
+	
+      "op": "add",
+		"path": "/gic_2vvm_rack",
+		"value": {
+    "stats" : {
+      "power" : 1,
+      "energy" : 17,
+      "mechMass": 1
+    },
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/missileburstarm.lua",
+      "armClass" : "MissileBurst",
+
+      "rotationLimits" : [0, 0], //[-1.75, 1.75],
+      "fireOffset" : [5.5, -0.1],
+
+      "windupTime" : 2,
+      "fireTime" : 0,
+      "cooldownTime" : 30.0,
+
+      "projectileType" : "gic_voidtovoid_missile_stubby_vt_float_mech",
+      "projectileParameters" : {
+        "power" : 20
+      },
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_2vvm_rack_front.png",
+        "<armName>Fullbright" : "arm/gic_2vvm_rack_front_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_2vvm_rack_back.png",
+        "<armName>Fullbright" : "arm/gic_2vvm_rack_back_fullbright.png"
+      }
+	  
+    },
+    "partImages" : {
+      "<armName>" : "arm/gic_2vvm_rack_front.png",
+      "<armName>Fullbright" : "arm/gic_2vvm_rack_front_fullbright.png"
+    },
+    "defaultPrimaryColors" : ["ffffa7", "e2c344", "a46e06", "642f00"],
+    "defaultSecondaryColors" : ["838383", "555555", "383838", "151515"],
+    "animationCustom" : {
+      "animatedParts" : { "stateTypes" : { "<armName>" : { "states" : {
+        "windup" : {
+          "mode" : "end"
+        }
+      }}}},
+      "sounds" : {
+        "<armName>Recover" : ["/sfx/gun/reload/rocket_reload_clip1.ogg"],
+        "<armName>Fire" : ["/sfx/gun/rocket2.ogg"]
+      }
+    }
+  }
+  },
+    
+  
+  
+  
+  
+		{ 
+	
+      "op": "add",
+		"path": "/gic_subsurfacedisplacementmissilelauncher",
+		"value": {
+    "stats" : {
+      "power" : 1,
+      "energy" : 17,
+      "mechMass": 1
+    },
+    "partParameters" : {
+      "script" : "/vehicles/modularmech/armscripts/missileburstarm.lua",
+      "armClass" : "MissileBurst",
+
+      "rotationLimits" : [0, 0], //[-1.75, 1.75],
+      "fireOffset" : [5.5, -0.1],
+
+      "windupTime" : 2,
+      "fireTime" : 0,
+      "cooldownTime" : 30.0,
+
+      "projectileType" : "gic_subsurfacedisplacement_missile",
+      "projectileParameters" : {
+        "power" : 1000 //2000
+      },
+	  
+      "frontPartImages" : {
+        "<armName>" : "arm/gic_subsurfacedisplacementmissilelauncher.png",
+        "<armName>Fullbright" : "arm/gic_subsurfacedisplacementmissilelauncher_fullbright.png"
+      },
+
+      "backPartImages" : {
+        "<armName>" : "arm/gic_subsurfacedisplacementmissilelauncher.png",
+        "<armName>Fullbright" : "arm/gic_subsurfacedisplacementmissilelauncher_fullbright.png"
+      }
+	  
+    },
+    "partImages" : {
+      "<armName>" : "arm/gic_subsurfacedisplacementmissilelauncher.png",
+      "<armName>Fullbright" : "arm/gic_subsurfacedisplacementmissilelauncher_fullbright.png"
+    },
+    "defaultPrimaryColors" : ["ffffa7", "e2c344", "a46e06", "642f00"],
+    "defaultSecondaryColors" : ["838383", "555555", "383838", "151515"],
+    "animationCustom" : {
+      "animatedParts" : { "stateTypes" : { "<armName>" : { "states" : {
+        "windup" : {
+          "mode" : "end"
+        }
+      }}}},
+      "sounds" : {
+        "<armName>Recover" : ["/sfx/gun/reload/rocket_reload_clip1.ogg"],
+        "<armName>Fire" : ["/sfx/gun/rocket2.ogg"]
+      }
+    }
+  }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+		
+    
+]

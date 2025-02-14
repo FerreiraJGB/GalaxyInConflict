@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_unitan_m5_assaultdrone_deployment",
+  "physics" : "gic_parachutedeployment",
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    },
+	
+    { 
+      "action":"spawnmonster",
+      "type":"gic_unitan_m5_assaultdrone",
+	  "level":1,
+      "arguments":{"damageTeam":13}
+	}
+	
+  ],
+  "image" : "gic_unitan_m5_assaultdrone_deployment.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 20,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+  "maxspeed":10,
+  "timeToLive" : 20,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

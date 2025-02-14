@@ -1,0 +1,16 @@
+{
+  "name" : "gic_applyparalyzant",
+  "blockingStat" : "gic_paralyzantProtection",
+  
+  "effectConfig" : {
+    "diseases" : [
+		"gic_paralyzant_stage1" //note: THIS DISEASE CORRESPONDS WITH THE VALUE LISTED IN /stats/gic_diseases.config, NOT THE STATUS EFFECT ITSELF
+	]
+  },
+  "defaultDuration" : 0.5,
+
+  "scripts" : [
+    "gic_applydiseases.lua"
+  ],
+  "scriptDelta" : 1
+}

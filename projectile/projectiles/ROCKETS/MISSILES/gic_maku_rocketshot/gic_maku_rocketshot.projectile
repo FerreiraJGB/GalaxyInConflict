@@ -1,0 +1,35 @@
+{
+  "projectileName" : "gic_maku_rocketshot",
+
+  "bounces" : 0,
+  "image" : "gic_maku_rocketshot.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    }
+  ],
+  "power" : 100,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+
+  "maxSpeed" : 250,
+  
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  "persistentAudio" : "/sfx/vehicles/gic_highfleet_missile_run_01.ogg",  
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 5.0,
+  "acceleration" : 40,
+  "timeToLive" : 10,
+  "physics" : "rocket",
+  
+//  "damagePoly" : [ [-128, 0], [-22, -22], [0, -128], [5, -22], [5, 0], [5, 22], [0, 128], [-22, 22]  ],
+  
+  "rotationRate" : 1,
+  "trackingLimit" : 1
+}

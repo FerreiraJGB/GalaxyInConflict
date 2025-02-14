@@ -1,0 +1,157 @@
+{
+  "metadata" : {
+    "name" : "gic_floranfortress",
+    "species" : "floran",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_floranfortress_upperlevel_capital"],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 45,
+    "extendSurfaceFreeSpace" : 50,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+	
+	
+
+	
+
+
+
+	
+
+	
+  //Upper Fortress
+
+
+
+
+    {
+      "name" : "gic_floranfortress_upperlevel_capital",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_upperlevel_capital.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_floranfortress_upperlevel_gunsmith",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_upperlevel_gunsmith.json" ] ],
+      "chance" : 1
+    },
+
+
+
+    {
+      "name" : "gic_floranfortress_upperlevel_leftgate",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+//	    [ "doNotConnectToPart", [ "gic_floranfortress_upperlevel_rightgate"] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_upperlevel_leftgate.json" ] ],
+      "chance" : 0
+    },
+	
+	
+	
+    {
+      "name" : "gic_floranfortress_upperlevel_wallright", //Transition to Battlefield
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+//	    [ "doNotConnectToPart", [ "gic_floranfortress_upperlevel_wallleft"] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_upperlevel_wallright.json" ] ],
+      "chance" : 0
+    },	
+	
+	
+
+  //Lower Fortress
+
+
+
+    {
+      "name" : "gic_floranfortress_lowerlevel_residence",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+	    [ "doNotConnectToPart", [ "gic_floranfortress_lowerlevel_residence"] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_lowerlevel_residence.json" ] ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_floranfortress_lowerlevel_midgate",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_floranfortress_lowerlevel_midgate"] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_lowerlevel_midgate.json" ] ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_floranfortress_lowerlevel_watchtower",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+	    [ "doNotConnectToPart", [ "gic_floranfortress_lowerlevel_watchtower"] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_lowerlevel_watchtower.json" ] ],
+      "chance" : 1
+    },
+
+
+	
+    {
+      "name" : "gic_floranfortress_lowerlevel_endleft", //Lower Level Left Gate, transition to overworld
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_lowerlevel_endleft.json" ] ],
+      "chance" : 0
+    },	
+	
+	
+	
+	
+	//Battlefield Level - rightside only
+
+
+
+
+    {
+      "name" : "gic_floranfortress_battlefield_meleecombat",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_battlefield_meleecombat.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_floranfortress_battlefield_trenches",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_battlefield_trenches.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_floranfortress_battlefield_endright", //Battlefield end
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_floranfortress_battlefield_endright.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

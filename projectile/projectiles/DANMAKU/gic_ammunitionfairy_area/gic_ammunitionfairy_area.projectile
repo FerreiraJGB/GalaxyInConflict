@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_ammunitionfairy_area",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_ammunitionfairy_area.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 1,
+  "timeToLive" : 0.01,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_ammunitionfairy_area_effect",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_ammunitionfairy_area_explosion/gic_ammunitionfairy_area_explosion.config"
+    }
+  ],
+  "statusEffects" : [
+"gic_pinged_ammunitionfairy"
+  ]
+}

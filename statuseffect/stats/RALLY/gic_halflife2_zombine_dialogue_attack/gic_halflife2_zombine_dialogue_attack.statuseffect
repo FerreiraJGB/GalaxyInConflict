@@ -1,0 +1,35 @@
+{
+  "name" : "gic_halflife2_zombine_dialogue_attack",
+  "effectConfig" : {
+	"projectileType" : "gic_null", //does not accept arrays
+	"projectileTypeMiss" : "gic_null", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	"missChance" : 0,
+	"offset" : [-0.0,-0.5],
+	"muzzleOffset" : [1.2, 2.0],
+	"muzzleOffset2" : [1.2, 2.0],
+	"trackingDistance" : 40,
+	"trackingAngle" : 181,
+	"fireRate" : 1.0,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 15.0
+  },
+  "defaultDuration" : 40,
+
+  "scripts" : [
+    "gic_halflife2_zombine_dialogue_attack.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_halflife2_zombine_dialogue_attack.animation"
+}

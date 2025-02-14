@@ -1,0 +1,56 @@
+{
+  "projectileName" : "gic_flamingheavyarrow_sniper",
+  "physics" : "laser",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "statusEffects" : ["burning" ],  
+"periodicActions" : [
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "streak",
+        "layer" : "front",
+        "fullbright" : true,
+        "destructionAction" : "shrink",
+        "size" : 1,
+        "color" : [253, 209, 77, 200],
+        "collidesForeground" : false,
+        "length" : 20,
+        "position" : [0, 0],
+        "timeToLive" : 0.05,
+        "destructionTime" : 0.2,
+        "initialVelocity" : [0.5, 0],
+        "variance" : {
+          "size" : 0,
+          "initialVelocity" : [0.5, -0],
+          "length" : 0
+        }
+      }
+    }
+],
+  
+  "image" : "gic_heavyarrow.png",
+  "animationCycle" : 0.25,
+  "fullbright" : true,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "power" : 20,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "lightColor" : [ 200, 100, 100 ],
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "emitters" : [ "arrowflames" ]
+}

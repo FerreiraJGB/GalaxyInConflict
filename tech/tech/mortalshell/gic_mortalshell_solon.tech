@@ -1,0 +1,50 @@
+{
+  "name" : "gic_mortalshell_solon",
+  "type" : "head",
+
+  "scripts" : ["gic_mortalshell_solon.lua"],
+  "animator" : "gic_mortalshell.animation",
+
+  "description" : "Resist Bullets by turning into Shell Form | Cover-Type | ^green;[F]",
+  "shortDescription" : "Mortal Shell: Solon",
+  "rarity" : "Rare",
+  "icon" : "/tech/gic_mortalshell_solon.png",
+
+  "chipCost" : 8,
+
+  "animationParts" : {
+    "ballGlow" : "gic_mortalshell_solon_glow.png",
+    "ball" : "gic_mortalshell_solon.png"
+  },
+
+  "transformedMovementParameters" : {
+    "collisionPoly" : [ [-0.75, -2.0], [-0.35, -2.5], [0.35, -2.5], [0.75, -2.0], [0.75, 0.65], [0.35, 1.22], [-0.35, 1.22], [-0.75, 0.65] ],
+
+    "groundForce" : 450.0,
+    "normalGroundFriction" : 50.5, //1.5
+    "ambulatingGroundFriction" : 0.0, //0.2
+    "slopeSlidingFactor" : 0.0, //3.0
+
+    "airJumpProfile" : {
+      "jumpSpeed" : 0,
+      "jumpControlForce" : 0.0,
+      "jumpInitialPercentage" : 0.0,
+      "jumpHoldTime" : 0.0
+    },
+
+    "liquidJumpProfile" : {
+      "jumpSpeed" : 0.0,
+      "jumpControlForce" : 0.0,
+
+      "multiJump" : false,
+      "autoJump" : false
+    }
+  },
+
+  "ballSpeed" : 0,
+
+  "energyCost" : 5000,
+
+  "ballRadius" : 1,
+  "ballFrames" : 8
+}

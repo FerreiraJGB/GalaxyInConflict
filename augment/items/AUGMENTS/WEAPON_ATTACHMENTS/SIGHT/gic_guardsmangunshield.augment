@@ -1,0 +1,50 @@
+{
+  "itemName" : "gic_guardsmangunshield",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Sight Attachment^white;",
+  "inventoryIcon" : "gic_guardsmangunshield_icon.png",
+  
+  
+  "description" : "Gun shields are metal armor plates designed to protect the gunners from small arms fire and shrapnel from explosions.
+  
+^orange;Gain +25% BALLISTIC Resistance when using a firearm with this attachment. On taking more than 20 damage, lose the defensive buff for 2s.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Guardsman Gun Shield",
+
+  "attachment" : {
+	"attachmentType" : "sight", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_guardsmangunshield", //name of attachment
+	
+	"attachmentTag" : [ "gic_guardsmangunshield", "gic_sight" ],     //if target item has one or more of these tags, then this attachment will be applicable to the item
+	
+	"attachmentId" : "gic_guardsmangunshield", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentImage" : "/items/augments/weapon_attachments/sight/gic_guardsmangunshield.png", //determines what image is displayed on the resulting gun
+	
+	"specialAttachmentConfig" : {
+		"type" : "statusEffect", //this can be applied to any attachment of type "sight", "barrel", "stock", or "underbarrel".
+		"statusEffects" : ["gic_guardsmangunshield"], //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+		
+		"projectileConfig" : {
+		}
+		
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

@@ -1,0 +1,43 @@
+{
+  "objectName" : "gic_stage_otherworld_seijanue_bossfight_end",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Common",
+  "scannable" : false,
+  "category" : "wire",
+  "price" : 15,
+  "description" : "Plays a nuke sound. Due to mechanics, only plays once. It's a crude way of working with it, but it's better than nothing.",
+  "shortdescription" : "Stage Otherworld Seija Nue Boss Fight End",
+  "race" : "generic",
+
+  "inventoryIcon" : "gic_stage_otherworld_seijanue_bossfight_end.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_stage_otherworld_seijanue_bossfight_end.png",
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+    }
+
+
+  ],
+
+  "animation" : "/objects/noisy/noisy.animation",
+
+  "inputNodes" : [ [0, 0] ],
+
+  "scripts" : [
+    "/objects/scripts/wiredmine.lua"
+  ],
+  "scriptDelta" : 5,
+
+  "triggerOnBreak" : false,
+
+  "explosionProjectile" : "gic_null",
+  "explosionOffset" : [0, 0],
+	
+  "triggerSounds" : [ "/music/RemnantFromTheAshes/gic_remnantfromtheashes_brudvaakandvargr_deathtune.ogg" ], ///sfx/objects/hiddenswitch1.ogg
+  
+  "detonationTime" : 1.0
+}

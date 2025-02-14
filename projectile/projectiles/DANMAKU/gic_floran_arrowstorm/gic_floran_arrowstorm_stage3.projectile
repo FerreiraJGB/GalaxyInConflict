@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_floran_arrowstorm_stage3",
+  "physics" : "rocket",
+  
+  
+  "periodicActions" : [
+	
+    {
+      "time" : 0.2,
+      "action" : "projectile",
+      "type" : "gic_floran_arrowstorm_stage4",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0,
+	  "fuzzAngle" : 360,
+      "angleAdjust" : 0
+    }
+  ],
+  
+  
+  "image" : "gic_floran_arrowstorm_stage3.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+ 
+  
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 20,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 0.5,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

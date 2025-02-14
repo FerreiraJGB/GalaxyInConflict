@@ -1,0 +1,2031 @@
+{
+  "type" : "gic_yamaxanadu_tyrantjudge",
+  "shortdescription" : "[The Tyrant Judge]",
+  "description" : "This war ends here.",
+
+  "categories" : [ "gic_yamaxanadu_tyrantjudge" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_yamaxanadu_tyrantjudge.animation",
+
+  "dropPools" : [ { "default" : "gic_yamaxanadu_tyrantjudgeTreasure", "ews_melee_sinnersdagger" : "gic_yamaxanadu_tyrantjudge_sinnersdaggerTreasure" } ],
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster_phases_music_adaptive.lua"
+    ],
+	
+	"music" : ["/music/Remnant2/gic_remnant2_onetrueking.ogg"],
+  
+	"range" : 135,			//measured in blocks, default val is 50 blocks
+	"fadeOutTime" : 2.0,	//measured in seconds, default val is 2.0 seconds
+	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+	
+	
+	//ADAPTIVE HEALTH STUFF
+	"adaptiveTrackingRange" : 150, //should be range in blocks
+	"adaptiveHealthBonus" : 20250, //flat max health stat. HP per additional player is heightened to account for the slow moveset of the boss.
+	
+	//EXTRA DROP POOLS, DROPS ONE LOOT POOL PER EXTRA PLAYER
+	"extraDropPools" : ["gic_yamaxanadu_tyrantjudgeTreasure"],
+	
+    "damageBar" : "Special",
+
+    "behavior" : "monster",
+    "deathBehavior" : "monster-death",
+
+    "seeThroughLiquid" : false,
+	
+	
+	
+	
+	
+	
+	"phaseTriggerCount" : 1, //how many indices should the monster consider for phases
+	"healthThresholdTriggers" : [0.7], //determines health threshhold for phase trigger [0.66,0.33]
+	"regressPhases" : false, //if enabled, monster will regress to its prior phase if the monster's health increases above its current threshold.
+	
+	"phaseTriggerIds" : ["behaviorConfigInjured1"], //configs to correspond to once the corresponding healthThresholdTrigger has been reached. ["behaviorConfigInjured1","behaviorConfigInjured2"]
+	//configs correspond to healthThresholdTriggers via index, ie index 1 of healthThresholdTrigger corresponds to index 1 of phaseTrigger
+	
+	
+	
+	
+	
+	
+	
+	//--- Standard moveset --- Phase 1 - Relatively "slow" and performs simpler non-combo attacks.
+	
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 120,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 90,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+
+      ],
+	  
+	  
+	  
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idle",
+            "animationTime" : 600
+          }
+        }
+	  ],	  
+	  
+	  
+	  
+	  
+      "concurrentHostileActions" : [
+
+
+
+      ],	  
+	  
+	  
+
+
+
+
+
+		
+	  
+
+      "hostileActions" : [
+
+
+
+//OPENER ATTACK - Divine Slam without AoE, then warps.
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 99999,
+		  "parameters" : {
+			"maximumRange" : 200,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+
+	  //Divine Slam then visually disappears.
+       {
+          "name" : "action-fire",
+          "cooldown" : 9999,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "warpin_divineslamwindup",
+            "windupTime" : 2.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_yamaxanadu_tyrantjudge_divineswoosh_360pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 50,
+			  "knockback" : 10,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[4, -0.5]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "warpin_divineslam",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 4
+          }
+        },	  		
+				
+	  //Warp In - Moves to another part of the map to reset attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 9999.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : -600,
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "",
+          "winddownTime" : 2.0,
+          "winddownState" : "warpin"
+        }
+      }
+				
+				
+			]
+		  }
+		},		
+		
+
+
+
+
+
+
+
+
+
+	  //Swordstorm Overhead
+      {
+        "name" : "action-charge",
+        "cooldown" : 30.0,
+        "parameters" : {
+          "maximumRange" : 35,
+          "minimumRange" : 10,
+          "windupTime" : 1.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 0,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "swordstorm_overhead",
+          "windupState" : "swordstorm_overheadwindup",
+          "winddownTime" : 3.0,
+          "winddownState" : ""
+        }
+      },
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  
+	  //Summon Adds - Summons up to 2x15 Sin Sacks. Multi-staged so as to space out hordes and to prevent the game from lagging and stacking all the projectiles together.
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 80,
+		  "parameters" : {
+			"maximumRange" : 50,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  //Summon Adds - Stage 1
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "summon_floatwindup",
+            "windupTime" : 2.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_tyrantjudge_summon_2pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 5.0,
+			  "power" : 0,
+			  "knockback" : 70,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 1]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "sinsacksummon",
+            "winddownState" : "",
+            "winddownTime" : 4
+          }
+        },
+		
+	  //Summon Adds - Stage 2
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "",
+            "windupTime" : 2.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_tyrantjudge_summon_2pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 5.0,
+			  "power" : 0,
+			  "knockback" : 70,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 1]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "sinsacksummon",
+            "winddownState" : "",
+            "winddownTime" : 7
+          }
+        },
+		
+	  //Summon Adds - Stage 3
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "",
+            "windupTime" : 2.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_tyrantjudge_statue_summon_2pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 0,
+			  "knockback" : 70,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 6]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "sinsacksummon",
+            "winddownState" : "summon_floatwinddown",
+            "winddownTime" : 4
+          }
+        }
+
+				
+				
+			]
+		  }
+		},
+		
+		
+
+
+
+		
+	  //2-Combo Standard Overhead Melee
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 15,
+		  "parameters" : {
+			"maximumRange" : 40,
+			"minimumRange" : 10,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+			
+
+	  //Standard Overhead
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 35,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 800,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_overhead",
+          "windupState" : "standard_overheadwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+
+	  //Standard Overhead Finisher
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 40,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 800,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_overhead_finisher",
+          "windupState" : "standard_overheadwindup",
+          "winddownTime" : 3,
+          "winddownState" : ""
+        }
+      }	  
+				
+				
+				
+			]
+		  }
+		},
+	  
+	  
+	  //3-Combo Standard Melee
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 3,
+		  "parameters" : {
+			"maximumRange" : 30,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+				
+	  //Standard Sweep
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 600,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_sweep",
+          "windupState" : "standard_sweepwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+
+	  //Standard Overhead
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 35,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 1200,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_overhead",
+          "windupState" : "standard_overheadwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+
+	  //Standard Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 40,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 2400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_thrust",
+          "windupState" : "standard_thrustwindup",
+          "winddownTime" : 2.25,
+          "winddownState" : ""
+        }
+      }		  
+				
+				
+				
+			]
+		  }
+		},
+
+
+	  //Shining Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 15.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 30,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 3200,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_thrust",
+          "windupState" : "shining_thrustwindup",
+          "winddownTime" : 2.0,
+          "winddownState" : ""
+        }
+      },
+
+
+	  //General Warp - Moves to another part of the map to reset attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 25.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 1.0,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 1600,
+          "chargeControlForce" : 3200,
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "warpout",
+          "winddownTime" : 2.5,
+          "winddownState" : "warpin"
+        }
+      },
+
+	  //General Warp - Moves to another part of the map to reset attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 8.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 40,
+          "windupTime" : 1.0,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 1600,
+          "chargeControlForce" : 3200,
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "warpout",
+          "winddownTime" : 2.5,
+          "winddownState" : "warpin"
+        }
+      },
+	  
+	  //General Warp - Moves to another part of the map to reset attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 80,
+          "windupTime" : 1.0,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 1600,
+          "chargeControlForce" : 3200,
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "warpout",
+          "winddownTime" : 2.5,
+          "winddownState" : "warpin"
+        }
+      }	
+
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+      "damageTakenActions" : [
+      ],
+
+	  "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_yamaxanadu_tyrantjudge_divineswoosh_360pattern",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        },  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion_npc",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//--- Below 50% HP --- Phase 2 - Mostly the same as the first phase, but begins shoulder-bashing and is much more aggressive with certain attacks (todo notation).
+	
+	
+    "behaviorConfigInjured1" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 120,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 90,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+
+      ],
+	  
+	  
+	  
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idle",
+            "animationTime" : 600
+          }
+        }
+	  ],	  
+	  
+	  
+      "concurrentHostileActions" : [
+
+		  //Passive ranged attack.
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 70,
+            "windupStopForce" : 10,
+            "windupState" : "",
+            "windupTime" : 0.75,
+            "projectileCount" : 3,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 1,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicbullet_ruinorb_12pattern_delayedruinshot",
+            "projectileParameters" : {
+			  "power" : 100,
+              "piercing" : true,
+			  "knockback" : 0,			  
+              "damageKind" : "electric",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[0.3, -0.4]],
+            "aimDirection" : [0, 2],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "sinsacksummon",
+            "winddownState" : "",
+            "winddownTime" : 4.5
+          }
+        }
+
+      ],	  
+
+      "hostileActions" : [
+	 
+		
+
+
+
+
+
+
+
+
+
+
+//OPENER ATTACK - Divine Slam without AoE, then warps.
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 99999,
+		  "parameters" : {
+			"maximumRange" : 200,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+
+	  //Divine Slam then visually disappears.
+       {
+          "name" : "action-fire",
+          "cooldown" : 9999,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "warpin_divineslamwindup",
+            "windupTime" : 2.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_yamaxanadu_tyrantjudge_divineswoosh_360pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 50,
+			  "knockback" : 10,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[4, -0.5]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "warpin_divineslam",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 4
+          }
+        },	  		
+				
+	  //Warp In - Moves to another part of the map to reset attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 9999.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : -600,
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "",
+          "winddownTime" : 2.0,
+          "winddownState" : "warpin"
+        }
+      }
+				
+				
+			]
+		  }
+		},		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  //Swordstorm Overhead
+      {
+        "name" : "action-charge",
+        "cooldown" : 30.0,
+        "parameters" : {
+          "maximumRange" : 35,
+          "minimumRange" : 10,
+          "windupTime" : 1.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 0,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "swordstorm_overhead",
+          "windupState" : "swordstorm_overheadwindup",
+          "winddownTime" : 3.0,
+          "winddownState" : ""
+        }
+      },
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  
+	  //Summon Adds - Summons up to 2x15 Sin Sacks. Multi-staged so as to space out hordes and to prevent the game from lagging and stacking all the projectiles together.
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 80,
+		  "parameters" : {
+			"maximumRange" : 50,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  //Summon Adds - Stage 1
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "summon_floatwindup",
+            "windupTime" : 2.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_tyrantjudge_summon_2pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 5.0,
+			  "power" : 0,
+			  "knockback" : 70,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 1]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "sinsacksummon",
+            "winddownState" : "",
+            "winddownTime" : 4
+          }
+        },
+		
+	  //Summon Adds - Stage 2
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "",
+            "windupTime" : 2.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_tyrantjudge_summon_2pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 5.0,
+			  "power" : 0,
+			  "knockback" : 70,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 1]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "sinsacksummon",
+            "winddownState" : "",
+            "winddownTime" : 7
+          }
+        },
+		
+	  //Summon Adds - Stage 3
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "",
+            "windupTime" : 2.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_tyrantjudge_statue_summon_2pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 0,
+			  "knockback" : 70,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 6]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "sinsacksummon",
+            "winddownState" : "",
+            "winddownTime" : 4
+          }
+        },
+		
+	  //Summon Adds - Stage 4 - Additional summoning phase after statues have spawned.
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "",
+            "windupTime" : 2.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_tyrantjudge_summon_2pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 5.0,
+			  "power" : 0,
+			  "knockback" : 70,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 1]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "sinsacksummon",
+            "winddownState" : "summon_floatwinddown",
+            "winddownTime" : 7
+          }
+        }
+
+				
+				
+			]
+		  }
+		},
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+	  
+	  //Warp into Sweep
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 20,
+		  "parameters" : {
+			"maximumRange" : 40,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+
+	  //Warp Out
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 40,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 2400,
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "warpout",
+          "winddownTime" : 1.0,
+          "winddownState" : ""
+        }
+      },			
+				
+	  //Warp Sweep
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 100,
+          "minimumRange" : 0,
+          "windupTime" : 0.6,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 2400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "warpin_sweep",
+          "windupState" : "warpin_sweepwindup",
+          "winddownTime" : 1.5,
+          "winddownState" : ""
+        }
+      }	
+				
+				
+			]
+		  }
+		},
+		
+		
+
+	  //Tyrant Judge Loyalty Laser
+       {
+          "name" : "action-fire",
+          "cooldown" : 60,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 80,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "air_thrustwindup",
+            "windupTime" : 1.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_magicshot_loyaltylaser_tyrantjudge_2pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 50,
+			  "knockback" : 10,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[2, 16]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "air_thrust",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 4
+          }
+        },
+		
+		
+		
+		
+		
+	  //Warp into Triple Overhead (Vortex into AoE 360), then warp again.
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 15,
+		  "parameters" : {
+			"maximumRange" : 40,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+
+	  //Warp Out
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 40,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 3200, //2400
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "warpout",
+          "winddownTime" : 1.0,
+          "winddownState" : ""
+        }
+      },
+
+	  //Gravity Vortex Slam - Warps in to initiate a slam.
+       {
+          "name" : "action-fire",
+          "cooldown" : 7,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "warpin_gravityvortexslamwindup",
+            "windupTime" : 1.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_supergravitysphere_tyrantjudge",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 1.5,
+			  "power" : 0,
+			  "knockback" : 90,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[4, -0.5]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "warpin_gravityvortexslam",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 2
+          }
+        },	
+
+	  //Divine Slam then visually disappears.
+       {
+          "name" : "action-fire",
+          "cooldown" : 7,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "warpin_divineslamwindup",
+            "windupTime" : 2.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_yamaxanadu_tyrantjudge_divineswoosh_360pattern",
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.0,
+			  "power" : 75,
+			  "knockback" : 90,			  
+              "damageKind" : "ews_antitank",
+              "damageType" : "IgnoresDef"
+            },
+            "fireOffsets" : [[4, -0.5]],
+            "aimDirection" : [2, 0.1],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "warpin_divineslam",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 4
+          }
+        },	  		
+				
+	  //Warp In - Moves to another part of the map to reset attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 2400,
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "",
+          "winddownTime" : 2.0,
+          "winddownState" : "warpin"
+        }
+      }
+				
+				
+			]
+		  }
+		},		
+		
+		
+	  //2-Combo Standard Overhead Melee
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 15,
+		  "parameters" : {
+			"maximumRange" : 40,
+			"minimumRange" : 10,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+			
+
+	  //Standard Overhead
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 35,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 800,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_overhead",
+          "windupState" : "standard_overheadwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+
+	  //Standard Overhead Finisher
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 40,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 800,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_overhead_finisher",
+          "windupState" : "standard_overheadwindup",
+          "winddownTime" : 3,
+          "winddownState" : ""
+        }
+      }	  
+				
+				
+				
+			]
+		  }
+		},
+	  
+	  
+	  //3-Combo Standard Melee
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 3,
+		  "parameters" : {
+			"maximumRange" : 30,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "idle",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+				
+	  //Standard Sweep
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 600,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_sweep",
+          "windupState" : "standard_sweepwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+
+	  //Standard Overhead
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 35,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 1200,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_overhead",
+          "windupState" : "standard_overheadwindup",
+          "winddownTime" : 0.5,
+          "winddownState" : ""
+        }
+      },
+
+	  //Standard Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 5.0,
+        "parameters" : {
+          "maximumRange" : 40,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 2400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_thrust",
+          "windupState" : "standard_thrustwindup",
+          "winddownTime" : 2.25,
+          "winddownState" : ""
+        }
+      }		  
+				
+				
+				
+			]
+		  }
+		},
+
+
+	  //Shining Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 15.0,
+        "parameters" : {
+          "maximumRange" : 60,
+          "minimumRange" : 30,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 3200,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "standard_thrust",
+          "windupState" : "shining_thrustwindup",
+          "winddownTime" : 2.0,
+          "winddownState" : ""
+        }
+      },
+
+
+	  //General Warp - Moves to another part of the map to reset attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 25.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 1.0,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 1600,
+          "chargeControlForce" : 3200,
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "warpout",
+          "winddownTime" : 2.5,
+          "winddownState" : "warpin"
+        }
+      },
+
+	  //General Warp - Moves to another part of the map to reset attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 8.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 40,
+          "windupTime" : 1.0,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 1600,
+          "chargeControlForce" : 3200,
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "warpout",
+          "winddownTime" : 2.5,
+          "winddownState" : "warpin"
+        }
+      },
+	  
+	  //General Warp - Moves to another part of the map to reset attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 80,
+          "windupTime" : 1.0,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 1600,
+          "chargeControlForce" : 3200,
+          "wallCrashSound" : "",
+          "wallCrashEmitter" : "",
+          "chargeState" : "",
+          "windupState" : "warpout",
+          "winddownTime" : 2.5,
+          "winddownState" : "warpin"
+        }
+      }	
+
+
+
+
+
+
+
+
+
+
+      ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+	  
+	  
+	  
+	  "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_yamaxanadu_tyrantjudge_divineswoosh_360pattern",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        },  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion_npc",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],	  
+	  
+	  
+      "damageTakenActions" : [
+      ],
+
+
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//---
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    "damageParts" : {
+      "body" : {
+        "damage" : 200,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.5, //0.75
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 30, //90
+        "statusEffects" : [ "gic_stun_025" ]
+      },
+	  
+	  
+	  
+	  "kickDamage" : { //Extreme attack
+		"damage" : 60,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.25,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 60,
+        "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_attackpowernullification_3" ],
+        "damageRepeatGroup": ""
+	  },	  
+	  
+	  
+	  "swordstormBackDamage" : { //Behind. Does a little more damage.
+		"damage" : 200,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.25,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : -50,
+        "statusEffects" : [ ],
+        "damageRepeatGroup": ""
+	  }
+	  
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.0], [0.5, -2.0], [0.5, 2.0], [-0.5, 2.0] ],
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.75], [-0.35, -1.90], [0.35, -1.90], [0.75, -1.75], [0.75, 4.22], [0.35, 4.8], [-0.35, 4.8], [-0.75, 4.22] ], 
+
+      "mass" : 1,
+      "walkSpeed" : 3, //8
+      "runSpeed" : 3,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 250	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 1
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 200
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 90000 //50000 (reminder that the actual HP is 40% of this value).
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "gic_ammo_replicatorBlock" : {
+          "baseValue" : 1
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+	  
+      "gic_stunProtection" : {
+        "baseValue" : 1.0
+      },	  
+	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -4.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.95
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 1.0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 1.0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_magicshot_hailblast_haunt_stage2",
+  "image" : "gic_magicshot_hailblast_stage2.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "fullbright" : true,
+  "pointLight" : false,
+  "timeToLive" : 12,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact_muzzle.config"
+    }
+  ],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bulletshot", "gic_stun_1"],
+  "speed" : 30,
+  "damageKind" : "ice",
+  "damageType" : "IgnoresDef"
+}

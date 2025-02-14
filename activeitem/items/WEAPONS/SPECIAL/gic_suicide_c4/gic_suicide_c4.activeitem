@@ -1,0 +1,90 @@
+{
+  "itemName" : "gic_suicide_c4",
+  "price" : 0,
+  "inventoryIcon" : "gic_suicide_c4.png",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "What...",
+  "shortdescription" : "Immediate self-detonation.",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "Unique Explosive",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_suicide_c4.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/ranged/gic_heavymachinegun_muzzleflash.png"
+  },
+  "animationCustom" : {
+  
+    "sounds" : {
+    "fire" : {
+      "pool" : [ "/sfx/alerts/gic_lockbeep.ogg" ],
+      "rangeMultiplier" : 5.0
+    }
+   }
+	
+
+
+  },
+
+  "baseOffset" : [0.35, -0.0],
+  "muzzleOffset" : [1, 0.3],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "ews_explosive",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 1,
+    "baseDps" : 1400,
+    "energyUsage" : 180,
+    "inaccuracy" : 0.006,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "gic_uxo_mortar",
+    "projectileParameters" : {
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.1, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.1, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+  "aimOffset" : 0,
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_homingpin_pacifiermicrobullet_stage1",
+//  "renderLayer" : "Monster+10",
+  "bounces" : 0,
+  "image" : "gic_homingpin_pacifiermicrobullet_stage1.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [0, 0, 40],
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_homingpin_pacifiermicrobullet_stage2",
+      "inheritDamageFactor" : 1
+    }
+  ],
+  "power" : 10,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "maxSpeed" : 0.1,
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+
+//  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 0.1,
+  "acceleration" : 0,
+  "timeToLive" : 3,
+  "physics" : "gic_swarmer_pacifiermicrobullet_drop",
+  
+  "rotationRate" : 4,
+  "trackingLimit" : 300
+}

@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_pericarpyx_infection_spawn_husk",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_pericarpyx_infection_spawn_husk.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 3,
+  "timeToLive" : 0,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_blood_explosion",
+      "angle" : 0
+    },	
+	
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_afflictedwalker_husk",
+     "level" : 1, //1
+     "offset": [0, 0],
+     "arguments" : { "damageTeam" : 2, "persistent" : true }
+    }
+
+  ]
+}

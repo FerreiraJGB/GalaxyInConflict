@@ -1,0 +1,34 @@
+{
+  "itemName" : "gic_accelerated_pericarpyx_pack",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_accelerated_pericarpyx_pack.png",
+  
+  "itemTags" : ["gic_syringerifle_ammo"],
+  
+  "maxStack" : 4,
+  "description" : "Pericarpyx kept at its most active growth state. Those afflicted by the parasite within this pack are immediately accelerated to Stage 5 Pericarpyx Infection, immediately converting the host. On death, those afflicted will resurrect as a mutant.
+  
+^red;- Afflicts Pericarpyx Infection at Stage 4.",
+
+  "shortdescription" : "^orange;Accelerated Pericarpyx",
+  "effects" : [ [
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 2
+      },
+	  
+      {
+        "effect" : "gic_pericarpyx_infection_stage5"
+      }
+	  
+	  
+	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_bandage_use" ],
+  "blockingEffects" : [
+  ]
+}

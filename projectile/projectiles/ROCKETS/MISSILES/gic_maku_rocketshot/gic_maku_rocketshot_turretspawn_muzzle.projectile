@@ -1,0 +1,38 @@
+{
+  "projectileName" : "gic_maku_rocketshot_turretspawn_muzzle",
+  "image" : "gic_maku_rocketshot_muzzle.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : true,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnTimeout" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "inheritDamageFactor" : 1
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_maku_rocketshot_turretspawn",
+      "inheritDamageFactor" : 1
+    }
+  ],
+  
+  "actionOnCollide" : [
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

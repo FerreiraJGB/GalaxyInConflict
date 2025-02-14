@@ -1,0 +1,34 @@
+{
+  "itemName" : "gic_armor_chainarmor",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Armor Plating^reset;",
+  "inventoryIcon" : "gic_armor_chainarmor.png",
+  "maxStack" : 1,  
+  "description" :
+
+"Chainmail armor of thin interlinking rings of steel fitted into a modern ballistic plate frame. Seemingly popular due to its ease of crafting (albeit time-consuming), respectable damage absorption, and light weight. Utterly useless when compared to actual purpose-built armors.
+
+^green;+5% SMALL-ARMS Resistance.^reset;
+^green;+20% MELEE and PHYSICAL Resistance.^reset;",
+
+
+
+  
+  
+  
+  "shortdescription" : "Contemporary Chain Armor Plate",
+
+  "augment" : {
+    "type" : "gic_basicchest",
+    "name" : "gic_armor_chainarmor",
+    "displayName" : "Contemporary Chain Armor Plating",
+    "displayIcon" : "/items/augments/basic/chest/gic_armor_chainarmor.png",
+    "effects" : [ {"stat" : "ews_smallarmsResistance", "amount" : 0.05}, {"stat" : "ews_meleeResistance", "amount" : 0.20}, {"stat" : "physicalResistance", "amount" : 0.20}, "gic_armor_chainarmor", "gic_parryshield_chainmail_hit" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_armorplate_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

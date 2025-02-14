@@ -1,0 +1,2296 @@
+{
+  "type" : "gic_guardianofnod",
+  "shortdescription" : "[Guardian of Nod]",
+  "description" : "This stench... Smells like you, stranger.",
+
+  "categories" : [ "gic_guardianofnod" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_guardianofnod.animation",
+
+  "dropPools" : ["gic_guardianofnodTreasure"], //{ "default" : "banditTreasure", "bow" : "banditTreasure" }
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster_phases_music_laststand_adaptive.lua"
+    ],
+	
+	
+	
+	//ADAPTIVE HEALTH STUFF
+	"adaptiveTrackingRange" : 130, //should be range in blocks
+	"adaptiveHealthBonus" : 7875, //flat max health stat
+	
+	//EXTRA DROP POOLS, DROPS ONE LOOT POOL PER EXTRA PLAYER
+	"extraDropPools" : ["gic_guardianofnodTreasure"],
+	
+	
+	
+	"music" : ["/music/DarkSouls2/gic_darksouls2_thepursuer.ogg"],
+  
+	"range" : 120,			//measured in blocks, default val is 50 blocks
+	"fadeOutTime" : 2.0,	//measured in seconds, default val is 2.0 seconds
+	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+	
+	
+	//LAST STAND MUSIC
+	"finalStandThreshold" : 0.4, 	//when health % reaches this value, music played will be permanently swapped to this. may code in last stand regression later?
+	"finalStandMusic" : ["/music/DarkSouls3/gic_darksouls3_iudexgundyr_remastered.ogg"],
+	
+	
+    "damageBar" : "Special",
+    "deathBehavior" : "monster-death",
+    "behavior" : "monster",
+
+    "seeThroughLiquid" : false,
+	
+	
+	
+	//dialogue stuff
+	"chatPortrait" : "/interface/chatbubbles/gic_static.png:0",
+    "dialog" : {
+	
+	
+	
+      "tutorial_introduce" : {
+        "default" : {
+          "default" : [
+            "Ah, another dogged contender. Welcome, ashen wanderer."
+          ]
+        }
+      },
+	  
+      "tutorial_phase1" : {
+        "default" : {
+          "default" : [
+            "Very well then. Here, weapons. You won't be killing warriors with childlike energy weapons."
+          ]
+        }
+      },
+	  
+      "tutorial_phase1_fundamentals" : {
+        "default" : {
+          "default" : [
+            "Parrying. You will learn how to parry."
+          ]
+        }
+      },
+	  
+      "tutorial_phase1_blocking" : {
+        "default" : {
+          "default" : [
+            "Parrying is not the same as blocking. Blocking is what happens when you fail a parry."
+          ]
+        }
+      },
+	  
+      "tutorial_phase1_weapons" : {
+        "default" : {
+          "default" : [
+            "Weapons. Each has its advantages. Understand them. Know them."
+          ]
+        }
+      },
+	  
+      "tutorial_phase1_armor" : {
+        "default" : {
+          "default" : [
+            "Armor. Pay attention to their effects."
+          ]
+        }
+      },
+	  
+      "tutorial_phase1_battle" : {
+        "default" : {
+          "default" : [
+            "Now, let us begin. I will start off with some basics. Practice parrying and attacking. Come, then."
+          ]
+        }
+      },
+	  
+      "tutorial_phase2_advance" : {
+        "default" : {
+          "default" : [
+            "I will introduce an overhead strike. ''Punish'' and attack after my overhead swings to deal damage."
+          ]
+        }
+      },	
+	  
+	  
+	  
+	  
+
+      "tutorial_phase3_advance" : {
+        "default" : {
+          "default" : [
+            "I will introduce ''combos'' to my pattern. Attack after the combo."
+          ]
+        }
+      },
+
+
+
+
+
+
+
+
+
+      "tutorial_phase4_advance" : {
+        "default" : {
+          "default" : [
+            "I'll now bring forth two more attack types: Ranged and Perilous."
+          ]
+        }
+      },
+	  
+	 
+      "tutorial_phase4_advance_2" : {
+        "default" : {
+          "default" : [
+            "Both of these are like any other attacks, but demand something different from you."
+          ]
+        }
+      },
+	  
+
+      "tutorial_phase4_ranged" : {
+        "default" : {
+          "default" : [
+            "Ranged attacks are a response to distance. Act accordingly."
+          ]
+        }
+      },
+	  
+      "tutorial_phase4_rangedcrouch" : {
+        "default" : {
+          "default" : [
+            "Duck and cover may be true for some, but not all."
+          ]
+        }
+      },
+	  	  
+      "tutorial_phase4_perilous" : {
+        "default" : {
+          "default" : [
+            "Perilous attacks, stuns, heavies, ailments- These are things that will not be parried."
+          ]
+        }
+      },	
+
+      "tutorial_phase4_perilous_2" : {
+        "default" : {
+          "default" : [
+            "Sometimes you must dodge, instead of parrying."
+          ]
+        }
+      },		  
+	  
+      "tutorial_phase4_battle" : {
+        "default" : {
+          "default" : [
+            "Stay in range, and stay out of the way of Perilous attacks. Fight!"
+          ]
+        }
+      },	  	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+      "tutorial_phase5_advance" : {
+        "default" : {
+          "default" : [
+            "I will now combine all previous attacks into one moveset. Practice as needed."
+          ]
+        }
+      },	  
+	  
+      "tutorial_phase5_advance_2" : {
+        "default" : {
+          "default" : [
+            "Mark my words, Ashen Wanderer. You remain among the accursed. Fight!"
+          ]
+        }
+      },		  
+	  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      "tutorial_phase6_advance" : {
+        "default" : {
+          "default" : [
+            "This spot marks our grave, but you may rest here too, if you like."
+          ]
+        }
+      },	
+
+
+
+	  
+	  	  
+	  
+      "tutorial_phase6_insult" : {
+        "default" : {
+          "default" : [
+            "Come on! I'm already dead! Hit me, damn it! HIT ME!"
+          ]
+        }
+      },	
+
+
+      "tutorial_phase6_adapt" : {
+        "default" : {
+          "default" : [
+            "Prove yourself capable! Let power course through you!"
+          ]
+        }
+      },		  
+	  
+	  
+      "death" : {
+        "default" : {
+          "default" : [
+            "That'll do."
+          ]
+        }
+      }
+	  
+	  
+	  
+    },
+		
+	
+	
+	
+	
+	"phaseTriggerCount" : 5, //how many indices should the monster consider for phases
+	"healthThresholdTriggers" : [0.9, 0.8, 0.7, 0.6, 0.4], //determines health threshhold for phase trigger [0.66,0.33]
+	"regressPhases" : false, //if enabled, monster will regress to its prior phase if the monster's health increases above its current threshold.
+	
+	"phaseTriggerIds" : ["behaviorConfigInjured1", "behaviorConfigInjured2", "behaviorConfigInjured3", "behaviorConfigInjured4", "behaviorConfigInjured5"], //configs to correspond to once the corresponding healthThresholdTrigger has been reached. ["behaviorConfigInjured1","behaviorConfigInjured2"]
+	//configs correspond to healthThresholdTriggers via index, ie index 1 of healthThresholdTrigger corresponds to index 1 of phaseTrigger	
+	
+	
+	
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 250,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 250,
+      "targetOutOfSightTime" : 50,
+
+      "damageTakenActions" : [
+      ],
+	  
+      "foundTargetActions" : [
+	  
+	  
+	  
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : 9999,
+          "parameters" : {
+            "windupTime" : 0.1,
+            "windupState" : "talk",
+            "winddownTime" : 0.1,
+            "winddownState" : "weaponrecovery",
+
+            "invulnerableTime" : 63, //53 - 58
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+			
+			
+			
+				//dialogue
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_introduce",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 5, //7
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase1",
+						"dialogTarget": false
+					}
+				},
+				
+				
+				
+				{
+					"name" : "action-fire",
+					"cooldown" : 999,
+					"parameters" : {
+						"requireLineOfSight" : true,
+						"maximumRange" : 999,
+						"minimumRange" : 0,
+						"windupStopForce" : 10,
+						"windupState" : "",
+						"windupTime" : 0.1,
+						"projectileCount" : 1,
+						"fireDelay" : 0.0,
+						"projectileInterval" : 0,
+						"inaccuracy" : 0.0,
+						"projectileType" : "gic_null",
+						"projectileParameters" : {
+							"speed" : 0,
+							"timeToLive" : 0.2,
+							"actionOnReap": [
+								{
+									"action" : "projectile",
+									"type" : "gic_guardianofnod_thrownsupplyweapons_3types"
+								}
+							]
+						},
+						"fireOffsets" : [[-2.0, -2.0]],
+						"aimAtTarget" : false,
+						"onGround" : false,
+						"fireState" : "throwweapons",
+						"fireSound" : "",
+						"aimDirection" : [1, 1],
+						"winddownState" : "",
+						"winddownTime" : 10.0
+					}
+				},
+				
+				
+
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase1_fundamentals",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase1_blocking",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase1_weapons",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase1_armor",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase1_battle",
+						"dialogTarget": false
+					}
+				}
+				
+				
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+		
+		
+		
+      ],
+
+      "hostileActions" : [
+	  
+
+	  
+	  
+	  
+	  
+	  //Close Range - Thrust Jab
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 15, //7
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 1.5,
+          "winddownState" : ""
+        }
+      }
+	  
+	  
+	 
+
+
+
+	
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "approachActions" : [
+      ],
+
+      "followActions" : [
+      ],
+	  
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_guardianofnod_leavevector",
+            "projectileParameters" : {
+            },
+            "aimDirection" : [0, 5],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        },
+		
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_uxo_mortar",
+            "projectileParameters" : {
+              "power" : 0,
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],	
+
+      "wanderActions" : [
+      ]
+    },
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+    "behaviorConfigInjured1" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 250,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 250,
+      "targetOutOfSightTime" : 50,
+
+      "damageTakenActions" : [
+      ],
+	  
+      "foundTargetActions" : [
+	  
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : 9999,
+          "parameters" : {
+            "windupTime" : 0.1,
+            "windupState" : "talk",
+            "winddownTime" : 0.1,
+            "winddownState" : "weaponrecovery",
+
+            "invulnerableTime" : 7,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+			
+			
+			
+				//dialogue
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase2_advance",
+						"dialogTarget": false
+					}
+				}
+				
+				
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+      ],
+
+      "hostileActions" : [
+	  
+
+	  
+	  //Close Range - Overhead Strike
+       {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "maximumRange" : 15, //7
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "chargedoverhead",
+          "windupState" : "chargedoverheadwindup",
+          "winddownTime" : 3.00,
+          "winddownState" : ""
+        }
+      },	  
+	  
+	  
+	  //Close Range - Thrust Jab
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 15, //7
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      }
+	  
+	  
+
+	  	  
+	 
+
+
+
+	
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "approachActions" : [
+      ],
+
+      "followActions" : [
+      ],
+	  
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_guardianofnod_leavevector",
+            "projectileParameters" : {
+            },
+            "aimDirection" : [0, 5],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        },
+		
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_uxo_mortar",
+            "projectileParameters" : {
+              "power" : 0,
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],	
+
+      "wanderActions" : [
+      ]
+    },
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+    "behaviorConfigInjured2" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 250,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 250,
+      "targetOutOfSightTime" : 50,
+
+      "damageTakenActions" : [
+      ],
+	  
+      "foundTargetActions" : [
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : 9999,
+          "parameters" : {
+            "windupTime" : 0.1,
+            "windupState" : "talk",
+            "winddownTime" : 0.1,
+            "winddownState" : "weaponrecovery",
+
+            "invulnerableTime" : 4.0,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+			
+			
+			
+				//dialogue
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase3_advance",
+						"dialogTarget": false
+					}
+				}
+				
+				
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+      ],
+
+      "hostileActions" : [
+	  
+
+
+
+//Thrust-Overhead Combo - Light, Light, Heavy
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 2,
+		  "parameters" : {
+			"maximumRange" : 10,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "weaponrecovery",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  
+	  //Close Range - Thrust Jab
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  //Close Range - Thrust Jab
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  //Close Range - Overhead Strike
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "overhead",
+          "windupState" : "overheadwindup",
+          "winddownTime" : 1.5,
+          "winddownState" : ""
+        }
+      }  
+	  
+	  
+
+				
+				
+				
+			]
+		  }
+		}
+
+	  
+	
+	  	  
+	 
+
+
+
+	
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "approachActions" : [
+      ],
+
+      "followActions" : [
+      ],
+
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_guardianofnod_leavevector",
+            "projectileParameters" : {
+            },
+            "aimDirection" : [0, 5],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        },
+		
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_uxo_mortar",
+            "projectileParameters" : {
+              "power" : 0,
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],	
+
+      "wanderActions" : [
+      ]
+    },
+	
+
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+    "behaviorConfigInjured3" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 250,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 250,
+      "targetOutOfSightTime" : 50,
+
+      "damageTakenActions" : [
+      ],
+	  
+      "foundTargetActions" : [
+	  
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : 9999,
+          "parameters" : {
+            "windupTime" : 0.1,
+            "windupState" : "talk",
+            "winddownTime" : 0.1,
+            "winddownState" : "weaponrecovery",
+
+            "invulnerableTime" : 49,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+			
+			
+			
+				//dialogue
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase4_advance",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase4_advance_2",
+						"dialogTarget": false
+					}
+				},
+
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase4_ranged",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase4_rangedcrouch",
+						"dialogTarget": false
+					}
+				},					
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase4_perilous",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase4_perilous_2",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase4_battle",
+						"dialogTarget": false
+					}
+				}
+				
+				
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+		
+      ],
+
+      "hostileActions" : [
+	  
+
+
+
+
+	  //Close Range - Perilous Stab
+       {
+        "name" : "action-charge",
+        "cooldown" : 1.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "stab",
+          "windupState" : "stabwindup",
+          "winddownTime" : 1.5,
+          "winddownState" : ""
+        }
+      },
+
+
+
+	  //Mid-ranged - Knife - Apply pressure.
+       {
+          "name" : "action-fire",
+          "cooldown" : 2,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 80,
+            "minimumRange" : 10,
+            "windupStopForce" : 10,
+            "windupState" : "throwwindup",
+            "windupTime" : 0.35,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_magicshot_knife_fanofknives_stage2_sicario", //meleeslash
+            "projectileParameters" : {
+              "speed" : 90, //80
+              "timeToLive" : 8.0,
+			  "power" : 10,
+			  "knockback" : 10,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 0.2]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "throw",
+            "fireSound" : "",
+//            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 0.5
+          }
+        }	  	  
+	 
+
+
+
+	
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "approachActions" : [
+
+      ],
+
+      "followActions" : [
+
+      ],
+
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_guardianofnod_leavevector",
+            "projectileParameters" : {
+            },
+            "aimDirection" : [0, 5],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        },
+		
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_uxo_mortar",
+            "projectileParameters" : {
+              "power" : 0,
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],	
+
+      "wanderActions" : [
+      ]
+    },
+	
+
+		
+		
+	
+	
+	
+	
+
+	
+
+	
+    "behaviorConfigInjured4" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 250,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 250,
+      "targetOutOfSightTime" : 50,
+
+      "damageTakenActions" : [
+      ],
+	  
+      "foundTargetActions" : [
+	  
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : 9999,
+          "parameters" : {
+            "windupTime" : 0.1,
+            "windupState" : "talk",
+            "winddownTime" : 0.1,
+            "winddownState" : "weaponrecovery",
+
+            "invulnerableTime" : 14,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+			
+			
+			
+				//dialogue
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase5_advance",
+						"dialogTarget": false
+					}
+				},
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase5_advance_2",
+						"dialogTarget": false
+					}
+				}
+				
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+		
+      ],
+
+      "hostileActions" : [
+	  
+
+
+
+
+
+
+//Thrust-Overhead Combo - Light, Light, Heavy
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 15,
+		  "parameters" : {
+			"maximumRange" : 10,
+			"minimumRange" : 0,
+			
+			"windupState": "idle",
+			"winddownState": "weaponrecovery",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  
+	  //Close Range - Thrust Jab
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  //Close Range - Thrust Jab
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+	  
+	  
+	  //Close Range - Overhead Strike
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "overhead",
+          "windupState" : "overheadwindup",
+          "winddownTime" : 2.0,
+          "winddownState" : ""
+        }
+      }  
+	  
+	  
+
+				
+				
+				
+			]
+		  }
+		},
+
+
+
+
+	  //Close Range - Perilous Stab
+       {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "maximumRange" : 9,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "stab",
+          "windupState" : "stabwindup",
+          "winddownTime" : 1.5,
+          "winddownState" : ""
+        }
+      },
+
+
+
+	  //Mid-ranged - Knife - Apply pressure.
+       {
+          "name" : "action-fire",
+          "cooldown" : 4,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 80,
+            "minimumRange" : 10,
+            "windupStopForce" : 10,
+            "windupState" : "throwwindup",
+            "windupTime" : 0.35,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_magicshot_knife_fanofknives_stage2_sicario", //meleeslash
+            "projectileParameters" : {
+              "speed" : 90, //80
+              "timeToLive" : 8.0,
+			  "power" : 10,
+			  "knockback" : 10,			  
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[0, 0.2]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "throw",
+            "fireSound" : "",
+//            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 0.5
+          }
+        },
+
+
+	 
+	  //Close Range - Overhead Strike
+       {
+        "name" : "action-charge",
+        "cooldown" : 6.0,
+        "parameters" : {
+          "maximumRange" : 15, //7
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0, //200
+          "chargeControlForce" : 0, //800
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "chargedoverhead",
+          "windupState" : "chargedoverheadwindup",
+          "winddownTime" : 2.00,
+          "winddownState" : ""
+        }
+      }
+	  
+
+
+	
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "approachActions" : [
+      ],
+
+      "followActions" : [
+      ],
+	  
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_guardianofnod_leavevector",
+            "projectileParameters" : {
+            },
+            "aimDirection" : [0, 5],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        },
+		
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_uxo_mortar",
+            "projectileParameters" : {
+              "power" : 0,
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],	
+
+      "wanderActions" : [
+      ]
+    },
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+    "behaviorConfigInjured5" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 250,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 250,
+      "targetOutOfSightTime" : 50,
+
+      "damageTakenActions" : [
+      ],
+	  
+      "foundTargetActions" : [
+	  
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : 9999,
+          "parameters" : {
+            "windupTime" : 0.1,
+            "windupState" : "talk",
+            "winddownTime" : 4,
+            "winddownState" : "aggro_truebattle",
+
+            "invulnerableTime" : 7,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+			
+			
+			
+				//dialogue
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.tutorial_phase6_advance",
+						"dialogTarget": false
+					}
+				}
+				
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+		
+      ],
+
+      "hostileActions" : [
+	  
+
+//Dashing Thrust Gun
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : [5,15],
+		  "parameters" : {
+			"maximumRange" : 100,
+			"minimumRange" : 20,
+			
+			"windupState": "walk",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  
+	  //Close Range - Dash Gun Setup
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 100,
+          "minimumRange" : 20,
+          "windupTime" : 0.05,
+          "chargeTime" : 0.5, //0.150
+          "chargeSpeed" : 18,
+          "chargeControlForce" : 1600,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "float_dashgunwindup",
+          "windupState" : "",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Mid-ranged - Dash Gun Fire
+       {
+          "name" : "action-fire",
+          "cooldown" : 0,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "",
+            "windupTime" : 0.35,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_handcannon_a_jiangshi", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 70,
+			  "knockback" : 15,			  
+              "damageKind" : "ews_smallarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ ]	
+			  
+            },
+            "fireOffsets" : [[3.5, 0.05]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "float_dashgunfire",
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 2.0
+          }
+        },
+		
+	  //Close Range - Overhead Strike Gun Lance
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 200,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 0,
+          "chargeControlForce" : 0,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "float_overhead",
+          "windupState" : "",
+          "winddownTime" : 3.00,
+          "winddownState" : ""
+        }
+      }  
+				
+			]
+		  }
+		},
+	 
+
+
+
+//Thrust Combo - Light, Light, Light
+		{
+		  "name" : "action-gic_chainactions",
+		  "cooldown" : 12,
+		  "parameters" : {
+			"maximumRange" : 10,
+			"minimumRange" : 0,
+			
+			"windupState": "walk",
+			"winddownState": "",
+			"windupTime": 0.0,
+			"winddownTime": 0.0,
+			
+			"chainActions": [
+		
+	  
+	  //Close Range - Thrust Jab
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 100,
+          "chargeControlForce" : 400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "float_thrust",
+          "windupState" : "float_thrustwindup",
+          "winddownTime" : 0.33,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Close Range - Thrust Jab
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 20,
+          "minimumRange" : 0,
+          "windupTime" : 0.33,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 100,
+          "chargeControlForce" : 400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "float_thrust",
+          "windupState" : "float_thrustwindup",
+          "winddownTime" : 0.33,
+          "winddownState" : ""
+        }
+      },
+				
+	  //Close Range - Thrust Jab
+       {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 0,
+          "windupTime" : 0.33,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 100,
+          "chargeControlForce" : 400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "float_thrust",
+          "windupState" : "float_thrustwindup",
+          "winddownTime" : 2.0,
+          "winddownState" : ""
+        }
+      }			
+				
+			]
+		  }
+		},
+
+
+
+
+	  //Close Range - Floating Perilous Stab
+       {
+        "name" : "action-charge",
+        "cooldown" : 8.0,
+        "parameters" : {
+          "maximumRange" : 9,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : 100,
+          "chargeControlForce" : 100,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "float_stab",
+          "windupState" : "float_stabwindup",
+          "winddownTime" : 1.5,
+          "winddownState" : ""
+        }
+      },
+
+
+
+
+	 
+	  //Close Range - Overhead Strike
+       {
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 8,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.150
+          "chargeSpeed" : -200,
+          "chargeControlForce" : 1900, //1600
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "float_overhead",
+          "windupState" : "float_overheadwindup",
+          "winddownTime" : 1.00,
+          "winddownState" : ""
+        }
+      }  
+	  
+	  
+
+
+
+	
+      ],
+
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "walk",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "approachActions" : [
+		
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "walk",
+            "fallState": "walk",
+            "moveState": "walk",
+            "run": true,
+            "idleState": "walk"
+          }
+        }
+		
+		
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10,
+            "jumpState": "walk",
+            "fallState": "walk",
+            "moveState": "walk",
+            "run": true,
+            "idleState": "walk"
+          }
+        }
+      ],
+
+	  
+
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_guardianofnod_leavevector",
+            "projectileParameters" : {
+            },
+            "aimDirection" : [0, 5],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        },
+		
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_uxo_mortar",
+            "projectileParameters" : {
+              "power" : 0,
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],	
+	  
+      "wanderActions" : [
+      ]
+    },
+	
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    "damageParts" : { //For all moving attacks.
+      "body" : {
+        "damage" : 15,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.3, //0.25
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 5,
+        "statusEffects" : [ ]
+      },
+	  "stabDamage" : { //Shield Bash
+		"damage" : 40,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.3,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 10,
+        "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_stun_3" ], // "gic_stun_1"
+        "damageRepeatGroup": ""
+	  }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.05], [0.5, -2.05], [0.5, 2.0], [-0.5, 2.0] ],
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.05,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.75], [-0.35, -2.05], [0.35, -2.05], [0.75, -1.75], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ], 
+
+      "mass" : 1,
+      "walkSpeed" : 14,
+      "runSpeed" : 14,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 2.0,
+    "knockoutAnimationStates" : {
+      "damage" : "leave"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200,	//if received damage reaches above this number, damage will be reset to this value.
+		"damageAllow" : "ews_melee"	//only this damage type will deal any damage to the entity
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap_immune.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 1
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 50
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 35000 //40000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "gic_boss_statidentifier" : {
+        "baseValue" : 0.0
+      },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -3.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

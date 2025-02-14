@@ -1,0 +1,22 @@
+{
+  "projectileName" : "gic_unbranded_instability_shrapnel",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "physics" : "gic_shrapnelfall",
+  "image" : "gic_unbranded_instability_shrapnel.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 1,
+  "power" : 50,
+  "speed" : 150,
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact_small/gic_energyimpact_small.config"
+    }
+  ],
+  "damageKind" : "ews_smallarms",
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot", {"effect":"gic_boss_melee_primer","duration":20} ],
+  "damageType" : "ignoresdef",
+  "damageTeam" : { "type" : "indiscriminate" }
+}

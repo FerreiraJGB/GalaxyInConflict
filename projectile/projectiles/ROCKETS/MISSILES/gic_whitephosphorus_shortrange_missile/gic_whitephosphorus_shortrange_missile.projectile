@@ -1,0 +1,146 @@
+{
+  "projectileName" : "gic_whitephosphorus_shortrange_missile",
+
+  "bounces" : 0,
+  "image" : "gic_whitephosphorus_shortrange_missile.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_whitephosphorus_shrapnel",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_whitephosphorus_shrapnel",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_whitephosphorus_shrapnel",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_whitephosphorus_shrapnel",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_whitephosphorus_shrapnel",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_whitephosphorus_shrapnel",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_whitephosphorus_shrapnel",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_whitephosphorus_shrapnel",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_whitephosphorus_shrapnel",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.2,
+      "fuzzAngle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 180,
+      "directional" : "true"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 45,
+      "directional" : "true"
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_missile_thrustertrail/trail.png",
+        "position" : [-1, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "position" : [-1, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+  
+  "power" : 4000,
+  "damageKind" : "ews_explosive",
+  "damageType" : "ignoresdef",
+
+  "maxSpeed" : 200,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 30.0,
+  "acceleration" : 200,
+  "timeToLive" : 2,
+  "physics" : "gic_cannonfall",
+  
+  "rotationRate" : 0.2,
+  "trackingLimit" : 1
+}

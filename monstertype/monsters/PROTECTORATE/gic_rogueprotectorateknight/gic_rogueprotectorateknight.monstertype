@@ -1,0 +1,654 @@
+{
+  "type" : "gic_rogueprotectorateknight",
+  "shortdescription" : "[RogueProtectorate Knight]",
+  "description" : "Knights of old.",
+
+  "categories" : [ "gic_rogueprotectorateknight" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_rogueprotectorateknight.animation",
+
+  "dropPools" : ["gic_rogueprotectorateknightTreasure"], //{ "default" : "banditTreasure", "bow" : "banditTreasure" }
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster.lua"
+    ],
+	
+
+	
+//    "damageBar" : "None",
+
+    "behavior" : "monster",
+
+    "seeThroughLiquid" : false,
+	
+	
+	
+	
+	
+	
+
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 120,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 90,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro",
+            "animationTime" : 5
+          }
+        }
+      ],
+
+      "hostileActions" : [
+	  
+	  
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 15.0,
+        "parameters" : {
+          "maximumRange" : 4,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+//         "power" : 300,
+          "chargeTime" : 0.2,
+          "chargeSpeed" : -4800, //18
+          "chargeControlForce" : 600, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "backdash",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      },		 
+	  
+	  //Spear Stab
+      {
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 15,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 600,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : "thrustwinddown"
+        }
+      },
+	  
+	  
+	  
+	  
+
+	  
+
+
+	  //Double Slash
+      {
+        "name" : "action-charge",
+        "cooldown" : 9.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 1,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 800,
+          "chargeControlForce" : 600,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "downslash",
+          "windupState" : "downslashwindup",
+          "winddownTime" : 1.5,
+          "winddownState" : ""
+        }
+      },
+	  
+	 
+	  	
+	  //Two-Handed Spear Charge
+      {
+        "name" : "action-charge",
+        "cooldown" : 16.0,
+        "parameters" : {
+          "maximumRange" : 50, //18
+          "minimumRange" : 15, //13
+          "windupTime" : 3.0,
+          "chargeTime" : 0.15, //0.15
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 2400,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "twohandcharge",
+          "windupState" : "shieldstow",
+          "winddownTime" : 2.0,
+          "winddownState" : "" //use regular chargewindown when phases get added
+        }
+      },	  
+	  
+
+	
+	
+	//Overhead Swing
+	
+       {
+          "name" : "action-fire",
+          "cooldown" : 2,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 10,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "overheadswingwindup",
+            "windupTime" : 0.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.1,
+            "projectileInterval" : 0.4,
+            "inaccuracy" : 0,
+            "projectileType" : "hugemeleeslash", //meleeslash
+            "projectileParameters" : {
+              "speed" : 90,
+              "timeToLive" : 0.055,
+			  "power" : 120,
+			  "knockback" : 30,
+              "damageKind" : "ews_melee",
+              "damageType" : "IgnoresDef"
+//              "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_stun_3", "gic_energynullification_3", "gic_attackpowernullification_3" ]	  
+            },
+            "fireOffsets" : [[0.5, 0.2]],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireState" : "overheadswing",
+            "fireSound" : "overheadswing",
+            "aimDirection" : [0, 0],
+            "winddownState" : "",
+            "winddownTime" : 1.25
+          }
+        },		
+		
+		
+		
+	  //Spear Charge
+      {
+        "name" : "action-charge",
+        "cooldown" : 7.0,
+        "parameters" : {
+          "maximumRange" : 30, //18
+          "minimumRange" : 15, //13
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1, //0.15
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 1200,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "heavythrust",
+          "windupState" : "heavythrustwindup",
+          "winddownTime" : 1.5,
+          "winddownState" : "thrustwinddown" //use regular chargewindown when phases get added
+        }
+      },
+	
+		
+		
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 20,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+//         "power" : 300,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : -4800, //18
+          "chargeControlForce" : 500, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "backdash",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      }	  
+		
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+
+
+
+      "periodicActions" : [
+      ],
+
+      "damageTakenActions" : [
+        {
+          "name" : "action-invulnerable",
+          "cooldown" : 20.0,
+          "parameters" : {
+            "windupTime" : 0.05,
+            "windupState" : "idle",
+            "winddownTime" : 0.05,
+            "winddownState" : "",
+
+            "invulnerableTime" : 1.0,
+
+            "invulnerableState": "shieldbashwindup",
+            "invulnerableActions": [],
+            "invulnerableEffect": "gic_parryshield_greatshield"
+			
+          }
+        }
+      ],
+
+
+
+
+
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+
+	
+	
+	
+	
+	
+
+    "damageParts" : { //Regular Attacks
+      "body" : {
+        "damage" : 150,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.25,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 10,
+        "statusEffects" : [ ]
+      },
+	  "shieldbashDamage" : { //Shield Bash
+		"damage" : 40,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.25,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 30,
+        "statusEffects" : [ "gic_stun_1" ],
+        "damageRepeatGroup": ""
+	  },
+	  "twohandchargeDamage" : { //Extreme attack
+		"damage" : 400,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.25,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 30,
+        "statusEffects" : [ "gic_stun_1", "gic_stun_2" ],
+        "damageRepeatGroup": ""
+	  }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.15], [0.5, -2.15], [0.5, 2.0], [-0.5, 2.0] ], // [-0.5, -2.15], [0.5, -2.15], [0.5, 2.6], [-0.5, 2.6],    [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375] 
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.07,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.75], [-0.35, -2.05], [0.35, -2.05], [0.75, -1.75], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ],                 //[ [-0.5, -2.15], [0.5, -2.15], [0.5, 1.8], [-0.5, 1.8],      [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375]  ], //1.8 > 2.0
+
+      "mass" : 1,
+      "walkSpeed" : 8,
+      "runSpeed" : 8,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 1
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 50
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 8000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -3.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

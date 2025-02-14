@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_crystalshot_energysphere",
+  "bounces" : -1,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_crystalshot_energysphere.png",
+  "animationCycle" : 0.5,
+  "timeToLive" : 15,
+  "frameNumber" : 1,
+  "power" : 100,
+  "speed" : 12,
+  "fullbright" : true,
+  "knockback" : 80,
+  "supportsProcessing" : true,
+  "renderLayer" : "Monster+10",
+  "damagePoly" : [ [-32, 0], [-22, -22], [0, -32], [22, -22], [32, 0], [22, 22], [0, 32], [-22, 22]  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    }
+  ],
+  "lightColor" : [100, 0, 0],
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef"
+}

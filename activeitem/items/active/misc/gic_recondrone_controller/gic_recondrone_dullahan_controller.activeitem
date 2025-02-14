@@ -1,0 +1,49 @@
+{
+  "itemName" : "gic_recondrone_dullahan_controller",
+  "level" : 1,
+  "price" : 0,
+  "rarity" : "Legendary",
+  "category" : "^#DBC5A6;Hi!",
+  "description" : "Summon a Dullahan Wisp to act as your eyes.
+^#DBC5A6;[MOUSE1] to spawn/despawn
+HOLD [SHIFT] to increase speed at the cost of handling
+[MOUSE2] to emit a terrain-detecting ping at the Wisp's location which can also detect neutral or hostile entities.^reset;",
+  
+  "shortdescription" : "Dullahan Wisp",
+  "twoHanded" : true,
+  "maxStack" : 1,
+  "itemTags" : [],
+
+  "animation" : "gic_recondrone_dullahan_controller.animation",
+  "scripts" : ["gic_recondrone_dullahan_controller.lua"],
+  
+  "animationScripts" : ["/items/active/misc/gic_recondrone_controller/gic_detector.lua"],
+  "animationDelta" : 5,
+  "pingDetectConfig" : {
+    "type" : "entity",
+    "image" : "/items/active/unsorted/oredetector/detectnoise.png:<variant>",
+    "variants" : 4,
+    "colors" : {
+      "empty" : [0, 180, 0, 255],
+      "solid" : [120, 160, 120, 50],
+	  "hostile" : [255,0,0,255],
+	  "neutral" : [255,255,0,255]
+    }
+  },
+
+  "pingRange" : 50,
+  "pingBandWidth" : 8,
+  "pingDuration" : 3.0,
+  "pingCooldown" : 0.5,
+  
+  
+  "tooltipKind" : "gic_largebase",
+
+  "boundingBox" : [-1, -1, 1, 1],
+  
+  "animationParts" : {
+    "controller" : "gic_recondrone_dullahan_controller.png"
+  },
+
+  "inventoryIcon" : "gic_recondrone_dullahan_controller_icon.png"
+}

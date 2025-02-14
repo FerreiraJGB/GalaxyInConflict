@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_summon_glitch_crusaderknight_stage2",
+  "physics" : "laser",
+  "actionOnReap" : [
+	
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_crusader_knight",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : { "damageTeam" : 30 }
+    }
+	
+  ],
+  "image" : "gic_summon_glitch_crusaderknight_stage2.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 3,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "orientationLocked" :true,
+  "power" : 70,
+  "speed" : 0,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "statusEffects" : [ ],
+  "timeToLive" : 0.22,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

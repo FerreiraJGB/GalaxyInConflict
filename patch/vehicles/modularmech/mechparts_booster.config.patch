@@ -1,0 +1,148 @@
+[
+
+	{
+		"op": "add",
+		"path": "/gic_void_booster",
+		"value": {
+    "stats" : {
+      "speed" : 40, //20
+      "control" : 3,
+      "mechMass": 1
+    },
+    "partParameters" : {},
+    "partImages" : {
+      "backBoosterBack" : "booster/gic_void_back_back.png",
+      "backBoosterFullbright" : "boosterflame/gic_simple_back.png",
+      "backBoosterFront" : "booster/gic_void_back_front.png",
+      "frontBoosterBack" : "booster/gic_void_front_back.png",
+      "frontBoosterFullbright" : "boosterflame/gic_simple_front.png",
+      "frontBoosterFront" : "booster/gic_void_front_front.png"
+    },
+    "defaultPrimaryColors" : ["e6e6e6", "b6b6b6", "7b7b7b", "373737"],
+    "defaultSecondaryColors" : ["9da8af", "676f83", "3d3d51", "24232f"],
+    "animationCustom" : {
+	
+	
+	
+      "animatedParts" : {
+	  
+    "stateTypes" : {
+      "boost" : {
+        "priority" : 1,
+        "default" : "idle",
+        "states" : {
+          "idle" : {},
+          "boostN" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_up_01_mech.ogg",
+              "immediateSoundRangeMultiplier" : 1.0,
+              "persistentSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_01_mech.wav",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.25
+            }
+          },
+          "boostNE" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_up_01_mech.ogg",
+              "immediateSoundRangeMultiplier" : 1.0,
+              "persistentSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_01_mech.wav",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.25
+            }
+          },
+          "boostE" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_up_01_mech.ogg",
+              "immediateSoundRangeMultiplier" : 1.0,
+              "persistentSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_01_mech.wav",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.25
+            }
+          },
+          "boostSE" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_up_01_mech.ogg",
+              "immediateSoundRangeMultiplier" : 1.0,
+              "persistentSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_01_mech.wav",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.25
+            }
+          },
+          "boostS" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_up_01_mech.ogg",
+              "immediateSoundRangeMultiplier" : 1.0,
+              "persistentSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_01_mech.wav",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.25
+            }
+          },
+          "boostSW" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_up_01_mech.ogg",
+              "immediateSoundRangeMultiplier" : 1.0,
+              "persistentSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_01_mech.wav",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.25
+            }
+          },
+          "boostW" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_up_01_mech.ogg",
+              "immediateSoundRangeMultiplier" : 1.0,
+              "persistentSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_01_mech.wav",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.25
+            }
+          },
+          "boostNW" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_up_01_mech.ogg",
+              "immediateSoundRangeMultiplier" : 1.0,
+              "persistentSound" : "/sfx/vehicles/gic_highfleet_engine_rocket_01_mech.wav",
+              "persistentSoundRangeMultiplier" : 1.0,
+              "persistentSoundStopTime" : 0.25
+            }
+          }
+        }
+      }
+    },	  
+	  
+	  
+	  "parts" : {
+        "frontBoosterFullbright" : { "properties" : {
+          "zLevel" : 10.5
+        }}
+      }
+	}
+	  
+	  
+	  
+    }
+  }
+	}
+]

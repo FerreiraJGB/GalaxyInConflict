@@ -1,0 +1,149 @@
+{
+  "metadata" : {
+    "name" : "gic_floranmountainbattlefield",
+    "species" : "floran",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_floranmountainbattlefield_upperpeak_capital"],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 15,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+	
+	
+
+	
+
+
+
+	
+
+	
+  //Upper Mountain
+
+
+
+
+    {
+      "name" : "gic_floranmountainbattlefield_upperpeak_capital",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_upperpeak_capital.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_floranmountainbattlefield_upperpeak_playerspawn",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_upperpeak_playerspawn.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_floranmountainbattlefield_upperpeak_residence",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_upperpeak_residence.json" ] ],
+      "chance" : 1
+    },
+	
+
+
+
+    {
+      "name" : "gic_floranmountainbattlefield_upperpeak_rightbridge",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+	    [ "doNotConnectToPart", [ "gic_floranmountainbattlefield_upperpeak_leftbridge"] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_upperpeak_rightbridge.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_floranmountainbattlefield_upperpeak_leftbridge",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+	    [ "doNotConnectToPart", [ "gic_floranmountainbattlefield_upperpeak_rightbridge"] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_upperpeak_leftbridge.json" ] ],
+      "chance" : 0
+    },
+	
+
+	
+	
+	
+	
+	//Battlefield Level
+    {
+      "name" : "gic_floranmountainbattlefield_battlefield_artillery",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_battlefield_artillery.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_floranmountainbattlefield_battlefield_radio",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_battlefield_radio.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_floranmountainbattlefield_battlefield_triage",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_battlefield_triage.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_floranmountainbattlefield_battlefield_watchtower",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_battlefield_watchtower.json" ] ],
+      "chance" : 1
+    },
+
+
+
+
+    {
+      "name" : "gic_floranmountainbattlefield_battlefield_leftend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_battlefield_leftend.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_floranmountainbattlefield_battlefield_rightend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_floranmountainbattlefield_battlefield_rightend.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

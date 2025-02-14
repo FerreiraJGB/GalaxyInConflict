@@ -1,0 +1,65 @@
+{
+  "itemName" : "gic_merc_combatshield",
+  "fixedLevel" : false,
+  "price" : 1200,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "shield",
+  "description" : "A lightweight shield with a confortable grip.",
+  "shortdescription" : "Compact Combat Shield",
+  "tooltipKind" : "gic_largebase_shield",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_merc_combatshield.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_merc_combatshield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.5, 1.5], [0.5, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/melee/sword_guard.ogg" ],
+      "perfectBlock" : [ "/sfx/melee/shield_block_metal_perfect.ogg" ],
+      "block" : [ "/sfx/melee/shield_block_metal.ogg" ],
+      "break" : [ "/sfx/melee/shield_break_metal.ogg" ]
+    }
+  },
+
+  "scripts" : ["gic_merc_combatshield.lua"],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 320,
+  "cooldownTime" : 0.4,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 0.2,
+
+  "knockback" : 50,
+  "damage" : 40,
+  "damageType" : "IgnoresDef",
+  "damageKind" : "ews_melee",
+  "damageRepeatTimeout" : 0.5,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

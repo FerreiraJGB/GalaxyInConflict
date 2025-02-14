@@ -1,0 +1,40 @@
+{
+  "itemName" : "gic_bootsofperfection",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Leg Trinket^reset;",
+  "inventoryIcon" : "gic_bootsofperfection.png",
+  "maxStack" : 1,    
+  "description" : 
+  
+"''Legend tells of a sniper so consumed by perfection that anything less was considered a complete failure.''
+
+The boots of a sniper so obsessed with accuracy that he would stake everything on stillness for the perfect shot. He died, never satisfied.
+
+^green;+40% [EWS] Hit Chance and Accuracy Multiplier.^reset;
+^red;-50% HP.^reset;",
+
+
+
+  "shortdescription" : "Boots of Perfection",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_bootsofperfection",
+    "displayName" : "Deserter's Boots",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_bootsofperfection.png",
+    "effects" : [
+	
+	"gic_maxhealthscalingboost_-50_bootsofperfection",
+
+{"stat" : "ews_misschance_mult", "amount" : -0.4},
+{"stat" : "ews_inaccuracy_mult", "amount" : -0.4}
+	
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_legwear_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

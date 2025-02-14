@@ -1,0 +1,49 @@
+{
+  "projectileName" : "gic_magicshot_bloodsword_stage1",
+  "image" : "gic_magicshot_bloodsword_appear.png",
+  "physics" : "bullet",
+  "animationCycle" : 2.05,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 5,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 2,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_bloodsword_stage2",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 0
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.1,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+  
+  "statusEffects" : [ ],
+  "power" : 50.0,
+  "speed" : 6,
+  "acceleration" : -2,
+  "knockback" : 10
+}

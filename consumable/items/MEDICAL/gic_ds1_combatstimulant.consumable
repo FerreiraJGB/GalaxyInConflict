@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_ds1_combatstimulant",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_ds1_combatstimulant.png",
+  "maxStack" : 10,
+  "description" : "These substances significantly improve the cognitive functions of Florans. Applied via injections into the... plantstream?
+
+^green;+10% EWS Hit Chance and Accuracy for 10 minutes.^white;
+
+^orange;Any other race:
+^red;Cardiac arrest.^white;",
+
+  "shortdescription" : "^yellow;DS-1 ''Dry Sap'' Combat Stimulant",
+  "effects" : [ [
+//      {
+//        "effect" : "gic_drysap_cardiacarrest",
+//        "duration" : 600 //20m
+//      },
+      {
+        "effect" : "gic_floran_drysap_boost",
+        "duration" : 600 //20m
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "bandageuse" ],
+  "blockingEffects" : [
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "projectileName" : "gic_ammoresupply_droppod_stage2_altrocket",
+  "physics" : "laser",
+  
+  
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "rangeMultiplier" : 4.0,
+      "options" : [
+        "/sfx/WorldAtWar/gic_naval_gun5.ogg"
+      ]
+    },  		
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_ammoresupply_droppod_stage3_altrocket",
+	  "fuzzAngle" : 5,
+      "angleAdjust" : 0
+    }
+  ],
+  
+  "periodicActions" : [
+  ],
+  
+  "image" : "gic_ammoresupply_droppod_stage2_altrocket.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+ 
+  
+  "damageKindImage" : "icon.png",
+  "power" : 0,
+  "speed" : 0,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 2,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

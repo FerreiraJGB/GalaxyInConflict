@@ -1,0 +1,46 @@
+{
+  "itemName" : "gic_aimco_flashlight",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Foregrip Attachment^white;",
+  "inventoryIcon" : "gic_aimco_flashlight_icon.png",
+  "description" : "Attachable underbarrel flashlight with tight field of view, making it suitable for aiming in dark areas whilst providing barely enough light for general visibility.
+  
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  "shortdescription" : "Aim-Co Flashlight Attachment",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_aimco_flashlight", //name of attachment
+	"attachmentTag" : ["gic_foregrip", "gic_underbarrel_flashlight","gic_aimco_flashlight"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/foregrip/gic_aimco_flashlight.png", //determines what image is displayed on the resulting gun
+		
+	"attachmentId" : "gic_aimco_flashlight", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "light",
+		"lightConfig" : {
+			"active" : true,
+			"offset" : [0.3, -0.1], //offset, not position. Position will be set by the main gun scripts
+			"transformationGroups" : ["weapon"],
+			"color" : [250, 250, 250],
+			"pointLight" : true,
+			"pointAngle" : 0.00,
+			"pointBeam" : 30
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

@@ -1,0 +1,63 @@
+{
+  "itemName" : "gic_soulspitter_bow",
+  "fixedLevel" : false,
+  "price" : 0,
+  "inventoryIcon" : "gic_soulspitter_bow_icon.png",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#D6484F;Occultist's Implement^reset;",
+  
+  "description" : "Ask any sorcerer, and they'll tell you that something must be used as a catalyst to channel otherworldly energies. While the particular ''rules'' are unclear, any item with personal or sentimental value should suffice. Such items could include common weapons like swords, spears, bows, and even firearms.
+^red;Energy regeneration is crippled while the bow is equipped.^reset;
+^yellow;Arcane Archery: Standard shots fire 3 split arrows at a consistent speed regardless of draw-length. Charged shots fire a singular, piercing, soul-arrow.^reset;",
+  
+  "shortdescription" : "Soul-Spitter",
+  
+  "twoHanded" : true,
+  "itemTags" : ["weapon", "ranged"],
+
+  "radioMessagesOnPickup" : [ "pickupbow" ],
+
+  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animationParts" : {
+    "bow" : "gic_soulspitter_bow.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "bow" : { "properties" : {
+      "offset" : [0.25, 0]
+    }}}},
+    "sounds" : {
+      "draw" : [ "/sfx/bow/gic_bloodborne_bow-stance1.wav" ],
+      "release" : [ "/sfx/bow/gic_bloodborne_bow-shot1.wav", "/sfx/bow/gic_bloodborne_bow-shot2.wav", "/sfx/bow/gic_bloodborne_bow-shot3.wav" ],
+      "perfectRelease" : [ "/sfx/melee/gic_bloodborne_magic-force23.wav" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/bow/bow.lua", "/abilities/weapons/gic_soulspitter_bow.lua"],
+  "scriptDelta" : 2,
+
+  "primaryAbilityType" : "bowshot",
+  "primaryAbility" : {
+  
+    "energyPerShot" : 90,
+  
+    "walkWhileFiring" : true,
+  
+    "cooldownTime" : 0.4,
+  
+    "fireOffset" : [-0.5, 0.1],
+  
+    "projectileType" : "gic_soul_arrow_3pattern",
+    "powerProjectileType" : "gic_soul_greatarrow",
+	
+    "powerProjectileTime" : [0.9, 1.1], //0.9, 1.1
+	
+    "projectileParameters" : {
+      "speed" : 100,
+      "power" : 40
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildbow.lua"
+}

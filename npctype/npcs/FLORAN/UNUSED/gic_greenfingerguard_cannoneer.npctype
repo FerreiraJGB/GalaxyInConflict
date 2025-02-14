@@ -1,0 +1,137 @@
+{
+  "type" : "gic_greenfingerguard_cannoneer",
+  "baseType" : "gic_greenfingerguard_base",
+
+  "dropPools" : [ "basicTreasure" ],
+  "damageTeam" : 18,
+  "persistent" : true,
+  
+  "scriptConfig" : {
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+    "reactions" : {
+      "spontaneous" : [
+//       [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+//        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+//        [5.0, "patrol"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:attack",
+      "reattack" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:reattack",
+      "killedTarget" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:killedTarget",
+      "lostTarget" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:lostTarget",
+      "outOfSight" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:outOfSight",
+      "cheerOn" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:cheerOn",
+      "cantReach" : "/dialog/floran/gic_primitivefloranvillagesurvivor_combat_intimidate.config:cantReach"
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "default" : [
+      [0, [
+		  
+		  //Samurai
+          {
+            "head" : [ { "name" : "gic_keffiyehhead", "parameters" : { "colorIndex" : [11] } } ],
+            "chest" : [ { "name" : "florantier6mchest", "parameters" : { "colorIndex" : [11] } } ],
+            "legs" : [ { "name" : "florantier6mpants", "parameters" : { "colorIndex" : [11] } } ],
+            "primary" : [
+              "gic_heavyhandcannon"
+            ]
+		  }
+		  
+        ] ]
+		
+
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 666.6666 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5 //0.5 for default. 0.1 effectively 20% of base damage
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0
+      },
+	  
+        "physicalResistance" : {
+          "baseValue" : 0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.9
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.8
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.9
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.7
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.9
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.6
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

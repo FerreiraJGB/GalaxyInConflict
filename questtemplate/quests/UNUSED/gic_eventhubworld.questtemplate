@@ -1,0 +1,23 @@
+{
+  "id" : "gic_eventhubworldquest",
+  "title" : "^green;Bulletarium",
+  "text" : "Unlocked the hub-world for special US.E missions for special annual events such as Christmas or Halloween. By tradition, specific missions will only be unlocked depending on the current event.",
+  "completionText" : "SAIL UPDATED",
+  "speaker" : "player",
+  "moneyRange" : [20000, 20000],
+  "rewards" : [
+      [ [ "rewardbag" ] ]
+   ],
+  "canBeAbandoned" : false,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+		"portraits" : {
+		"default" : "player"
+		},
+	"associatedMission" : "gic_eventhubworld",
+    "turnInDescription" : "-",
+    "requireTurnIn" : false
+  }
+}

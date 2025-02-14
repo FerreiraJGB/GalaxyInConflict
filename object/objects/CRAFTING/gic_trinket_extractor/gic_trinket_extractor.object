@@ -1,0 +1,55 @@
+// note: how this works is that if it detects an armor with the proper "gic_largebase_armor" tooltip, it'll try to do its magic. simple as
+
+{
+  "objectName" : "gic_trinket_extractor",
+  "colonyTags" : [],
+  "rarity" : "Legendary",
+  "printable" : false,
+  "description" : "An object that is capable of extracting [GiC] Trinkets from [GiC] Armors.
+
+Place the object down to begin Trinket Extraction.",
+  "shortdescription" : "^orange;[GiC] Trinket Extractor^reset;",
+  "race" : "generic",
+  "category" : "^orange;Extractor^reset;",
+  "price" : 750,
+  "health" : 1.5,
+  "tooltipKind" : "gic_largebase",
+  
+  "objectType" : "container",
+  "slotCount" : 2,
+  "uiConfig" : "/interface/objectcrafting/gic_trinket_extractor.config",
+
+  "frameCooldown" : 1,
+  "autoCloseCooldown" : 3600, //what is this even for? if we don't have it, game crashes...
+  "scripts" : [ "gic_trinket_extractor.lua"],
+
+  "inventoryIcon" : "gic_trinket_extractor_icon.png",
+
+  "animationPosition" : [-6, 0],
+
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_trinket_extractor.png:off.1", "fullbright" : true }, { "image" : "gic_trinket_extractorlit.png:off.1" } ],
+      "imagePosition" : [-6, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "frames" : 1,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "gic_trinket_extractor.png:off.1", "fullbright" : true }, { "image" : "gic_trinket_extractorlit.png:off.1" } ],
+      "imagePosition" : [-6, 0],
+
+      "direction" : "right",
+      
+      "frames" : 1,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "itemName" : "gic_grilledlamprey",
+  "rarity" : "Common",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_grilledlamprey.png",
+  "description" : "River fish that have been grilled. Simple as.
+  
+Lampreys were considered an extinct species beyond the 22nd century. Nuclear detonations across the planet were thought to have wiped most native-Earth species following the total collapse of the ecosystem. Through mysterious circumstances, their populations have made a sudden massive resurgence across human worlds with a sizeable youkai population.",
+  "shortdescription" : "Grilled Lampreys",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 15,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

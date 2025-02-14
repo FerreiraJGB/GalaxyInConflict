@@ -1,0 +1,801 @@
+{
+  "type" : "gic_otherworld_noblevampire",
+  "shortdescription" : "[Noble Vampire]",
+  "description" : "Lies.",
+  "persistent" : true,
+  "categories" : [ "gic_otherworld_noblevampire" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_otherworld_noblevampire.animation",
+
+  "dropPools" : [ "gic_generic_commoneliteTreasure" ],
+
+  "baseParameters" : {
+    "scripts" : [
+      "/monsters/gic_base_monster.lua"
+    ],
+
+    "behavior" : "monster",
+    "deathBehavior" : "monster-death",
+    "seeThroughLiquid" : false,
+	
+	
+	
+	
+//    "damageBar" : "Special",	
+	
+	
+	
+	
+	
+	
+
+	//dialogue stuff
+	"chatPortrait" : "/interface/chatbubbles/gic_static.png:0",
+    "dialog" : {
+	
+	
+	
+      "noblevampire_attack_1" : {
+        "default" : {
+          "default" : [
+            "You cannot claim the Scarlet Inheritance! I have severed the bloodline!"
+          ]
+        }
+      },
+	  
+      "noblevampire_attack_2" : {
+        "default" : {
+          "default" : [
+            "That annoying christmas-tree of a child... It was good to finally dispose of her."
+          ]
+        }
+      },
+	  
+      "noblevampire_attack_3" : {
+        "default" : {
+          "default" : [
+            "And her pompous sister... Such a brat. Soon I'll end the Mage as well..."
+          ]
+        }
+      },
+	  
+      "noblevampire_attack_4" : {
+        "default" : {
+          "default" : [
+            "You really are hopeless and desperate. Is this winged rogue the best humanity can muster?"
+          ]
+        }
+      },
+	  
+      "noblevampire_attack_5" : {
+        "default" : {
+          "default" : [
+            "You will be squashed like the vermin you are!"
+          ]
+        }
+      },
+
+
+	  
+      "death" : {
+        "default" : {
+          "default" : [
+            "That'll do..."
+          ]
+        }
+      }
+	  
+	  
+	  
+    },
+			
+	
+	
+	
+	
+	
+	
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 190,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 20.0,
+
+      "hurtWaitForGround" : false,
+
+      "foundTargetActions" : [
+
+	  
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : 9999,
+          "parameters" : {
+            "windupTime" : 8,
+            "windupState" : "idle",
+            "winddownTime" : 0.1,
+            "winddownState" : "idle",
+
+            "invulnerableTime" : 32,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+			
+			
+			
+				//dialogue
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.noblevampire_attack_1",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.noblevampire_attack_2",
+						"dialogTarget": false
+					}
+				},
+				
+	
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.noblevampire_attack_3",
+						"dialogTarget": false
+					}
+				},
+				
+					{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.noblevampire_attack_4",
+						"dialogTarget": false
+					}
+				},
+				
+				{
+					"name" : "sequentialdialognoskip",
+					"cooldown" : 999,
+					"parameters" : {
+						"dialogWaitTime": 7,
+						"dialogEndWait": 0,
+						"dialogKey": "dialog.noblevampire_attack_5",
+						"dialogTarget": false
+					}
+				}
+				
+				
+			],
+            "invulnerableEffect": "invulnerable"
+          }
+        }
+		
+      ],
+
+      "hostileActions" : [
+	  
+	  
+	  
+	  
+		
+		//Noble Vampire's Standard Shoot
+		
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : [10.0, 50.0],
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupState" : "",
+            "windupTime" : 1,
+			
+			
+            "projectileCount" : 16,
+            "projectileInterval" : 0.2,
+            "inaccuracy" : 0.0,
+			
+            "projectileType" : "gic_magicbullet_fire_noblevampire_standardshoot_3pattern_centralbeam",
+            "fireOffsets" : [ [0, 0] ],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireSound" : "",
+            "fireDelay" : 0.00,
+			
+            "aimDirection" : [0, 0],
+			
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 100
+            },
+
+            "fireArc": false,
+            "gravityMultiplier": 0.0,
+            "fireState" : "attack",
+            "winddownState" : "idle",
+            "winddownTime" : 3
+          }
+        },		
+		
+		
+		//Noble Vampire's Cross Pattern Fire Orbs
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : [10.0, 50.0],
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupState" : "",
+            "windupTime" : 1,
+			
+			
+            "projectileCount" : 32, //8
+            "projectileInterval" : 0.1,
+            "inaccuracy" : 0.0,
+			
+            "projectileType" : "gic_fireorb_noblevampire_crosspattern",
+            "fireOffsets" : [ [0, 0] ],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireSound" : "",
+            "fireDelay" : 0.00,
+			
+            "aimDirection" : [0, 0],
+			
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 100
+            },
+
+            "fireArc": false,
+            "gravityMultiplier": 0.0,
+            "fireState" : "attack",
+            "winddownState" : "idle",
+            "winddownTime" : 3
+          }
+        },	
+		
+		
+		//Noble Vampire's Explosive Snipe Batch
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : [10.0, 50.0],
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupState" : "",
+            "windupTime" : 1,
+			
+			
+            "projectileCount" : 4,
+            "projectileInterval" : 4,
+            "inaccuracy" : 0.0,
+			
+            "projectileType" : "gic_magicshot_explosivesnipe_tripattern_noblevampire",
+            "fireOffsets" : [ [0, 0] ],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireSound" : "",
+            "fireDelay" : 0.00,
+			
+            "aimDirection" : [0, 0],
+			
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 100
+            },
+
+            "fireArc": false,
+            "gravityMultiplier": 0.0,
+            "fireState" : "attack",
+            "winddownState" : "idle",
+            "winddownTime" : 6
+          }
+        },			
+
+		
+		//Noble Vampire's 8-Pattern Fire Orbs
+		
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : [10.0, 50.0],
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupState" : "",
+            "windupTime" : 1,
+			
+            "projectileCount" : 10,
+            "projectileInterval" : 0.1,
+            "inaccuracy" : 1.0,
+			
+            "projectileType" : "gic_fireorb_noblevampire_8pattern",
+            "fireOffsets" : [ [0, 0] ],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireSound" : "laser",
+            "fireDelay" : 0.00,
+			
+            "aimDirection" : [0, 0],
+			
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 100
+            },
+
+            "fireArc": false,
+            "gravityMultiplier": 0.0,
+            "fireState" : "attack",
+            "winddownState" : "idle",
+            "winddownTime" : 3
+          }
+        },
+		
+		
+		
+		
+		//Noble Vampire's Classic Shot
+		
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : [10.0, 50.0],
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 200,
+            "minimumRange" : 0,
+            "windupState" : "",
+            "windupTime" : 1,
+			
+            "projectileCount" : 10,
+            "projectileInterval" : 0.1,
+            "inaccuracy" : 1.0,
+			
+            "projectileType" : "gic_magicshot_bullethell_touhou",
+            "fireOffsets" : [ [0, 0] ],
+            "aimAtTarget" : true,
+            "onGround" : false,
+            "fireSound" : "laser",
+            "fireDelay" : 0.00,
+			
+            "aimDirection" : [0, 0],
+			
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 100
+            },
+
+            "fireArc": false,
+            "gravityMultiplier": 0.0,
+            "fireState" : "attack",
+            "winddownState" : "idle",
+            "winddownTime" : 3
+          }
+        }
+		
+		
+		
+      ],
+
+      "damageTakenActions" : [
+        {
+          "name" : "action-fire",
+          "cooldown" : 0.5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 150,
+            "minimumRange" : 2,
+            "windupTime" : 0.5,
+            "windupState" : "",
+            "projectileCount" : 1,
+            "projectileInterval" : 0.2,
+            "projectileType" : "gic_magicshot_bloodyoukai_stabber_summon_stage2",
+            "projectileParameters" : {
+              "speed" : 50,
+			  "timeToLive" : 0.5,
+              "power" : 0,
+              "damageKind" : "ews_smallarms"
+            },
+            "inaccuracy" : 2.0,
+            "fireOffsets" : [[-2.0, -3]],
+            "fireSound" : "",
+            "fireDelay" : 0.0,
+            "fireState" : "",
+            "damageRepeatGroup" : "",
+            "onGround" : false,
+            "winddownState" : "",
+            "winddownTime" : 0.5
+          }
+        },
+        {
+          "name" : "action-fire",
+          "cooldown" : 0.5,
+          "parameters" : {
+            "requireLineOfSight" : false,
+            "maximumRange" : 150,
+            "minimumRange" : 2,
+            "windupTime" : 0.5,
+            "windupState" : "",
+            "projectileCount" : 1,
+            "projectileInterval" : 0.2,
+            "projectileType" : "gic_magicshot_bloodyoukai_riflewoman_summon_stage2",
+            "projectileParameters" : {
+              "speed" : 50,
+			  "timeToLive" : 0.5,
+              "power" : 0,
+              "damageKind" : "ews_smallarms"
+            },
+            "inaccuracy" : 2.0,
+            "fireOffsets" : [[-2.0, -3]],
+            "fireSound" : "",
+            "fireDelay" : 0.0,
+            "fireState" : "",
+            "damageRepeatGroup" : "",
+            "onGround" : false,
+            "winddownState" : "",
+            "winddownTime" : 0.5
+          }
+        }
+
+      ],
+
+      "concurrentHostileActions" : [ 		
+		
+      ],
+
+
+      "fleeActions" : [ ],
+
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_plasmaimpact_large",
+            "projectileParameters" : {
+              "power" : 10,
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+	  
+
+      "wanderActions" : [
+
+      ],
+
+      "periodicActions" : [
+       ],
+
+      "approachActions" : [
+
+      ],
+
+      "followActions" : [
+
+      ]
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -3.05], [0.5, -3.05], [0.5, 1.0], [-0.5, 1.0] ],
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_psychic",
+      "knockback" : 0,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.5, -3.05], [0.5, -3.05], [0.5, 1.0], [-0.5, 1.0] ],
+
+      "mass" : 0.1,
+      "walkSpeed" : 4,
+      "runSpeed" : 12,
+      "gravityEnabled" : false,
+
+      "airFriction" : 0.5,
+      "airForce" : 5,
+      "flySpeed" : 30
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		"gic_psychic_anomaly" : {	//designates mob as a psychic anomaly so "grounded" effects can work
+			"baseValue" : 1.0
+		},
+		
+        "knockbackStunTime" : {
+          "baseValue" : 0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 90
+        },
+        "maxHealth" : {
+          "baseValue" : 400000
+        },
+        "grit" : {
+          "baseValue" : 1.0
+        },
+        "protection" : {
+          "baseValue" : 1.0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.8
+        },
+        "fireResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.5
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 1
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.9
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+		
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -3.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.0
+      },
+	 
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+
+      "novaResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 1
+				},
+				"cosmicResistance": {
+					"baseValue": 1
+				},
+				"radioactiveResistance": {
+					"baseValue": 1
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 1
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 1
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 1
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.7
+				} 
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

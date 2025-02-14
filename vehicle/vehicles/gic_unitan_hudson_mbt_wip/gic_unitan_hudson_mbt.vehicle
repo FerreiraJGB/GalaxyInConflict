@@ -1,0 +1,237 @@
+{
+  "name" : "gic_unitan_hudson_mbt_wip",
+  "boundBox" : [-4.5, -4, 4.5, 5],
+  "slaveControlTimeout" : 2.0,
+  "persistent" : true,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : false,
+
+  "script" : "/vehicles/gic_unitan_hudson_mbt_wip/gic_unitan_hudson_mbt.lua",
+  "animation" : "gic_unitan_hudson_mbt.animation",
+
+  "animationPartTags" : {
+    "backLeg" : {
+      "partImage" : "gic_unitan_hudson_mbt_backtread.png"
+    },
+    "background" : {
+      "partImage" : "gic_unitan_hudson_mbt_backturret.png"
+    },
+    "foreground" : {
+      "partImage" : "gic_unitan_hudson_mbt_frontturret"
+    },
+    "backGun" : {
+      "partImage" : "gic_unitan_hudson_mbt_backgun.png"
+    },
+    "backGun2" : {
+      "partImage" : "gic_unitan_hudson_mbt_backgun2.png"
+    },
+    "body" : {
+      "partImage" : "gic_unitan_hudson_mbt_tbody.png"
+    },
+    "rbody" : {
+      "partImage" : "gic_unitan_hudson_mbt_rbody.png"
+    },
+    "hatch" : {
+      "partImage" : "gic_unitan_hudson_mbt_hatch.png"
+    },
+    "frontGun" : {
+      "partImage" : "gic_unitan_hudson_mbt_frontgun.png"
+    },
+    "frontLeg" : {
+      "partImage" : "gic_unitan_hudson_mbt_fronttread.png"
+    },
+    "fbody" : {
+      "partImage" : "gic_unitan_hudson_mbt_frontbody.png"
+    },
+    "warp" : {
+      "partImage" : "vehicle_warp.png"
+    },
+    "lights" : {
+      "partImage" : "gic_unitan_hudson_mbt_headlights.png"
+    }
+
+  },
+
+  "animationCustom" : {
+    "particleEmitters" : {
+      "vehiclemove" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-7.5, -2.5, 10.5, -2.5],
+        "particles" : [{ "particle" : "weathersmok", "count": 1}]
+      },
+      "vehicleengine" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-7.0, 1.5, -7.0, 1.5],
+        "particles" : [{ "particle" : "minivehiclewrecksmoke", "count": 1}]
+      },
+      "vehicleengine2" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-9.5, 1.5, -9.5, 1.5],
+        "particles" : [{ "particle" : "minivehiclewrecksmoke", "count": 1}]
+      },
+      "heavyfiresmoke" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-15.5, -2, 15.5, -2],
+        "particles" : [{ "particle" : "barrelsmok", "count": 20}]
+      },
+      "barrelfiresmoke" : {
+        "transformationGroups" : ["turret", "rotation"],
+        "emissionRate" : 0.0,
+        "offsetRegion" : [10.0, 1.5, 15.0, 0.5],
+          "offset" : [3.25, 0.75],
+          "rotationGroup" : "guns",
+        "particles" : [{ "particle" : "barrelsmok", "count": 10}]
+      },
+      "smoke" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-5.5, 0, -5, 0.5],
+        "particles" : [{ "particle" : "smok"}]
+      },
+      
+      "smoke2" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-5.5, 0, -5, 0.5],
+        "particles" : [{ "particle" : "vehiclewrecksmoke"},{ "particle" : "tinyburning"}]
+      },
+      
+      "fire" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-5.5, 0, -5, 0.5],
+        "particles" : [
+                       { "particle" : "tinyburning"},
+                       { "particle" : "vehiclewrecksmoke"}]
+
+      },
+
+      "fire2" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-5.5, 0, -5, 0.5],
+        "particles" : [
+                       { "particle" : "tinyburning2"},
+                       { "particle" : "vehiclewrecksmoke"}]
+
+      },
+
+      "damageShards" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "emissionRate" : 0.0,
+        "burstCount"  : 4,
+        "offsetRegion" : [-3, -1.5, 3, 1],
+        "particles" : [{ "particle" : "smok"}]
+      },
+
+      "wreckage" : {
+        "transformationGroups" : ["flip", "rotation"],
+        "active" : false,
+        "emissionRate" : 0.0,
+        "burstCount"  : 3,
+        "offsetRegion" : [-5.5, 0, -5, 0.5],
+        "particles" : [
+                       { "particle" : "tinyburning"},
+                       { "particle" : "vehiclewrecksmoke"}]
+      }
+    },
+
+    "lights" : {
+      "headLights" : {
+        "active" : false,
+        "transformationGroups" : ["flip", "rotation"],
+        "position" : [4.0, 0.75],
+        "color" : [208, 252, 255],
+        "pointLight" : true,
+        "pointAngle" : 0,
+        "pointBeam" : 5
+      },
+      "backLights" : {
+        "active" : false,
+        "transformationGroups" : ["flip", "rotation"],
+        "position" : [-5.5, 1.5],
+        "color" : [255, 0, 0],
+        "pointLight" : true,
+        "pointAngle" : 180,
+        "pointBeam" : 1.5
+      }
+    },
+    "sounds" : {
+    }
+ 
+  },
+
+  "movementSettings" : {
+    "collisionPoly" : [[-7.0, 0.4], [-5.0, -6.5], [-5.0, -8], [5.0, -8], [5.0, -6.5], [7.0, 0.4]],
+    "mass" : 5,
+    "airFriction" : 0.5,
+    "groundFriction" : 30.0,
+    "ignorePlatformCollision" : true
+  },
+
+  "loungePositions" : {
+    "turretseat" : {
+      "part" : "foreground",
+      "partAnchor" : "sitPosition",
+      "orientation" : "sit",
+      "dance" : "wave",
+      "statusEffects" : ["highprotection"]
+    },
+    "driverseat" : {
+      "part" : "body",
+      "partAnchor" : "sitPosition1",
+      "orientation" : "sit",
+      "statusEffects" : ["maxprotection", "breathprotectionvehicle"]
+    }
+  },
+
+  "mechAimLimit" : 7.5,
+  "mechHorizontalMovement" : 10,
+  "mechJumpVelocity" : [10, 30],
+  "offGroundFrames" : 8,
+
+  "altFireCycle" : 8.0,
+  "altProjectile" : "vehicle120APa",
+  "altProjectileConfig" : {
+    "power" : 0
+  },
+  "mainFireCycle" : 0.08,
+  "mainProjectile" : "vehicle7x62a",
+  "mainProjectileConfig" : {
+    "power" : 0
+  },
+  "mainFireCycle2" : 0.0,
+  "mainProjectile2" : "invisibleProjectile",
+  "mainProjectile2Config" : {
+    "power" : 0
+  },
+  "smokeFireCycle" : 10.0,
+  "smokeProjectile" : "tanksmoke",
+  "smokeProjectileConfig" : {
+    "power" : 0
+  },
+  "mechLevel" : 6,
+  
+  "maxHealth" : 950,
+  "protection" : 50,
+
+  "explosionConfig" : "/projectiles/explosions/hvyexplosion/hvyexplosionknockback.config",
+  "explosionDamage" : 20,
+
+  "physicsCollisions" : {
+    "deck" : {
+      "collision" : [ [-3.5, 0.5], [3.5, 0.5], [3.5, 0.5], [-3.5, 0.5] ],
+      "attachToPart" : "body",
+      "collisionType" : "platform"
+    }
+  },
+  
+  "emotes" : ["laugh","happy","neutral","annoyed","sad"],
+  "dances" : ["typing","warmhands","flipswitch","titanic","panic"],
+  "maxGroundSearchDistance" : 5
+
+}

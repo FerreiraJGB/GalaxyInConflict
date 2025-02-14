@@ -1,0 +1,38 @@
+{
+  "itemName" : "gic_warriorsflower",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#B15C46;Recovery Item^white;",
+  "inventoryIcon" : "gic_warriorsflower.png",
+  "maxStack" : 20,
+  "description" : "Many primitive Florans eventually progressed beyond hunter-gatherer societies in ways not too dissimilar to the hyper-ancient Gallic Tribes of Terra. These flowers and their derivatives are commonly used as symbolic items, given to warriors answering the call to war. Both the FLF and GFG employ these tribal warriors as auxiliary fighters.
+
+^green;Heals 25hp over 1s.^white;
+^orange;Removes the IGNITION effect.^white;",
+
+  "foodValue" : 0,
+
+  "shortdescription" : "Warrior's Flower",
+  "effects" : [ [
+      {
+        "effect" : "gic_warriorsflower_medkitheal"
+      },
+
+      {
+        "effect" : "gic_oilburningStatusImmunity",
+        "duration" : 1
+      },	  
+	  
+//      {
+//        "effect" : "gic_warriorsflower"
+//      },
+	  {
+        "effect" : "gic_healing_slowdown_1"
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_elixirheal" ],
+  "blockingEffects" : [
+  ]
+}

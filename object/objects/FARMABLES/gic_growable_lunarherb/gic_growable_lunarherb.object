@@ -1,0 +1,67 @@
+{
+  "objectName" : "gic_growable_lunarherb",
+  "colonyTags" : ["outdoor","light"],
+  "printable" : false,
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 110,
+  "tooltipKind" : "gic_largebase",
+  "description" : "Rare herb that only grows under lunar light.",
+  "shortdescription" : "Lunar Herb",
+  "race" : "generic",
+
+  "inventoryIcon" : "gic_growable_lunarherb_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_growable_lunarherb.png:1",
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-8, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "gic_growable_lunarherb.png:1",
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-8, 0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_growable_lunarherb.animation",
+  "animationParts" : {
+    "light" : "gic_growable_lunarherb_lit.png",
+    "post" : "gic_growable_lunarherb.png"
+  },
+
+  "scripts" : [ "/objects/scripts/gic_harvestable.lua" ],
+  "scriptDelta" : 60,
+
+  "activeTimeRange" : [0.7, 1.0],
+  "activeAnimationStates" : {
+    "light" : "on"
+  },
+  "inactiveAnimationStates" : {
+    "light" : "off"
+  },
+
+  "itemDropOffset" : [1.5, 2.5],
+  "stages" : [
+    {
+      "duration" : [600, 900]
+    },
+    {
+      "duration" : [600, 900]
+    },
+    {
+      "harvestPool" : "gic_chickencoopHarvest"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name" : "gic_mortalshell_sticky_test",
+  "type" : "head",
+
+  "scripts" : ["gic_mortalshell_sticky_test.lua"],
+  "animator" : "distortionsphere.animation",
+
+  "description" : "Form a rocky shell to parry attacks without a shield or weapon ^green;[F]",
+  "shortDescription" : "Mortal Shell",
+  "rarity" : "Legendary",
+  "icon" : "/tech/spikesphere.png",
+
+  "chipCost" : 8,
+
+  "animationParts" : {
+    "ballGlow" : "spikesphereglow.png",
+    "ball" : "spikesphere.png"
+  },
+
+  "transformedMovementParameters" : {
+    "collisionPoly" : [ [-0.85, -0.35], [-0.35, -0.85], [0.35, -0.85], [0.85, -0.35], [0.85, 0.35], [0.35, 0.85], [-0.35, 0.85], [-0.85, 0.35] ],
+
+    "airForce" : 0.0,
+    "liquidForce" : 0.0,
+
+    "airJumpProfile" : {
+      "jumpSpeed" : 0.0
+    },
+
+    "liquidJumpProfile" : {
+      "jumpSpeed" : 0.0,
+      "jumpControlForce" : 0.0,
+
+      "multiJump" : false,
+      "autoJump" : false
+    }
+  },
+
+  "ignorePlatforms" : true,
+
+  "ballSpeed" : 0,
+
+  "energyCost" : 50,
+
+  "ballRadius" : 1,
+  "ballFrames" : 4,
+
+  "damageDisableTime" : 0.2
+}

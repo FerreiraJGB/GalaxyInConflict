@@ -1,0 +1,189 @@
+{
+  "metadata" : {
+    "name" : "gic_greenfingerdaimyo_battlefield",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_greenfingerdaimyo_battlefield_start"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 150,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_greenfingerdaimyo_battlefield_start",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_battlefield_start.json" ] ],
+      "chance" : 0
+    },
+	
+	
+	
+	
+	
+	
+    {
+      "name" : "gic_greenfingerdaimyo_battlefield_meleecombat",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_battlefield_meleecombat" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_battlefield_meleecombat.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_greenfingerdaimyo_battlefield_crossing",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_battlefield_crossing" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_battlefield_crossing.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_greenfingerdaimyo_battlefield_outpost1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_battlefield_outpost1" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_battlefield_outpost1.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_greenfingerdaimyo_battlefield_outpost2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_battlefield_outpost2" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_battlefield_outpost2.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_greenfingerdaimyo_battlefield_guntower",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_battlefield_guntower" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_battlefield_guntower.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_greenfingerdaimyo_battlefield_trenches",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_battlefield_trenches" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_battlefield_trenches.json" ] ],
+      "chance" : 1
+    },
+	
+	
+	
+	
+	
+	
+	
+    {
+      "name" : "gic_greenfingerdaimyo_battlefield_transition",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_battlefield_transition.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_greenfingerdaimyo_wasteland_trenches",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_wasteland_trenches" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_wasteland_trenches.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_greenfingerdaimyo_wasteland_landingzone",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_wasteland_landingzone" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_wasteland_landingzone.json" ] ],
+      "chance" : 1
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "name" : "gic_greenfingerdaimyo_wasteland_transition",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_wasteland_transition.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_greenfingerdaimyo_cliffside_courtyard",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_cliffside_courtyard" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_cliffside_courtyard.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_greenfingerdaimyo_cliffside_moat",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_cliffside_moat" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_cliffside_moat.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_greenfingerdaimyo_cliffside_residence",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_cliffside_residence" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_cliffside_residence.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_greenfingerdaimyo_cliffside_end",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_cliffside_end.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

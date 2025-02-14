@@ -1,0 +1,35 @@
+{
+  "projectileName" : "gic_energybeam_groundwave_stage1",
+  "image" : "gic_energybeam_groundwave_stage1.png",
+  "physics" : "laser",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 2,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_energybeam_groundwave_stage2",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_energybeam_groundwave_stage2",
+      "inheritDamageFactor" : 1,
+      "angle" : 180
+    }
+
+
+  ],
+  "statusEffects" : [ ],
+  "power" : 500.0,
+  "speed" : 20,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef",
+  "knockback" : 18
+}

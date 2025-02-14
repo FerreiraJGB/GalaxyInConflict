@@ -1,0 +1,31 @@
+{
+  "name" : "gic_khurtovyna_erroralarm_pingspawner",
+  "blockingStat" : "gic_khurtovyna_erroralarm_pingspawnerStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_khurtovyna_erroralarm_summon_stage0", //does not accept arrays
+	"projectileTypeMiss" : "gic_khurtovyna_erroralarm_summon_stage0", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 200,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 130.0, //40  //130
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 130.0 //40 //130
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_khurtovyna_erroralarm_pingspawner.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_khurtovyna_erroralarm_pingspawner.animation"
+}

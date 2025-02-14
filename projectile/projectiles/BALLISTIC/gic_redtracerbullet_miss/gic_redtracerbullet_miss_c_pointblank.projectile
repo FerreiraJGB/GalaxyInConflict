@@ -1,0 +1,37 @@
+{
+  "projectileName" : "gic_redtracerbullet_miss_c_pointblank",
+  "image" : "gic_redtracerbullet_miss.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 0.05,
+  
+  "fullbright" : true,
+  "lightColor" : [96, 0, 0],
+  
+  "actionOnHit" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    }
+  ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_redtracerbullet_miss",
+      "fuzzAngle" : 0.0,
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    }
+  ],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium" ],
+  "speed" : 200,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

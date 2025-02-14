@@ -1,0 +1,91 @@
+{
+  "itemName" : "gic_fishhuntingspear_directthrow",
+  "price" : 3260,
+  "inventoryIcon" : "gic_fishhuntingspear_throw.png",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "Did we make that?",
+  "shortdescription" : "Spear Throw",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "Battle Arm",
+  "itemTags" : ["weapon","ranged","rifle"],
+  "twoHanded" : false,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_fishhuntingspear_throw.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/projectiles/throw_item.ogg" ]
+    }
+  },
+
+  "baseOffset" : [0.95, 0.3],
+  "muzzleOffset" : [-0.6, 0.14],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+    "damageConfig" : { "statusEffects" : [] },
+    "fireTime" : 1,
+    "baseDps" : 10,
+    "energyUsage" : 24,
+    "inaccuracy" : 0.09, //0.06
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : ["gic_fishhuntingspear_npc"],
+    "projectileParameters" : {
+      "knockback" : 1,
+      "speed" : 120
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 115, //90
+        "weaponRotation" : -85,
+        "twoHanded" : false,
+	    "frontArmFrame" : "run.2",
+	    "backArmFrame" : "run.2",
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "weaponOffset" : [-1.2, -0.7]
+      },
+      "fire" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+		
+        "weaponOffset" : [-1.2, -0.7],
+		
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.3,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+		
+        "weaponOffset" : [0, 0],
+		
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  "aimOffset" : -2,
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

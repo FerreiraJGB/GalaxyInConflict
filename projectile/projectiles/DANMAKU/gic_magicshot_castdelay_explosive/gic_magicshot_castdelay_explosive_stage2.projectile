@@ -1,0 +1,41 @@
+{
+  "projectileName" : "gic_magicshot_castdelay_explosive_stage2",
+  "image" : "gic_magicshot_castdelay_explosive.png",
+  "animationCycle" : 0.25,
+  "bounces" : -1,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 20,
+  "timeToLive" : 8,
+  "fullbright" : true,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 1,
+      "action" : "projectile",
+      "type" : "gic_crystal_areashockwave_stage2",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    }
+],
+
+
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  
+  "rotationRate" : 10,
+  "trackingLimit" : 300,
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

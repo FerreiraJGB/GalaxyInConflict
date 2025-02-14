@@ -1,0 +1,49 @@
+{
+  "itemName" : "gic_barrelflamethrower",
+  "level" : 5,
+  "price" : 1500,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "Napalm! It's burning us alive! Within me the beast starts to roar!",
+  "shortdescription" : "Bandit's Flamethrower",
+  "tooltipKind" : "gun",
+  "category" : "uniqueWeapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","ranged","flamethrower"],
+
+  "inventoryIcon" : "gic_barrelflamethrower.png",
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_barrelflamethrower.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fireStart" : [ "/sfx/gun/flamethrower_start.ogg" ],
+      "fireLoop" : [ "/sfx/gun/flamethrower_loop.ogg" ],
+      "fireEnd" : [ "/sfx/gun/flamethrower_stop.ogg" ]
+    }
+  },
+  "baseOffset" : [0.35, 0.4],
+  "muzzleOffset" : [3.5, -0.8],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "ews_smallarmsthermal",
+
+  "primaryAbilityType" : "gic_realisticflamethrower",
+  "primaryAbility" : {
+    "baseDps" : 12800,
+    "energyUsage" : 30
+	
+
+	
+  },
+
+  "altAbilityType" : "",
+  "aimOffset" : -4,
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

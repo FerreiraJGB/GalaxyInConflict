@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_ammoresupply_droppod_grenade",
+  "physics" : "gic_grenadenormal",
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "timeToLive" : 5,
+  "speed" : 45,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [0, 0, 0],
+  "image" : "gic_ammoresupply_droppod_grenade.png",
+  "frameNumber" : 1,
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/grenade/gic_anm14_bounce_01.ogg"
+      ]
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_grenadeexplosion/gic_grenadeexplosionknockback.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_ammoresupply_droppod_stage0",
+      "inheritDamageFactor" : 1,
+      "angle" : 90
+    }
+  ],
+  "power" : 60,
+  "damageKind" : "ews_explosive",
+  "damagePoly" : [ [-4.5, 0], [-3, -3], [0, -4.5], [3, -3], [4.5, 0], [3, 3], [0, 4.5], [-3, 3] ]
+}

@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_armor_paddedplate",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Armor Plate^reset;",
+  "inventoryIcon" : "gic_armor_paddedplate.png",
+  "maxStack" : 1,  
+  "description" : 
+  
+"Basic padded armor with the goal to prevent any blunt or explosive trauma to the torso, which is effective at preventing the onset of light bleeding. Effectively a lightweight variant of the Type III-E28 Ceramic Plate providing slightly less protection for higher mobility, as well as stopping light bleeding, which the Ceramic Plate does not.
+
+^green;+15% MELEE and PHYSICAL Resistance
+^green;Prevents Light bleeding.^reset;",
+
+
+
+  "shortdescription" : "Padded Armor Plate",
+
+  "augment" : {
+    "type" : "gic_basicchest",
+    "name" : "gic_armor_paddedplate",
+    "displayName" : "Padded Armor Plate",
+    "displayIcon" : "/items/augments/basic/chest/gic_armor_paddedplate.png",
+    "effects" : [ "gic_bleeding_lightStatusImmunity", {"stat" : "ews_explosiveResistance", "amount" : 0.15}, {"stat" : "ews_meleeResistance", "amount" : 0.15}, {"stat" : "physicalResistance", "amount" : 0.15}, "gic_armor_paddedplate" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_armorplate_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_owlhunterscrossbow_bolt_10barrage_stage1",
+  "bounces" : 0,
+  "image" : "gic_owlhunterscrossbow_bolt.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "onlyHitTerrain" : true,
+  "frameNumber" : 1,
+  "periodicActions" : [
+    {
+      "time" : 0.1,
+      "action" : "projectile",
+      "type" : "gic_owlhunterscrossbow_bolt_10barrage_stage2",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 2,
+	  "directional" :true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 1.01,
+  "physics" : "laser"
+}

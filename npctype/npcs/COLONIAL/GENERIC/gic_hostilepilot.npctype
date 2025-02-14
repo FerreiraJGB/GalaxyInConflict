@@ -1,0 +1,76 @@
+{
+  "type" : "gic_hostilepilot",
+  "baseType" : "gic_soldierbase",
+
+  "dropPools" : [ "gic_civilianpilotTreasure" ],
+
+  "scriptConfig" : {
+
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Attack!"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "What the hell!?",
+			"Oh fuck!",
+			"Oh god!",
+			"Boarders!",
+			"Oh fuck! They're inside the ship!",
+			"Hostile boarders!",
+			"Send a distress call!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+		    "head" : [ { "name" : "gic_captainhead" } ],
+            "chest" : [ { "name" : "gic_spaceinfantrychest", "parameters" : { "colorIndex" : [2] }  } ],
+            "legs" : [ { "name" : "gic_spaceinfantrypants", "parameters" : { "colorIndex" : [2] }  } ],
+            "primary" : [
+              "gic_emcp19"
+            ]
+          }
+        ] ]
+    ]
+  },
+
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"], 
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 76.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "projectileName" : "gic_oilbomb",
+  "image" : "gic_oilbomb.png",
+  "animationCycle" : 0.25,
+  "physics" : "gic_grenadenormal",
+  "frameNumber" : 1,
+  "bounces" : 0,
+  "timeToLive" : 8,
+  "pointLight" : false,
+  "speed" : 50,
+  "damagePoly" : [ [-2, 0], [-2, -2], [0, -2], [2, -2], [2, 0], [2, 2], [0, 2], [-2, 2] ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_molotovexplosion/gic_molotovexplosion.config"
+    }
+  ],
+  "statusEffects" : [ "gic_oil" ],
+  "power" : 5.0,
+  "emitters" : [ "rocketsmoke" ],
+  "damageKind" : "ews_smallarms"
+}
+
+

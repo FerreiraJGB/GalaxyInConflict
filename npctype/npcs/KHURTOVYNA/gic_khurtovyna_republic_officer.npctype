@@ -1,0 +1,136 @@
+{
+  "type" : "gic_khurtovyna_republic_officer",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeam" : 85,
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "behavior" : "gic_hostileguard_advanced", //Will switch to sheathedprimary when in close range.
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_frostrepublic_captainhead" } ],   
+            "chest" : [ { "name" : "gic_frostrepublic_captainchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_frostrepublic_infantrylegs", "parameters" : { "colorIndex" : [0] } } ], 
+            "back" : [ { "name" : "gic_radiopackback", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+              "gic_stgl40_khurtovyna_republic_officer"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_mp41r", "parameters" : { "backupWeapon" : true }  }
+			]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion", "gic_khurtovyna_republic_officer_rally", "gic_rally_khurtovyna_republic_medic_primer"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+	  
+      "gic_infantry_panicProtection" : {
+        "baseValue" : 1
+      },	  
+	  
+	  
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : -0.4
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+	  
+    }
+  }
+  
+}

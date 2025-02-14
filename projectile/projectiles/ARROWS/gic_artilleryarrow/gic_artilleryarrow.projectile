@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_artilleryarrow",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "gic_artilleryarrow.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+//  "statusEffects" : ["gic_bleeding_light", "gic_bleeding_medium", "gic_bulletshot" ],
+  "statusEffects" : ["gic_bulletshot" ],
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

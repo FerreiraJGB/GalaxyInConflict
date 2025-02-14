@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_armor_armoredprotectorlegsupports",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Leg Equipment^reset;",
+  "inventoryIcon" : "gic_armor_armoredprotectorlegsupports.png",
+  
+  "description" : 
+  
+"''She is the only hope this colony has. I am her Protector, and in turn She is our Protector.''
+The leg supports of an Armored Protector. Produced from nanocomposite weaving to fit seamlessly into most sets of armor legwear, providing augmented strength with surprising comfortability.
+^green;Nullifies the ^red;Red Sun's Mobility Kill^green;, granting full mobility whilst still allowing the +400 HP boost provided by the Red Sun Artifact.^reset;
+^red;-50% Energy.^reset;",
+
+
+
+  "shortdescription" : "Armored Protector Leg Supports",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_armor_armoredprotectorlegsupports",
+    "displayName" : "Armored Protector Leg Supports",
+    "displayIcon" : "/items/augments/basic/legs/gic_armor_armoredprotectorlegsupports.png",
+    "effects" : [ {"stat" : "gic_redsun_-50StatusImmunity", "amount" : 1.0}, "gic_maxenergyscalingboost_armoredprotectorlegsupports" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_legwear_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

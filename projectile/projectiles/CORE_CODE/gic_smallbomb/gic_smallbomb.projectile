@@ -1,0 +1,25 @@
+{
+  "projectileName" : "gic_smallbomb",
+  "image" : "gic_smallbomb.png",
+  "fullbright" : true,
+  "lightColor" : [96, 0, 0],
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosion.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    }
+  ],
+  "power" : 5.0,
+  "speed" : 170,
+  "damageKind" : "ews_explosive",
+  "damageType" : "ignoresdef",
+  "damageTeam" : { "type" : "indiscriminate" }
+}

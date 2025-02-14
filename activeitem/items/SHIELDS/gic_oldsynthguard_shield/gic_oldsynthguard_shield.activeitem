@@ -1,0 +1,89 @@
+{
+  "itemName" : "gic_oldsynthguard_shield",
+  "fixedLevel" : false,
+  "price" : 0,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "^#D6DFFF;Light Parry Shield^white;",
+  
+  "description" : "''I was created for one purpose: Peace. I was instructed for one purpose: Peace. I was assigned for one purpose: War.''
+
+An older-model energy shield that still used metal frames to contain a hardlight 'wall'. Rusted beyond repair, it's a wonder this item wasn't already scrapped.
+
+^#D6DFFF;Rusting Hulks: 0.45s PARRY WINDOW | 0.25s COOLDOWN.^white;",
+  
+  
+  "shortdescription" : "Old Synth Guard Shield",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_oldsynthguard_shield_icon.png",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_oldsynthguard_shield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/melee/sword_guard.ogg" ], //sword_guard
+      "perfectBlock" : [
+ 	  "/sfx/block/gic_sekiro_meleedeflect1.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect2.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect3.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect4.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect5.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect6.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect7.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect8.ogg",
+	  "/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ], //shield_block_ice_perfect
+	  
+      "block" : [
+	  "/sfx/block/gic_sekiro_meleeblock1.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock2.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock3.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ],
+	  
+      "break" : [
+	  "/sfx/melee/gic_bloodborne_ShieldBreak00.wav"
+	  ] //shield_block_ice
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_bucklershield.lua"],
+
+  "minActiveTime" : 0.1,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 5,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.25,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 0.45,
+
+  "knockback" : 1,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

@@ -1,0 +1,67 @@
+{
+  "type" : "gic_protectoratewar_undeadunitansoldier",
+  "baseType" : "base",
+
+  "persistent" : true,
+
+  "dropPools" : [  ],
+
+  "damageTeamType" : "assistant",
+
+  "scriptConfig" : {
+    "behavior" : "gic_stationary_right_gunner"
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_planetaryinfantrymodernhead", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_planetaryinfantrymodernchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_planetaryinfantrymodernlegs", "parameters" : { "colorIndex" : [1] }  } ],
+            "back" : [ { "name" : "gic_planetaryinfantrymodernback", "parameters" : { "colorIndex" : [1] }  } ],
+            "primary" : [
+			  "gic_unitedearth_ilws"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  
+  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.9
+      }
+	  
+	  
+    }
+  }
+  
+  
+  
+}

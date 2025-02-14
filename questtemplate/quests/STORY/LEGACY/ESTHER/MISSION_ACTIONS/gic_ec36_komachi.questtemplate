@@ -1,0 +1,32 @@
+{
+  "id" : "gic_ec36_komachiquest",
+  "title" : "^#D1FFDE;The Assassination Target",
+  "prerequisites" : [  ],
+  "text" : "",
+  "completionText" : "",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_shinigamichest", 1 ], [ "gic_shinigamilegs", 1 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+//    "turnInEntityUid" : "gic_unitan_shrinemaiden_statue_quest",
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_charcoalcharm",
+        "count" : 1,
+        "consume" : true
+      }
+    ]
+  }
+}

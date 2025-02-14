@@ -1,0 +1,60 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret_marker.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [0, 0.0],
+					
+					"rotationOffset" : [0, 0.0]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret_marker.png", //"image" : "gic_shoulderturret.png?flipy",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret"],
+					"offset" : [0, 0.0],
+					
+					"rotationOffset" : [0, 0.0]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_konpaku_marker.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.0]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [],
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 0,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 0,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

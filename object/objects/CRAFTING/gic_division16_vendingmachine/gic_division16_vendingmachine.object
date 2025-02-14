@@ -1,0 +1,181 @@
+{
+  "objectName" : "gic_division16_vendingmachine",
+  "colonyTags" : ["station","mechanical","commerce", "human"],
+  "rarity" : "Common",
+  "category" : "other",
+  "price" : 300,
+  "printable" : false,
+  "description" : "Standard vending machine accepting Unitan currency. Requires Unitan Dollars.",
+  "shortdescription" : "Vending Machine",
+  "race" : "generic",
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_generic_shop_notab.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Vending Machine",
+        "subtitle" : "  Only accepts Unitan Dollars.",
+        "icon" : {
+          "file" : "/interface/crafting/gic_tradeterminal.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":5, //4
+				"name":"gic_physicalunitandollar"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_bottledwater"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_division16_vendingmachine", "objects", "all" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":6,
+				"name":"gic_physicalunitandollar"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_cannedmineralwater"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_division16_vendingmachine", "objects", "all" ]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":5,
+				"name":"gic_physicalunitandollar"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_cannedcoffee"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_division16_vendingmachine", "objects", "all" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":250,
+				"name":"gic_physicalunitandollar"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_us_k_ration"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_division16_vendingmachine", "objects", "all" ]
+		},
+	
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":7,
+				"name":"gic_physicalunitandollar"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_packagedmixedmeal"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_division16_vendingmachine", "objects", "all" ]
+		}
+		
+		
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_division16_vendingmachine" ]
+  },
+
+  "inventoryIcon" : "gic_division16_vendingmachine.png",
+  "orientations" : [
+    {
+      "image" : "gic_division16_vendingmachine.png:<color>",
+      "imagePosition" : [-16, -0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    },
+    {
+      "image" : "gic_division16_vendingmachine.png:<color>",
+      "imagePosition" : [-16, -0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ],
+
+  "soundEffect" : "/sfx/objects/fluorescent_light_loud.ogg",
+  "soundEffectRangeMultiplier" : 0.5,
+
+  "scripts" : [
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 60,
+
+  "npcToy" : {
+    "influence" : [
+      "vendingmachineActivate",
+      "vendingmachineCollect",
+      "vendingmachineConsume",
+      "vendingmachineComplete"
+    ],
+    "defaultReactions" : {
+      "vendingmachineActivate" : [
+        [1.0, "pressbutton"]
+      ],
+      "vendingmachineCollect" : [
+        [1.0, "crouchcollect"]
+      ],
+      "vendingmachineConsume" : [
+        [1.0, "drink"]
+      ],
+      "vendingmachineComplete" : [
+        [1.0, "smile"],
+        [0.1, "vomit"]
+      ]
+    },
+    "preciseStandPositionLeft" : [-2.0, 1.0],
+    "preciseStandPositionRight" : [2.0, 1.0],
+    "maxNpcs" : 1
+  }
+}

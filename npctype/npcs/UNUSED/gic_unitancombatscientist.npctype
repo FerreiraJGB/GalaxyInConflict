@@ -1,0 +1,77 @@
+{
+  "type" : "gic_unitancombatscientist",
+  "baseType" : "gic_soldierbase",
+
+  "dropPools" : [ "baseTreasure" ],
+
+  "movementParameters" : {
+    "runSpeed" : 17
+  },
+  
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+  
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Attack!"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "I'm not letting my research go to waste!",
+            "I am the result of a generation of education!",
+            "The best technology! The best fighters!",
+            "We are not dying!",
+            "Like all, we hold the line!",
+			"We're not to be underestimated!"
+          ]
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [5, [
+          {
+            "head" : [ { "name" : "humantier5ahead", "parameters" : { "colorIndex" : [3] }  } ],
+            "chest" : [ { "name" : "gic_spaceinfantrymodernchest", "parameters" : { "colorIndex" : [3] }  } ],
+            "legs" : [ { "name" : "gic_spaceinfantrymodernpants", "parameters" : { "colorIndex" : [3] }  } ],
+            "back" : [ { "name" : "gic_spaceinfantrymodernback", "parameters" : { "colorIndex" : [1] }  } ],
+            "primary" : [ "gic_npcheavypetcapturepod" ],
+            "sheathedprimary" : ["gic_emcp19" ],
+            "sheathedalt" : [
+              { "name" : "gic_energyshield" }
+            ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.0
+      },
+      "protection" : {
+        "baseValue" : 0.4
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "itemName" : "gic_darkbread",
+  "rarity" : "Common",
+  "price" : 0,
+  "category" : "food",
+  "inventoryIcon" : "gic_darkbread.png",
+  "description" : "Also known as Rye bread, a type made with various proportions of flour from rye grain. It can be light or dark in color, depending on the type of flour used and the addition of coloring agents, and is typically denser than bread made from wheat flour. This density makes it higher in fiber than white bread and thus stronger in flavor.",
+  "shortdescription" : "Dark Bread",
+
+  "foodValue" : 35,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "effects" : [ [
+  "gic_foodbuff_human_primer"
+    ] ],
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "objectName" : "gic_medicalcrate",
+  "colonyTags" : ["storage"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "price" : 145,
+  "description" : "A metallic crate emblazened with a red cross, indicating items with medical purpose.",
+  "shortdescription" : "Medical Crate",
+  "race" : "generic",
+  "health" : 1.5,
+
+
+
+  "inventoryIcon" : "gic_icon_medicalcrate.png",
+  "orientations" : [
+    {
+      "image" : "gic_medicalcrate.png",
+      "direction" : "left",
+      "flipImages" : true,
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+      "image" : "gic_medicalcrate.png",
+      "direction" : "right",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/chest_large_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/chest_large_close.ogg" ],
+  "slotCount" : 9,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

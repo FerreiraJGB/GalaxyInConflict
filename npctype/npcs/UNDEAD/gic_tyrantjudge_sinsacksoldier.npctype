@@ -1,0 +1,89 @@
+{
+  "type" : "gic_tyrantjudge_sinsacksoldier",
+  "baseType" : "gic_soldierbase",
+  "damageTeamType" : "friendly",
+  "damageTeam" : 1,
+  
+  "identity" : {
+    "gender" : "male"
+  },
+  
+  "dropPools" : [],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "!"
+          ]
+        }
+      }
+    },
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "patrol", { "timeRange" : [0.1,0.3]}],
+        [2.0, "wander"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_gp45_sinsackhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_khurtovyna_peoplesarmy_conscriptchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_khurtovyna_peoplesarmy_conscriptlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_shockbanditcarrierback", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+			  "gic_vss7"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : [ "gic_npc_death_blood_explosion", "gic_shockbanditcarrier_light", "gic_dialogue_metro2033_commonsoldier_voice3_gasmask"],    
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 777.7
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.001
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+        "gic_gasmask_filterProtection" : {
+          "baseValue" : 1.0
+        },
+	  
+        "gic_moldc1_infectionProtection" : {
+          "baseValue" : 1.0
+        },
+	  
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.75
+      }
+	  
+	  
+    }
+  }
+  
+}

@@ -1,0 +1,280 @@
+{
+  "itemName" : "gic_peasants_pitchfork_player",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "Not originally intended for battle, but can serve as a deadly weapon owing to its sharp points. The term is also applied colloquially, but inaccurately, to the garden fork. While similar in appearance, the garden fork is shorter and stockier than the pitchfork, with three or four thicker tines intended for turning or loosening the soil of gardens. ^green;Hold [ALT-FIRE] to parry.^white;
+^#D6DFFF;Desperate Measures: [SHIFT] to stab the ground directly infront of the user, inflicting standard and boss bleeding, as well as stunning targets for 2s.^reset;",
+
+  "shortdescription" : "Peasant's Pitchfork",
+  "tooltipKind" : "gic_largebase_sword",
+  "tooltipFields" : {
+	"objectImage" : "/items/weapons/melee/player/gic_peasants_pitchfork/gic_peasants_pitchfork_icon2.png"
+  },
+  "category" : "^#D6DFFF;Spear^white;",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_peasants_pitchfork_icon.png",
+
+  "animation" : "gic_peasants_pitchfork.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_peasants_pitchfork.png"
+  },
+  "animationCustom" : { "sounds" : {
+          "fire" : ["/sfx/melee/gic_bloodborne_nokonata_noko1.wav"],
+		  
+	  "hiltSmash" : ["/sfx/melee/gic_bloodborne_onosao_tukisasi0.wav"],
+	  "hiltSmashHit" : ["/sfx/melee/gic_bloodborne_hammer-hit2.wav"],
+	  
+      "guard" : [ "/sfx/melee/sword_guard.ogg" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  
+      "parry" : [
+		"/sfx/block/gic_sekiro_meleeblock1.ogg",
+		"/sfx/block/gic_sekiro_meleeblock2.ogg",
+		"/sfx/block/gic_sekiro_meleeblock3.ogg",
+		"/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ],
+	  
+	  "perfectBlock" : [
+		"/sfx/block/gic_sekiro_meleedeflect1.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect2.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect3.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect4.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect5.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect6.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect7.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect8.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ]
+	  
+        },
+
+
+
+	"animatedParts" : {
+	"stateTypes" : {
+      "swoosh" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+          },
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire2" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire3" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire4" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire5" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire6" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire7" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire8" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          }
+        }
+      }
+    },
+	
+	"parts" : {
+	  "parryShield" : {
+          "properties" : {
+            "zLevel" : -1,
+            "centered" : true,
+            "offset" : [0.65, 1.0],
+            "transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0],
+            "shieldPoly" : [ [-1.25, -2.7], [-1.25, 2.8], [-0.25, 2.8], [-0.25, -2.7] ]
+        },
+		
+		"partStates" : {
+            "parryShield" : {
+              "inactive" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "active" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/abilities/broadsword/parry/parryshield.png:active?flipx"
+                }
+              },
+              "block" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/abilities/broadsword/parry/parryshield.png:block?flipx"
+                }
+              }
+            }
+        }
+	  }
+    }
+	
+	}			
+		
+		
+		
+		},
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua"],
+  "scriptDelta" : 2,
+  
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+	"scripts" : ["/items/active/weapons/melee/abilities/gic_spearstab.lua"],
+    "fireTime" : 1.11,
+    "baseDps" : 70, //80
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+//      "statusEffects" : [ "gic_boss_melee_primer" ],
+      "knockbackRange" : 25,
+	  "damageType" : "IgnoresDef",
+      "timeout" : 0.5
+    },
+
+
+	"stances" : {
+	
+      "idle" : {
+        "armRotation" : -55,
+		"aimAngle" : 0,
+        "weaponRotation" : -15,
+        "allowRotate" : false,
+        "allowFlip" : true,
+		"twoHanded" : true,
+		"weaponOffset" : [ 0.0, 0.2 ],
+		
+		"backArmFrame" : "swim.3"
+      },
+	  
+      "windup" : {
+        "duration" : 0.45,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "twoHanded" : true,
+		"weaponOffset" : [ 0.0, 0.6 ],
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+
+	  
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+		"weaponOffset" : [ 0.0, 0.6 ],
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "hold" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+		"weaponOffset" : [ 0.0, 0.6 ],
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+	  
+	  
+	}
+
+  },
+  
+  
+  
+
+  "altAbilityType" : "parry",
+  "altAbility" : {
+	"scripts" : ["/items/weapons/melee/player/gic_peasants_pike/gic_peasants_pike_perfectblock.lua"],
+	"class" : "Parry",
+	"name" : "Perfect Parry",
+	"parryTime" : 1.5,
+	"cooldownTime" : 0.25,
+	"shieldHealth" : 150,
+	"perfectBlockTime" : 0.4,
+	
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : ["gic_stun_1", "gic_stun_2", "gic_bleeding_light", "gic_bleeding_medium", {"effect":"gic_attackpowernullification_3","duration":1.0}, {"effect":"gic_boss_melee_primer","duration" : 2.0} ],
+	  "baseDamage" : 80,
+      "knockbackMode" : "facing",
+      "timeout" : 0.5
+    },
+	
+	
+	"stances" : {
+      "parry" : {
+        "armRotation" : -55,
+        "weaponRotation" : 30,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"twoHanded" : true,
+		"weaponOffset" : [ 0.3, 1.2 ],
+		
+		"backArmFrame" : "swim.3"
+      },
+	  
+	  "windup" : {
+		"duration" : 0.5,
+        "armRotation" : 65,
+        "weaponRotation" : 210, //30
+        "allowRotate" : false,
+        "allowFlip" : true,
+		"twoHanded" : true,
+		"weaponOffset" : [ 0.2, 0.2 ]
+      },
+	  "fire" : {
+		"duration" : 0.75,
+        "armRotation" : 15,
+        "weaponRotation" : 220, //40
+        "allowRotate" : false,
+        "allowFlip" : false,
+		"twoHanded" : true,
+		"weaponOffset" : [ 0.15, 0.6 ]
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

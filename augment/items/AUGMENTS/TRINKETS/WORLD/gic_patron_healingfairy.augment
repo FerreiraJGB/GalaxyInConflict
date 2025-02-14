@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_patron_healingfairy",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#8B30F0;Patron Trinket",
+  "inventoryIcon" : "gic_patron_healingfairy.png",
+  "maxStack" : 1,
+  "description" : 
+  
+"Fairies are immortal in the sense that they are incarnations of nature. Though they can develop personality, it will be one defined by its respective experiences. A fairy too disconnected from humanity may only end up harming humans through apathy or ignorance.
+
+^yellow;Eccentric Employ: Every 30 seconds within 100 units of a visible enemy, grants an Area-of-Effect Healing Flask zone.^reset;
+^green;Significantly increases HP restored by Healing Flasks.^reset;",
+
+
+
+  "shortdescription" : "Patron: Healing Fairy",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_patron_healingfairy",
+    "displayName" : "Patron: Healing Fairy",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_patron_healingfairy.png",
+    "effects" : [ "gic_patron_healingfairy", "gic_healingfairy_bonusheal_primer" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_patron_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

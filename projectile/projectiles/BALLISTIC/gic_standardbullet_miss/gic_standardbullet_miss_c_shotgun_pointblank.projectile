@@ -1,0 +1,53 @@
+{
+  "projectileName" : "gic_standardbullet_miss_c_shotgun_pointblank",
+  "image" : "gic_standardbullet_miss_c_pointblank.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 0.05,
+  "actionOnHit" : [
+//    {
+//      "action" : "config",
+//      "file" : "/projectiles/gic_bullet.config"
+//    }
+  ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_miss_c_shotgun",
+      "fuzzAngle" : 0.0,
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    }
+  ],
+  
+  "periodicActions" : [  
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_usoa50_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.2, //0.4
+        "destructionAction" : "fade", //shrink
+        "fullbright" : false
+      }
+    }
+  ], 
+  
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bulletshot", "gic_bleeding_light" ],
+  "speed" : 200,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

@@ -1,0 +1,25 @@
+{
+  "projectileName" : "gic_shellcasing_shotgunshell",
+  "image" : "gic_shellcasing_shotgunshell.png",
+  "animationCycle" : 0.25,
+  "renderLayer" : "Player+1", 
+  "physics" : "grenade",
+  "piercing" : true,
+  "bounces" : 20,
+  "speed" : 10,
+  //"frameNumber" : 1,
+  "timeToLive" : 10,
+  //"damageKindImage" : "icon.png",
+  "power" : 0,
+  "damageType" : "NoDamage",
+  "damageKind" : "default",
+  "actionOnCollide" : [
+  ],
+  "actionOnHit" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_shellcasing_shotgunshell_end",
+      "fuzzAngle" : 360
+    }
+  ]
+}

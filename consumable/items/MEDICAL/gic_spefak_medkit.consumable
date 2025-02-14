@@ -1,0 +1,47 @@
+{
+  "itemName" : "gic_spefak_medkit",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_spefak_medkit.png",
+  "maxStack" : 8,
+  "description" : "A medical kit often loaded into spaceships and ground flitter vehicles as standard adherence to common mankind laws. ^green;This kit offers all the required equipment in sterile, controlled environments^white;.
+
+^green;- Restores 300 health over 3 seconds, costing 5 seconds.
+^yellow;- Heals Bruising.^white;
+^orange;- Heals Burn Wounds.^white;
+^gray;- Heals Fractures.^white;",
+
+  "shortdescription" : "^yellow;Spaceport Emergency First Aid Kit",
+  
+  "effects" : [ [
+      {
+        "effect" : "gic_spefak_medkit",
+        "duration" : 3
+      },
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 5
+      },
+	  
+      {
+        "effect" : "gic_medkit_use_messenger",
+        "duration" : 5
+      },	
+	  
+	  {
+        "effect" : "gic_bruise_pack_recovery"
+      },
+      {
+        "effect" : "gic_burn_pack_recovery"
+      },
+      {
+        "effect" : "gic_fracture_pack_recovery"
+      }	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_medkit_use" ],
+  "blockingEffects" : [
+  ]
+}

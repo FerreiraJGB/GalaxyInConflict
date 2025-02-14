@@ -1,0 +1,44 @@
+{
+  "itemName" : "gic_suppressor_base",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Barrel Attachment^white;",
+  "inventoryIcon" : "gic_usm_545_suppressor_icon.png",
+  
+  
+  "description" : "^yellow;Significantly reduces sound profile, nullifying excessive sound debuffs caused by firing. Alters firing sound.^white; Threading only supports standard USM-type 5.45mm caliber width barrels.
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Suppressor Base (GiC)",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_suppressor_base", //name of attachment
+	"attachmentTag" : ["gic_suppressor_base","gic_barrel_usm_545"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/gic_suppressor_base.png", //determines what image is displayed on the resulting gun
+	
+	"specialAttachmentConfig" : {
+		"type" : "suppressor",			//will require the main activeitem file to have "suppressedFire" sfx
+		"fireShellProjectile" : "ews_null",		//exists mostly for GiC's "noise" system.
+		"projectileConfig" : {
+			"processing" : "?crop=10;3;10;3"
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

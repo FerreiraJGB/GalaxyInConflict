@@ -1,0 +1,75 @@
+{
+  "type" : "gic_terrorhunter",
+  "baseType" : "gic_soldierbase",
+
+  "persistent" : true,
+
+  "movementParameters" : {
+    "runSpeed" : 90,
+    "walkSpeed" : 40,
+    "airFriction" : 0.2,
+    "airJumpProfile" : {
+      "jumpSpeed" : 80.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.2
+    }
+  },
+	
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/gic_citysearcher_combat.config:attack",
+      "reattack" : "/dialog/gic_citysearcher_combat.config:reattack",
+      "killedTarget" : "/dialog/gic_citysearcher_combat.config:killedTarget",
+      "lostTarget" : "/dialog/gic_citysearcher_combat.config:lostTarget",
+      "outOfSight" : "/dialog/gic_citysearcher_combat.config:outOfSight",
+      "cheerOn" : "/dialog/gic_citysearcher_combat.config:cheerOn",
+      "cantReach" : "/dialog/gic_citysearcher_combat.config:cantReach"
+    }
+  },
+  
+  "damageTeam" : 2,
+
+  "dropPools" : [ "basicTreasure" ],
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_huntermaskhead", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "soldierchest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "soldierpants", "parameters" : { "colorIndex" : [1] } } ],
+            "alt" : ["gic_psionickatana"],
+            "primary" : ["gic_unita_ilws"]
+          }
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 20,
+    "statusEffects" : [ ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1000.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      }
+    }
+  }
+}

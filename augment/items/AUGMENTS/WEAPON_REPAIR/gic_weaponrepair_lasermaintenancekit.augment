@@ -1,0 +1,20 @@
+{
+  "itemName" : "gic_weaponrepair_lasermaintenancekit",
+  "price" : 0,
+  "rarity" : "Legendary",
+  "category" : "^#E0EAFF;''Better than spit-shine!''^white;",
+  "inventoryIcon" : "gic_weaponrepair_lasermaintenancekit.png",
+  "description" : "A small, organized collection of exotic materials, tools, and components required to sustain Laser, Plasma, and other unique Weapon Systems. ^Yellow;Can only repair special weapons that are above 25% durability.^reset;",
+  "shortdescription" : "Exotic Weapon Maintenance Kit",
+  "maxStack" : 1,
+  "tooltipKind" : "gic_largebase",
+  "config" : {
+	"tags" : ["gic_repair_laser"],	//main activeitem needs to have this tag under "weaponRepairAcceptTags"
+	"limit" : 0.25,	//if main item's weaponDurability/weaponDurabilityMax is greater/equal, then this "augment" can apply.
+	"repairAmount" : 1.0  //how much the weapon repairs (1.0 is 100%)
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/repairItems/ews_repairItem.lua" ]
+}

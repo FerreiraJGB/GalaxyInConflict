@@ -1,0 +1,27 @@
+{
+  "projectileName" : "gic_projectile_spawnnpc_gic_otherworldhuman_gic_ghostgirl_samurai",
+  "image" : "icon.png",
+  "physics" : "gas",
+  "piercing" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "damageKindImage" : "icon.png",
+  
+"actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_voidexplosion",
+      "angle" : 90
+    }
+],
+  
+//  "emitters" : [ "smok" ],
+  "scripts" : [  "gic_projectile_spawnnpc_gic_otherworldhuman_gic_ghostgirl_samurai.lua" ],
+  "speed" : 0.0,
+  "timeToLive" : 0.0,
+  "onlyHitTerrain" : true,
+  "damageKind" : "default",
+  "damageType" : "NoDamage"
+}

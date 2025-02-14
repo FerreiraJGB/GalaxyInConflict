@@ -1,0 +1,33 @@
+{
+  "objectName" : "gic_glitch_cannedwhalemeat",
+  "colonyTags" : [],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "Canned Whale Meat.",
+  "shortdescription" : "Canned Whale Meat",
+  "race" : "generic",  
+  "category" : "furniture",
+  "price" : 0,
+//  "tooltipKind" : "gic_largebase",
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "smashSounds" : [ "/sfx/objects/locker_open.ogg" ],  
+  
+  "breakDropOptions" : [
+    [ [ "gic_cannedwhalemeat", 1, { } ] ]
+  ],
+
+  "inventoryIcon" : "gic_glitch_cannedwhalemeat.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_glitch_cannedwhalemeat.png",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

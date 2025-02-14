@@ -1,0 +1,52 @@
+{
+  "objectName" : "gic_glitch_wooddoor",
+  "colonyTags" : ["door"],
+  "printable" : false,
+  "rarity" : "Common",
+
+  "category" : "door",
+  "price" : 40,
+  "description" : "Wood Door.",
+  "shortdescription" : "Wood Door",
+  "race" : "generic",
+
+  "inventoryIcon" : "gic_glitch_wooddoor_icon.png",
+
+  "tooltipKind" : "gic_largebase",
+  "largeImage" : "gic_glitch_wooddoor.png:right",
+   
+  "orientations" : [
+    {
+      "image" : "gic_glitch_wooddoor.png:default",
+      "imagePosition" : [-16, 0],
+      "renderLayer" : "Object+5",
+
+      "spaces" : [ [0,0], [0,1], [0,2], [0,3], [0,4] ],
+      "anchors" : [ "bottom", "top" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "open" : {
+        "pool" : [ "/sfx/objects/wooddoor_open.ogg" ],
+        "rangeMultiplier" : 0.5
+      },
+      "close" : {
+        "pool" : [ "/sfx/objects/wooddoor_close.ogg" ],
+        "rangeMultiplier" : 0.5
+      }
+    }
+  },
+  "animationParts" : {
+    "door" : "gic_glitch_wooddoor.png"
+  },
+  "animationPosition" : [-16, 0],
+
+  "inputNodes" : [ [0, 4] ],
+  "outputNodes" : [ [0, 0] ]
+}

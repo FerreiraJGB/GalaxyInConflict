@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_magicbullet_ruinorb_6pattern_maku_muzzlespawn",
+  "image" : "gic_magicbullet_ruinorb.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : true,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_fireexplosion/gic_fireexplosion.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ruinorb_6pattern_maku",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 0
+    }
+  ],
+  
+  "actionOnCollide" : [
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 50,
+  "acceleration" : 0,
+  "knockback" : 18
+}

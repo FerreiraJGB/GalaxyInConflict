@@ -1,0 +1,39 @@
+{
+  "id" : "gic_esther_chapter_0_1_revelationsquest",
+  "title" : "^yellow;[GiC]: Chapter 0 - Revelations",
+  "prerequisites" : [ "gic_esther_chapter_0_0_legacystorylinequest" ],
+  
+  //QUEST 1
+  
+  //Intro cinematic to GiC. Mostly a glorified slideshow. Finishes and leads up to Ark Beyond.
+  
+  "text" : "---",
+  
+  //No cutscene. Bugs out if you use a quest complete cutscene thing on the main one.
+  
+  "completionText" : "---",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+  "rewards" : [
+//    [ [ "", 1 ], [ "", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_questunlockcinematic.lua", //other one is bugged
+  "scriptConfig" : {
+		"portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+		},
+    "gic_missionUnlockedCinema" : "/cinematics/ESTHER_STORY/gic_esther_revelations/gic_esther_revelations.cinematic",	 //leave as coordinates if no need for secondary
+    "turnInDescription" : "-",
+    "requireTurnIn" : false
+  }
+  
+  
+}

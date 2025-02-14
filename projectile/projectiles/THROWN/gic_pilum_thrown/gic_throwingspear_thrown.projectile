@@ -1,0 +1,35 @@
+{
+  "projectileName" : "gic_throwingspear_thrown",
+  "physics" : "arrow",
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  
+  "actionOnTimeout" : [
+    {
+      "action" : "item",
+      "name" : "gic_throwingspear",
+      "count" : 1
+    }
+  ],
+  
+  "image" : "gic_triballevy_javelin.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "damageKindImage" : "icon.png",
+  "power" : 40,
+  "onlyHitTerrain" : false,
+  "knockback" : 2,
+  "knockbackDirectional" : true,
+  "statusEffects" : [ {"effect":"gic_boss_melee_primer","duration":5}, "gic_bulletshot", "gic_stun_1", "gic_stun_2", "gic_stun_3" ],
+  "timeToLive" : 5,
+  "pointLight" : false,
+  "damagePoly" : [ [12, -0.2], [12.5, -0.2], [12.5, 0.2], [12, 0.2] ]
+}

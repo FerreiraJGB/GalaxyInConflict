@@ -1,0 +1,966 @@
+[
+
+
+
+
+
+
+
+{
+      "op": "add",
+		"path": "/gic_helicopterreinforcement",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 1.2, //1.0
+    "liquidFriction" : 2.5,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+ },
+
+//same as gas template, but without any bounce factor
+
+
+
+
+
+
+
+
+
+
+{
+      "op": "add",
+		"path": "/gic_genecultist_javelin",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.9,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+
+{
+      "op": "add",
+		"path": "/gic_genecultist_javelin_arrow",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.9,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [0.3, -0.1], [0.5, -0.1], [0.3, 0.1], [0.5, 0.1] ],
+    "ignorePlatformCollision" : true,
+    "stickyCollision" : true,
+    "stickyForce" : 20.0,
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+
+  }
+},
+
+
+
+
+
+
+ 
+{
+      "op": "add",
+		"path": "/gic_realisticflame",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.08,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.4,
+    "liquidFriction" : 1.0,
+    "groundFriction" : 1.0,
+    "maximumCorrection" : 0.75
+  }
+ },
+ 
+ 
+ 
+ 
+
+
+
+
+{
+      "op": "add",
+		"path": "/gic_starshell_flare",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.6,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 16.0, //8.0s works with 15s lifetime
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+
+{
+      "op": "add",
+		"path": "/gic_starshell_40mm_flare",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.6,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 32.0, //8.0s works with 15s lifetime
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+
+
+
+
+
+ 
+{
+      "op": "add",
+		"path": "/gic_beacongrenade_spawn",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.6,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-2.25, -2.25], [2.25, -2.25], [2.25, 2.25], [-2.25, 2.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+}, 
+ 
+ 
+ 
+{
+      "op": "add",
+		"path": "/gic_grenadenormal_conscriptinfantry",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.3,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+
+
+
+
+
+{
+      "op": "add",
+		"path": "/gic_grenadenormal_trenchraid",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.3,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-2.25, -2.25], [2.25, -2.25], [2.25, 2.25], [-2.25, 2.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+
+ 
+{
+      "op": "add",
+		"path": "/gic_grenadenormal",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.6,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+{
+      "op": "add",
+		"path": "/gic_grenadenormal_maku",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.6,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "speedLimit" : null,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 0.0,
+    "groundFriction" : 0.0,
+    "maximumCorrection" : 0.75
+	
+	
+  }
+},
+
+{
+      "op": "add",
+		"path": "/gic_deployablemine",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.6,
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "stickyCollision" : true,
+    "stickyForce" : 20.0,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 60.0,
+    "maximumCorrection" : 1.0
+  }
+},
+
+{
+      "op": "add",
+		"path": "/gic_magic_bouncy",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.9,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.2,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+{
+      "op": "add",
+		"path": "/gic_grenademagic_highbounce",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 1.0,
+    "bounceFactor" : 1.0,
+    "stopOnFirstBounce" : false,
+    "maxMovementPerStep" : 0.8,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 0.0,
+    "maximumCorrection" : 0.15
+  }
+},
+
+{
+      "op": "add",
+		"path": "/gic_grenadenormal_lowbounce",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.6,
+    "bounceFactor" : 0.05,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+
+{
+      "op": "add",
+		"path": "/gic_grenaderoll", //Same as normal, but with rolling capacity.
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.6,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 1.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+{
+      "op": "add",
+		"path": "/gic_grenaderoll_rollingcontact", //Same as normal, but with rolling capacity.
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 1.0,
+    "bounceFactor" : 0.8,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 0.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+
+{
+      "op": "add",
+		"path": "/gic_musketshot",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.25, //0.4
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.15, //0.5
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+ },
+ 
+ 
+{
+      "op": "add",
+		"path": "/gic_dustlaser",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 3,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+ },
+ 
+ 
+{
+      "op": "add",
+		"path": "/gic_orbitalprojectile",
+		"value": {
+    "mass" : 1.0,
+    "gravityMultiplier" : 10,
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 2,
+
+    "collisionPoly" : [ [-0.5, -0.5], [0.5, -0.25], [0.5, 0.25], [-0.5, 0.5] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.7,
+    "liquidFriction" : 1,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+ },
+ 
+
+{
+      "op": "add",
+	"path": "/gic_airstrike_gausshawk_ascend",
+    "value": {
+    "mass" : 1.0,
+    "gravityMultiplier" : -0.3,
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 2,
+
+    "collisionPoly" : [ [-0.5, -0.5], [0.5, -0.25], [0.5, 0.25], [-0.5, 0.5] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.4,
+    "liquidFriction" : 1,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+
+{
+      "op": "add",
+		"path": "/gic_distantprojectile",
+		"value": {
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.2,
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 2,
+
+    "collisionPoly" : [ [-0.5, -0.5], [0.5, -0.25], [0.5, 0.25], [-0.5, 0.5] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.3,
+    "liquidFriction" : 1,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+ },
+ 
+ 
+{
+      "op": "add",
+		"path": "/gic_parachutedeployment",
+		"value": {
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.2,
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 2,
+
+    "collisionPoly" : [ [-0.5, -0.5], [0.5, -0.25], [0.5, 0.25], [-0.5, 0.5] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 1.3,
+    "liquidFriction" : 1,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+ },
+ 
+{
+      "op": "add",
+		"path": "/gic_parachutedeployment_soldier",
+		"value": {
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.2,
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 2,
+
+    "collisionPoly" : [ [-0.5, -0.5], [5, -0.25], [5, 0.25], [-0.5, 0.5] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 1.4,
+    "liquidFriction" : 1,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+ },
+ 
+{
+      "op": "add",
+	"path": "/gic_goshawk_machinegun_strafe_stage5_physics",
+    "value": {
+    "mass" : 1.0,
+    "gravityMultiplier" : -0.4, //-0.15
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 2,
+
+    "collisionPoly" : [ [-0.5, -0.5], [0.5, -0.25], [0.5, 0.25], [-0.5, 0.5] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.1,
+    "liquidFriction" : 1,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+{
+      "op": "add",
+	"path": "/gic_goshawk_machinegun_strafe_stage6_physics",
+    "value": {
+    "mass" : 1.0,
+    "gravityMultiplier" : -0.8, //-0.5 //-0.6
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 2,
+
+    "collisionPoly" : [ [-0.5, -0.5], [0.5, -0.25], [0.5, 0.25], [-0.5, 0.5] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.6, //0.7
+    "liquidFriction" : 1,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+{
+      "op": "add",
+		"path": "/gic_goshawk_skyraider_whitephosphorus_bomb",
+		"value": {
+		
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.15,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+{
+      "op": "add",
+	"path": "/gic_demongravityshotup",
+    "value": {
+    "mass" : 1.0,
+    "gravityMultiplier" : -0.3,
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 2,
+
+    "collisionPoly" : [ [-0.5, -0.5], [0.5, -0.25], [0.5, 0.25], [-0.5, 0.5] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.7,
+    "liquidFriction" : 1,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+{
+      "op": "add",
+	"path": "/gic_swarmer_pacifiermicrobullet_drop",
+    "value": {
+    "mass" : 0.1,
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 2,
+
+    "collisionPoly" : [ [-0.5, -0.5], [0.5, -0.25], [0.5, 0.25], [-0.5, 0.5] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.3,
+    "liquidFriction" : 1,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
+{"op":"add","path":"/gic_bulletphysics","value":{
+
+    "gravityMultiplier" : 0.3,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75
+
+	}},
+	
+	
+{"op":"add","path":"/gic_shrapnelfall","value":{
+
+    "gravityMultiplier" : 0.25,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 8.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75
+
+	}
+ },
+	
+	
+{"op":"add","path":"/gic_bulletfall","value":{
+
+    "gravityMultiplier" : 0.25,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75
+
+	}
+},
+
+{"op":"add","path":"/gic_bulletfall_bouncy","value":{
+
+    "gravityMultiplier" : 0.25,
+    "bounceFactor" : 2.0,
+    "maxMovementPerStep" : 1.0,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 1.0
+
+	}
+},
+
+{"op":"add","path":"/gic_bulletfall_highvel","value":{
+
+    "gravityMultiplier" : 0.125,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75
+
+	}
+},
+	
+{"op":"add","path":"/gic_cannonfall","value":{
+
+    "gravityMultiplier" : 0.1,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75
+
+	}
+},
+
+{"op":"add","path":"/gic_cannonfall_nocorrection","value":{
+
+    "gravityMultiplier" : 0.1,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.0
+
+	}
+},
+
+	
+{"op":"add","path":"/gic_cannonfall_bounce","value":{
+
+    "gravityMultiplier" : 0.1,
+    "bounceFactor" : 0.2,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75
+
+	}},
+	
+{"op":"add","path":"/gic_nohitlaser","value":{
+
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75,
+    "stickyCollision" : false,
+    "stickyForce" : 20.0
+
+	}},	
+	
+{"op":"add","path":"/gic_beaconlaser","value":{
+
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-1.25, -1.25], [1.25, -1.25], [1.25, 1.25], [-1.25, 1.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75,
+    "stickyCollision" : false,
+    "stickyForce" : 20.0
+
+	}},
+	
+{"op":"add","path":"/gic_ammoresupply_pod","value":{
+
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-1.25, -1.25], [1.25, -1.25], [1.25, 1.25], [-1.25, 1.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75,
+    "stickyCollision" : true,
+    "stickyForce" : 20.0
+
+	}},	
+	
+	
+{"op":"add","path":"/gic_ammoresupply_pod_altrocket","value":{
+
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-1.25, -1.25], [1.25, -1.25], [1.25, 1.25], [-1.25, 1.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 1.3,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75,
+    "stickyCollision" : true,
+    "stickyForce" : 20.0
+
+	}},	
+	
+	
+{"op":"add","path":"/gic_arrowlaser","value":{
+
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75,
+    "stickyCollision" : true,
+    "stickyForce" : 20.0
+
+	}},
+	
+	
+	
+	
+	
+{"op":"add","path":"/gic_arrow_razed_siege2","value":{
+
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.5,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.75, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.75, 0.25] ],
+    "ignorePlatformCollision" : false,
+    "stickyCollision" : true,
+    "stickyForce" : 200.0,
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+
+	}},	
+	
+	
+	
+	
+{"op":"add","path":"/gic_arrow_razed_siege","value":{
+
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : false,
+    "groundFriction" : 0,
+    "airFriction" : 0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.75,
+    "stickyCollision" : true,
+    "stickyForce" : 20.0
+
+	}},	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+{"op":"add","path":"/gic_void_coilgun","value":{
+
+    "gravityMultiplier" : 3.0,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0.0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.0
+
+	}},	
+	
+	
+	
+{"op":"add","path":"/gic_subsurfacedisplacement_missile","value":{
+
+    "gravityMultiplier" : 2.0,
+    "bounceFactor" : 0.0,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0.0,
+    "liquidFriction" : 2.0,
+    "speedLimit" : null,
+    "maximumCorrection" : 0.0
+
+	}}
+	
+	
+  
+  
+  
+]

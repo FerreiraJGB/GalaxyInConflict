@@ -1,0 +1,38 @@
+{
+  "itemName" : "gic_cointoss",
+  "level" : 1,
+  "price" : 0,
+  "rarity" : "Essential",
+  "category" : "^#FFE751;A Killer's Currency^reset;",
+  "description" : "^gold;''Everyone pays, one way or another...''^reset;
+An odd stack of four coins with anomalous properties. Thrown coins ^yellow;match the player's velocity^reset;. When damaged ^red;BY ANYTHING^reset;, coins will accelerate toward the nearest coin or enemy for ^yellow;x1.75 damage^reset;, ^red;inheriting the damage type received^reset;. If a damage threshold is reached, an ^red;explosion^reset; will trigger. Thrown coins will return to you after 3 seconds, ^yellow;even if you're holding something else.^reset;
+^orange;Ancient Riches: Flashing coins split when hit.^reset;",
+
+
+//- coin matches player velocity
+//- shoot coin or otherwise damage it for cool thing
+//- resulting coin when shot will deal x2 damage it received
+//- will (eventually) create explosions if damage received is high enough
+//- 4 coin charges, regens a coin in 3 seconds even if not actively held
+  
+  "shortdescription" : "^yellow;Murderous Money^reset;",
+  "twoHanded" : false,
+  "maxStack" : 1,
+  "itemTags" : [],
+
+  "animation" : "gic_cointoss.animation",
+  "scripts" : ["gic_cointoss.lua"],
+  //"animationScripts" : ["gic_outsiders_mark_cursor.lua"],
+  //"filled" : true,
+  "tooltipKind" : "gic_largebase",
+  
+  //"tooltipFields" : {
+	//"objectImage" : "/items/active/misc/gic_outsiders_mark/gic_highres_outsiders_mark.png" //high-res image
+  //},
+
+  "animationParts" : {
+    "casing" : "gic_cointoss.png"
+  },
+
+  "inventoryIcon" : "gic_cointoss2.png"
+}

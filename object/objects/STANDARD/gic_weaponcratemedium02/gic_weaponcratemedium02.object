@@ -1,0 +1,53 @@
+{
+  "objectName" : "gic_weaponcratemedium02",
+  "colonyTags" : ["storage"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "price" : 45,
+  "description" : "Wooden crate intended for munitions storage.",
+  "shortdescription" : "Medium Weapon Crate",
+  "race" : "generic",
+  "health" : 1.5,
+
+
+
+  "inventoryIcon" : "gic_icon_weaponcratemedium02.png",
+  "orientations" : [
+    {
+      "image" : "gic_weaponcratemedium02.png",
+      "direction" : "left",
+      "flipImages" : true,
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+      "image" : "gic_weaponcratemedium02.png",
+      "direction" : "right",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/woodenbox_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/woodenbox_close.ogg" ],
+  "slotCount" : 9, //2
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 2,
+  "autoCloseCooldown" : 3600
+}

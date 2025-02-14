@@ -1,0 +1,32 @@
+{
+  "itemName" : "gic_starter_contrabandcrate",
+  "rarity" : "Common",
+  "price" : 100,
+  "category" : "Reward Box",
+  "inventoryIcon" : "gic_starter_contrabandcrate.png",
+  "description" : "Seems like someone forgot to remove this marked crate. Contains:
+- 20x Copper, Silver, Iron and Gold Bars
+- Hakutaku's Cookbook, Teddy Bear Plush
+- 4x Random Undercolony Armor, 16x Random Undercolony Ammo, 8x Random Undercolony Weapons, 5x Random Trinkets
+- Mech Parts, Mining Pickaxe Multitool, Recon Drone, Grappling Hook
+^orange;Interact to open the crate.",
+
+  "shortdescription" : "Contraband Crate",
+  "tooltipKind" : "gic_largebase",
+  "maxStack" : 1,
+  "twoHanded" : true,
+  
+"pickupQuestTemplates" : [ "gic_equipmentcheckupquest" ],
+	
+  "animation" : "gic_starter_contrabandcrate.animation",
+  "animationCustom" : {},
+  "scripts" : ["gic_starter_contrabandcrate.lua"],
+
+  "fireTime" : 5.0,
+  "fireOffset" : [1.0, 0.0],	
+	
+  "treasure" : {
+    "pool" : "gic_starter_contrabandcrateTreasure",
+    "level" : 1
+  }
+}

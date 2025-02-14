@@ -1,0 +1,77 @@
+{
+  "itemName" : "gic_bashshield_demo",
+  "fixedLevel" : false,
+  "price" : 5000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "shield",
+  "description" : "Damage/Knockback increased based off player velocity (horizontal).",
+  "shortdescription" : "Bash Shield Demo",
+  "tooltipKind" : "Shield",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_bashshield_demo.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_bashshield_demo.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/melee/sword_guard.ogg" ],
+      "perfectBlock" : [ "/sfx/melee/shield_block_ice_perfect.ogg" ],
+      "block" : [ "/sfx/melee/shield_block_ice.ogg" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  
+	  "shieldBash" : [ "/sfx/melee/gic_bloodborne_shieldpress.wav" ]
+	  
+    }
+  },
+
+  "scripts" : ["gic_shieldbash.lua"],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 150,
+  "cooldownTime" : 0.25,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 1.0,
+  "knockback" : 15,
+
+  
+  // CUSTOM SHIELD BASH PARAMS
+  "minVelocity" : 10,
+  "accelKnockback" : 30,
+  "accelMaxKnockback" : 45,
+  
+  "accelDamage" : 20,
+  "accelMaxDamage" : 100,
+  
+  "minDamageTimeout" : 0.25,
+  "maxDamageTimeout" : 1.0,
+  // CUSTOM SHIELD BASH PARAMS
+  
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

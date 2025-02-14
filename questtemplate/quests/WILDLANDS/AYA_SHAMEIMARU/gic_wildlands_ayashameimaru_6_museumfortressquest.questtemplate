@@ -1,0 +1,63 @@
+{
+  "id" : "gic_wildlands_ayashameimaru_6_museumfortressquest",
+  "title" : "^#F0523C;[AYA-6] Museum Fortress",
+  "prerequisites" : [ "gic_wildlands_ayashameimaru_5_policestationquest" ],
+  
+//Cutscenes always play first.
+  
+  "text" : "We're going to have to get bloody now.",
+  
+
+  
+  "completionText" : "While you're here, you could start by helping us get rid of the Police Chief and gettin' the armory open. I dunnae where his key is, but he's dun locked himself in his office. Else, if you must, the lass has all the evidence she needs.",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_character.lua", //Same as original variant. Enables cutscenes when starting and finishing.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/interface/MISSION_PORTRAITS/gic_questicon_aya.png"} ],
+        "title" : "Aya"
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/interface/MISSION_PORTRAITS/gic_questicon_aya.png"} ],
+        "title" : "Aya"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;Aya^reset; to travel to the ^orange;Police Station^reset;.",
+      "findGoal" : "Investigate the area for any potential clues.",
+      "turnIn" : "Speak to the ^orange;Officer.^reset;"
+    },
+    "warpEntityUid" : "gic_romancecharacter_ayashameimaru_office_hubworld",
+    "warpAction" : "instanceworld:gic_wildlands_ayashameimaru_mission_6_1_asylumpush",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_wildlands_island_ayashameimaru_6_confirmation",
+
+    "gic_missionUnlockedCinema" : "/cinematics/characters/AYA_SHAMEIMARU/gic_wildlands_ayashameimaru_mission_6_1_museumfortress.cinematic", //???
+    "gic_missionCompleteCinema" : "/cinematics/characters/AYA_SHAMEIMARU/gic_wildlands_ayashameimaru_mission_5_1_policestationend.cinematic",	 //leave as coordinates if no need for secondary
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 20,
+
+    "goalEntityUid" : "gic_wildlands_ayashameimaru_mission_5_1_cell_goal",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "",
+	
+    "setUniverseFlags" : [ ] 
+	
+  }
+  
+}

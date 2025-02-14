@@ -1,0 +1,50 @@
+{
+  "projectileName" : "gic_magicshot_fusionfire_18pattern_fast_spawner",
+  "image" : "gic_magicshot_atomicfire_null.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 5,
+  "emitters" : [ "fireplasma" ],
+  "periodicActions" : [
+  
+    {
+      "time" : 0.1,
+      "action" : "sound",
+      "options" : [
+        "/sfx/touhou/gic_touhou_se_kira00-13db.ogg"
+      ]
+    },  
+    {
+      "time" : 0.1,
+      "action" : "projectile",
+      "type" : "gic_magicshot_fusionfire_18pattern_fast",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : 0
+    }
+
+  ],
+  
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 50.0,
+  "speed" : 0,
+  "acceleration" : -10,
+  "knockback" : 18
+}

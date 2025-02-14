@@ -1,0 +1,222 @@
+{
+  "type" : "gic_floran_primitive_greatbow_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },  
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0} ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "gic_noinspectcrew",
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "soldier",
+        "name" : "Primitive Greatbow Infantry",
+        "field" : "Infantry",
+        "uniformColorIndex" : 3,
+		
+        "benefits" : [
+        ]
+		
+      },
+
+      "ranks" : [
+	    "Heavy Missile Infantry"
+      ],
+
+      "defaultUniform" : {
+	    "head" : "",
+        "chest" : "gic_ashigaruchest", //soldierchest
+        "legs" : "florantier2pants", //soldierpants
+		"back" : "quiverback"
+      },
+      "uniformSlots" : []
+    },
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "Bring me to your fights!",
+			  "No more fighting here! Fight elsewhere.",
+			  "Floran want to fight in the ssskiess above!",
+			  "Let us leave to fight!",
+			  "We who are about to die, salute you!"
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Greatbow Infantry, present!"
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "Greatbow Infantry, present!"
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "Guarding!",
+              "Holding position."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "Greatbow Infantry, following!",
+			  "Heavy Missile Infantry, following!"
+            ]
+          }
+        },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy.",
+			"Move it!"
+          ]
+        }
+      },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "Slow down! I can't run that fast!",
+              "You're too far!",
+              "Slow down!"
+            ]
+          }
+	}
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+      "converse" : "/dialog/space_colony/gic_surfacecityspacecolonist_converse.config:converse",
+
+      "attack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cantReach"
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player
+    "runSpeed" : 8
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+//            "head" : [ { "name" : "gic_greenfingerguard_samuraihelmethead", "parameters" : { "colorIndex" : [8] } } ],
+            "chest" : [ { "name" : "gic_ashigaruchest", "parameters" : { "colorIndex" : [8] } } ],
+            "legs" : [ { "name" : "florantier2pants", "parameters" : { "colorIndex" : [8] } } ],
+            "back" : [ { "name" : "quiverback", "parameters" : { "colorIndex" : [8] } } ],
+            "primary" : [ "gic_floran_greatbow" ]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 200.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -10.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+	  
+    }
+  }
+}

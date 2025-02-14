@@ -1,0 +1,173 @@
+{
+  "type" : "gic_combatandroid_base",
+  "baseType" : "gic_soldierbase",
+
+  "dropPools" : [ "valuableTreasure" ],
+  "damageTeam" : 13,
+  "scriptConfig" : {
+//    "behavior" : "gic_combat_default",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "patrol"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_combatandroid_colonial_combat.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_uscmichhead", "parameters" : { "colorIndex" : [7] }  } ],
+            "chest" : [ { "name" : "gic_militiarigchest", "parameters" : { "colorIndex" : [0] }  } ],
+//            "legs" : [ { "name" : "gic_hscplegs", "parameters" : { "colorIndex" : [0] } } ],
+//            "back" : [ { "name" : "gic_wolfpackback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [ "gic_dcdr516" ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Psychic
+      "ews_psychicResistance" : {
+        "baseValue" : 0.8
+      },	
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.9
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  
+
+
+
+	  
+      "gic_pericarpyx_infectionProtection" : {
+        "baseValue" : 1.0
+      },  	  
+      "gic_opiate_addictionProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_opiate_withdrawalProtection" : {
+        "baseValue" : 1.0
+      },
+      "gic_burn_woundsProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_burn_wounds_severeProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_bruising_lightProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_bruising_mediumProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_bloodloss_heavyProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_cyanide_poisoningProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_opium_medkithealProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_opiate_medkithealProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_opiate_fentanyl_medkithealProtection" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_opiate_overdose_active_primarycheck_cardiacProtection" : {
+        "baseValue" : 1.0
+      },			  
+      "gic_paralyzantProtection" : {
+        "baseValue" : 1.0
+      },	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

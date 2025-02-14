@@ -1,0 +1,94 @@
+{
+  "type" : "gic_floranliberationfront_introstory_shieldbearer_imperator_follower",
+  "baseType" : "follower",
+  
+  "movementParameters" : {
+    "runSpeed" : 10
+  },
+
+  "scriptConfig" : {
+    "dialog" : {
+      "follower" : {
+        "attack" : {
+          "default" : {
+            "default" : [
+              "Attacking!"
+            ]
+          }
+        },
+        "join" : {
+          "default" : {
+            "default" : [
+			  "Imperator!",
+			  "Glory to our chieftain!",
+			  "Glory to our leader!",
+			  "May the Gods bless our leader!",
+			  "May the Gods bless you!",
+			  "The Gods bless us with your presence!"
+            ]
+          }
+        },
+        "returnFromCombat" : {
+          "default" : {
+            "default" : [
+			  "Imperator!",
+			  "Glory to our chieftain!",
+			  "Glory to our leader!",
+			  "May the Gods bless our leader!",
+			  "May the Gods bless you!",
+			  "The Gods bless us with your presence!"
+            ]
+          }
+        },
+        "wait" : {
+          "default" : {
+            "default" : [
+              "Waiting!"
+            ]
+          }
+        },
+        "returnFromWait" : {
+          "default" : {
+            "default" : [
+              "Moving!"
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_uscmichhead", "parameters" : { "colorIndex" : [7] }  } ],
+            "chest" : [ { "name" : "gic_colonialsurvivorchest", "parameters" : { "colorIndex" : [11] }  } ],
+            "legs" : [ { "name" : "gic_hscplegs", "parameters" : { "colorIndex" : [0] } } ],
+//            "back" : [ { "name" : "gic_banner_floranliberationfrontback", "parameters" : { "colorIndex" : [11] } } ],
+            "primary" : [ "gic_soldiers_sword_npc_razed" ]
+//            "alt" : [ "gic_ovalscutum_greatshield_npc" ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.111
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      }
+    }
+  }
+}

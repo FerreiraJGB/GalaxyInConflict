@@ -1,0 +1,28 @@
+{
+  "id" : "gic_blackmarket_razed_mechdealerQuest",
+  "title" : "^#D1FFDE;Razed Black Market: M2420 Incendiary Multicannon",
+  "prerequisites" : [  ],
+  "text" : "Well, who are you? Hm, Protector. Then here, a little welcome gift. I care not for who dies, only that my business flows.",
+  "completionText" : "I have a Mech Platform just over to your right. Use it, or don't. It's up to you.",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_m2420_incendiary_multicannon", 1 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+	
+    "turnInEntityUid" : "gic_blackmarket_razed",
+    "conditions" : [
+    ]
+  }
+}

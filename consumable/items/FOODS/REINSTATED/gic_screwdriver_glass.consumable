@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_screwdriver_glass",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#FFB941;Springfield Bar Custom",
+  "inventoryIcon" : "gic_foods_reinstated.png",
+  
+  
+  
+  "description" : "An alcoholic highball (composed of an alcoholic base spirit and a larger proportion of a non-alcoholic mixer, often a carbonated beverage) drink made with orange juice and vodka. While the basic drink is simply the two ingredients, there are many variations. Many of the variations have different names in different parts of the galaxy.
+
+^Yellow;- No Effects.^reset;",
+  
+  "shortdescription" : "Screwdriver",
+  
+  "effects" : [ [
+ //  {
+ //       "effect" : "gic_lowgravity_food_nueale",
+ //       "duration" : 1800
+ //   }
+  ] ],
+  
+  
+  
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

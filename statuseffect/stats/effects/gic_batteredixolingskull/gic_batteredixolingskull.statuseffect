@@ -1,0 +1,21 @@
+{
+  "name" : "gic_batteredixolingskull",
+  "blockingStat" : "gic_batteredixolingskullStatusImmunity",
+
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 1,
+    "triggerDamageThreshold" : 1,
+    "explosionDamageAmount" : 0
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "gic_batteredixolingskull.lua"
+  ],
+
+  "animationConfig" : "gic_batteredixolingskull.animation",
+  
+  "label" : "Battered Ixoling Skull - On taking damage, reduce incoming DMG by 50% for the next 2s (refreshes upon taking further damage). Once the defensive buff expires, all incoming damage to wearer is increased by 15% for 5s, blocking the next proc of the defensive buff.",
+  "icon" : "/interface/statuses/gic_batteredixolingskull.png"
+}

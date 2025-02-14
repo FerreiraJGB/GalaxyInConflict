@@ -1,0 +1,89 @@
+{
+  "itemName" : "gic_floran_compoundbow",
+  "fixedLevel" : false,
+  "price" : 0,
+  "inventoryIcon" : "gic_floran_compoundbowicon.png",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "tooltipKind" : "bow",
+  "category" : "bow",
+  "description" : "It takes great skill to wield a bow in the future.",
+  "shortdescription" : "Floran Heavy Bow",
+  "twoHanded" : true,
+  "itemTags" : ["weapon", "ranged", "bow"],
+
+  "radioMessagesOnPickup" : [ "pickupbow" ],
+
+  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animationParts" : {
+    "bow" : "gic_floran_compoundbow.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "bow" : { "properties" : {
+      "offset" : [0.25, 0]
+    }}}},
+    "sounds" : {
+      "draw" : [ "/sfx/gun/bow_draw1.ogg", "/sfx/gun/bow_draw2.ogg", "/sfx/gun/bow_draw3.ogg" ],
+      "release" : [ "/sfx/gun/bow_loose.ogg" ],
+      "perfectRelease" : [ "/sfx/gun/bow_loose_perfect.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/bow/bow.lua"],
+  "scriptDelta" : 2,
+
+  "primaryAbilityType" : "bowshot",
+  "primaryAbility" : {
+    "projectileType" : "gic_heavyarrow",
+    "powerProjectileType" : "gic_heavyarrow",
+    "projectileParameters" : {
+      "speed" : 100
+    },
+	
+	"damageConfig" : {
+	  "damageType" : "IgnoresDef"
+    },	
+
+    "drawFrameSelector" : "bowImageSelector",
+    "drawPowerMultiplier" : "drawTimeMultiplier",
+    "drawSpeedMultiplier" : "drawTimeMultiplier",
+	
+	
+	
+    "fireOffset" : [1, 0], //1.75, 0
+
+    "energyPerShot" : 40,
+
+    "cooldownTime" : 0.05,
+
+    "inaccuracy" : 0.05,
+    "stances" : {
+      "idle" : {
+        "armRotation" : -30,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "draw" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "fire" : {
+        "duration" : 0.05,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true,
+
+        "frontArmFrame" : "idle.3"
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildbow.lua"
+}

@@ -1,0 +1,51 @@
+{
+  "projectileName" : "gic_burningshrapnel",
+  "image" : "gic_burningshrapnel.png",
+  "physics" : "grenade",
+  "piercing" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "emitters" : [ "gic_tinysmoke" ],
+  "animationCycle" : 0.1,
+  "pointLight" : true,
+  "timeToLive" : 6.0,
+  "power" : 5,
+  "speed" : 30,
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 0.5,
+        "destructionTime" : 0.5,
+        "destructionAction" : "fade",
+        "fullbright" : true
+      }
+    }
+],
+
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.1,
+      "angleAdjust" : 0
+    }
+	],
+  "lightColor" : [235, 126, 2],
+  "damageKind" : "flamethrower",
+  "damageKindImage" : "/interface/statuses/fire.png",
+  "statusEffects" : [
+	"gic_bleeding_light"
+  ],
+  "hydrophobic" : true,
+  "damageType" : "IgnoresDef"
+}

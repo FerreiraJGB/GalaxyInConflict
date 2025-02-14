@@ -1,0 +1,42 @@
+{
+  "id" : "gic_esther_chapter_6_lionheartQuest",
+  "title" : "^#D1FFDE;Lionheart, The Lunarian", //After completing Chapter 6
+  "prerequisites" : [ "gic_esther_chapter_6_0_lunaQuest" ],
+  
+  "text" : "I'm sure you confused the hell out of the Erchius. It's been bombing Earth this whole time. Shame it can't comprehend alliances.",
+  
+  "completionText" : "A fellow Lunarian sent me these. An almost-perfect copy of my armor and a necklace. I have no need for this, so I give them to you. You'd make better use of it.",
+  
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_lunarnecklacehead", 1 ], [ "gic_lionheartsarmorhead", 1 ], [ "gic_lionheartsarmorchest", 1 ], [ "gic_lionheartsarmorlegs", 1 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      }
+    },
+
+
+    "descriptions" : {
+      "turnIn" : "Speak to ^orange;Lionheart^reset;."
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_1_lionheart",
+    "conditions" : [
+    ]
+	
+	
+  }
+}

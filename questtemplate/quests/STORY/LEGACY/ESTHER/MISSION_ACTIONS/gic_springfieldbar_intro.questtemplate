@@ -1,0 +1,41 @@
+{
+  "id" : "gic_springfieldbar_introQuest",
+  "title" : "^#D1FFDE;Springfield's Bar",
+  
+  "text" : "",
+  
+  "completionText" : "",
+  
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+//    [ [ "gic_ark_katana_player", 1 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_springfield_bartender/gic_esther_chapter_1_springfield_bartenderportrait.png"} ],
+        "title" : ""
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_springfield_bartender/gic_esther_chapter_1_springfield_bartenderportrait.png"} ],
+        "title" : ""
+      }
+    },
+
+
+    "descriptions" : {
+      "turnIn" : "Speak to ^orange;Springfield^reset;."
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_1_springfield_bartender",
+    "conditions" : [
+    ]
+	
+	
+  }
+}

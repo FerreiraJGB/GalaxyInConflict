@@ -1,0 +1,25 @@
+{
+  "kind" : "gic_vehiclefiresmoke",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/gic_vehiclefiresmoke/gic_vehiclefiresmoke.animation",
+    "position" : [0, 0],
+    "initialVelocity" : [3.0, 0.5],
+    "finalVelocity" : [0.5, 1.5],
+    "approach" : [5, 5],
+    "destructionAction" : "shrink",
+    "destructionTime" : 1.0,
+    "fade" : 0.5,
+    "size" : 1,
+	"ignoreWind" : false,
+        "collidesForeground" : true,
+    "collidesLiquid" : true,
+    "layer" : "front",
+    "timeToLive" : 1.0,
+    "variance" : {
+    "initialVelocity" : [-3.0, 0.5],
+    "finalVelocity" : [-0.5, 1.5],
+      "rotation" : 180
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "itemName" : "gic_fishhuntingspear",
+  "price" : 4,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_fishhuntingspear.png",
+  "image" : "gic_fishhuntingspear.png",
+  "shortdescription" : "Fish Hunting Spear",
+  "description" : "A throwing spear primarily for hunting fish, but can also be used to attack other monsters should the situation arise. Whilst crude and often mocked by stronger Florans, the Fish Hunter's Spear has been a staple of any civilization that passively harvests fish from the shores of rivers and oceans alike. Monsters will drop meat if killed by this spear.",
+  "tooltipKind" : "gic_largebase_hybrid",
+  "ammoUsage" : 1,
+  "maxStack" : 4,
+  "edgeTrigger" : true,
+  "windupTime" : 0.0,
+  "cooldown" : 1.5,
+
+  "projectileType" : "gic_fishhuntingspear",
+  "projectileConfig" : {
+    "speed" : 60,
+    "power" : 10,
+    "knockback" : 20,
+
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  },
+  
+  "tooltipFields" : {
+	"smallDescriptionLabel" : "Go poke a Hylotl will you? It's not like they need all 3 of those eyes..."
+  }
+
+}

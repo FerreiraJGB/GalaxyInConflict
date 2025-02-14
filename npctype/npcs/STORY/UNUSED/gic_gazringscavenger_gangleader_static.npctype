@@ -1,0 +1,87 @@
+{
+  "type" : "gic_gazringscavenger_gangleader_static",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 14,
+  
+  "dropPools" : [ "gic_wartorninsurgentTreasure" ],
+  
+  "identity" : {
+    "gender" : "male",
+    "hairGroup" : "hair",
+    "hairType" : "male4",
+    "hairColor" : "1"
+  },  
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+			"Hey! Stop!"
+          ]
+        }
+      }
+    },
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Gatherer
+          {
+            "head" : [ { "name" : "gic_uscmichhead", "parameters" : { "colorIndex" : [5] }  } ],
+            "chest" : [ { "name" : "coolchest", "parameters" : { "colorIndex" : [5] }  } ],
+            "legs" : [ { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [5] } } ],
+            "primary" : [
+			  "gic_scumbagpistol"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+//      "gic_true_1g" : {
+//        "baseValue" : 1.0
+//      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+	  
+    }
+  }
+  
+}

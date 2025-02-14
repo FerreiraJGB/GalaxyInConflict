@@ -1,0 +1,106 @@
+{
+  "type" : "gic_gazrian_augmentyr_alliedsoldier",
+  "baseType" : "gic_gazrian_augmentyr_base",
+
+
+  "damageTeam" : 19,
+  "scriptConfig" : {
+//    "behavior" : "gic_combat_default",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "patrol"],
+        [2.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/gic_generic_combat_blank.config:attack",
+      "reattack" : "/dialog/gic_generic_combat_blank.config:reattack",
+      "killedTarget" : "/dialog/gic_generic_combat_blank.config:killedTarget",
+      "lostTarget" : "/dialog/gic_generic_combat_blank.config:lostTarget",
+      "outOfSight" : "/dialog/gic_generic_combat_blank.config:outOfSight",
+      "cheerOn" : "/dialog/gic_generic_combat_blank.config:cheerOn",
+      "cantReach" : "/dialog/gic_generic_combat_blank.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_augmentyrarmorhead", "parameters" : { "colorIndex" : [3] }  } ],
+            "chest" : [ { "name" : "gic_augmentyrarmorchest", "parameters" : { "colorIndex" : [3] }  } ],
+            "legs" : [ { "name" : "gic_augmentyrarmorlegs", "parameters" : { "colorIndex" : [3] }  } ],
+            "back" : [ { "name" : "gic_augmentyrarmorback", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+              "gic_augmentyr_smg"
+			  ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : [ "gic_gazrian_augmentyr_dialogue_attack" ], 
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 555.5555 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.0
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+	  
+        "iceResistance" : {
+          "baseValue" : 0.5
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.6
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.4
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.8
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+	  
+	  
+    }
+  }
+}

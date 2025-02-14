@@ -1,0 +1,177 @@
+{
+  "metadata" : {
+    "name" : "gic_khurtovyna_behemoth_train",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_khurtovyna_behemoth_train_playerspawn" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 30,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+
+  
+  
+
+	
+
+  //Behemoth Train
+  
+    {
+      "name" : "gic_khurtovyna_behemoth_train_flatbed",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_flatbed" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_flatbed.json" ]
+    },  
+  
+    {
+      "name" : "gic_khurtovyna_behemoth_train_playerspawn",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_playerspawn" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_playerspawn.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_behemoth_train_gunposition",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_gunposition" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_gunposition.json" ]
+    },
+  
+  
+    {
+      "name" : "gic_khurtovyna_behemoth_train_agricultural",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_agricultural" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_agricultural.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_behemoth_train_batterycar",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_batterycar" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_batterycar.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_behemoth_train_cargo1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_cargo1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_cargo1.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_behemoth_train_cargo2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_cargo2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_cargo2.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_behemoth_train_cargo3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_cargo3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_cargo3.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_behemoth_train_cargo4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_cargo4" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_cargo4.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_behemoth_train_flakgun",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_flakgun" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_flakgun.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_behemoth_train_officerquarters",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_officerquarters" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_officerquarters.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_behemoth_train_standard",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_behemoth_train_standard" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_standard.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_behemoth_train_theengine",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_behemoth_train_theengine.json" ],
+      "chance" : 0
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

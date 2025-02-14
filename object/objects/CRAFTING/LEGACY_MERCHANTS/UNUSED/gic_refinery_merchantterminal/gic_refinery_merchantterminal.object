@@ -1,0 +1,220 @@
+{
+  "objectName" : "gic_refinery_merchantterminal",
+  "category" : "Crafting Station",
+  "rarity" : "Uncommon",
+  "description" : "Merchant Terminal for Refineries.",
+  "shortdescription" : "^orange;Merchant Terminal: Refinery [GIC]^white;",
+  "race" : "generic",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_tradeterminal_economicfacility.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Merchant Terminal: Refinery Bulk Processing",
+        "subtitle" : "  Efficient bulk ore processing. Trades refined metals for unprocessed ore.",
+        "icon" : {
+          "file" : "/interface/crafting/gic_merchantterminal_refinery.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+	
+	
+	
+	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"copperore"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":100,
+				"name":"copperbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_function" ]
+		},
+	
+	
+	
+	
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"goldore"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":100,
+				"name":"goldbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_function" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"ironore"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":100,
+				"name":"ironbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_function" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10,
+				"name":"gic_scrapmetal"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_commercial" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"silverore"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":100,
+				"name":"silverbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_function" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"titaniumore"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":100,
+				"name":"titaniumbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_function" ]
+		},
+		
+		
+		
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":1,
+				"name":"gic_physicalcredit"
+				},
+				{
+				"parameters":{},
+				"count":100,
+				"name":"tungstenore"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":100,
+				"name":"tungstenbar"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_refinery_merchantterminal", "gic_trade_function" ]
+		}
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_refinery_merchantterminal" ]
+  },
+  "printable" : false,
+  "price" : 300,
+  
+  "inventoryIcon" : "gic_refinery_merchantterminal.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_refinery_merchantterminal.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+
+}

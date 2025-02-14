@@ -1,0 +1,51 @@
+{
+  "itemName" : "gic_vampir_scope",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Sight Attachment^white;",
+  "inventoryIcon" : "gic_vampir_scope_icon.png",
+  
+  "description" : "''To see is to live. To see is to spot that one little crack in the enemy's armor, to spot that smallest moment of hesitation when they rear back to strike. To see the way flesh folds once the skull gives in to your weapon.''
+  
+^#96CBE7;Highlights targets in a 40-degree angle from the gun | 100 Block Range | Cannot see through walls.^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  
+  "shortdescription" : "Vampir Scope",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "sight", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_vampir_scope", //name of attachment
+	"attachmentTag" : ["gic_sight","gic_vampir_scope"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/sight/gic_vampir_scope.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_vampir_scope", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "thermalScope",
+		
+//		"statusEffects" : ["gic_regenerationaugment_05percentpersecond_vampir_scope"], //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+		
+		"scopedIn" : "/cursors/gic_vampir_scope2.cursor",	//only parameter absolutely needed for the scope function to work. Scope in and scope out stuff are optional.
+		
+		"range" : 100,
+		"spreadAngle" : 40, // 40 | degrees
+		"lineOfSightCheck" : true, // if true, thermal scope highlighting obeys line of sight
+		"color" : [255, 0, 0, 150] //[0, 255, 0, 150]
+		
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1.0,1.0,1.0,1.0,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1.0,1,1.0] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

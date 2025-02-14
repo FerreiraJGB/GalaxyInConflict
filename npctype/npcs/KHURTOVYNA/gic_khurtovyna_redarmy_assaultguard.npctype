@@ -1,0 +1,136 @@
+{
+  "type" : "gic_khurtovyna_redarmy_assaultguard",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeam" : 84,
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "behavior" : "gic_hostileguard_advanced", //Will switch to sheathedprimary when in close range.
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_s6b710ahead", "parameters" : { "colorIndex" : [3] } } ],
+            "chest" : [ { "name" : "gic_s6b702chest", "parameters" : { "colorIndex" : [3] } } ],
+            "legs" : [ { "name" : "gic_sdkplegs", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [
+              "gic_rpk74m"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_imperial_infantryspade_npc", "parameters" : { "backupWeapon" : true }  }
+			]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  
+  
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion", "gic_dialogue_metro2033_commonsoldier_voice2", "gic_rally_khurtovyna_redarmy_primer"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "gic_infantry_panicProtection" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.5
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : 0.15
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.35
+      }
+	  
+	  
+    }
+  }
+  
+}

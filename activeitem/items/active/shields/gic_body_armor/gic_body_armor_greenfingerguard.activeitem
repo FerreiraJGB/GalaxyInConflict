@@ -1,0 +1,62 @@
+{
+  "itemName" : "gic_body_armor_greenfingerguard",
+  "fixedLevel" : false,
+  "price" : 1200,
+  "maxStack" : 1,
+  "level" : 0,
+  "rarity" : "Legendary",
+  "category" : "shield",
+  "description" : "Covers only the body. Meant for npcs, not players.",
+  "shortdescription" : "Body Armor",
+  "tooltipKind" : "gic_largebase_shield",
+  "twoHanded" : false,
+  "itemTags" : [],
+
+  "inventoryIcon" : "null.png",
+
+  //"animation" : "",
+  "animationParts" : {
+    "shield" : "null.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.775, -2.5], [-0.775, 0.0], [0.775, 0.0], [0.775, -2.5] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/melee/sword_guard.ogg" ],
+      "perfectBlock" : [ "/sfx/melee/shield_block_metal_perfect.ogg" ],
+      "block" : [ "/sfx/melee/shield_block_metal.ogg" ],
+      "break" : [ "/sfx/melee/shield_break_metal.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/shields/gic_body_armor/gic_body_armor.lua"],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 800,
+  "cooldownTime" : 0.4,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 0.0,
+
+  "knockback" : 50,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

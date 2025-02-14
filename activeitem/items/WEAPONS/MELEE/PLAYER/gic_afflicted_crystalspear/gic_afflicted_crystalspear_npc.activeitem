@@ -1,0 +1,152 @@
+{
+  "itemName" : "gic_afflicted_crystalspear_npc",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  
+  "description" : "Much slower than player variant, with longer cooldown as well. All attacks deal electrical instead of melee unlike the player variant.",
+
+  "shortdescription" : "Afflicted Crystal-Spear NPC",
+  "tooltipKind" : "gic_largebase_sword",
+  "category" : "^#D6DFFF;Formation Spear^white;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_afflicted_crystalspear_icon.png",
+
+  "animation" : "gic_afflicted_crystalspear.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_afflicted_crystalspear.png"
+  },
+  
+  "animationCustom" : { "sounds" : {
+ 
+      "heavyAttack" : ["/sfx/melee/gic_bloodborne_nokonata_tenkai.wav"],
+      "heavyAttackSwing" : ["/sfx/melee/gic_bloodborne_swing-stab-charge.wav"],
+      "heavyAttackHit" : ["/sfx/melee/gic_bloodborne_iron-cut-iron2.wav"],
+
+      "shing" : ["/sfx/melee/gic_bloodborne_nokonata_tojiru.wav"],
+  
+          "fire" : ["/sfx/melee/gic_bloodborne_nokonata_nata1.wav", "/sfx/melee/gic_bloodborne_nokonata_nata2.wav", "/sfx/melee/gic_bloodborne_nokonata_nata3.wav"]
+        } },
+ 
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua", "/abilities/weapons/gic_base_formation_weapon.lua"],
+  "scriptDelta" : 1,
+  
+  "elementalType" : "electric",
+
+  //"aimOffset" : -2.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+	"scripts" : ["/items/active/weapons/melee/abilities/gic_spearstab.lua"],
+    "fireTime" : 1.0,
+    "baseDps" : 85,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [ ],
+      "knockbackRange" : 2,
+	  "knockback" : 15,
+	  "damageType" : "IgnoresDef"
+    },
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -100,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.1],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 0.75,
+        "armRotation" : -120,
+        "weaponRotation" : 15,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.1],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 1.25,
+        "armRotation" : -15,
+        "weaponRotation" : -70,
+        "twoHanded" : false,
+        "weaponOffset" : [0.1, 2.6],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "hold" : {
+        "armRotation" : -30,
+        "weaponRotation" : -60,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.1],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+	}
+  },
+  
+
+  "altAbilityType" : "spin",
+  "altAbility" : {
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [{"effect":"gic_boss_melee_primer","duration":2}],
+      "baseDamage" : 300,
+      "knockback" : 0, //50
+      "timeout" : 0.15,
+      "timeoutGroup" : "alt"
+    },
+	"scripts" : ["/items/weapons/melee/player/gic_protectorate_knight_spear/gic_charge.lua"],
+	"class" : "Charge",
+	
+	"cooldownTime" : 1.0,
+	
+	"name" : "Spear Charge",
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -70,
+        "weaponRotation" : -20,
+		"aimAngle" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.5],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 1.0,
+		"aimAngle" : 0,
+        "armRotation" : -115,
+        "weaponRotation" : 12.5,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 2.5],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.25,
+        "armRotation" : -20,
+        "weaponRotation" : -70,
+        "twoHanded" : false,
+        "weaponOffset" : [0.1, 3.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

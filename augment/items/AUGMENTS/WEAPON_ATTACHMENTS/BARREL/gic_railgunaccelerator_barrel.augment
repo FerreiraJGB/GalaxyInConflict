@@ -1,0 +1,98 @@
+{
+  "itemName" : "gic_railgunaccelerator_barrel",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Barrel Attachment^white;",
+  "inventoryIcon" : "gic_railgunaccelerator_barrel_icon.png",
+  
+  
+  
+  "description" : "''Lord Yatagarasu, the Black Sun. Thank you for giving me your power.''
+Supports attachment on most firearms that can attach a barrel.
+^yellow;------------------------------------------------------------------
+^yellow;        ! ! !   C A U T I O N   ! ! !   C A U T I O N   ! ! !   C A U T I O N   ! ! !
+^yellow;------------------------------------------------------------------
+^orange;Bullet damage increases the longer the bullet is in flight, increasing by 1.5x of base damage per 0.1s.",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Railgun Accelerator Barrel",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_railgunaccelerator_barrel", //name of attachment
+	"attachmentTag" : ["gic_railgunaccelerator_barrel", "gic_barrel" ], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_railgunaccelerator_barrel.png", //determines what image is displayed on the resulting gun
+	
+	
+	"specialAttachmentConfig" : {
+//		"type" : "statusEffect", //this can be applied to any attachment of type "sight", "barrel", "stock", or "underbarrel".
+//		"statusEffects" : ["gic_railgunaccelerator_barrel"] //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+
+		"projectileConfig" : {
+//--- --- ---		
+  //"timeToLive" : 2.0,
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    }
+  ],
+
+//  "statusEffects" : [ "electrified" ],
+  "emitters" : [ "electricplasma" ],
+//"damageKind" : "ews_heavyarms",		
+"periodicActions" : [
+    {
+      "time" : 0.1,
+	  //"repeats" : 1, doesn't work, im not smart
+      "action" : "projectile",
+      "type" : "gic_standardbullet_c",
+      "fuzzAngle" : 0.0,
+      "inheritSpeedFactor" : 1.0,
+      "inheritDamageFactor" : 0.5,
+      "directional" : "true",
+	  "config" : {
+		  "timeToLive" : 0.4
+	  }
+    },
+    {
+      "time" : 0.005,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_bluetracer_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.005,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+]	
+//--- --- ---			
+		}
+
+	},
+	
+	
+	"attachmentId" : "gic_railgunaccelerator_barrel", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1.0,1.0,1.0,1.0,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1.0,1.0] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_railgun_attachment.lua" ]
+}

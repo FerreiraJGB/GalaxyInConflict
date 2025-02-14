@@ -1,0 +1,46 @@
+{
+  "projectileName" : "gic_guardiantengu_onbashira_2pattern",
+  "image" : "gic_guardiantengu_onbashira_null.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "onlyHitTerrain" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_guardiantengu_onbashira_stage1",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_guardiantengu_onbashira_stage1",
+      "inheritDamageFactor" : 1,
+	  "angle" : 180
+    }
+  ],
+  
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

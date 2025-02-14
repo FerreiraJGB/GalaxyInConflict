@@ -1,0 +1,40 @@
+{
+  "projectileName" : "gic_speculatoresgladius_precisionartillery_stage4",
+  "physics" : "rocket",
+  
+  
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_pilum_thrown_speculatoresgladius", //gic_rocketartilleryarrow_stage2_arrowstorm
+	  "angle" : -90,
+	  "fuzzAngle" : 10,
+      "angleAdjust" : 0
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_bordergap_start_artillery",
+	  "angle" : 0,
+      "angleAdjust" : 0
+    }
+	
+  ],
+  
+  
+  "image" : "gic_speculatoresgladius_precisionartillery_stage3.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 3,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 0.1,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

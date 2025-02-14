@@ -1,0 +1,35 @@
+{
+  "name" : "gic_armor_fearfactor_pinger_vengefulthirdeye",
+  "blockingStat" : "gic_armor_fearfactor_pingerStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_armor_fearfactor_vengefulthirdeye", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_armor_fearfactor_vengefulthirdeye", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 60,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 4.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_vengefulthirdeye.animation",
+   
+   "label" : "Vengeful Third Eye - Nearby infantry become hesitant, reducing their effective firerate by 0.5s | Also afflicts -20% ATK.",
+  "icon" : "/interface/statuses/gic_vengefulthirdeye.png"
+   
+}

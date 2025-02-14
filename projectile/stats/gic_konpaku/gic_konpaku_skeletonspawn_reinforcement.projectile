@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_konpaku_skeletonspawn_reinforcement",
+  "image" : "icon.png",
+  "physics" : "gas",
+  "piercing" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "damageKindImage" : "icon.png",
+
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_summon_possessed_visual",
+      "inheritDamageFactor" : 0
+	}
+  ],
+
+  "scripts" : [  "gic_konpaku_skeletonspawn_reinforcement.lua" ],
+  "speed" : 0.0,
+  "timeToLive" : 0.05,
+  "onlyHitTerrain" : true,
+  "damageKind" : "default",
+  "damageType" : "NoDamage"
+}

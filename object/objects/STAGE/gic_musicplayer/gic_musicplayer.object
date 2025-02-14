@@ -1,0 +1,36 @@
+{
+  "objectName" : "gic_musicplayer",
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "printable" : false,
+  "scannable" : false,
+
+  "description" : "music player thing.",
+  "shortdescription" : "Music Player",
+  "race" : "human",
+  
+  "inputNodes" : [ [-1, 1] ],
+  
+  "scripts" : [ "/objects/STAGE/gic_musicplayer/gic_musicplayer.lua" ],
+  
+  "fadeInTime" : 2.0,	//how many seconds for song to fade in fully
+  "fadeOutTime" : 2.0,	//how many seconds for song to fade out fully
+  
+  "music" : ["/music/swansong.ogg"],	//picks at random from this list
+  "range" : 100, //range for where players will be radiomessaged; units measured in blocks.
+  
+  "inventoryIcon" : "gic_musicplayer.png",
+  "orientations" : [
+    {
+      "image" : "gic_musicplayer.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "fullbright" : true,
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+
+    }
+  ]
+}

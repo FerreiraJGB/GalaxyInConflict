@@ -1,0 +1,48 @@
+{
+  "name" : "gic_dronepinger_v2",
+  "effectConfig" : {
+	//"projectileType" : "gic_ping_projectile", //does not accept arrays
+	//"projectileTypeMiss" : "gic_ping_projectile", //does not accept arrays
+	"statusEffect" : "gic_pinged", //does not accept arrays
+	"statusDuration" : 2.0,
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.4,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^red;Radar Pinged^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+	},
+	"trackingDistance" : 70,
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 2.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_dronepinger_v2.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_dronepinger.animation",
+ 
+  "label" : "drone pinger tmp",
+  "icon" : "/interface/statuses/gic_suppressed.png"
+}

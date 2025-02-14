@@ -1,0 +1,29 @@
+{
+  "itemName" : "gic_seafoodmisosoup",
+  "rarity" : "Common",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+//  "category" : "^#FFB941;Izakaya Cuisine",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_seafoodmisosoup.png",
+  "description" : "Miso soup with additional cooked seafood added to the mix for additional nutrition.
+  
+Miso is a thick paste made by fermenting soybeans and the kōji fungus, sometimes with rice, barley, seawood or other ingredients. It is then mixed with dashi soup stock to form the basis of miso soup. Its high protein, vitamin, and mineral content played an important nutritional role in Feudal Japan.",
+  "shortdescription" : "Seafood Miso Soup",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 15,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

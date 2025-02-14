@@ -1,0 +1,46 @@
+{
+  "objectName" : "gic_stage_foreground_slopedrustypanel_white_door",
+  "colonyTags" : ["door"],
+  "printable" : false,
+  "rarity" : "Common",
+
+  "category" : "door",
+  "price" : 1000,
+  "description" : "Sloped Rusty Panel",
+  "shortdescription" : "Sloped Rusty Panel",
+  "race" : "generic",
+
+
+  "inventoryIcon" : "gic_stage_foreground_slopedrustypanel_white_dooricon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_stage_foreground_slopedrustypanel_white_door.png:closed",
+      "imagePosition" : [0, 0],
+      "renderLayer" : "Player+10",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "open" : {
+      },
+      "close" : {
+      }
+    }
+  },
+
+  "animationParts" : {
+    "door" : "gic_stage_foreground_slopedrustypanel_white_door.png"
+  },
+  "animationPosition" : [0, 0],
+
+  "inputNodes" : [ [0, 0] ],
+  "outputNodes" : [ [0, -1] ]
+}

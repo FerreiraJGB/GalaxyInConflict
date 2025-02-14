@@ -1,0 +1,37 @@
+{
+  "projectileName" : "gic_standardlaser_miss_pointblank",
+  "image" : "gic_standardlaser.png",
+  "physics" : "laser",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 0.05,
+  "actionOnHit" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_laserimpact/gic_laserimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact_small/gic_energyimpact_small.config"
+    }
+  ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_standardlaser_miss",
+      "fuzzAngle" : 0.0,
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    }
+  ],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "speed" : 200,
+  "statusEffects" : [ "gic_colonial_energyshieldBreak" ],
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef"
+}

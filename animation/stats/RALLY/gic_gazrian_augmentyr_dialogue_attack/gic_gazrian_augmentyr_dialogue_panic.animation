@@ -1,0 +1,71 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_gazrian_augmentyr_dialogue_attack.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [
+		
+        "/sfx/npc/gic_halflifealyx_combinegrunt_panic-01.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_panic-02.ogg",		
+		"/sfx/npc/gic_halflifealyx_combinegrunt_panic-03.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_panic-04.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_panic-05.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_panic-06.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_panic-07.ogg",		
+		"/sfx/npc/gic_halflifealyx_combinegrunt_panic-08.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_panic-09.ogg",
+        "/sfx/npc/gic_halflifealyx_combinegrunt_panic-10.ogg"
+		
+		],
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 1,
+        "particles" : [
+
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 1,
+        "particles" : [
+
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

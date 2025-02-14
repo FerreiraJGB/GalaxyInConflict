@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_ibuki_gourd_heal_sicario",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_ibuki_gourd_heal.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 1,
+  "timeToLive" : 0.01,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_ibuki_gourd_heal_effect",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_ibuki_gourd_heal_area/gic_ibuki_gourd_heal_area_sicario.config"
+    }
+  ],
+  "statusEffects" : [
+"gic_healingflask_medkitheal"
+  ]
+}

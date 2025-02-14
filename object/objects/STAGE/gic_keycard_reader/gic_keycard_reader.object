@@ -1,0 +1,54 @@
+{
+  "objectName" : "gic_keycard_reader",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "Asks for a Muted Core, consumes if found, then produces a wire signal.",
+  "shortdescription" : "Key Card (Example)",
+  "race" : "human",
+  "category" : "wire",
+  "price" : 20,
+
+
+  "inventoryIcon" : "smallwallbuttonicon.png",
+  "orientations" : [
+	{
+      "dualImage" : "smallwallbutton.png:<color>.off",
+      "imagePosition" : [0, 0],
+	  "fullbright" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+    }
+  ],
+
+  // IMPORTANT SCRIPT STUFF
+  "scripts" : [
+    "/objects/gic_keycard.lua"
+  ],
+  "scriptDelta" : 5,
+  "requiredItem" : "gic_muted_artifact", // item ID to consume
+  "consumeItem" : true, // if true, then consume the item upon accepting item
+  "activeTime" : 1, // dummy value; instead of having an "active time", object toggles "on" when enabled
+  
+  // this setup is to allow for checking if a status effect is on a given player
+  "confirmStat" : true, // if enabled, then the switch will only turn on if the stat corresponding to 'checkStat' is greater or equal to 1
+  "checkStat" : "biomeheatImmunity", // the stat checked on the player
+  
+  
+
+  "animation" : "/objects/wired/switch/switchtoggle.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/metalbarrel_break1.ogg" ],
+      "off" : [ "/sfx/interface/clickon_error.ogg" ]
+    }
+  },
+
+  "animationParts" : {
+    "switch" : "smallwallbutton.png"
+  },
+  "animationPosition" : [0, 0],
+
+  "outputNodes" : [ [1, 1] ]
+}

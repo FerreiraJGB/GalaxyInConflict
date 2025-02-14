@@ -1,0 +1,41 @@
+{
+  "projectileName" : "gic_magicshot_sarielsstrike_stage1",
+  "image" : "gic_magicshot_sarielsstrike_stage1.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "onlyHitTerrain" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "fullbright" : true,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 0.1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_sarielsstrike_stage2_spawner_appear",
+      "inheritDamageFactor" : 1,
+      "directional" : "true",
+      "angle" : 0
+    }
+  ],
+"periodicActions" : [
+],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bulletshot" ],
+  "speed" : 200,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

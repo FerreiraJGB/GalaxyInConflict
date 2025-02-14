@@ -1,0 +1,25 @@
+{
+  "name" : "gic_biomeweathercold_frost",
+  "blockingStat" : "gic_biomeweathercold_frostImmunity",
+  
+  "effectConfig" : {
+    "directives" : "fade=AAAAFF=0.3",
+    "movementModifiers" : {
+      "speedModifier" : 1,
+      "airJumpModifier" : 1
+    },
+    "tickRate" : 50,
+    "energyCost" : 1,
+    "healthDamage" : 5
+  },
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "gic_biomeweathercold_frost.lua"
+  ],
+
+  "animationConfig" : "gic_biomeweathercold_frost.animation",
+
+  "label" : "Chilly Frost - Energy Reserves will cease to be viable and the frost will slowly kill you.",
+  "icon" : "/interface/statuses/biomecold.png"
+}

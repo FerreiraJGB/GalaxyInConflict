@@ -1,0 +1,46 @@
+{
+  "objectName" : "gic_npcspawner_radiomsg",
+  "colonyTags" : ["misc"],
+  "rarity" : "Common",
+  "description" : "Spawns npcs in a variety of configurable ways.",
+  "shortdescription" : "Npc Spawner (Radio Message Var)",
+  "race" : "human",
+  "printable" : false,
+  "category" : "spawner",
+  "price" : 133,
+
+  "inventoryIcon" : "gic_npcspawner.png",
+  "orientations" : [
+    {
+      "image" : "gic_npcspawner.png",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/STAGE/gic_npcspawner/gic_npcspawner_radiomsg.lua" ],
+  "scriptDelta" : 10,
+
+  "inputNodes" : [ [-1, 0] ],
+
+  "spawner" : {
+	"radioMessage" : ["gic_biomeairless"],	//picks random from list n stuff
+	"range" : 100, //range for where players will be radiomessaged; is in blocks i think? not sure
+    "typeName" : ["hostile"], //type of npc to spawn (random from list)
+	"npc" : [ "apex", "avian", "floran", "glitch", "human", "hylotl", "novakid" ], //species of NPC to spawn.
+    "npcLevel" : [1, 10], //level of npc to spawn (random within range, or leave blank for world threat level)
+    "npcParams" : { //additional parameters of spawned npc
+      "aggressive" : true
+    },
+    "position" : [0, 2], //relative position to spawn at
+    "positionVariance" : [10, 0], //[x,y] size of randomized spawn area, centered on position
+    "frequency" : [5.0, 5.0], //cooldown time between spawns (random within range)
+    "stock" : 1, //total number of spawns, -1 for infinite
+    "trigger" : null, //options include "wire", "interact", "break", null (periodic)
+    "outOfSight" : false //only spawn where the player can't see
+  },
+
+  "smashOnBreak" : true
+}

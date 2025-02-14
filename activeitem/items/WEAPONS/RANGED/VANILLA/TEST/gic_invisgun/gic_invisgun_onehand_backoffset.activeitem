@@ -1,0 +1,108 @@
+{
+  "itemName" : "gic_invisgun_onehand_backoffset",
+  "price" : 2015,
+  "inventoryIcon" : "ue_enfielder.png",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "From older times, the legend is back.",
+  "shortdescription" : "Enfield Rifle",
+  "level" : 4,
+  "tooltipKind" : "base",
+  "category" : "Battle Rifle",
+  "itemTags" : ["weapon","ranged","rifle"],
+  "twoHanded" : false,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "ue_enfielder_open.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash.png"
+  },
+  "animationCustom" : {  "particleEmitters" : { "muzzleFlash" : {  "burstCount" : 1, "particles" : [ {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },  {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },  {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },  {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },  {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },  {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },
+ 
+            { "particle" : {
+                "type" : "textured",
+                "image" : "/projectiles/CASINGS/ue_50calshellcasing/ue_50calshellcasing.png:0",
+                "position" : [-1.7, -0.0],
+                "size" : 1.0,
+                "color" : [255, 255, 255, 255],
+                "fade" : 0,
+                "initialVelocity" : [-5.0, 6.5],
+                "finalVelocity" : [0, -60],
+                "approach" : [5, 50],
+                "rotation" : -90,
+                "flippable" : true,
+                "angularVelocity" : 0,
+                "timeToLive" : 3,
+                "destructionAction" : "fade",
+                "destructionTime" : 1,
+                "layer" : "middle",
+                "variance" : {
+                  "initialVelocity" : [3, 1],
+                  "timeToLive" : 0.1
+                }
+              } }
+
+ ] } },
+    "sounds" : {
+      "fire" : [ "/sfx/gun/ue_enfield_02.ogg" ]
+    }, "animatedParts" :
+ { "parts" : { "muzzleFlash" : { "offset" : [1.2,0.3] }, "middle" : { "properties" : {  "zLevel" : 10, "offset" : [0.95,0.3], "transformationGroups" : [] } },  "slide" : { "properties" : { "zLevel" : 1, "image" : "ue_enfielder_slide.png", "offset" : [0.95,0.3], "transformationGroups" : ["weapon"] } }, "back" : { "properties" : { "zLevel" : -10, "image" : "ue_enfielder_open_p2.png", "offset" : [0.95,0.3], "transformationGroups" : [] } } } } },
+
+  "baseOffset" : [0.95, 0.3],
+  "muzzleOffset" : [1.5, 0.14],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 1.75,
+    "baseDps" : 14,
+    "energyUsage" : 47.8,
+    "inaccuracy" : 0.04,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : [ "ue_tracerbullet" ],
+    "projectileParameters" : {
+      "knockback" : 11
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : -45,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 1.0,
+        "armRotation" : 3,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [-0.23, 0],
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "cooldown" : {
+        "duration" : 0.5,
+        "armRotation" : 3,
+        "weaponRotation" : 0,        "frontArmFrame" : "run.1",
+        "twoHanded" : false,
+        "weaponOffset" : [-0.23, 0],
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

@@ -1,0 +1,50 @@
+{
+  "metadata" : {
+    "name" : "gic_afflictedcolony_expedition_bossrush",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_afflictedcolony_expedition_start"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 10,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_afflictedcolony_expedition_start",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_expedition_start.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_afflictedcolony_expedition_ravine",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_afflictedcolony_expedition_ravine" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_expedition_ravine.json" ] ],
+      "chance" : 1.0
+    },
+	
+	
+
+    {
+      "name" : "gic_afflictedcolony_expedition_end",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_afflictedcolony_expedition_end.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

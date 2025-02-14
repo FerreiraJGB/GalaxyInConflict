@@ -1,0 +1,17 @@
+{
+  "name" : "gic_bleeding_heavy",
+  "blockingStat" : "gic_bleeding_heavyStatusImmunity",
+
+  "effectConfig" : {
+    "initialTickDamagePercentage" : 0.025,
+    "rampUpPerTick" : 0.01 //this % value is added to initialTickDamagePercentage every damage tick
+  },
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "gic_bleeding_heavy.lua"
+  ],
+
+  "label" : "Heavy Bleeding - -10% HIT CHANCE and ACCURACY | -20% ATK.",
+  "icon" : "/interface/statuses/gic_heavybleeding.png"
+}

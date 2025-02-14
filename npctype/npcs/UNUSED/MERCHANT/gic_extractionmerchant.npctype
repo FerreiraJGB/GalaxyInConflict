@@ -1,0 +1,80 @@
+{
+  "type" : "gic_extractionmerchant",
+  "baseType" : "merchant",
+
+  "scriptConfig" : {
+    "questGenerator" : {
+      "pools" : ["common"],
+      "enableParticipation" : true,
+      "timeLimit" : 30,
+      "nearbyQuestLimit" : 1,
+      "nearbyQuestRange" : 50,
+      "questCountRange" : [1, 4]
+    },
+
+    "dialog" : {
+      "merchant" : {
+        "start" : "/dialog/civilian/gic_civilianmerchant.config:merchantStart",
+        "end" : "/dialog/civilian/gic_civilianmerchant.config:merchantEnd",
+        "follow" : "/dialog/civilian/gic_civilianmerchant.config:follow",
+        "welcome" : "/dialog/civilian/gic_civilianmerchant.config:welcome",
+        "tout" : "/dialog/civilian/gic_civilianmerchant.config:tout"
+      },
+      "flee" : {
+        "helpme" : "/dialog/flee.config:helpme",
+        "safe" : "/dialog/flee.config:safe"
+      },
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/merchant.config:tagCriteria",
+          "enclosedArea" : "/dialog/merchant.config:enclosedArea",
+          "otherDeed" : "/dialog/merchant.config:otherDeed",
+          "severe" : "/dialog/merchant.config:severe",
+          "final" : "/dialog/merchant.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/merchant.config:beacon",
+          "rent" : "/dialog/merchant.config:rent"
+        }
+      },
+      "accuse" : "/dialog/thief.config:accuse",
+      "alert" : "/dialog/thief.config:alert"
+    },
+
+    "merchant" : {
+      "waitTime" : 10,
+      "storeRadius" : 5,
+      "poolsFile" : "/npcs/merchant/gic_civilianitemsstore.config",
+      "categories" : {
+        "override" : [ "gic_extractionshop" ]
+      },
+      "buyFactorRange" : [ 1.0, 2.0 ],
+      "sellFactorRange" : [ 0.05, 0.1 ],
+      "numItems" : 2,
+      "paneLayoutOverride" : {
+        "windowtitle" : {
+          "title" : "  Extraction Dealer",
+          "subtitle" : "  Sells raw minerals commonly mined from barren rocks."
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "back" : [
+              { "name" : "survivalgearback", "parameters" : { "colorIndex" : [1] } }
+            ],
+            "chest" : [
+              { "name" : "workoutchest", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "legs" : [
+              { "name" : "workoutlegs", "parameters" : { "colorIndex" : [0] } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "itemName" : "gic_burdenofthedivine",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_burdenofthedivine.png",
+  "maxStack" : 1,  
+  "description" :
+
+"''The Grand Hakutaku tried to instill in us a sense of responsibility for our fellow people, saying it was the burden of those who ruled to care for those they ruled over. There exists one of whom she tried to instill these lessons harsher than others, but those most disciplined so often turn rebellious.''
+^orange;Enemies killed within approximately 60 blocks restore 4% HP/s for 3s for all bearers with the ring worn.^reset;
+^yellow;Counts as a 0-damage effect, also proccing ON-DAMAGE effects on a kill^reset; | ^red;-10% MAX HP.^reset;",
+
+  
+  
+  
+  "shortdescription" : "Burden of the Divine",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_burdenofthedivine",
+    "displayName" : "Burden of the Divine",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_burdenofthedivine.png",
+    "effects" : [ 
+	
+"gic_maxhealthscalingboost_-10_burdenofthedivine",
+
+"gic_burdenofthedivine_pinger",
+
+"gic_burdenofthedivine_primer"
+
+
+
+	
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_rig_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

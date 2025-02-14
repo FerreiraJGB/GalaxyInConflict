@@ -1,0 +1,118 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_dialogue_scabgunner.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : {
+      "pool" : [
+		
+        "/sfx/Darktide/gic_darktide_scabgunner-01.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-02.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-03.ogg",	//Heavy Support
+        "/sfx/Darktide/gic_darktide_scabgunner-04.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-05.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-06.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-07.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-08.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-09.ogg",	//Loyalist Mention
+        "/sfx/Darktide/gic_darktide_scabgunner-10.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-11.ogg",	//Heavy Support
+        "/sfx/Darktide/gic_darktide_scabgunner-12.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-13.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-14.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-15.ogg",	//Establishing Fire Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-16.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-17.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-18.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-19.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-20.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-21.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-22.ogg",	//Where's your corpse God now?
+//        "/sfx/Darktide/gic_darktide_scabgunner-23.ogg",	//Establishing Fire Base
+        "/sfx/Darktide/gic_darktide_scabgunner-24.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-25.ogg",	//Establishing Heavy Fire Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-26.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-27.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-28.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-29.ogg",	//Getting shot at.
+//        "/sfx/Darktide/gic_darktide_scabgunner-30.ogg",	//Heavy Support on alert.
+        "/sfx/Darktide/gic_darktide_scabgunner-31.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-32.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-33.ogg",	//Establishing Fire Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-34.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-35.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-36.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-37.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-38.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-39.ogg",	//Establishing Kill Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-40.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-41.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-42.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-43.ogg",	//Heavy Support establishing fire corridor
+        "/sfx/Darktide/gic_darktide_scabgunner-44.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-45.ogg",	//Clearing Fire Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-46.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-47.ogg",	//Heavy Support moving to overwatch
+        "/sfx/Darktide/gic_darktide_scabgunner-48.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-49.ogg",	
+//        "/sfx/Darktide/gic_darktide_scabgunner-50.ogg",	//Establishing Kill Zone
+        "/sfx/Darktide/gic_darktide_scabgunner-51.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-52.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-53.ogg",	
+        "/sfx/Darktide/gic_darktide_scabgunner-54.ogg"
+		],
+      "rangeMultiplier" : 2.0
+		},
+		
+
+		
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

@@ -1,0 +1,43 @@
+{
+  "objectName" : "gic_tvmonitor_large_corporate",
+  "colonyTags" : ["station","electronic","space"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "description" : "A screen displaying a series of Corporate Logos.",
+  "shortdescription" : "TV Monitor Corporate",
+  "race" : "generic",
+
+  
+  "lightColor" : [145, 145, 145],
+
+  "inventoryIcon" : "gic_tvmonitor_large_corporateicon.png",
+  "orientations" : [
+    {
+      "image" : "gic_tvmonitor_large_corporate.png:<color>.<frame>",
+      "imagePosition" : [-48, -16],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "animation" : "gic_tvmonitor_large_corporate.animation",
+  "animationParts" : {
+    "bg" : "gic_tvmonitor_large_corporate.png",
+    "fg" : "gic_tvmonitor_large_corporatelit.png"
+  },
+  "animationPosition" : [-48, -16],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [-6, -2] ],
+
+  "interactive" : false,
+
+  "soundEffect" : "/sfx/objects/bunkerdisplay.ogg",
+  "soundEffectRangeMultiplier" : 0.25
+
+}

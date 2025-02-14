@@ -1,0 +1,26 @@
+{
+  "projectileName" : "ews_garand_enbloc_magreload_autoreload",
+  "image" : "icon.png",
+  "animationCycle" : 0.25,
+  "physics" : "laser",
+  "piercing" : true,
+  "bounces" : 1,
+  "renderLayer" : "Player+1",
+  "frameNumber" : 1,
+  "timeToLive" : 0.05,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "ews_garand_enbloc_magreload",
+      "directional" : "true",  
+      "fuzzAngle" : 15,
+      "angle" : 90
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

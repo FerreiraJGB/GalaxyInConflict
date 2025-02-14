@@ -1,0 +1,19 @@
+{
+  "itemName" : "ews_repairitem",
+  "price" : 5000,
+  "rarity" : "Essential",
+  "category" : "Attachment",
+  "inventoryIcon" : "/assetmissing.png",
+  "description" : "Repairs 15% of durability if durability is above 50%.",
+  "shortdescription" : "Repair Item (EWS)",
+
+  "config" : {
+	"tags" : ["ews_rifle"],	//main activeitem needs to have this tag under "weaponRepairAcceptTags"
+	"limit" : 0.5,	//if main item's weaponDurability/weaponDurabilityMax is greater/equal, then this "augment" can apply.
+	"repairAmount" : 0.15  //how much the weapon repairs (1.0 is 100%)
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/repairItems/ews_repairItem.lua" ]
+}

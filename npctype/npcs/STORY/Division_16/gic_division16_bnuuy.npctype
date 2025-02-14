@@ -1,0 +1,251 @@
+{
+  "type" : "gic_division16_bnuuy",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ ],
+  
+  "identity" : {
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "fem11",
+    "hairColor" : "15"
+  },  
+  
+  "scriptConfig" : {
+    "behavior" : "villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 1,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+	
+      "complain" : {
+        "default" : {
+          "default" : [
+            "What's hoppin'?",
+			"Nothing here to see.",
+			"You like chocolate or strawberry?",
+			"Longevity, peace, and prosperity to you, good sir.",
+			"Maybe one day I'll be able to walk in the Lunar Capital again.",
+			"I'm impure, they say. Just for hangin' out with humies.",
+			"Me? Impure? Preposterous.",
+			"Lunar Capital can suck it.",
+			"Can't believe I'm here. Eatin', sleepin', and shittin' with humans.",
+			"What horrible fate put us here? To actually get along?",
+			"Pure as gravel, huh.",
+			"Lunar Capital always on about purity..."
+          ]
+        }
+      },
+	
+      "converse" : {
+        "default" : {
+          "default" : [
+            "What's hoppin'?",
+			"Nothing here to see.",
+			"You like chocolate or strawberry?",
+			"Longevity, peace, and prosperity to you, good sir.",
+			"Maybe one day I'll be able to walk in the Lunar Capital again.",
+			"I'm impure, they say. Just for hangin' out with humies.",
+			"Me? Impure? Preposterous.",
+			"Lunar Capital can suck it.",
+			"Can't believe I'm here. Eatin', sleepin', and shittin' with humans.",
+			"What horrible fate put us here? To actually get along?",
+			"Pure as gravel, huh.",
+			"Lunar Capital always on about purity..."
+          ]
+        }
+      },
+	  
+      "greeting" : {
+        "default" : {
+          "default" : [
+            "What's hoppin'?",
+			"Nothing here to see.",
+			"You like chocolate or strawberry?",
+			"Longevity, peace, and prosperity to you, good sir.",
+			"Maybe one day I'll be able to walk in the Lunar Capital again.",
+			"I'm impure, they say. Just for hangin' out with humies.",
+			"Me? Impure? Preposterous.",
+			"Lunar Capital can suck it.",
+			"Can't believe I'm here. Eatin', sleepin', and shittin' with humans.",
+			"What horrible fate put us here? To actually get along?",
+			"Pure as gravel, huh.",
+			"Lunar Capital always on about purity..."
+          ]
+        }
+      },
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "hail" : {
+        "default" : {
+          "default" : [
+            "What's hoppin'?",
+			"Nothing here to see.",
+			"You like chocolate or strawberry?",
+			"Longevity, peace, and prosperity to you, good sir.",
+			"Maybe one day I'll be able to walk in the Lunar Capital again.",
+			"I'm impure, they say. Just for hangin' out with humies.",
+			"Me? Impure? Preposterous.",
+			"Lunar Capital can suck it.",
+			"Can't believe I'm here. Eatin', sleepin', and shittin' with humans.",
+			"What horrible fate put us here? To actually get along?",
+			"Pure as gravel, huh.",
+			"Lunar Capital always on about purity..."
+          ]
+        }
+      },
+	  
+      "accuse" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      }
+	  
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_rabbitearshead", "parameters" : { "colorIndex" : [0] }  }, { "name" : "gic_rabbitearshead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_moonrabbitchest", "parameters" : { "colorIndex" : [0, 1, 2, 3] }  }, { "name" : "", "parameters" : { "colorIndex" : [0, 1, 2, 3] }  }  ],
+            "legs" : [ { "name" : "gic_moonrabbitlegs", "parameters" : { "colorIndex" : [3] } } ],
+            "sheathedprimary" : [ "gic_scumbagpistol" ]
+		  }
+        ] ]
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

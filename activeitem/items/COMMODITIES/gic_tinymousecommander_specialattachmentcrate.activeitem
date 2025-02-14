@@ -1,0 +1,39 @@
+{
+  "itemName" : "gic_tinymousecommander_specialattachmentcrate",
+  "rarity" : "Rare",
+  "category" : "^#697D98;Item Box",
+  "inventoryIcon" : "gic_tinymousecommander_specialattachmentcrate.png",
+  "description" : "A sealed container with a random exotic firearm attachment from everywhere and nowhere. For all the options they're offered, why in all of divinity would they continue to use a suppressor?
+  
+^orange;Open to obtain an exotic FIREARM ATTACHMENT from somewhere beyond...^reset;",
+  "shortdescription" : "TMC's S. Attachment Crate",
+  "tooltipKind" : "gic_largebase",
+  "price" : 250,
+  "maxStack" : 1,
+  
+  "twoHanded" : true,  
+  
+  "animation" : "/items/commodities/trade/gic_openablecargo.animation",
+  "animationCustom" : {
+	"animatedParts" : {
+		"parts" : {
+			"gun" : {
+				"properties" : {
+					"centered" : true,
+					"image" : "gic_tinymousecommander_specialattachmentcrate.png",
+					"offset" : [0.0, 0.0]
+				}
+			}	
+		}
+	}
+  },
+  "scripts" : ["/items/commodities/trade/gic_openablecargo.lua"],
+
+  "fireTime" : 5.0,
+  "fireOffset" : [1.0, 0.0],	
+	
+  "treasure" : {
+    "pool" : "gic_starter_world_randomspecialattachmentTreasure",
+    "level" : 1
+  }  
+}

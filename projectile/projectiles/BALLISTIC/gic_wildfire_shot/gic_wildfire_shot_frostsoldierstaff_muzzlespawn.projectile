@@ -1,0 +1,77 @@
+{
+  "projectileName" : "gic_wildfire_shot_frostsoldierstaff_muzzlespawn",
+  "image" : "gic_wildfire_shot.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "angle" : 90
+    },	
+    {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/gic_remnantfromtheashes_root_slayer-05.ogg",
+	  "/sfx/gic_remnantfromtheashes_root_slayer-06.ogg",
+      "/sfx/gic_remnantfromtheashes_root_slayer-07.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_wildfire_shot",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 0
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_blackfog/2.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 20.0,
+        "destructionTime" : 10,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_lightfog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 20.0,
+        "destructionTime" : 10,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+  ],
+  
+  "actionOnCollide" : [
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

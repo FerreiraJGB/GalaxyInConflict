@@ -1,0 +1,27 @@
+{
+  "itemName" : "gic_packagedrawbacon",
+  "rarity" : "Common",
+  "price" : 100,
+  "category" : "Packaged Food",
+  "inventoryIcon" : "gic_packagedrawbacon.png",
+  "description" : "3kg of Raw Bacon in a commercial package. 10 strips of vaguely-pork-related meat. Good luck figuring out if it's real pork or not.",
+  "shortdescription" : "Packaged Raw Bacon",
+  "tooltipKind" : "gic_largebase_food",
+  "maxStack" : 1,
+  "twoHanded" : true,
+	
+  "animation" : "gic_packagedrawbacon.animation",
+  "animationCustom" : {},
+  "scripts" : ["gic_packagedfoodcontainer.lua"],
+
+  "fireTime" : 5.0,
+  "fireOffset" : [1.0, 0.0],	
+	
+  "treasure" : {
+    "pool" : "gic_packagedrawbaconTreasure",
+    "level" : 1
+  },
+	
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2
+}

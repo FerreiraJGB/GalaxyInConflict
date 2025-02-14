@@ -1,0 +1,32 @@
+{
+  "itemName" : "gic_armor_basicvisor",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CCD8B6;Helmet Equipment^reset;",
+  "inventoryIcon" : "gic_armor_basicvisor.png",
+  
+  "description" : 
+  
+"Basic general-purpose PPE with general UV protection from some suns and durability for rough conditions. Prevents dust from entering your eyes but is otherwise completely useless by itself. You can still put it on with your helmet if you want.
+
+^yellow;Fulfills basic safety checklists when the supervisor appears.^reset;",
+
+
+
+  "shortdescription" : "Basic Protective Visor",
+
+  "augment" : {
+    "type" : "gic_basichead",
+    "name" : "gic_armor_basicvisor",
+    "displayName" : "Basic Protective Visor",
+    "displayIcon" : "/items/augments/basic/head/gic_armor_basicvisor.png",
+    "effects" : [ 
+	"gic_armor_basicvisor"
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_helmet_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

@@ -1,0 +1,80 @@
+{
+  "itemName" : "gic_psychic_bucklershield",
+  "fixedLevel" : false,
+  "price" : 0,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "^#D6DFFF;Parry Shield^white;",
+  
+  "description" : "-blank-
+
+^yellow;Force Deflection: 1.5 second perfect block time.^white;
+^yellow;All-in: 5hp blocking power.^white;",
+  
+  
+  "shortdescription" : "Psychic Buckler Shield",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_psychic_bucklershieldicon.png", //:nearidle
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_psychic_bucklershield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ ], //sword_guard
+      "perfectBlock" : [
+ 	  "/sfx/melee/gic_bloodborne_shield-ghost.wav"
+	  ], //shield_block_ice_perfect
+	  
+      "block" : [
+	  "/sfx/block/gic_sekiro_meleeblock1.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock2.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock3.ogg",
+	  "/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ],
+	  
+      "break" : [
+	  "/sfx/melee/gic_bloodborne_ShieldBreak00.wav"
+	  ] //shield_block_ice
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_bucklershield.lua"],
+
+  "minActiveTime" : 0.1,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 5,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.5,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 1.5,
+
+  "knockback" : 1,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

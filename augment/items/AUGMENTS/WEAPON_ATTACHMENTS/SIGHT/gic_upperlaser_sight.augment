@@ -1,0 +1,54 @@
+{
+  "itemName" : "gic_upperlaser_sight",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Sight Attachment^white;",
+  "inventoryIcon" : "gic_upperlaser_sight_icon.png",
+  "description" : "Close-quarters attachment that completely replaces your sights with an aim guide laser sight.
+  
+^green;+15% [EWS] Hit Chance and Accuracy when standing or moving.^reset;
+
+^red;-30% [EWS] Hit Chance and Accuracy when crouching.^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  "shortdescription" : "Upper Laser Sight",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "sight", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_upperlaser_sight", //name of attachment
+	"attachmentTag" : ["gic_sight","gic_upperlaser_sight"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/sight/gic_upperlaser_sight.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_upperlaser_sight", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "lasersight",
+		
+		"statusEffects" : ["gic_ews_attachment_sight"], //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+		
+		"transformationGroupWeapon" : true,		//if enabled, then the laser sight will properly align with the weapon transformation group
+		"lasersightConfig" : {
+			"originalOffset" : [0.0, 0.625],		//original offset
+			"offset" : [0,0],					//mostly set dynamically by scripts if transformationGroupWeapon is true
+			"color" : [255, 0, 0, 150],
+			"length" : 60,
+			"segments" : 20,
+			"angle" : 0
+		}
+		
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [0.85,1.3,0.85,1.3,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1.0,1,1.0] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

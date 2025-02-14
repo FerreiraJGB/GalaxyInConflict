@@ -1,0 +1,32 @@
+{
+  "id" : "gic_wildlands_dealer_repeatablequest",
+  "title" : "^orange;Old Frontiers [Repeatable]",
+  "text" : "Wildlands planets would make good colonies if not for the aggressive nocturnal wildlife. I know folk who pay well for information on the beasts.",
+  "completionText" : "Earned in blood and paid for in full. Return to me or one of our associates for more jobs like these.",
+  "moneyRange" : [500,2500],
+  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 50 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_wildlands_asylumdocument",
+        "count" : 5,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset; within a ^orange;Wildlands Research Asylum^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

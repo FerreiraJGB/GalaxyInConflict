@@ -1,0 +1,22 @@
+{
+  "itemName" : "gic_vegetableburger",
+  "rarity" : "Common",
+  "price" : 0,
+  "category" : "food",
+  "inventoryIcon" : "gic_foods_reinstated.png",
+  "description" : "Someone had the brilliant idea of putting vegetables between two thick buns of bread. Really it's just the bread that's filling.",
+  "shortdescription" : "Vegetable Burger",
+
+  "foodValue" : 30,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "effects" : [ [
+  "gic_foodbuff_human_primer"
+    ] ],
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

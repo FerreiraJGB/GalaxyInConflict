@@ -1,0 +1,70 @@
+{
+  "type" : "gic_ww3_soldier_right_setpiece",
+  "baseType" : "base",
+
+  "persistent" : true,
+
+  "dropPools" : [  ],
+
+  "damageTeamType" : "assistant",
+
+  "scriptConfig" : {
+    "behavior" : "gic_stationary_right_gunner"
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "chest" : [ { "name" : "gic_lust_infantryarmorchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_lust_infantryarmorlegs", "parameters" : { "colorIndex" : [0] }  } ],
+            "back" : [ { "name" : "gic_lust_infantryarmorback", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+			  "gic_ak202"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  
+  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 100
+      },
+      "grit" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+	  "ews_npcfirerate" : {
+        "baseValue" : 0.33
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.9
+      }
+	  
+	  
+    }
+  }
+  
+  
+  
+}

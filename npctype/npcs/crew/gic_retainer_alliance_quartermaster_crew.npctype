@@ -1,0 +1,336 @@
+{
+  "type" : "gic_retainer_alliance_quartermaster_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },  
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0} ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "crewmember", //gic_noinspectcrew
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  //------------
+	  
+ //Retainer Add-on - Had to concede with the default popup.  
+      "interactAction" : "ShowPopup", //ScriptPane
+	  
+      "interactData" : {
+      "uiConfig" : "/interface/windowconfig/gic_retainerpopup.config", //-- This doesn't work, the bastards!
+	  
+//	  "gui" : "/interface/windowconfig/gic_retainerpopup.config",
+	  
+        "icon" : {
+          "file" : "/interface/crafting/gic_undercolonyworkshopmerchant.png"
+        },
+	  
+      "title" : "^#52A8DD;Alliance Quartermaster Retainer^reset;",	  
+      "subtitle" : "^#E0C200;''When even one rifle is faulty, the army is weakened.''^reset;",
+
+    "paneLayoutOverride" : { //This doesn't work either!
+      "windowtitle" : {
+        "icon" : {
+          "file" : "/interface/crafting/gic_undercolonyworkshopmerchant.png"
+        }
+      }
+    },
+	  
+      "message" : 
+"^#E0C200;+15% EWS Hit Chance and Accuracy.^reset;
+
+^#52A8DD;The Alliance of Independents are known for their mercantile traditions and can maintain the influx of war equipment for the crew, as well as maintaining weaponry and gear themselves.^reset;"
+      },
+
+
+
+//----------------------
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "retainer",
+        "name" : "Quartermaster",
+        "field" : "Quartermaster",
+        "uniformColorIndex" : 1,
+		
+        "benefits" : [
+          {
+            // Ephemeral effects gained upon leaving the ship.
+            "type" : "EphemeralEffect",
+            "effect" : "gic_alliance_quartermaster",
+            "duration" : 3600 //1hr
+          }
+        ]
+		
+      },
+
+      "ranks" : [
+		"Captain",
+		"Major",
+		"Lieutenant"
+		
+      ],
+
+      "defaultUniform" : {
+	    "head" : "gic_operatorcaphead",
+        "chest" : "minerchest", //soldierchest
+        "legs" : "sweatervestlegs", //soldierpants
+		"back" : ""
+      },
+      "uniformSlots" : [] //"chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"
+    },
+	
+
+	
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "I'm willing to join as a quartermaster. I've got plenty of experience.",
+			  "You look like you need someone to act as a quartermaster.",
+			  "You there, have you kept your inventory organized?",
+			  "Have you organized your inventory?"
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "I'll be here then.",
+              "I'll be here."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "A sorry excuse for stock.",
+			  "You call this well-kept?",
+			  "I want an inventory check, right now.",
+			  "Have you kept your inventory organized?"
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+	    },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy."
+          ]
+        }
+      }
+	
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "converse" : {
+        "default" : {
+          "default" : [
+			"I got nothin' for you chief.",
+			"Sorry mate, nothing for you.",
+			"You think I got stock? You're joking, surely."
+          ]
+        }
+      }
+
+
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player = 18
+    "runSpeed" : 12
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+	  
+          {
+            "head" : [ { "name" : "gic_operatorcaphead", "parameters" : { "colorIndex" : [1,2,3,4,5,6,7,8,9,10,11] } } ],
+            "chest" : [ { "name" : "minerchest", "parameters" : { "colorIndex" : [1,2,3,4,5,6,7,8,9,10,11] } } ],
+            "legs" : [ { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : [1,2,3,4,5,6,7,8,9,10,11] } } ]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "itemName" : "gic_morphine_pack",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_morphine_pack.png",
+  
+  "itemTags" : ["gic_syringerifle_ammo"],
+  
+  "maxStack" : 15,
+  "description" : "Morphine is an extremely useful medicine that can be used to treat most forms of damage by easing pain which could otherwise impact combat effectiveness. Whilst relatively easy to use it can also very easily cause Opiate Addictions in users not proficient in administering aid, or with those lacking the mental fortitude.
+^green;- Restores 200 health, costing 1 second.
+^yellow;- Heals Bruising.^white;
+^red;- Causes Opiate Addiction for unskilled or unprepared users.^white;",
+
+  "shortdescription" : "^Orange;Morphine Pack",
+  "effects" : [ [
+      {
+        "effect" : "gic_opiate_medkitheal",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_opiate_addiction"
+      },
+	  {
+        "effect" : "gic_applyopiate_addiction"
+      },
+	  
+      {
+        "effect" : "gic_trait_drugaddict_primer"
+      },
+	  
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 1
+      },
+	  {
+        "effect" : "gic_bruise_pack_recovery"
+      }
+
+//	  {
+//        "effect" : "gic_opiate_overdose_smalldelay"
+//      },	  
+//	  {
+//        "effect" : "gic_opiate_overdose_active_check"
+//      }
+	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_medkit_use" ],
+  "blockingEffects" : [
+  ]
+}

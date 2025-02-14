@@ -1,0 +1,34 @@
+{
+  "projectileName" : "gic_PatrolTeam_Protectorate_HelicopterDeployment_stage4",
+  "image" : "T1_ARadio_Backup.png",
+  "animationCycle" : 0.3,
+  "physics" : "gic_helicopterreinforcement",
+  "bounces" : -1,
+  "frameNumber" : 3,
+  "timeToLive" : 2.0,
+  "flippable" : false,
+  "orientationLocked" : true,
+  "onlyHitTerrain" : true,
+  "fullBright" : true,
+  "pointLight" : false,
+  "damageKindImage" : "icon.png",
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_PatrolTeam_Protectorate_HelicopterDeployment_stage5",
+      "angle" : 90.0
+    
+    },
+    {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/alerts/gic_cto_backup_departing.ogg"
+      ]
+    }
+  ],
+  "power" : 0.0,
+  "speed" : 1,
+  "persistentAudio" : "/sfx/vehicles/gic_helicopterrotorloop.ogg",
+  "persistentAudioRangeMultiplier" : 1.0,
+  "damageKind" : "default"
+}

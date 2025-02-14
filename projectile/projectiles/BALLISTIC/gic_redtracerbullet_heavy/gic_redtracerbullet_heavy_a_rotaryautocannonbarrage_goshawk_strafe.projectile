@@ -1,0 +1,39 @@
+{
+  "projectileName" : "gic_redtracerbullet_heavy_a_rotaryautocannonbarrage_goshawk_strafe",
+  "bounces" : 0,
+  "image" : "gic_handcannon_a.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/WorldAtWar/gic_50cal_plane.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact_muzzle.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_redtracerbullet_heavy_c_goshawk_strafe",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 1,
+	  "directional" :true
+    }
+  ],
+  "power" : 300,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.0,
+  "physics" : "laser"
+}

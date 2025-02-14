@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_armor_stonelegion_pinger_summon_chest",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "/projectiles/CORE_CODE/gic_null/gic_null.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 3,
+  "timeToLive" : 0,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+     "offset": [0, 1],
+      "angle" : 90
+    },		
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_erchius_shieldsman_summon",
+     "level" : 1,
+     "offset": [0, 1],
+     "arguments" : { "damageTeam" : 1, "damageTeamType" : "friendly" }
+    }
+
+  ]
+}

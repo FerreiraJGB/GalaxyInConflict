@@ -1,0 +1,137 @@
+{
+  "type" : "gic_occasus_thug",
+  "baseType" : "gic_occasus_base",
+  "damageTeam" : 14,
+  "dropPools" : [ "gic_personalhumansmallTreasure" ],
+
+  "scriptConfig" : {
+  
+    "behavior" : "gic_hostileguard_advanced",
+  
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "!"
+          ]
+        }
+      }
+    }
+  },
+  
+  "items" : {
+    "override" : [
+      [0, [
+	  //Conscript
+          {
+            "head" : [ { "name" : "gic_occasusinfantryhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_occasusinfantrypants", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_m89_npcbayonet_occasusthug"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_npcbayonet_m89_occasusthug", "parameters" : { "backupWeapon" : true }  }
+			]
+          },
+		  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_occasusinfantryhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_occasusinfantrypants", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_polisduplet"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_peasants_battleaxe_npc", "parameters" : { "backupWeapon" : true }  }
+			]
+          },
+		  
+	  //Conscript
+          {
+            "head" : [ { "name" : "gic_occasusinfantryhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_occasusinfantrypants", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_m89_npcbayonet_occasusthug"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_npcbayonet_m89_occasusthug", "parameters" : { "backupWeapon" : true }  }
+			]
+          },
+		  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_occasusinfantryhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_occasusinfantrypants", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_polisduplet"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_peasants_battleaxe_npc", "parameters" : { "backupWeapon" : true }  }
+			]
+          },
+	
+	  //Rocketeer
+          {
+            "head" : [ { "name" : "gic_occasusinfantryhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_occasusinfantrypants", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_occasusinfantryback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_panzerfaust"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_se14", "parameters" : { "backupWeapon" : true }  }
+			]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_dialogue_soviet_conscriptinfantry", "gic_npc_death_blood_explosion"],   
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 1.0
+      },
+	  
+        "fireResistance" : {
+          "baseValue" : 0.8
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -0.4
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+	  
+    }
+  }
+  
+}

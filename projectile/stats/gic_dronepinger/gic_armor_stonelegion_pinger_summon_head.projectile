@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_armor_stonelegion_pinger_summon_head",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "/projectiles/CORE_CODE/gic_null/gic_null.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 3,
+  "timeToLive" : 0,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+	
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_erchius_rat_summon",
+     "level" : 1,
+     "offset": [1, 1],
+     "arguments" : { "damageTeam" : 1, "damageTeamType" : "friendly" }
+    },
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_erchius_rat_summon",
+     "level" : 1,
+     "offset": [-1, 1],
+     "arguments" : { "damageTeam" : 1, "damageTeamType" : "friendly" }
+    }
+
+  ]
+}

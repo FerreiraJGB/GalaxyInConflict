@@ -1,0 +1,145 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "stage" : {
+        "default" : "gic_wildlands_porttrader0",
+        "states" : {
+          "gic_wildlands_porttrader0" : {
+            "frames" : 64,
+            "cycle" : 11,
+            "mode" : "loop"
+          },
+          "gic_wildlands_porttrader1" : {
+            "frames" : 64,
+            "cycle" : 11,
+            "mode" : "loop"
+          },
+          "gic_wildlands_porttrader2" : {
+            "frames" : 64,
+            "cycle" : 11,
+            "mode" : "loop",
+            "properties" : {
+//              "lightsOn" : [ "scifiglow" ]
+            }
+          },
+          "gic_wildlands_porttrader3" : {
+            "frames" : 64,
+            "cycle" : 11,
+            "mode" : "loop"
+          },
+          "gic_wildlands_porttrader4" : {
+            "frames" : 64,
+            "cycle" : 11,
+            "mode" : "loop"
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "chassis" : {
+        "properties" : {
+          "centered" : true
+        },
+        "partStates" : {
+          "stage" : {
+            "gic_wildlands_porttrader0" : {
+              "properties" : {
+                "image" : "gic_wildlands_porttrader_tier0.png:<color>.<frame>"
+              }
+            },
+
+            "gic_wildlands_porttrader1" : {
+              "properties" : {
+                "image" : "gic_wildlands_porttrader_tier1.png:<color>.<frame>"
+              }
+            },
+
+            "gic_wildlands_porttrader2" : {
+              "properties" : {
+                "image" : "gic_wildlands_porttrader_tier2.png:<color>.<frame>"
+              }
+            },
+			
+            "gic_wildlands_porttrader3" : {
+              "properties" : {
+                "image" : "gic_wildlands_porttrader_tier3.png:<color>.<frame>"
+              }
+            },
+			
+            "gic_wildlands_porttrader4" : {
+              "properties" : {
+                "image" : "gic_wildlands_porttrader_tier4.png:<color>.<frame>"
+              }
+            }
+          }
+        }
+      },
+
+      "light" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true
+        },
+        "partStates" : {
+          "stage" : {
+            "gic_wildlands_porttrader0" : {
+              "properties" : {
+                "image" : "gic_wildlands_porttrader_tier0.png:<color>.<frame>"
+              }
+            },
+
+            "gic_wildlands_porttrader1" : {
+              "properties" : {
+                "image" : "gic_wildlands_porttrader_tier1.png:<color>.<frame>"
+              }
+            },
+
+            "gic_wildlands_porttrader2" : {
+              "properties" : {
+                "image" : "gic_wildlands_porttrader_tier2.png:<color>.<frame>"
+              }
+            },
+            "gic_wildlands_porttrader3" : {
+              "properties" : {
+                "image" : "gic_wildlands_porttrader_tier3.png:<color>.<frame>"
+              }
+            },
+            "gic_wildlands_porttrader4" : {
+              "properties" : {
+                "image" : "gic_wildlands_porttrader_tier4.png:<color>.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "fanfare" : ["/sfx/cinematics/mission_unlock_event.ogg"],
+    "fanfare2" : ["/sfx/cinematics/license_acquired_event.ogg"]
+  },
+
+  "lights" : {
+    "scifiglow" : {
+      "active" : false,
+      "position" : [0, 2],
+      "color" : [76, 125, 153],
+      "flickerPeriod" : 0.8,
+      "flickerMinIntensity" : 0.95,
+      "flickerMaxIntensity" : 1.0,
+      "flickerPeriodVariance" : 0.0,
+      "flickerIntensityVariance" : 0.0
+    }
+  },
+  
+  "particleEmitters" : {
+    "dust" : {
+      "emissionRate" : 0.0,
+      "burstCount"  : 10,
+      "offsetRegion" : [-2, -2, 2, 2],
+      "particles" : [{ "particle" : "dust2"}]
+    }
+  }
+}

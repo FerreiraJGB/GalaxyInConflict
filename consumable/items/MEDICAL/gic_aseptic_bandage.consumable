@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_aseptic_bandage",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_aseptic_bandage.png",
+  "maxStack" : 30,
+  "description" : "Common civilian gauze bandage. Autoclaved and aseptic. Will give just enough time to recover from heavier bleed sources.
+^green;Recovers Light bleeding.^white;
+^green;BLEED damage HALVED^white; for ^yellow;4 minutes (+50% Bleed Resist).^white;
+^orange;- Heals Burn Wounds.^white;
+
+^orange;Extrasolar Humans Only:
+^green;BLEED damage HALTED^white; for ^yellow;4 minutes (+100% Bleed Resist) + Recovers Medium Bleeding.^white;",
+
+  "shortdescription" : "^yellow;Aseptic Bandage",
+  "effects" : [ [
+  
+	  {
+        "effect" : "gic_bandaged_adaptive2"//"gic_bandaged"
+      },
+      {
+        "effect" : "gic_bleeding_lightStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_burn_pack_recovery"
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_bandage_use" ],
+  "blockingEffects" : [
+  ]
+}

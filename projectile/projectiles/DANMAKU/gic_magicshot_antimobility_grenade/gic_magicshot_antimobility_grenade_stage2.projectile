@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_magicshot_antimobility_grenade_stage2",
+  "physics" : "grenade",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/poisonexplosionknockbackstatus.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    }
+  ],
+  "image" : "gic_magicshot_antimobility_grenade_stage2.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 60,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "statusEffects" : ["gic_antimobility_grenade" ],
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

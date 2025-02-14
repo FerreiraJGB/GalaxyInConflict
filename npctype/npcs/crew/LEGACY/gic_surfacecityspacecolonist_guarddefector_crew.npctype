@@ -1,0 +1,247 @@
+{
+  "type" : "gic_surfacecityspacecolonist_guarddefector_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ "gic_surfacecityspacecolonist_guarddefector_crewTreasure" ],
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0} ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "gic_noinspectcrew",
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "soldier",
+        "name" : "Defector",
+        "field" : "Infantry",
+        "uniformColorIndex" : 3,
+		
+        "benefits" : [
+//          {
+            // Persistent effects are active while on the ship
+//            "type" : "PersistentEffect",
+//            "effect" : "shiprunboost"
+//          }
+        ]
+		
+      },
+
+      "ranks" : [
+	    "Lieutenant",
+		"Staff Sergeant",
+        "Sergeant",
+		"Corporal",
+		"Patrolman",
+		"Trooper",
+		"Probationary Trooper",
+		"Cadet"
+      ],
+
+      "defaultUniform" : {
+	    "head" : "",
+        "chest" : "gic_g4rtmvchest", //soldierchest
+        "legs" : "gic_sdkplegs", //soldierpants
+		"back" : "gic_wolfpackback"
+      },
+      "uniformSlots" : ["chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"]
+    },
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "Looking to get off this planet, wondering if you've got the ticket.",
+			  "I'm willing to work just to get out of here.",
+			  "I can't stand this damned place.",
+			  "This place can burn in hell. Take me with you.",
+			  "I'm up for jobs.",
+			  "I'll work just to leave this place."
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Aight, I'll be here then.",
+			  "How much food do we have on the ship?",
+              "I'll be here.",
+			  "Rightio, I'll be here then."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "I'll just stay here.",
+              "I'll stay here.",
+              "Alright, I'll guard this area.",
+              "I'll stay here for now, then.",
+              "I'll stay here.",
+              "Aight, I'll be here then.",
+              "I'll be here."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "Aye, I'm here.",
+			  "Aye!",
+              "Following your orders.",
+              "What's the mission?",
+			  "I'm here!"
+            ]
+          }
+        },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy.",
+			"Move it!"
+          ]
+        }
+      },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "Slow down! I can't run that fast!",
+              "You're too far!",
+              "Hey, wait up! I'm not a superhuman!",
+              "I can't catch up! Slow the hell down!",
+              "Let me catch up!",
+			  "Slow the hell down!",
+			  "Slow down!",
+			  "I can't run that fast!"
+            ]
+          }
+	}
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+      "converse" : "/dialog/space_colony/gic_surfacecityspacecolonist_converse.config:converse",
+
+      "attack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cantReach"
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player
+    "runSpeed" : 18
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "chest" : [ { "name" : "gic_g4rtmvchest", "parameters" : { "colorIndex" : [3] } } ],
+            "legs" : [ { "name" : "gic_sdkplegs", "parameters" : { "colorIndex" : [3] } } ],
+            "back" : [ { "name" : "gic_wolfpackback", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [ "gic_dcdr516" ],
+            "sheathedprimary" : [ "gic_dcdr516" ]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 300.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+	  
+    }
+  }
+}

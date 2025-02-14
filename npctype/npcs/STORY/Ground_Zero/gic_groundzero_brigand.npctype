@@ -1,0 +1,100 @@
+{
+  "type" : "gic_groundzero_brigand",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 14,
+  
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Bandit!",
+            "Opening fire!",
+			"Holy shit!",
+			"Who the hell is that?!",
+			"That's gotta be a Bandit!",
+			"Shoot that Bandit!",
+			"Shit! Bandit!",
+			"It's a Bandit!",
+			"Hey! Stop!"
+          ]
+        }
+      }
+    },
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}],
+        [4.0, "wander"]
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Gatherer
+          {
+            "head" : [ { "name" : "gic_brigandhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_brigandchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_brigandlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+			  "gic_soldiers_sword_npc"
+            ],
+            "alt" : [
+			  "gic_soldiers_sword_npc"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+  
+  "innateStatusEffects" : ["gic_commandingofficer_usmarine_rally"],  
+
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+	 
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0
+      }
+	  
+	  
+    }
+  }
+  
+}

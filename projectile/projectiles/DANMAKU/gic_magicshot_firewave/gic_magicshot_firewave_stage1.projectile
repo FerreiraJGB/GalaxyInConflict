@@ -1,0 +1,38 @@
+{
+  "projectileName" : "gic_magicshot_firewave_stage1",
+  "image" : "gic_magicshot_firewave_stage1.png",
+  "animationCycle" : 0.2,
+  "frameNumber" : 3,
+  "lightColor" : [150, 100, 100],
+  "fullbright" : true,
+  "damageKindImage" : "icon.png",
+  "physics" : "boomerang",
+  "emitters" : [ ],
+  
+  "periodicActions" : [
+    {
+      "time" : 0.02,
+      "action" : "projectile",
+      "type" : "gic_fireeruption_stage1",
+      "inheritDamageFactor" : 1
+//	  "fuzzAngle" : 0,
+//      "angle" : 0
+    }
+  ],
+  
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/pulsecannonexplosion/redpulsecannonexplosion.config"
+    }
+  ],
+  "damagePoly" : [ [28, -11], [24, 2], [2, 0], [-12, -11] ],
+  "damageKind" : "ews_antitank",
+  "onlyHitTerrain" : true,
+  "flippable" : true,
+  "piercing" : true,
+  "speed" : 30,
+  "damageType" : "IgnoresDef",
+  "scripts" : [ "/projectiles/tracksourcestatus.lua" ],
+  "scriptDelta" : 1
+}

@@ -1,0 +1,473 @@
+{
+  "itemName" : "gic_crusadercrossbow",	//this is an example weapon. Copy the folder to your mod (in appropriate location) and change "examplerifle" for the name you want to use
+  "price" : 0,
+  "inventoryIcon" : "/items/weapons/ranged/independent/scavenger/gic_crusadercrossbow/gic_crusadercrossbow.png:armed.1",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : 
+
+"^#D6AF8B;Uses various bolts. Bolts are classed as MELEE DMG.^reset; Many cultures treated archers as a separate and superior warrior caste, despite usually being drawn from commoners, as their archery skill-set was essentially trained and strengthened from early childhood and was impossible to reproduce outside a pre-established cultural tradition, which many cultures lacked. In contrast, the crossbow was the first ranged weapon to be simple, cheap, and easily operated in large numbers by untrained conscripts. ^orange;Iron Will: 0.4s PARRY WINDOW | 150HP STABILITY^reset;",
+  
+  
+  
+  "shortdescription" : "Crusader Crossbow",
+  
+  "ewsBetterUpdatingTooltipIcon" : true, //if set to true, then the tooltip's inventory icon will update better! i.e. the tooltip's icon will update properly when reloading a weapon, so magazine in tooltip will be updated to properly display current loaded magazine.
+										   //however, THERE ARE SOME CAVEATS to be aware of! for one, ALL IMAGE FILES MUST BE DEFINED AS ABSOLUTE PATHS - i.e. "/items/active/weapons/weapon/weapon.png". this applies for inventory icon, magazine images, and default attachment images (attachment images should already be absolute file paths by default)
+										   //secondly, this system doesn't actually properly update an item's inventory icon - just the tooltip icon! there's no way to update the inventory icon (the one shown in player's inventory, hotbar) without using a default activeitem function, and that function accepts ONLY SINGLE IMAGES - EWS inventory icons are an ARRAY of images because of attachments and magazines.
+										   //this feature does work enough for me to publish it, but it's kept as a toggle option for backwards compatibility's sake. hopefully, i'll later figure out some way to update the inventory icon as a whole, even with an array of images... (Echo, 9-25-22)
+  "level" : 1,
+  "tooltipKind" : "gic_largebase_ammogun_highres_base",//custom tooltip, values set by the .lua
+  "highResImg" : "/items/weapons/ranged/independent/SCAVENGER/gic_crusadercrossbow/gic_crusadercrossbow_highres.png",
+  "category" : "^orange;Crossbow^reset;",
+  "itemTags" : ["weapon","ranged","sniperrifle","crossbow","rifle","gic"],
+  "twoHanded" : true,
+  
+  "missChanceToggle" : false, //appears to not have any miss projectiles, so manually disabled miss chance system
+  
+  "consumeAmmoModule" : true,
+  //"consumeAmmoType" : "gic_woodenbolt",
+  "consumeAmmoType" : ["gic_woodenbolt", "gic_firebolt", "gic_soulbolt", "gic_shrapnelbolt", "gic_triforkvolleybolt"],
+  "defaultAmmoIndexValue" : 1,
+  "ammoProjectileType" : ["gic_woodenbolt", "gic_firebolt", "gic_soulbolt", "gic_shrapnelbolt", "gic_triforkvolleybolt_cup"],
+  //"ammoProjectileTypeMiss" : [],
+  
+  "magazineDamageValues" : [150, 70, 53, 250, 300],
+  
+  "magazineImages" : [
+  "/items/weapons/ranged/independent/scavenger/gic_crusadercrossbow/gic_woodenbolt.png",
+  "/items/weapons/ranged/independent/scavenger/gic_crusadercrossbow/gic_firebolt.png",
+  "/items/weapons/ranged/independent/scavenger/gic_crusadercrossbow/gic_soulbolt.png",
+  "/items/weapons/ranged/independent/scavenger/gic_crusadercrossbow/gic_shrapnelbolt.png",
+  "/items/weapons/ranged/independent/scavenger/gic_crusadercrossbow/gic_triforkvolleybolt.png"
+  ],
+  
+    
+  "consumeAmmoOrderedInventory" : true,						//if enabled, gun will search for ammo in order as placed in the player's inventory! allows for players to better control what ammo they want to use
+  "consumeAmmoTag" : "gic_crusadercrossbow_bolt",			//must be defined with consumeAmmoOrderedInventory is enabled! any item with this itemTag will be considered as a possible ammo item; will only be used as an ammo item if the tagged item's name matches with something from consumeAmmoType!
+  
+  
+  "ammoMax" 		: 1,			//Specifies how big the guns' magazine is.
+  "magazineProjectile": "gic_null", //Projectile dropped when reloading, basically a dummy projectile (Gnio)
+  "ammoAmount" 		: 1,			//Holds the current amount of ammo. Mostly set dynamically
+  
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+	"magazineImage" : "",	//optional, required for "magazineImages" to function (to prevent error msgs)
+    "butt" : "",
+    "middle" : "/items/weapons/ranged/independent/scavenger/gic_crusadercrossbow/gic_crusadercrossbow.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+	"animatedParts":{
+      "stateTypes" : {
+        "gunState" : {
+          "default" : "armed",
+          "states" : {					//animations are handled by both gunammo.lua (ammo states) and gunfireammo.lua (firing state). If you want to change those, make a copy and work with that.
+			"firing" :{					//gun will transition to "firing" state each time you pull the trigger
+			  "frames" : 4,
+			  "cycle" : 0.05,
+			  "mode" : "transition",
+			  "transition" : "empty"	//transition mode and animation is set up for the crossbow. may not work for everything
+			},
+            "armed" : {					//gun transitions to "armed" state if it has ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+            "empty" : {					//gun transitions to "empty" if it has no ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+			"reloading" : {				//reloading animation, placeholder here but can be useful if reloadejects is set to false
+			  "frames" : 6,
+			  "cycle" : 0.6,
+			  "mode" : "transition",
+			  "transition" : "reloadMid"
+			},
+			"reloadMid" : {
+			  "frames" : 1,
+			  "cycle" : 0.1,
+			  "mode" : "transition",
+			  "transition" : "reloadFin"
+			},
+			"reloadFin" : {
+			  "frames" : 2,
+			  "cycle" : 0.25,
+			  "mode" : "transition",
+			  "transition" : "holdArmed"
+			},
+			"holdArmed" : {
+			  "frames" : 1,
+			  "cycle" : 0.25,
+			  "mode" : "transition",
+			  "transition" : "armed"
+			}
+          }
+        }
+      },
+
+      "parts" : {
+	  
+		"parryShield" : {
+			"properties" : {
+				"zLevel" : 10,
+				"centered" : true,
+				"offset" : [0.75, 0],
+				"transformationGroups" : ["weapon"],
+				"rotationCenter" : [0, 0],
+				"shieldPoly" : [ [-2.7, -0.25], [2.5, -0.25], [2.5, 0.75], [-2.7, 0.75] ]
+			},
+		
+			"partStates" : {
+				"parryShield" : {
+				  "inactive" : {
+					"properties" : {
+					  "image" : ""
+					}
+				  },
+				  "active" : {
+					"properties" : {
+					  "image" : "/items/weapons/ranged/gic_gunparryshield.png:active?scalenearest=0.75;1.0"
+					}
+				  },
+				  "block" : {
+					"properties" : {
+					  "image" : "/items/weapons/ranged/gic_gunparryshield.png:block?scalenearest=0.75;1.0"
+					}
+				  }
+				}
+			}
+		},
+	  
+        "middle" : {
+          "properties" : {
+            "image" : null,
+			"zLevel" : 1
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<partImage>:firing.<frame><paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<partImage>:empty.1<paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<partImage>:reload.<frame><paletteSwaps>"
+				}
+			  },
+			  "reloadMid" : {
+			    "properties" : {
+				  "image" : "<partImage>:reload.6<paletteSwaps>"
+				}
+			  },
+			  "reloadFin" : {
+			    "properties" : {
+				  "image" : "<partImage>:reloadFin.<frame><paletteSwaps>"
+				}
+			  },
+			  "holdArmed" : {
+			    "properties" : {
+				  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+				}
+			  }
+            }
+          }
+        },
+		"magazine" : {
+          "properties" : {
+            "image" : null,
+			"zLevel" : 0,
+			"centered" : true,
+			"offset" : [0.2,0.2],
+			"transformationGroups" : ["weapon"]
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<magazineImage>:firing.<frame><paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<magazineImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<magazineImage>:empty.1<paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<magazineImage>:reload.<frame><paletteSwaps>"
+				}
+			  },
+			  "reloadMid" : {
+			    "properties" : {
+				  "image" : "<magazineImage>:reload.6<paletteSwaps>"
+				}
+			  },
+			  "reloadFin" : {
+			    "properties" : {
+				  "image" : "<magazineImage>:reloadFin.<frame><paletteSwaps>"
+				}
+			  },
+			  "holdArmed" : {
+			    "properties" : {
+				  "image" : "<magazineImage>:armed.<frame><paletteSwaps>"
+				}
+			  }
+            }
+          }
+        }
+      }
+	},
+	"particleEmitters" : {
+      "muzzleFlash" : {
+        "burstCount" : 0,
+		"transformationGroups" : ["muzzle"],
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [1.5, 0.0], "count" : 0 }
+        ]
+      },
+      "hotsmoke" : {
+		"transformationGroups" : ["muzzle"],
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [1.5, 0.0], "count" : 0 }
+        ]
+      }
+      },
+    "sounds" : {
+      "fire" 		: [ "/sfx/darkestdungeon/gic_Char_al_arb_suppress.ogg" ],
+	  "empty"		: [ "/sfx/gun/reload/machinepistol_reload_clip1.ogg" ],
+      "switchAmmo" 	: [ "/sfx/darkestdungeon/gic_Camp_skills_restringcross.wav" ],
+	  
+	  "guard" : [ "/sfx/melee/sword_guard.ogg" ],
+	  "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  
+      "parry" : [
+		"/sfx/block/gic_sekiro_meleeblock1.ogg",
+		"/sfx/block/gic_sekiro_meleeblock2.ogg",
+		"/sfx/block/gic_sekiro_meleeblock3.ogg",
+		"/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ],
+	  
+	  "perfectBlock" : [
+		"/sfx/block/gic_sekiro_meleedeflect1.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect2.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect3.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect4.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect5.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect6.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect7.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect8.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ]
+    }
+  },
+  
+  "animationScripts" : [],
+  "scriptedAnimationParameters" : {},
+
+  "baseOffset" : [0.3, 0.35],
+  "muzzleOffset" : [0.0, -0.1],
+
+  "scripts" : ["/items/active/weapons/ranged/ews_weaponcore.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/weapons/ranged/INDEPENDENT/SCAVENGER/gic_crusadercrossbow/gic_crusadercrossbow_autoload.lua"],
+    "class" : "ULTRAKILL",
+
+    "fireTime" : 0.25,
+    "baseDamage" : 70,
+	"bonusDps" : 0,					//the parameter responsible for extra per-shot damage, introduced by ammo. Per shot damage gets spread over all the projectiles
+    "energyUsage" : false,
+    "inaccuracy" : 0.05, //0.028
+
+    "projectileCount" : 1,
+    "fireType" : "semi",
+
+    "projectileType" : "gic_woodenbolt",
+    "projectileParameters" : {
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "swimIdle.1", //run.2
+        "backArmFrame" : "rotation"
+      },
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swimIdle.1", //run.2
+        "backArmFrame" : "rotation"
+      },
+      "motion1" : {
+        "duration" : 0
+      },
+      "motion2" : {
+        "duration" : 0
+      },
+      "motion3" : {
+        "duration" : 0
+      },
+      "motion4" : {
+        "duration" : 0
+      },
+      "motion5" : {
+        "duration" : 0
+      },
+      "motion6" : {
+        "duration" : 0
+      },
+	  
+
+
+
+      "reload" : {
+        "duration" : 0.1,
+        "armRotation" : -10,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		"weaponOffset" : [-0.5,0.0],
+		
+		"frontArmFrame" : "swim.3",
+        "backArmFrame" : "run.5"
+      },  
+	  "reload1" : {
+        "duration" : 0.1,
+        "armRotation" : -10,
+        "weaponRotation" : 25,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		"weaponOffset" : [-0.5,0.0],
+		
+		"frontArmFrame" : "swim.3",
+        "backArmFrame" : "run.5"
+      },
+	  
+	  
+	  
+      "reload2" : {
+        "duration" : 0.2,
+        "armRotation" : -10,
+        "weaponRotation" : 25,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"weaponOffset" : [-0.5,0.0],
+		
+	    "frontArmFrame" : "swim.4", //run.2
+        "backArmFrame" : "run.5"
+      },
+      "reload3" : {
+        "duration" : 0.1,
+        "armRotation" : -10,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+		"weaponOffset" : [-0.5,0.0],
+		
+	    "frontArmFrame" : "swim.4", //run.2
+        "backArmFrame" : "run.5"
+      },
+	  
+      "reload4" : {
+        "duration" : 0,
+		"weaponOffset" : [-0.5,0.0]
+      },
+	  
+      "reload5" : {
+        "duration" : 0,
+		"weaponOffset" : [-0.5,0.0]
+      },
+	  
+      "reload6" : {
+        "duration" : 0,
+		"weaponOffset" : [-0.5,0.0]
+      },
+	  
+	  
+	  
+	  
+      "cooldown" : {
+        "duration" : 0.0,
+        "armRotation" : 0, //-10
+        "weaponRotation" : 0, //5
+        "twoHanded" : true,
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+
+		
+	    "frontArmFrame" : "swimIdle.1", //run.2
+        "backArmFrame" : "rotation"
+      }
+    }
+  },
+  
+  
+  "altAbilityType" : "parry",
+  "altAbility" : {
+	"scripts" : ["/items/weapons/ranged/gic_bayonetparry.lua"],
+	"class" : "Parry",
+	"name" : "Perfect Parry",
+	
+	"parryTime" : 1.5,
+	"cooldownTime" : 0.25,
+	"shieldHealth" : 150,
+	"perfectBlockTime" : 0.4,
+	
+	"stances":{
+		"parry" : {
+			"armRotation" : -15,
+			"weaponRotation" : 80,
+			"allowRotate" : true,
+			"allowFlip" : true,
+			"twoHanded" : true,
+			"weaponOffset" : [ 0.0, -0.6 ],
+			
+			"frontArmFrame" : "swim.3"
+		}
+	}
+  },
+  
+  "aimOffset" : 0,
+  "builder" : "/items/buildscripts/ews_buildunrandweapon_highres.lua"
+}

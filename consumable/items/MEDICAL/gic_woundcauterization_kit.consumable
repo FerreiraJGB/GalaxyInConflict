@@ -1,0 +1,48 @@
+{
+  "itemName" : "gic_woundcauterization_kit",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase_hybrid",//"gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_woundcauterization_kit.png",
+  "maxStack" : 5,
+  "description" : "A crude 'kit' consisting of nothing more than a box of matches and a lighter. Used in the most dire of situations: If you're bleeding out, you probably don't have the steady hands necessary to strike a match, so that's what the lighter is for. Just ignite a fistful of matches and stab it in the wound.
+
+^green;- Immediately recovers Light, Medium, and Heavy Bleeding.^white;
+^orange;- Causes Burn Wounds.^white;
+^red;- Mobility hindered for 5 seconds.^reset;",
+
+  "shortdescription" : "^yellow;Wound Cauterization Kit",
+  "effects" : [ [
+  
+      {
+        "effect" : "gic_burn_wounds"
+      }, 
+      {
+        "effect" : "gic_bleeding_lightStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_bleeding_mediumStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_bleeding_heavyStatusImmunity",
+        "duration" : 1
+      },
+	  {
+        "effect" : "gic_woundcauterization_slowdown_30",
+        "duration" : 5
+      }
+    ] ],
+  "emote" : "",
+  
+  "tooltipFields" : {
+	"smallDescriptionLabel" : "^green;Exchange bleeding for burns.^reset;
+^red;Mobility hindered for 30 seconds.^reset;"
+  },
+  
+  "emitters" : [ "gic_darksouls_fireuse" ],
+  "blockingEffects" : [
+  ]
+}

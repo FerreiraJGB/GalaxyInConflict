@@ -1,0 +1,112 @@
+{
+  "projectileName" : "gic_anm20_incendiary_grenade",
+  "physics" : "gic_grenadenormal",
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "timeToLive" : 5,
+  "speed" : 50,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [40, 60, 80],
+  "image" : "gic_anm20_incendiary_grenade.png",
+  "frameNumber" : 1,
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/grenade/gic_anm14_bounce_01.ogg"
+      ]
+    }
+  ],
+  "actionOnReap" : [
+
+
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/grenade/gic_anm14_detonate.ogg"
+      ]
+    },
+
+	
+	
+	
+	
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_thermateflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.7,
+      "angleAdjust" : 35
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_thermateflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.7,
+      "angleAdjust" : -35
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_thermateflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.7,
+      "angleAdjust" : 1
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_thermateflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.7,
+      "angleAdjust" : -18
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_thermateflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.7,
+      "angleAdjust" : 18
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_thermateflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.7,
+      "angleAdjust" : 55
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_thermateflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.7,
+      "angleAdjust" : -55
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_thermateflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.7,
+      "angleAdjust" : -1
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_thermateflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.7,
+      "angleAdjust" : -65
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_thermateflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.7,
+      "angleAdjust" : 65
+    }
+
+
+  ],
+  "power" : 60,
+  "damageKind" : "ews_antitank",
+  "damagePoly" : [ [-4.5, 0], [-3, -3], [0, -4.5], [3, -3], [4.5, 0], [3, 3], [0, 4.5], [-3, 3] ]
+}

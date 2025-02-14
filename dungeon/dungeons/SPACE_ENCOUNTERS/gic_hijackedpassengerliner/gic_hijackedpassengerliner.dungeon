@@ -1,0 +1,71 @@
+{
+  "metadata" : {
+    "name" : "gic_hijackedpassengerliner",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [
+      "gic_hijackedpassengerliner_fuelbomb",
+      "gic_hijackedpassengerliner_recreationalbomb",
+	  "gic_hijackedpassengerliner_dinerbomb"
+    ],
+    "breathable" : false,	
+    "gravity" : 160,
+    "extendSurfaceFreeSpace" : 100,
+    "maxRadius" : 1000000,
+    "maxParts" : 2,
+    "protected" : true
+  },
+
+  "parts" : [
+
+	
+    // SAFE ZONE
+    {
+      "name" : "gic_hijackedpassengerliner-empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "/dungeons/SPACE_ENCOUNTERS/gic_hijackedpassengerliner-empty.json" ],
+      "chance" : 0,
+      "markDungeonId" : false
+    },	
+	
+
+    {
+      "name" : "gic_hijackedpassengerliner_fuelbomb",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+        [ "doNotConnectToPart", [ "gic_hijackedpassengerliner_fuelbomb" ] ]
+      ],
+      "def" : [ "tmx", "gic_hijackedpassengerliner_fuelbomb.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_hijackedpassengerliner_recreationalbomb",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+        [ "doNotConnectToPart", [ "gic_hijackedpassengerliner_recreationalbomb" ] ]
+      ],
+      "def" : [ "tmx", "gic_hijackedpassengerliner_recreationalbomb.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_hijackedpassengerliner_dinerbomb",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+        [ "doNotConnectToPart", [ "gic_hijackedpassengerliner_dinerbomb" ] ]
+      ],
+      "def" : [ "tmx", "gic_hijackedpassengerliner_dinerbomb.json" ],
+      "chance" : 1
+    }
+	
+
+	
+  ]
+}

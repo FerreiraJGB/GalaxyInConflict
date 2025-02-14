@@ -1,0 +1,116 @@
+{
+  "metadata" : {
+    "name" : "gic_shockbanditoutpost",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_shockbanditoutpost_radiotower" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 10,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+     {
+      "name" : "gic_shockbanditoutpost_residence",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditoutpost_residence" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditoutpost_residence.json" ]
+    },
+	
+     {
+      "name" : "gic_shockbanditoutpost_bunkerresidence",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditoutpost_bunkerresidence" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditoutpost_bunkerresidence.json" ]
+    },
+	
+     {
+      "name" : "gic_shockbanditoutpost_cafeteria",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditoutpost_cafeteria" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditoutpost_cafeteria.json" ]
+    }, 
+  
+     {
+      "name" : "gic_shockbanditoutpost_converter",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditoutpost_converter" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditoutpost_converter.json" ]
+    }, 
+ 
+     {
+      "name" : "gic_shockbanditoutpost_guardtower",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditoutpost_guardtower" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditoutpost_guardtower.json" ]
+    },
+	
+     {
+      "name" : "gic_shockbanditoutpost_guntruck",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditoutpost_guntruck" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditoutpost_guntruck.json" ]
+    }, 
+	
+    {
+      "name" : "gic_shockbanditoutpost_radiotower",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditoutpost_radiotower" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditoutpost_radiotower.json" ]
+    },	
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+	
+	
+    {
+      "name" : "gic_shockbanditoutpost_endleft",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_shockbanditoutpost_endleft.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_shockbanditoutpost_endright",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_shockbanditoutpost_endright.json" ] ],
+      "chance" : 0
+    }
+  ]
+}

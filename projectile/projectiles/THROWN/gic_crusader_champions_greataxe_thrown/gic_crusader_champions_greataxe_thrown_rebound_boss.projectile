@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_crusader_champions_greataxe_thrown_rebound_boss",
+  "physics" : "grenade",
+  
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/melee/gic_bloodborne_hammer-hit2.wav"
+      ]
+    }
+  ],
+  "image" : "gic_crusader_champions_greataxe_thrown_rebound_boss.png",
+  "animationCycle" : 0.4,
+  "frameNumber" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 0,
+  "knockback" : 30,
+  "knockbackDirectional" : true,
+  "statusEffects" : [ "gic_bulletshot" ],
+  "timeToLive" : 10,
+  "bounces" : -1,
+  "piercing" : true,
+  "pointLight" : false,
+
+  "damagePoly" : [[-20, 10], [-10, 20], [10, 20], [20, 10], [20, -10], [10, -20], [-10, -20], [-20, -10]]
+}

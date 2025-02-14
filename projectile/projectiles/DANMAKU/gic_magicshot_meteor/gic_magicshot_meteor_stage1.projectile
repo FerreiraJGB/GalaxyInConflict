@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_magicshot_meteor_stage1",
+  "image" : "gic_magicshot_meteor_stage1.png",
+  "physics" : "grenade",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 1.5,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_meteor_stage2",
+      "inheritDamageFactor" : 1,
+      "angle" : 90
+    }
+
+
+  ],
+  "statusEffects" : [ ],
+  "power" : 500.0,
+  "speed" : 10,
+  "knockback" : 18
+}

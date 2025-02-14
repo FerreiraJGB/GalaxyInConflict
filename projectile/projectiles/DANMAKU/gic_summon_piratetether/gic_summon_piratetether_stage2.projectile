@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_summon_piratetether_stage2",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_summon_piratetether_stage2.png",
+  "animationCycle" : 4.05,
+  "frameNumber" : 20,
+  "timeToLive" : 4,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  
+  
+  
+  "actionOnReap" : [
+  
+    {
+      "action" : "projectile",
+      "type" : "gic_summon_piratetether_stage3",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 0
+    }
+  ]
+  
+  
+  
+  
+}

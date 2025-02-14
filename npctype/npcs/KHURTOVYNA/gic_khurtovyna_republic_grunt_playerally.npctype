@@ -1,0 +1,185 @@
+{
+  "type" : "gic_khurtovyna_republic_grunt_playerally",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeamType" : "friendly",
+  "damageTeam" : 1,
+  
+  "movementParameters" : {
+    "runSpeed" : 12
+  },
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "behavior" : "follower",
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  
+  
+      "follower" : {
+        "attack" : {
+          "default" : {
+            "default" : [
+              "!"
+            ]
+          }
+        },
+        "join" : {
+          "default" : {
+            "default" : [
+              "[Following]"
+            ]
+          }
+        },
+        "returnFromCombat" : {
+          "default" : {
+            "default" : [
+              "!"
+            ]
+          }
+        },
+        "wait" : {
+          "default" : {
+            "default" : [
+              "[Standing By]"
+            ]
+          }
+        },
+        "returnFromWait" : {
+          "default" : {
+            "default" : [
+              "[Following]"
+            ]
+          }
+        }
+      }
+  
+  
+    },
+	
+    "reactions" : {
+      "spontaneous" : [
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_frostrepublic_infantryhead" }, { "name" : "gic_khurtovyna_republic_brodie_1head" }, { "name" : "gic_khurtovyna_republic_brodie_2head" }, { "name" : "gic_khurtovyna_republic_brodie_3head" } ],   
+            "chest" : [ { "name" : "gic_frostrepublic_infantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_frostrepublic_infantrylegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_uscm4_republic_npc"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_npcbayonet_m16a3", "parameters" : { "backupWeapon" : true }  }
+			]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_dialogue_metro2033_commonsoldier_voice3", "gic_npc_death_desummon_voidexplosion"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : -2
+      },
+	  
+      "gic_crewmember_stat" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.5
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : -0.2
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+	  
+    }
+  }
+  
+}

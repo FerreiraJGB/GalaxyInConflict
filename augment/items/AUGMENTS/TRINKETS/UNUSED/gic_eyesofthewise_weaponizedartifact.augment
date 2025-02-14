@@ -1,0 +1,30 @@
+{
+  "itemName" : "gic_eyesofthewise_weaponizedartifact",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CCD8B6;Helmet Equipment ^#8B30F0;Weaponized Artifact",
+  "inventoryIcon" : "gic_eyesofthewise_weaponizedartifact.png",
+  "maxStack" : 5,
+  "description" : 
+  
+"This visor has been affixed with Sky-Eyes by the power of duct tape. When worn under a helmet, it imparts a sense of viscocity in your blood, assisting in clotting wounds.
+
+^green;+15% BLEED Resistance.^reset;",
+
+
+
+  "shortdescription" : "Eyes of the Wise",
+
+  "augment" : {
+    "type" : "gic_basichead",
+    "name" : "gic_eyesofthewise_weaponizedartifact",
+    "displayName" : "Eyes of the Wise",
+    "displayIcon" : "/items/augments/psionic/gic_eyesofthewise_weaponizedartifact.png",
+    "effects" : [ {"stat" : "ews_bleedResistance", "amount" : 0.15}, "gic_eyesofthewise_weaponizedartifact", "gic_eyesofthewise_light"]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_artifact_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

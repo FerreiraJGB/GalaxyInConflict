@@ -1,0 +1,52 @@
+{
+  "objectName" : "gic_glitch_ornatedesk",
+  "colonyTags" : ["storage"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "gic_largebase",
+
+  "category" : "storage",
+  "price" : 25,
+  "description" : "Ornate Desk.",
+  "shortdescription" : "Ornate Desk",
+  "race" : "generic",
+  "health" : 1.5,
+
+
+  "inventoryIcon" : "gic_glitch_ornatedesk.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_ornatedesk.png",
+      "direction" : "left",
+      "flipImages" : true,
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+      "image" : "gic_glitch_ornatedesk.png",
+      "direction" : "right",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/chest_small_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/chest_small_close.ogg" ],
+  "slotCount" : 16,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

@@ -1,0 +1,29 @@
+{
+  "metadata" : {
+    "name" : "gic_wildlands_compound",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ 
+	"gic_wildlands_compound_farm"
+	],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 10,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_wildlands_compound_farm",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_wildlands_compound_farm.json" ] ],
+      "chance" : 0
+    }
+  ]
+}

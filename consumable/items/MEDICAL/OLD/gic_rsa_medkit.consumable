@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_rsa_medkit",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_rsa_medkit.png",
+
+  "description" : "The Red Star Alliance 'Quick Recovery Pack' is a mass-producible medical kit intended to quickly recover life-threatening damage to a soldier to fighting condition as soon as possible using traditional methods. The equipment within this Medical Kit contains a significant amount of blood plasma and every blood type in unique syringes intended to rapidly transfuse blood on the move.
+
+Restores 100 health over 30 seconds. Recovers light and medium bleeding ailments.",
+
+  "shortdescription" : "Red Star Medkit",
+  "effects" : [ [
+      {
+        "effect" : "gic_rsa_medkitheal"
+      },
+      {
+        "effect" : "gic_bleeding_lightStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_bleeding_mediumStatusImmunity",
+        "duration" : 1
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "bandageuse" ],
+  "blockingEffects" : [
+    "salveheal",
+    "bandageheal",
+    "medkitheal",
+    "nanowrapheal"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "objectName" : "gic_arcadestarburner",
+  "colonyTags" : ["human","gic_redya","electronic"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 200,
+  "description" : "An old-school arcade machine. This one plays Starburner.",
+  "shortdescription" : "Starburner Arcade Machine",
+  "race" : "generic",
+
+  "apexDescription" : "Starburner, an atmospheric fighter simulator where you fly a human 'Jet' and fight other 'Jets'.",
+  "avianDescription" : "Starburner is all about fighting for a single planet using a fighter 'Jet'.",
+  "floranDescription" : "Floran not like ssstarburner. Iss too hard.",
+  "glitchDescription" : "Curious. This game portrays Earth Air Battles in a shockingly realistic fashion.",
+  "humanDescription" : "An old-school arcade machine that plays an old-but-gold Starburner game. Extremely realistic flight simulator of old-Earth jet fighters. The highest score in the galaxy has the initials 'W.W.W'.",
+  "hylotlDescription" : "Starburner, a gripping story of tragedy as you fight your way through countless hordes of of enemy fighter Jets. Truly a masterpiece.",
+  "novakidDescription" : "Starburner, an ultra-realistic combat simulator where you fly some weird thing called a 'Jet'.",
+  
+  
+  "avaliDescription" : "A REALLY old arcade cabinet that plays Starburner.",
+  
+  "avikanDescription" : "Starburner is a really good game where you fly in a human aircraft. Almost a favorite.",
+  "trinkDescription" : "An entertainment cabinet playing Starburner. Not my type of game.",
+  "drodenDescription" : "Entertainment Device detected. Non-relevant object.",
+  "aegiDescription" : "Starburner? Oh boy this was a violent one. Many diplomats couldn't bare to stand these videogames.",
+  
+  "inventoryIcon" : "gic_arcadestarburner.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_arcadestarburner.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "scripts" : [ "/scripts/npcToyObject.lua"],
+  "npcToy" : {
+    "influence" : [
+      "videogame",
+      "videogame",
+      "videogameComplete"
+    ],
+    "defaultReactions" : {
+      "videogame" : [
+        [1.0, "typing"]
+      ],
+      "videogameComplete" : [
+        [1.0, "smile"],
+        [1.0, "annoyed"],
+        [1.0, "punch"]
+      ]
+    },
+    "preciseStandPositionLeft" : [-0.5, 0.0],
+    "preciseStandPositionRight" : [2.0, 0.0],
+    "maxNpcs" : 1
+  },
+
+  "soundEffect" : "/sfx/objects/arcademachine.ogg"
+
+}

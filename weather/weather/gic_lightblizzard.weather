@@ -1,0 +1,66 @@
+{
+  "name" : "gic_lightblizzard",
+
+  "particles" : [
+    {
+
+      "density" : 0.001,
+      "autoRotate" : true,
+
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "velocity" : [0, -7.5],
+        "approach" : [15, 15],
+        "angularVelocity" : 0,
+        "timeToLive" : 20,
+        "collidesForeground" : true,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+    {
+      "density" : 0.03,
+      "particle" : {
+        "type" : "ember",
+        "color" : [212, 219, 247],
+        "size" : 1.0,
+        "velocity" : [0, -6],
+        "timeToLive" : 20,
+        "collidesForeground" : true,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+    {
+      "density" : 0.03,
+      "particle" : {
+        "type" : "ember",
+        "color" : [239, 242, 254],
+        "size" : 1.0,
+        "velocity" : [0, -5.5],
+        "timeToLive" : 20,
+        "collidesForeground" : true,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+    {
+      "density" : 0.03,
+      "particle" : {
+        "type" : "ember",
+        "color" : [246, 250, 250],
+        "size" : 1.0,
+        "velocity" : [0, -7],
+        "timeToLive" : 20,
+        "collidesForeground" : true,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    }
+  ],
+
+  "duration" : [120, 480],
+  "maximumWind" : 13.0,
+  "weatherNoises" : [ "/sfx/weather/blizzard.ogg" ]
+}

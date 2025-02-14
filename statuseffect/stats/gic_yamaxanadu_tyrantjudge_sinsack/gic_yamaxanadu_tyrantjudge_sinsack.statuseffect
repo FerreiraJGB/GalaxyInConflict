@@ -1,0 +1,42 @@
+{
+  "name" : "gic_yamaxanadu_tyrantjudge_sinsack",
+  "effectConfig" : {
+	"projectileType" : "gic_bloodbranch_spiritbullet_yamaxanadu_tyrantjudge_sinsack", //does not accept arrays
+	"projectileTypeMiss" : "gic_bloodbranch_spiritbullet_yamaxanadu_tyrantjudge_sinsack", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	"missChance" : 10,
+	
+	"offset" : [-1.5,0.5],
+	
+	"muzzleOffset" : [-1.5, 0.1],
+	
+	"muzzleOffset2" : [-1.3, 0.0],
+	
+	"trackingDistance" : 200,
+	"trackingAngle" : 181, //181
+	"fireRate" : 2.0,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 20,
+	"reloadTimer" : 2.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_yamaxanadu_tyrantjudge_sinsack.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_yamaxanadu_tyrantjudge_sinsack.animation",
+ 
+  "label" : "Smart Missile Mk.2 - Fires very weak homing missiles at long ranges | 0.25s firerate | Base 10 Small-Arms DMG | 20rnd Mag | 2s reload.",
+  "icon" : "/interface/statuses/gic_smartmissile_mk2.png"
+}

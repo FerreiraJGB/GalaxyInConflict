@@ -1,0 +1,31 @@
+{
+  "itemName" : "gic_colonial_medkit",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_colonial_medkit.png",
+
+  "description" : "A Medical Kit offering the ^yellow;bare minimum equipment^white; deemed ^green;safe^white; by the Galactic Community. Unofficial, of course.
+
+^green;Restores 1000 health^white; over ^yellow;5 minutes^white;. ^green;Recovers light bleeding ailments^white;.",
+
+  "shortdescription" : "^yellow;Colonial Medkit",
+  "effects" : [ [
+      {
+        "effect" : "gic_us_medkitheal"
+      },
+      {
+        "effect" : "gic_bleeding_lightStatusImmunity",
+        "duration" : 1
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "bandageuse" ],
+  "blockingEffects" : [
+    "salveheal",
+    "bandageheal",
+    "medkitheal",
+    "nanowrapheal"
+  ]
+}

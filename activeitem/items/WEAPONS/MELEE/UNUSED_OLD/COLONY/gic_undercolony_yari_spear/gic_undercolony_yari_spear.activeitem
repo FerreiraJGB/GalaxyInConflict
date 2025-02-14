@@ -1,0 +1,50 @@
+{
+  "itemName" : "gic_undercolony_yari_spear",
+  "price" : 0,
+  "level" : 6,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A common metal spear created by the poorest of societies unable to equip their own infantry with firearms. Decent enough to outrange most crude mobster weapons and even swords, but has no defense against ranged weaponry. Or longer spears.",
+  "shortdescription" : "Undercolony Yari Spear",
+  "tooltipKind" : "gic_largebase_sword",
+  "category" : "^green;Spear^white;",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_undercolony_yari_spear.png",
+
+  "animation" : "gic_undercolony_yari_spear.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_undercolony_yari_spear.png"
+  },
+  "animationCustom" : {
+  "sounds" : {
+      "fire" 		: [ "/sfx/melee/swing_spear.ogg" ]
+    } 
+	},
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua"],
+  "scriptDelta" : 2,
+  
+  "elementalType" : "ews_melee",
+
+  "aimOffset" : -4.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+	"scripts" : ["/items/active/weapons/melee/abilities/gic_spearstab.lua"],
+    "fireTime" : 1.11,
+    "baseDps" : 20,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [ "gic_boss_melee_primer" ],
+      "knockbackRange" : 25
+    }
+	
+  },
+
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

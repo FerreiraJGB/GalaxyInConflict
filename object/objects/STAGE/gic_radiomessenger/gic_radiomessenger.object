@@ -1,0 +1,37 @@
+{
+  "objectName" : "gic_radiomessenger",
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "printable" : false,
+  "scannable" : false,
+
+  "description" : "placeholder image, radio message thing.",
+  "shortdescription" : "Radiomessager",
+  "race" : "human",
+  
+  "inputNodes" : [ [-1, 0] ],
+  
+  "scripts" : [ "/objects/STAGE/gic_radiomessenger/gic_radiomessenger.lua" ],
+  
+  "radioMessages" : ["gic_biomevaporizingheat"],	//picks at random from this list
+  "range" : 100, //range for where players will be radiomessaged; units measured in blocks.
+  
+  "uses" : 99999, //uses for the object until it stops messaging. works on semi-auto format, as in turn on n turn off = one radio message.
+  //one thing to note is that radiomessages don't quite work if another radiomessage is already playing.
+  //set to extremely high number if you want unlimited uses.
+  
+  "inventoryIcon" : "gic_radiomessenger.png",
+  "orientations" : [
+    {
+      "image" : "gic_radiomessenger.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "fullbright" : true,
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+
+    }
+  ]
+}

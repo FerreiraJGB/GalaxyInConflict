@@ -1,0 +1,52 @@
+{
+  "projectileName" : "gic_40x46mm_lv_flare_grenade_stage2_redarmy_sniper",
+  "physics" : "gic_starshell_40mm_flare",
+  "bounces" : -1,
+  "timeToLive" : 30,
+  "image" : "gic_40x46mm_lv_flare_grenade_stage2.png",
+  "animationCycle" : 0.25,
+  "lightColor" : [255, 255, 255],
+  "frameNumber" : 2,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smoke/smoke.config"
+    }
+  ],
+  "power" : 0,
+  "onlyHitTerrain" : false,
+  "damageType" : "IgnoresDef", //NoDamage
+  "damageKind" : "fire",
+  
+  "periodicActions" : [  
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_usoa50_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.2, //0.4
+        "destructionAction" : "fade", //shrink
+        "fullbright" : false
+      }
+    }
+  ], 
+  
+  "persistentAudio" : "/sfx/gic_cod4_flare_loop_alt.ogg", 
+  
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  
+  "piercing" : true,
+
+  "statusEffects" : [
+    "gic_oilfire_primer"
+  ],
+  
+  "damageTeam" : { "type" : "indiscriminate" }
+
+}

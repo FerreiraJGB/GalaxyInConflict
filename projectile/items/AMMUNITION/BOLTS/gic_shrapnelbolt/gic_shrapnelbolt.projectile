@@ -1,0 +1,121 @@
+{
+  "projectileName" : "gic_shrapnelbolt",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback_shrapnelbolt.config"
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+	
+	
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_shrapnel",
+      "inheritDamageFactor" : 0.025,
+      "fuzzAngle" : 20
+    }	
+	
+  ],
+  
+  "image" : "gic_shrapnelbolt.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_melee",
+  "statusEffects" : [ "gic_bulletshot"],
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 0.2, //0.1
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "speed" : 100
+}

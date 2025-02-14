@@ -1,0 +1,113 @@
+{
+  "name" : "gic_nuclearash",
+
+  "particles" : [
+    {
+      "density" : 0.015,
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/ash/1.png",
+        "velocity" : [0, -3],
+        "angularVelocity" : 180,
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+    {
+      "density" : 0.015,
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/ash/2.png",
+        "velocity" : [0, -4],
+        "angularVelocity" : 180,
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+    {
+      "density" : 0.015, //0.035
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/ash/3.png",
+        "velocity" : [0, -5],
+        "angularVelocity" : 180,
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+	
+	
+	
+	
+	
+    {
+      "density" : 0.05,
+      "autoRotate" : true,
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/darksandcloud/1.png",
+        "velocity" : [0, -4],
+        "approach" : [15, 15],
+        "angularVelocity" : 0,
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "destructionAction" : "shrink",
+        "destructionTime" : 2,
+        "ignoreWind" : false
+      }
+    },
+    {
+      "density" : 0.005,
+      "particle" : {
+        "type" : "animated",
+        "animation" : "/animations/windstorm/windstorm2.animation",
+        "velocity" : [0, -4],
+        "fade" : 0.5,
+        "looping" : true,
+        "destructionTime" : 20,
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+    {
+      "density" : 0.0025,
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "velocity" : [0, -4],
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+    {
+      "density" : 0.15,
+      "particle" : {
+        "type" : "ember",
+        "color" : [96, 89, 131],
+        "size" : 1.0,
+        "velocity" : [0, -4],
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    }
+	
+  ],
+  "projectiles" : [
+  ],
+
+  "duration" : [40, 100],
+  "maximumWind" : 0.0
+}

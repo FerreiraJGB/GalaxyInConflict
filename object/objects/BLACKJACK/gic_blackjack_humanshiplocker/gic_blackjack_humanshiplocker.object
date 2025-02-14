@@ -1,0 +1,33 @@
+{
+  "objectName" : "gic_blackjack_humanshiplocker",
+  "colonyTags" : ["human","storage"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "description" : "Ship Locker.",
+  "shortdescription" : "Ship Locker",
+  "race" : "human",
+//  "lightColor" : [61, 88, 102],
+  
+  "inventoryIcon" : "gic_blackjack_humanshiplocker_icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_blackjack_humanshiplocker.png:<color>.<key>", "fullbright" : true }, { "image" : "gic_blackjack_humanshiplocker_lit.png:<color>.<key>" } ],
+      "imagePosition" : [-16, -8],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/gunchest_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/gunchest_close.ogg" ],
+  "slotCount" : 64,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5, //11
+  "openFrameIndex" : 4,
+  "autoCloseCooldown" : 3600
+}

@@ -1,0 +1,520 @@
+{
+  "itemName" : "gic_stormrulers_rapier_player",
+  "price" : 45,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : 
+
+"''I am the one who controls my own fate. I am the one who writes my own destiny. None shall control me.''
+
+^#D6DFFF;Ruler of the Storm: Automatic ranged attack for enemies within 100 units of range. 15-second firing windup.^white;
+
+^#9EE2CF;Wind Wave: [SHIFT] to create a Wind Wave. [SHIFT] after the first wave to follow-up with a more powerful wave.^reset;",
+
+
+
+  "shortdescription" : "Storm-Ruler's Rapier",
+  "tooltipKind" : "gic_largebase_sword",
+  "tooltipFields" : {
+	"objectImage" : "/items/weapons/melee/player/gic_stormrulers_rapier/gic_stormrulers_rapier_icon2.png"
+  },
+  "category" : "^#D6DFFF;Light Rapier^white;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","shortsword","rapier"],
+
+  "inventoryIcon" : "gic_stormrulers_rapier_icon.png",
+
+  "animation" : "/items/active/weapons/melee/broadsword/combobroadsword.animation",
+  "animationParts" : {
+    "handle": "",
+    "blade" : "gic_stormrulers_rapier.png"
+  },
+  "animationCustom" : {
+	"sounds" : {
+      "fire" : [ "/sfx/melee/gic_bloodborne_swing-stab.wav" ],
+      "fire2" : [ "/sfx/melee/gic_bloodborne_swing-sword.wav" ],
+      "fire3" : [ "/sfx/melee/gic_bloodborne_swing-stab2.wav" ],
+	  "fire4" : [ "/sfx/melee/gic_bloodborne_swing-sword2.wav" ],
+	  "fire5" : [ "/sfx/melee/gic_bloodborne_swing-stab.wav" ],
+	  
+	  
+      "heavyAttack" : ["/sfx/melee/gic_bloodborne_nokonata_tenkai.wav"],
+      "heavyAttackSwing" : ["/sfx/melee/gic_bloodborne_swing-stab-charge.wav"],
+      "heavyAttackHit" : ["/sfx/melee/gic_bloodborne_iron-cut-iron2.wav"],
+
+      "shing" : ["/sfx/melee/gic_bloodborne_nokonata_tojiru.wav"],
+	  
+	  
+      "guard" : [ "/sfx/melee/sword_guard.ogg" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+      "parry" : [
+		"/sfx/block/gic_sekiro_meleeblock1.ogg",
+		"/sfx/block/gic_sekiro_meleeblock2.ogg",
+		"/sfx/block/gic_sekiro_meleeblock3.ogg",
+		"/sfx/block/gic_sekiro_meleeblock4.ogg"
+	  ],
+	  
+	  "perfectBlock" : [
+		"/sfx/block/gic_sekiro_meleedeflect1.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect2.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect3.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect4.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect5.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect6.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect7.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect8.ogg",
+		"/sfx/block/gic_sekiro_meleedeflect9.ogg"
+	  ]
+    },
+	"animatedParts" : {
+	"stateTypes" : {
+      "swoosh" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+          },
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire2" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire3" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire4" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+		  "fire5" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          }
+        }
+      }
+    },
+	"parts" : {
+	  "parryShield" : {
+          "properties" : {
+            "zLevel" : -1,
+            "centered" : true,
+            "offset" : [-0.75, 1.75],
+            "transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0],
+            "shieldPoly" : [ [1.0, -2.7], [1.0, 1.5], [0.25, 1.75], [0.25, -2.0] ] //[-0.25, -2.5], [-0.25, 2.0], [1.0, 2.75], [1.0, -1.0]
+        }
+	  },
+      "swoosh" : {
+        "properties" : {
+          "zLevel" : -1,
+          "centered" : true,
+          "transformationGroups" : ["swoosh"],
+          "rotationCenter" : [0, 0]
+        },
+        "partStates" : {
+          "swoosh" : {
+            "idle" : {
+              "properties" : {
+                "image" : ""
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh3/<elementalType>swoosh.png:<frame>?scalenearest=0.75;1.0", //1h jab
+                "offset" : [2, 0.0],
+                "damageArea" : [[-1.25, 0.3], [1.7, 0.3], [1.7, -0.4], [-1.25, -0.4]]
+              }
+            },
+            "fire2" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh2/<elementalType>swoosh.png:<frame>?scalenearest=0.75;1.0", //1h horizontal swipe back
+                "offset" : [5.0, 0.5],
+                "damageArea" : [[-3.0, -0.0], [1.25, 0.5], [1.25, -1.0], [-3.0, -1.0]]
+              }
+            },
+            "fire3" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh3/<elementalType>swoosh.png:<frame>?scalenearest=0.75;1.0", //1h jab
+                "offset" : [2, 0.0],
+                "damageArea" : [[-1.25, 0.3], [1.7, 0.3], [1.7, -0.4], [-1.25, -0.4]]
+              }
+            },
+
+
+            "fire4" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh2/<elementalType>swoosh.png:<frame>?scalenearest=0.75;1.0", //1h horizontal swipe back
+                "offset" : [5.0, 0.5],
+                "damageArea" : [[-3.0, -0.0], [1.25, 0.5], [1.25, -1.0], [-3.0, -1.0]]
+              }
+            },
+            "fire5" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/broadsword/swoosh3/<elementalType>swoosh.png:<frame>?scalenearest=0.75;1.0", //1h jab
+                "offset" : [2, 0.0],
+                "damageArea" : [[-1.25, 0.3], [1.7, 0.3], [1.7, -0.4], [-1.25, -0.4]]
+              }
+            }
+			
+			
+			
+          }
+        }
+      }
+    }
+	},
+	"particleEmitters" : {
+	 "ews_meleeswoosh" : {
+	  "active" : false,
+      "transformationGroups" : ["swoosh"],
+      "emissionRate" : 1,
+      "burstCount" : 1,
+      "particles" : [
+//        { "particle" : "gic_meleeswoosh1"},
+//        { "particle" : "gic_meleeswoosh2"},
+//        { "particle" : "gic_meleeswoosh3"}
+	  ]
+	 }
+	}
+  },
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua", "/abilities/weapons/gic_stormrulers_rapier.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "gic_broadswordcombo",
+  "primaryAbility" : {
+    "fireTime" : 0.55,
+	"scripts" : ["/items/weapons/melee/player/gic_duellers_rapier/gic_meleecombo.lua"],
+    "baseDps" : 30.0,
+	//"damageKind" : "IgnoresDef",
+	//"damageType" : "IgnoresDef",
+	"comboSteps" : 5,
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+//      "statusEffects" : [ "gic_boss_melee_primer"],
+      "knockbackMode" : "facing",
+	  //"damageKind" : "IgnoresDef",
+	  "damageType" : "IgnoresDef",
+      "timeout" : 0.3
+    },
+	"swooshOffsetRegions" : [
+      [1.5, -1.0, 5.5, 1.0],
+      [3.0, -0.5, 6.5, 2.0],
+      [1.5, -1.0, 5.5, 1.0],
+      [3.0, -0.5, 6.5, 2.0],
+      [1.5, -1.0, 5.5, 1.0]
+    ],
+	"stepDamageConfig" : [
+      {
+        "baseDamageFactor" : 1.5,
+        "knockback" : 3
+      },
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 15
+      },
+      {
+        "baseDamageFactor" : 1.5,
+        "knockback" : 3
+      },
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 15
+      },
+      {
+        "baseDamageFactor" : 1.5,
+        "knockback" : 3
+      }
+    ],
+	"comboSpeedFactor" : 0.6,
+	"stances" : {
+      "idle" : {
+        "armRotation" : -45,
+        "weaponRotation" : -13,
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"weaponOffset" : [ -0.1, 0.05 ]
+      },
+
+      "windup1" : {
+        "duration" : 0.2,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+
+
+      "preslash1" : {
+        "duration" : 0.01,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : false
+      },
+	  
+	  
+      "fire1" : {
+        "duration" : 0.25,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "wait1" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  
+	  
+      "windup2" : {
+        "duration" : 0.2,
+        "armRotation" : -15,
+        "weaponRotation" : -60,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : false,
+        "allowFlip" : true,
+        "allowRotate" : true
+      },
+      "fire2" : {
+        "duration" : 0.25,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : false,
+        "allowFlip" : true,
+        "allowRotate" : true
+      },
+      "wait2" : {
+        "duration" : 0.1,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "weaponOffset" : [0, 0],
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : false
+      },
+      "windup3" : {
+        "duration" : 0.2,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire3" : {
+        "duration" : 0.25,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "wait3" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  
+	  
+	  
+	  
+      "windup4" : {
+        "duration" : 0.2,
+        "armRotation" : -15,
+        "weaponRotation" : -60,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : false,
+        "allowFlip" : true,
+        "allowRotate" : true
+      },
+      "fire4" : {
+        "duration" : 0.25,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : false,
+        "allowFlip" : true,
+        "allowRotate" : true
+      },
+      "wait4" : {
+        "duration" : 0.1,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "weaponOffset" : [0, 0],
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : false
+      },
+      "windup5" : {
+        "duration" : 0.2,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire5" : {
+        "duration" : 0.25,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "wait5" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+	  
+	  
+    }
+  },
+  
+
+  "altAbilityType" : "spin",
+  "altAbility" : {
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [],
+      "baseDamage" : 50,
+      "knockback" : 20, //50
+      "timeout" : 0.15,
+      "timeoutGroup" : "alt"
+    },
+	"scripts" : ["/items/weapons/melee/player/gic_stormrulers_rapier/gic_stormrulers_rapier_player.lua"],
+	"class" : "Charge",
+	
+	"cooldownTime" : 1.5,
+	
+	"name" : "Wind Wave",
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -70,
+        "weaponRotation" : -20,
+		"aimAngle" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [-0.1, 0.1],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 0.3,
+		"aimAngle" : 0,
+        "armRotation" : -130,
+        "weaponRotation" : -10,
+        "twoHanded" : false,
+        "weaponOffset" : [-0.1, 0.1],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.75,
+        "armRotation" : 15,
+        "weaponRotation" : -45,
+        "twoHanded" : false,
+        "weaponOffset" : [0.0, 0.1],
+		
+		"fireProjectile" : true, //only possible because of this sword's unique code
+		"powerMultiplier" : true, //toggles on/off whether projectiles are effected by user's power multiplier
+		
+		"inaccuracy" : 0.01,
+		"projectileType" : "meleeslash", //meleeslash
+		"projectileParameters" : {
+			"speed" : 100,
+			"timeToLive" : 10,
+			"power" : 10,
+			"knockback" : 70,
+			"damageRepeatTimeout" : 0.15,
+			"damageKind" : "ews_melee",
+			"damageType" : "IgnoresDef",
+			"statusEffects" : [ ]
+		},
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  "windup2" : {
+        "duration" : 0.3,
+		"aimAngle" : 0,
+        "armRotation" : 90,
+        "weaponRotation" : -10,
+        "twoHanded" : false,
+        "weaponOffset" : [-0.1, 0.1],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire2" : {
+        "duration" : 0.75,
+        "armRotation" : -45,
+        "weaponRotation" : -55,
+        "twoHanded" : false,
+        "weaponOffset" : [0.0, 0.1],
+		
+		"fireProjectile" : true, //only possible because of this sword's unique code
+		"powerMultiplier" : true, //toggles on/off whether projectiles are effected by user's power multiplier
+		
+		"inaccuracy" : 0.01,
+		"projectileType" : "hugemeleeslash", //meleeslash
+		"projectileParameters" : {
+			"speed" : 100,
+			"timeToLive" : 10,
+			"power" : 25,
+			"knockback" : 100,
+			"damageRepeatTimeout" : 0.15,
+			"damageKind" : "ews_melee",
+			"damageType" : "IgnoresDef",
+			"statusEffects" : [ ]
+		},
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

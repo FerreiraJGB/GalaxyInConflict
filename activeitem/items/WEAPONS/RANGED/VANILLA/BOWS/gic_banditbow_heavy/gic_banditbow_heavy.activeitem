@@ -1,0 +1,75 @@
+{
+  "itemName" : "gic_banditbow_heavy",
+  "fixedLevel" : false,
+  "price" : 0,
+  "inventoryIcon" : "gic_banditbow_heavyicon.png",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "tooltipKind" : "bow",
+  "category" : "bow",
+  "description" : "It takes great skill to wield a bow in the future.",
+  "shortdescription" : "Bandit's Heavy Bow",
+  "twoHanded" : true,
+  "itemTags" : ["weapon", "ranged", "bow"],
+
+  "radioMessagesOnPickup" : [ "pickupbow" ],
+
+  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animationParts" : {
+    "bow" : "gic_banditbow_heavy.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "bow" : { "properties" : {
+      "offset" : [0.25, 0]
+    }}}},
+    "sounds" : {
+      "draw" : [ "/sfx/bow/gic_bloodborne_bow-stance1.wav" ],
+      "release" : [ "/sfx/bow/gic_bloodborne_bow-shot1.wav", "/sfx/bow/gic_bloodborne_bow-shot2.wav", "/sfx/bow/gic_bloodborne_bow-shot3.wav" ],
+      "perfectRelease" : [ "/sfx/bow/gic_bloodborne_bow-shot1.wav", "/sfx/bow/gic_bloodborne_bow-shot2.wav", "/sfx/bow/gic_bloodborne_bow-shot3.wav" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/bow/bow.lua"],
+  "scriptDelta" : 2,
+
+  "primaryAbilityType" : "bowshot",
+  "primaryAbility" : {
+    "projectileType" : "gic_heavyarrow",
+    "powerProjectileType" : "gic_heavyarrow",
+    "projectileParameters" : {
+      "speed" : 50
+    },
+	
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : -30,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "draw" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true,
+
+        "frontArmFrame" : "idle.3"
+      }
+    }
+	
+	
+  },
+
+  "builder" : "/items/buildscripts/buildbow.lua"
+}

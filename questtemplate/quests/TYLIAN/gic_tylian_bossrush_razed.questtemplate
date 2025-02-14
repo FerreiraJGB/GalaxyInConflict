@@ -1,0 +1,44 @@
+{
+  "id" : "gic_tylian_bossrush_razedquest",
+  "title" : "^orange;Boss Rush: Razed",
+  
+  "prerequisites" : [ "gic_tylian_planetincentive_2_razedquest" ],
+  
+  "text" : "Obtain: Greenfinger Guard Samurai Helmet and Hylotl Gunbai (kill Greenfinger General and Greenfinger Daimyo).
+
+^orange;[Upon completion: Unlocks the Greenfinger General and Greenfinger Daimyo Boss-Rush Replays at the Bazaar]",
+  "completionText" : "[Greenfinger General and Greenfinger Daimyo can now be replayed via the Bazaar]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_greenfingerguard_samuraihelmethead",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_hylotl_gunbai",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

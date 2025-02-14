@@ -1,0 +1,266 @@
+{
+  "type" : "gic_ultrasheriff_avatar_afterburner",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+
+  "npcname" : "Ultra-Sheriff",
+  "identity" : {
+    "gender" : "male"
+  },
+  
+  "keepAlive" : true,
+  
+  "humanoidConfig" : "/npcs/story/gazrian_populace/gic_ultrasheriff_avatar_campfire.config",
+  
+  "persistent" : true,
+
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+    "behavior" : "speaker",
+	
+    "chatPortrait" : "/interface/chatbubbles/gic_ultrasheriff.png:<frame>",
+
+    "behaviorConfig" : {
+      "alwaysRun" : false,
+      "wanderWaitTime" : [6.0, 10.0],
+      "wanderTime" : [0.0, 0.0],
+      "wanderDistance" : 0,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ]
+    },
+
+    "chatSounds" : {
+      "avian" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "apex" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "human" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "glitch" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "floran" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "hylotl" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "default" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "gic_undeadskeleton" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      }
+    },	
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"[Dialogue repeat]"
+          ]
+        }
+      },
+      "speak" : {
+        "default" : {
+          "default" : [
+            "!"
+          ]
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "gic_ultrasheriffhelmethead", "parameters" : { "colorIndex" : [1] } }
+            ],
+            "chest" : [
+              { "name" : "gic_parassoldierchest", "parameters" : { "colorIndex" : [3] } }
+            ],
+            "legs" : [
+              { "name" : "gic_parassoldierlegs", "parameters" : { "colorIndex" : [3] } }
+            ],
+            "primary" : [
+              "gic_augmentyr_smg"
+			  ]
+          }
+        ] ]
+    ]
+  },
+  
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 1.0
+      },
+	  
+	  //Psychic
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },	
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : -0.5
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	,
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    },
+    "statusProperties" : {
+      "effectDirectives" : "?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=8af062FF?replace=31a6ffFF=40bf21FF"
+    }
+  }
+  
+}

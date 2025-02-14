@@ -1,0 +1,90 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "podState" : {
+        "default" : "active",
+        "states" : {
+          "active" : {
+            "frames" : 1,
+            "cycle" : 0.5,
+            "mode" : "loop"
+          },
+          "expire" : {
+            "frames" : 1,
+            "cycle" : 0.2,
+            "mode" :"transition",
+            "transition" :"pause"
+          },
+          "pause" : {
+            "frames" : 1,
+            "mode" :"transition",
+            "transition" :"expire2"
+          },
+          "expire2" : {
+            "frames" : 1,
+            "cycle" : 0.5
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "pod" : {
+        "properties" : {
+          "centered" : false
+        },
+
+        "partStates" : {
+          "podState" : {
+            "active" : {
+              "properties" : {
+                "image" : "<partImage>:active.<frame>"
+              }
+            },
+            "expire" : {
+              "properties" : {
+                "image" : "<partImage>:expire1.<frame>"
+              }
+            },
+            "pause" : {
+              "properties" : {
+                "image" : "<partImage>:pause.1"
+              }
+            },
+            "expire2" : {
+              "properties" : {
+                "image" : "<partImage>:expire2.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "use" : [
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_virtue-01.ogg",
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_virtue-02.ogg",
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_virtue-03.ogg",
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_virtue-04.ogg",
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_virtue-05.ogg",
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_virtue-06.ogg",
+	
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-01.ogg",	
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-02.ogg",	
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-03.ogg",
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-04.ogg",
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-05.ogg",
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-06.ogg",	
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-07.ogg",	
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-08.ogg",
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-09.ogg",
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-10.ogg",	
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-11.ogg",	
+//	"/sfx/darkestdungeon/gic_darkestdungeon_narrator_hamlet-12.ogg"
+	
+	
+	]
+  }
+}

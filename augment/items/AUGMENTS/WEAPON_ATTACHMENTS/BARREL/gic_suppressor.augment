@@ -1,0 +1,49 @@
+{
+  "itemName" : "gic_suppressor",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Barrel Attachment^white;",
+  "inventoryIcon" : "gic_suppressor_icon.png",
+  
+  
+  "description" : "^orange;Afflicts hit targets with SUDDEN-STRIKE, granting subsequent shots +50% DMG. If the target is not hit again for 0.25s, the target becomes RESISTANT to SUDDEN-STRIKE for 480s.^white;
+  
+^yellow;Alters the gun's firing sound.^white;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+
+
+  "tooltipKind" : "gic_largebase",  
+
+  "shortdescription" : "Suppressor Attachment",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_suppressor", //name of attachment
+	"attachmentTag" : ["gic_suppressor", "gic_barrel" ], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_suppressor.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_suppressor", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "suppressor",			//will require the main activeitem file to have "suppressedFire" sfx
+//		"fireShellProjectile" : "ews_null",		//exists mostly for GiC's "noise" system.
+			"projectileConfig" : {
+  "statusEffects" : [ {"effect" : "gic_suppressor", "duration" : 0.25} ]		
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

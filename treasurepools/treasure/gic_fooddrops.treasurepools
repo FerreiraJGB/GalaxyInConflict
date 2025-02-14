@@ -1,0 +1,74 @@
+{
+
+
+//BANDIT CAMPS
+
+//gic_microcreditstashTreasure
+//gic_creditstashTreasure
+//gic_consumergoodsTreasure
+//gic_rationpackTreasure
+//gic_junkdocumentsstashTreasure
+//gic_genericofficeTreasure
+
+//CONTENTS
+//Medical
+//Bandit Hoards
+//Item Stashes of a single type
+//Standard setting-based items
+//Faction Specific
+//Codex Dumps
+//Economy Cargo
+
+
+
+
+//---------------------------------------------------------
+//PACKAGED RATIONS
+//---------------------------------------------------------
+
+"gic_usrationpackTreasure" : [
+    [1, {
+      "pool" : [
+        {"weight" : 1, "pool" : "gic_usrationcontentTreasure"}
+      ]
+    }]
+  ],
+  
+"gic_usrationcontentTreasure" : [
+    [1, {
+      "fill" : [
+       {"item" : "gic_cannedfood_1_opened"},
+       {"item" : "gic_cannedfood_2_opened"},
+       {"item" : "gic_cannedfood_3_opened"},
+       {"item" : "gic_cannedfood_4_opened"},
+       {"item" : "gic_cannedfood_5_opened"},
+       {"item" : "gic_cannedfood_6_opened"},
+       {"item" : "gic_cannedfood_7_opened"},
+       {"item" : "gic_cannedfood_8_opened"},
+       {"item" : "gic_cannedfood_9_opened"}
+      ]
+    }]
+  ],
+  
+//---------------------------------------------------------
+//INDIVIDUAL FOOD ITEMS
+//---------------------------------------------------------
+
+"gic_cannedfood_1_closedTreasure" : [
+    [1, {
+      "pool" : [
+        {"weight" : 1, "pool" : "gic_cannedfood_1_openedTreasure"}
+      ]
+    }]
+  ],
+  
+"gic_cannedfood_1_openedTreasure" : [
+    [1, {
+      "fill" : [
+       {"item" : "gic_cannedfood_1_opened"}
+      ]
+    }]
+  ]
+  
+  
+}

@@ -1,0 +1,35 @@
+{
+  "name" : "gic_spiritoftheghostlyswordswoman_ghostgirl_samurai",
+  "blockingStat" : "gic_spiritoftheghostlyswordswoman_ghostgirl_samuraiStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_projectile_spawnnpc_gic_otherworldhuman_gic_ghostgirl_samurai", //does not accept arrays
+	"projectileTypeMiss" : "gic_projectile_spawnnpc_gic_otherworldhuman_gic_ghostgirl_samurai", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 100,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 60.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 60.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_spiritoftheghostlyswordswoman_ghostgirl_samurai.animation",
+   
+   "label" : "Samurai Ghost Girl - Summons a temporary SAMURAI GHOST GIRL follower | 60s Cooldown.",
+  "icon" : "/interface/statuses/gic_spiritoftheghostlyswordswoman.png"
+   
+}

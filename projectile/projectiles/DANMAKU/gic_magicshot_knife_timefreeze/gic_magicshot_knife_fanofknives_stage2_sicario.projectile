@@ -1,0 +1,45 @@
+{
+  "projectileName" : "gic_magicshot_knife_fanofknives_stage2_sicario",
+  "image" : "gic_magicshot_knife_timefreeze.png",
+  "physics" : "bullet", //gic_arrowlaser
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_melee",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 8,
+  "emitters" : [ ],
+  "actionOnTimeout" : [
+  ],
+  
+  "actionOnReap" : [
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.1,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+  
+  "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_stun_3" ],
+  "power" : 50.0,
+  "speed" : 80,
+  "acceleration" : 10,
+  "knockback" : 10
+}

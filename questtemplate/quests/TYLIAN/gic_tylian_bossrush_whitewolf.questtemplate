@@ -1,0 +1,37 @@
+{
+  "id" : "gic_tylian_bossrush_whitewolfquest",
+  "title" : "^orange;Boss Rush: White Wolf",
+  
+  "prerequisites" : [ "gic_tylian_planetincentive_4_wildlandsquest" ],
+  
+  "text" : "Obtain: Wildlands Capture Pod Battery (kill the White Wolf on Wildlands).
+
+^orange;[Upon completion: Unlocks the White Wolf Boss-Rush Replays at the Bazaar]",
+  "completionText" : "[White Wolf can now be replayed via the Bazaar]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_wildlands_capturepodbattery",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

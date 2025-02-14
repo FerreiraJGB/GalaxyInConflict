@@ -1,0 +1,78 @@
+{
+  "type" : "gic_ww3_undeadsoldier",
+  "baseType" : "gic_soldierbase",
+  "damageTeamType" : "friendly",
+  "dropPools" : [],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "!"
+          ]
+        }
+      }
+    },
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "patrol", { "timeRange" : [0.1,0.3]}],
+        [2.0, "wander"]
+      ]
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  //Rifleman
+          {
+            "chest" : [ { "name" : "gic_lust_infantryarmorchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_lust_infantryarmorlegs", "parameters" : { "colorIndex" : [0] }  } ],
+            "back" : [ { "name" : "gic_lust_infantryarmorback", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+			  "gic_usm47p_onehanded_undead"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : [],    
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 333.3
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_crewmember_stat" : {
+        "baseValue" : 1.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : -10
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      }
+	  
+	  
+    }
+  }
+  
+}

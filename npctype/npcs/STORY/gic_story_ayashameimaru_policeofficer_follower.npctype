@@ -1,0 +1,191 @@
+{
+  "type" : "gic_story_ayashameimaru_policeofficer_follower",
+  "baseType" : "gic_soldierbase",
+  
+  "damageTeamType" : "friendly",
+  "damageTeam" : 1,
+
+  "movementParameters" : {
+    "runSpeed" : 20 //16
+  },
+
+
+
+  "dropPools" : [ ],
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "follower",
+
+    "dialog" : {
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+
+      "follower" : {
+        "attack" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+        "join" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+        "returnFromCombat" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+        "wait" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+        "returnFromWait" : {
+          "default" : {
+            "default" : [
+              "!"
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+
+            "chest" : [ { "name" : "gic_crowtenguchest" } ],
+            "legs" : [ { "name" : "gic_crowtengulegs" } ]
+//            "primary" : [ "gic_uscm4" ]
+          }
+        ] ]
+    ]
+  },
+  
+  
+  "statusControllerSettings" : {    
+  
+    "appliesWeatherStatusEffects" : false,
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 555.5555 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+        "fireResistance" : {
+          "baseValue" : 0.35
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.1
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	,
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 100.0
+      }
+    }
+  }
+  
+  
+}

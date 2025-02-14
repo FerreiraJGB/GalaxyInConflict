@@ -1,0 +1,41 @@
+{
+  "projectileName" : "gic_magicshot_explosivewave_2pattern_maku",
+  "image" : "gic_magicshot_explosivewave_2pattern.png",
+  "physics" : "grenade",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_explosion",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_explosivewave_stage1_maku",
+      "inheritDamageFactor" : 0.2,
+      "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_explosivewave_stage1_maku",
+      "inheritDamageFactor" : 0.2,
+      "angle" : 180
+    }
+
+
+  ],
+  "statusEffects" : [ ],
+  "power" : 500.0,
+  "speed" : 20,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "knockback" : 18
+}

@@ -1,0 +1,530 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+              "persistentSoundRangeMultiplier" : 5.35,
+              "persistentSoundStopTime" : 0.0
+            }
+          },
+          "fly" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "loop",
+			
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+              "persistentSoundRangeMultiplier" : 5.35,
+              "persistentSoundStopTime" : 0.0
+            }
+			
+          },
+          "firewindup" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "transition",
+            "transition" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+              "persistentSoundRangeMultiplier" : 5.35,
+              "persistentSoundStopTime" : 0.0
+            }
+          },
+          "winduploop" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+              "persistentSoundRangeMultiplier" : 5.35,
+              "persistentSoundStopTime" : 0.0
+            }
+          },
+          "fire" : {
+            "frames" : 4,
+            "cycle" : 0.50,
+            "mode" : "loop",
+            "transition" : "idle",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+              "persistentSoundRangeMultiplier" : 5.35,
+              "persistentSoundStopTime" : 0.0
+            }
+          },
+          "dooropen" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "transition",
+            "transition" : "dooropenidle",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+              "persistentSoundRangeMultiplier" : 5.35,
+              "persistentSoundStopTime" : 0.0
+            }
+          },
+          "dooropenidle" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "loop",
+            "transition" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+              "persistentSoundRangeMultiplier" : 5.35,
+              "persistentSoundStopTime" : 0.0
+            }
+          },
+          "doorclose" : {
+            "frames" : 16,
+            "cycle" : 2,
+            "mode" : "transition",
+            "transition" : "idle",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+              "persistentSoundRangeMultiplier" : 5.35,
+              "persistentSoundStopTime" : 0.0
+            }
+          }
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 3,
+            "cycle" : 0.10,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ ]
+            }
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.25, -0.25],
+          "zLevel" : 2
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "firewindup" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "winduploop" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "dooropen" : {
+              "properties" : {
+                "image" : "<partImage>:dooropen.<frame>"
+              }
+            },
+            "dooropenidle" : {
+              "properties" : {
+                "image" : "<partImage>:dooropenidle.<frame>"
+              }
+            },
+            "doorclose" : {
+              "properties" : {
+                "image" : "<partImage>:doorclose.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "thruster" : {
+        "properties" : {
+          "centered" : true,
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.25, -0.25],
+          "zLevel" : 4,
+          "fullbright" : true
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "firewindup" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "winduploop" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "dooropen" : {
+              "properties" : {
+                "image" : "<partImage>:dooropen.<frame>"
+              }
+            },
+            "dooropenidle" : {
+              "properties" : {
+                "image" : "<partImage>:dooropenidle.<frame>"
+              }
+            },
+            "doorclose" : {
+              "properties" : {
+                "image" : "<partImage>:doorclose.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "gunner" : {
+        "properties" : {
+          "centered" : true,
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.25, -0.25],
+          "zLevel" : 3,
+          "fullbright" : false
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "firewindup" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "winduploop" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "dooropen" : {
+              "properties" : {
+                "image" : "<partImage>:dooropen.<frame>"
+              }
+            },
+            "dooropenidle" : {
+              "properties" : {
+                "image" : "<partImage>:dooropenidle.<frame>"
+              }
+            },
+            "doorclose" : {
+              "properties" : {
+                "image" : "<partImage>:doorclose.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "turretgun" : {
+        "properties" : {
+          "centered" : true,
+          "transformationGroups" : [ "aim", "facing", "body" ],
+          "offset" : [0, 0.0],
+          "rotationCenter" : [11.4, -4.2],
+          "zLevel" : 1
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fly" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "firewindup" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "winduploop" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "dooropen" : {
+              "properties" : {
+                "image" : "<partImage>:dooropen.<frame>"
+              }
+            },
+            "dooropenidle" : {
+              "properties" : {
+                "image" : "<partImage>:dooropenidle.<frame>"
+              }
+            },
+            "doorclose" : {
+              "properties" : {
+                "image" : "<partImage>:doorclose.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+  "transformationGroups" : {
+    "body" : { "interpolated" : true },
+    "facing" : { "interpolated" : true },
+    "aim" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+  
+  "lights" : {
+    "engineglow" : {
+      "active" : true,
+      "position" : [0, 0],
+      "color" : [250, 250, 100], //255, 255, 107
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+    "deathPoof" : {
+      "particles" : [
+	  
+	  
+	  
+	  
+//            { "particle" : {
+    //            "type" : "textured",
+    //            "image" : "/projectiles/WRECKS/ue_lighthelicopterwreck/ue_lighthelicopterwreck.png",
+    //            "position" : [0, 0],
+    //            "size" : 1.0,
+ //               "color" : [255, 255, 255, 255],
+   //             "fade" : 0,
+  //              "initialVelocity" : [0.0, 10.0],
+ //               "bounces" : -1,
+   //             "finalVelocity" : [0, -75],
+  //              "approach" : [0, 50],
+   //             "rotation" : 0,
+   //             "flippable" : false,
+   //             "angularVelocity" : 0,
+  //              "timeToLive" : 8,
+   //             "layer" : "middle",
+  //              "variance" : {
+  //                "initialVelocity" : [0, 5],
+ //                 "timeToLive" : 8
+ //               }
+//              } },  
+	
+	  
+        { "particle" : "monstersplosion" },
+        { "particle" : "poisondust" },
+        { "particle" : "poisondust" },
+        { "particle" : "poisondust" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "poisonswoosh3" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathfizz1left" },
+        { "particle" : "deathfizz1right" },
+        { "particle" : "deathfizz2left" },
+        { "particle" : "deathfizz2right" },
+        { "particle" : "deathfizz3left" },
+        { "particle" : "deathfizz3right" },
+        { "particle" : "deathfizz4left" },
+        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    },
+	
+	
+	
+    "muzzleFlash" : {
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "looping" : true,
+            "animation" : "/animations/gic_foreground_muzzle/gic_foreground_muzzle.animation",
+            "position" : [0, -4.7],
+            "layer" : "front",
+            "timeToLive" : 0.07,
+			"fullbright" : true,
+            "rotation" : 0.0
+          }
+        }
+		
+      ]
+    }
+	
+  },
+
+
+  
+  
+  
+  "sounds" : {
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/npc/gic_tankdie.ogg" ],
+
+    "fire" : {
+      "pool" : [ "/sfx/gun/gic_metro2033_dshk_shoot_1.ogg" ],
+      "rangeMultiplier" : 1.0
+    },
+	
+	"firerocket" : {
+      "pool" : [ "/sfx/alerts/gic_lockbeep_rapid.ogg" ],
+      "rangeMultiplier" : 1.0
+    }
+  }
+}

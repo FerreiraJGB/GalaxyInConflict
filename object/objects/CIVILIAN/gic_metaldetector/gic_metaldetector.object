@@ -1,0 +1,65 @@
+{
+  "objectName" : "gic_metaldetector",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Rare",
+
+  "category" : "wire",
+  "price" : 5000,
+  "description" : "A metal detector. Detects the player's ridiculous amount of gear.",
+  "shortdescription" : "Metal Detector",
+  "race" : "human",
+
+  "apexDescription" : "This will go off if I get too close.",
+  "avianDescription" : "Don't get too close!",
+  "floranDescription" : "Floran know to be careful around thisss!",
+  "glitchDescription" : "Cautious. This metal detector would detect me regardless of my gear.",
+  "humanDescription" : "A simple metal detector. There's gotta be some way around this...",
+  "hylotlDescription" : "A sensor.",
+  "novakidDescription" : "Tread carefully.",
+  
+  "avaliDescription" : "A metal detector. Every Avali has an augment, meaning these would go off regardless of what I have.",
+  "avikanDescription" : "A metal detector for detecting metal. Us Avikan don't have to worry about these going off as much as other species.",
+  "trinkDescription" : "A metal detector. Impossible to pass by undetected.",
+  "drodenDescription" : "Metal Detector detected. Status: Operational. Exercising caution.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_metaldetector.png:<color>.off",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [
+    "/objects/wired/proximitysensor/proximitysensor.lua",
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 25,
+
+  "animation" : "/objects/wired/switch/switchtoggle.animation",
+  "animationParts" : {
+    "switch" : "gic_metaldetector.png"
+  },
+  "animationPosition" : [-8, 0],
+
+  "outputNodes" : [ [-1, 1] ],
+  
+  "interactive" : false,
+
+  "detectDuration" : 0.5,
+  "detectEntityTypes" : [ "player" ],
+  "detectArea" : [ [1, 1.5], 2 ],
+  
+  "npcToy": {
+    "ownerOnly" : false,
+    "influence" : [
+      "proximitysensor"
+    ],
+    "defaultReactions" : {},
+    "maxNpcs" : 1
+  }
+}

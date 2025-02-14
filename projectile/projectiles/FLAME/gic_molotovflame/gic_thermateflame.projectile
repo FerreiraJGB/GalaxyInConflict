@@ -1,0 +1,42 @@
+{
+  "projectileName" : "gic_thermateflame",
+  "physics" : "grenadenobounce",
+  "bounces" : -1,
+  "timeToLive" : 40,
+  "speed" : 15,
+  "image" : "gic_molotovflame.png",
+  "animationCycle" : 0.8,
+  "lightColor" : [235, 126, 2],
+  "frameNumber" : 8,
+//  "emitters" : [ "flames" ],
+  "piercing" : true,
+  
+  "fullbright" : true,
+  
+  "damagePoly" : [ [-6, 0], [-4, -4], [0, -6], [4, -4], [6, 0], [4, 4], [0, 6], [-4, 4] ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smoke/smoke.config"
+    }
+  ],
+  
+  
+"periodicActions" : [
+    {
+      "time" : 2,
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_fireexplosion/gic_fireexplosion.config"
+    }
+	],
+  
+  "damageKind" : "ews_antitank",
+  "damageTeam" : { "type" : "indiscriminate" },
+  "damageKindImage" : "/interface/statuses/fire.png",
+  "statusEffects" : [
+    "gic_thermateburning", "gic_burn_wounds", "gic_burn_wounds_severe"
+  ],
+  "hydrophobic" : false,
+
+  "persistentAudio" : "/sfx/objects/torch.ogg"
+}

@@ -1,0 +1,49 @@
+{
+  "projectileName" : "gic_blood_giblet_small",
+  "image" : "gic_blood_giblet.png",
+  "physics" : "grenade",
+  "piercing" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+//  "emitters" : [ "gic_tinysmoke" ],
+  "animationCycle" : 0.1,
+  "pointLight" : true,
+  "onlyHitTerrain" : false,
+  "timeToLive" : 6.0,
+  "power" : 0,
+  "speed" : 10,
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_bloodtracer_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "front",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+],
+
+
+
+  "actionOnReap" : [
+	],
+	
+	
+//  "lightColor" : [235, 126, 2],
+  "damageKind" : "hidden",
+  "damageTeam" : { "type" : "environment" },
+  "damageKindImage" : "/interface/statuses/fire.png",
+  "statusEffects" : [ "gic_bloodsoaked"
+  ],
+  "hydrophobic" : true,
+  "damageType" : "IgnoresDef"
+}

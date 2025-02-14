@@ -1,0 +1,184 @@
+{
+  "itemName" : "gic_katakama_spear_player",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  
+  "description" : "A refined Yari with additional rope wrapped around the shaft to retrieve the spear if thrown. Whilst powerful in the hands of the skilled, one mustn't forget that wars are not won by individuals alone.
+  
+^green;Noble Heritage: Hold and release [SHIFT] to throw the spear | When thrown, deal 100 damage base with piercing capabilities.^reset;
+^green;Return Eternal: While thrown, press [SHIFT] to forcibly recall the spear.^reset;",
+
+  "shortdescription" : "Katakama Yari",
+  "tooltipKind" : "gic_largebase_sword",
+  "tooltipFields" : {
+	"objectImage" : "/items/weapons/melee/player/gic_katakama_spear/gic_katakama_spear_icon2.png"
+  },
+  "category" : "^#D6DFFF;Exotic Spear^white;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_katakama_spear_icon.png",
+
+  "animation" : "gic_katakama_spear.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_katakama_spear.png"
+  },
+  
+  "animationCustom" : { "sounds" : {
+          "fire" : ["/sfx/melee/gic_bloodborne_nokonata_noko1.wav"]
+        } },
+ 
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua"],
+  "scriptDelta" : 1,
+  
+  "elementalType" : "ews_melee",
+
+  //"aimOffset" : -2.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+	"scripts" : ["/items/active/weapons/melee/abilities/gic_spearstab.lua"],
+    "fireTime" : 0.9,
+    "baseDps" : 81.25,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [ ],
+      "knockbackRange" : 2,
+	  "knockback" : 20, //30
+	  "damageType" : "IgnoresDef"
+    },
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -90,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 0.45,
+        "armRotation" : -110,
+        "weaponRotation" : 20,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire" : {
+        "duration" : 0.4,
+        "armRotation" : -20,
+        "weaponRotation" : -70,
+        "twoHanded" : false,
+        "weaponOffset" : [0.1, 1.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "hold" : {
+        "armRotation" : -30,
+        "weaponRotation" : -60,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+	}
+  },
+  
+  "projectileType" : "gic_katakama_thrown",
+  "projectileParameters" : {
+    "power" : 100, //200
+    "knockback" : 20,
+	"speed" : 80,
+	"recallSpeed" : 100,
+
+    "ignoreTerrain" : false,
+    "controlForce" : 300,
+	"timeToLive" : 4,
+	"minVelocity" : 0.1,
+	"maxDistance" : 50,
+	"returnOnHit" : true,
+    "pickupDistance" : 1.0,
+    "snapDistance" : 5.0
+  },
+  
+  "fireOffset" : [0.0,0],
+  
+  "ropeWidth" : 1.0,
+  "ropeColor" : [120, 80, 30, 255],
+  
+  "ropeOffset" : [-1.75, 0.3],
+  "ropeVisualOffset" : [0.0, 0.3],
+  "animationScripts" : ["/items/active/effects/renderrope.lua"],
+  
+
+  "altAbilityType" : "spin",
+  "altAbility" : {
+	"damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : [ ],
+      "baseDamage" : 55,
+      "knockback" : 20,
+      "timeout" : 0.15,
+      "timeoutGroup" : "alt"
+    },
+	"scripts" : ["/items/weapons/melee/player/gic_katakama_spear/gic_spearthrow.lua"],
+	"class" : "Throw",
+	
+	"cooldownTime" : 0.3,
+	
+	"name" : "Throwable Spear",
+	
+	"stances" : {
+	  "idle" : {
+        "armRotation" : -90,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "wait" : {
+        "armRotation" : 45,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "windup" : {
+	    "duration" : 0.5,
+        "armRotation" : 110,
+        "weaponRotation" : -200,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	  "throw" : {
+		"duration" : 0.2,
+        "armRotation" : 90,
+        "weaponRotation" : 180,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

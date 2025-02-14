@@ -1,0 +1,29 @@
+{
+  "id" : "gic_wildlands_ayashameimaru_5_armoryquest",
+  "title" : "^#D1FFDE;[AYA-5] Armory",
+  "prerequisites" : [  ],
+  "text" : "This key leads to the two armories of the police station. Perhaps it could benefit the remaining officers.",
+  "completionText" : "^#D1FFDE;[Officers will now assist in the Final AYA Mission]",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_spiritualremedy", 5 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "setUniverseFlags" : ["gic_wildlands_ayashameimaru_mission_6_1_modifier_buildingsuppression"],
+	
+    "turnInEntityUid" : "",
+    "conditions" : [
+    ]
+  }
+}

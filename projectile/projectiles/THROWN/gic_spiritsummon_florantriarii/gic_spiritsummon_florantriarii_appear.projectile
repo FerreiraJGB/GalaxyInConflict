@@ -1,0 +1,38 @@
+{
+  "projectileName" : "gic_spiritsummon_florantriarii_appear",
+  "image" : "gic_spiritsummon_florantriarii_appear.png",
+  "animationCycle" : 3.05,
+  "physics" : "laser",
+  "frameNumber" : 4,
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "timeToLive" : 3,
+  "pointLight" : false,
+  "speed" : 0,
+  "damagePoly" : [ [-2, 0], [-2, -2], [0, -2], [2, -2], [2, 0], [2, 2], [0, 2], [-2, 2] ],
+  "actionOnTimeout" : [
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_floran_triarii",
+     "level" : 1,
+     "offset": [0, 2.5],
+     "arguments" : {
+	 "persistent" : true,
+     "damageTeamType" : "friendly",
+     "damageTeam" : 1
+	 }
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_bloodborne_bell_friend_oneshot_new.wav"
+      ]
+    }
+  ],
+  "statusEffects" : [ ],
+  "power" : 5.0,
+  "emitters" : [ "rocketsmoke" ],
+  "damageKind" : "ews_smallarms"
+}
+
+

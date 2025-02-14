@@ -1,0 +1,130 @@
+{
+  "type" : "gic_khurtovyna_redarmy_commissar",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeam" : 84,
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "behavior" : "gic_hostileguard",
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_ushankahead", "parameters" : { "colorIndex" : [0] } } ],
+            "chest" : [ { "name" : "gic_khurtovyna_peoplesarmy_commissarchest", "parameters" : { "colorIndex" : [0] } } ],
+            "legs" : [ { "name" : "gic_khurtovyna_peoplesarmy_commissarlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_se14"
+            ]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion", "gic_khurtovyna_redarmy_officer_rally" ],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 222.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "gic_infantry_panicProtection" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.25
+      }
+	  
+	  
+    }
+  }
+  
+}

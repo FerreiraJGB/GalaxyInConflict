@@ -1,0 +1,55 @@
+{
+  "name" : "gic_morphinedrug_effect",
+  "defaultDuration" : 0, // can be used to delay the effect
+  "effectConfig" : {
+    // count of stages is not limited
+    // count of effects per stage is not limited too
+    // next stage overrides effects of previous
+    // effect name and item name can be any
+    // every stage must have strictly one addiction effect
+    // addiction effects case-sensitive and must look like: <drug>_addiction_<number>
+    // you also can add scripts to addiction effects
+    // when last addiction stage will be reached and you used drug before addiction will pass then the effects in the drugAddictionEaseEffects list will be removed for a time equal to drugAddictionEaseTime; if there is no effects in the drugAddictionEaseEffects list then effects of the last stage will be simply refreshed
+    
+    "drug" : "uemorphine",
+    "drugStatusEffects" : {
+      "1" : {
+        "1" : { "effect" : "gicmorphine_addiction_1", "time" : 780 },
+        "2" : { "effect" : "gic_morphinedrug_paintolerance1", "time" : 780 },
+        "3" : { "effect" : "gic_morphinedrug_disorientation", "time" : 780 },
+        "4" : { "effect" : "regeneration4", "time" : 60 }
+      },
+	  
+      "2" : {
+        "1" : { "effect" : "gicmorphine_addiction_2", "time" : 900 },
+        "2" : { "effect" : "regeneration4", "time" : 30 },
+        "3" : { "effect" : "gic_morphinedrug_paintolerance2", "time" : 900 },
+        "4" : { "effect" : "gic_morphinedrug_disorientation", "time" : 900 }
+      },
+	  
+      "3" : {
+        "1" : { "effect" : "gicmorphine_addiction_3", "time" : 1020 },
+        "2" : { "effect" : "regeneration4", "time" : 5 },
+        "3" : { "effect" : "gic_morphinedrug_paintolerance3", "time" : 1020 },
+        "4" : { "effect" : "gic_morphinedrug_nofocus", "time" : 1020 },
+        "5" : { "effect" : "gic_morphinedrug_slowedbreathing", "time" : 1020 }
+      },
+	  
+      "4" : {
+        "1" : { "effect" : "gicmorphine_addiction_4", "time" : 1200 },
+        "2" : { "effect" : "gic_cyanide", "time" : 1200 }
+      }
+	  
+    },
+	
+    "drugAddictionEaseTime" : 10,
+    "drugAddictionEaseEffects" : {
+      "1" : { "effect" : "gic_cyanide" }
+    }
+  },
+  
+  "scripts" : [ "/stats/effects/gic_drug_effects.lua" ],
+  
+  "label" : "Morphine",
+  "icon" : "/interface/statuses/gic_morphine.png"
+}

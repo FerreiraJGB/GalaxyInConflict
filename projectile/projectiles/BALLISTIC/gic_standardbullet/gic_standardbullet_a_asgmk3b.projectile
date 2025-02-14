@@ -1,0 +1,48 @@
+{
+  "projectileName" : "gic_standardbullet_a_asgmk3b",
+  "bounces" : 0,
+  "image" : "gic_standardbullet_c_null.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/gun/gic_highfleet_shell_out_tiny_01.wav", "/sfx/gun/gic_highfleet_shell_out_tiny_02.wav", "/sfx/gun/gic_highfleet_shell_out_tiny_03.wav"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact_muzzle.config"
+    }
+//    {
+//      "action" : "projectile",
+//      "type" : "gic_standardbullet_c_asgmk3b",
+//      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 4,
+//	  "directional" :true
+ //   }
+  ],
+  "power" : 20,
+  "damageKind" : "ews_explosive",
+
+  "scripts" : [ "/scripts/projectiles/gic_miss_primer.lua" ],
+
+  "hitProjectile" : "gic_standardbullet_c_asgmk3b",
+  "missProjectile" : "gic_standardbullet_miss_c_pointblank_asgmk3b",
+  "missChance" : 20,
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  
+  "onlyHitTerrain" : true,
+  
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.0,
+  "physics" : "laser"
+}

@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_psychichandcannon_a_machinegun_antitank",
+  "bounces" : 0,
+  "image" : "gic_psychichandcannon_a.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_psychicshot_bullet_antitank",
+      "inheritDamageFactor" : 1,
+      "fuzzAngle" : 7,
+	  "directional" :true
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion"
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_antitank",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.0,
+  "physics" : "laser"
+}

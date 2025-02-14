@@ -1,0 +1,25 @@
+{
+  "projectileName" : "gic_magicbullet_icedart_bouncy",
+  "bounces" : -1,
+  "physics" : "gic_magic_bouncy",
+  "damageKindImage" : "icon.png",
+  "image" : "gic_magicbullet_icedart.png",
+  "animationCycle" : 0.5,
+  "timeToLive" : 4,
+  "edgeTrigger" : true,
+  "frameNumber" : 1,
+  "power" : 100,
+  "speed" : 30,
+  "fullbright" : true,
+  "supportsProcessing" : true,
+  "renderLayer" : "Monster+10",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    }
+  ],
+  "lightColor" : [0, 0, 40],
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

@@ -1,0 +1,86 @@
+{
+  "objectName" : "gic_heatsinklauncher_target_up",
+  "colonyTags" : ["outpost"],
+  "printable" : false,
+  "rarity" : "Common",
+  "category" : "other",
+  "price" : 0,
+  "lightColor" : [100, 100, 100],
+  "description" : "Outputs wire signal when broken. Can loop back to itself to self-activate heatsinks.",
+  "shortdescription" : "Heatsink Launcher [up]",
+  "race" : "generic",
+
+
+
+  "inventoryIcon" : "gic_heatsinklauncher_targeticon.png",
+  "orientations" : [
+    {
+      "image" : "gic_heatsinklauncher_target_up.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      
+      "direction" : "left",
+      "flipImages" : true,
+      
+      "animationPosition" : [-8, 0],
+      "animationParts" : {
+        "bg" : "gic_heatsinklauncher_target_up.png",
+        "fg" : "gic_heatsinklauncher_target_up.png"
+      },
+
+      "projectileDirection" : [0, 1],
+      "projectilePosition" : [0, -8],
+
+      "spaceScan" : 0.1
+    },
+    {
+      "image" : "gic_heatsinklauncher_target_up.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "direction" : "right",
+      
+      "animationPosition" : [-8, 0],
+      "animationParts" : {
+        "bg" : "gic_heatsinklauncher_target_up.png",
+        "fg" : "gic_heatsinklauncher_target_up.png"
+      },
+
+      "projectileDirection" : [0, 1],
+      "projectilePosition" : [0, -8],
+
+      "spaceScan" : 0.1
+    }
+  ],
+
+  
+  
+  "animation" : "/objects/wired/gic_heatsinklauncher_target/gic_heatsinklauncher_target.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "shoot" : [ ],
+      "on" : [ ],
+      "off" : [ ]
+    }
+  },
+
+  "inputNodes" : [ [1, 0] ],
+  "outputNodes" : [ [0, 0] ],
+
+  "inactiveLightColor" : [0, 0, 0], // light color to emit when the object is 'off'
+  "activeLightColor" : [0, 0, 0], // light color to emit when the object is 'on'
+
+  "fireTime" : 1.0, // rate of fire
+  "fireTimeVariance" : 0.0, // variation in rate of fire
+  "projectile" : "gic_heatsink_small", // name of projectile (required)
+  "projectileDirection" : [0, 1],
+  "projectileConfig" : { // extra configuration overrides for projectile
+    "damageTeam" : { "type" : "indiscriminate" },
+    "power" : 10,
+    "speed" : 5
+  },
+
+  "smashable" : true,
+  "smashSounds" : [ "/sfx/objects/wiredtarget_break1.ogg"],
+  "smashParticles" : [ { "count" : 4, "particle" : "greytargetshard" } ],
+
+  "scripts" : ["/objects/wired/gic_heatsinklauncher_target/gic_heatsinklauncher_target.lua"],
+  "scriptDelta" : 2
+}

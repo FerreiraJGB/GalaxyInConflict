@@ -1,0 +1,66 @@
+{
+  "itemName" : "gic_goshawk_machinegun_coordinator",
+  "price" : 500,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Underbarrel Attachment^white;",
+  "inventoryIcon" : "gic_goshawk_machinegun_coordinator_icon.png",
+  
+  "tooltipKind" : "gic_largebase",    
+  
+  
+  
+  
+  
+  "description" : "''Four .50 caliber machineguns might not seem like much, but keep in mind that each one of those bullets carries enough punch to pulverize a man.''
+  
+^orange;Machinegun Strafe:^reset; Fires a ^yellow;non-damaging beacon^reset; that ^orange;calls upon a Goshawk Fightercraft to strafe the target zone.^reset; Strafing begins from left-to-right.
+^yellow;Requires decent space, but can work underground | Reloads using Healing Flasks.^reset;",
+  
+  
+  "shortdescription" : "Goshawk Strafe Coordinator",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_goshawk_machinegun_coordinator", //name of attachment
+	"attachmentTag" : ["ews_grenadelauncher", "gic_grenadelauncher" ], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/WEAPON_ATTACHMENTS/FOREGRIP/gic_goshawk_machinegun_coordinator.png", //determines what image is displayed on the resulting gun. For grenade launchers/under barrel launchers, do NOT add a frame identifier. Keep this as "[...].png".
+		
+	"attachmentId" : "gic_goshawk_machinegun_coordinator", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "grenadelauncher",
+		"grenadelauncherConfig" : {	//requires some part anims stuff in the main activeitem and some particle stuff. also needs some stances built in too.
+			"altFireTime" : 2.0,
+			"altAmmoMax" : 1,
+			"altAmmo" : 0,			//default starting ammo value
+			"altMagazine" : "gic_healingflask",				//the magazine item the alt fire needs to reload
+			"projectileTypeGrenade" : "gic_goshawk_machinegun_strafe_object", //grenadeimpact
+			"projectileTypeGrenadeCount" : 1,
+			"projectileTypeGrenadeConfig" : {
+				"power" : 0,		//damage for projectile
+				"speed" : 150,
+				"knockback" : 0
+			},
+			
+			"fireSFX" : "/sfx/gun/grenade1.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("soundEffectGrenade")
+			"reloadSFX" : "/sfx/gic_glreload.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("switchAmmoAlt")
+			
+			"altInaccuracy" : 0,
+			"grenadeMuzzleOffset" : [1.2,-0.05]		//not the same thing as a muzzle offset; this is an offset offsetted off the main muzzleOffset
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1.0,1.0,1.0,1.0,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1.0,1.0,1.0,1.0] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

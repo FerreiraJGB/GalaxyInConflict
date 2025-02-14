@@ -1,0 +1,36 @@
+{
+  "itemName" : "gic_armor_ballisticcomputervisor",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#4797D8;Advanced Helmet Equipment^reset;",
+  "inventoryIcon" : "gic_armor_ballisticcomputervisor.png",
+  
+  "description" : 
+  
+"An advanced ballistic visor with an embedded high-tech micro-computer. Sight is fed through a specialised camera which protects against flashbangs. Equipped with an advanced ballistics system that tracks and predicts incoming fire, effectively removing suppression. Users are warned that being able to track a bullet does not grant you superhuman reflexes unless you are already a cyborg.
+^green;+5% THERMAL Resistance.
+^green;Immunity to Suppression and Flashbangs.^reset;",
+
+
+
+  "shortdescription" : "Ballistic Computer Visor",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_armor_ballisticcomputervisor",
+    "displayName" : "Ballistic Computer Visor",
+    "displayIcon" : "/items/augments/trinkets/UNUSED/gic_armor_ballisticcomputervisor.png",
+    "effects" : [
+	"gic_armor_ballisticcomputervisor",
+	{"stat" : "gic_flashbangProtection", "amount" : 1.0},
+	{"stat" : "gic_suppressedProtection", "amount" : 1.0},
+	{"stat" : "ews_smallarmsthermalResistance", "amount" : 0.05}
+	
+	]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_helmet_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

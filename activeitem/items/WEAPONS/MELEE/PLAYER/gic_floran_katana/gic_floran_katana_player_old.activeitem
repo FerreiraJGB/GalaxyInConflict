@@ -1,0 +1,64 @@
+{
+  "itemName" : "gic_floran_katana_player_old",
+  "price" : 500,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A Floran copy of a Hylotl Katana, wielded by privileged warriors loyal (or that used to be loyal) to a Greenfinger. Its presence suggests Florans engaged in some manner of cultural appropriation. ^green;Its attacks may overwhelm the melee defenses of false Floran martial artists^white;.",
+  "shortdescription" : "Floran ^green;Ashigaru^white; Katana",
+  "tooltipKind" : "gic_largebase_sword",
+  "category" : "^green;Medium Ashigaru Sword^white;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","axe"],
+ 
+  "inventoryIcon" : "gic_floran_katana.png",
+
+  "animation" : "/items/active/weapons/melee/axe/axe.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_floran_katana.png"
+  },
+  "animationCustom" : { "sounds" : {
+          "fire" : [ "/sfx/melee/gic_sekiro_ichimonji_16speed.ogg" ]
+        } },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "axecleave",
+  "primaryAbility" : {
+    "fireTime" : 0.80,
+    "baseDps" : 50,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "knockbackRange" : 15,
+	  "damageType" : "IgnoresDef",
+      "statusEffects" : [ "gic_guardbreak" ]
+    },
+	
+    "allowHold" : true,
+    "stances" : {
+      "idle" : {
+        "allowRotate" : false
+      },
+      "windup" : {
+//        "hold" : true,
+//        "duration" : 0.55,
+
+        "allowRotate" : false
+      },
+      "fire" : {
+        "allowRotate" : false
+      },
+      "hold" : {
+        "allowRotate" : false
+      }
+    }
+	
+  },
+
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

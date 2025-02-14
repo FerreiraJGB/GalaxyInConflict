@@ -1,0 +1,192 @@
+{
+  "type" : "gic_ghostgirl_samurai",
+  "baseType" : "gic_soldierbase",
+
+  "damageTeamType" : "friendly",
+  "damageTeam" : 1,
+
+  "movementParameters" : {
+    "runSpeed" : 20
+  },
+
+
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "fem16",
+    "hairColor" : "29"
+  },  
+
+  "scriptConfig" : {
+  
+    "behavior" : "follower",
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  
+  
+      "follower" : {
+        "attack" : {
+          "default" : {
+            "default" : [
+              "!"
+            ]
+          }
+        },
+        "join" : {
+          "default" : {
+            "default" : [
+              "[Following]"
+            ]
+          }
+        },
+        "returnFromCombat" : {
+          "default" : {
+            "default" : [
+              "!"
+            ]
+          }
+        },
+        "wait" : {
+          "default" : {
+            "default" : [
+              "[Standing By]"
+            ]
+          }
+        },
+        "returnFromWait" : {
+          "default" : {
+            "default" : [
+              "[Following]"
+            ]
+          }
+        }
+      }
+  
+  
+    },
+	
+    "reactions" : {
+      "spontaneous" : [
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_samuraighostgirlhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_samuraighostgirlchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_samuraighostgirllegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_samuraighostgirlback", "parameters" : { "colorIndex" : [0] } } ],		
+            "primary" : [
+              "gic_ark_katana_player"
+            ]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_commandingofficer_japanesefemalesoldier_rally_mousecommander", "gic_npc_death_desummon_voidexplosion"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1111.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : -20
+      },
+	  
+      "gic_crewmember_stat" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_dodge_stat" : {
+        "baseValue" : 0.8
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.5
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : -0.2
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+	  
+    }
+  }
+  
+}

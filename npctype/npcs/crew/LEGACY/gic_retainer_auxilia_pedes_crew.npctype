@@ -1,0 +1,338 @@
+{
+  "type" : "gic_retainer_auxilia_pedes_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ ],
+
+  "identity" : {
+    "gender" : "male"
+  },  
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0} ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "crewmember", //gic_noinspectcrew
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  //------------
+	  
+ //Retainer Add-on - Had to concede with the default popup.  
+      "interactAction" : "ShowPopup", //ScriptPane
+	  
+      "interactData" : {
+      "uiConfig" : "/interface/windowconfig/gic_retainerpopup.config", //-- This doesn't work, the bastards!
+	  
+//	  "gui" : "/interface/windowconfig/gic_retainerpopup.config",
+	  
+        "icon" : {
+          "file" : "/interface/crafting/gic_undercolonyworkshopmerchant.png"
+        },
+	  
+      "title" : "^#52A8DD;Auxilia Pedes Retainer^reset;",	  
+      "subtitle" : "^#E0C200;''I will return as a new believer!''^reset;",
+
+    "paneLayoutOverride" : { //This doesn't work either!
+      "windowtitle" : {
+        "icon" : {
+          "file" : "/interface/crafting/gic_undercolonyworkshopmerchant.png"
+        }
+      }
+    },
+	  
+      "message" : 
+"^#E0C200;''Here to conquer the walls of pain!''^reset;
+Grants the Extrasolar Human Ability: ^#E0C200;Lethal Clarity,^reset; which ^#E0C200;increases EWS Accuracy and Hit Chance^reset; when ^#E0C200;under Suppression.^reset;
+^#52A8DD;The Auxilia Pedes are the lowest rank of true auxilliary troops the unrecognized militant state of the Occasus can field.^reset;"
+      },
+
+
+
+//----------------------
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "retainer",
+        "name" : "Auxilia",
+        "field" : "Auxilia",
+        "uniformColorIndex" : 1,
+		
+        "benefits" : [
+          {
+            // Ephemeral effects gained upon leaving the ship.
+            "type" : "EphemeralEffect",
+            "effect" : "gic_human_lethalclarity_auxiliapedes_primer",
+            "duration" : 3600 //1hr
+          }
+        ]
+		
+      },
+
+      "ranks" : [
+		"Pedes"
+		
+      ],
+
+      "defaultUniform" : {
+	    "head" : "gic_occasusauxiliahead",
+        "chest" : "gic_colonialresistancechest", //soldierchest
+        "legs" : "gic_occasusauxilialegs", //soldierpants
+		"back" : ""
+      },
+      "uniformSlots" : [] //"chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"
+    },
+	
+
+	
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "You look like someone in need of help.",
+			  "I'd like to see more places than this.",
+			  "I might be older, but I've plenty of experience behind me.",
+			  "You should try jogging.",
+			  "Have you touched Terran grass? I heard it's good for you.",
+			  "Come on, you need some help from someone like me.",
+			  "I ain't academic like you Protectorate folk, but I got sense!",
+			  "Hey, let me aboard and off this boring rock!"
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "I'll be here then.",
+              "I'll be here."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "You need better training!",
+			  "Come on, what is this regime?",
+			  "You call this a ship?",
+			  "A poor excuse of a ship!"
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+	    },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy."
+          ]
+        }
+      }
+	
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "converse" : {
+        "default" : {
+          "default" : [
+			"Infantry!",
+			"Spearman!",
+			"Levy!"
+          ]
+        }
+      }
+
+
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player = 18
+    "runSpeed" : 12
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+	  
+          {
+            "head" : [ { "name" : "gic_occasusauxiliahead", "parameters" : { "colorIndex" : [0] } } ],
+            "chest" : [ { "name" : "gic_colonialresistancechest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "gic_occasusauxilialegs", "parameters" : { "colorIndex" : [3] } } ]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "projectileName" : "gic_khurtovyna_republic_officer_artillerygrenade",
+  "physics" : "gic_genecultist_javelin",
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "timeToLive" : 5,
+  "speed" : 65,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [0, 0, 0],
+  "image" : "gic_khurtovyna_republic_officer_artillerygrenade.png",
+  "frameNumber" : 1,
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/grenade/gic_anm14_bounce_01.ogg"
+      ]
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_grenadeexplosion/gic_grenadeexplosionknockback.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_qfmk1113mm_precisionartillery_stage1_alt_republic",
+//      "inheritDamageFactor" : 1,
+      "angle" : 90
+    }
+  ],
+  
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  "rotationRate" : 1.0,
+  "trackingLimit" : 300,
+  
+  "power" : 100,
+  "damageKind" : "ews_explosive",
+  "damagePoly" : [ [-4.5, 0], [-3, -3], [0, -4.5], [3, -3], [4.5, 0], [3, 3], [0, 4.5], [-3, 3] ]
+}

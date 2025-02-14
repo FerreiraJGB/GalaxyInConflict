@@ -1,0 +1,35 @@
+{
+  "projectileName" : "gic_setpiece_thrown_daimyo_spawner",
+  "bounces" : 0,
+  "image" : "icon.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [0, 0, 0],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_setpiece_thrown_daimyo",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0,
+	  "fuzzAngle" : 5,
+	  "directional" :true
+    }
+  ],
+  
+"periodicActions" : [
+
+],
+  
+  "power" : 77,
+  "damageKind" : "ews_heavyarms",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.001,
+  "physics" : "laser"
+}

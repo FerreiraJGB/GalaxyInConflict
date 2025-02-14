@@ -1,0 +1,51 @@
+{
+  "projectileName" : "gic_magicshot_visionarytuning_stage2_3pattern",
+  "image" : "gic_magicshot_visionarytuning_null.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ "fireplasma" ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_visionarytuning_stage2",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : -10
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_visionarytuning_stage2",
+      "inheritDamageFactor" : 1
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_visionarytuning_stage2",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 10
+    }
+  ],
+  
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

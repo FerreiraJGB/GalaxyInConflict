@@ -1,0 +1,588 @@
+{
+  "type" : "gic_bandit_spectre_combatrobot",
+  "shortdescription" : "[Spectre]",
+  "description" : "Knights of old.",
+
+  "categories" : [ "gic_bandit_spectre_combatrobot" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_bandit_spectre_combatrobot.animation",
+
+  "dropPools" : [], //{ "default" : "banditTreasure", "bow" : "banditTreasure" }
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster.lua"
+    ],
+	
+
+	
+//    "damageBar" : "None",
+
+    "behavior" : "monster",
+    "deathBehavior" : "monster-death",
+
+    "seeThroughLiquid" : false,
+	
+	
+	
+	
+	
+	
+
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 300,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 300,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro",
+            "animationTime" : 5
+          }
+        }
+      ],
+
+      "hostileActions" : [
+	  
+	  //Forward Dash
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 120,
+          "minimumRange" : 40,
+          "windupTime" : 0.25,
+//         "power" : 300,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1200, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "slidewindup",
+          "chargeState" : "slide",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },  
+	  
+	  
+	  //Forward Dash
+      {
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+//         "power" : 300,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 4800, //18
+          "chargeControlForce" : 1200, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "slidewindup",
+          "chargeState" : "slide",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      },  
+	 
+	  
+	  //Willy-Pete Pellets
+        {
+          "name" : "action-fire",
+        "cooldown" : 5.0,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 300,
+            "minimumRange" : 20,
+            "windupState" : "cannonwindup",
+            "windupTime" : 3.0,
+
+            "projectileCount" : 1,
+            "fireDelay" : 0.05,
+            "projectileInterval" : 1.0,
+            "inaccuracy" : 0.3,
+			
+            "projectileParameters" : {
+              "speed" : 75,
+              "power" : 50
+            },
+
+            "projectileType" : "gic_whitephosphorus_shrapnel",
+            "fireOffsets" : [ [5.3, 0.7], [5.3, 0.7], [5.3, 5.7], [5.3, 0.7], [5.3, 0.7], [5.3, 0.7] ],
+            "aimAtTarget" : true,
+            "aimDirection" : [3, 0],
+
+            "fireState" : "cannonfire",
+            "fireSound" : "fire",
+            "fireParticleBurst" : "",
+
+            "winddownTime" : 2.0,
+            "winddownState" : ""
+          }
+        },
+		
+		
+	  //Back Dash
+      {
+        "name" : "action-charge",
+        "cooldown" : 3.0,
+        "parameters" : {
+          "maximumRange" : 30,
+          "minimumRange" : 0,
+          "windupTime" : 0.25,
+//         "power" : 300,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : -4800, //18
+          "chargeControlForce" : 1200, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "slidewindup",
+          "chargeState" : "slide",
+          "winddownTime" : 0.25,
+          "winddownState" : ""
+        }
+      }			
+		
+
+
+      ],
+	  
+	  
+	  
+      "concurrentHostileActions" : [
+	
+	
+	
+        {
+          "name" : "action-fire",
+//          "cooldown" : 0.1,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 30,
+            "minimumRange" : 0,
+            "windupState" : "",
+            "windupTime" : 2.0,
+
+            "projectileCount" : 4,
+            "fireDelay" : 0.05,
+            "projectileInterval" : 0.5,
+            "inaccuracy" : 0.5,
+			
+            "projectileParameters" : {
+              "speed" : 35,
+              "power" : 20
+            },
+
+            "projectileType" : "gic_occasus_energydisruptor",
+            "fireOffset" : [1.1, 1.7],
+            "aimAtTarget" : false,
+            "aimDirection" : [1, 2],
+            "fireState" : "",
+            "fireSound" : "grenadefire",
+            "fireParticleBurst" : "",
+
+            "winddownTime" : 20.0,
+            "winddownState" : ""
+          }
+        },	
+	  
+        {
+          "name" : "action-fire",
+//          "cooldown" : 0.1,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 100,
+            "minimumRange" : 10,
+            "windupState" : "",
+            "windupTime" : 2.0,
+
+            "projectileCount" : 10,
+            "fireDelay" : 0.05,
+            "projectileInterval" : 0.1,
+            "inaccuracy" : 0.05,
+			
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 77
+            },
+
+            "projectileType" : "gic_redtracerbullet_heavy_miss_primer_machinegun",
+            "fireOffset" : [0.0, 2.6],
+            "aimAtTarget" : true,
+            "aimDirection" : [0, 0],
+
+            "fireState" : "",
+            "fireSound" : "fire_coaxial_mg",
+            "fireParticleBurst" : "",
+
+            "winddownTime" : 15.0,
+            "winddownState" : ""
+          }
+        }
+		
+		
+		
+		
+      ],
+	  
+
+      "approachActions" : [
+      ],
+
+      "followActions" : [
+      ],
+	  
+
+
+
+      "periodicActions" : [
+      ],
+
+      "damageTakenActions" : [
+      ],
+
+
+      "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_tankexplosion_smoke",
+            "projectileParameters" : {
+              "power" : 4000,
+              "damageTeam" : { "type" : "indiscriminate", "team" : 0 },
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 5],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        }
+      ],
+
+
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+
+	
+	
+	
+	
+	
+
+    "damageParts" : { //Greed
+      "body" : {
+        "damage" : 40,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.25,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 60,
+        "statusEffects" : [ "gic_stun_05" ]
+      }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-2.25, -3.05], [2.25, -3.05], [2.25, 2.25], [-2.25, 2.25],               [-1.3125, 0.10], [-0.8125, -0.40], [-1.3125, 0.75], [-0.8125, 1.25] ],
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-2.25, -3.05], [2.25, -3.05], [2.25, 2.25], [-2.25, 2.25],               [-1.3125, 0.10], [-0.8125, -0.40], [-1.3125, 0.75], [-0.8125, 1.25] ],
+
+      "mass" : 1,
+      "walkSpeed" : 16,
+      "runSpeed" : 16,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "robotic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "robotic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 0.0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 99999
+        },
+        "maxHealth" : {
+          "baseValue" : 2000
+        },
+        "grit" : {
+          "baseValue" : 1.0
+        },
+        "protection" : {
+          "baseValue" : 1.0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1.0
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.9
+        },
+        "fireResistance" : {
+          "baseValue" : 0.7
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.7
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.7
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.7
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+				"gic_stunProtection": {
+					"baseValue": 1.0
+				},
+
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_oilburningStatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.75
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "novaResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 1
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+	  
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+	  
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 1
+				},
+				"cosmicResistance": {
+					"baseValue": 1
+				},
+				"radioactiveResistance": {
+					"baseValue": 0.9
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 1
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0.9
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 1
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 1
+				}
+		
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

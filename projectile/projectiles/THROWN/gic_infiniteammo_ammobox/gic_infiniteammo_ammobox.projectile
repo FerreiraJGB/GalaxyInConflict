@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_infiniteammo_ammobox",
+  "physics" : "gic_grenadenormal",
+  "onlyHitTerrain" : false,
+  "bounces" : -1,
+  "timeToLive" : 30,
+  "speed" : 45,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [32, 32, 32],
+  "image" : "gic_infiniteammo_ammobox.png",
+  "fullbright" : true,
+  "frameNumber" : 1,
+  "damageTeam" : { "type" : "indiscriminate" },
+  "statusEffects" : [ "gic_ammo_replicator_ammobox" ],
+  "actionOnCollide" : [
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "inheritDamageFactor" : 0.0,
+	  "fuzzAngle": 0,
+      "angle" : 0
+    }
+  ],
+  "power" : 0,
+  "damageKind" : "hidden" //hidden
+}

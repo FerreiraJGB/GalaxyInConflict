@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_whitephosphorus_shrapnel_ground",
+  "image" : "gic_whitephosphorus_shrapnel_ground.png",
+  "physics" : "gic_grenadenormal",
+  "piercing" : true,
+  "bounces" : -1,
+  "frameNumber" : 8,
+  "animationCycle" : 0.8,
+  "pointLight" : true,
+  "timeToLive" : 30.0,
+  "power" : 5,
+  "speed" : 15, //200
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "actionOnReap" : [
+  ],
+"periodicActions" : [
+],
+  "lightColor" : [235, 126, 2],
+  "damageKind" : "flamethrower",
+  "damageKindImage" : "/interface/statuses/fire.png",
+  "statusEffects" : [
+	"gic_bleeding_light", "burning", "gic_oilfire_primer", "gic_oilburning", "gic_burn_wounds", "gic_burn_wounds_severe"
+  ],
+  "hydrophobic" : false,
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "damageTeam" : { "type" : "indiscriminate" },
+  "persistentAudio" : "/sfx/objects/torch.ogg"
+}

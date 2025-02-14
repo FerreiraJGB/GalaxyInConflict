@@ -1,0 +1,37 @@
+{
+  "objectName" : "gic_blackjack_brokenhumanfuelhatch",
+  "colonyTags" : ["human"],
+  "printable" : false,
+  "rarity" : "Common",
+  
+  "description" : "[Broken Fuel Hatch]",
+  "shortdescription" : "Broken FTL Fuel Hatch",
+  "race" : "human",
+//  "lightColor" : [46, 66, 77],
+
+  "inventoryIcon" : "gic_blackjack_brokenhumanfuelhatch_icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_blackjack_brokenhumanfuelhatch.png:<color>.<frame>", "fullbright" : true }, { "image" : "gic_blackjack_brokenhumanfuelhatch_lit.png:<color>.<frame>" } ],
+
+      "imagePosition" : [-8, -16],
+      "frames" : 10, //12
+      "animationCycle" : 0.8333, //1
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+  
+  "soundEffect" : "/sfx/objects/tv_static.ogg",
+  "soundEffectRangeMultiplier" : 0.5,
+
+  "animation" : "/objects/noisy/noisy.animation",
+
+  "scripts" : [
+    "/objects/noisy/noisy.lua"
+  ],
+  
+  "sounds" : [ "/sfx/interface/clickon_error.ogg" ]
+  
+}

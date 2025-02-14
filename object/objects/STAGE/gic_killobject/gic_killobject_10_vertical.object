@@ -1,0 +1,31 @@
+{
+  "objectName" : "gic_killobject_10_vertical",
+  "colonyTags" : [],
+  "rarity" : "Common",
+  "description" : "instakill set piece",
+  "shortdescription" : "object_kill",
+  "scannable" : false,
+  "printable" : false,
+  "race" : "human",
+  "category" : "trap",
+  "price" : 75,
+
+  "inventoryIcon" : "gic_killobject_10_vertical.png",
+  "orientations" : [
+    {
+      "image" : "gic_killobject_10_vertical.png:<color>",
+      "imagePosition" : [-8, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ ],
+
+      "touchDamage" : {
+        "poly" : [ [-1, 0], [-1, 10], [1, 10], [1, 0] ],
+        "damage" : 9999,
+
+        "damageType" : "ignoresdef",
+        "damageSourceKind" : "ews_antitank",
+        "damageTeam" : { "type" : "indiscriminate"}
+      }
+	}
+  ]
+}

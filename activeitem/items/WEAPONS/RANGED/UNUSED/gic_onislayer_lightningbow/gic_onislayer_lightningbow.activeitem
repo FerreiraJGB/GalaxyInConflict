@@ -1,0 +1,56 @@
+{
+  "itemName" : "gic_onislayer_lightningbow",
+  "fixedLevel" : false,
+  "price" : 0,
+  "inventoryIcon" : "gic_onislayer_lightningbowicon.png",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#D6484F;Lightning Bow^reset;",
+  
+  "description" : "A bow compatible with standard Protectorate energy systems. Scales with the attack power of the user. Oni are not exactly something one would expect the Florans to fear, but that shouldn't be a problem with the advent of firearms...
+^red;Energy Systems Overload: Energy regeneration is crippled whilst the bow is equipped.^reset;
+^yellow;Lightning Puncture: When fully charged, fire a slow lightning arrow that flies perfectly straight, piercing all targets. Hit targets are stunned for a second.^reset;",
+  
+  "shortdescription" : "Oni-Slayer",
+  
+  "twoHanded" : true,
+  "itemTags" : ["weapon", "ranged"],
+
+  "radioMessagesOnPickup" : [ "pickupbow" ],
+
+  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animationParts" : {
+    "bow" : "gic_onislayer_lightningbow.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "bow" : { "properties" : {
+      "offset" : [0.25, 0]
+    }}}},
+    "sounds" : {
+      "draw" : [ "/sfx/bow/gic_bloodborne_bow-stance1.wav" ],
+      "release" : [ "/sfx/bow/gic_bloodborne_bow-shot1.wav", "/sfx/bow/gic_bloodborne_bow-shot2.wav", "/sfx/bow/gic_bloodborne_bow-shot3.wav" ],
+      "perfectRelease" : [ "/sfx/bow/gic_bloodborne_bow-large-shot.wav" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/bow/bow.lua", "/abilities/weapons/gic_onislayer_lightningbow.lua"],
+  "scriptDelta" : 2,
+
+  "primaryAbilityType" : "bowshot",
+  "primaryAbility" : {
+  
+    "energyPerShot" : 5000,
+  
+    "fireOffset" : [0.0, 0],
+  
+    "projectileType" : "gic_electricarrow",
+    "powerProjectileType" : "gic_lightningheavyarrow_sniper_piercing",
+    "projectileParameters" : {
+      "speed" : 100,
+      "power" : 20
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildbow.lua"
+}

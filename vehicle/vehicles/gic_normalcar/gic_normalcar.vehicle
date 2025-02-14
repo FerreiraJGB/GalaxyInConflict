@@ -1,0 +1,133 @@
+{
+  "name" : "gic_normalcar",
+  "script" : "gic_normalcar.lua",
+  "boundBox" : [-5, -5, 5, 5],
+  "slaveControlTimeout" : 2.0,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : true,
+
+  "animation" : "gic_normalcar.animation",
+  "animationCustom" : {
+    "particleEmitters" : {
+      "damageShards" : {
+        "transformationGroups" : ["rotation"],
+        "emissionRate" : 3.0,
+        "burstCount"  : 20,
+        "offsetRegion" : [-4, -4, 4, 0],
+        "particles" : [{ "particle" : "steelshard"},
+                       { "particle" : "fireshard"}]
+      }
+    }
+  },
+
+  "animationPartTags" : {
+    "frontGun" : {
+      "partImage" : "gic_normalcargun.png"
+    },
+    "frontGun2" : {
+      "partImage" : "gic_normalcargun.png"
+    }
+  },
+
+  "movementSettings" : {
+    "collisionPoly" : [[-6.2, 0.3], [6.2, 0.3], [6.2, 3.25], [-6.2, 3.25],           [-1.3125, 1], [-0.8125, 1], [-1.3125, 1.75], [-0.8125, 2.25]],
+    "mass" : 1,
+    "airFriction" : 1,
+    "groundFriction" : 100,
+    "ignorePlatformCollision" : true
+  },
+
+  "loungePositions" : {
+    "drivingSeat" : {
+      "part" : "seat",
+      "partAnchor" : "drivingSeatPosition",
+      "statusEffects" : ["invisible"],
+      "orientation" : "sit",
+      "exitBottomOffset" : [-1.0, 1.0]
+    },
+    "titanicPose" : {
+      "part" : "seat",
+      "partAnchor" : "titanicSeatPosition",
+      "statusEffects" : ["invisible"],
+      "orientation" : "sit",
+      "exitBottomOffset" : [-1.0, 1.0]
+    },
+    "backSeat1" : {
+      "part" : "seat",
+      "partAnchor" : "backSeat1Position",
+      "statusEffects" : ["invisible"],
+      "orientation" : "sit",
+      "exitBottomOffset" : [-1.0, 1.0]
+    }
+  },
+
+  "mechAimLimit" : 0,
+  
+  "mechFireCycle" : 0.1,
+  "mechFireCycle2" : 0.1,
+    
+  "mechProjectile" : "",
+  "mechProjectileConfig" : {
+    "speed" : 200,
+    "power" : 0
+  },
+  "mechProjectile2" : "",
+  "mechProjectile2Config" : {
+    "power" : 20
+  },
+  "minWaterFactorToFloat" : 0.1,
+
+  "targetMoveSpeed" : 50,
+
+  "moveControlForce" : 10000,
+
+  "windLevelOffset" : [0, 4],
+  "rockingWindAngleMultiplier": 0,
+
+  "rockingInterval" : 10,
+  "maxRockingAngle": 0.1,
+  "speedRotationMultiplier": 0.025,
+  "angleApproachFactor" : 0.025,
+  "maxGroundSearchDistance" : 2.5,
+
+  "maxHealth" : 1000,
+  "protection" : 0,
+  "materialKind" : "robotic",
+
+  "undamagedSettings" : {
+    "frictionEnabled" : true,
+    "groundFriction" : 100
+  },
+  "slowSettings" : {
+    "frictionEnabled" : true,
+    "groundFriction" : 120
+  },
+  "wreckedSettings" : {
+    "frictionEnabled" : true,
+    "groundFriction" : 150
+  },
+
+  "sinkingBuoyancy" : 0,
+  "sinkingFriction" : 15,
+  "maxSinkTime" : 10,
+  "destroyParticleBurstCount" : 20,
+
+  "damageStateNames" : ["undamaged","scratched","broken","wrecked"],
+  "damageMovementSettingNames" : ["undamagedSettings","undamagedSettings","slowSettings","wreckedSettings"],
+  "damageStateDriverEmotes" : ["happy","happy","sad","annoyed"],
+  "damageTakenEmote" : "oooh",
+  "damageEmoteTime" : 2.0,
+
+  "physicsCollisions" : {
+    "deck" : {
+      "collision" : [ [-5, 2.2], [-0.5, 2.2], [1, 2.2]],
+      "collisionKind" : "platform",
+      "attachToPart" : "seat"
+    }
+  },
+
+  "bowWaveParticles" : ["bowWaveWater","bowWaveLava","splashPoison"],
+  "bowWaveMaxEmissionRate" : 200,
+  "splashParticles" : ["splashWater","splashLava","splashPoison"],
+  "splashEpsilon" : 0.025
+}

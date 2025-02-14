@@ -1,0 +1,30 @@
+{
+  "frameGrid" : {
+    "size" : [137, 71],
+    "dimensions" : [11, 4],
+
+    "names" : [
+      [ null, "idle.1", null, null, null, null, null, null, null, null, null ],
+      [ null, "walk.1", "walk.2", "walk.3", null, null, null, null, null, null, null ],
+      [ null, "windup.1", null, null, null, null, null, null, null, null, null],
+	  [ null, "fire.1", "fire.2", null, null, null, null, null, null, null, null]
+    ]
+  },
+  
+  
+  "aliases" : {
+    "charge.1" : "walk.1",
+    "charge.2" : "walk.2",
+    "charge.3" : "walk.3",
+	
+    "reversecharge.1" : "walk.3",
+    "reversecharge.2" : "walk.2",
+    "reversecharge.3" : "walk.1",
+	
+    "chargewindup.1" : "idle.1",
+    "chargewinddown.1" : "idle.1",
+    "crash.1" : "idle.1",
+    "hurt.1" : "idle.1"
+  }
+  
+}

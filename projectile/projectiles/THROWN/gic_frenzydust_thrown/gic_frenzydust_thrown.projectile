@@ -1,0 +1,40 @@
+{
+  "projectileName" : "gic_frenzydust_thrown",
+  "image" : "gic_frenzydust_thrown.png",
+  "animationCycle" : 0.25,
+  "physics" : "gic_grenadenormal",
+  "frameNumber" : 1,
+  "bounces" : 0,
+  "timeToLive" : 30,
+  "pointLight" : false,
+  "speed" : 40,
+  "damagePoly" : [ [-2, 0], [-2, -2], [0, -2], [2, -2], [2, 0], [2, 2], [0, 2], [-2, 2] ],
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/objects/vase_break_large1.ogg"
+      ]
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/objects/vase_break_large2.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_soldierslayerloop_explosion/gic_soldierslayerloop_frenzydust_explosion.config"
+    }
+	
+
+	
+	
+  ],
+  "statusEffects" : [ "gic_oil", "gic_stun_025" ],
+  "power" : 5.0,
+  "emitters" : [ "rocketsmoke" ],
+  "damageKind" : "ews_smallarms"
+}
+
+

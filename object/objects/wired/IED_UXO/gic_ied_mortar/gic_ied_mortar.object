@@ -1,0 +1,42 @@
+{
+  "objectName" : "gic_ied_mortar",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "wire",
+  "price" : 15,
+  "description" : "An unexploded 60mm Mortar Round.",
+  "shortdescription" : "60mm Mortar IED",
+  "race" : "generic",
+
+  "inventoryIcon" : "gic_ied_mortar_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_ied_mortar.png",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+
+
+  ],
+
+  "animation" : "/objects/noisy/noisy.animation",
+
+  "inputNodes" : [ [0, 0] ],
+
+  "scripts" : [
+    "/objects/scripts/wiredmine.lua"
+  ],
+  "scriptDelta" : 5,
+
+  "triggerOnBreak" : false,
+
+  "explosionProjectile" : "gic_uxo_mortar",
+  "explosionOffset" : [0, 0],
+
+  "triggerSounds" : [ "/sfx/objects/hiddenswitch1.ogg" ],
+  "detonationTime" : 1.0
+}

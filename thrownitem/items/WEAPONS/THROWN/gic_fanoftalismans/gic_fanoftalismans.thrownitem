@@ -1,0 +1,34 @@
+{
+  "itemName" : "gic_fanoftalismans",
+  "price" : 100,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_fanoftalismansicon.png",
+  "image" : "gic_fanoftalismans.png",
+  "shortdescription" : "Fan of Talismans",
+  
+  "description" : "''If something hurts them, then it hurts them. It doesn't matter whether that has to be a grain of rice or a piece of paper. Both Youkai and Anomalies are vulnerable against certain rituals.''
+  
+Deals PSYCHIC DMG.",
+  "tooltipKind" : "gic_largebase_ammogun",
+  "ammoUsage" : 1,
+  "maxStack" : 10,
+  "edgeTrigger" : true,
+  "windupTime" : 0.10,
+  "cooldown" : 0.10,
+  "elementalType" : "ews_psychic",
+  "projectileType" : "gic_magicbullet_redtalisman_fanoftalismans_7pattern",
+  "projectileConfig" : {
+
+    "speed" : 0.0,
+    "power" : 10.0,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/melee/gic_bloodborne_swing-throw.wav" ]
+      }
+    ]
+  }
+}

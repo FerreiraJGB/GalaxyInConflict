@@ -1,0 +1,35 @@
+{
+  "objectName" : "gic_stanag_usm_762x39mm_mag_stack6",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "breakable",
+  "price" : 5,
+  "description" : "6x 7.62x39mm STANAG-USM Ammunition Magazines.",
+  "shortdescription" : "STANAG-USM 7.62x39mm Magazine Stack x6",
+  "race" : "human",
+  "maxStack" : 3,
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "smashSounds" : [ "/sfx/objects/gic_ammopickup.ogg" ],
+  "scriptDelta" : 0,  
+  "breakDropOptions" : [
+    [ [ "gic_stanag_usm_762x39mm_mag", 2, { } ], [ "gic_stanag_usm_762x39mm_mag", 2, { } ], [ "gic_stanag_usm_762x39mm_mag", 2, { } ] ]
+  ],
+  
+  "inventoryIcon" : "gic_stanag_usm_762x39mm_mag_stack6icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_stanag_usm_762x39mm_mag_stack6.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+
+
+}

@@ -1,0 +1,21 @@
+{
+  "name" : "gic_flamethrowerequipment_explosion",
+  "blockingStat" : "gic_flamethrowerequipment_explosionStatusImmunity",
+
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 5,
+    "triggerDamageThreshold" : 200,
+    "explosionDamageAmount" : 6000
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "gic_flamethrowerequipment_explosion.lua"
+  ],
+
+  "animationConfig" : "gic_flamethrowerequipment_explosion.animation",
+  
+  "label" : "Flamethrower Equipment - When taking 200HP or greater damage: Explode.",
+  "icon" : "/interface/statuses/gic_flamethrowerequipment_explosion.png"
+}

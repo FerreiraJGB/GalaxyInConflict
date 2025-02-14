@@ -1,0 +1,22 @@
+{
+  "itemName" : "gic_packagedmixedmeal",
+  "rarity" : "Common",
+  "price" : 0,
+  "category" : "food",
+  "inventoryIcon" : "gic_packagedmixedmeal.png",
+  "description" : "Mixed meal containing necessary dietary requirements. Edible as-is so as to be more marketable towards poor college students and the generally-impoverished. You'd eat piles of boiled rice and pearlpeas anyways, so not like anything's changed.",
+  "shortdescription" : "Cheap Microwaved Meal",
+
+  "foodValue" : 30,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "effects" : [ [
+  "gic_foodbuff_human_primer"
+    ] ],
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

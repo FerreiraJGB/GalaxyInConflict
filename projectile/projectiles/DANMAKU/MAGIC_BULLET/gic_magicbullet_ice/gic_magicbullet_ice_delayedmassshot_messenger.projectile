@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_magicbullet_ice_delayedmassshot_messenger",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_magicbullet_ice.png",
+  "animationCycle" : 0.1,
+  "timeToLive" : 3,
+  "frameNumber" : 1,
+  "power" : 100,
+  "speed" : 50,
+  "acceleration" : -80,
+  "fullbright" : true,
+  "supportsProcessing" : true,
+  "renderLayer" : "Monster+10",
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ice_homing_05s",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 180
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/melee/gic_bloodborne_magic-fireball-14db.wav"
+      ]
+    }
+  ],
+  "lightColor" : [0, 0, 40],
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

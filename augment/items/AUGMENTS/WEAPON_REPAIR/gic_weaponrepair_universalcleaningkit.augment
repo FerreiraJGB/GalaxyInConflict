@@ -1,0 +1,20 @@
+{
+  "itemName" : "gic_weaponrepair_universalcleaningkit",
+  "price" : 0,
+  "rarity" : "Essential",
+  "category" : "^#E0EAFF;Weapon Repair Kit^white;",
+  "inventoryIcon" : "gic_weaponrepair_universalcleaningkit.png",
+  "description" : "Large universal weapon cleaning kit, equivalent to a standard toolkit with varying tools designed to dissassemble and reassemble certain sections of guns without outright rebuilding the firearm. ^Yellow;Repairs most firearms by 40% if durability is above 30%^reset;",
+  "shortdescription" : "Universal Cleaning Kit [EWS]",
+  "maxStack" : 2,
+  "tooltipKind" : "gic_largebase",
+  "config" : {
+	"tags" : ["gic_repair"],	//main activeitem needs to have this tag under "weaponRepairAcceptTags"
+	"limit" : 0.3,	//if main item's weaponDurability/weaponDurabilityMax is greater/equal, then this "augment" can apply.
+	"repairAmount" : 0.40  //how much the weapon repairs (1.0 is 100%)
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/repairItems/ews_repairitem.lua" ]
+}

@@ -1,0 +1,68 @@
+{
+  "itemName" : "gic_maids_charm",
+  "price" : 500,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Foregrip Attachment^white;",
+  "inventoryIcon" : "gic_maids_charm_icon.png",
+  
+  "tooltipKind" : "gic_largebase",    
+  
+  
+  
+  
+  
+  "description" : "''We achieved the impossible! Hail, to the working class!''
+Exotic underbarrel attachment that can be placed on any weapon supporting foregrips. When used, ^yellow;freezes time^reset; in a large radius around the user. The ^yellow;user^reset; is also ^yellow;affected by this time-freeze^reset; unless they are also wearing the Maid's Pocket Watch. ^yellow;Time-freezed units cannot be harmed.^reset; ^yellow;Reloads using Healing Flasks.^reset;
+^orange;Tap Right-Click to Fire/Reload the Maid's Charm | Holds 4 uses.^reset;
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  
+  
+  "shortdescription" : "Maid's Charm",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_maids_charm", //name of attachment
+	"attachmentTag" : ["ews_grenadelauncher", "gic_grenadelauncher" ], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/WEAPON_ATTACHMENTS/FOREGRIP/gic_maids_charm.png", //determines what image is displayed on the resulting gun. For grenade launchers/under barrel launchers, do NOT add a frame identifier. Keep this as "[...].png".
+		
+	"attachmentId" : "gic_maids_charm", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "grenadelauncher",
+		"grenadelauncherConfig" : {	//requires some part anims stuff in the main activeitem and some particle stuff. also needs some stances built in too.
+			"altFireTime" : 0.25,
+			"altAmmoMax" : 4,
+			"altAmmo" : 0,			//default starting ammo value
+			"altMagazine" : "gic_healingflask",				//the magazine item the alt fire needs to reload
+			"projectileTypeGrenade" : "gic_timefreeze_2s_fanofknives", //grenadeimpact
+			"projectileTypeGrenadeCount" : 1,
+			"projectileTypeGrenadeConfig" : {
+				"power" : 0,		//damage for projectile
+				"speed" : 0,
+				"timeToLive" : 0,
+                "damageTeam" : { "type" : "indiscriminate" },
+				"bounces" : 0
+			},
+			
+			"fireSFX" : "/sfx/melee/gic_bloodborne_miracle.wav", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("soundEffectGrenade")
+			"reloadSFX" : "/sfx/gic_energyweapon_reload.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("switchAmmoAlt")
+			
+			"altInaccuracy" : 0,
+			"grenadeMuzzleOffset" : [1.2,-0.15]		//not the same thing as a muzzle offset; this is an offset offsetted off the main muzzleOffset
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1.0,1.0,1.0,1.0,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1.0,1.0,1.0,1.0] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

@@ -1,0 +1,36 @@
+{
+  "id" : "gic_tylian_planetincentive_1_afflictedquest",
+  "title" : "^#CC7970;Tylian: Afflicted Colony",
+  "text" : "I'll need some materials from Afflicted. A living sample from one of those Erchius things. Not one of their grunts, but from a proper master-coordinator unit. Go on then, I'll see you soon.",
+
+  "prerequisites" : [ "gic_tylian_planetincentive_0_introquest" ],
+  "canBeAbandoned" : false,
+  "completionText" : "Bloody... So inefficient. You'd think the neurological processes in this would be more active, but its structure is nearly identical to that of a human's... Bah, typical. Thank you, though.",
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ], [ "gic_tylian_usm47a2-codex", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_livingerchiussample",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on an ^orange;Afflicted Colony^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}
+

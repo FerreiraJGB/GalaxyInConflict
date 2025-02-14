@@ -1,0 +1,32 @@
+{
+  "objectName" : "gic_glitch_woodchest",
+  "colonyTags" : ["storage"],
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "gic_largebase",
+
+  "category" : "storage",
+  "price" : 90,
+  "description" : "Wood Chest.",
+  "shortdescription" : "Wood Chest",
+  "race" : "generic",
+  "health" : 1.5,
+
+  "inventoryIcon" : "gic_glitch_woodchest_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_glitch_woodchest.png:<color>.<key>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/chest_medium_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/chest_medium_close.ogg" ],
+  "slotCount" : 16,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

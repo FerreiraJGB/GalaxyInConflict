@@ -1,0 +1,94 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_commandingofficer_usmarine_moraleshock.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [
+		
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-01.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-02.ogg",		
+		"/sfx/npc/gic_battlefield3_usmarine_suppressenemy-03.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-04.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-05.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-06.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-07.ogg",		
+		"/sfx/npc/gic_battlefield3_usmarine_suppressenemy-08.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-09.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-10.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-11.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-12.ogg",		
+		"/sfx/npc/gic_battlefield3_usmarine_suppressenemy-13.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-14.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-15.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-16.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-17.ogg",		
+		"/sfx/npc/gic_battlefield3_usmarine_suppressenemy-18.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-19.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-20.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-21.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-22.ogg",		
+		"/sfx/npc/gic_battlefield3_usmarine_suppressenemy-23.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-24.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-25.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-26.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-27.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-28.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-29.ogg",		
+		"/sfx/npc/gic_battlefield3_usmarine_suppressenemy-30.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-31.ogg",
+        "/sfx/npc/gic_battlefield3_usmarine_suppressenemy-32.ogg"
+		
+		
+		],
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [0.2, 0.0], "count" : 2 }
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [0.2, 0.0], "count" : 3 }
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

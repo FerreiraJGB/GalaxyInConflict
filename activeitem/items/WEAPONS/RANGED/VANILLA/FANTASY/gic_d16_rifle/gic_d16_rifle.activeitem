@@ -1,0 +1,85 @@
+{
+  "itemName" : "gic_d16_rifle",
+  "price" : 0,
+  "inventoryIcon" : "gic_d16_rifle.png",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "Powered by magic, this gun falls back on tradition.",
+  "shortdescription" : "D16 Rifle",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "Battle Rifle",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_d16_rifle.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/gun/gic_plasmariflefire.ogg" ]
+    }
+  },
+
+  "baseOffset" : [0.95, 0.3],
+  "muzzleOffset" : [1.0, 0.18],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "gic_heavyarms",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.135,
+    "baseDps" : 450,
+    "energyUsage" : 180,
+    "inaccuracy" : 0.006,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "gic_magicbullet_ice",
+    "projectileParameters" : {
+      "knockback" : 0,
+	  "speed" : 100
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.2, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.2, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

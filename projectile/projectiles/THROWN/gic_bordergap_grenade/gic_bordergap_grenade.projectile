@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_bordergap_grenade",
+  "physics" : "gic_grenadenormal",
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "timeToLive" : 5,
+  "speed" : 45,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [0, 0, 0],
+  "image" : "gic_bordergap_grenade.png",
+  "frameNumber" : 1,
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/grenade/gic_anm14_bounce_01.ogg"
+      ]
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_grenadeexplosion/gic_grenadeexplosionknockback.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_bordergap_start",
+      "inheritDamageFactor" : 1.0,
+      "angle" : 0
+    }
+  ],
+  "power" : 60,
+  "damageKind" : "ews_psychic",
+  "damagePoly" : [ [-4.5, 0], [-3, -3], [0, -4.5], [3, -3], [4.5, 0], [3, 3], [0, 4.5], [-3, 3] ]
+}

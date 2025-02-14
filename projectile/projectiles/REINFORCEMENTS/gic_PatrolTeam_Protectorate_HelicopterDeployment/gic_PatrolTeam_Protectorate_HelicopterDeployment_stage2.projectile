@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_PatrolTeam_Protectorate_HelicopterDeployment_stage2",
+  "image" : "icon.png",
+  "animationCycle" : 0.0,
+  "physics" : "gic_helicopterreinforcement",
+  "bounces" : -1,
+  "frameNumber" : 1,
+  "timeToLive" : 5.0,
+  "onlyHitTerrain" : true,
+  "orientationLocked" : true,
+  "flippable" : false,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [120, 120, 120],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_PatrolTeam_Protectorate_HelicopterDeployment_stage3",
+      "angle" : -90
+    },
+    {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/alerts/gic_cto_backup_arriving.ogg"
+      ]
+    }
+  ],
+  "power" : 0,
+  "speed" : 1,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

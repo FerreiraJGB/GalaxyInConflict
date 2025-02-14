@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_summon_augmentyr_serviceskull",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_summon_augmentyr_serviceskull.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 3,
+  "timeToLive" : 0,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+  
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_augmentyr_airborne_serviceskull",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : { "damageTeam" : 19 }
+    }
+
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id" : "gic_esther_planetincentive_6_wartornquest",
+  "title" : "^orange;[GiC] Insurgency: Wartorn",
+  "text" : "",
+
+  "prerequisites" : [ "gic_esther_planetincentive_0_introquest", "glitch_mission2" ],
+  "canBeAbandoned" : true,
+  
+  "completionText" : "",
+  
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 50 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questGiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_occasus_militarydocument",
+        "count" : 5,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Wartorn Planet^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_occasus_dogtag",
+        "count" : 10,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; from ^orange;Occasus Soldiers^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "type" : "gic_banditsoldier",
+  "baseType" : "gic_banditbase",
+
+  "dropPools" : [ "gic_undercolonyarmorymagsspawnTreasure" ],
+
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "scriptConfig" : {
+  
+    "behavior" : "gic_hostileguard_advanced",
+  
+    "dialog" : {
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_undercolony_grunt_helmethead" } ],   
+            "chest" : [ { "name" : "gic_nedkellychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_nedkellylegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_bastardrifle_npc_3burst_bayonet"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_npcbayonet_bastardrifle_3burst", "parameters" : { "backupWeapon" : true }  }
+			]
+          },
+	
+	  //Shotgunner
+          {
+            "head" : [ { "name" : "gic_colonialresistancehead" } ],
+            "chest" : [ { "name" : "gic_colonialresistancechest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_colonialresistancelegs", "parameters" : { "colorIndex" : [1,2,3] } } ],
+            "primary" : [
+              "gic_polisduplet"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_peasants_battleaxe_npc", "parameters" : { "backupWeapon" : true }  }
+			]
+          },
+
+	  //Veteran
+          {
+            "head" : [ { "name" : "gic_undercolony_specops_helmethead", "parameters" : { "colorIndex" : [5] } } ],
+            "chest" : [ { "name" : "gic_colonialresistancechest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_sdkplegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+              "gic_vich515"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_bandit_cleaver_npc", "parameters" : { "backupWeapon" : true }  }
+			]
+          }		  
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion", "gic_dialogue_scabgunner_infantry"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 1.0
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.25
+      }
+	  
+	  
+    }
+  }
+  
+}

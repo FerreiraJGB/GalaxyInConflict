@@ -1,0 +1,46 @@
+{
+  "itemName" : "gic_danmakubow",
+  "fixedLevel" : false,
+  "price" : 0,
+  "inventoryIcon" : "gic_danmakubowicon.png",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "tooltipKind" : "bow",
+  "category" : "bow",
+  "description" : "It takes great skill to wield a bow in the future.",
+  "shortdescription" : "Bandit's Bow",
+  "twoHanded" : true,
+  "itemTags" : ["weapon", "ranged", "bow"],
+
+  "radioMessagesOnPickup" : [ "pickupbow" ],
+
+  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animationParts" : {
+    "bow" : "gic_danmakubow.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "bow" : { "properties" : {
+      "offset" : [0.25, 0]
+    }}}},
+    "sounds" : {
+      "draw" : [ "/sfx/gun/bow_draw1.ogg", "/sfx/gun/bow_draw2.ogg", "/sfx/gun/bow_draw3.ogg" ],
+      "release" : [ "/sfx/gun/bow_loose.ogg" ],
+      "perfectRelease" : [ "/sfx/gun/bow_loose_perfect.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/bow/bow.lua"],
+  "scriptDelta" : 2,
+
+  "primaryAbilityType" : "bowshot",
+  "primaryAbility" : {
+    "projectileType" : "gic_magicshot_iceeruption_stage1",
+    "powerProjectileType" : "gic_magicshot_iceeruption_stage1",
+    "projectileParameters" : {
+      "speed" : 40,
+	  "timetolive":1
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildbow.lua"
+}

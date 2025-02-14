@@ -1,0 +1,82 @@
+{
+  "type" : "gic_afflictedcolony_letheiadealer_livingerchiussample",
+  "baseType" : "gic_villagerbase",
+
+  "damageTeam" : 1,
+  "damageTeamType" : "friendly",
+  
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      "greetingChance" : 0.0
+    },
+    "questGenerator" : {
+      "enableParticipation" : false
+    },
+    "offeredQuests" : [ "gic_letheiadealer_livingerchiussamplequest" ],
+    "turnInQuests" : [ "gic_letheiadealer_livingerchiussamplequest" ],
+
+    "dialog" : {
+      "converse" : "/dialog/space_colony/gic_afflictedcolony_letheiadealer_livingerchiussample.config:converse"
+    },
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}]
+      ]
+    }
+	
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_operatorcaphead", "parameters" : { "colorIndex" : [4] } } ],
+            "chest" : [ { "name" : "gic_militiarigchest", "parameters" : { "colorIndex" : [4] } } ],
+            "legs" : [ { "name" : "mediclegs", "parameters" : { "colorIndex" : [4] } } ],
+            "primary" : [
+			  "gic_scumbagpistol"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 500.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      }
+	  
+	  
+    }
+  }
+  
+}

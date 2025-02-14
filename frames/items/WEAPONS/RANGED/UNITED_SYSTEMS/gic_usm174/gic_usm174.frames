@@ -1,0 +1,19 @@
+{
+  "frameGrid" : {
+    "size" : [29, 13],
+    "dimensions" : [5, 3],
+    "names" : [
+      ["armed.1","empty.1", "prereload.1", "reload.4","reload.2"],
+	  ["firing.1","firing.2", "prereload.2", "reload.5","reload.3"],
+	  ["firing.3","firing.4", "prereload.3", "reload.6", null]
+    ]
+  },
+  "aliases" : {
+	"reload.1" : "prereload.2",
+	//"reload.2" : "prereload.3",
+	//"reload.3" : "prereload.2",
+	"postreload.1" : "prereload.2",
+	"postreload.2" : "prereload.2",
+	"postreload.3" : "armed.1"
+  }
+}

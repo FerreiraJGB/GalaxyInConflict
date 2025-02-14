@@ -1,0 +1,227 @@
+{
+  "metadata" : {
+    "name" : "gic_unitanbase",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_unitanbase_capital" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 20,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+  
+  //Tree of Life
+  
+	{
+      "name" : "gic_unitanbase_treeoflife_entrance",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_treeoflife_entrance" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_treeoflife_entrance.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_unitanbase_treeoflife_research",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_treeoflife_research" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_treeoflife_research.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_unitanbase_treeoflife_residence",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_treeoflife_residence" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_treeoflife_residence.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_unitanbase_treeoflife_bunk",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_treeoflife_bunk" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_treeoflife_bunk.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_unitanbase_treeoflife_empty",
+      "rules" : [
+        [ "maxSpawnCount", [2] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_treeoflife_empty.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_unitanbase_treeoflife_top",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_unitanbase_treeoflife_top.json" ] ],
+      "chance" : 0
+    },
+
+
+    //Base Grounds
+	
+    {
+      "name" : "gic_unitanbase_apartments1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_apartments1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_apartments1.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_unitanbase_apartments2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_apartments2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_apartments2.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_unitanbase_armory",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_armory" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_armory.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_unitanbase_bathroom",
+      "rules" : [
+        [ "maxSpawnCount", [3] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_bathroom" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_bathroom.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_unitanbase_helipad",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_helipad" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_helipad.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_unitanbase_medicalclinic",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_medicalclinic" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_medicalclinic.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_unitanbase_powerplant",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_powerplant" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_powerplant.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_unitanbase_oildrill",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_oildrill" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_oildrill.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_unitanbase_radar",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_radar" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_radar.json" ],
+      "chance" : 1
+    },
+	
+	{
+      "name" : "gic_unitanbase_smallwarehouse",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_smallwarehouse" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_smallwarehouse.json" ],
+      "chance" : 1
+    },
+
+
+  
+    {
+      "name" : "gic_unitanbase_capital",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_unitanbase_capital" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_unitanbase_capital.json" ]
+    },
+ 
+
+    {
+      "name" : "gic_unitanbase_endright",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_unitanbase_endright.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_unitanbase_endleft",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_unitanbase_endleft.json" ] ],
+      "chance" : 0
+    }
+  ]
+}

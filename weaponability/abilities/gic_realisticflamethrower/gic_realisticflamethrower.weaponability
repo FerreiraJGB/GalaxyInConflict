@@ -1,0 +1,62 @@
+{
+  "ability" : {
+    "name" : "Flamethrower",
+    "type" : "gic_realisticflamethrower",
+    "scripts" : ["/abilities/gic_realisticflamethrower/gic_realisticflamethrower.lua"],
+    "class" : "FlamethrowerAttack",
+
+    "baseDps" : 100,
+    "energyUsage" : 30,
+    "fireTime" : 0.001,
+    "inaccuracy" : 0.015,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "gic_liquidflame_slow",
+    "projectileParameters" : { },
+
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : -6,
+        "weaponRotation" : 6,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"weaponOffset" : [-0.1,-1.25],
+		
+	    "frontArmFrame" : "run.3",
+        "backArmFrame" : "fall.1"
+      },
+      "fire" : {
+        "duration" : 0.1,
+        "armRotation" : -7,
+        "weaponRotation" : 7,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"weaponOffset" : [-0.1,-1.25],
+		
+	    "frontArmFrame" : "run.3",
+        "backArmFrame" : "fall.1"
+      },
+      "cooldown" : {
+		"duration" : 0,
+        "armRotation" : -6,
+        "weaponRotation" : 6,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		"weaponOffset" : [-0.1,-1.25],
+		
+	    "frontArmFrame" : "run.3",
+        "backArmFrame" : "fall.1"
+      }
+    }
+	
+  }
+}

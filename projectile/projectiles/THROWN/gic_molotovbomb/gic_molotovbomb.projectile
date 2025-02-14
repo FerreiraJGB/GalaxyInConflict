@@ -1,0 +1,103 @@
+{
+  "projectileName" : "gic_molotovbomb",
+  "image" : "gic_molotovbomb.png",
+  "animationCycle" : 0.25,
+  "physics" : "gic_grenadenormal",
+  "frameNumber" : 1,
+  "bounces" : 0,
+  "timeToLive" : 8,
+  "lightColor" : [235, 126, 2],
+  "pointLight" : false,
+  "speed" : 50,
+  "damagePoly" : [ [-2, 0], [-2, -2], [0, -2], [2, -2], [2, 0], [2, 2], [0, 2], [-2, 2] ],
+  "actionOnReap" : [
+//    {
+//      "action" : "config",
+//      "file" : "/projectiles/explosions/gic_grenadeexplosion/gic_grenadeexplosionknockback.config"
+//    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_molotovexplosion/gic_molotovexplosion.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.05,
+      "angleAdjust" : 35
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.05,
+      "angleAdjust" : -35
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.05,
+      "angleAdjust" : 1
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.05,
+      "angleAdjust" : -18
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.05,
+      "angleAdjust" : 18
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.05,
+      "angleAdjust" : 55
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.05,
+      "angleAdjust" : -55
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.05,
+      "angleAdjust" : -1
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.05,
+      "angleAdjust" : -65
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.05,
+      "angleAdjust" : 65
+    }
+  ],
+  
+  "statusEffects" : [
+    "gic_oil"
+  ],
+  
+  "power" : 5.0,
+  "emitters" : [ "rocketsmoke" ],
+  "damageKind" : "ews_explosive"
+}
+
+

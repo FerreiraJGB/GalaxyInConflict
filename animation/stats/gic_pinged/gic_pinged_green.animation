@@ -1,0 +1,55 @@
+{
+  "animatedParts" : {
+		"stateTypes" : {
+			"mainState" : {
+				"default" : "active1",
+				"states" : {
+					"active1" : {
+						"frames" : 16,
+						"cycle" : 1.0,
+						"mode" : "transition",
+						"transition" : "inactive"
+					},
+					"inactive" : {
+						"frames" : 1,
+						"mode" : "end"
+					}
+				}
+			}
+		},
+		"parts" : {
+			"marker" : {
+				"properties" : {
+					"image" : null
+				},
+				"partStates" : {
+					"mainState" : {
+						"active1" : {
+							"properties" : {
+								"image" : "ping_spritesheet_green.png:ping.<frame>",
+								"zLevel" : 10,
+								"offset" : [0.0,0.0],
+								"fullbright" : true
+							}
+						},
+						"inactive" : {
+							"properties" : {
+								"image" : "ping_spritesheet_green.png:nil.1",
+								"zLevel" : 10,
+								"offset" : [0.0,0.0],
+								"fullbright" : true
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+  "lights" : {
+    "glow" : {
+      "active" : false,
+      "position" : [0, 0],
+      "color" : [177, 240, 236]
+    }
+  }
+}

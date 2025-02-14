@@ -1,0 +1,58 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [0.2,0.0]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [0.2,0.0]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [],
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 0,
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [0.2, 0.0], "count" : 2 }
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 0,
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [0.2, 0.0], "count" : 3 }
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

@@ -1,0 +1,53 @@
+{
+  "projectileName" : "gic_wallpiercingbullet_c",
+  "image" : "gic_wallpiercingbullet_c.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "pointLight" : false,
+  "timeToLive" : 12,
+  "fullbright" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+	{
+		"action" : "projectile",
+		"type" : "gic_null_ignorewalls",
+		"inheritDamageFactor" : 1.0,
+		"config" : {
+			"timeToLive" : 0.0,
+			"speed" : 75,
+			"actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_heavybulletimpact/gic_heavybulletimpact.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_redtracerbullet_c",
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    }
+			]
+		}
+	}
+  ],
+  
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bulletshot"],
+  "speed" : 200,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "IgnoresDef"
+}

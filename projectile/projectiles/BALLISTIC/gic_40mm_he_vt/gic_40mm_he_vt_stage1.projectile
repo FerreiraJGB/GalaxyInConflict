@@ -1,0 +1,41 @@
+{
+  "projectileName" : "gic_40mm_he_vt_stage1",
+  "bounces" : 0,
+  "image" : "gic_40mm_he_vt_stage1.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback.config"
+    },
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/gun/gic_highfleet_shell_out_small_01.wav", "/sfx/gun/gic_highfleet_shell_out_small_02.wav", "/sfx/gun/gic_highfleet_shell_out_small_03.wav"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_40mm_he_vt",
+      "inheritDamageFactor" : 1,
+	  "directional" : true
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 0,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot", "gic_fracture_injury" ],
+  
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.01,
+  "physics" : "laser"
+}

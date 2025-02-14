@@ -1,0 +1,118 @@
+{
+  "type" : "gic_ec11_scavengermerchant_hubworld",
+  "baseType" : "gic_villagerbase",
+  "npcname" : "Scavenge R.",  
+  "identity" : {
+    "gender" : "male",
+    "hairGroup" : "hair",
+    "hairType" : "male1",
+    "hairColor" : "5"
+  },  
+
+  "damageTeam" : 1,
+  "damageTeamType" : "friendly",
+  
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      "greetingChance" : 0.0
+    },
+    "questGenerator" : {
+      "enableParticipation" : false
+    },
+    "offeredQuests" : [ "gic_ec11_merchantsrequestQuest" ],
+    "turnInQuests" : [ "gic_ec11_merchantsrequestQuest" ],
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],	
+
+  "uniqueId" : "gic_ec11_scavengermerchant",
+	
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+		    "Good luck on the road ahead, it will be a rough one.",
+            "Last I checked, killing people didn't solve anything.",
+            "Not much left here.",
+            "How much blood do you have on your hands?",
+            "You take a thought to that proposal?",
+            "Everybody decided that killing eachother was better than sticking together. Fools.",
+			"You can kill everyone you see, but what happens after that?"
+          ]
+        }
+      },
+	  
+      "speak" : {
+        "default" : {
+          "default" : [
+            "How's it going?",
+			"Seen anything lately?",
+			"What's up?"
+          ]
+        }
+      }
+	  
+    },
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}]
+      ]
+    }
+	
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_operatorcaphead", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "gic_militiarigchest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "mediclegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+			  "gic_dcdr516"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 9999
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 9999
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.9
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.9
+      }
+	  
+	  
+    }
+  }
+  
+}

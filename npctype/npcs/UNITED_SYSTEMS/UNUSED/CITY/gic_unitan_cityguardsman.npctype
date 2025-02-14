@@ -1,0 +1,150 @@
+{
+  "type" : "gic_unitan_cityguardsman",
+  "baseType" : "gic_unitan_base",
+
+  "persistent" : true,
+
+  "damageTeam" : 16,
+
+  "dropPools" : [ "gic_unitancityguardsmanTreasure" ],
+
+  "scriptConfig" : {
+
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:attack",
+      "reattack" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:reattack",
+      "killedTarget" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:killedTarget",
+      "lostTarget" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:lostTarget",
+      "outOfSight" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:outOfSight",
+      "cheerOn" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:cheerOn",
+      "cantReach" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:cantReach"
+    },
+
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0.05,
+        "broadsword" : 0.45,
+        "dagger" : 0.3,
+        "axe" : 0.45,
+        "hammer" : 0.6,
+        "shortsword" : 0.35,
+        "spear" : 0.01
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.2,
+        "broadsword" : 1.7,
+        "dagger" : 0.7,
+        "axe" : 1.4,
+        "hammer" : 2.0,
+        "shortsword" : 1.0,
+        "spear" : 0.01
+      }
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_orch1500head", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_rangerchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_rangerpants", "parameters" : { "colorIndex" : [0] }  } ],
+//            "back" : [ { "name" : "gic_d3apback", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [ "gic_usm60" ]
+          },
+		  
+          {
+            "head" : [ { "name" : "gic_orch1500head", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_rangerchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_rangerpants", "parameters" : { "colorIndex" : [0] }  } ],
+//            "back" : [ { "name" : "gic_d3apback", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [ "gic_emcp19" ]
+          },
+		  
+          {
+            "head" : [ { "name" : "gic_uachhead", "parameters" : { "colorIndex" : [3] }  } ],
+            "chest" : [ { "name" : "gic_iibas5chest", "parameters" : { "colorIndex" : [3] }  } ],
+            "legs" : [ { "name" : "gic_uacplegs", "parameters" : { "colorIndex" : [3] } } ],
+            "back" : [ { "name" : "gic_d3apback", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [ "gic_usm60_psychic" ],
+            "alt" : [
+              "gic_psychicjunkshield"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 20,
+    "statusEffects" : [ ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.4
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

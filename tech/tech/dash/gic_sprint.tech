@@ -1,0 +1,21 @@
+{
+  "name" : "gic_sprint",
+  "type" : "body",
+
+  "scripts" : ["gic_sprint.lua"],
+  "animator" : "gic_sprint.animation",
+
+  "description" : "Variant of sprint that's slower but doesn't cost energy.",
+  "shortDescription" : "Sprint-Charge",
+  "rarity" : "Legendary",
+  "icon" : "/tech/gic_sprint.png",
+
+  "chipCost" : 8,
+
+  "energyCostPerSecond" : 0, //15
+  "maximumDoubleTapTime" : 0.25,
+  "dashControlForce" : 2000, //1000
+  "dashSpeedModifier" : 1.4, //1.6
+  "stopAfterDash" : false, //true
+  "groundOnly" : true
+}

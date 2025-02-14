@@ -1,0 +1,59 @@
+{
+  "metadata" : {
+    "name" : "gic_conflictzone_unitan_vs_protectorate",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [
+      "gic_conflictzone_unitan_vs_protectorate_battlespace_middle"
+    ],
+    "breathable" : false,	
+    "gravity" : 0,
+    "extendSurfaceFreeSpace" : 100,
+    "maxRadius" : 1000000,
+    "maxParts" : 3,
+    "protected" : false
+  },
+
+  "parts" : [
+
+	
+	
+	
+
+    {
+      "name" : "gic_conflictzone_unitan_vs_protectorate_battlespace_middle",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+        [ "doNotConnectToPart", [ "gic_conflictzone_unitan_vs_protectorate_battlespace_middle" ] ]
+      ],
+      "def" : [ "tmx", "gic_conflictzone_unitan_vs_protectorate_battlespace_middle.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_conflictzone_unitan_vs_protectorate_battlespace_left",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+        [ "doNotConnectToPart", [ "gic_conflictzone_unitan_vs_protectorate_battlespace_left" ] ]
+      ],
+      "def" : [ "tmx", "gic_conflictzone_unitan_vs_protectorate_battlespace_left.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_conflictzone_unitan_vs_protectorate_battlespace_right",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+        [ "doNotConnectToPart", [ "gic_conflictzone_unitan_vs_protectorate_battlespace_right" ] ]
+      ],
+      "def" : [ "tmx", "gic_conflictzone_unitan_vs_protectorate_battlespace_right.json" ],
+      "chance" : 1
+    }
+
+	
+  ]
+}

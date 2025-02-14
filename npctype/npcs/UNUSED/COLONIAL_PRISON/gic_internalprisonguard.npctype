@@ -1,0 +1,128 @@
+{
+  "type" : "gic_internalprisonguard",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 13,
+  "dropPools" : [ "gic_internalprisonguardTreasure" ],
+  
+  "movementParameters" : {
+    "runSpeed" : 15
+  },
+
+  "scriptConfig" : {
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/prisons/gic_prisonguard_combat.config:attack",
+      "reattack" : "/dialog/prisons/gic_prisonguard_combat.config:reattack",
+      "killedTarget" : "/dialog/prisons/gic_prisonguard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/prisons/gic_prisonguard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/prisons/gic_prisonguard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/prisons/gic_prisonguard_combat.config:cheerOn",
+      "cantReach" : "/dialog/prisons/gic_prisonguard_combat.config:cantReach"
+    },
+	
+	
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0.05,
+        "broadsword" : 0.45,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 0.6,
+        "shortsword" : 0.35,
+        "spear" : 0.55
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.02,
+        "broadsword" : 1.7,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 2.0,
+        "shortsword" : 1.0,
+        "spear" : 1.4
+      }
+    }
+	
+	
+  },
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "chest" : [ { "name" : "gic_g4rtmvchest" } ],
+            "legs" : [ { "name" : "gic_iagplegs" } ],
+            "primary" : [
+			  "gic_transheya12"
+            ]
+          },
+		  
+		  
+          {
+            "chest" : [ { "name" : "gic_g4rtmvchest" } ],
+            "legs" : [ { "name" : "gic_iagplegs" } ],
+            "primary" : [
+			  "gic_g218_onehanded"
+            ],
+            "alt" : [ "gic_securityriotshield" ]
+          }
+		  
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.4
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.2
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : -100.0
+      }	
+    }
+  }
+}

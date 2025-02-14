@@ -1,0 +1,25 @@
+{
+  "projectileName" : "gic_magicbullet_redorb",
+  "bounces" : -1,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_magicbullet_redorb.png",
+  "animationCycle" : 0.5,
+  "timeToLive" : 10,
+  "frameNumber" : 1,
+  "power" : 100,
+  "speed" : 12,
+  "fullbright" : true,
+  "physics" : "gic_grenademagic_highbounce",
+  "supportsProcessing" : true,
+  "renderLayer" : "Monster+10",
+  "damagePoly" : [ [-16.2, 0], [-10.8, -10.8], [0, -16.2], [10.8, -10.8], [16.2, 0], [10.8, 10.8], [0, 16.2], [-10.8, 10.8] ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    }
+  ],
+  "lightColor" : [0, 0, 40],
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

@@ -1,0 +1,39 @@
+{
+  "projectileName" : "gic_20mm_solid_coilgun_a_mech",
+  "bounces" : 0,
+  "image" : "/projectiles/CORE_CODE/gic_null/gic_null.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/barotrauma/gic_Coilgun3.ogg", "/sfx/barotrauma/gic_Coilgun3.ogg", "/sfx/barotrauma/gic_Coilgun3.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact_muzzle.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_20mm_solid_coilgun",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 5,
+	  "directional" :true
+    }
+  ],
+  "power" : 700,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 2,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.0,
+  "physics" : "laser"
+}

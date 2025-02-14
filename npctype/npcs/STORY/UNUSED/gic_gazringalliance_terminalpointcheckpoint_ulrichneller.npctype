@@ -1,0 +1,194 @@
+{
+  "type" : "gic_gazringalliance_terminalpointcheckpoint_ulrichneller",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  
+  "identity" : {
+    "gender" : "male",
+    "hairGroup" : "hair",
+    "hairType" : "male1",
+    "hairColor" : "5"
+  },    
+  
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      "greetingChance" : 0.85,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "wander"]
+      ]
+    },
+	
+	"behavior" : "gic_sequentialdialogue_modular",
+    "chatPortrait" : "/interface/chatbubbles/gic_pilotradio.png:<frame>",
+
+    "chatSounds" : {
+      "avian" : {
+        "male" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ]
+      },
+      "apex" : {
+        "male" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ]
+      },
+      "floran" : {
+        "male" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ]
+      },
+      "glitch" : {
+        "male" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ]
+      },
+      "human" : {
+        "male" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ]
+      },
+      "hylotl" : {
+        "male" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ]
+      },
+      "default" : {
+        "male" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/apex_chatter_female3.ogg"
+        ]
+      }
+    },	
+
+    "dialog" : {
+      "missionconverse" : {
+        "start" : {
+          "default" : {
+            "default" : [
+              "You don't look like the team that we sent.",
+              "Are you the ex-bandit that Yumeko sent us?",
+			  "We could definitely use anyone.",
+			  "It's surely odd how you managed to survive back there.",
+			  "Nobody survives against the drones alone.",
+			  "Surely an odd fellow, you are...",
+			  "Keep on moving through.",
+			  "HQ is a long walk this way."
+            ]
+          }
+        },
+        "end" : {
+          "default" : {
+            "default" : [
+              "Our HQ is at the heart of Ring Arm Hub 1, just behind us. You're nearly there."
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "default" : [
+      [0, [
+		  
+          {
+            "chest" : [ { "name" : "coolchest", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }  } ],
+            "legs" : [ { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] } } ],
+            "back" : [ { "name" : "gic_scavengerpackback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [ "gic_sova762" ]
+          }
+
+        ] ]
+		
+
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_true_1g" : {
+        "baseValue" : 1.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.4
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

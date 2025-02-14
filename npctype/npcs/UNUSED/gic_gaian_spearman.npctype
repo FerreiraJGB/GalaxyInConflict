@@ -1,0 +1,88 @@
+{
+  "type" : "gic_gaian_spearman",
+  "baseType" : "gic_soldierbase",
+
+  "identity" : {
+    "gender" : "male"
+  },  
+  "persistent" : true,
+
+//  "movementParameters" : {
+//    "runSpeed" : 70,
+//    "walkSpeed" : 40,
+//    "airFriction" : 0.05,
+//    "airJumpProfile" : {
+//      "jumpSpeed" : 60.0,
+//      "jumpInitialPercentage" : 0.75,
+//      "jumpHoldTime" : 3
+//    }
+//  },
+	
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/fantasy/gic_demon_combat.config:attack",
+      "reattack" : "/dialog/fantasy/gic_demon_combat.config:reattack",
+      "killedTarget" : "/dialog/fantasy/gic_demon_combat.config:killedTarget",
+      "lostTarget" : "/dialog/fantasy/gic_demon_combat.config:lostTarget",
+      "outOfSight" : "/dialog/fantasy/gic_demon_combat.config:outOfSight",
+      "cheerOn" : "/dialog/fantasy/gic_demon_combat.config:cheerOn",
+      "cantReach" : "/dialog/fantasy/gic_demon_combat.config:cantReach"
+    },
+	  "damageBar" : "special"
+  },
+  
+  "damageTeam" : 2,
+
+  "dropPools" : [ "basicTreasure" ],
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "bedouinhead", "parameters" : { "colorIndex" : [2] } } ],
+            "chest" : [ { "name" : "hylotltier1chest", "parameters" : { "colorIndex" : [2] } } ],
+            "legs" : [ { "name" : "hylotltier1pants", "parameters" : { "colorIndex" : [2] } } ],
+//            "back" : [ { "name" : "demonwingsback", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : ["gic_yari_spear"]
+//            "alt" : [
+//              "gic_yari_spear_bash"
+//            ]
+          }
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 20,
+    "statusEffects" : [ ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 150.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+      "fireResistance" : {
+        "baseValue" : 1.0
+      },
+      "fireStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

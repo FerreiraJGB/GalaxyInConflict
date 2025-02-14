@@ -1,0 +1,36 @@
+{
+  "itemName" : "gic_crackedredsun",
+  "rarity" : "Common",
+  "price" : 0,
+  
+  //Allows it to be used as actual modular ammo
+  "itemTags" : ["gic_1090x33mm_bullet"],
+  
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#FFAD12;Remnant^white;",
+  "inventoryIcon" : "gic_crackedredsun.png",
+  "maxStack" : 30,
+  "description" : "Temporarily gain the strength of a Red Sun artifact ^yellow;for 6 minutes or until death.^reset; It should be used before fighting [BOSSES]...
+^yellow;Equipping the actual Red Sun Artifact will remove the temporary boon!^reset;  
+^green;+400 HP^reset; | ^red;-10% Speed^reset; | ^red;-50% Jump Height^reset; | ^red;x10 Fall Damage^reset;
+^orange;Used as ammo for exotic firearms and underbarrel attachments.^reset;",
+
+  "shortdescription" : "^red;Cracked Red Sun",
+  "effects" : [ [
+      {
+        "effect" : "gic_maxhealthboost_redsun_400",
+        "duration" : 360
+      },
+      {
+        "effect" : "gic_redsun_-50",
+        "duration" : 360
+      },
+	  {
+        "effect" : "gic_healing_slowdown_1"
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_darksouls_souluse" ],
+  "blockingEffects" : [
+  ]
+}

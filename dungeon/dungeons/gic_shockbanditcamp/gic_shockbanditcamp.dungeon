@@ -1,0 +1,106 @@
+{
+  "metadata" : {
+    "name" : "gic_shockbanditcamp",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_shockbanditcamp_building5" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 10,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+     {
+      "name" : "gic_shockbanditcamp_building1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditcamp_building1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditcamp_building1.json" ]
+    }, 
+  
+    {
+      "name" : "gic_shockbanditcamp_building2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditcamp_building2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditcamp_building2.json" ]
+    },  
+
+    {
+      "name" : "gic_shockbanditcamp_building3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditcamp_building3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditcamp_building3.json" ]
+    },
+
+    {
+      "name" : "gic_shockbanditcamp_building4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditcamp_building4" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditcamp_building4.json" ]
+    },
+  
+    {
+      "name" : "gic_shockbanditcamp_building5",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditcamp_building5" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditcamp_building5.json" ]
+    },
+	
+    {
+      "name" : "gic_shockbanditcamp_radiotower",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_shockbanditcamp_radiotower" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_shockbanditcamp_radiotower.json" ]
+    },	
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+	
+	
+    {
+      "name" : "gic_shockbanditcamp_endleft",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_shockbanditcamp_endleft.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_shockbanditcamp_endright",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_shockbanditcamp_endright.json" ] ],
+      "chance" : 0
+    }
+  ]
+}

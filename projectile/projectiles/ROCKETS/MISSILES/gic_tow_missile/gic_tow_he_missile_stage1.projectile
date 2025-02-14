@@ -1,0 +1,91 @@
+{
+  "projectileName" : "gic_tow_he_missile_stage1",
+
+  "bounces" : 0,
+  "image" : "gic_tow_he_missile_stage1.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_tow_he_missile_stage2",
+      "inheritDamageFactor" : 1
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_missile_thrustertrail/trail.png",
+        "position" : [-1, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "position" : [-1, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.4,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    },
+	
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "streak",
+        "layer" : "back",
+        "fullbright" : true,
+        "destructionAction" : "shrink",
+        "size" : 0.7,
+        "color" : [0, 0, 0, 255],
+        "collidesForeground" : false,
+        "length" : 20,
+        "position" : [0, 0],
+        "timeToLive" : 0.5,
+        "destructionTime" : 0.2,
+        "initialVelocity" : [0.5, 0],
+        "variance" : {
+          "size" : 0,
+          "initialVelocity" : [0.5, -0],
+          "length" : 0
+        }
+      }
+    }
+	
+],
+  
+  "power" : 10,
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 250,
+  
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 40.0,
+  "acceleration" : 10,
+  "timeToLive" : 0.1,
+  "physics" : "gic_cannonfall"
+}

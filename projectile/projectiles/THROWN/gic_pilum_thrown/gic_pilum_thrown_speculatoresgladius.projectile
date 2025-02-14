@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_pilum_thrown_speculatoresgladius",
+  "physics" : "arrow",
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "gic_pilum_thrown_npc.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageTeam" : { "type" : "indiscriminate" },
+  "damageKindImage" : "icon.png",
+  "power" : 80,
+  
+  "speed" : 80,
+  
+  "onlyHitTerrain" : false,
+  "knockback" : 2,
+  "knockbackDirectional" : true,
+  "statusEffects" : [ {"effect":"gic_boss_melee_primer","duration":5}, "gic_bulletshot" ],
+  "timeToLive" : 3,
+  "pointLight" : false,
+  "damagePoly" : [ [12, -0.2], [12.5, -0.2], [12.5, 0.2], [12, 0.2] ]
+}

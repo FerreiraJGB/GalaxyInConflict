@@ -1,0 +1,86 @@
+{
+  "type" : "gic_undercolony_bandit_suppressor",
+  "baseType" : "gic_banditbase",
+
+  "dropPools" : [ "gic_undercolonyarmorymagsspawnTreasure" ],
+
+  "scriptConfig" : {
+  
+//    "behavior" : "gic_hostileguard_advanced",
+  
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Gunner
+          {
+            "head" : [ { "name" : "gic_colonialresistancehead", "parameters" : { "colorIndex" : [5] } } ],   
+            "chest" : [ { "name" : "gic_colonialresistancechest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_colonialresistancelegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_npc_undercolony_heavystubber"
+            ]
+          }	  
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion", "gic_dialogue_scabgunner"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 333.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.25
+      }
+	  
+	  
+    }
+  }
+  
+}

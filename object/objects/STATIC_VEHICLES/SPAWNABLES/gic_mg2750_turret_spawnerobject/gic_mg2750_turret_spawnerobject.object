@@ -1,0 +1,37 @@
+{
+  "objectName" : "gic_mg2750_turret_spawnerobject",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "printable" : false,
+  "category" : "^#589144;Packaged Turret",
+  "description" : "Contains a 3D printer that prints a 3D printer that prints the parts for a turret that you'll need to assemble. Those hackers have a sense of humor...
+^green;Must first be placed as an object, then activated to create turret parts. To construct the turret, apply percussive maintenance with a wrench. Has a chance to jam. Hit with more wrench until unjammed. Comes with complementary ''cracked'' Protectorate firmware typically used on Mechs to provide infinite ammo.",
+  "shortdescription" : "MG2750 Prefabricated Turret",
+  "race" : "human",
+  "price" : 0,
+  "maxStack" : 1,
+  
+  "scripts" : [ "gic_vehiclespawn.lua" ],
+  "scriptDelta" : 5,
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_mg2750_turret_spawnerobject.png",
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "gic_mg2750_turret_spawnerobject.png",
+      "imagePosition" : [-8, 0],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

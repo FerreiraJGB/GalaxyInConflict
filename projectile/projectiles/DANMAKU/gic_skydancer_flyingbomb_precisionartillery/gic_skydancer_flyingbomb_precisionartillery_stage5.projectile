@@ -1,0 +1,45 @@
+{
+  "projectileName" : "gic_skydancer_flyingbomb_precisionartillery_stage5",
+  "physics" : "rocket",
+  
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_tankexplosion_smoke",
+      "inheritSpeedFactor" : 1,
+      "inheritDamageFactor" : 1
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_largeexplosion/gic_largeexplosionknockback_indiscriminate_flyingbomb.config"
+    }
+  ],
+  
+
+  
+   "periodicActions" : [
+ 
+
+	
+  ], 
+  
+  
+
+
+  "image" : "gic_skydancer_flyingbomb_precisionartillery_stage5.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+  "persistentAudio" : "/sfx/vehicles/gic_highfleet_jet_engine_01.wav",
+  "damageTeam" : { "type" : "indiscriminate" },  
+  "damageKindImage" : "icon.png",
+  "power" : 2000,
+  "speed" : 150,
+  "onlyHitTerrain" : false,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 1.5,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

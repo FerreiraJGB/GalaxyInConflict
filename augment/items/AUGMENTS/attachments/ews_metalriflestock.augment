@@ -1,0 +1,31 @@
+{
+  "itemName" : "ews_metalriflestock",
+  "price" : 5000,
+  "rarity" : "Common",
+  "category" : "Attachment",
+  "inventoryIcon" : "ews_metalriflestock.png",
+  "description" : "Reduces inaccuracy and miss chance by a minor amount.",
+  "shortdescription" : "Metal Rifle Stock (EWS)",
+
+  "attachment" : {
+	"attachmentType" : "stock", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "ews_metalriflestock", //name of attachment
+	"attachmentTag" : ["ews_rifle","ews_metalriflestock"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/attachments/ews_metalriflestock.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "ews_metalriflestock", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"attachmentBonusType" : "additive", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [-0.02,-0.01,-10,-5,0,0,0,0], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [-0.02,-0.01,-10,-5] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

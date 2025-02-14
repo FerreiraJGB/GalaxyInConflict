@@ -1,0 +1,305 @@
+{
+  "metadata" : {
+    "name" : "gic_abandonedcolonialprison",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_abandonedcolonialprison_capital" ],
+    //"gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 32,
+    "extendSurfaceFreeSpace" : 500,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+    {
+      "name" : "gic_abandonedcolonialprison_capital",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_capital" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_capital.json" ]
+    },
+  
+    {
+      "name" : "gic_abandonedcolonialprison_cell1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_cell1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_cell1.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_abandonedcolonialprison_cell2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_cell2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_cell2.json" ],
+      "chance" : 0.5
+    },
+	
+    {
+      "name" : "gic_abandonedcolonialprison_cell3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_cell3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_cell3.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_abandonedcolonialprison_cell4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_cell4" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_cell4.json" ],
+      "chance" : 1
+    },
+	
+	
+
+	
+    {
+      "name" : "gic_abandonedcolonialprison_medical",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_medical" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_medical.json" ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_abandonedcolonialprison_cafeteria",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_cafeteria" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_cafeteria.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_abandonedcolonialprison_armory",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_armory" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_armory.json" ],
+      "chance" : 1
+    },
+	
+
+    {
+      "name" : "gic_abandonedcolonialprison_exitleft",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedcolonialprison_exitleft.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_abandonedcolonialprison_exitright",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedcolonialprison_exitright.json" ] ],
+      "chance" : 0
+    },
+	
+	
+	
+	
+//ABYSS
+	
+	
+    {
+      "name" : "gic_abandonedcolonialprison_abyss_entrance",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_abyss_entrance" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_abyss_entrance.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_abandonedcolonialprison_abyss_standard",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_abyss_standard" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_abyss_standard.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_abandonedcolonialprison_abyss_checkpoint",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_abyss_checkpoint"  ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_abyss_checkpoint.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_abandonedcolonialprison_abyss_end",
+      "rules" : [
+        [ "ignorePartMaximumRule" ],
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedcolonialprison_abyss_end.json" ] ],
+      "chance" : 0
+    },	
+	
+	
+	
+	
+	
+	
+//COMPLEX	
+	
+	
+    {
+      "name" : "gic_abandonedcolonialprison_complex_bulkhead",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_complex_bulkhead", "gic_abandonedcolonialprison_abyss_checkpoint"  ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_complex_bulkhead.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_abandonedcolonialprison_complex_office",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_complex_office" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_complex_office.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_abandonedcolonialprison_complex_psycheblock",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_complex_psycheblock" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_complex_psycheblock.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_abandonedcolonialprison_complex_elevatedright",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_complex_elevatedright", "gic_abandonedcolonialprison_complex_elevatedleft"  ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_complex_elevatedright.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_abandonedcolonialprison_complex_elevatedleft",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_complex_elevatedright", "gic_abandonedcolonialprison_complex_elevatedleft"  ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_complex_elevatedleft.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_abandonedcolonialprison_complex_elevatedofficeleft",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_complex_elevatedright", "gic_abandonedcolonialprison_complex_elevatedleft"  ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_complex_elevatedofficeleft.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_abandonedcolonialprison_complex_chasm",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_complex_chasm"  ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_complex_chasm.json" ],
+      "chance" : 1
+    },	
+    {
+      "name" : "gic_abandonedcolonialprison_complex_warehouse",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_complex_warehouse"  ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_complex_warehouse.json" ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_abandonedcolonialprison_complex_mining",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_complex_mining"  ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_complex_mining.json" ],
+      "chance" : 1
+    },	
+    {
+      "name" : "gic_abandonedcolonialprison_complex_containment",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_abandonedcolonialprison_complex_containment"  ] ]
+
+      ],
+      "def" : [ "tmx", "gic_abandonedcolonialprison_complex_containment.json" ],
+      "chance" : 1
+    },	
+    {
+      "name" : "gic_abandonedcolonialprison_complex_endleft",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedcolonialprison_complex_endleft.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_abandonedcolonialprison_complex_endright",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_abandonedcolonialprison_complex_endright.json" ] ],
+      "chance" : 0
+    }
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

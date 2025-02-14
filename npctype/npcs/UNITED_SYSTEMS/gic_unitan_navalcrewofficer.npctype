@@ -1,0 +1,74 @@
+{
+  "type" : "gic_unitan_navalcrewofficer",
+  "baseType" : "gic_unitan_base",
+  
+  "identity" : {
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "fem11",
+    "hairColor" : "15"
+  },  
+
+  "dropPools" : [ "gic_unitancitizenTreasure" ],
+  "damageTeam" : 16,
+  "scriptConfig" : {
+
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol"],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/gic_generic_combat_panic.config:attack",
+      "reattack" : "/dialog/gic_generic_combat_panic.config:reattack",
+      "killedTarget" : "/dialog/gic_generic_combat_panic.config:killedTarget",
+      "lostTarget" : "/dialog/gic_generic_combat_panic.config:lostTarget",
+      "outOfSight" : "/dialog/gic_generic_combat_panic.config:outOfSight",
+      "cheerOn" : "/dialog/gic_generic_combat_panic.config:cheerOn",
+      "cantReach" : "/dialog/gic_generic_combat_panic.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_rabbitearshead", "parameters" : { "colorIndex" : [0] } }, { "name" : "gic_droopedrabbitearshead", "parameters" : { "colorIndex" : [0] } } ],
+            "chest" : [
+              { "name" : "gic_moonrabbitchest", "parameters" : { "colorIndex" : 1 } }
+            ],
+            "legs" : [
+              { "name" : "gic_moonrabbitlegs", "parameters" : { "colorIndex" : 1 } }
+            ],
+            "primary" : [ "gic_lacm1" ]
+          }
+    ]  ]  ]
+  },
+  
+  "innateStatusEffects" : ["gic_commandingofficer_japanesefemalesoldier_rally_moonrabbit", "gic_npc_death_blood_explosion"],    //gic_commandingofficer_voidpirate_rally_moonrabbit
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 133.3333 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

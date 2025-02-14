@@ -1,0 +1,37 @@
+{
+  "id" : "gic_esther_planetincentive_2_wildlandsquest",
+  "title" : "^orange;[GiC] Ghost Recon: Wildlands",
+  "text" : "",
+
+  "prerequisites" : [ "gic_esther_planetincentive_0_introquest", "floran_mission2" ],
+  "canBeAbandoned" : true,
+  
+  "completionText" : "",
+  
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 50 ], [ "librarycodex", 1 ], [ "hylotlmusicbox", 1 ], [ "hylotllibraryposter1", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questGiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_wildlands_asylumdocument",
+        "count" : 3,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; within a ^orange;Wildlands Research Asylum^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

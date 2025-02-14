@@ -1,0 +1,49 @@
+{
+  "projectileName" : "gic_voidtovoid_missile_stubby_vt_float_mech",
+
+  "bounces" : 0,
+  "image" : "gic_voidtovoid_missile_stubby_float_2x.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [0, 0, 0],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+	
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/gun/gic_highfleet_missile_launch_01.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_voidtovoid_missile_stubby_vt",
+     "offset": [0, -0.5],
+     "inheritSpeedFactor": 1,
+      "fuzzAngle" : 5
+    },
+
+    {
+      "action" : "projectile",
+      "type" : "gic_voidtovoid_missile_stubby_vt_delayedlaunch",
+      "offset": [0, 0.5],
+     "inheritSpeedFactor": 1,
+      "fuzzAngle" : 5
+    }
+	
+	
+  ],
+  "power" : 8000,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+
+  "maxSpeed" : 10,
+  
+  "onlyHitTerrain" : true,
+
+  "emitters" : [ ],
+  "flippable" : true,
+  "speed" : 1.0,
+  "acceleration" : 5,
+  "timeToLive" : 2,
+  "physics" : "bullet"
+}

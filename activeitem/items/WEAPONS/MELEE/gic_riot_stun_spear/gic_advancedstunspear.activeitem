@@ -1,0 +1,93 @@
+{
+  "itemName" : "gic_advancedstunspear",
+  "price" : 0,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "Please delete this item or I will strangle your character.",
+  "shortdescription" : "If I remove this whilst your character has one it will crash.",
+  "tooltipKind" : "sword",
+  "category" : "^#6DFFD5;Melee^reset;",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","spear"],
+  "level" : 1,
+  "inventoryIcon" : "gic_advancedstunspear_inventory_icon.png",
+
+  "animation" : "/items/active/weapons/melee/spear/spear.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_advancedstunspear.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "swoosh" : { "properties" : {
+      "offset" : [2.0, 0.0]
+    }}}},
+	
+ "sounds" : {
+          "fire" : [ "/sfx/melee/swing_shortsword_electric1.ogg", "/sfx/melee/swing_shortsword_electric2.ogg", "/sfx/melee/swing_shortsword_electric3.ogg" ]
+        }
+	
+  },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+  "scriptDelta" : 2,
+
+  "elementalType" : "ews_melee",
+
+  "aimOffset" : -1.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+    "fireTime" : 1.1,
+    "baseDps" : 30,
+	
+  "damageConfig" : {
+  "statusEffects" : [ "gic_tazed_1", "electrified" ],
+  "damageType" : "IgnoresDef"
+  },
+
+    "allowHold" : false,
+    "stances" : {
+      "idle" : {
+        "armRotation" : -10,
+        "weaponRotation" : -80,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.6],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup" : {
+        "duration" : 0.1,
+        "armRotation" : -20,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.4],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire" : {
+        "duration" : 0.3,
+        "armRotation" : 10,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.7],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "hold" : {
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.6],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+//    "altAbilityType" : [ "gic_spearcharge" ],
+//  "learnBlueprintsOnPickup" : [ "gic_advancedstunspear_old", "gic_advancedstunspear_thrown_player", "gic_mule_shockgrenade" ],
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

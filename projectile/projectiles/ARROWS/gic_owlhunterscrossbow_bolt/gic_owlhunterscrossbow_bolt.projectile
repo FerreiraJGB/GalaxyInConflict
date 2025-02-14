@@ -1,0 +1,46 @@
+{
+  "projectileName" : "gic_owlhunterscrossbow_bolt",
+  "physics" : "gic_bulletfall",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_smallexplosion/gic_smallexplosionknockback_owlhunterscrossbow.config"
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/grenadeblast_fire1.ogg", "/sfx/gun/grenadeblast_fire2.ogg", "/sfx/gun/grenadeblast_fire3.ogg"
+      ]
+    },
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "position" : [-1, 0],
+        "layer" : "front",
+        "timeToLive" : 20.0,
+        "destructionTime" : 3,
+        "destructionAction" : "shrink",
+        "fullbright" : false
+      }
+    }
+  ],
+  "image" : "gic_owlhunterscrossbow_bolt.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "speed" : 150,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 20,
+  "knockback" : 15,
+  "knockbackDirectional" : true,
+  "statusEffects" : ["gic_bleeding_heavy", "gic_bulletshot" ],
+  "timeToLive" : 10,
+  "pointLight" : false
+//  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

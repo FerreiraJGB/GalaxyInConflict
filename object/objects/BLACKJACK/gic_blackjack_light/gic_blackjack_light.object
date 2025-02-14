@@ -1,0 +1,53 @@
+{
+  "objectName" : "gic_blackjack_light",
+  "colonyTags" : ["light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 60,
+
+  "description" : "[Blackjack Light]",
+  "shortdescription" : "Blackjack Light",
+  "race" : "generic",
+  "printable" : false,
+			"tooltipKind" : "gic_largebase",
+  "statusEffects" : [ ],
+
+  "pointLight" : true,
+  "lightColor" : [255, 237, 189],
+
+  "inventoryIcon" : "gic_blackjack_light_icon.png",
+  "orientations" : [
+
+    {
+      "image" : "gic_blackjack_light.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    }
+  ],
+
+//  "soundEffect" : "/sfx/objects/oillantern.ogg",
+
+  "animation" : "gic_blackjack_light.animation",
+  "animationParts" : {
+    "bg" : "gic_blackjack_light.png",
+    "fg" : "gic_blackjack_light_lit.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [  ],
+      "off" : [  ]
+    }
+  },
+  "animationPosition" : [0, 0],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+
+}

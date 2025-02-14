@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_summon_arrowstorm_stage2",
+  "physics" : "laser",
+  "actionOnReap" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_summon_arrowstorm_stage3",
+      "inheritDamageFactor" : 1,
+	  "angle" : -90,
+	  "fuzzAngle" : 0,
+      "angleAdjust" : 0
+    }
+	
+  ],
+  "image" : "gic_summon_arrowstorm_stage2.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 30,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "statusEffects" : ["gic_antimobility_grenade" ],
+  "timeToLive" : 2,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

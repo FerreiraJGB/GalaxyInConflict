@@ -1,0 +1,20 @@
+{
+  "name" : "gic_flagellant_armor_legs",
+  "blockingStat" : "gic_flagellant_armor_legsStatusImmunity",
+
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 10,
+    "triggerDamageThreshold" : 50
+  },
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "gic_flagellant_armor_legs.lua"
+  ],
+
+  "animationConfig" : "gic_flagellant_armor.animation",
+  
+  "label" : "Flagellant [LEGS] - When taking 50HP+ damage: Heal 50HP over 5s | 10s cooldown.",
+  "icon" : "/interface/statuses/gic_flagellant_armor_legs.png"
+}

@@ -1,0 +1,104 @@
+{
+  "name" : "gic_humanmech",
+  "boundBox" : [-5, -5, 5, 5],
+  "slaveControlTimeout" : 2.0,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : true,
+
+  "script" : "/vehicles/mech/gic_mech.lua",
+  "animation" : "/vehicles/mech/gic_mech.animation",
+
+  "animationPartTags" : {
+    "backLeg" : {
+      "partImage" : "/vehicles/mech/gic_humanmech/humanmechbleg.png"
+    },
+    "background" : {
+      "partImage" : "/vehicles/mech/gic_humanmech/humanmechbackground.png"
+    },
+    "backGun" : {
+      "partImage" : "/vehicles/mech/gic_humanmech/humanmechgun.png"
+    },
+    "body" : {
+      "partImage" : "/vehicles/mech/gic_humanmech/humanmechbody.png"
+    },
+    "frontGun" : {
+      "partImage" : "/vehicles/mech/gic_humanmech/humanmechgun.png"
+    },
+    "frontLeg" : {
+      "partImage" : "/vehicles/mech/gic_humanmech/humanmechfleg.png"
+    },
+	"rocketPod" : {
+      "partImage" : "/vehicles/mech/gic_humanmech/humanmechrocketpod.png"
+    }
+  },
+
+  "movementSettings" : {
+    "collisionPoly" : [ [-3.5, -2.0], [-2, -4.5], [2, -4.5], [3.5, -2.0], [3.5, 2], [2, 3], [-2, 3], [-3.5, 2] ],
+    "mass" : 5,
+    "airFriction" : 0.5,
+    "groundFriction" : 40.0,
+    "ignorePlatformCollision" : true
+  },
+
+  "loungePositions" : {
+    "seat" : {
+      "part" : "body",
+      "partAnchor" : "sitPosition",
+      "orientation" : "sit",
+	  "cameraFocus" : true,
+      "cursorOverride" : "/cursors/reticle0.cursor",
+	  "statusEffects" : [
+        "invulnerable",
+        {
+          "stat" : "breathProtection",
+          "amount" : 1.0
+        }
+      ]
+    }
+  },
+  
+  "physicsForces" : {
+    "itemMagnet" : {
+      "enabled" : true,
+
+      "type" : "RadialForceRegion",
+      "outerRadius" : 10,
+      "innerRadius" : 3,
+      "targetRadialVelocity" : -60,
+      "controlForce" : 200,
+      "categoryWhitelist" : ["itemdrop"]
+    }
+  },
+
+  "mechAimLimit" : 50,
+  "mechHorizontalMovement" : 10,
+  "mechJumpVelocity" : [10, 50],
+  "offGroundFrames" : 8,
+  
+  "protection" : 50,
+  "maxHealth" : 350,
+  "maxShields" : 200,
+  
+  "resistances" : {
+	"ews_melee" : 0.9,
+	"ews_smallarms" : 0.9,
+	"ews_heavyarms" : 0.5
+  },
+
+  "walkCycleTime" : 0.45, //how long it takes for one foot to reach ground again. used to sync footstep sounds.
+  
+  "mechFireCycle" : 0.25,
+  "mechFireInaccuracy" : 0.02,
+  "mechProjectile" : "gic_redtracerbullet_a_machinegun",
+  "mechProjectileConfig" : {
+    "power" : 80
+  },
+  
+  "rocketAimLimit" : 30, //aim limit determines how many degrees up/down aim can go. 90 degrees = maximum turn angles.
+  "rocketReloadTime" : 6.0,
+  "rocketProjectile" : "gic_mechrocket",
+  "rocketProjectileConfig" : {
+    "power" : 50
+  },
+  "mechLevel" : 1
+}

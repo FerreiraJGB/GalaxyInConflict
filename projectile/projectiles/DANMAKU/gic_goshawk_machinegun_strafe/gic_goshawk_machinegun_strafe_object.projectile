@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_goshawk_machinegun_strafe_object",
+  "physics" : "gic_beaconlaser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_goshawk_machinegun_strafe_object.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 1,
+  "timeToLive" : 6.0,
+  "power" : 0,
+  "speed" : 100,
+//  "onlyHitTerrain" : true,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "rangeMultiplier" : 4.0,
+      "options" : [
+        "/sfx/WorldAtWar/gic_naval_gun5.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_goshawk_machinegun_strafe_stage1",
+      "inheritDamageFactor" : 1,
+      "angle" : 90
+    }
+  ]
+}

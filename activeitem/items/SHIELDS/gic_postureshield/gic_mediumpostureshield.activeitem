@@ -1,0 +1,62 @@
+{
+  "itemName" : "gic_mediumpostureshield",
+  "fixedLevel" : false,
+  "price" : 5000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "shield",
+  "description" : "A basic invisible shield for Low Posture enemies.",
+  "shortdescription" : "Medium Posture",
+  "tooltipKind" : "Shield",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_postureshield.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_postureshield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.4, -1.2], [-0.4, 0.95],
+                   		 [0.45, 0.2],  [0.45, -0.65] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/melee/gic_sekiro_shing.ogg" ],
+      "perfectBlock" : [ "/sfx/block/gic_sekiro_meleedeflect1.ogg" ],
+      "block" : [ "/sfx/block/gic_sekiro_meleeblock2.ogg" ],
+      "break" : [ "/sfx/block/gic_sekiro_meleebigdeflect.ogg" ]
+    }
+  },
+
+  "scripts" : ["shield.lua"],
+
+  "minActiveTime" : 0.2,
+
+  "forceWalk" : true,
+  "baseShieldHealth" : 60,
+  "cooldownTime" : 0.4,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 1.0,
+
+  "knockback" : 2,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -20,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" :-20,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

@@ -1,0 +1,43 @@
+{
+  "projectileName" : "gic_plasma_energyshot_c",
+  "image" : "gic_plasma_energyshot_c.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "fullbright" : true,
+//  "pointLight" : false,
+  "lightColor" : [189, 148, 255],
+  "timeToLive" : 12,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback_plasmagunshot.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact_muzzle.config"
+    }
+  ],
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bulletshot"],
+  "speed" : 200,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef"
+}

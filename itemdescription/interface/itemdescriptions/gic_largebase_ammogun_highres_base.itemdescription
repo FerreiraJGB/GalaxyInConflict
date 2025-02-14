@@ -1,0 +1,160 @@
+{
+  "moneyIcon" : {
+    "type" : "image",
+    "position" : [18, 0],
+    "file" : "/interface/money.png"
+  },
+  "priceLabel" : {
+    "type" : "label",
+    "position" : [31, 0],
+    "hAnchor" : "left",
+    "value" : "0"
+  },
+ 
+
+  "descriptionLabel" : {
+    "type" : "label",
+    "position" : [22, 110], //22, 100
+    "hAnchor" : "left",
+    "vAnchor" : "top",
+    "wrapWidth" : 275
+  },
+
+  
+  
+  
+  //Default gun image defined in weapon file. Do not alter file.
+  
+  "objectImage" : {
+    "type" : "image",
+    "position" : [70, 140], //62, 150
+    "file" : "",
+    "centered" : true,
+    "maxSize" : [60, 35],
+    "minSize" : [60, 30]
+  },
+  
+  //Workaround method. This is defined in-file and cuts down on aligning everything exact since it scales, which is the most important. Values must be absolute.
+  
+  "ammogunhighresImage" : {
+    "type" : "image",
+    "position" : [205, 155], //value prior to weapon integrity [205, 160]
+    "file" : "/interface/tooltips/weapons/gic_usm47_test_image_scale2.png",
+    "centered" : true,
+    "maxSize" : [156, 51], //166, 61 for exact dimensions
+    "minSize" : [156, 51]  //trims off 10 pixels
+  },
+  
+  "missTitleLabel" : {
+    "type" : "label",
+    "position" : [215, 120],
+    "hAnchor" : "right"// ,
+    // "value" : "Base Miss Chance:"
+  },
+  "missLabel" : {
+    "type" : "label",
+    "position" : [270, 120],
+    "hAnchor" : "right",
+    "wrapWidth" : 126
+  },
+  
+
+  
+  "weaponDurabilityLabel" : {
+    "type" : "label",
+    "position" : [255, 185],
+    "hAnchor" : "right",
+    "wrapWidth" : 126
+  },
+  
+  "weaponDurabilityTitleLabel" : {
+    "type" : "label",
+    "position" : [225, 185],
+    "hAnchor" : "right",
+    "wrapWidth" : 126
+  },
+
+  
+  "ammoAmountTitleLabel" : {
+    "type" : "label",
+    "position" : [20, 183],
+    "hAnchor" : "left",
+    "value" : "Ammo:"
+  },
+  "ammoAmountLabel" : {
+    "type" : "label",
+    "position" : [116, 183],
+    "hAnchor" : "right",
+    "wrapWidth" : 126
+  },
+  
+  
+  "usesAttachmentsLabel" : {
+    "type" : "label",
+    "position" : [300, 0],
+    "hAnchor" : "right",
+    "centered" : false,
+    "wrapWidth" : 300
+  },
+////  
+  
+  
+  
+  
+  "damagePerShotTitleLabel" : {
+    "type" : "label",
+    "position" : [20, 174],
+    "hAnchor" : "left",
+    "value" : "Damage Per Shot:"
+  },
+  "damagePerShotLabel" : {
+    "type" : "label",
+    "position" : [116, 174],
+    "hAnchor" : "right",
+    "wrapWidth" : 126
+  },
+  "speedTitleLabel" : {
+    "type" : "label",
+    "position" : [20, 165],
+    "hAnchor" : "left",
+    "value" : "Rate of Fire:"
+  },
+  "speedLabel" : {
+    "type" : "label",
+    "position" : [116, 165],
+    "hAnchor" : "right",
+    "wrapWidth" : 126
+  },
+  
+
+  
+  "title" : {
+    "type" : "label",
+    "position" : [41, 211],
+    "hAnchor" : "left",
+    "value" : ""
+  },
+  "subTitle" : {
+    "type" : "label",
+    "position" : [41, 201],
+    "hAnchor" : "left",
+    "color" : [185, 181, 178],
+    "value" : ""
+  },
+  //"rarityLabel" : {
+    //"type" : "label",
+    //"position" : [18, 0],
+    //"hAnchor" : "left",
+    //"centered" : true,
+    //"wrapWidth" : 126
+  //},
+  "titleIcon" : {
+    "type" : "itemslot",
+    "position" : [15, 199],
+    "callback" : "null",
+    "iconMode" : true,
+    "backingImage" : "/interface/inventory/portrait.png",
+    "showRarity" : false,
+    "showBackingImageWhenFull" : true
+  }
+}

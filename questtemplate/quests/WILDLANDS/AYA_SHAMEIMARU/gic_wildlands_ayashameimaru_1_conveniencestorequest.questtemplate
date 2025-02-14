@@ -1,0 +1,61 @@
+{
+  "id" : "gic_wildlands_ayashameimaru_1_conveniencestorequest",
+  "title" : "^#F0523C;[AYA-1] Convenience Store",
+  "prerequisites" : [ "gic_wildlands_ayashameimaru_0_rivalnewsreporterquest" ],
+  
+//Cutscenes always play first.
+  
+  "text" : "There's been disappearances all over the city-islands over the last few months. A particular man hasn't been seen in a while, so we're going to investigate one of his business properties for any clues.",
+  
+
+  
+  "completionText" : "Ooh, looks like we're onto something here. Somebody's been here for a while, collecting this ''Bradley's'' mail for him. It looks like some were meant to arrive at his house, so we've got his address here. Let's go pay him a visit.",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_character.lua", //Same as original variant. Enables cutscenes when starting and finishing.
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/interface/MISSION_PORTRAITS/gic_blank_portrait.png"} ],
+        "title" : "Aya"
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/interface/MISSION_PORTRAITS/gic_blank_portrait.png"} ],
+        "title" : "Aya"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;Aya^reset; to travel to the ^orange;Convenience Store^reset;.",
+      "findGoal" : "Investigate the area for any potential clues.",
+      "turnIn" : "Talk to ^orange;Aya^reset; at her office."
+    },
+    "warpEntityUid" : "gic_romancecharacter_ayashameimaru_office_hubworld",
+    "warpAction" : "instanceworld:gic_wildlands_ayashameimaru_mission_1_1_conveniencestore",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_wildlands_island_ayashameimaru_1_confirmation",
+
+    "gic_missionUnlockedCinema" : "/cinematics/characters/AYA_SHAMEIMARU/gic_ayashameimaru_1_conveniencestore.cinematic", //???
+    "gic_missionCompleteCinema" : "/cinematics/characters/AYA_SHAMEIMARU/gic_ayashameimaru_1_conveniencestorebasement.cinematic",	 //leave as coordinates if no need for secondary
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 10,
+
+    "goalEntityUid" : "gic_wildlands_ayashameimaru_mission_1_2_conveniencestorebasement_goal",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "turnInEntityUid" : "gic_romancecharacter_ayashameimaru_office_hubworld"
+	
+  }
+  
+}

@@ -1,0 +1,38 @@
+{
+  "projectileName" : "gic_summon_piratetether_stage1",
+  "bounces" : -1,
+  "image" : "gic_summon_piratetether_null.png",
+  "animationCycle" : 0.5,
+  "lightColor" : [0, 0, 0],
+  "frameNumber" : 1,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/fireexplosionknockbackstatus.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_summon_piratetether_stage2",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : 0
+    }
+  ],
+  
+  "actionOnTimeout" : [
+  ],
+  
+"periodicActions" : [
+],
+  
+  "power" : 20,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+
+  "maxSpeed" : 25,
+  "ignoredef" : true,
+  "flippable" : true,
+  "speed" : 0.0,
+  "timeToLive" : 0.001,
+  "physics" : "laser"
+}

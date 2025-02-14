@@ -1,0 +1,49 @@
+{
+  "projectileName" : "gic_floran_arrowstorm_stage1",
+  "physics" : "laser",
+  "actionOnReap" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_floran_arrowstorm_stage2",
+      "inheritDamageFactor" : 1,
+	  "angle" : -180,
+	  "fuzzAngle" : 0,
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_floran_arrowstorm_stage2",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0,
+	  "fuzzAngle" : 0,
+      "angleAdjust" : 0
+    },
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_floran_arrowstorm_stage1_whoosh_effect",
+      "inheritDamageFactor" : 1,
+	  "angle" : -90,
+	  "fuzzAngle" : 0,
+      "angleAdjust" : 0
+    }
+	
+	
+  ],
+  "image" : "gic_floran_arrowstorm_stage1.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 20,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+
+  "timeToLive" : 2.0,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

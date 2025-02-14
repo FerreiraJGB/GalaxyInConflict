@@ -1,0 +1,30 @@
+{
+  "itemName" : "gic_patron_undyingskull",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#8B30F0;Patron Trinket",
+  "inventoryIcon" : "gic_patron_undyingskull.png",
+  "maxStack" : 1,
+  "description" : 
+  
+"''A lone survivor braved the harsh tundra for seven days, determined to find food or die trying. When a blood-hungry youkai towered over him, he looked up and declared: ''You will be my prey tonight.''
+
+^yellow;DEATHWISH:^reset; Healing Flasks will now also ^red;drain 1000HP over 30 seconds.^reset; During this life-drain, the user's ^yellow;ATK power^reset; is increased by ^green;100%,^reset; their ^yellow;damage resistance^reset; increases by ^green;+15%,^reset; and ^yellow;EWS accuracy and hit chance^reset; by ^green;+60%^reset;",
+
+
+
+  "shortdescription" : "Patron: Undying Skull",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_patron_undyingskull",
+    "displayName" : "Patron: Undying Skull",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_patron_undyingskull.png",
+    "effects" : [ "gic_patron_undyingskull", "gic_deathwish_bonusheal_primer" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_patron_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

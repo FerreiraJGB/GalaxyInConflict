@@ -1,0 +1,31 @@
+{
+  "objectName" : "gic_lunarbattlefield_artifact_start",
+  "colonyTags" : [],
+  "rarity" : "Common",
+  "description" : "set piece",
+  "shortdescription" : "Lunar Battlefield",
+  "scannable" : false,
+  "printable" : false,
+  "race" : "human",
+  "category" : "trap",
+  "price" : 75,
+
+  "inventoryIcon" : "gic_lunarbattlefield_artifact_start.png",
+  "orientations" : [
+    {
+      "image" : "gic_lunarbattlefield_artifact_start.png:<color>",
+      "imagePosition" : [-8, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ ],
+
+      "touchDamage" : {
+        "poly" : [ [-1, 0], [-1, 2], [1, 2], [1, 0] ],
+        "damage" : 0,
+        "statusEffects" : [ "gic_chapter6_lunarartifact_stage1" ],
+        "damageType" : "ignoresdef",
+        "damageSourceKind" : "ews_antitank",
+        "damageTeam" : { "type" : "indiscriminate" }
+      }
+	}
+  ]
+}

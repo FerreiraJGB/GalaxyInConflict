@@ -1,0 +1,34 @@
+{
+  "name" : "gic_beastbloodpellet",
+  "blockingStat" : "gic_beastbloodpelletStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_beastbloodpellet", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_beastbloodpellet", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 60,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 2.0
+  },
+  "defaultDuration" : 60,
+
+  "scripts" : [
+    "gic_beastbloodpellet.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_beastbloodpellet.animation",
+   
+   "label" : "Beast Blood Pellet - Nearby enemies receive -50% DMG RES and [EWS] HIT CHANCE | User is also afflicted with these effects.",
+  "icon" : "/interface/statuses/gic_beastbloodpellet.png"
+}

@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_qf3pounder_artillerybarrage_object",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_qf3pounder_artillerybarrage_object.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 3,
+  "timeToLive" : 0.0,
+  "power" : 600,
+  "speed" : 0,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnTimeout" : [
+    {
+      "action" : "sound",
+      "rangeMultiplier" : 4.0,
+      "options" : [
+        "/sfx/WorldAtWar/gic_naval_gun5.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_qf3pounder_artillerybarrage_stage1",
+      "inheritDamageFactor" : 1,
+      "angle" : 90
+    }
+  ]
+}

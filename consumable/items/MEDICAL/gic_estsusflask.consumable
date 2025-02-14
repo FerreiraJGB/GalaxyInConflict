@@ -1,0 +1,39 @@
+{
+  "itemName" : "gic_estsusflask",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#FFAD12;An Item^white;",
+  "inventoryIcon" : "gic_estsusflask.png",
+  "maxStack" : 10,
+  "description" : "Some sort of healing flask. Only dropped by [GiC] Bosses.
+  
+^green;Heals 200hp in a second. All Bleeding is removed.^white;
+^red;Mobility hindered for 1 second.^white;",
+
+  "shortdescription" : "^yellow;Estsus Flask",
+  "effects" : [ [
+      {
+        "effect" : "gic_bleeding_lightStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_bleeding_mediumStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_bleeding_heavyStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_healingflask_medkitheal"
+      },
+	  {
+        "effect" : "gic_healing_slowdown_1"
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_sekiroheal" ],
+  "blockingEffects" : [
+  ]
+}

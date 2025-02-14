@@ -1,0 +1,54 @@
+{
+  "name" : "gic_artillerybarrage",
+
+  "projectiles" : [
+    {
+      "projectile" : "gic_artilleryshell_he",
+      "parameters" : {
+        "power" : 3000
+      },
+      "velocity" : [60, -60],
+      "gravityMultiplier": 2,
+      "ratePerX" : 0.0040,
+      "spawnAboveRegion" : 50,
+      "spawnHorizontalPad" : 30,
+      "windAffectAmount" : 3.0
+    }
+  ],
+
+ "particles" : [
+    {
+      "density" : 0.005,
+      "particle" : {
+        "type" : "animated",
+        "animation" : "/animations/windstorm/windstorm2.animation",
+        "velocity" : [0, 0],
+        "fade" : 0.5,
+        "looping" : true,
+        "destructionTime" : 20,
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+    {
+
+      "density" : 0.0025,
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "velocity" : [0, 0],
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    }
+  ],
+
+  "duration" : [360, 640],
+  "maximumWind" : 20.0,
+  "weatherNoises" : [ "/sfx/ambience/gic_distant_canonade.ogg" ]
+
+}

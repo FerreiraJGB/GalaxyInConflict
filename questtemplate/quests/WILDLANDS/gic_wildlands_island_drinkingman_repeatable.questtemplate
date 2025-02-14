@@ -1,0 +1,32 @@
+{
+  "id" : "gic_wildlands_island_drinkingman_repeatablequest",
+  "title" : "^orange;The Drinking Man",
+  "text" : "---",
+  "completionText" : "---",
+  "moneyRange" : [1,1],
+  "ephemeral" : true,
+  "rewards" : [
+    [ ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_physicalmicrocredit",
+        "count" : 200,
+        "consume" : true,
+        "description" : "Give ^orange;<itemName>^reset; to the ^orange;Wildlands Homeless Man^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

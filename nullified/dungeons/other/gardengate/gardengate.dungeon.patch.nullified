@@ -1,0 +1,23 @@
+[
+{
+  "op": "replace",
+  "path": "/metadata/anchor",
+  "value":  
+	 ["gic_gardengate"]
+},
+
+
+{
+  "op": "replace",
+  "path": "/parts",
+  "value":  
+    [{
+      "name" : "gic_gardengate",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "gic_gardengate.json" ]
+    }]	
+}
+
+]

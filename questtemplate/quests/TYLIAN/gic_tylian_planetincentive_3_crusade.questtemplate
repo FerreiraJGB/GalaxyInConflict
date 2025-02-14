@@ -1,0 +1,45 @@
+{
+  "id" : "gic_tylian_planetincentive_3_crusadequest",
+  "title" : "^#CC7970;Tylian: Crusade",
+  "text" : "It takes a remarkable level of psychic energy for metal to gain properties like the Glitch do... I have another task for you. Need you to get some equipment from those robot-people. Well, go on then lad.",
+
+  "prerequisites" : [ "gic_tylian_planetincentive_2_razedquest" ],
+  "canBeAbandoned" : false,
+  "completionText" : "Bloody remarkable... I'm sure it's quite obvious, but this isn't natural, not even for the scholars of the Gensokyan universities. As usual, I have a little something for you.",
+  
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ], [ "gic_tylian_unitanmyth-codex", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_blessed_blackpowder_pistol",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Crusade World^reset;: ^green;<current> / <required>^reset;"
+      },
+	  
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_crusaderchampionshelmethead",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Crusade World^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}
+

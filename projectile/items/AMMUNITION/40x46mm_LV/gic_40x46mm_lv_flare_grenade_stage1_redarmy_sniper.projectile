@@ -1,0 +1,51 @@
+{
+  "projectileName" : "gic_40x46mm_lv_flare_grenade_stage1_redarmy_sniper",
+  "image" : "gic_40x46mm_lv_flare_grenade_stage1.png",
+  "physics" : "gic_grenadenormal",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  
+  "fullbright" : true,
+  "lightColor" : [63, 54, 14],
+  
+  "pointLight" : false,
+  "timeToLive" : 0.15,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_40x46mm_lv_flare_grenade_stage2_redarmy_sniper",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.0,
+      "inheritSpeedFactor" : 1.0
+    }
+  ],
+  
+  "periodicActions" : [  
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_whitetracer_usoa50_trail/trail.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.2, //0.4
+        "destructionAction" : "fade", //shrink
+        "fullbright" : false
+      }
+    }
+  ], 
+  
+  "damageKindImage" : "icon.png",
+  "power" : 0.0,
+  "statusEffects" : [ "gic_bulletshot", "gic_oilfire_primer"],
+  "speed" : 200,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef"
+}

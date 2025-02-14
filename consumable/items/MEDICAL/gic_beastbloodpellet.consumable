@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_beastbloodpellet",
+  "rarity" : "Rare",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#FFAD12;Conspicuous Consumable^white;",
+  "inventoryIcon" : "gic_beastbloodpellet.png",
+  "maxStack" : 15,
+  
+  //Often given to Frontier Soldiers before storming rival Port-Cities, these drugs are a major instrument in the assault tactics employed by Port-City Governors. 
+  
+  "description" : "Large medicinal pellets, supposedly created with the blood of a Wolf-Tengu. Sends its user into a wild frenzy, greatly empowering their destructive potential at the cost of their own survivability. The Celestial Merchant refuses to disclose how she obtained these pellets, but when asked, her eyes tell of a woman who has seen too many die.
+^#CE7777;Nearby enemies receive -50% DMG RES and [EWS] HIT CHANCE | Lasts 60s.^white;
+^red;User is also afflicted with these effects.^white;",
+
+  "shortdescription" : "^#CE7777;Beast Blood Pellet",
+  "effects" : [ [
+      {
+        "effect" : "gic_beastbloodpellet",
+        "duration" : 60
+      },
+      {
+        "effect" : "gic_pinged_beastbloodpellet_player",
+        "duration" : 60
+      },
+	  {
+        "effect" : "gic_healing_slowdown_1",
+        "duration" : 1
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_sekiroheal" ],
+  "blockingEffects" : [
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_magicshot_homing",
+
+  "bounces" : 0,
+  "image" : "gic_magicshot_homing.png",
+  "animationCycle" : 0.1,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    }
+  ],
+  "power" : 20,
+  "damageKind" : "default",
+
+  "maxSpeed" : 10,
+  "ignoredef" : true,
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 8.0,
+  "acceleration" : 2,
+  "timeToLive" : 10,
+  "physics" : "rocket",
+  
+  "rotationRate" : 3,
+  "trackingLimit" : 300
+}

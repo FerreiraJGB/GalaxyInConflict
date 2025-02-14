@@ -1,0 +1,74 @@
+{
+  "objectName" : "gic_train_bt_projectilespawner_left",
+  "colonyTags" : ["trap", "evil"],
+  "printable" : false,
+  "rarity" : "Legendary",
+  "description" : "Hot!",
+  "shortdescription" : "Train BT Projectile Spawner Left",
+  "race" : "ancient",
+  "scannable" :false,
+  "category" : "trap",
+  "price" : 0,
+
+  "inventoryIcon" : "gic_train_bt_projectilespawner_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_train_bt_projectilespawner_left.png:<frame>.off",
+      "imagePosition" : [0, 0],
+      "projectileDirection" : [-1, 0],
+      "projectilePosition" : [0.3, 1.0],
+      "spaceScan" : 0.1,
+      "anchors" : []
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/projectiletrap/projectiletrap.lua" ],
+  "scriptDelta" : 2,
+
+  "animation" : "/objects/wired/projectiletrap/projectiletrap.animation",
+  "animationParts" : {
+    "bg" : "gic_train_bt_projectilespawner_left.png",
+	"fg" : "gic_train_bt_projectilespawner_left.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "shoot" : [ ],
+      "on" : [ "/sfx/objects/flametrap_on.ogg" ],
+      "off" : [ "/sfx/objects/flametrap_off.ogg" ]
+    }
+  },
+
+  "soundEffect" : "", // this is a thing that also works
+
+  "inputNodes" : [ [0, 1] ],
+
+  "inactiveLightColor" : [0, 0, 0], // light color to emit when the object is 'off'
+  "activeLightColor" : [0, 0, 0], // light color to emit when the object is 'on'
+
+  "fireTime" : 12, // rate of fire
+  "fireTimeVariance" : 6, // variation in rate of fire
+  "projectile" : "arenainvisible", // name of projectile (required)
+  "projectileConfig" : { // extra configuration overrides for projectile
+    "power" : 400,
+    "speed" : 0,
+    "damageType" : "Environment",
+    "actionOnReap" : [
+      {
+        "action" : "projectile",
+        "type" : "gic_40mm_he_vt_stage1_train_turret",
+        "config" : {
+          "damageType" : "Environment",
+          "damageKind" : "ews_explosive"
+        }
+//        "inheritDamageFactor" : 0.5,
+//        "inheritSpeedFactor" : 1.0
+      }
+    ]
+  },
+  
+  "health" : 1,
+
+  "smashOnBreak" : true,
+  "smashSounds" : [ "/sfx/objects/rock_break1.ogg", "/sfx/objects/rock_break2.ogg", "/sfx/objects/rock_break3.ogg", "/sfx/objects/rock_break4.ogg", "/sfx/objects/rock_break5.ogg", "/sfx/objects/rock_crumble1.ogg", "/sfx/objects/rock_crumble2.ogg", "/sfx/objects/rock_crumble3.ogg", "/sfx/objects/rock_crumble4.ogg", "/sfx/objects/rock_crumble5.ogg" ],
+  "smashParticles" : [ { "count" : 6, "particle" : "greystoneshard" } ]
+}

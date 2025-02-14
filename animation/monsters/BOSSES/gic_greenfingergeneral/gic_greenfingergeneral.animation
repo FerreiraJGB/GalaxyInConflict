@@ -1,0 +1,691 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+		
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "idlesword" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "idlegun" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "walk" : {
+            "frames" : 8,
+            "cycle" : 1,
+            "mode" : "loop"
+          },
+		  
+          "jump" : {
+            "frames" : 3,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "fall" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "land" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "idlesword"
+          },
+		  
+          "aggro" : { //AS I BREATHE, YOU WILL NOT PASS THE CASTLE GATE
+            "frames" : 1,
+            "cycle" : 5,
+            "mode" : "loop",
+			
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_sekiro_gyoubu_aggro.ogg",
+              "immediateSoundRangeMultiplier" : 12.0
+            }
+			
+          },
+		  
+		  
+		  
+          "aggro_phase2" : { //AS I BREATHE, YOU WILL NOT PASS THE CASTLE GATE
+            "frames" : 1,
+            "cycle" : 1,
+            "mode" : "loop",
+			
+            "properties" : {
+              "immediateSound" : "/sfx/npc/gic_sekiro_gyoubu_boyallowmetoshowyouthewrathofaman.ogg",
+              "immediateSoundRangeMultiplier" : 12.0
+            }
+			
+          },
+		  
+		  
+		  
+          "hop" : {
+            "frames" : 1,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "hopfull",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/gleap_hop.ogg" ]
+            }
+          },
+          "hopfull" : {
+            "frames" : 3,
+            "cycle" : 0.325
+          },		  
+		  
+		  
+		  
+          "sweepwindup_shing" : {
+            "frames" : 1,
+            "cycle" : 0.75,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_shing.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "sweepwindup" : {
+            "frames" : 1,
+            "cycle" : 0.5,
+            "properties" : {
+            }
+          },
+		  
+          "sweepswing" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "transition",
+            "transition" : "idlesword"
+          },
+
+		  
+		  
+		
+		
+          "ichimonjiwindup_perilous" : {
+            "frames" : 2,
+            "cycle" : 0.5,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_perilousattack.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		
+          "ichimonjiwindup_shing" : {
+            "frames" : 2,
+            "cycle" : 0.5,
+            "properties" : {
+              "immediateSound" : "/sfx/melee/gic_sekiro_shing.ogg",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "ichimonjiwindup" : {
+            "frames" : 2,
+            "cycle" : 0.5,
+            "properties" : {
+            }
+          },
+		  
+          "ichimonjiswing" : {
+            "frames" : 2,
+            "cycle" : 0.6,
+            "mode" : "transition",
+            "transition" : "idlesword"
+          },
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+          "thrustwindup" : {
+            "frames" : 1,
+            "cycle" : 0.5,
+            "properties" : {
+            }
+          },
+		  
+          "thrustjab" : {
+            "frames" : 2,
+            "cycle" : 0.6,
+            "mode" : "transition",
+            "transition" : "idlesword"
+          },
+		  
+		  
+          "bowwindup_heavy" : {
+            "frames" : 3,
+            "cycle" : 0.75,
+            "properties" : {
+              "immediateSound" : "/sfx/bow/gic_bloodborne_bow-stance1.wav",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },		  
+          "bowwindup" : {
+            "frames" : 3,
+            "cycle" : 0.75,
+            "properties" : {
+              "immediateSound" : "/sfx/bow/gic_bloodborne_bow-pre1.wav",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },
+          "bowwindup_quickdraw" : {
+            "frames" : 3,
+            "cycle" : 0.35
+          },
+          "bowfire" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "bowfire_triple" : {
+            "frames" : 12,
+            "cycle" : 0.75,
+            "mode" : "loop"
+          },
+		  
+          "bowwinddown" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "transition",
+            "transition" : "idlesword"
+          },	
+
+
+
+
+
+          "gunwindup" : {
+            "frames" : 3,
+            "cycle" : 0.35,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_bolt_action_reload_insert.ogg",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },
+          "gunfire" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "gunwinddown" : {
+            "frames" : 1,
+            "cycle" : 0.6
+          },			  
+		  
+		  
+          "gunthrowwindup" : {
+            "frames" : 3,
+            "cycle" : 0.35
+          },
+          "gunthrowfire" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "gunthrowwinddown" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "transition",
+            "transition" : "idlesword"
+          },
+
+
+          "gunreinforcementcallwindup" : {
+            "frames" : 5,
+            "cycle" : 0.6,
+            "properties" : {
+              "immediateSound" : "/sfx/gic_bolt_action_reload_insert.ogg",
+              "immediateSoundRangeMultiplier" : 2.0
+            }
+          },
+          "gunreinforcementcallfire" : {
+            "frames" : 1,
+            "cycle" : 0.6,
+            "mode" : "loop"
+          },
+		  
+          "gunreinforcementcallwinddown" : {
+            "frames" : 3,
+            "cycle" : 0.4
+          },		  
+		  
+
+		  
+          "chargewindup" : {
+            "frames" : 1
+          },
+		  
+          "chargebashwindup" : {
+            "frames" : 1
+          },
+		  
+          "charge" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/gic_bloodborne_movement2.wav",
+              "immediateSoundRangeMultiplier" : 1.0
+            }
+          },
+		  
+          "chargewinddown" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "transition",
+            "transition" : "idlesword"
+          }	  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [0.0, 0.5]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "idlesword" : {
+              "properties" : {
+                "image" : "<partImage>:idlesword.<frame>"
+              }
+            },
+            "idlegun" : {
+              "properties" : {
+                "image" : "<partImage>:idlegun.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "<partImage>:fall.<frame>"
+              }
+            },
+            "land" : {
+              "properties" : {
+                "image" : "<partImage>:land.<frame>"
+              }
+            },
+            "aggro" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "aggro_phase2" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },			
+			
+            "hop" : {
+              "properties" : {
+                "image" : "<partImage>:prep.<frame>"
+              }
+            },
+            "hopfull" : {
+              "properties" : {
+                "image" : "<partImage>:hop.<frame>"
+              }
+            },
+			
+            "sweepwindup_shing" : {
+              "properties" : {
+                "image" : "<partImage>:sweepwindup.<frame>"
+              }
+            },
+            "sweepwindup" : {
+              "properties" : {
+                "image" : "<partImage>:sweepwindup.<frame>"
+              }
+            },
+            "sweepswing" : {
+              "properties" : {
+                "image" : "<partImage>:sweepswing.<frame>"
+              }
+            },
+			
+            "ichimonjiwindup_perilous" : {
+              "properties" : {
+                "image" : "<partImage>:ichimonjiwindup.<frame>"
+              }
+            },	
+            "ichimonjiwindup_shing" : {
+              "properties" : {
+                "image" : "<partImage>:ichimonjiwindup.<frame>"
+              }
+            },			
+            "ichimonjiwindup" : {
+              "properties" : {
+                "image" : "<partImage>:ichimonjiwindup.<frame>"
+              }
+            },
+            "ichimonjiswing" : {
+              "properties" : {
+                "image" : "<partImage>:ichimonjiswing.<frame>"
+              }
+            },
+			
+            "thrustwindup" : {
+              "properties" : {
+                "image" : "<partImage>:thrustwindup.<frame>"
+              }
+            },
+            "thrustjab" : {
+              "properties" : {
+                "image" : "<partImage>:thrustjab.<frame>"
+              }
+            },
+			
+			
+            "bowwindup_quickdraw" : {
+              "properties" : {
+                "image" : "<partImage>:bowwindup.<frame>"
+              }
+            },	
+            "bowwindup_heavy" : {
+              "properties" : {
+                "image" : "<partImage>:bowwindup.<frame>"
+              }
+            },			
+            "bowwindup" : {
+              "properties" : {
+                "image" : "<partImage>:bowwindup.<frame>"
+              }
+            },
+            "bowfire" : {
+              "properties" : {
+                "image" : "<partImage>:bowfire.<frame>"
+              }
+            },
+            "bowfire_triple" : {
+              "properties" : {
+                "image" : "<partImage>:bowfire_triple.<frame>"
+              }
+            },
+            "bowwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:bowwinddown.<frame>"
+              }
+            },
+			
+			
+            "gunwindup" : {
+              "properties" : {
+                "image" : "<partImage>:gunwindup.<frame>"
+              }
+            },
+            "gunfire" : {
+              "properties" : {
+                "image" : "<partImage>:gunfire.<frame>"
+              }
+            },
+            "gunwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:gunwinddown.<frame>"
+              }
+            },
+			
+            "gunthrowwindup" : {
+              "properties" : {
+                "image" : "<partImage>:gunthrowwindup.<frame>"
+              }
+            },
+            "gunthrowfire" : {
+              "properties" : {
+                "image" : "<partImage>:gunthrowfire.<frame>"
+              }
+            },
+            "gunthrowwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:gunthrowwinddown.<frame>"
+              }
+            },
+			
+			
+            "gunreinforcementcallwindup" : {
+              "properties" : {
+                "image" : "<partImage>:gunreinforcementcallwindup.<frame>"
+              }
+            },
+            "gunreinforcementcallfire" : {
+              "properties" : {
+                "image" : "<partImage>:gunreinforcementcallfire.<frame>"
+              }
+            },
+            "gunreinforcementcallwinddown" : {
+              "properties" : {
+                "image" : "<partImage>:gunreinforcementcallwinddown.<frame>"
+              }
+            },
+			
+			
+			
+            "chargewindup" : {
+              "properties" : {
+                "image" : "<partImage>:chargewindup.<frame>"
+              }
+            },	
+            "chargebashwindup" : {
+              "properties" : {
+                "image" : "<partImage>:chargebashwindup.<frame>"
+              }
+            },				
+            "charge" : {
+              "properties" : {
+                "image" : "<partImage>:charge.<frame>",
+                "damageArea" : [ [0.0, -3.2], [0.6, -3.2], [0.6, 0.0], [0.0, 0.0] ]
+              }
+            },
+            "chargewinddown" : {
+              "properties" : {
+                "image" : "<partImage>:chargewinddown.<frame>"
+              }
+            }			
+			
+			
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:idlesword.<frame>"
+              }
+            }
+          }
+        }
+      }
+	}
+  },
+  "globalTagDefaults" : {
+    "aggro" : ""
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+  
+  "lights" : {
+    "glow" : {
+      "active" : true,
+      "position" : [0, 0],
+      "color" : [2550, 160, 160], //255, 255, 107
+      "pointLight" : true
+    }
+  },
+
+  "particleEmitters" : {
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+        { "particle" : "electricswoosh1" },
+        { "particle" : "electricswoosh2" },
+
+        { "particle" : "deathfizz1left" },
+        { "particle" : "deathfizz1right" },
+        { "particle" : "deathfizz2left" },
+        { "particle" : "deathfizz2right" },
+        { "particle" : "deathfizz3left" },
+        { "particle" : "deathfizz3right" },
+        { "particle" : "deathfizz4left" },
+        { "particle" : "deathfizz4right" }
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+  
+    "fire_bow" : {
+      "pool" : [ "/sfx/bow/gic_bloodborne_bow-shot2.wav" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "fire_heavybow" : {
+      "pool" : [ "/sfx/bow/gic_bloodborne_bow-large-shot.wav" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "fire_gun" : {
+      "pool" : [ "/sfx/gun/gic_musket_fire.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "ichimonji_swing" : {
+      "pool" : [ "/sfx/melee/gic_sekiro_ichimonji_16speed.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "thrust_jab" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_swing-stab2.wav" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "sweep_swing" : {
+      "pool" : [ "/sfx/melee/gic_bloodborne_swing-sword.wav" ],
+      "rangeMultiplier" : 2.0
+    },
+	
+    "danmaku" : {
+      "pool" : [ "/sfx/touhou/gic_touhou_tan_1-15db.ogg" ],
+      "rangeMultiplier" : 2.0
+    },
+  
+    "wallCrash" : [ "/sfx/npc/monsters/peblit_drop1.ogg" ],
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/npc/gic_sekiro_gyoubu_death.ogg" ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "itemName" : "gic_grenadethrow_npc",
+  "price" : 1200,
+  "inventoryIcon" : "gic_grenadethrow_npc.png",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "The arcane magic of throwing things.",
+  "shortdescription" : "NPC Grenade Throw.",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "???",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_grenadethrow_npc.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+  
+    "sounds" : {
+    "fire" : {
+      "pool" : [ "/sfx/projectiles/throw_item.ogg" ],
+      "rangeMultiplier" : 5.0
+    }
+   }
+	
+
+
+  },
+
+  "baseOffset" : [0.35, 0.2],
+  "muzzleOffset" : [-0.15, 0.2],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "ews_explosive",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.135,
+    "baseDps" : 50,
+    "energyUsage" : 180,
+    "inaccuracy" : 0.006,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+    "projectileType" : ["gic_m86_flashbang_grenade", "gic_nail_grenade", "gic_hgmk121_grenade", "gic_lf2_grenade"],
+    "projectileParameters" : {
+      "knockback" : 10,
+	  "speed" : 40
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : -80,
+        "weaponRotation" : 20,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 20,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+	    "frontArmFrame" : "run.5",
+		
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 20,
+        "twoHanded" : true,
+
+	    "frontArmFrame" : "run.2",
+		
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+    "aimOffset" : -5.0,
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

@@ -1,0 +1,38 @@
+{
+  "metadata" : {
+    "name" : "gic_undercolony_abandonedsector_bossrush_sicario",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_undercolony_abandonedsector_start_bossrush"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 2,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_undercolony_abandonedsector_start_bossrush",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_undercolony_abandonedsector_start_bossrush.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_undercolony_abandonedsector_floodedhallway",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_undercolony_abandonedsector_floodedhallway" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_undercolony_abandonedsector_floodedhallway.json" ] ],
+      "chance" : 1.0
+    }
+	
+  ]
+}

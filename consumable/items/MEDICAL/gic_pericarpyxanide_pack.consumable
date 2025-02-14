@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_pericarpyxanide_pack",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_pericarpyxanide_pack.png",
+  
+  "itemTags" : ["gic_syringerifle_ammo"],
+  
+  "maxStack" : 4,
+  "description" : "^green;Cures Pericarpyx Infection.^reset; The fact that a cure already exists for the Pericarpyx suggests that the Erchius outbreaks might not be as 'natural' as Letheia claims.",
+
+  "shortdescription" : "^orange;Pericarpyxanide Pack",
+  "effects" : [ [
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 2
+      },
+	  
+      {
+        "effect" : "gic_pericarpyxanide_pack_recovery",
+        "duration" : 2
+      }
+	  
+	  
+	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_bandage_use" ],
+  "blockingEffects" : [
+  ]
+}

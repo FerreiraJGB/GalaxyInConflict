@@ -1,0 +1,28 @@
+{
+  "projectileName" : "gic_copsc_1143x23mm_magreload",
+  "image" : "icon.png",
+  "animationCycle" : 0.25,
+  "physics" : "laser",
+  "timeToLive" : 0.0,
+  "pointLight" : false,
+  "actionOnReap" : [
+	//{
+      //"action" : "projectile",
+      //"type" : "case_mercbullet",
+      //"fuzzAngle" : 20,
+      //"directional" : "true",
+      //"angle" : 90
+    //},
+    {
+      "action" : "projectile",
+      "type" : "gic_copsc_1143x23mm_mag",
+      "fuzzAngle" : 20,
+      "directional" : "true",
+      "angle" : -90
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

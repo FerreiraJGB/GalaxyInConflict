@@ -1,0 +1,55 @@
+{
+  "projectileName" : "gic_hylotlgunbai_playersummon_2pattern",
+  "image" : "gic_hylotlgunbai_playersummon_null.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "onlyHitTerrain" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_hylotlgunbai_playersummon_stage1_cannoneer",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_hylotlgunbai_playersummon_stage1_spearman",
+      "inheritDamageFactor" : 1,
+	  "angle" : 180
+    },
+	
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_floran_musketeer_playersummon",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : { "damageTeam" : 1, "damageTeamType" : "friendly" }
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "angle" : 90
+    },
+	
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_remnantfromtheashes_claviger-08.ogg"
+      ]
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

@@ -1,0 +1,42 @@
+{
+  "name" : "gic_75_vehicle_railplatform",
+  "boundBox" : [-4.5, -1.0, 4.5, 1.0],
+  "slaveControlTimeout" : 2.0,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : false,
+
+  "persistent" : true,
+
+  "script" : "/vehicles/gic_railplatform/gic_railplatform.lua",
+  "animation" : "/vehicles/gic_railplatform/gic_75_vehicle_railplatform.animation",
+
+  "animationPartTags" : {
+    "platform" : {
+      "partImage" : "/vehicles/gic_railplatform/gic_75_vehicle_railplatform.png"
+    },
+    "platformfullbright" : {
+      "partImage" : "/vehicles/gic_railplatform/gic_75_vehicle_railplatformplatformfullbright.png"
+    }
+  },
+
+  "movementSettings" : {
+    "collisionPoly" : [ [-3.75, 1.0], [3.75, 1.0], [3.75, 0.0], [-3.75, 0.0] ],
+    "mass" : 4.0,
+    "ignorePlatformCollision" : true,
+    "physicsEffectCategories" : []
+  },
+
+  "loungePositions" : {},
+
+  "physicsCollisions" : {
+    "platform" : {
+      "collision" : [ [-36, 8.0], [36, 8.0], [36, -8.0], [-36, -8.0] ],
+      "collisionKind" : "dynamic",
+      "attachToPart" : "platform"
+    }
+  },
+
+  "railConfig" : {
+    "speed" : 5
+  }
+}

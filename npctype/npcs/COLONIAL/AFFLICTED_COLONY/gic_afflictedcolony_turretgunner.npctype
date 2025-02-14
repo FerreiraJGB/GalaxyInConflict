@@ -1,0 +1,97 @@
+{
+  "type" : "gic_afflictedcolony_turretgunner",
+  "baseType" : "gic_soldierbase",
+  
+  "scripts" : [
+    "/npcs/gic_bmain.lua",
+	"/npcs/gic_turretlounge.lua"
+  ],
+  
+  "damageTeamType" : "friendly", 
+  "damageTeam" : 1,
+  "dropPools" : [ "gic_wartorninsurgentTreasure" ],
+
+  "identity" : {
+    "gender" : "female"
+  }, 
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/gic_generic_combat_panic.config:attack",
+      "reattack" : "/dialog/gic_generic_combat_panic.config:reattack",
+      "killedTarget" : "/dialog/gic_generic_combat_panic.config:killedTarget",
+      "lostTarget" : "/dialog/gic_generic_combat_panic.config:lostTarget",
+      "outOfSight" : "/dialog/gic_generic_combat_panic.config:outOfSight",
+      "cheerOn" : "/dialog/gic_generic_combat_panic.config:cheerOn",
+      "cantReach" : "/dialog/gic_generic_combat_panic.config:cantReach"
+    },
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}],
+        [1.0, "wander"]
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  
+	  //Militiaman 
+          {
+            "head" : [ { "name" : "gic_colonialresistancehead", "parameters" : { "colorIndex" : [1, 2, 3, 11] }  } ],
+            "chest" : [ { "name" : "gic_copcchest", "parameters" : { "colorIndex" : [1, 2, 3, 11] }  } ],
+            "legs" : [ { "name" : "gic_hscplegs", "parameters" : { "colorIndex" : [1, 2, 3, 11] } } ],
+            "primary" : [
+			  
+			  "gic_m2055"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_rally_insurgent_primer", "gic_npc_death_blood_explosion"],    
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 222.2222 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -0.4
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      }
+	  
+	  
+    }
+  }
+  
+}

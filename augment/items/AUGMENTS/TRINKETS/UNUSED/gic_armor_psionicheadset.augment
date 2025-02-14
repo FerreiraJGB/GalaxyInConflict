@@ -1,0 +1,32 @@
+{
+  "itemName" : "gic_armor_psionicheadset",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "eppAugment",
+  "inventoryIcon" : "gic_armor_psionicheadset.png",
+  
+  "description" : 
+  
+"Basic headgear attuned to psionic frequencies. Allows for anomalous reloads at the cost of damage. The user can block some ballistic forces with their psionic powers as well.
+
+^green;+40% Damage Resistance to Small Arms
++40% Damage Resistance to Heavy Arms
++40% Damage Resistance to Melee^reset;",
+
+
+
+  "shortdescription" : "Psionic Headset",
+
+  "augment" : {
+    "type" : "gic_basichead",
+    "name" : "gic_armor_psionicheadset",
+    "displayName" : "Helmet Padding",
+    "displayIcon" : "/items/augments/psionic/head/gic_armor_psionicheadset.png",
+    "effects" : [ {"stat" : "ews_smallarmsResistance", "amount" : 0.4}, {"stat" : "ews_meleeResistance", "amount" : 0.4}, {"stat" : "ews_smallarmsResistance", "amount" : 0.4}, {"stat" : "ews_infammo", "amount" : 1.0} ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_artifact_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

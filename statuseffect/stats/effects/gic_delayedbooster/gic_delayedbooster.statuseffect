@@ -1,0 +1,21 @@
+{
+  "name" : "gic_delayedbooster",
+  "blockingStat" : "gic_delayedboosterStatusImmunity",
+
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 1,
+    "triggerDamageThreshold" : 1,
+    "explosionDamageAmount" : 0
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "gic_delayedbooster.lua"
+  ],
+
+  "animationConfig" : "gic_delayedbooster.animation",
+  
+  "label" : "Delayed Booster - 3 seconds after getting hurt, regenerate 4% HP/s for 3s. Getting hurt during the delay will refresh its duration, preventing healing.",
+  "icon" : "/interface/statuses/gic_delayedbooster.png"
+}

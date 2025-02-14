@@ -1,0 +1,74 @@
+{
+  "itemName" : "gic_riot_stun_spear_npc",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A spear-like Riot Control weapon with an embedded taser 'head', able to momentarily stun targets. Designed for societies with heavy disarmament, these spears allow local policing forces to utilise ancient pike-and-shot tactics for riot suppression. Its stun utility has found its way into the kits of Survivalists, and serves just as well against wild animals as much as the animals of urban jungles.",
+  "shortdescription" : "Riot Stun Spear NPC",
+  "tooltipKind" : "gic_largebase_hybrid_sword",
+  "category" : "^green;Spear^white;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "gic_riot_stun_spear.png",
+
+  "animation" : "gic_riot_stun_spear.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_riot_stun_spear.png"
+  },
+  "animationCustom" : {
+  "sounds" : {
+      "fire" 		: [ "/sfx/melee/swing_spear_electric1.ogg", "/sfx/melee/swing_spear_electric2.ogg", "/sfx/melee/swing_spear_electric3.ogg" ]
+    } 
+	},
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua"],
+  "scriptDelta" : 2,
+  
+  "elementalType" : "ews_melee",
+
+  "aimOffset" : -4.0, //-4.0
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+	"scripts" : ["/items/active/weapons/melee/abilities/gic_spearstab.lua"],
+	
+    "fireTime" : 1.11,
+    "baseDps" : 20,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "knockbackRange" : 25,
+      "statusEffects" : [ "gic_tazed", "electrified", "gic_advancedmunition_overcharged" ],
+      "damageType" : "IgnoresDef"
+    },
+	
+	
+    "stances" : {
+      "idle" : {
+        "twoHanded" : false
+      },
+      "windup" : {
+        "twoHanded" : false
+      },
+      "fire" : {
+        "twoHanded" : false,
+        "weaponOffset" : [0.0, -0.0]
+      },
+      "hold" : {
+        "twoHanded" : false
+      }
+    }
+	
+	
+  },
+
+  //"altAbilityType" : "",
+  "learnBlueprintsOnPickup" : [ "gic_riot_stun_spear", "gic_riot_stun_spear_thrown_player", "gic_mule_shockgrenade" ],
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua",
+  
+  "tooltipFields" : {
+	"smallDescriptionLabel" : "A Riot Stun Spear, utilized both by civilians and enforcement officials alike."
+  }
+}

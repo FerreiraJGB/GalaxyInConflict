@@ -1,0 +1,634 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "base" : {
+        "default" : "idle",
+        "states" : {
+          "warpInPart1" : {
+            "frames" : 4,
+            "cycle" : 0,//0.33,
+            "mode" : "transition",
+            "transition" : "warpInPart2",
+            "properties" : {
+              "persistentSound" : "",
+              "immediateSound" : "/sfx/melee/gic_bloodborne_shield-iron1.wav",
+              "persistentSoundRangeMultiplier" : 1.0
+            }
+          },
+          "warpInPart2" : {
+            "frames" : 4,
+            "cycle" : 0,//0.33,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "idle" : {},
+          "warpOutPart1" : {
+            "frames" : 4,
+            "cycle" : 0,//0.33,
+            "mode" : "transition",
+            "transition" : "warpOutPart2"
+          },
+          "warpOutPart2" : {
+            "frames" : 4,
+            "cycle" : 0,//0.33,
+            "mode" : "transition",
+            "transition" : "warpedOut",
+            "properties" : {
+              "persistentSound" : "",
+              "immediateSound" : "",
+              "persistentSoundRangeMultiplier" : 1.0
+            }
+          },
+          "warpedOut" : {},
+          "sinking" : {}
+        }
+      },
+	  
+	  "turret" : {
+		"default" : "idle",
+		"states" : {
+			"idle" : {},
+			"attached" : {},
+			"loaded" : {}
+		}
+	  },
+
+      "propeller" : {
+        "priority" : 0,
+        "default" : "still",
+        "states" : {
+          "warpInPart1" : {
+            "frames" : 4,  
+            "cycle" : 0,//0.33,
+            "mode" : "transition",
+            "transition" : "warpInPart2"
+            },
+
+          "warpInPart2" : {
+            "frames" : 4,  
+            "cycle" : 0,//0.33,
+            "mode" : "transition",
+            "transition" : "idle"
+            },
+			
+          "still" : {
+            "frames" : 1
+          },
+          "turning" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "",
+              "persistentSoundRangeMultiplier" : 1.0
+            }
+          },
+          "warpOutPart1" : {
+            "frames" : 4,  
+            "cycle" : 0,//0.33,
+            "mode" : "transition",
+            "transition" : "warpOutPart2"
+            },
+
+          "warpOutPart2" : {
+            "frames" : 4,  
+            "cycle" : 0,//0.33,
+            "mode" : "transition",
+            "transition" : "invisible"
+            },
+			
+          "invisible" : {}
+        }
+      },
+	  
+      "frontFiring" : {
+        "default" : "off",
+
+        "states" : {
+          "fire" : {
+            "frames" : 2,
+            "cycle" : 0.05,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+			  "immediateSound" : ""
+            }
+          },
+
+          "off" : { }
+        }
+      },
+      "frontFiring2" : {
+        "default" : "off",
+
+        "states" : {
+          "fire" : {
+            "frames" : 2,
+            "cycle" : 0.05,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+			  //"immediateSound" : "/sfx/gun/gic_mg3_shoot.ogg"
+            }
+          },
+
+          "off" : { }
+        }
+      },
+
+
+      "onfire" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+
+          "on" : {
+            "frames" : 2,
+            "cycle" : 0.1,
+            "mode" : "loop"
+          }
+
+        }
+      },
+
+       "headlights" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+
+          "on" : {}
+        }
+      }
+    },
+
+    "parts" : {
+      "seat" : {
+        "properties" : {
+          "zLevel" : -2,
+          "transformationGroups" : ["flip", "rotation"],
+          "drivingSeatPosition" : [-2.5, 2.5]//,
+          //"titanicSeatPosition" : [-3, 2.5]
+        }
+      },
+
+      "boathull" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2,
+          "transformationGroups" : ["flip", "rotation"],
+          "offset" : [0.0, 1.3]
+        },
+
+        "partStates" : {
+          "base" : {
+            "warpInPart1" : {
+              "properties" : {}
+            },
+            "warpInPart2" : {
+              "properties" : {
+                "image" : "/vehicles/gic_mg2750_turret/gic_mg2750_turretbody.png:hull"
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "/vehicles/gic_mg2750_turret/gic_mg2750_turretbody.png:hull"
+              }
+            },
+            "warpOutPart1" : {
+              "properties" : {
+                "image" : "/vehicles/gic_mg2750_turret/gic_mg2750_turretbody.png:hull"
+              }
+            },
+            "warpOutPart2" : {
+              "properties" : {}
+            },
+            "invisible" : {
+              "properties" : {}
+
+            },
+            "sinking" : {
+              "properties" : {
+                "image" : "/vehicles/gic_mg2750_turret/gic_dshk_gunturretbody.png:hull"
+              }
+            }
+          }
+        }
+      },
+
+      "warp" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 15,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"],
+          "offset" : [0.13, 1.0]
+        },
+
+        "partStates" : {
+          "base" : {
+            "warpInPart1" : {
+              "properties" : {
+                "image" : "/vehicles/gic_mg2750_turret/gic_dshk_gunturretwarp.png:warpInPart1.<frame>"
+              }
+            },
+            "warpInPart2" : {
+              "properties" : {
+                "image" : "/vehicles/gic_mg2750_turret/gic_dshk_gunturretwarp.png:warpInPart2.<frame>"
+              }
+            },
+            "idle" : {
+              "properties" : {}
+            },
+            "warpOutPart1" : {
+              "properties" : {
+                "image" : "/vehicles/gic_mg2750_turret/gic_dshk_gunturretwarp.png:warpOutPart1.<frame>"
+              }
+            },
+            "warpOutPart2" : {
+              "properties" : {
+                "image" : "/vehicles/gic_mg2750_turret/gic_dshk_gunturretwarp.png:warpOutPart2.<frame>"
+              }
+            },
+            "invisible" : {
+              "properties" : {}
+            }
+          }
+        }
+      },
+
+      "prop" : {
+        "properties" : {
+          "zLevel" : 4,
+          "centered" : true,
+          "transformationGroups" : ["flip", "rotation"],
+          "offset" : [0.0, 1.3]
+        },
+        "partStates" : {
+          "propeller" : {
+            "still" : {
+              "properties" : {
+                //"image" : "/vehicles/gic_mg2750_turret/gic_mg2750_turretlegs.png:idle"
+              }
+            },
+            "turning" : {
+              "properties" : {
+                //"image" : "/vehicles/gic_mg2750_turret/gic_mg2750_turretlegs.png:on.<frame>"
+              }
+            }
+          }
+        }
+      },
+
+      "frontGun" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -2.75,
+          "rotationGroup" : "guns",
+          "rotationCenter" : [0, 0.2],
+          "firePoint" : [0, 0],
+          "anchorPart" : "boathull",
+          "offset" : [0.75, 1.0]
+        },
+
+        "partStates" : {
+          "base" : {
+            "idle" : {
+              "properties" : {
+                "image" : ""
+              }
+            }
+          }
+        }
+      },
+      "frontGun2" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 10.0,
+          "rotationGroup" : "guns",
+          "rotationCenter" : [0, 0.5], //0.5, 1
+          "firePoint2" : [0.125, 0.5],
+          "anchorPart" : "boathull",
+          "offset" : [0.0, 0.4]
+        },
+
+        "partStates" : {
+          "turret" : {
+            "idle" : {
+              "properties" : {
+                "image" : ""//"gic_mg2750_turretgun.png:rotation"
+              }
+            },
+			"attached" : {
+              "properties" : {
+                "image" : "gic_mg2750_unloaded.png"
+              }
+            },
+			"loaded" : {
+              "properties" : {
+                "image" : "<partImage>:rotation"
+              }
+            }
+          }
+        }
+      },
+	  
+	  "boxMagazine" : {
+		"properties" : {
+			"centered" : true,
+			"zLevel" : 10.0,
+			"offset" : [0.5,0]
+		},
+		"partStates" : {
+          "turret" : {
+            "idle" : {
+              "properties" : {
+                //"image" : "gic_mg2750_magazine.png"
+              }
+            },
+			"attached" : {
+              "properties" : {
+                //"image" : "gic_mg2750_magazine.png"
+              }
+            },
+			"loaded" : {
+              "properties" : {
+                //"image" : ""
+              }
+            }
+          }
+        }
+	  },
+	  
+	  "unattachedGun" : {
+		"properties" : {
+			"centered" : true,
+			"transformationGroups" : ["unattachedGun"],
+			"zLevel" : 9.0,
+			"offset" : [-0.75,-0.2]
+		},
+		"partStates" : {
+          "turret" : {
+            "idle" : {
+              "properties" : {
+                "image" : "gic_mg2750_unloaded.png"
+              }
+            },
+			"attached" : {
+              "properties" : {
+                "image" : ""
+              }
+            },
+			"loaded" : {
+              "properties" : {
+                "image" : ""
+              }
+            }
+          }
+        }
+	  },
+	  
+      "frontGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3,
+          "rotationGroup" : "guns",
+          "rotationCenter" : [0, 0.2],
+          "anchorPart" : "boathull",
+          "offset" : [0.75, 1.0],
+		  "fullbright" : true
+        },
+
+        "partStates" : {
+          "frontFiring" : {
+            "fire" : {
+				"properties" : {
+				"fullbright" : true,
+                "image" : "sawmuzzleflash.png:default.<frame>",
+				"offset" : [1.6, 0.4]
+              }
+            }
+          }
+        }
+      },
+      "frontGunFire2" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3,
+          "rotationGroup" : "guns",
+          "rotationCenter" : [0, 0.2],
+          "anchorPart" : "boathull",
+          "offset" : [0.5, 1.6],
+		  "fullbright" : true
+        },
+
+        "partStates" : {
+          "frontFiring2" : {
+            "fire" : {
+              "properties" : {
+				"fullbright" : true,
+                "image" : "sawmuzzleflash.png:default.<frame>",
+				"offset" : [1.6, 0.4]
+              }
+            }
+          }
+        }
+      },
+
+       "lights" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 6,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"]
+        },
+
+        "partStates" : {
+
+          "headlights" : {
+
+            "off" : {
+              "properties" : {
+              }
+            },
+
+            "on" : {
+              "properties" : {
+                //"image" : "gic_dshk_gunturretlights.png:headlights.<damageState>",
+				//"offset" : [0.0, 0.8]
+              }
+            }
+          }
+        }
+      },
+
+      "fire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 6,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"]
+//		  "offset" : [-0.4, 0.4]
+        },
+
+        "partStates" : {
+          "onfire" : {
+            "on" : {
+              "properties" : {
+                "image" : "fire.png:burn.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "rotation" : {
+      "interpolated" : true
+    },
+    "flip" : {},
+	"unattachedGun" : {}
+  },
+
+  "particleEmitters" : {
+	"muzzleFlash" : {
+        "burstCount" : 2,
+		"rotationGroup" : "guns",
+		"transformationGroups" : ["flip"],
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [2.5, 2.0], "count" : 2 }
+        ]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+		"rotationGroup" : "guns",
+		"transformationGroups" : ["flip"],
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [2.5, 2.0], "count" : 3 }
+        ]
+      },
+  
+    "bowWaveWater" : {
+       "emissionRate" : 25.0,
+       "active" : false,
+       "offsetRegion" : [ 5, -4, 5.1, -4],
+       "particles" : [{ "particle" : "splashwater"}]
+    },
+    "bowWaveLava" : {
+       "emissionRate" : 25.0,
+       "active" : false,
+       "offsetRegion" : [ 5, -4, 5.1, -4],
+       "particles" : [{ "particle" : "fireshard"}]
+    },
+    "bowWavePoison" : {
+       "emissionRate" : 25.0,
+       "active" : false,
+       "offsetRegion" : [ 5, -4, 5.1, -4],
+       "particles" : [{ "particle" : "splashpoison"}]
+    },
+
+    "splashWater" : {
+       "emissionRate" : 0,
+       "active" : false,
+       "burstCount" : 20,
+       "offsetRegion" : [ -5, -4, 5.0, -4],
+       "particles" : [{ "particle" : "splashwater"}]
+    },
+    "splashLava" : {
+       "emissionRate" : 0,
+       "active" : false,
+       "burstCount" : 20,
+       "offsetRegion" : [ -5, -4, 5.1, -4],
+       "particles" : [{ "particle" : "fireshard"}]
+    },
+    "splashPoison" : {
+       "emissionRate" : 0,
+       "active" : false,
+       "burstCount" : 20,
+       "offsetRegion" : [ -5, -4, 5.1, -4],
+       "particles" : [{ "particle" : "splashpoison"}]
+    },
+
+    "bubbles" : {
+       "enabled" : false,
+       "emissionRate" : 25.0,
+       "offsetRegion" : [ -3, -3, 3, 3],
+       "particles" : [{ "particle" : "bubbles"}]
+    },
+	
+    "smoke" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 0.0,
+      "zLevel" : -2,
+      "offsetRegion" : [-4, -4, 1, -4],
+      "particles" : [{ "particle" : "smoke"}]
+    },
+	
+    "smoke3" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 0.0,
+      "zLevel" : -2,
+      "offsetRegion" : [-4, -4, 4, -4],
+      "particles" : [{ "particle" : "smoke"}]
+    },
+    "smoke3a" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 0.0,
+      "zLevel" : -2,
+      "offsetRegion" : [-4, -4, 4, -4],
+      "particles" : [{ "particle" : "smoke"}]
+    },
+	
+    "smoke2" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 0.0,
+      "zLevel" : -2,
+      "offsetRegion" : [-5, -4, -5, -4],
+      "particles" : [{ "particle" : "smoke"}]
+    }
+  },
+ "lights" : {
+    "headlightBeam" : {
+      "active" : false,
+      "transformationGroups" : ["flip", "rotation"],
+      "position" : [3.5, 1.0],
+      "color" : [0, 0, 0],
+      "pointLight" : true,
+      "pointAngle" : -5,
+      "pointBeam" : 5
+    }
+  },
+
+  "sounds" : {
+    "collisionNotification" : [
+      "/sfx/tech/hoverbike_bump1.ogg",
+      "/sfx/tech/hoverbike_bump2.ogg",
+      "/sfx/tech/hoverbike_bump3.ogg"
+    ],
+    "collisionDamage" : ["/sfx/melee/bite_robotic1.ogg"],
+    "changeDamageState" : [
+      "/sfx/gun/grenadeblast_small_fire1.ogg",
+      "/sfx/gun/grenadeblast_small_fire2.ogg",
+      "/sfx/gun/grenadeblast_small_fire3.ogg"
+    ],
+	
+	"repair" : [
+      "/sfx/melee/blunt_hit_metal1.ogg",
+      "/sfx/melee/blunt_hit_metal2.ogg",
+      "/sfx/melee/blunt_hit_metal3.ogg"
+    ],
+
+	"fire" : ["/sfx/gun/gic_metro2033_ak2012_shot4.ogg"],
+	"upgrade" : ["/sfx/melee/gic_bloodborne_shield-iron1.wav"],
+	"jam" : ["/sfx/melee/gic_bloodborne_shield-iron1_large.wav"],
+    "headlightSwitchOn" : ["/sfx/objects/floodlights_on.ogg"],
+    "headlightSwitchOff" : ["/sfx/objects/floodlights_off.ogg"],
+    "hornLoop" : ["/sfx/tech/honk.ogg"]
+  },
+  "rotationGroups" : {
+    "guns" : {
+      "angularVelocity" : 10.0
+    }
+  }
+}

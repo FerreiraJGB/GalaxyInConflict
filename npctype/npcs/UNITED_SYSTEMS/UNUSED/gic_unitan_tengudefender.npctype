@@ -1,0 +1,139 @@
+{
+  "type" : "gic_unitan_tengudefender",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 16,
+  "identity" : {
+    "gender" : "male"
+  },  
+
+    "seed": 1,
+
+  "damageBar" : "special",
+  "persistent" : true,
+
+  "movementParameters" : {
+    "runSpeed" : 50,
+    "walkSpeed" : 50,
+    "airFriction" : 0.05,
+    "airJumpProfile" : {
+      "jumpSpeed" : 90.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 3
+    }
+  },
+	
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:attack",
+      "reattack" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:reattack",
+      "killedTarget" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:killedTarget",
+      "lostTarget" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:lostTarget",
+      "outOfSight" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:outOfSight",
+      "cheerOn" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:cheerOn",
+      "cantReach" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_tengumaskhead", "parameters" : { "colorIndex" : [0] } }],
+            "chest" : [ { "name" : "traineechest", "parameters" : { "colorIndex" : [1] } }, { "name" : "monkchest", "parameters" : { "colorIndex" : [1] } }, { "name" : "traditionalchest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "monklegs", "parameters" : { "colorIndex" : [1] } } ],
+            "back" : [ { "name" : "gic_featheredwingsback", "parameters" : { "colorIndex" : [1, 2, 3, 4, 5, 6, 7, 8] } } ],
+            "primary" : ["gic_fae_wand"],
+            "alt" : [
+              "gic_undercolony_yari_spear"
+            ]
+          }
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 40,
+    "statusEffects" : [ ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 200.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+        "physicalResistance" : {
+          "baseValue" : 0.4
+        },
+        "fireResistance" : {
+          "baseValue" : 0.6
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.9
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.9
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.9
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.1
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.8
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : -0.2
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : -100.0
+      }
+	  
+    }
+  }
+}

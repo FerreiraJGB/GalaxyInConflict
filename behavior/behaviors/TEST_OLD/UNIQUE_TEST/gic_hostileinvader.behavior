@@ -1,0 +1,252 @@
+{
+  "name": "gic_hostileinvader",
+  "description": "",
+  "scripts": [
+    "/scripts/actions/movement.lua",
+    "/scripts/actions/time.lua",
+    "/scripts/actions/notification.lua",
+    "/scripts/actions/npc.lua",
+    "/scripts/actions/status.lua",
+    "/scripts/actions/query.lua",
+    "/scripts/actions/world.lua",
+    "/scripts/behavior/bgroup.lua",
+    "/scripts/behavior.lua"
+  ],
+  "parameters": {},
+  "root": {
+    "title": "sequence",
+    "type": "composite",
+    "name": "sequence",
+    "parameters": {},
+    "children": [
+      {
+        "title": "faceDirection",
+        "type": "action",
+        "name": "faceDirection",
+        "parameters": {
+          "direction": {"value": -1}
+        }
+      },
+      {
+        "title": "timer",
+        "type": "action",
+        "name": "timer",
+        "parameters": {
+          "time": {"value": 1}
+        }
+      },
+      {
+        "title": "Villager",
+        "type": "composite",
+        "name": "dynamic",
+        "parameters": {},
+        "children": [
+          {
+            "title": "sequence",
+            "type": "composite",
+            "name": "sequence",
+            "parameters": {},
+            "children": [
+              {
+                "title": "receivedNotification",
+                "type": "action",
+                "name": "receivedNotification",
+                "parameters": {
+                  "type": {"value": "missionEnded"}
+                }
+              },
+              {
+                "title": "sequence",
+                "type": "composite",
+                "name": "sequence",
+                "parameters": {},
+                "children": [
+                  {
+                    "title": "setDeathParticleBurst",
+                    "type": "action",
+                    "name": "setDeathParticleBurst",
+                    "parameters": {}
+                  },
+                  {
+                    "title": "addEphemeralEffect",
+                    "type": "action",
+                    "name": "addEphemeralEffect",
+                    "parameters": {
+                      "name": {"value": "beamoutanddie"}
+                    }
+                  },
+                  {
+                    "title": "timer",
+                    "type": "action",
+                    "name": "timer",
+                    "parameters": {
+                      "time": {"value": 1}
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "sequence",
+            "type": "composite",
+            "name": "sequence",
+            "parameters": {},
+            "children": [
+              {
+                "title": "cooldown",
+                "type": "decorator",
+                "name": "cooldown",
+                "parameters": {
+                  "cooldown": {"value": 1},
+                  "onFail": {"value": true},
+                  "onSuccess": {"value": true}
+                },
+                "child": {
+                  "title": "findMonster",
+                  "type": "action",
+                  "name": "findMonster",
+                  "parameters": {
+                    "orderBy": {"value": "nearest"},
+                    "position": {"key": "self"},
+                    "range": {"value": 20},
+                    "type": {"value": "gic_enemytank"}
+                  },
+                  "output": {
+                    "entity": "gic_enemytank"
+                  }
+                }
+              },
+              {
+                "title": "parallel",
+                "type": "composite",
+                "name": "parallel",
+                "parameters": {
+                  "fail": {"value": 1},
+                  "success": {"value": -1}
+                },
+                "children": [
+                  {
+                    "title": "entityExists",
+                    "type": "action",
+                    "name": "entityExists",
+                    "parameters": {
+                      "entity": {"key": "gic_enemytank"}
+                    }
+                  },
+                  {
+                    "title": "group",
+                    "type": "action",
+                    "name": "group",
+                    "parameters": {
+                      "goal": {"value": "gic_enemytank"},
+                      "goalType": {"value": "entity"},
+                      "groupId": {"value": "followgic_enemytank"},
+                      "maxMembers": {"value": 1},
+                      "minMembers": {"value": 1},
+                      "unique": {"value": true}
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "parallel",
+            "type": "composite",
+            "name": "parallel",
+            "parameters": {
+              "fail": {"value": 1},
+              "success": {"value": -1}
+            },
+            "children": [
+              {
+                "title": "NPC Hostile Tracking",
+                "type": "module",
+                "name": "hostiletracking",
+                "parameters": {
+                  "trackingRange": {"value": 100}
+                }
+              },
+              {
+                "title": "NPC Combat",
+                "type": "module",
+                "name": "npccombat",
+                "parameters": {}
+              }
+            ]
+          },
+          {
+            "title": "sequence",
+            "type": "composite",
+            "name": "sequence",
+            "parameters": {},
+            "children": [
+              {
+                "title": "entityConfigParameter",
+                "type": "action",
+                "name": "entityConfigParameter",
+                "parameters": {
+                  "default": {"value": false},
+                  "path": {"value": "moveLeft"}
+                },
+                "output": {
+                  "bool": "moveLeft"
+                }
+              },
+              {
+                "title": "hasFlag",
+                "type": "action",
+                "name": "hasFlag",
+                "parameters": {
+                  "name": {"key": "moveLeft"}
+                }
+              },
+              {
+                "title": "parallel",
+                "type": "composite",
+                "name": "parallel",
+                "parameters": {
+                  "fail": {"value": -1},
+                  "success": {"value": -1}
+                },
+                "children": [
+                  {
+                    "title": "openDoors",
+                    "type": "action",
+                    "name": "openDoors",
+                    "parameters": {
+                      "direction": {"value": -1},
+                      "distance": {"value": 1.5}
+                    }
+                  },
+                  {
+                    "title": "controlMove",
+                    "type": "action",
+                    "name": "controlMove",
+                    "parameters": {
+                      "direction": {"value": -1},
+                      "run": {"value": false}
+                    }
+                  },
+                  {
+                    "title": "runner",
+                    "type": "action",
+                    "name": "runner",
+                    "parameters": {}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "runner",
+            "type": "action",
+            "name": "runner",
+            "parameters": {}
+          }
+        ]
+      }
+    ]
+  }
+}

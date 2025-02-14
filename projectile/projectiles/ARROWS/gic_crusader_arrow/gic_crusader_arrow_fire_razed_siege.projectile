@@ -1,0 +1,46 @@
+{
+  "projectileName" : "gic_crusader_arrow_fire_razed_siege",
+  "physics" : "gic_arrow_razed_siege",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+	
+	
+  ],
+  
+  "actionOnReap" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_crusader_arrow_fire_razed_siege2",
+      "inheritDamageFactor" : 1,
+	  "inheritSpeedFactor" : 2.0,
+	  "fuzzAngle" : 0,
+      "angleAdjust" : 0
+    }
+	
+  ],
+  
+  "image" : "gic_crusader_arrow_fire_razed_siege.png",
+  "animationCycle" : 1.1,
+  "frameNumber" : 11,
+  "damageKind" : "ews_smallarmsthermal",
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 1.0,
+  "pointLight" : false,
+  "power" : 24.0,
+  "knockback" : 0,
+  "fullbright" : true,
+  "lightColor" : [126, 71, 37],
+  "statusEffects" : [
+    "burning", "gic_oilfire_primer"
+  ],
+  "hydrophobic" : true,
+  "acceleration" : 50,
+  "knockbackDirectional" : true,
+  "speed" : 1
+}

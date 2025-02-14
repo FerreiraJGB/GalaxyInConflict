@@ -1,0 +1,49 @@
+{
+  "projectileName" : "gic_180mm_flak_ultrasheriff_stage1",
+  "bounces" : 0,
+  "image" : "gic_180mm_flak_ultrasheriff_stage1.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_tankmuzzle/gic_tankmuzzleknockback_180mm_ultrasheriff.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_tankmuzzle/gic_tankmuzzleknockback_180mm_ultrasheriff.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_tankmuzzle/gic_tankmuzzleknockback_180mm_ultrasheriff.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_tankmuzzle/gic_tankmuzzleknockback_180mm_ultrasheriff.config"
+    },
+     {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/gun/gic_highfleet_shell_out_big_01.wav", "/sfx/gun/gic_highfleet_shell_out_big_02.wav", "/sfx/gun/gic_highfleet_shell_out_big_03.wav"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_180mm_flak_ultrasheriff_stage2",
+	  "directional" : true
+    }
+  ],
+  "power" : 390, //390
+  "damageKind" : "ews_explosive",
+
+  "maxSpeed" : 0,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0,
+  "timeToLive" : 0.01,
+  "physics" : "laser"
+}

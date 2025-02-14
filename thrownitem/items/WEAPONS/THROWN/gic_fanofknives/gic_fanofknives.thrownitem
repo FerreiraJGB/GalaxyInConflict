@@ -1,0 +1,36 @@
+{
+  "itemName" : "gic_fanofknives",
+  "price" : 100,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_fanofknivesicon.png",
+  "image" : "gic_fanofknives.png",
+  "shortdescription" : "Fan of Knives",
+  "description" : "''Another day, your truth will come
+You're gonna pay for what you've- pay for what you've done
+You'll tell them, give me back what's mine
+Give me back what's mine.''
+
+^orange;Knives deal HEAVY BLEED and MELEE DMG.^reset;",
+  "tooltipKind" : "gic_largebase_ammogun",
+  "ammoUsage" : 1,
+  "maxStack" : 32,
+  "edgeTrigger" : true,
+  "windupTime" : 0.15,
+  "cooldown" : 0.15,
+  "elementalType" : "ews_melee",
+  "projectileType" : "gic_magicshot_knife_fanofknives_7pattern",
+  "projectileConfig" : {
+
+    "speed" : 0.0,
+    "power" : 5.0,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/melee/gic_bloodborne_swing-throw.wav" ]
+      }
+    ]
+  }
+}

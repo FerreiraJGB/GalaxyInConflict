@@ -1,0 +1,38 @@
+{
+  "projectileName" : "gic_remoteexplosive",
+  "physics" : "gic_grenadenormal",
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "timeToLive" : 9999,
+  "speed" : 10,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [0, 0, 0],
+  "image" : "gic_remoteexplosive.png",
+  "frameNumber" : 1,
+  //"actionOnCollide" : [
+    //{
+      //"action" : "sound",
+      //"options" : [
+        //"/sfx/grenade/gic_anm14_bounce_01.ogg"
+      //]
+    //}
+  //],
+  "actionOnReap" : [
+	{
+		"action" : "projectile",
+		"type" : "gic_uxo_artillery",
+		"inheritDamageFactor" : 1.0,
+		"config" : {
+			"timeToLive" : 0
+		}
+	}
+  ],
+  
+  "scripts" : [ "/projectiles/activeitems/remotegrenade/remotegrenade.lua" ],
+  
+  "power" : 60,
+  "damageKind" : "noDamage",
+  "damageType" : "noDamage",
+  "damagePoly" : [ [-4.5, 0], [-3, -3], [0, -4.5], [3, -3], [4.5, 0], [3, 3], [0, 4.5], [-3, 3] ]
+}

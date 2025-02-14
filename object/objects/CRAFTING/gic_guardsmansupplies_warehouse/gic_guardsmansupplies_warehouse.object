@@ -1,0 +1,341 @@
+{
+  "objectName" : "gic_guardsmansupplies_warehouse",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 160,
+  "description" : "[Hello.]",
+  "shortdescription" : "Guardsman Supplies",
+  "race" : "human",
+  "health" : 2,
+  
+  "breakDropOptions" : [],
+  
+//  "scriptDelta" : 20,
+
+//  "chatRadius" : 5,
+//  "chatCooldown" : 25,
+//  "chatOptions" : [
+//    "Please state your concern.",
+//	"Yes?",
+//	"What can I do for you, sir?"
+//  ],  
+  
+  "scripts" : [ "/objects/crafting/gic_upgradeablecraftingobject.lua" ],  //, "/objects/missions/gic_esther_chapter_1_springfield_bartender/gic_springfield_talk.lua"
+  
+  "animation" : "gic_guardsmansupplies_warehouse.animation",
+  "animationPosition" : [40, 28],  
+  
+  "placementImage" : "gic_guardsmansupplies_warehouse.png:default.default",
+  "placementImagePosition" : [-16, 0],      
+  
+  
+  
+  "startingUpgradeStage" : 1,
+  "maxUpgradeStage" : 4,
+
+  "upgradeStages" : [
+  
+  //--- --- ---- FUNDING LEVEL 0
+  
+    {
+      "animationState" : "gic_guardsmansupplies_warehouse0",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_guardsmansupplies_warehouse_icon.png",
+        "placementImage" : "gic_guardsmansupplies_warehouse_tier0.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "[Hello!]",
+        "shortdescription" : "^orange;Guardsman Supplies | FUNDING: Tier 0^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_guardsmansupplies_warehouse.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Guardsman Supplies",
+            "subtitle" : "FUNDING: Tier 0",
+            "icon" : {
+              "file" : "/interface/crafting/gic_guardsmansupplies_warehouse.png"
+            }
+          }
+        },
+
+	"recipes" : [
+	
+	
+	
+	
+
+		
+		
+		
+		
+	],
+
+        "filter" : [ "gic_guardsmansupplies_warehouse" ],
+        "upgradeMaterials" : [
+          { "item" : "tungstenbar", "count" : 6 }
+        ]
+      },
+
+      "learnBlueprintsOnPickup" : [],
+
+      "upgradeSoundEffect" : "fanfare",
+      "upgradeParticleEffect" : "dust"
+    },
+
+
+// --- --- --- FUNDING LEVEL 1
+
+
+    {
+      "animationState" : "gic_guardsmansupplies_warehouse1",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_guardsmansupplies_warehouse_icon.png",
+        "placementImage" : "gic_guardsmansupplies_warehouse_tier1.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "[Hello!]",
+        "shortdescription" : "^orange;Guardsman Supplies | FUNDING: Tier 1^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_guardsmansupplies_warehouse.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Guardsman Supplies",
+            "subtitle" : "FUNDING: Tier 1",
+            "icon" : {
+              "file" : "/interface/crafting/gic_guardsmansupplies_warehouse.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+	
+
+		
+		
+		
+		
+	],
+	
+	
+        "filter" : [ "gic_guardsmansupplies_warehouse" ],
+        "upgradeMaterials" : [
+          { "item" : "tungstenbar", "count" : 6 }
+        ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    },
+	
+	
+// --- --- --- FUNDING LEVEL 2
+
+
+    {
+      "animationState" : "gic_guardsmansupplies_warehouse2",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_guardsmansupplies_warehouse_icon.png",
+        "placementImage" : "gic_guardsmansupplies_warehouse_tier1.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "[Hello!]",
+        "shortdescription" : "^orange;Guardsman Supplies | FUNDING: Tier 2^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_guardsmansupplies_warehouse.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Guardsman Supplies",
+            "subtitle" : "FUNDING: Tier 2",
+            "icon" : {
+              "file" : "/interface/crafting/gic_guardsmansupplies_warehouse.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+	
+		
+
+		
+		
+		
+		
+		
+		
+		
+	],
+	
+	
+        "filter" : [ "gic_guardsmansupplies_warehouse" ],
+        "upgradeMaterials" : [
+          { "item" : "tungstenbar", "count" : 6 }
+        ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    },
+	
+
+
+
+// --- --- --- FUNDING LEVEL 3
+
+
+    {
+      "animationState" : "gic_guardsmansupplies_warehouse3",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_guardsmansupplies_warehouse_icon.png",
+        "placementImage" : "gic_guardsmansupplies_warehouse_tier1.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "[Hello!]",
+        "shortdescription" : "^orange;Guardsman Supplies | FUNDING: Tier 3^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_guardsmansupplies_warehouse.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Guardsman Supplies",
+            "subtitle" : "FUNDING: Tier 3",
+            "icon" : {
+              "file" : "/interface/crafting/gic_guardsmansupplies_warehouse.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+	
+
+		
+		
+		
+		
+		
+		
+	],
+	
+	
+        "filter" : [ "gic_guardsmansupplies_warehouse" ],
+        "upgradeMaterials" : [
+          { "item" : "tungstenbar", "count" : 6 }
+        ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    },
+	
+	
+// --- --- --- FUNDING LEVEL 4
+
+
+    {
+      "animationState" : "gic_guardsmansupplies_warehouse4",
+      
+      "itemSpawnParameters" : {
+        "inventoryIcon" : "gic_guardsmansupplies_warehouse_icon.png",
+        "placementImage" : "gic_guardsmansupplies_warehouse_tier1.png:default.default",
+        "placementImagePosition" : [-16, 0],    
+
+        "description" : "[Hello!]",
+        "shortdescription" : "^orange;Guardsman Supplies | FUNDING: Tier 4^white;"
+      },
+
+      "interactData" : {
+        "config" : "/interface/windowconfig/gic_guardsmansupplies_warehouse.config",
+        "paneLayoutOverride" : {
+          "windowtitle" : {
+            "title" : "Guardsman Supplies",
+            "subtitle" : "FUNDING: Tier 4",
+            "icon" : {
+              "file" : "/interface/crafting/gic_guardsmansupplies_warehouse.png"
+            }
+          }
+        },
+		
+		
+	"recipes" : [
+
+		
+		
+		
+		
+		
+		
+	],
+	
+	
+        "filter" : [ "gic_guardsmansupplies_warehouse" ],
+        "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+      },
+
+      "learnBlueprintsOnPickup" : []
+    }
+	
+	
+	
+  ],  
+  
+  
+ // --- --- --- 
+  
+  
+  
+  
+  
+  
+  
+  //gic_guardsmansupplies_warehouse_weapons
+  //gic_guardsmansupplies_warehouse_equipment
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  "inventoryIcon" : "gic_guardsmansupplies_warehouse.png:default.1",
+  "orientations" : [
+    {
+      "dualImage" : "gic_guardsmansupplies_warehouse.png:<color>.<frame>",
+      "imagePosition" : [-16, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+}

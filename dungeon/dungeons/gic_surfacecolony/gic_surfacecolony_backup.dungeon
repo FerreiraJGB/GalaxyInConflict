@@ -1,0 +1,96 @@
+{
+  "metadata" : {
+    "name" : "gic_surfacecolony_backup",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : ["gic_surfacecolony_officecapital" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 24,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  //HALLWAYS
+	
+    {
+      "name" : "gic_surfacecolony_undercolony_surfacecheckpoint",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_surfacecheckpoint" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_undercolony_surfacecheckpoint.json" ] ],
+      "chance" : 1
+    },
+    {
+      "name" : "gic_surfacecolony_undercolony_servicehallway",
+      "rules" : [
+        [ "maxSpawnCount", [4] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_undercolony_servicehallway" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_undercolony_servicehallway.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_genericbuilding2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_genericbuilding2" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_genericbuilding2.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_surfacecolony_genericbuilding3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_genericbuilding3.json" ] ],
+      "chance" : 1
+    },
+	
+
+	
+	
+
+	
+
+	
+
+
+  
+  
+  //ANCHORS
+    {
+      "name" : "gic_surfacecolony_officecapital",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_surfacecolony_officecapital", "gic_surfacecolony_leftwall", "gic_surfacecolony_rightwall" ] ]
+      ],
+      "def" : [ "tmx", "gic_surfacecolony_officecapital.json" ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_surfacecolony_leftwall",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_leftwall.json" ] ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_surfacecolony_rightwall",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_surfacecolony_rightwall.json" ] ],
+      "chance" : 0
+    }
+  ]
+}

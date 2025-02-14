@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_cannonlaser_b",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_cannonlaser.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "fullbright" : true,
+  "power" : 500.0,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef",
+  "speed" : 50000,
+  "knockback" : 0,
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_laserimpact/gic_laserimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    }
+  ]
+}

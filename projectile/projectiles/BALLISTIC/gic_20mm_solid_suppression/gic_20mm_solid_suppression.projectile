@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_20mm_solid_suppression",
+  "image" : "gic_20mm_solid_suppression.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "damageType" : "IgnoresDef",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+   {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    }
+  ],
+  
+  "emitters" : [ "rocketsmoke", "rocketsmoke", "rocketsmoke" ],
+  "power" : 5.0,
+  
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot", "gic_fracture_injury" ],
+  
+  "speed" : 170,
+  "damageKind" : "ews_heavyarmsbullet"
+}

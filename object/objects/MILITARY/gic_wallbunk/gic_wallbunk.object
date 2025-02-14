@@ -1,0 +1,56 @@
+{
+  "objectName" : "gic_wallbunk",
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 125,
+  "description" : "A harsh military bunk for 2 people. No blankets or pillows. Just a cold, hard, mattress.",
+  "shortdescription" : "Military Wall Bunk",
+  "race" : "human",
+  "printable" : false,
+
+  "apexDescription" : "These beds are extremely space efficient being built into the walls but lack luxuries such as soft mattresses or blankets.",
+  "avianDescription" : "Hard and incredibly uncomfortable, as if I was sleeping on a sacrificial altar!",
+  "floranDescription" : "Floran doesn't feel like ssleeping anymore.",
+  "glitchDescription" : "Statement. Sleeping on this doesn't affect me an anyway.",
+  "humanDescription" : "A harsh bunk with nothing but a cold hard mattress to sleep on. This is what soldiers have to sleep on.",
+  "hylotlDescription" : "A militaristic and harsh bunk that has the bare minimum of what counts as a mattress. Almost like a prison bed.",
+  "novakidDescription" : "A hole in the wall with a tough mattress. Looks pretty darn uncomfortable if I do say so myself. Doesn't even have a blanket!",
+  
+  "avaliDescription" : "A bare bunk bed. Nothing a couple of augments couldn't make comfortable.",
+  "avikanDescription" : "A barely comfortable bunk. I'd rather sleep on sand than this.",
+  "trinkDescription" : "A bed with a hard mattress. Not relevant to me.",
+  "drodenDescription" : "Bed detected. Non-relevant object.",
+  "aegiDescription" : "A harsh wall bunk. These mattresses feel like hard rock.",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : true,
+  "sitOrientation" : "lay",
+  "sitAngle" : 90,
+  "sitEmote" : "sleep",
+  "sitStatusEffects" : [
+    "gic_bed4"
+  ],
+  "sitEffectEmitters" : [ "sleepbubbles" ],
+
+  "inventoryIcon" : "gic_wallbunk.png",
+  "orientations" : [
+
+    {
+      "image" : "gic_wallbunk.png:<color>",
+      "flipImages" : true,
+      "imagePosition" : [-24, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["background"],
+      "direction" : "left",
+      "sitPosition" : [0, 15]
+    },
+    {
+      "image" : "gic_wallbunk.png:<color>",
+      "imagePosition" : [-24, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["background"],
+      "direction" : "right",
+      "sitPosition" : [-8, 15]
+    }
+  ]
+}

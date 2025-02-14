@@ -1,0 +1,26 @@
+{
+  "projectileName" : "gic_fire_razed",
+  "physics" : "firespread",
+  "bounces" : -1,
+  "timeToLive" : 7,
+  "speed" : 30,
+  "image" : "gic_fire_razed.png",
+  "animationCycle" : 0.55,
+  "lightColor" : [235, 126, 2],
+  "frameNumber" : 4,
+  "onlyHitTerrain" : true,
+  "fullbright" : true,
+  "emitters" : [],
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "hydrophobic" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smoke/smoke.config"
+    }
+  ],
+  "damageKind" : "fire",
+  "damageKindImage" : "/interface/statuses/fire.png",
+  "statusEffects" : [
+  ]
+}

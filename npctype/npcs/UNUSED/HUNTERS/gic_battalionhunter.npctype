@@ -1,0 +1,104 @@
+{
+  "type" : "gic_battalionhunter",
+  "baseType" : "gic_soldierbase",
+
+  "persistent" : true,
+  "level" : 1,
+  "movementParameters" : {
+    "runSpeed" : 20,
+    "walkSpeed" : 10,
+    "airFriction" : 0.2,
+    "airJumpProfile" : {
+      "jumpSpeed" : 80.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.2
+    }
+  },
+	
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/HUNTERS/gic_hunter_combat.config:attack",
+      "reattack" : "/dialog/HUNTERS/gic_hunter_combat.config:reattack",
+      "killedTarget" : "/dialog/HUNTERS/gic_hunter_combat.config:killedTarget",
+      "lostTarget" : "/dialog/HUNTERS/gic_hunter_combat.config:lostTarget",
+      "outOfSight" : "/dialog/HUNTERS/gic_hunter_combat.config:outOfSight",
+      "cheerOn" : "/dialog/HUNTERS/gic_hunter_combat.config:cheerOn",
+      "cantReach" : "/dialog/HUNTERS/gic_hunter_combat.config:cantReach"
+    },
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "wander"]
+      ]
+    }
+	
+  },
+  
+  "damageTeam" : 2,
+
+  "dropPools" : [ "valuableTreasure" ],
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "chest" : [ { "name" : "gic_rangerchest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "gic_rangerpants", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : ["gic_lust_scar_17"]
+          }
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 20,
+    "statusEffects" : [ ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 200.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 5
+      },
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.2
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+    }
+  }
+}

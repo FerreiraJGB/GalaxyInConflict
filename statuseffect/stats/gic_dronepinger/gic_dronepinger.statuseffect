@@ -1,0 +1,69 @@
+{
+  "name" : "gic_dronepinger",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.4,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^red;Radar Pinged^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+	},
+	"missChance" : 0,
+	"offset" : [0.0,2.0], //suggested to keep the x value 0 so the switch directions float looks more natural.
+	//"xOffset" : 0.0,
+	//"yOffset" : 0.4,
+	"muzzleOffset" : [0.0,3.0], //suggested to keep the x value 0 so the switch directions float looks more natural.
+	//"rotationOffset" : [-0.4,0.3], 
+	//"xOffsetRotationPoint" : 0.0,
+	//"yOffsetRotationPoint" : 0.4,
+	"trackingDistance" : 70,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"inaccuracyAngle" : 2, //inaccuracy angle for both above and below "0"
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 2.0,
+	"maxDriftOffset" : 100, //if this threshhold is EVER hit, the drift will stop (for drift anim. not much use iirc, usually stops on own)
+	
+	//new configs
+	"yHoverIntHeight" : 0.5, //the hover anim's inital starting height
+	"yHoverMulti" : 0.020, //how much the drone hovers up and down per tick (multiplied by the delta); recommended somewhere near 0.05
+	"xDriftMultiplier" : 0, //how much additional floaty movement correction for x char movement. multiplier
+	"yDriftMultiplier" : 0, //how much additional floaty movement correction for y char movement. multiplier
+	
+	"xNeededMultiplier" : 0.9, //direct multiplier of how much movement correction is required for x axis. recommended no lower than 0.9
+	"yNeededMultiplier" : 0.9, //direct multiplier of how much movement correction is required for y axis. recommended no lower than 0.9
+	
+	"driftMultiplier" : 15, //how much the drone will float left/right when turning directions
+	"driftFloatMultiplier" : 0.9 //drift multiplier for the movement correction. recommended somewhere near 0.9. If value is >= 1 and (y)xDriftMultiplier is 0, float gets real wack. would not suggest.
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_dronepinger.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_dronepinger.animation",
+ 
+  "label" : "drone pinger tmp",
+  "icon" : "/interface/statuses/gic_suppressed.png"
+}

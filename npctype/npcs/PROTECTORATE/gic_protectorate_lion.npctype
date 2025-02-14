@@ -1,0 +1,147 @@
+{
+  "type" : "gic_protectorate_lion",
+  "baseType" : "gic_protectorate_base",
+
+  "dropPools" : [ "basicTreasure" ],
+//  "identity" : {    "gender" : "male"  },  
+  
+	 "damageTeam" : 13,  
+  
+  
+  "movementParameters" : {
+    "runSpeed" : 20,
+    "walkSpeed" : 10
+  },  
+  
+  
+  
+  
+  "scriptConfig" : {
+//    "behavior" : "gic_combat_default",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "wander", { "timeRange" : [7,20]}]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:attack",
+      "reattack" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:reattack",
+      "killedTarget" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:killedTarget",
+      "lostTarget" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:lostTarget",
+      "outOfSight" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:outOfSight",
+      "cheerOn" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:cheerOn",
+      "cantReach" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+  
+          {
+            "head" : [ { "name" : "gic_huntermaskhead", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "protectoratechest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "protectoratepants", "parameters" : { "colorIndex" : [0] }  } ],
+            "back" : [ { "name" : "raggedprotectoratecape", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+			  "gic_riot_stun_spear"
+			  ]
+          }
+		  
+		  
+		  
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 944.4444 //accounts for vanilla scaling of 0.9x health at tier 1. actually 850hp
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+		
+        "gic_bleeding_lightStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "gic_bleeding_mediumStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+	
+        "gic_bleeding_heavyStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+	
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_heavyarmsResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_armor_turretengineer_summon_legs",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "/projectiles/CORE_CODE/gic_null/gic_null.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 3,
+  "timeToLive" : 0,
+  "power" : 0,
+  "speed" : 0,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+     "offset": [1, 0],
+      "angle" : 90
+    },	
+	
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_asgmk9m_burst_autoturret",
+     "level" : 1,
+     "offset": [3, 0],
+     "arguments" : { "damageTeam" : 1, "damageTeamType" : "friendly" }
+    }
+
+  ]
+}

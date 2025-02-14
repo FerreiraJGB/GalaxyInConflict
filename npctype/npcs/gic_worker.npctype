@@ -1,0 +1,74 @@
+{
+  "type" : "gic_worker",
+  "baseType" : "villager",
+  
+
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      "greetingChance" : 0
+    },
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+            "A faction isn't without its workers!",
+            "The workers are the real backbone of any successful faction.",
+            "We're here to keep everything running.",
+		    "We work and build. That's it",
+			"Nothing else to see here.",
+			"*grumble*",
+			"We're the normal kind of workers. You can't just hire 100 of us to build something and then immediately fire us afterwards!",
+			"For this place, I think it's got pretty good work conditions.",
+			"I'd say that this place is still 100x safer than a Letheia Mining Base.",
+			"Construction can be slow at times.",
+			"I'm a noncombatant, so any honorable soldier wouldn't shoot me.",
+			"Man, beats working in a foundry, that's for sure!",
+			"Starburner 1 is my favourite game.",
+			"I've heard rumors of automated spaceships still attacking targets from a war that ended long ago.",
+			"I'm no soldier, but you should use your surroundings to your advantage. Closed doors make for great cover while crouching can give you a lower profile.",
+			"From my experience, rushing a soldier with a sword is one of the worst things you could do."
+          ]
+        },
+        "apex" : {
+          "default" : [
+            "This foundry is tough to live in, but it beats being under Miniknog rule.",
+            "Big Ape will not find me here. I hope.",
+            "This planet is even hotter for those of us with fur."
+          ]
+        },
+        "avian" : {
+          "default" : [
+            "I keep singeing my feathers working in this place...",
+            "This heat! I'm pretty parched.",
+            "Only the hardiest workers can stand working on a planet like this."
+          ]
+        },
+        "glitch" : {
+          "default" : [
+            "Exhausted. Foundry work is hard work!",
+            "Fatigued. I have been working hard here. I'm nearly reaching melting point!",
+            "Eager. A Glitch's work is never done!",
+            "Tired. My shift isn't over yet!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+            ],
+            "chest" : [
+              { "name" : "foundrychest", "parameters" : { "colorIndex" : 0 } }
+            ],
+            "legs" : [
+              { "name" : "foundrylegs", "parameters" : { "colorIndex" : 0 } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

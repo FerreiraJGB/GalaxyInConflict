@@ -1,0 +1,35 @@
+{
+  "name" : "gic_beverage_joonjadetea_pinger",
+  "blockingStat" : "gic_beverage_joonjadetea_pingerStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_joonjadetea", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_joonjadetea", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 60,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 4.0
+  },
+  "defaultDuration" : 1800,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_beverage_joonjadetea_pinger.animation",
+   
+  "label" : "Jo'on Jade Tea - Enemies killed within approximately 60 blocks of the user have a 25% chance to drop additional microcredits.",
+  "icon" : "/interface/statuses/gic_beverage_joonjadetea.png"
+   
+}

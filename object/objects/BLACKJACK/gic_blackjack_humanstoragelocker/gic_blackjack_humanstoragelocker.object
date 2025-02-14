@@ -1,0 +1,33 @@
+{
+  "objectName" : "gic_blackjack_humanstoragelocker",
+  "colonyTags" : ["human","storage"],
+  "rarity" : "Common",
+  "category" : "storage",
+  "price" : 180,
+  "printable" : false,
+  "objectType" : "container",
+
+  "description" : "[Blackjack Storage Locker]",
+  "shortdescription" : "Blackjack Storage Locker",
+  "race" : "human",
+  "health" : 1.5,
+			"tooltipKind" : "gic_largebase",
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_blackjack_humanstoragelocker.png:<color>.<key>",
+      "imagePosition" : [-16, -8],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/gunchest_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/gunchest_close.ogg" ],
+  "slotCount" : 48,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "openFrameIndex" : 4,
+  "autoCloseCooldown" : 3600
+}

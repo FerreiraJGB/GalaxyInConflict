@@ -1,0 +1,44 @@
+{
+  "objectName" : "gic_whiteflag_teleporter",
+  "colonyTags" : ["human"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "teleporter",
+  "category" : "teleportMarker",
+  "price" : 70,
+  "radioMessagesOnPickup" : [ "pickupflag" ],
+  
+  "description" : "Use ^green;[E]^white; to bookmark a teleportation location.",
+  "shortdescription" : "White Flag [Teleporter]",
+  "race" : "human",
+
+  "interactAction" : "OpenTeleportDialog",
+  "interactData" : "/interface/warping/destinationonly.config",
+
+  "inventoryIcon" : "gic_whiteflag_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_whiteflag.png:<color>.<frame>",
+      "flipImages" : true,
+      "direction" : "left",
+      "imagePosition" : [-8, 0],
+      "frames" : 6,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "gic_whiteflag.png:<color>.<frame>",
+      "direction" : "right",
+      "imagePosition" : [-8, 0],
+      "frames" : 6,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+
+  //"soundEffect" : "/sfx/objects/flag_flap_loop.ogg"
+}

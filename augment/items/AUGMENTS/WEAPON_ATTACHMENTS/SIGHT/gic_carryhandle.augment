@@ -1,0 +1,41 @@
+{
+  "itemName" : "gic_carryhandle",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Sight Attachment^white;",
+  "inventoryIcon" : "gic_carryhandle_icon.png",
+  "description" : "Add a carry handle to your firearm, making it quicker to move with.
+  
+^green;+20% Movement Speed.^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  "shortdescription" : "Carry Handle Kit",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "sight", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_carryhandle", //name of attachment
+	"attachmentTag" : ["gic_sight","gic_carryhandle"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/sight/gic_carryhandle.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_carryhandle", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "statusEffect",
+		
+		"statusEffects" : ["gic_ews_attachment_carryhandle"] //can contain any number of status effects; duplicate status effects won't cause any issues, whether if duplicate effect comes from other attachment or not
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1.0,1.0,1.0,1.0,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1.0,1,1.0] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

@@ -1,0 +1,33 @@
+{
+  "projectileName" : "gic_trait_altarfield_naturaleye",
+  "image" : "gic_trait_altarfield.png",
+  "animationCycle" : 0.2,
+  "frameNumber" : 6,
+  "speed" : 0,
+  "lightColor" : [0, 0, 0],
+  "pointLight" : true,
+  "statusEffects" : [ "gic_undodgeable", "gic_applytrait_naturaleye", "gic_pinged_yellow" ],
+  "damagePoly" : [ [-74, 0], [-56, -56], [0, -74], [56, -56], [74, 0], [56, 56], [0, 74], [-56, 56] ],
+  "animationLoops" : false,
+  
+  "actionOnReap" : [
+    {
+      "action" : "item",
+      "name" : "gic_trait_messenger_naturaleye",
+      "count" : 1
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/darkestdungeon/gic_darkestdungeon_virtue.wav"
+      ]
+    }
+  ],
+  
+  "piercing" : true,
+  "bounces" : -1,
+  "flippable" : true,
+  "power" : 0,
+  "damageKind" : "hidden",
+  "knockback" : 0
+}

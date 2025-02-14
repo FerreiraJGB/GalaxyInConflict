@@ -1,0 +1,73 @@
+{
+  "type" : "gic_unitan_researcher",
+  "baseType" : "gic_unitan_base",
+
+  "dropPools" : [ "gic_unitancitizenTreasure" ],
+  "damageTeam" : 16,
+  "scriptConfig" : {
+
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:attack",
+      "reattack" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:reattack",
+      "killedTarget" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_cocky.config:killedTarget",
+      "lostTarget" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:lostTarget",
+      "outOfSight" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:outOfSight",
+      "cheerOn" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:cheerOn",
+      "cantReach" : "/dialog/UNITED_SYSTEMS/gic_unitan_combat_russian.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [
+              { "name" : "gic_uachhead", "parameters" : { "colorIndex" : 0 } },
+			  { "name" : "gic_syntheticcatearshead", "parameters" : { "colorIndex" : 0 } },
+			  { "name" : "gic_bandithood_scarf", "parameters" : { "colorIndex" : 0 } },
+			  { "name" : "", "parameters" : { "colorIndex" : 0 } }
+            ],
+            "chest" : [
+              { "name" : "scientistchest", "parameters" : { "colorIndex" : 0 } }
+            ],
+            "legs" : [
+              { "name" : "scientistlegs", "parameters" : { "colorIndex" : 0 } }
+            ],
+            "primary" : [ "gic_unitan_psychicsummon" ],
+            "sheathedprimary" : ["gic_emcp19"]
+          }
+    ]  ]  ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 0.0
+      },
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

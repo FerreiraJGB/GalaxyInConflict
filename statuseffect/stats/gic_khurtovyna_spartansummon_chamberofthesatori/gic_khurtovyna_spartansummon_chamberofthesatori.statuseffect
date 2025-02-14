@@ -1,0 +1,42 @@
+{
+  "name" : "gic_khurtovyna_spartansummon_chamberofthesatori",
+  "effectConfig" : {
+	"projectileType" : "gic_summon_reinforcement_spartan_chamberofthesatori_messenger", //does not accept arrays
+	"projectileTypeMiss" : "gic_summon_reinforcement_spartan_chamberofthesatori_messenger", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	"missChance" : 10,
+	
+	"offset" : [-1.5,1.0],
+	
+	"muzzleOffset" : [-3.5, 0.6],
+	
+	"muzzleOffset2" : [2.5, 0.5],
+	
+	"trackingDistance" : 200,
+	"trackingAngle" : 181, //181
+	"fireRate" : 30.0,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 0,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 30.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_khurtovyna_spartansummon_chamberofthesatori.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_khurtovyna_spartansummon_chamberofthesatori.animation",
+ 
+  "label" : "Chamber of the Satori [Republic Reinforcements] - Every 60s when in combat, summon 2x Infantry to assist. Infantry last indefinitely.",
+  "icon" : "/interface/statuses/gic_khurtovyna_spartansummon_chamberofthesatori.png"
+}

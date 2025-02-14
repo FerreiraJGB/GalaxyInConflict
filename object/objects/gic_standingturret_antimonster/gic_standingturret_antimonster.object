@@ -1,0 +1,198 @@
+{
+  "objectName" : "gic_standingturret_antimonster",
+  "colonyTags" : ["wired","combat"],
+  "printable" : false,
+  "rarity" : "Legendary",
+  "objectType" : "container",
+  "price" : 150,
+  "category" : "^#F4C315;Tuned Defense System",
+  "maxStack" : 2,
+  "slotCount" : 0,
+  "uiConfig" : "/interface/turret/standingturret.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600,
+  "tooltipKind" : "gic_largebase",
+  
+"description" : "Same as the default Turret Stand, but with specific parameters. ^red;Once placed, it cannot be picked back up without breaking.^white;
+^green;Scan Range: 200 | Firing Range: 190 | Aim Angle: 85 | Armament: MG2750 | Energy: 100 | Damage: 78 (fixed)
+^yellow;Targets: [ALL] [MONSTERS] (This includes passive or neutral monster entities)
+^red;Will [NOT] Target [NPCs] or [PLAYERs] (will ignore NPCs and Players regardless of affiliation)",
+
+  "shortdescription" : "MG2750 Defense Turret - [Anti-Monster]",
+  "subtitle" : "Tuned Base Defense",
+  "race" : "generic",
+
+  "breakDropOptions" : [
+    [ [ "siliconboard", 3, { } ], [ "wire", 3, { } ] ]
+  ],
+
+  "apexDescription" : "Always watchful.",
+  "avianDescription" : "The monsters don't stand a chance, unless they can fly.",
+  "floranDescription" : "Effective againssst living thingsss.",
+  "glitchDescription" : "Cautious. Must not disrupt my brother in his vigilance.",
+  "humanDescription" : "An automated security system.",
+  "hylotlDescription" : "Looks like a turret of some sort.",
+  "novakidDescription" : "Looks like this thing sure could do some damage!",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "turretstand.png:bottom",
+
+      "imagePosition" : [-16, 0],
+      "imageLayers" : [ { "image" : "turretstand.png:bottom" }, { "image" : "turretgun.png:dead", "position": [4, 12] } ],
+      "spaces" : [
+        [-2, 0], [-1, 0], [0, 0], [1, 0],
+        [-2, 1], [-1, 1], [0, 1], [1, 1]
+      ],
+      "anchors" : [ "bottom" ],
+
+      "animationParts" : {
+        "gun" : "turretgun.png",
+        "stand" : "turretstand.png:bottom",
+        "energy" : "energy.png"
+      },
+      "animationPosition" : [0, 16],
+      "animationCenterLine" : 0,
+
+      "baseOffset" : [0, 2],
+      "energyBarOffset" : [0.375, -1.5],
+      "verticalScaling" : false
+    },
+    {
+      "dualImage" : "turretstand.png:top",
+
+      "imagePosition" : [-16, -24],
+      "imageLayers" : [ { "image" : "turretstand.png:top" }, { "image" : "turretgun.png:dead", "position": [4, 12] } ],
+      "spaces" : [
+        [-2, -1], [-1, -1], [0, -1], [1, -1],
+        [-2, 0], [-1, 0], [0, 0], [1, 0]
+      ],
+      "anchors" : [ "top" ],
+
+      "animationParts" : {
+        "gun" : "turretgun.png",
+        "stand" : "turretstand.png:top",
+        "energy" : "energy.png"
+      },
+      "animationPosition" : [0, -8],
+      "animationCenterLine" : 0,
+
+      "baseOffset" : [0, -1],
+      "energyBarOffset" : [0.375, 1.375],
+      "verticalScaling" : false
+    },
+    {
+      "image" : "turretstand.png:left",
+
+      "imagePosition" : [0, 0],
+      "imageLayers" : [ { "image" : "turretstand.png:left" }, { "image" : "turretgun.png:dead", "position": [4, 12] } ],
+      "spaces" : [
+        [0, 0], [1, 0],
+        [0, 1], [1, 1],
+        [0, 2], [1, 2]
+      ],
+      "anchors" : [ "left" ],
+      "direction" : "right",
+
+      "animationParts" : {
+        "gun" : "turretgun.png",
+        "stand" : "turretstand.png:left",
+        "energy" : "energy.png"
+      },
+      "animationPosition" : [16, 16],
+
+      "baseOffset" : [2, 2],
+      "energyBarOffset" : [-1.5, -0.625],
+      "verticalScaling" : true
+    },
+    {
+      "image" : "turretstand.png:left",
+
+      "imagePosition" : [-24, 0],
+      "spaces" : [
+        [-1, 0], [0, 0],
+        [-1, 1], [0, 1],
+        [-1, 2], [0, 2]
+      ],
+      "anchors" : [ "right" ],
+      "direction" : "left",
+
+      "imageLayers" : [ { "image" : "turretstand.png:left" }, { "image" : "turretgun.png:dead", "position": [4, 12] } ],
+      "flipImages" : true,
+
+      "animationParts" : {
+        "gun" : "turretgun.png",
+        "stand" : "turretstand.png:left",
+        "energy" : "energy.png"
+      },
+      "animationPosition" : [-10, 16],
+
+      "baseOffset" : [-1, 2],
+      "energyBarOffset" : [-1.5, -0.625],
+      "verticalScaling" : true
+    }
+  ],
+
+  "objectWidth" : 4,
+
+  "animation" : "gic_standingturret_antimonster.animation",
+
+  "scripts" : [
+    "/objects/gic_standingturret_antimonster/gic_standingturret_antimonster.lua",
+    "/scripts/npcToyObject.lua",
+    "/scripts/stateMachine.lua",
+    "/scripts/util.lua",
+    "/scripts/vec2.lua"
+  ],
+
+  "damageTeam" : {
+    "team" : 0,
+    "type" : "indiscriminate"
+  },
+
+  "scriptDelta" : 5,
+
+  "outputNodes" : [ [0, 0] ],
+  "inputNodes" : [ [0, 1] ],
+
+  "rotationSpeed" : 80, //25
+
+  "tipOffset" : [2.5, 0],
+  "offAngle" : -30,
+
+  "scanInterval" : 6,
+  "scanAngle" : 30,
+  "scanRange" : 200,
+
+  "targetQueryRange" : 200,
+  "targetMinRange" : 2.5,
+  "targetMaxRange" : 190,
+  "targetAngleRange" : 85,
+
+  "maxFireAngle" : 6,
+
+  "energyUsage" : 1,
+  "power" : 97.0,
+  "fireTime" : 0.025,
+
+  "maxEnergy" : 100,
+  "energyRegen" : 25,
+  "energyRegenBlock" : 1.0,
+
+  "npcToy" : {
+    "influence" : [
+      "turret"
+    ],
+    "defaultReactions" : {
+      "turret" : [
+        [1.0, "pressbutton"],
+        [1.0, "oh"],
+        [1.0, "laugh"]
+      ]
+    },
+    "preciseStandPositionLeft" : [-1.0, 0.0],
+    "preciseStandPositionRight" : [1.0, 0.0],
+    "maxNpcs" : 1
+  }
+}

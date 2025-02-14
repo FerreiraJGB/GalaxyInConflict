@@ -1,0 +1,72 @@
+{
+  "itemName" : "gic_protectorate_hardlightbucklershield",
+  "fixedLevel" : false,
+  "price" : 0,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "^#D6DFFF;Parry Shield^white;",
+  
+  "description" : "-blank-
+^yellow;Antithetical Arts: 1.5 second perfect block time.^white;
+^yellow;Passivity, Parted: 5hp blocking power.^white;",
+  
+  
+  "shortdescription" : "Protectorate Hardlight Buckler Shield",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_protectorate_hardlightbucklershield.png:nearidle",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_protectorate_hardlightbucklershield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/statuseffects/powerup.ogg" ],
+      "perfectBlock" : [
+      "/sfx/block/gic_darksouls_parry1.ogg",
+      "/sfx/block/gic_darksouls_parry2.ogg"
+	  ], //shield_block_ice_perfect
+	  
+      "block" : [ "/sfx/statuseffects/stimuse.ogg" ],
+      "break" : [ "/sfx/interface/energy_out1.ogg" ]
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_bucklershield.lua"],
+
+  "minActiveTime" : 0.1,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 5,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.5,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 1.5,
+
+  "knockback" : 1,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

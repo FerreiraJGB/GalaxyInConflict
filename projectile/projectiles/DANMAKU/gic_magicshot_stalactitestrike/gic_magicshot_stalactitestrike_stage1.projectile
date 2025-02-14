@@ -1,0 +1,57 @@
+{
+  "projectileName" : "gic_magicshot_stalactitestrike_stage1",
+  "image" : "gic_magicshot_stalactitestrike_null.png",
+  "physics" : "laser",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 4.0,
+  "emitters" : [ ],
+  "actionOnReap" : [
+  
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_stalactitestrike_stage2",
+      "inheritDamageFactor" : 1
+    },
+	
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/touhou/gic_touhou_lazer00-15db.ogg"
+      ]
+    }
+	
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.5,
+      "action" : "projectile",
+      "type" : "gic_magicshot_stalactitestrike_warningshot",
+      "inheritDamageFactor" : 1
+    }
+],
+  
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

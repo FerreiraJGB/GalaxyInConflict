@@ -1,0 +1,150 @@
+{
+  "type" : "gic_abandonedcolonialprison_possessedguard",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 2,
+  "dropPools" : [ "gic_internalprisonguardTreasure" ],
+  
+  "movementParameters" : {
+    "walkSpeed" : 8,
+    "runSpeed" : 8
+  },
+
+  "scriptConfig" : {
+  
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 0.50,
+      "rangedWindupTime" : 0.01
+    },
+
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [10.0, "gic_roam"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/infected/gic_mindcontrolled_sane.config:attack",
+      "reattack" : "/dialog/infected/gic_mindcontrolled_sane.config:reattack",
+      "killedTarget" : "/dialog/infected/gic_mindcontrolled_sane.config:killedTarget",
+      "lostTarget" : "/dialog/infected/gic_mindcontrolled_sane.config:lostTarget",
+      "outOfSight" : "/dialog/infected/gic_mindcontrolled_sane.config:outOfSight",
+      "cheerOn" : "/dialog/infected/gic_mindcontrolled_sane.config:cheerOn",
+      "cantReach" : "/dialog/infected/gic_mindcontrolled_sane.config:cantReach"
+    },
+	
+	
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0.05,
+        "broadsword" : 0.45,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 0.6,
+        "shortsword" : 0.35,
+        "spear" : 0.55
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.02,
+        "broadsword" : 1.7,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 2.0,
+        "shortsword" : 1.0,
+        "spear" : 1.4
+      }
+    }
+	
+	
+  },
+  "items" : {
+    "override" : [
+      [1, [
+		  
+          {
+            "head" : [ { "name" : "gic_s6b710gp45_possessedhead" } ],
+            "chest" : [ { "name" : "gic_s6b702chest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "gic_iagplegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+              "gic_tyurma70_flashbang_riflegrenade_npc"
+            ]
+          },	
+		  
+          {
+            "head" : [ { "name" : "gic_s6b710gp45_possessedhead" } ],
+            "chest" : [ { "name" : "gic_wt1pcchest", "parameters" : { "colorIndex" : [3] } } ],
+            "legs" : [ { "name" : "gic_coollegs", "parameters" : { "colorIndex" : [3] } } ],
+            "primary" : [
+              "gic_vich919"
+            ]
+          },	
+
+          {
+            "head" : [ { "name" : "gic_s6b710gp45_possessedhead" } ],
+            "chest" : [ { "name" : "gic_s6b702chest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_cbrnsuitlegs", "parameters" : { "colorIndex" : [1] } } ],
+            "back" : [ { "name" : "gic_cbrnsuitback", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+			  "gic_6p41mg", "gic_tyurma70"
+            ]
+          }
+		  
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : -100.0
+      },
+
+      "ews_psychicResistance" : {
+        "baseValue" : -0.2
+      }
+	  
+    }
+  }
+}

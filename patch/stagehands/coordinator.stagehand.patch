@@ -1,0 +1,2881 @@
+
+[
+
+// 100 is good value for npcs, but 200 causes some issues with detection.
+//    "behaviorConfig" : {
+//	  "queryRange": 200,
+//	  "trackingRange": 200
+//    },
+
+//Vanilla value for sniper rifle
+//      "npcsniperrifle" : {
+//        "minRange" : 15,
+//        "maxRange" : 35,
+//        "forceMoveRange" : 50
+//      },
+
+
+//forcemoverange is apparently their actual range they can fire at. Source: fixed suicider range coordinator. 29/09/2022
+
+
+//Pistols
+
+
+//        "minRange" : 15,
+//        "maxRange" : 70,
+//        "forceMoveRange" : 60
+
+
+//Shotguns
+
+
+//        "minRange" : 25,
+//        "maxRange" : 70,
+//        "forceMoveRange" : 60
+
+
+//Rifles
+
+
+//        "minRange" : 25,
+//        "maxRange" : 120,
+//        "forceMoveRange" : 110
+
+
+//Sniper Rifles
+
+//        "minRange" : 45,
+//        "maxRange" : 130,
+//        "forceMoveRange" : 120
+
+
+//Light Machineguns
+
+//        "minRange" : 45,
+//        "maxRange" : 130,
+//        "forceMoveRange" : 120
+
+//Rocket Launchers
+
+//        "minRange" : 65,
+//        "maxRange" : 140,
+//        "forceMoveRange" : 130
+
+
+
+//Melee
+
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_undercolony_yari_spear",
+    "value":
+	   {
+        "minRange" : 1.5,
+        "maxRange" : 5.0
+       }
+  },
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_riot_stun_spear_npc",
+    "value":
+	   {
+        "minRange" : 4.5,
+        "maxRange" : 6.0
+       }
+  },
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_floran_yari_spear_npc",
+    "value":
+	   {
+        "minRange" : 4.5,
+        "maxRange" : 6.0
+       }
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_floran_yari_spear_npc_razed",
+    "value":
+	   {
+        "minRange" : 4.5,
+        "maxRange" : 6.0
+       }
+  },
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_afflicted_crystalspear_npc",
+    "value":
+	   {
+        "minRange" : 5.5,
+        "maxRange" : 10.5 //6.5. Longer range is to make it more defensive.
+       }
+  },  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_whirligig_saw_npc",
+    "value":
+	   {
+        "minRange" : 4.5,
+        "maxRange" : 10.5 //6.5. Longer range is to make it more defensive.
+       }
+  },    
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_peasants_pike_npc",
+    "value":
+	   {
+        "minRange" : 8.5,
+        "maxRange" : 16.0
+       }
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_peasants_pike_npc_razed",
+    "value":
+	   {
+        "minRange" : 8.5,
+        "maxRange" : 16.0
+       }
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_soldiers_halberd_npc",
+    "value":
+	   {
+        "minRange" : 4.5,
+        "maxRange" : 6.0
+       }
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_peasants_spear_npc",
+    "value":
+	   {
+        "minRange" : 4.5,
+        "maxRange" : 6.0
+       }
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_peasants_spear_npc_razed",
+    "value":
+	   {
+        "minRange" : 5,
+        "maxRange" : 6.0
+       }
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/gic_bandit_spear_player",
+    "value":
+	   {
+        "minRange" : 4.5,
+        "maxRange" : 6.0
+       }
+  },
+
+
+
+
+
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_firebreathbottle",
+    "value":
+	
+	
+	   {
+        "minRange" : 2,
+        "maxRange" : 6,
+        "forceMoveRange" : 10
+	   }
+		
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_firebreathbottle_npc_graveyardfather",
+    "value":
+	
+	
+	   {
+        "minRange" : 2,
+        "maxRange" : 6,
+        "forceMoveRange" : 10
+	   }
+		
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Pistols
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_syberpds9",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_syberpds9_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_g218",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_g218_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_copsc_sidearm",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_copsc_sidearm_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_m20c",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },  
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_travelerchainpistol",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_travelerchainpistol_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_m2055",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_m2055_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_vich515",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_vich515_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_mp41r",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_mp41r_raider_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },  
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_vich919",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_vich919_special_spotter",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_kmk18",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_ashot",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_scumbagpistol",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_scumbagpistol_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_se14",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_kh44",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm45",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm45_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_emcp19",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_emcp19_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+
+
+
+//Shotguns
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_wbss2",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_wbss2_sawedoff",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_tyurma70",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_mfsg12",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+
+
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_metroshambler",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_polisduplet",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_transheya12",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm12",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_ed725f",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_federatsiya1850_special_spotter",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_federatsiya1850",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 70,
+        "forceMoveRange" : 60
+      }
+	    
+	
+	  
+  },
+  
+  
+  
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_nue_hankyu",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },    
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_floran_greatbow",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+   {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_floran_bow",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+   
+  
+  
+  
+  
+  
+  
+  
+//Rifles
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_frostmilitia_crossbow",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_frostmilitia_crossbow_npc",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_otherworld_harpoonlauncher",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_otherworld_heavystaff",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },    
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_wolfsoldier_crossbow",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_crusadercrossbow",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_erchius_shrike_armcannon",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_oldsynthguard_armcannon",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+
+
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_dcdr516",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_dcdr516_tactical_npc",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_dcdr516_overcharged_npc",
+    "value":
+	
+	
+	  {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_syberm4",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_syberm4_enforcer",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_mhp45",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_dcsrk54",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_dcsrk54s",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_ak202",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_ak202_darkness",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_ccr71",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_ppsh2600",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_nagashinomatchlock",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_steelguardpercussionrifle",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_steelguardpercussionrifle_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_steelguardpercussionpistol",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_crowspistol",
+    "value":
+	
+	
+	   {
+        "minRange" : 15,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_breechloader54",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_bastardrifle",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_npcbayonet_bastardrifle_3burst",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_uscm4",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_uscm4_republic_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  }, 
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_uscm4_sapper_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_rk6",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },   
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_bvar80",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_copsc_smg",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },   
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_copsc_smg_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  }, 
+  
+  
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_copsc_servicerifle",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  }, 
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_copsc_laserrifle",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },   
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_sova_gb",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_sova545",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_sova762",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },    
+  
+  
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm47",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_aks74u",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },    
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_aks74u_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },    
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_aks74u_onehanded_assaultguard_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },      
+
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm47a2_onehanded",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm47a2_special_spotter",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_rpk74m",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_ak74m_npc_bayonet",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_ak74m",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },   
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_ak74m_assaulttroop_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },    
+  
+   {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_ak74m_spetsnaz_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm47a2",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm47a2_servicerifle",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm47p",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_colonial_ilws",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm60",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm60_occasus",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm60_psychic",
+    "value":
+	
+	
+	   {
+        "minRange" : 25,
+        "maxRange" : 120,
+        "forceMoveRange" : 110
+      }
+	    
+	
+	  
+  },
+  
+  
+  
+  
+  
+  
+
+  
+//Sniper Rifles  
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usoa50",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usoa50_mousecommander",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+
+
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_m89_servicerifle",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_m89",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_m89_mousecommander",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_m89_npcbayonet_occasusthug",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_fcs243",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_fcp243",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_m100h",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_lacm1",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },  
+  
+   {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_lacm1_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  }, 
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_augmentyr_smg",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_augmentyr_smg_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },    
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_augmentyr_suppressor",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },     
+  
+  
+//Light Machineguns
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_stormstubber",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_mg2750",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_mg2750_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_lewisgun",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_lewisgun_heavy_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_m556cq",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_dshkm127108",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_dcmk51",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_dcmk51_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_6p41mg",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_fairyrotarygun",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_bohiya_daimyo",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_floran_multishotmusket_boss",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+	   }
+   },
+   
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_realmlockjezail",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+	   }
+		
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_realmlockfirelance",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+	   }
+		
+  },
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_android_arm_mk19",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+	   }
+		
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_hellravenminigun",
+    "value":
+	
+	
+	   {
+        "minRange" : 45,
+        "maxRange" : 130,
+        "forceMoveRange" : 120
+	   }
+		
+  },	 
+
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_fal",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },  
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_fal_npc_crew_vehiclegunner",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },  
+
+
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_fal_sniper_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },  
+	
+	  
+
+  
+  
+//Explosives
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm47a2_flashbang_riflegrenade_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_fal_riflegrenade_npc",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+  
+  
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_copsc_dmr",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_mk483smaw",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_npc_undercolony_heavystubber",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_npc_undercolony_heavystubber_crew_militia_suppressor",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },    
+  
+  
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_rpg40",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_sarukh12",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_sbrl24",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_kulak",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_pirate_lasercannon",
+    "value":
+	
+	
+	   {
+        "minRange" : 35,
+        "maxRange" : 240,
+        "forceMoveRange" : 230
+      }
+	    
+	
+	  
+  },
+
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_rg8",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_panzerfaust",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_suicide_c4",
+    "value":
+	
+	
+	   {
+        "minRange" : 2,
+        "maxRange" : 20,
+        "forceMoveRange" : 6
+      }
+	    
+	
+	  
+  },
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_suicide_c4_highpower",
+    "value":
+	
+	
+	   {
+        "minRange" : 5,
+        "maxRange" : 10,
+        "forceMoveRange" : 12
+      }
+	    
+	
+	  
+  }, 
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_usm174",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_stgl40_khurtovyna_republic_officer",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_stgl40",
+    "value":
+	
+	
+	   {
+        "minRange" : 65,
+        "maxRange" : 140,
+        "forceMoveRange" : 130
+      }
+	    
+	
+	  
+  },    
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_pilum_directthrow_crew",
+    "value":
+	
+	
+	   {
+        "minRange" : 10,
+        "maxRange" : 110,
+        "forceMoveRange" : 100
+      }
+	    
+	
+	  
+  },  
+  
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_riot_stun_spear_directthrow",
+    "value":
+	
+	
+	   {
+        "minRange" : 10,
+        "maxRange" : 110,
+        "forceMoveRange" : 100
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_riot_stun_spear_directthrow_crew",
+    "value":
+	
+	
+	   {
+        "minRange" : 10,
+        "maxRange" : 110,
+        "forceMoveRange" : 100
+      }
+	    
+	
+	  
+  },
+  
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/gic_fishhuntingspear_directthrow",
+    "value":
+	
+	
+	   {
+        "minRange" : 10,
+        "maxRange" : 110,
+        "forceMoveRange" : 100
+      }
+	    
+	
+	  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+]

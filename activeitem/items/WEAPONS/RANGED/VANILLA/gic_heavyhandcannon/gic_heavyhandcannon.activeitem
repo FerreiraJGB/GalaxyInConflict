@@ -1,0 +1,95 @@
+{
+  "itemName" : "gic_heavyhandcannon",
+  "price" : 1200,
+  "inventoryIcon" : "gic_heavyhandcannon.png",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "It shouldn't even remotely work, but it does.",
+  "shortdescription" : "Cannoneer's Staff",
+  "level" : 1,
+  "tooltipKind" : "gun",
+  "category" : "Hand Cannon",
+  "itemTags" : ["weapon","ranged","assaultrifle"],
+  "twoHanded" : true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_heavyhandcannon.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+  
+    "sounds" : {
+    "fire" : {
+      "pool" : [ "/sfx/gun/gic_musket_fire.ogg" ],
+      "rangeMultiplier" : 15.0
+    }
+   }
+	
+
+
+  },
+
+  "baseOffset" : [0.15, -0.65],
+  "muzzleOffset" : [1.7, 0.3],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "ews_heavyarms",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.135,
+    "baseDps" : 3286,
+    "energyUsage" : 180,
+    "inaccuracy" : 0.006,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "gic_magicbullet_fire", //gic_heavyhandcannon_a
+    "projectileParameters" : {
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+		"frontArmFrame" : "run.4", //run.3
+        "backArmFrame" : "fall.1"
+      },
+      "fire" : {
+        "duration" : 2,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.7, 0],
+		"frontArmFrame" : "run.4", //run.3
+        "backArmFrame" : "fall.1",
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.1, 0],
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+  "aimOffset" : 0,
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

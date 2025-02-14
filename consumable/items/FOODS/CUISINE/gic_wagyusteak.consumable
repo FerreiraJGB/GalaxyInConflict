@@ -1,0 +1,28 @@
+{
+  "itemName" : "gic_wagyusteak",
+  "rarity" : "Common",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_wagyusteak.png",
+  "description" : "''Where... Where did you get this meat?''
+  
+The taste and texture of beef can change drastically depending on how long it's cooked for. This dish has been carefully-prepared with rare Wagyu Beef.",
+  "shortdescription" : "Wagyu Steak",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 20,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

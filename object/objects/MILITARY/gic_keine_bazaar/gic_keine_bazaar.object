@@ -1,0 +1,199 @@
+{
+  "objectName" : "gic_keine_bazaar",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "printable" : false,
+  "price" : 0,
+  "description" : "Keine?",
+  "shortdescription" : "Keine.",
+  "race" : "generic",
+
+  
+  "turnInQuests" : [
+  ],  
+  
+  "offeredQuests" : [
+  ],
+  
+  
+  "lightColor" : [0, 0, 0],
+
+
+
+
+
+
+  
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_generic_shop_notab_keine.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Kamish, The History Teacher",
+        "subtitle" : "''Used to be a school teacher, you know?''",
+        "icon" : {
+          "file" : "/interface/crafting/gic_kamish.png"
+        }
+      }
+    },
+	"recipes" : [
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_unitan_basictrainingbook"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_lionheart", "gic_lionheart_equipment" ]
+		},	
+	
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":10,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_hakutakuscookbook"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_lionheart", "gic_lionheart_equipment" ]
+		},
+
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":30,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_thevikingage"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_lionheart", "gic_lionheart_equipment" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":30,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_riseofoda"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_lionheart", "gic_lionheart_equipment" ]
+		},
+		
+		{
+			"input":[
+				{
+				"parameters":{},
+				"count":30,
+				"name":"gic_physicalcredit"
+				}
+			],
+			"output":{
+				"parameters":{},
+				"count":1,
+				"name":"gic_operationdesertshield"
+				},
+		"matchInputParameters" : false,
+		"groups" : [ "gic_lionheart", "gic_lionheart_equipment" ]
+		}
+		
+		
+		
+	],
+    "filter" : [ "gic_lionheart" ]
+  },
+
+  
+
+
+
+
+
+  "inventoryIcon" : "gic_keine_bazaar_portrait.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_keine_bazaar.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_keine_bazaar.animation",
+  "animationParts" : {
+    "bg" : "gic_keine_bazaar.png",
+    "fg" : "gic_keine_bazaar_lit.png"
+  },
+  "animationPosition" : [-8, -0],
+
+  "uniqueId" : "gic_keine_bazaar",
+  "interactive" : true,
+  
+  
+  "scripts" : [ "/objects/missions/gic_esther_chapter_1_springfield_bartender/gic_springfield_talk.lua" ],
+  "scriptDelta" : 20,
+
+  "chatRadius" : 5,
+  "chatCooldown" : 25,
+  "chatOptions" : [
+    "Hello.",
+	"Have you kept up with your studies?",
+	"You do remember the homework, right?",
+	"You've been taking notes, I presume?",
+	"Don't forget to eat properly!",
+	"Be sure to eat good food. Five-Minute Ramen is no way to live life!",
+	"You can't learn if you're just fed info. You need to study it.",
+	"I worry about her health sometimes...",
+	"I'd love to help you study, if you need.",
+	"Do you know how to cook? I could help you with that if you want.",
+	"Are you keeping yourself tidy?",
+	"Cooking good food, right?",
+	"You need to talk to more people!",
+	"Quite hard to turn into a Hakutaku these days.",
+	"I used to own a school, you know. Could've gone international at home, too.",
+	"Remember to always practice good cooking hygiene.",
+	"Don't try to study with aggressive music. Try slow-paced and softer music.",
+	"If you feel tired and frustrated, remember to take breaks!",
+	"Remember to stretch every 15 minutes after long periods of sitting!",
+	"If life is stressful, remember that no thought is final.",
+	"There is always a tomorrow for the future.",
+	"Never forget that someone out there loves you.",
+	"You can change as a person. No thought is final.",
+	"Winners don't do drugs!",
+	"Are you studying properly? Don't try to cram!",
+	"You won't be able to study properly if you're tired.",
+	"Everything should be done in moderation."
+  ] 
+  
+  
+
+}

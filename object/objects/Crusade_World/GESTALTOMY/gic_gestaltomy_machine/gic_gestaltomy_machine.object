@@ -1,0 +1,40 @@
+{
+  "objectName" : "gic_gestaltomy_machine",
+  "colonyTags" : ["electronic","wired"],
+  "rarity" : "Common",
+
+  "category" : "wire",
+  "price" : 125,
+  "description" : "Gestaltomy Machine.",
+  "shortdescription" : "Gestaltomy Machine",
+  "race" : "generic",
+
+  "lightColor" : [0, 0, 0],
+
+  "inventoryIcon" : "gic_gestaltomy_machine_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_gestaltomy_machine.png:<color>.off",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "animation" : "gic_gestaltomy_machine.animation",
+  "animationParts" : {
+    "bg" : "gic_gestaltomy_machine.png",
+    "fg" : "gic_gestaltomy_machine_lit.png"
+  },
+  
+  "interactive" : false,
+  
+  "animationPosition" : [-8, 0],
+
+  "inputNodes" : [ [0, 1] ]
+}

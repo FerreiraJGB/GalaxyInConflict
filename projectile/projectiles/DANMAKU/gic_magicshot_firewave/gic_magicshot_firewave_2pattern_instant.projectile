@@ -1,0 +1,35 @@
+{
+  "projectileName" : "gic_magicshot_firewave_2pattern_instant",
+  "image" : "gic_magicshot_firewave_2pattern.png",
+  "physics" : "grenade",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 2,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_firewave_stage1_instant",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_firewave_stage1_instant",
+      "inheritDamageFactor" : 1,
+      "angle" : 180
+    }
+
+
+  ],
+  "statusEffects" : [ ],
+  "power" : 500.0,
+  "speed" : 20,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "knockback" : 18
+}

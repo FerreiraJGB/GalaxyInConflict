@@ -1,0 +1,61 @@
+{
+  "projectileName" : "gic_darkenergy_orb",
+  "image" : "gic_darkenergy_orb.png",
+  "physics" : "laser",
+  "piercing" : true,
+  "edgeTrigger" : true,
+  "bounces" : -1,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "fullbright" : true,
+  "lightColor" : [0, 0, 0],
+  "pointLight" : false,
+  "timeToLive" : 3,
+  
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_ar2_function-03.ogg", "/sfx/gic_ar2_function-04.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    }
+  ],
+  
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_plasmaimpact_large/gic_plasmaimpact_large.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_ar2_function-02.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    }
+  ],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "damageTeam" : { "type" : "indiscriminate" },
+  "statusEffects" : [ "gic_bulletshot"],
+  "speed" : 120,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef"
+}

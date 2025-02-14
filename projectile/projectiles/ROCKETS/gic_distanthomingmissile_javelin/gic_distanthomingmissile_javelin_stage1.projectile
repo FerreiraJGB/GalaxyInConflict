@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_distanthomingmissile_javelin_stage1",
+  "renderLayer" : "Monster+10",
+  "bounces" : 0,
+  "image" : "gic_distanthomingmissile_javelin_stage1.png",
+  "animationCycle" : 0.4,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_distanthomingmissile_javelin_stage2",
+      "inheritDamageFactor" : 1,
+	  "angle" : 90
+    }
+  ],
+  "power" : 10,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+
+  "maxSpeed" : 0,
+  
+
+//  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 0.0,
+  "acceleration" : 0.0,
+  "timeToLive" : 0.4,
+  "physics" : "rocket"
+}

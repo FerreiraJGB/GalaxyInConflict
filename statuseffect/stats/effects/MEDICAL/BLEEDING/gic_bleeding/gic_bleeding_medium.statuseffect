@@ -1,0 +1,17 @@
+{
+  "name" : "gic_bleeding_medium",
+  "blockingStat" : "gic_bleeding_mediumStatusImmunity",
+
+  "effectConfig" : {
+    "initialTickDamagePercentage" : 0.0046875, //0.00625/2 > x1.5 = 0.0046875 | 0.0125
+    "rampUpPerTick" : 0.00125 //this % value is added to initialTickDamagePercentage every damage tick 0.0025
+  },
+  "defaultDuration" : 120,
+
+  "scripts" : [
+    "gic_bleeding_medium.lua"
+  ],
+
+  "label" : "Medium Bleeding - -10% HIT CHANCE and ACCURACY | -20% ATK.",
+  "icon" : "/interface/statuses/gic_mediumbleeding.png"
+}

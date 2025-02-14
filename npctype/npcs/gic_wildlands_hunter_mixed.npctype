@@ -1,0 +1,111 @@
+{
+  "type" : "gic_wildlands_hunter_mixed",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 14,
+  "dropPools" : [ "gic_wildlandsarmorymagsspawn_hunterTreasure" ],
+
+
+  "identity" : {
+    "gender" : "male"
+  },  
+
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/gic_generic_combat_panic.config:attack",
+      "reattack" : "/dialog/gic_generic_combat_panic.config:reattack",
+      "killedTarget" : "/dialog/gic_generic_combat_panic.config:killedTarget",
+      "lostTarget" : "/dialog/gic_generic_combat_panic.config:lostTarget",
+      "outOfSight" : "/dialog/gic_generic_combat_panic.config:outOfSight",
+      "cheerOn" : "/dialog/gic_generic_combat_panic.config:cheerOn",
+      "cantReach" : "/dialog/gic_generic_combat_panic.config:cantReach"
+    },
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}],
+        [1.0, "wander"]
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+
+		  
+		  //Beast
+          {
+            "head" : [ { "name" : "gic_brigand_beasthead", "parameters" : { "colorIndex" : [0] }  }],
+            "chest" : [ { "name" : "gic_brigandchest", "parameters" : { "colorIndex" : [0] }  }],
+            "legs" : [ { "name" : "gic_brigandlegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_thcpackback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+			  "gic_fcp243", "gic_wbss2", "gic_federatsiya1850", "gic_ed725f", "gic_mfsg12"
+            ]
+          }, 
+		 
+	  //Gatherer
+          {
+            "head" : [ { "name" : "gic_gunpowderhunterstricornehead", "parameters" : { "colorIndex" : [0] }  }],
+            "chest" : [ { "name" : "cultistchest", "parameters" : { "colorIndex" : [1] }  }],
+            "legs" : [ { "name" : "cultistlegs", "parameters" : { "colorIndex" : [1] } } ],
+            "back" : [ { "name" : "gic_thcpackback", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+			  "gic_lewisgun",
+			  "gic_m20c",
+			  "gic_usm47p",
+			  "gic_m100h",
+			  "gic_mfsg12",
+			  "gic_breechloader54",
+			  "gic_crusadercrossbow"
+            ]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_rally_insurgent_primer", "gic_npc_death_blood_explosion", "gic_bulletshot_bonusheal_primer"],    
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.25
+      }
+	  
+	  
+    }
+  }
+  
+}

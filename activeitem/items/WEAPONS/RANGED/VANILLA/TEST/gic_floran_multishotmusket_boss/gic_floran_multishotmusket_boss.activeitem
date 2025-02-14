@@ -1,0 +1,86 @@
+{
+  "itemName" : "gic_floran_multishotmusket_boss",
+  "price" : 1600,
+  "inventoryIcon" : "gic_floran_multishotmusket_boss.png",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A Floran Leader's multishot musket.",
+  "shortdescription" : "Floran Multi-shot Musket Boss",
+  "level" : 6,
+  "tooltipKind" : "gun",
+  "category" : "Revolver",
+  "itemTags" : ["weapon","ranged","pistol"],
+  "twoHanded" : false,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_floran_multishotmusket_boss.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {  "particleEmitters" : { "muzzleFlash" : {  "burstCount" : 1, "particles" : [ {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },  {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },  {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },  {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },  {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] },  {  "particle" : "rocketbarrelpuff" , "offset" : [0,0] }
+
+ ] } },
+    "sounds" : {
+      "fire" : [ "/sfx/gun/gic_musket_fire.ogg" ]
+    }
+  },
+
+  "baseOffset" : [0.95, 0.3],
+  "muzzleOffset" : [0.49, 0.2],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "ews_heavyarms",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 1,
+    "baseDps" : 15,
+    "energyUsage" : 45,
+    "inaccuracy" : 0.01,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "gic_handcannon_a_floran_boss",
+    "projectileParameters" : {
+      "knockback" : 30
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.2,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.05,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

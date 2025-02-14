@@ -1,0 +1,41 @@
+{
+  "projectileName" : "gic_fireeruption_stage1",
+  "image" : "gic_fireeruption_stage1.png",
+  "animationCycle" : 1.2,
+  "timeToLive" : 1.2,
+  "animationLoops" : false,
+  "frameNumber" : 3,
+  "fullbright" : true,
+  "lightColor" : [100, 100, 200],
+  "power" : 0.0,
+  "speed" : 0,
+  "orientationLocked" : true,
+  "piercing" : true,
+  "flippable" : true,
+  "damagePoly" : [ [-8, 5], [8, 5], [8, -5], [-8, -5] ],
+  "damageKind" : "ews_explosive",
+  "periodicActions" : [
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smoke/smoke.config"
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/fire_barrier_kill.ogg" ]
+    }
+  ],
+  "onlyHitTerrain" : true,
+
+  "eruptionAction" : {
+    "action" : "projectile",
+    "type" : "gic_fireeruption_stage2",
+    "inheritDamageFactor" : 1.0,
+    "angleAdjust" : 0,
+    "offset" : [ 0, 0 ]
+  },
+
+  "scripts" : [ "gic_fireeruption_stage1.lua" ],
+  "scriptDelta" : 1
+}

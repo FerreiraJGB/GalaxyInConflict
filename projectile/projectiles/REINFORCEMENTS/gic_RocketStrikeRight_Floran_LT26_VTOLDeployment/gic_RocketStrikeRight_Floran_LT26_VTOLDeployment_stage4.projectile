@@ -1,0 +1,54 @@
+{
+  "projectileName" : "gic_RocketStrikeRight_Floran_LT26_VTOLDeployment_stage4",
+  "image" : "T1_ARadio_Backup.png",
+  "renderLayer" : "Projectile+15",
+  "animationCycle" : 0.3,
+  "lightColor" : [250, 250, 100],
+  "physics" : "gas",
+  "bounces" : -1,
+  "frameNumber" : 4,
+  "timeToLive" : 5.0,
+  "flippable" : false,
+  "fullBright" : true,
+  "pointLight" : false,
+  "damageKindImage" : "icon.png",
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_RocketStrikeRight_Floran_LT26_VTOLDeployment_stage5",
+      "angle" : 90.0
+    
+    },
+    {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/alerts/gic_cto_backup_departing.ogg"
+      ]
+    }
+  ],
+  
+  "periodicActions" : [
+    {
+      "time" : 0.5,
+      "action" : "sound",
+      "options" : [
+	  "/sfx/gun/gic_rocketfireburst.ogg"
+      ]
+    },
+    {
+      "time" : 0.5,
+      "action" : "projectile",
+      "type" : "gic_swarm_missile_stubby",
+      "inheritDamageFactor" : 0.2,
+	  "offset" : [0, 2],
+      "angle" : 0.0,
+	  "fuzzAngle" : 5
+    }
+  ],
+  
+  "power" : 0.0,
+  "speed" : 1,
+  "persistentAudio" : "/sfx/vehicles/gic_halo_pelican_engine_loop.ogg",
+  "persistentAudioRangeMultiplier" : 1.0,
+  "damageKind" : "default"
+}

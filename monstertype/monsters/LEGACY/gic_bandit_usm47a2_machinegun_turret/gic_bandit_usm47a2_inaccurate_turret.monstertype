@@ -1,0 +1,302 @@
+{
+  "type" : "gic_bandit_usm47a2_inaccurate_turret",
+  "shortdescription" : "AA Autocannon",
+  "description" : "4-barreled manned Autocannon.",
+
+  "categories" : [ "gic_bandit_usm47a2_machinegun_turret" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_bandit_usm47a2_machinegun_turret.animation",
+
+  "dropPools" : ["gic_shipcannonTreasure"],
+
+  "baseParameters" : {
+    "scripts" : [
+      "/monsters/monster.lua"
+    ],
+
+    "behavior" : "monster",
+    "deathBehavior" : "monster-death",
+
+    "facingMode" : "transformation",
+
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "hurtWaitForGround" : false,
+
+      "targetQueryRange" : 200,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 300,
+      "targetOutOfSightTime" : 5.0,
+
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "wake",
+            "animationTime" : 0.5
+          }
+        }
+      ],
+
+      "fleeActions" : [ ],
+
+      "hostileActions" : [
+	  
+        {
+          "name" : "action-fire",
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 400,
+            "minimumRange" : 41,
+            "windupTime" : 5,
+            "windupState" : "",
+
+            "projectileCount" : 30,
+            "projectileInterval" : 1,
+            "projectileType" : "gic_standardbullet_miss_a_pointblank",
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 76
+            },
+            "inaccuracy" : 0.1,
+            "fireOffsets" : [[-0.4, 0.0] ],
+            "rotationCenter" : [0.0, 1],
+            "fireSound" : "fire",
+            "fireStateType" : "",
+            "fireState" : "",
+            "fireDelay" : 0.0,
+            "faceTarget" : true,
+            "rotateAim" : true,
+            "holdAim" : false,
+            "damageRepeatGroup" : "",
+
+            "winddownState" : "reload",
+            "winddownTime" : 4.0
+          }
+        },
+	  
+        {
+          "name" : "action-fire",
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 40,
+            "minimumRange" : 2,
+            "windupTime" : 0.5,
+            "windupState" : "",
+
+            "projectileCount" : 30,
+            "projectileInterval" : 0.1,
+            "projectileType" : "gic_standardbullet_miss_primer",
+            "projectileParameters" : {
+              "speed" : 0,
+              "power" : 76,
+			  "missChance" : 90
+            },
+            "inaccuracy" : 0.03,
+            "fireOffsets" : [[-0.4, 0.0] ],
+            "rotationCenter" : [0.0, 1],
+            "fireSound" : "fire",
+            "fireStateType" : "",
+            "fireState" : "",
+            "fireDelay" : 0.0,
+            "faceTarget" : true,
+            "rotateAim" : true,
+            "holdAim" : false,
+            "damageRepeatGroup" : "",
+
+            "winddownState" : "reload",
+            "winddownTime" : 4.0
+          }
+        }
+		
+		
+      ],
+
+      "periodicActions" : [ ],
+
+      "approachActions" : [
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport"
+        }
+      ],
+
+      "wanderActions" : [
+      ],
+
+      "concurrentActions" : [
+
+        {
+          "name" : "action-globaltag",
+          "parameters" : {
+            "tagName" : "aggro",
+            "tag" : ""
+          }
+        }
+      ],
+
+      "concurrentHostileActions" : [
+
+		
+        {
+          "name" : "action-globaltag",
+          "parameters" : {
+            "tagName" : "aggro",
+            "tag" : ".aggro"
+          }
+        }
+      ],
+
+      "deathActions" : []
+    },
+
+    "touchDamage" : {
+      "poly" : [ [2, 3], [-3, 3], [-3, -1], [2, -1]  ],
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "slash",
+      "knockback" : 20,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 5, 5],
+    "scale" : 1.0,
+
+    "selfDamagePoly" : [ [0, 3], [-3, 3], [-3, -1.4], [0, -1.4]  ],
+
+    "movementSettings" : {
+      "collisionPoly" : [ [0, 3], [-3, 3], [-3, -1.4], [0, -1.4] ],
+
+      "mass" : 1.0,
+      "walkSpeed" : 0,
+      "runSpeed" : 0,
+
+      "airFriction" : 0,
+
+      "airJumpProfile" : {
+        "jumpSpeed" : 45.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.0
+      }
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "healthLevelFunction" : "spaceMonsterLevelHealthMultiplier",
+    "powerLevelFunction" : "spaceMonsterLevelPowerMultiplier",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/spacemonster_primary.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+        "grit" : {
+          "baseValue" : 1.0
+        },
+        "knockbackStunTime" : {
+          "baseValue" : 0.25
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 999999
+        },
+        "maxHealth" : {
+          "baseValue" : 500
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+		
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false
+  }
+}

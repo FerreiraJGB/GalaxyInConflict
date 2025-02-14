@@ -1,0 +1,51 @@
+{
+  "projectileName" : "gic_wolfsoldier_arrow_electric_sear",
+  "physics" : "laser",
+  "actionOnTimeout" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/electricexplosionknockbackstatus.config"
+    }
+  ],
+  "actionOnHit" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_wolfsoldier_arrow_electric_parried_stage1",
+      "directional" : "true",
+	  "angleAdjust" : 180,
+      "inheritDamageFactor" : 1
+    }
+  ],
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/electricexplosionknockbackstatus.config"
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "gic_wolfsoldier_arrow_electric.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "electric",
+  "statusEffects" : [ "gic_tazed_1", "gic_tazed", "electrified", {"effect":"gic_advancedmunition_overcharged","duration":30.0} ],
+  "emitters" : [ "electricplasma" ],
+  "lightColor" : [ 143, 174, 211 ],
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 3,
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "speed" : 100
+}

@@ -1,0 +1,85 @@
+{
+  "objectName" : "gic_waterfiltrationstation",
+  "colonyTags" : ["station","human"],
+  "rarity" : "Common",
+  "category" : "other",
+  "price" : 300,
+  "printable" : false,
+  "description" : "[Water Filtration Station]",
+  "shortdescription" : "Water Filtration Station",
+  "race" : "generic",
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_generic_crafting_notab.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Water Filtration Station",
+        "subtitle" : "  (to be phased out in the future)",
+        "icon" : {
+          "file" : "/interface/crafting/gic_waterfiltrationstation.png"
+        }
+      }
+    },
+	"recipes" : [
+		
+		
+		
+	],
+    "filter" : [ "gic_waterfiltrationstation" ]
+  },
+
+  "inventoryIcon" : "gic_waterfiltrationstation.png",
+  "orientations" : [
+    {
+      "image" : "gic_waterfiltrationstation.png:<color>",
+      "imagePosition" : [-16, -0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    },
+    {
+      "image" : "gic_waterfiltrationstation.png:<color>",
+      "imagePosition" : [-16, -0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ],
+
+  "scripts" : [
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 60,
+
+  "npcToy" : {
+    "influence" : [
+      "vendingmachineActivate",
+      "vendingmachineCollect",
+      "vendingmachineConsume",
+      "vendingmachineComplete"
+    ],
+    "defaultReactions" : {
+      "vendingmachineActivate" : [
+        [1.0, "pressbutton"]
+      ],
+      "vendingmachineCollect" : [
+        [1.0, "crouchcollect"]
+      ],
+      "vendingmachineConsume" : [
+        [1.0, "drink"]
+      ],
+      "vendingmachineComplete" : [
+        [1.0, "smile"]
+      ]
+    },
+    "preciseStandPositionLeft" : [-2.0, 1.0],
+    "preciseStandPositionRight" : [2.0, 1.0],
+    "maxNpcs" : 1
+  }
+}

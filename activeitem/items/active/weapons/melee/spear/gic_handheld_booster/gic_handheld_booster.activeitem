@@ -1,0 +1,120 @@
+{
+  "itemName" : "gic_handheld_booster",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Essential",
+  "description" : "A handheld booster designed to allow for individuals to move quickly in zero-gravity environments. The design is relatively ancient and archaic, but any Protector can use it with ease.
+  
+^#69B1B1;Simply hold left-click or right-click depending on which arm-slot it's equipped in to accelerate in a direction.^reset;
+
+You can also use it to gain additional momentum to jump higher, glide, or lazily slide yourself across the floor.",
+  "shortdescription" : "Handheld Arm Booster",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#69B1B1;Utility^reset;",
+  "twoHanded" : false,
+  "itemTags" : ["utility","booster"],
+  
+  "inventoryIcon" : "gic_handheld_booster_icon.png",
+  
+  //"handGrip" : "wrap",
+
+  "animation" : "/items/active/weapons/melee/spear/spear.animation",
+  "animationParts" : {
+	"handle" : "",
+	"blade" : "gic_handheld_booster_frames.png:idle.1"
+  },
+  "animationCustom" : {
+	"animatedParts":{
+		"stateTypes" : {
+			"blade" : {
+				"default" : "idle",
+				"states" : {
+					"idle" : {
+						"properties" : {
+							"lightsOff" : ["glow"]
+						}
+					},
+					"boost" : {
+						"frames" : 3,
+						"cycle" : 0.2,
+						"mode" : "loop",
+						"properties" : {
+							"lightsOn" : ["glow"]
+						}
+					}
+				}
+			}
+		},
+		"parts" : {
+			"blade" : {
+				"partStates" : {
+					"blade" : {
+						"idle" : {
+							"properties" : {
+								"image" : "gic_handheld_booster_frames.png:idle.1",
+								"offset" : [0.0,0.6]
+							}
+						},
+						"boost" : {
+							"properties" : {
+								"image" : "gic_handheld_booster_frames.png:boost.<frame>",
+								"offset" : [0.0,0.6]
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"sounds" : {
+		"fireStart" : [ "/sfx/melee/swing_spear_fire1.ogg", "/sfx/melee/swing_spear_fire2.ogg", "/sfx/melee/swing_spear_fire3.ogg" ],
+		"fireBlast" : [ "/sfx/melee/rocketspear_loop_fire.ogg" ],
+		"fireEnd" : [ "/sfx/melee/rocketspear_stop_fire.ogg" ]
+	},
+	"lights" : {
+		"glow" : {
+			"active" : false,
+			"position" : [0, 0.6],
+			"color" : [47.6, 100, 100],
+			"transformationGroups" : ["weapon"]
+		}
+		//"glow2" : {
+		//	"active" : false,
+		//	"position" : [0, 0.6],
+		//	"color" : [8, 255, 239],
+		//	"transformationGroups" : ["weapon"]
+		//}
+	}
+  },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "physical",
+  
+  //"baseOffset" : [0.0,2.0],
+
+  "aimOffset" : -1.0,
+
+  "primaryAbilityType" : "rocketspear",
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/melee/spear/gic_handheld_booster/gic_handheld_booster.lua"],
+	"baseDps" : 0,
+	"energyUsage" : 0,
+	"boostSpeed" : -50,
+    "boostForce" : 190,
+	"cooldownTime" : 0.1,
+	"stances" : {
+		"idle" : {
+			"armRotation" : 0,
+			"weaponRotation" : 90,
+			"allowFlip" : true,
+			"allowRotate" : true,
+			"weaponOffset" : [-0.5,0.7]
+		}
+	}
+  },
+  "fireSounds" : [ "/sfx/melee/swing_spear.ogg" ],
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

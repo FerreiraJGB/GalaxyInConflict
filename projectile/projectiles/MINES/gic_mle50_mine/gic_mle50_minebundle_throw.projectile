@@ -1,0 +1,45 @@
+{
+  "projectileName" : "gic_mle50_minebundle_throw",
+  "physics" : "laser",
+  "onlyHitTerrain" : true,
+  "bounces" : 0,
+  "timeToLive" : 0,
+
+
+  "pointLight" : true,
+  "lightColor" : [0, 0, 0],
+  "image" : "/projectiles/CORE_CODE/gic_null/gic_null.png",
+  "frameNumber" : 1,
+  "actionOnCollide" : [
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_mle50_mine_arming",
+	  "inheritSpeedFactor" : 1.0,
+	  "fuzzAngle": 50
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_mle50_mine_arming",
+	  "inheritSpeedFactor" : 1.0,
+	  "fuzzAngle": 50
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_mle50_mine_arming",
+	  "inheritSpeedFactor" : 1.0,
+	  "fuzzAngle": 50
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_mle50_mine_arming",
+	  "inheritSpeedFactor" : 1.0,
+	  "fuzzAngle": 10
+    }
+  ],
+
+  "damageType" : "noDamage",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "damageKind" : "ews_smallarms"
+}

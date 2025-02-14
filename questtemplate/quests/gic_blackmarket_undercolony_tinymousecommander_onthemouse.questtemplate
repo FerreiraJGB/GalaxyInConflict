@@ -1,0 +1,30 @@
+{
+  "id" : "gic_blackmarket_undercolony_tinymousecommander_onthemouseQuest",
+  "title" : "^#D1FFDE;Tiny Mouse Bartender",
+  "prerequisites" : [  ],
+  "text" : "Irasshaimase~",
+  "completionText" : "She balances a glass of alcohol atop her head, and utters the forbidden words: ''For you? It's on the mouse.''",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_tunnelrat_glass", 1 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/CRAFTING/BLACK_MARKET/gic_blackmarket_tinymousecommander_merchant/gic_blackmarket_tinymousecommander_merchant_portrait.png"} ],
+        "title" : ""
+      }
+    },
+
+    "requireTurnIn" : true,
+	
+    "turnInEntityUid" : "gic_blackmarket_tinymousecommander_merchant",
+    "conditions" : [
+    ]
+  }
+}

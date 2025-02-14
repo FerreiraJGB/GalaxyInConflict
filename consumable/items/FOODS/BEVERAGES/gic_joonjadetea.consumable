@@ -1,0 +1,36 @@
+{
+  "itemName" : "gic_joonjadetea",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#88350B;Otherworldly",
+  "inventoryIcon" : "gic_joonjadetea.png",
+  
+  
+  
+  "description" : "''Maybe you'd be happier slipping into the crowd and then, I dunno, dropping dead?''
+  
+^#EDC078;Enemies killed within approximately 60 blocks of the user have a 25% chance to drop additional microcredits | Lasts for 30 minutes.^reset;",
+  
+  "shortdescription" : "Jo'on Jade Tea",
+  
+  
+  
+  "effects" : [ [
+  
+    {
+        "effect" : "gic_beverage_joonjadetea_pinger",
+        "duration" : 1800
+    }
+  
+  ] ],
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

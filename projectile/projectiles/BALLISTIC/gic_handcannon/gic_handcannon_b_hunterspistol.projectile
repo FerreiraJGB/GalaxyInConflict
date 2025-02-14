@@ -1,0 +1,56 @@
+{
+  "projectileName" : "gic_handcannon_b_hunterspistol",
+  "bounces" : 0,
+  "image" : "gic_handcannon_b.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_miss_c",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 0,
+	  "directional" :true
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    }
+  ],
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_heavybullet_trail/trail.png",
+        "position" : [-2, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+  "power" : 390,
+  "damageKind" : "ews_explosive",
+  "fullbright" : true,
+  "maxSpeed" : 250,
+  "ignoredef" : true,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 200.0,
+  "statusEffects" : [
+"gic_stun_025"
+  ],
+  "acceleration" : 0,
+  "timeToLive" : 0.05,
+  "physics" : "gic_cannonfall"
+}

@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_crystal_areashockwave_stage1",
+  "image" : "gic_crystal_areashockwave_stage1.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 20,
+  "timeToLive" : 8,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.75,
+      "action" : "projectile",
+      "type" : "gic_crystal_areashockwave_stage2",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 0
+    }
+],
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

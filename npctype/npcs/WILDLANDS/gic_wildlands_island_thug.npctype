@@ -1,0 +1,83 @@
+{
+  "type" : "gic_wildlands_island_thug",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 10,
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+    "dialog" : {
+	  "attack" : "/dialog/bandits/gic_militiabandit_combat.config:attack",
+      "reattack" : "/dialog/bandits/gic_militiabandit_combat.config:reattack",
+      "killedTarget" : "/dialog/bandits/gic_militiabandit_combat.config:killedTarget",
+      "lostTarget" : "/dialog/bandits/gic_militiabandit_combat.config:lostTarget",
+      "outOfSight" : "/dialog/bandits/gic_militiabandit_combat.config:outOfSight",
+      "cheerOn" : "/dialog/bandits/gic_militiabandit_combat.config:cheerOn",
+      "cantReach" : "/dialog/bandits/gic_militiabandit_combat.config:cantReach"
+    },
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol", { "timeRange" : [0.2,0.4]}],
+        [1.0, "wander"]
+      ]
+    }
+	
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+
+	  
+          {
+            "head" : [
+              "gic_bandithood"
+            ],
+            "chest" : [
+              { "name" : "hoodiechest", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } }
+            ],
+            "legs" : [
+              { "name" : "coollegs", "parameters" : { "colorIndex" : [1, 3, 4, 5, 6, 7, 8, 9] } },
+              { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "sweatervestlegs", "parameters" : { "colorIndex" : 8 } },
+              { "name" : "conceptlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "conceptlegs", "parameters" : { "colorIndex" : 1 } }, { "name" : "conceptlegs", "parameters" : { "colorIndex" : 2 } }, { "name" : "conceptlegs", "parameters" : { "colorIndex" : 8 } }
+            ],
+			"sheathedprimary" : [
+			"gic_emcp19",
+            "gic_vich515",
+			"gic_ashot"
+			]
+          }
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      }
+	  
+	  
+    }
+  }
+  
+}

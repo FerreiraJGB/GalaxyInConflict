@@ -1,0 +1,415 @@
+{
+  "projectileName" : "gic_fal_psychic_riflegrenade",
+  "physics" : "rocket",//gic_grenadenormal
+  "bounces" : 0,
+  "timeToLive" : 15,  
+  "lightColor" : [255, 121, 25],
+  
+  "actionOnTimeout" : [],
+  
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_small/gic_shellhit_small.config"
+    },
+	
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_grenadeexplosion/gic_grenadeexplosionknockback.config"
+    },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/grenade/gic_flashbang_explode1.ogg"
+      ]
+    },
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_strelok_realityanchor/1.png",
+			"fullbright":true,"size":2.0,
+			"destructionAction":"fade",
+			"destructionTime":2.0
+		}
+	},
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_strelok_realityanchor/1.png",
+			"fullbright":true,"size":2.0,
+			"destructionAction":"fade",
+			"destructionTime":2.0
+		}
+	},
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_strelok_realityanchor/1.png",
+			"fullbright":true,"size":2.0,
+			"destructionAction":"fade",
+			"destructionTime":2.0
+		}
+	},
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_strelok_realityanchor/1.png",
+			"fullbright":true,"size":2.0,
+			"destructionAction":"fade",
+			"destructionTime":2.0
+		}
+	},
+	{
+		"action" : "particle",
+		"rotate" : true,
+		"angleAdjust" : 0,
+		"config" : {
+			"timeToLive" : 1
+		},
+		"specification" : {
+			"type":"textured",
+			"image":"/particles/gic_strelok_realityanchor/1.png",
+			"fullbright":true,"size":2.0,
+			"destructionAction":"fade",
+			"destructionTime":2.0
+		}
+	},
+    {
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 90
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 100
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 80
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 110
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 70
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 120
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 60
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 130
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 50
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 140
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 40
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 150
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 160
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 170
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 10
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 180
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 0
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 190
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : -10
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 200
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : -20
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 210
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : -30
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 220
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : -40
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 230
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : -50
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 240
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : -60
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 250
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : -70
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 260
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : -80
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : 270
+    },
+	{
+      "action" : "projectile",
+      "type" : "gic_strelok_realityanchor",
+      "fuzzAngle" : 5,
+      "inheritDamageFactor" : 1.0,
+      "angle" : -90
+    }
+	
+	
+	
+	
+	],
+  "image" : "gic_fal_riflegrenade.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_explosive",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 20,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+  "emitters" : [ "arrowflames" ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+        "image" : "/particles/gic_heavybullet_trail/trail.png",
+        "position" : [-1.7, 0],
+        "layer" : "back",
+        "timeToLive" : 0.0,
+        "destructionTime" : 0.3,
+        "destructionAction" : "shrink",
+        "fullbright" : true
+      }
+    }
+],
+
+
+
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+  "rotationRate" : 2,
+  "trackingLimit" : 300,
+  "speed" : 20.0,
+  "acceleration" : 15,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

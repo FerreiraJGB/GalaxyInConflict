@@ -1,0 +1,260 @@
+{
+  "type" : "gic_criminal_autoshotgunner_crew",
+  "baseType" : "gic_base",
+
+  "dropPools" : [ ],
+
+  "damageTeamType" : "friendly",
+  
+  "identity" : {
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "fem11",
+    "hairColor" : "15"
+  },  
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -25 }, {"stat" : "powerMultiplier", "amount" : 0.0}, "gic_rally_player_primer" ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "gic_noinspectcrew",
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 5,
+      "idleTime" : 2,
+      "outerHomeRange" : 40,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "soldier",
+        "name" : "Suppressor",
+        "field" : "Militiawoman",
+        "uniformColorIndex" : 1,
+		
+        "benefits" : [
+//          {
+            // Persistent effects are active while on the ship
+//            "type" : "PersistentEffect",
+//            "effect" : "shiprunboost"
+//          }
+        ]
+		
+      },
+
+      "ranks" : [
+	    "Militia"
+      ],
+
+      "defaultUniform" : {
+	    "head" : "gic_berethead",
+        "chest" : "gic_oldadventurersarmorchest", //soldierchest
+        "legs" : "gic_oldadventurersarmorlegs", //soldierpants
+		"back" : ""
+      },
+      "uniformSlots" : ["chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"]
+    },
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "Looking to get off this planet, wondering if you've got the ticket.",
+			  "I'm willing to work just to get out of here.",
+			  "I can't stand this damned place.",
+			  "This place can burn in hell. Take me with you.",
+			  "I'm up for jobs.",
+			  "I'll work just to leave this place."
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Aight, I'll be here then.",
+			  "How much food do we have on the ship?",
+              "I'll be here.",
+			  "Rightio, I'll be here then."
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "..."
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "I'll just stay here.",
+              "I'll stay here.",
+              "Alright, I'll guard this area.",
+              "I'll stay here for now, then.",
+              "I'll stay here.",
+              "Aight, I'll be here then.",
+              "I'll be here."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "Aye, I'm here.",
+			  "Aye!",
+              "Following your orders.",
+              "What's the mission?",
+			  "I'm here!"
+            ]
+          }
+        },
+		
+      "combatBenefit" : {
+        "default" : {
+          "default" : [
+            "Hey, you good?",
+            "Come on, let's move!",
+            "Move!",
+            "Come on, let's go!",
+            "Go, go!",
+			"You're all good, buddy.",
+			"Move it!"
+          ]
+        }
+      },
+		
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "Slow down! I can't run that fast!",
+              "You're too far!",
+              "Hey, wait up! I'm not a superhuman!",
+              "I can't catch up! Slow the hell down!",
+              "Let me catch up!",
+			  "Slow the hell down!",
+			  "Slow down!",
+			  "I can't run that fast!"
+            ]
+          }
+	}
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+      "converse" : "/dialog/space_colony/gic_surfacecityspacecolonist_converse.config:converse",
+
+      "attack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_surfacecityspacecolonist_guard_combat.config:cantReach"
+    }
+  },
+
+  "movementParameters" : {
+    // Run at the same speed as the player
+    "runSpeed" : 16
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_berethead", "parameters" : { "colorIndex" : [4] } } ],
+            "chest" : [ { "name" : "gic_oldadventurersarmorchest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "gic_oldadventurersarmorlegs", "parameters" : { "colorIndex" : [1] } } ],
+//            "back" : [ { "name" : "gic_scavengerpackback", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [ "gic_npc_undercolony_heavystubber_crew_militia_suppressor" ],
+            "sheathedprimary" : [ "gic_npc_undercolony_heavystubber_crew_militia_suppressor" ]
+          }
+
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 285.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "gic_dodge_stat" : {
+        "baseValue" : 0.4
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+      "gic_crewmember_stat" : {
+        "baseValue" : 1.0
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      }
+	  
+    }
+  }
+}

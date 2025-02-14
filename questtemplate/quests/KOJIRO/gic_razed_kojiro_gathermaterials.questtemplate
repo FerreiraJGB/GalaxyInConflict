@@ -1,0 +1,68 @@
+{
+  "id" : "gic_razed_kojiro_gathermaterialsQuest",
+  "title" : "^orange;Hunt for the Kojiro Katana",
+  "text" : "Collections of Liberator and Greenfinger documents lie strewn across the shrine. All point toward the undeath of Greenfinger Daimyos and their immense power. Power a worthy challenger might obtain. ^orange;[Obtain Boss Items]^reset;",
+  "completionText" : "An Acclaimed Daimyo can now be challenged. But be warned as he is honorbound and will expect you to follow his code, or never face you again.",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "canBeAbandoned" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 125 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_slab_greatsword_player",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset; from an ^orange;Erchius Banner-Bearer^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_erchiusclutchring",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset; from an ^orange;Erchius Crystal Coordinator^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_musketeersclutchring",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset; from a ^orange;Greenfinger Daimyo^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_protectorate_greatsword_player",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset; from an ^orange;Armored Protector^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_gunslingersring",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset; from an ^orange;Ex-Cultist^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_ashenhealingflaskring",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset; from a ^orange;False Protector^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

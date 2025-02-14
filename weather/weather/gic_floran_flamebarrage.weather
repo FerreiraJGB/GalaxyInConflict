@@ -1,0 +1,48 @@
+{
+  "name" : "gic_floran_flamebarrage",
+
+  "projectiles" : [
+    {
+      "projectile" : "gic_whitephosphorus_shortrange_missile",
+      "parameters" : {
+  "damageKind" : "ews_explosive",
+  "damageType" : "IgnoresDef",
+  "damageTeam" : { "type" : "indiscriminate" },
+        "power" : 200, //400
+  "timeToLive" : 0.25
+      },
+      "velocity" : [60, -100],
+      "gravityMultiplier": 0.5,
+      "ratePerX" : 0.0005, //0.0020
+      "spawnAboveRegion" : 50,
+      "spawnHorizontalPad" : 30,
+      "windAffectAmount" : 0.5
+    },
+	
+	
+    {
+      "projectile" : "gic_120mm_whitephosphorus",
+      "parameters" : {
+  "damageKind" : "ews_explosive",
+  "damageType" : "IgnoresDef",
+  "damageTeam" : { "type" : "indiscriminate" },
+        "power" : 5000 //400
+      },
+      "velocity" : [60, -100],
+      "gravityMultiplier": 2,
+      "ratePerX" : 0.0005, //0.0020
+      "spawnAboveRegion" : 50,
+      "spawnHorizontalPad" : 30,
+      "windAffectAmount" : 0.5
+    }
+	
+  ],
+
+ "particles" : [
+  ],
+
+  "duration" : [30, 60],
+  "maximumWind" : 20.0,
+  "weatherNoises" : [ "/sfx/ambience/gic_distant_canonade.ogg" ]
+
+}

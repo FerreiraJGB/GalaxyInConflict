@@ -1,0 +1,54 @@
+{
+  "objectName" : "gic_glitch_ceilinglight",
+  "colonyTags" : ["light"],
+  "rarity" : "Common",
+  "description" : "Ceiling Light.",
+  "shortdescription" : "Ceiling Light",
+  "race" : "generic",
+  "category" : "light",
+  "price" : 30,
+  "printable" : false,
+  "lightColor" : [204, 204, 188],
+  "pointLight" : true,
+  "pointBeam" : 3,
+  "beamAmbience" : 0.7, //0.4
+  "tooltipKind" : "gic_largebase",
+  "inventoryIcon" : "gic_glitch_ceilinglight_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_ceilinglight.png:<color>.<frame>",
+      "imagePosition" : [-4, -16],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [0, 0], [0, -1], [-1, -2], [0, -2], [1, -2], [0, -3] ],
+      "anchors" : [ "top" ],
+      "lightPosition" : [0, -2],
+      "beamAngle" : 270
+    },
+    {
+      "image" : "gic_glitch_ceilinglight.png:<color>.<frame>",
+      "imagePosition" : [-4, -16],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, -1], [-1, -2], [0, -2], [1, -2], [0, -3] ],
+      "anchors" : [ "top" ],
+      "lightPosition" : [0, -2],
+      "beamAngle" : 270
+    }
+  ],
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "gic_glitch_ceilinglight.png",
+    "fg" : "gic_glitch_ceilinglight_lit.png"
+  },
+  "animationPosition" : [-4, -16],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+
+  "inputNodes" : [ [0, -2] ]
+}

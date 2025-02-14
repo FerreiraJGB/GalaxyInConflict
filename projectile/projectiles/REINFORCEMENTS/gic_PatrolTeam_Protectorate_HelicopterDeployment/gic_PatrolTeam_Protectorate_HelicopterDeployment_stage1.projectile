@@ -1,0 +1,27 @@
+{
+  "projectileName" : "gic_PatrolTeam_Protectorate_HelicopterDeployment_stage1",
+  "image" : "icon.png",
+  "animationCycle" : 0.0,
+  "physics" : "laser",
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "onlyHitTerrain" : true,
+  "timeToLive" : 1.0,
+  "damageKindImage" : "icon.png",
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_PatrolTeam_Protectorate_HelicopterDeployment_stage2",
+      "angle" : -90
+    }
+//    {
+//      "action" : "projectile",
+//      "type" : "gic_illuminationflare",
+//      "angle" : -90
+//    }
+  ],
+  "power" : 0,
+  "speed" : 40,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

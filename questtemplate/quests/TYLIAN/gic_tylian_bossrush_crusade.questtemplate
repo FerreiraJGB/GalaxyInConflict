@@ -1,0 +1,41 @@
+{
+  "id" : "gic_tylian_bossrush_crusadequest",
+  "title" : "^orange;Boss Rush: Crusade",
+  "text" : "Obtain: Glitch-Hunter Foil and Crusader Champion's Helmet (kill Glitch-Hunter Captain and Crusader Champion).
+
+^orange;[Upon completion: Unlocks the Glitch-Hunter Captain and Crusader Champion Boss-Rush Replays at the Bazaar]",
+  "completionText" : "[Glitch-Hunter Captain and Crusader Champion can now be replayed via the Bazaar]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_glitchhunter_rapier_player",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_crusaderchampionshelmethead",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

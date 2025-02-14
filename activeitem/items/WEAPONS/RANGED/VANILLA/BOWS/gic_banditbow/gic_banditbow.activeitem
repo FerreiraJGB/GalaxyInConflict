@@ -1,0 +1,78 @@
+{
+  "itemName" : "gic_banditbow",
+  "fixedLevel" : false,
+  "price" : 0,
+  "inventoryIcon" : "gic_banditbowicon.png",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "tooltipKind" : "bow",
+  "category" : "^#D6484F;Bow^reset;",
+  "description" : "It takes great skill to wield a bow in the future.",
+  "shortdescription" : "Bandit's Bow",
+  "twoHanded" : true,
+  "itemTags" : ["weapon", "ranged"],
+
+  "radioMessagesOnPickup" : [ "pickupbow" ],
+
+  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animationParts" : {
+    "bow" : "gic_banditbow.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "bow" : { "properties" : {
+      "offset" : [0.25, 0]
+    }}}},
+    "sounds" : {
+      "draw" : [ "/sfx/bow/gic_bloodborne_bow-stance1.wav" ],
+      "release" : [ "/sfx/bow/gic_bloodborne_bow-shot1.wav", "/sfx/bow/gic_bloodborne_bow-shot2.wav", "/sfx/bow/gic_bloodborne_bow-shot3.wav" ],
+      "perfectRelease" : [ "/sfx/bow/gic_bloodborne_bow-shot1.wav", "/sfx/bow/gic_bloodborne_bow-shot2.wav", "/sfx/bow/gic_bloodborne_bow-shot3.wav" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/bow/bow.lua"],
+  "scriptDelta" : 2,
+
+  "primaryAbilityType" : "bowshot",
+  "primaryAbility" : {
+  
+    "fireOffset" : [0.0, 0],
+  
+    "projectileType" : "gic_electricarrow",
+    "powerProjectileType" : "gic_electricarrow",
+    "projectileParameters" : {
+      "speed" : 170,
+      "power" : 30
+    },
+	
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : -30,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "draw" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true,
+
+        "frontArmFrame" : "idle.3"
+      }
+    }
+	
+	
+  },
+  "builder" : "/items/buildscripts/buildbow.lua"
+}

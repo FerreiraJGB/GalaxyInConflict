@@ -1,0 +1,36 @@
+{
+  "name" : "gic_wolfknights_spear",
+  "blockingStat" : "gic_wolfknights_spearStatusImmunity",
+  "effectConfig" : {
+	"projectileType" : "gic_ping_projectile_wolfknights_spear", //does not accept arrays
+	"projectileTypeMiss" : "gic_ping_projectile_wolfknights_spear", //does not accept arrays
+	//"statusEffect" : "gic_pinged_wolfknights_spear", //does not accept arrays
+	"statusDuration" : 2.0,
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	
+	"trackingDistance" : 20,
+	"trackingAngle" : 181, //if angle is greater than 180, then automatically have 360 tracing
+	"fireRate" : 0.0,
+	"baseDamage" : 0,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 2.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_vengefulthirdeye.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_dronepinger_floranhuntersense.animation",
+   
+   "label" : "Wolf-Knight's Spear - Enemies are marked in blue. Marked enemies have their armor value reduced to 0.",
+  "icon" : "/interface/statuses/gic_wolfknights_spear.png"
+}

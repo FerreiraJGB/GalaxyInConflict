@@ -1,0 +1,50 @@
+{
+  "objectName" : "gic_ammunitioncratemedium01",
+  "colonyTags" : ["storage"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "price" : 45,
+  "description" : "Generic ammunition crate.",
+  "shortdescription" : "Medium Ammunition Crate 1",
+  "race" : "generic",
+  "health" : 1.5,
+
+
+  "inventoryIcon" : "gic_ammunitioncratemedium01icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_ammunitioncratemedium01.png",
+      "direction" : "left",
+      "flipImages" : true,
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "gic_ammunitioncratemedium01.png",
+      "direction" : "right",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/gic_ammopickup.ogg" ],
+  "closeSounds" : [ "/sfx/objects/gic_ammopickup.ogg" ],
+  "slotCount" : 9,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

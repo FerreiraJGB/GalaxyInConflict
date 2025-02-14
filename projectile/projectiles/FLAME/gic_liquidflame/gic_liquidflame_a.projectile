@@ -1,0 +1,28 @@
+{
+  "projectileName" : "gic_liquidflame_a",
+  "image" : "icon.png",
+  "animationCycle" : 0.0,
+  "physics" : "laser",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "timeToLive" : 0.05,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [127, 127, 25],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_b",
+      "directional" : "true"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_b",
+      "fuzzAngle" : 20
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "noDamage",
+  "damageKind" : "ews_smallarms"
+}

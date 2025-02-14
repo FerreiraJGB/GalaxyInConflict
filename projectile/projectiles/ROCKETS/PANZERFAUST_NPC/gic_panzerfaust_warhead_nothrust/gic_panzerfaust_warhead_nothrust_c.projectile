@@ -1,0 +1,49 @@
+{
+  "projectileName" : "gic_panzerfaust_warhead_nothrust_c",
+  "image" : "gic_panzerfaust_warhead_nothrust_c.png",
+  "animationCycle" : 2.5,
+  "physics" : "gic_grenadenormal",
+  "bounces" : -1,
+  "frameNumber" : 6,
+  "timeToLive" : 2,
+  "pointLight" : true,
+  "lightColor" : [255, 255, 128],
+  "emitters" : [ "gic_tinysmoke" ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosionknockback.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.0125,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.0125,
+      "fuzzAngle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 180,
+      "inheritDamageFactor" : 0.0125,
+      "directional" : "true"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 45,
+      "inheritDamageFactor" : 0.0125,
+      "directional" : "true"
+    }
+  ],
+  "power" : 390.0,
+  "speed" : 3.0,
+  "damageKind" : "ews_explosive",
+  "damageType" : "IgnoresDef",
+  "damageTeam" : { "type" : "indiscriminate" }
+}

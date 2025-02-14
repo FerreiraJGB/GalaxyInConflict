@@ -1,0 +1,42 @@
+{
+  "metadata" : {
+    "name" : "gic_greenfingerdaimyo_battlefield_bossrush_general",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_greenfingerdaimyo_wasteland_transition_bossrush_general"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 5,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+
+
+    {
+      "name" : "gic_greenfingerdaimyo_cliffside_residence",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_greenfingerdaimyo_cliffside_residence" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_cliffside_residence.json" ] ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_greenfingerdaimyo_wasteland_transition_bossrush_general",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_greenfingerdaimyo_wasteland_transition_bossrush_general.json" ] ],
+      "chance" : 0
+    }
+	
+	
+	
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "itemName" : "gic_patron_ammunitionfairy",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#8B30F0;Nature Incarnate",
+  "inventoryIcon" : "gic_patron_ammunitionfairy.png",
+  "maxStack" : 1,
+  "description" : 
+  
+"--- Assign to a backpack for the unit to take effect.
+
+^yellow;Eccentric Employ: Every 30 seconds within 100 units of a visible enemy, grants an Area-of-Effect Healing Flask zone.^reset;",
+
+
+
+  "shortdescription" : "Patron: Ammunition Fairy",
+
+  "augment" : {
+    "type" : "gic_backpack",
+    "name" : "gic_patron_ammunitionfairy",
+    "displayName" : "Patron: Ammunition Fairy",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_patron_ammunitionfairy.png",
+    "effects" : [ "gic_patron_ammunitionfairy" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_patron_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

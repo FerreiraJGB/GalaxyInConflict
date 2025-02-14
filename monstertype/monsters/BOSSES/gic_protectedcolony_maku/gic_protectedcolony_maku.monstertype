@@ -1,0 +1,1598 @@
+{
+  "type" : "gic_protectedcolony_maku",
+  "shortdescription" : "[Maku, The Custodian]",
+  "description" : "Knights of old.",
+
+  "categories" : [ "gic_protectedcolony_maku" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_protectedcolony_maku.animation",
+
+  "dropPools" : [ "gic_protectedcolony_makuTreasure" ],
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster_phases_music_adaptive.lua"
+    ],
+	
+
+	"music" : ["/music/Remnant2/gic_remnant2_thecustodianseye.ogg"],
+  
+	"range" : 95,			//measured in blocks, default val is 50 blocks
+	"fadeOutTime" : 2.0,	//measured in seconds, default val is 2.0 seconds
+	"fadeInTime" : 2.0,		//measured in seconds, default val is 2.0 seconds
+	
+	
+	//ADAPTIVE HEALTH STUFF
+	"adaptiveTrackingRange" : 200, //should be range in blocks
+	"adaptiveHealthBonus" : 9000, //flat max health stat
+	
+	
+	//EXTRA DROP POOLS, DROPS ONE LOOT POOL PER EXTRA PLAYER
+	"extraDropPools" : ["gic_protectedcolony_makuTreasure"],
+	
+	
+	
+	
+	
+	"phaseTriggerCount" : 3, //how many indices should the monster consider for phases
+	"healthThresholdTriggers" : [0.60, 0.5, 0.25], //determines health threshhold for phase trigger [0.66,0.33]
+	"regressPhases" : false, //if enabled, monster will regress to its prior phase if the monster's health increases above its current threshold.
+	
+	"phaseTriggerIds" : ["behaviorConfigInjured1", "behaviorConfigInjured2", "behaviorConfigInjured3"], //configs to correspond to once the corresponding healthThresholdTrigger has been reached. ["behaviorConfigInjured1","behaviorConfigInjured2"]
+	//configs correspond to healthThresholdTriggers via index, ie index 1 of healthThresholdTrigger corresponds to index 1 of phaseTrigger
+
+
+    "damageBar" : "Special",
+    "behavior" : "monster",
+    "deathBehavior" : "monster-death",
+    "seeThroughLiquid" : false,
+	
+	
+
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 220,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+      ],
+
+      "hostileActions" : [
+
+
+		//Close-Ranged AoE blast - Only initiated if the player is at point-blank. A faster variant of the Thermal Laser but as a standard 360 effect.
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 5,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "special_windup_aoe",
+            "windupTime" : 0.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_plasmaimpact_crusaderchampion", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.6,
+			  "power" : 130,
+			  "knockback" : 130,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_stun_3" ]	
+			  
+            },
+            "fireOffsets" : [[0.0, -1.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "special_fire_aoe",
+            "fireSound" : "fire_aoe",
+            "aimDirection" : [1, 0.25],
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },
+		
+		
+		
+		
+	  
+	  //Pulse Dash - Will close the gap.
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 90,
+          "minimumRange" : 20,
+          "windupTime" : 0.25,
+         "power" : 300,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 1200,
+          "chargeState" : "dash",
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Pulse Dash Short - Will close the gap.
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 20,
+          "minimumRange" : 5,
+          "windupTime" : 0.25,
+         "power" : 300,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 1200,
+          "chargeState" : "dash",
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "winddownTime" : 0.05,
+          "winddownState" : "idle"
+        }
+      },
+	  
+		
+		
+
+
+	  //Rocket Shot - Fires directly at the player 3 times. Creates an immense "backblast" which coats the area behind Maku.
+       {
+          "name" : "action-fire",
+          "cooldown" : 7,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 150,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "shoot_forward",
+            "windupTime" : 0.75,
+            "projectileCount" : 3,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 1.5,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_maku_rocketshot_muzzle", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 80,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[3.0, -1.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "fire_rocket",
+            "aimDirection" : [1, 0],
+            "winddownState" : "",
+            "winddownTime" : 2.0
+          }
+        },
+
+
+	  //Bouncing Plasma - Fires a plasma ball diagonally upwards, which then hits a surface to reflect back in a slow fixed spread.
+       {
+          "name" : "action-fire",
+          "cooldown" : 7,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 150,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "shoot_up",
+            "windupTime" : 0.75,
+            "projectileCount" : 4,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.5,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_magicbullet_ruinorb_6pattern_maku_muzzlespawn", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 80,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[2.5, 0.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+			"holdAim" : true,
+            "fireState" : "",
+            "fireSound" : "fire_plasma",
+            "aimDirection" : [1, 0.25],
+            "winddownState" : "",
+            "winddownTime" : 4.0
+          }
+        },		
+		
+		
+		
+	  //Close-range - Backdash - Move away from player.
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 7,
+          "minimumRange" : 0, //20
+          "windupTime" : 0.1,
+          "chargeTime" : 0.05, //0.150
+          "chargeSpeed" : -2400, //2400
+          "chargeControlForce" : 1200, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "dash",
+          "windupState" : "",
+          "winddownTime" : 1.5,
+          "winddownState" : "idle"
+        }
+      }
+		
+
+
+
+
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "damageTakenActions" : [
+	 
+
+      ],
+	  
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_tankexplosion_smoke",
+            "projectileParameters" : {
+              "power" : 0,
+              "damageTeam" : { "type" : "indiscriminate", "team" : 0 },
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        }
+		
+      ],
+	  
+	  
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+//Disco Massacre
+	
+    "behaviorConfigInjured1" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 220,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+
+      ],
+
+      "hostileActions" : [
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : 9999,
+          "parameters" : {
+            "windupTime" : 0.05,
+            "windupState" : "",
+            "winddownTime" : 0.05,
+            "winddownState" : "idle",
+
+            "invulnerableTime" : 20,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+			
+			
+		
+		
+	  //Fires a turret spawner into the air.
+       {
+          "name" : "action-fire",
+          "cooldown" : 30,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 150,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "discomassacre_windup",
+            "windupTime" : 0.75,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0.0,
+            "projectileType" : "gic_maku_rocketshot_turretspawn_muzzle", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 80,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[2.0, 1.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "discomassacre_fire",
+            "fireSound" : "fire",
+            "aimDirection" : [1, 4],
+            "winddownState" : "",
+            "winddownTime" : 20.0
+          }
+        }
+		
+
+
+			],
+            "invulnerableEffect": "gic_colonial_energyshield_maku"
+          }
+        },
+
+
+
+
+
+
+		//Close-Ranged AoE blast - Only initiated if the player is at point-blank. A faster variant of the Thermal Laser but as a standard 360 effect.
+       {
+          "name" : "action-fire",
+          "cooldown" : 1,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 5,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "special_windup_aoe",
+            "windupTime" : 0.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_plasmaimpact_crusaderchampion", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0.6,
+			  "power" : 130,
+			  "knockback" : 130,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1", "gic_stun_2", "gic_stun_3" ]	
+			  
+            },
+            "fireOffsets" : [[0.0, -1.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "special_fire_aoe",
+            "fireSound" : "fire_aoe",
+            "aimDirection" : [1, 0.25],
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        }
+
+
+
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "damageTakenActions" : [
+	 
+
+      ],
+	  
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+	  
+	  
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+    "behaviorConfigInjured2" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 220,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+
+      ],
+
+      "hostileActions" : [
+
+
+
+	  //Close-range - Backdash - Move away from player.
+      {
+        "name" : "action-charge",
+        "cooldown" : 20.0,
+        "parameters" : {
+          "maximumRange" : 10,
+          "minimumRange" : 0, //20
+          "windupTime" : 0.1,
+          "chargeTime" : 0.05, //0.150
+          "chargeSpeed" : -2400, //2400
+          "chargeControlForce" : 1200, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "dash",
+          "windupState" : "",
+          "winddownTime" : 1.5,
+          "winddownState" : "idle"
+        }
+      },
+
+
+
+
+	  //Rocket Shot - Fires directly at the player 3 times. Creates an immense "backblast" which coats the area behind Maku. Phase 2 variant with shorter range and faster burst.
+       {
+          "name" : "action-fire",
+          "cooldown" : 5,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 10,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "shoot_forward",
+            "windupTime" : 0.75,
+            "projectileCount" : 2,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.2,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_maku_rocketshot_muzzle", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 80,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[3.0, -1.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "fire_rocket",
+            "aimDirection" : [1, 0],
+            "winddownState" : "",
+            "winddownTime" : 2.0
+          }
+        },
+
+		
+		
+		
+	  
+	  //Pulse Dash - Will close the gap.
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 90,
+          "minimumRange" : 20,
+          "windupTime" : 0.25,
+         "power" : 300,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 1200,
+          "chargeState" : "dash",
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Pulse Dash Short - Will close the gap.
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 20,
+          "minimumRange" : 5,
+          "windupTime" : 0.25,
+         "power" : 300,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 1200,
+          "chargeState" : "dash",
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "winddownTime" : 0.05,
+          "winddownState" : "idle"
+        }
+      },
+	  
+
+
+
+		
+	  //Explosive Wave - Fires into the ground to create an explosive wave which also spawns danmaku on its way back down.
+       {
+          "name" : "action-fire",
+          "cooldown" : 10,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 150,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "shoot_down",
+            "windupTime" : 1.5,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_magicshot_explosivewave_2pattern_maku", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 160,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[2.5, 0.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "fire_wave",
+            "aimDirection" : [1, 0.0],
+            "winddownState" : "",
+            "winddownTime" : 2.0
+          }
+        },
+		
+		
+
+
+		//Thermal Laser - Aims at the ground and creates a Loyalty Laser-like emission from the ground. Lasts longer. Starts off initially as the BIRB Laser effect before transitioning into the arena lock move.
+       {
+          "name" : "action-fire",
+          "cooldown" : 10,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 150,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "special_windup",
+            "windupTime" : 3.0,
+            "projectileCount" : 1,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 0.0,
+            "inaccuracy" : 0,
+            "projectileType" : "gic_energybeam_groundwave_stage1_danmaku_spawner_maku", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 3.5,
+			  "power" : 80,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[0.0, -1.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "special_fire",
+            "fireSound" : "fire_laser",
+            "aimDirection" : [1, 0.25],
+            "winddownState" : "",
+            "winddownTime" : 10.0
+          }
+        },
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+	  //Close-range - Backdash - Move away from player.
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 7,
+          "minimumRange" : 0, //20
+          "windupTime" : 0.1,
+          "chargeTime" : 0.05, //0.150
+          "chargeSpeed" : -2400, //2400
+          "chargeControlForce" : 1200, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "dash",
+          "windupState" : "",
+          "winddownTime" : 1.5,
+          "winddownState" : "idle"
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "damageTakenActions" : [
+	 
+
+      ],
+	  
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+	  
+	  
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+	
+    "behaviorConfigInjured3" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 220,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 15,
+	  
+      "foundTargetActions" : [
+
+      ],
+
+      "hostileActions" : [
+
+
+
+
+	  //Close-range - Backdash - Move away from player.
+      {
+        "name" : "action-charge",
+        "cooldown" : 7.0,
+        "parameters" : {
+          "maximumRange" : 7,
+          "minimumRange" : 0, //20
+          "windupTime" : 0.1,
+          "chargeTime" : 0.05, //0.150
+          "chargeSpeed" : -2400, //2400
+          "chargeControlForce" : 1200, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "dash",
+          "windupState" : "",
+          "winddownTime" : 1.5,
+          "winddownState" : "idle"
+        }
+      },
+
+
+		
+	  
+	  //Pulse Dash - Will close the gap.
+      {
+        "name" : "action-charge",
+        "cooldown" : 12.0,
+        "parameters" : {
+          "maximumRange" : 90,
+          "minimumRange" : 20,
+          "windupTime" : 0.25,
+         "power" : 300,
+          "chargeTime" : 0.3,
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 1200,
+          "chargeState" : "dash",
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "winddownTime" : 0.05,
+          "winddownState" : ""
+        }
+      },
+	  
+	  //Pulse Dash Short - Will close the gap.
+      {
+        "name" : "action-charge",
+        "cooldown" : 4.0,
+        "parameters" : {
+          "maximumRange" : 20,
+          "minimumRange" : 5,
+          "windupTime" : 0.25,
+         "power" : 300,
+          "chargeTime" : 0.15,
+          "chargeSpeed" : 2400, //18
+          "chargeControlForce" : 1200,
+          "chargeState" : "dash",
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "winddownTime" : 0.05,
+          "winddownState" : "idle"
+        }
+      },
+	  
+
+
+
+
+
+
+
+
+		
+		
+	  //Hot Grenade - Fires a grenade that explodes in a small AoE which also deals boss bleed to Maku.
+       {
+          "name" : "action-fire",
+          "cooldown" : 1,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 150,
+            "minimumRange" : 0,
+            "windupStopForce" : 10,
+            "windupState" : "shoot_45up",
+            "windupTime" : 0.75,
+            "projectileCount" : 4,
+            "fireDelay" : 0.0,
+            "projectileInterval" : 1.0,
+            "inaccuracy" : 0.2,
+            "projectileType" : "gic_maku_rocketshot_coldgrenade_muzzle", //meleeslash
+            "projectileParameters" : {
+              "speed" : 0,
+              "timeToLive" : 0,
+			  "power" : 200,
+			  "knockback" : 0,			  
+              "damageKind" : "ews_heavyarms",
+              "damageType" : "IgnoresDef",
+              "statusEffects" : [ "gic_stun_1" ]	
+			  
+            },
+            "fireOffsets" : [[2.0, 1.0]], //x, 1.0 for accurate fire
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireState" : "",
+            "fireSound" : "fire_grenade",
+            "aimDirection" : [1, 1],
+            "winddownState" : "",
+            "winddownTime" : 1.0
+          }
+        },		
+		
+		
+
+
+
+
+
+
+
+	  //Close-range - Backdash - Move away from player.
+      {
+        "name" : "action-charge",
+        "cooldown" : 1.0,
+        "parameters" : {
+          "maximumRange" : 7,
+          "minimumRange" : 0, //20
+          "windupTime" : 0.1,
+          "chargeTime" : 0.05, //0.150
+          "chargeSpeed" : -2400, //2400
+          "chargeControlForce" : 1200, //1200
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "dash",
+          "windupState" : "",
+          "winddownTime" : 1.5,
+          "winddownState" : "idle"
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+      "periodicActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "idlepassive",
+            "animationTime" : 600
+          }
+        }
+	  ],
+
+      "damageTakenActions" : [
+	 
+
+      ],
+	  
+	  
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+	  
+	  
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+
+    "damageParts" : {
+      "body" : {
+        "damage" : 210, //Standard Damage
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.35,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 20,
+        "statusEffects" : [ ]
+      },
+      "twirlDamage" : {
+        "damage" : 60,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.1,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 10,
+        "statusEffects" : [ ]
+      },
+      "jumpKickDamage" : {
+        "damage" : 20,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.35,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 60,
+        "statusEffects" : [ ]
+      },
+      "piercingDamage" : {
+        "damage" : 150,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.35,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 20,
+        "statusEffects" : [ {"effect" : "gic_unblockableDamage", "duration" : 50.0} ] //duration value (out of 100) represents % of health that will be dealt
+      }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -1.85], [0.5, -1.85], [0.5, 2.0], [-0.5, 2.0] ], // [-0.5, -2.15], [0.5, -2.15], [0.5, 2.6], [-0.5, 2.6],    [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375] 
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.45], [-0.35, -1.75], [0.35, -1.75], [0.75, -1.45], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ],                 //[ [-0.5, -2.15], [0.5, -2.15], [0.5, 1.8], [-0.5, 1.8],      [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375]  ], //1.8 > 2.0
+
+      "mass" : 1,
+      "walkSpeed" : 8,
+      "runSpeed" : 8,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "robotic",
+
+    "knockoutTime" : 5, //0.3
+    "knockoutAnimationStates" : {
+      "body" : "disabled" //damage : stunned
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "robotic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+        "knockbackStunTime" : {
+          "baseValue" : 0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 290
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 40000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireResistance" : {
+          "baseValue" : 0.25
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.8
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.8
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.25
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+	  
+      "gic_stunProtection" : {
+        "baseValue" : 1.0
+      },	  
+	  
+	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -2.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.95
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 25
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

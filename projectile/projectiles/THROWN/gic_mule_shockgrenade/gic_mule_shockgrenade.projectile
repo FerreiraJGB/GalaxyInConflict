@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_mule_shockgrenade",
+  "physics" : "gic_grenadenormal",
+  "bounces" : 0,
+  "timeToLive" : 3,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [0, 0, 0],
+  "image" : "gic_mule_shockgrenade.png",
+  "frameNumber" : 1,
+  "damageType" : "IgnoresDef",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/projectiles/snowball_hit_organic2.ogg"
+      ]
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/electricexplosionknockbackstatus.config"
+    }
+  ],
+  "power" : 30,
+  "statusEffects" : [ "gic_tazed_1", "gic_tazed", "electrified", "gic_advancedmunition_overcharged" ],
+  "damageKind" : "ews_smallarms"
+}

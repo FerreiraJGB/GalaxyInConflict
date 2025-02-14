@@ -1,0 +1,73 @@
+{
+  "objectName" : "gic_yamaxanadu_tyrantjudge_rubblespawner",
+  "colonyTags" : ["trap", "evil"],
+  "printable" : false,
+  "rarity" : "Legendary",
+  "description" : "Hot!",
+  "shortdescription" : "Rubble Spawner",
+  "race" : "ancient",
+  "scannable" :false,
+  "category" : "trap",
+  "price" : 0,
+
+  "inventoryIcon" : "gic_yamaxanadu_tyrantjudge_rubblespawner_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_yamaxanadu_tyrantjudge_rubblespawner.png:<frame>.off",
+      "imagePosition" : [0, 0],
+      "projectileDirection" : [0, -1],
+      "projectilePosition" : [1.0, 1.0],
+      "spaceScan" : 0.1,
+      "anchors" : []
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/projectiletrap/projectiletrap.lua" ],
+  "scriptDelta" : 2,
+
+  "animation" : "/objects/wired/projectiletrap/projectiletrap.animation",
+  "animationParts" : {
+    "bg" : "gic_yamaxanadu_tyrantjudge_rubblespawner.png",
+	"fg" : "gic_yamaxanadu_tyrantjudge_rubblespawner.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "shoot" : [ ],
+      "on" : [ "/sfx/objects/flametrap_on.ogg" ],
+      "off" : [ "/sfx/objects/flametrap_off.ogg" ]
+    }
+  },
+
+  "soundEffect" : "", // this is a thing that also works
+
+  "inputNodes" : [ [0, 1] ],
+
+  "inactiveLightColor" : [0, 0, 0], // light color to emit when the object is 'off'
+  "activeLightColor" : [0, 0, 0], // light color to emit when the object is 'on'
+
+  "fireTime" : 2.1, // rate of fire
+  "fireTimeVariance" : 2, // variation in rate of fire
+  "projectile" : "arenainvisible", // name of projectile (required)
+  "projectileConfig" : { // extra configuration overrides for projectile
+    "power" : 10,
+    "speed" : 5,
+    "damageType" : "Environment",
+    "actionOnReap" : [
+      {
+        "action" : "projectile",
+        "type" : "gic_yamaxanadu_tyrantjudge_statue_gib_12",
+		"fuzzAngle" : 10,
+        "config" : {
+          "damageType" : "Environment",
+          "damageKind" : "ews_melee"
+        }
+      }
+    ]
+  },
+  
+  "health" : 1,
+
+  "smashOnBreak" : true,
+  "smashSounds" : [ "/sfx/objects/rock_break1.ogg", "/sfx/objects/rock_break2.ogg", "/sfx/objects/rock_break3.ogg", "/sfx/objects/rock_break4.ogg", "/sfx/objects/rock_break5.ogg", "/sfx/objects/rock_crumble1.ogg", "/sfx/objects/rock_crumble2.ogg", "/sfx/objects/rock_crumble3.ogg", "/sfx/objects/rock_crumble4.ogg", "/sfx/objects/rock_crumble5.ogg" ],
+  "smashParticles" : [ { "count" : 6, "particle" : "greystoneshard" } ]
+}

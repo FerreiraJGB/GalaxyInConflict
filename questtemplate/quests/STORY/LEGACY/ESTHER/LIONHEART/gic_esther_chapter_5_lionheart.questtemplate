@@ -1,0 +1,42 @@
+{
+  "id" : "gic_esther_chapter_5_lionheartQuest",
+  "title" : "^#D1FFDE;Lionheart, The Hearty", //After completing Chapter 5
+  "prerequisites" : [ "gic_esther_chapter_5_0_division16Quest" ],
+  
+  "text" : "Still good? Remember to take breaks if you feel tired and frustrated. Time is fleeting, but if all you know is stress and fear, you won't get far.",
+  
+  "completionText" : "Cooked up some of this stuff. Old brigand's recipe. Drink them. I can't believe I'm saying this but; consumables are meant to be consumed. Use them.",
+  
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_bandits_heartystew", 1 ], [ "gic_bandits_heartystew", 1 ], [ "gic_bandits_heartystew", 1 ], [ "gic_bandits_heartystew", 1 ], [ "gic_bandits_heartystew", 1 ], [ "gic_bandits_heartystew", 1 ], [ "gic_bandits_heartystew", 1 ], [ "gic_bandits_heartystew", 1 ], [ "gic_bandits_heartystew", 1 ], [ "gic_bandits_heartystew", 1 ] ]
+  ],
+  "canBeAbandoned" : false,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      }
+    },
+
+
+    "descriptions" : {
+      "turnIn" : "Speak to ^orange;Lionheart^reset;."
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_1_lionheart",
+    "conditions" : [
+    ]
+	
+	
+  }
+}

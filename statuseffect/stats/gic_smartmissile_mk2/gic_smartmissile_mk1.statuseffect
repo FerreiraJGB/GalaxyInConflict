@@ -1,0 +1,56 @@
+{
+  "name" : "gic_smartmissile_mk1",
+  "effectConfig" : {
+	"projectileType" : "gic_distanthomingmissile_javelin_stage3_smartmissile_mk1", //does not accept arrays
+	"projectileTypeMiss" : "gic_distanthomingmissile_javelin_stage3_smartmissile_mk1", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+        {
+          "action": "particle",
+          "specification": {
+            "size": 0.4,
+            "color": [255, 255, 255],
+            "timeToLive": 0.2,
+            "destructionAction": "fade",
+            "destructionTime": 0.4,
+            "position": [0.0,0.5],
+            "type": "text",
+            "text": "^red;Reloading^reset;",
+            "velocity": [0,1.0]
+          }
+        }
+      ]
+	},
+	"missChance" : 10,
+	
+	"offset" : [-1.5,1.5],
+	
+	"muzzleOffset" : [-1.7, 1.1],
+	
+	"muzzleOffset2" : [-1.3, 0.9],
+	
+	"trackingDistance" : 200,
+	"trackingAngle" : 181, //181
+	"fireRate" : 1.0,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 5,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 1.0
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_smartmissile_mk2.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_smartmissile_mk1.animation",
+ 
+  "label" : "Smart Missile Mk.1 - Fires very weak homing missiles at long ranges | Base 10 Small-Arms DMG per missile | 2s reload.",
+  "icon" : "/interface/statuses/gic_smartmissile_mk1.png"
+}

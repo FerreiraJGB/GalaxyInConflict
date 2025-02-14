@@ -1,0 +1,35 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "mark" : {
+        "default" : "inactive",
+        "states" : {
+          "inactive" : {},
+          "active" : {}
+        }
+      }
+    },
+
+    "parts" : {
+      "controller" : {
+        "properties" : {
+          "centered" : true,
+          "offset" : [0.15, 0.2],
+		  "image" : "<partImage>"
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "aimTeleport" : ["/sfx/melee/gic_bloodborne_miracle-pre.wav"],
+    "placeOk" : [],
+    "placeBad" : ["/sfx/interface/clickon_error.ogg"],
+	
+	"activate" : ["/sfx/melee/gic_bloodborne_magic-powerup.wav"],
+	"deactivate" : [],
+	"speedUp" : [],
+	"speedDown" : [],
+	"ping" : ["/sfx/objects/screen5.ogg"]
+  }
+}

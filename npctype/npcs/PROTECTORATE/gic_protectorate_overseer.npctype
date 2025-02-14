@@ -1,0 +1,149 @@
+{
+  "type" : "gic_protectorate_overseer",
+  "baseType" : "gic_protectorate_base",
+
+  "dropPools" : [ "gic_traumatizedprotectorTreasure" ],
+//  "identity" : {    "gender" : "male"  },  
+  
+  
+  
+  
+  "movementParameters" : {
+    "runSpeed" : 10,
+    "walkSpeed" : 5
+  },  
+  
+  
+  
+  
+  "scriptConfig" : {
+//    "behavior" : "gic_combat_default",
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.03,
+      "rangedAimTime" : 1.00,
+      "rangedWindupTime" : 0.01
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "wander", { "timeRange" : [7,20]}]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:attack",
+      "reattack" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:reattack",
+      "killedTarget" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:killedTarget",
+      "lostTarget" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:lostTarget",
+      "outOfSight" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:outOfSight",
+      "cheerOn" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:cheerOn",
+      "cantReach" : "/dialog/PROTECTORATE/gic_traumatizedprotector_combat.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+  
+          {
+            "chest" : [ { "name" : "protectoratechest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "protectoratepants", "parameters" : { "colorIndex" : [0] }  } ],
+            "back" : [ { "name" : "heatprotectionback", "parameters" : { "colorIndex" : [0] }  } ],
+            "primary" : [
+			  "gic_iajutsu_katana_npc"
+			  ],
+	        "sheathedprimary" : [ "gic_shoru_wand", "gic_hinata_wand", "gic_azoyou_wand"]
+          }
+		  
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_commandingofficer_phylake_rally"],  
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 666.6666 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+	  
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+		
+        "gic_bleeding_lightStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+		
+        "gic_bleeding_mediumStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+	
+        "gic_bleeding_heavyStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+		
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },
+	
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_heavyarmsResistance" : {
+        "baseValue" : -1.0
+      },
+	  
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+    }
+  }
+}

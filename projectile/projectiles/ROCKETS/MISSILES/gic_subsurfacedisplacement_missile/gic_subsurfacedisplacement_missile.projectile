@@ -1,0 +1,49 @@
+{
+  "projectileName" : "gic_subsurfacedisplacement_missile",
+
+  "bounces" : -1,
+  "image" : "gic_subsurfacedisplacement_missile.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_blockexplosion/gic_blockexplosion_20.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_largeexplosion/gic_largeexplosion.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_shellhit_medium/gic_shellhit_medium.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_largeexplosion/gic_largeexplosionknockback.config"
+    }
+  ],
+  
+  "periodicActions" : [
+    {
+      "time" : 0.05,
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_blockexplosion/gic_blockexplosion_5.config"
+    }
+  ],
+  
+  "power" : 2000,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+
+  "maxSpeed" : 250,
+  
+  "damageTeam" : { "type" : "indiscriminate" },
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 16.0,
+  "acceleration" : 0,
+  "timeToLive" : 8,
+  "physics" : "gic_subsurfacedisplacement_missile"
+}

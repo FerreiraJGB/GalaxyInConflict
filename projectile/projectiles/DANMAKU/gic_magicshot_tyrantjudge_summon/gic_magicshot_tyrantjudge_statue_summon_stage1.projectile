@@ -1,0 +1,46 @@
+{
+  "projectileName" : "gic_magicshot_tyrantjudge_statue_summon_stage1",
+  "image" : "gic_magicshot_tyrantjudge_summon_null.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 20,
+  "timeToLive" : 7,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.7,
+      "action" : "projectile",
+      "type" : "gic_magicshot_tyrantjudge_statue_summon_stage2",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    },
+    {
+      "time" : 0.7,
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "inheritDamageFactor" : 1,
+      "angle" : 0
+    },
+    {
+      "time" : 0.7,
+      "action" : "sound",
+      "options" : [
+        "/sfx/touhou/gic_touhou_tan_1-15db.ogg"
+      ]
+    }
+],
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

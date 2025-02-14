@@ -1,0 +1,42 @@
+{
+  "objectName" : "gic_industrialpowercable_verticalstraight_wiredbreakable",
+  "category" : "Decorative",
+  "rarity" : "Common",
+  "description" : "A power cable connecting to somewhere. This section can be broken with a weapon.",
+  "shortdescription" : "Industrial Power Cable - Vertical Straight Breakable",
+  "race" : "human",
+
+  "printable" : false,
+  "price" : 0,
+
+
+  
+  "inventoryIcon" : "gic_industrialpowercable_verticalstraight_wiredbreakable.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_industrialpowercable_verticalstraight_wiredbreakable.png:<color>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+
+    }
+  ],
+  
+  
+  
+  "outputNodes" : [ [0, 0] ],
+
+  "smashable" : true,
+  "smashSounds" : [ "/sfx/objects/wiredtarget_break1.ogg", "/sfx/objects/wiredtarget_break2.ogg", "/sfx/objects/wiredtarget_break3.ogg", "/sfx/objects/wiredtarget_break4.ogg", "/sfx/objects/wiredtarget_break5.ogg", "/sfx/objects/wiredtarget_break6.ogg" ],
+  "smashParticles" : [ { "count" : 4, "particle" : "redtargetshard" }, { "count" : 4, "particle" : "greytargetshard" } ],
+
+  "scripts" : ["gic_industrialpowercable_wiredbreakable.lua"],
+  "scriptDelta" : 0
+  
+  
+
+}

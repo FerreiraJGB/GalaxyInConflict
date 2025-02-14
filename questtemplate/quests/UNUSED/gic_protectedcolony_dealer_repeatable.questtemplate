@@ -1,0 +1,39 @@
+{
+  "id" : "gic_protectedcolony_dealer_repeatablequest",
+  "title" : "^orange;Subterranean Animism [Repeatable]",
+  "text" : "The Colonial AI in charge of Protected Colonies and their weaponized Fusion Rod Cannons could be of incredible use for the construction of advanced ships, but we lack the technology to replicate either. Deliver these modules to one of our corporate associates, and we will pay you handsomely.",
+  "completionText" : "As stated, your payment of credits. So long as there are colonies like these, we will always have jobs for you.",
+  "moneyRange" : [500,2500],
+  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 200 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_protectorate_administrativeprotocolmodule-codex",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset; within a ^orange;Protected Colony Laboratory^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_fusioncannonfuelrod",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset; within a ^orange;Protected Colony Laboratory^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

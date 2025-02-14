@@ -1,0 +1,35 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "mark" : {
+        "default" : "inactive",
+        "states" : {
+          "inactive" : {},
+          "active" : {}
+        }
+      }
+    },
+
+    "parts" : {
+      "controller" : {
+        "properties" : {
+          "centered" : true,
+          "offset" : [0.15, 0.2],
+		  "image" : "<partImage>"
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "aimTeleport" : ["/sfx/npc/gic_remnantfromtheashes_ancientconstruct_turret-01_alt.ogg"], //"/sfx/tech/gic_dishonored_blink_aim_1.ogg","/sfx/tech/gic_dishonored_blink_aim_2.ogg"
+    "placeOk" : ["/sfx/npc/gic_remnantfromtheashes_ancientconstruct_turret-02.ogg"], //"/sfx/tech/gic_dishonored_blink_teleport_1.ogg","/sfx/tech/gic_dishonored_blink_teleport_2.ogg"
+    "placeBad" : ["/sfx/interface/clickon_error.ogg"],
+	
+	"activate" : ["/sfx/objects/ancientconsole_on.ogg"],
+	"deactivate" : ["/sfx/objects/ancientconsole_off.ogg"],
+	"speedUp" : ["/sfx/objects/apexconsole1on.ogg"],
+	"speedDown" : ["/sfx/objects/apexconsole1off.ogg"],
+	"ping" : ["/sfx/objects/screen5.ogg"]
+  }
+}

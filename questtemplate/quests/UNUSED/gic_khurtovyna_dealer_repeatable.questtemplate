@@ -1,0 +1,32 @@
+{
+  "id" : "gic_khurtovyna_dealer_repeatablequest",
+  "title" : "^orange;Document Hunting [Repeatable]",
+  "text" : "Khyurtovyna-class planets were penal colonies that used to house countless prisoners. Recovery of data on these facilities would help track down their families who must repay the debt. Help us connect the dots and you'll end up richer for it.",
+  "completionText" : "As promised, the payment for your efforts. Return to us if you ever run short on Credits. We have the money, and you have the talent. It's a win-win, my friend.",
+  "moneyRange" : [500,2500],
+  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 75 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_colonialprison_prisonerdocument",
+        "count" : 10,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset; within a ^orange;Khurtovynan Prison^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

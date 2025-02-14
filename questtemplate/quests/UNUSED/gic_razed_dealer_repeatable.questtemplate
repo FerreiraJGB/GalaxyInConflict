@@ -1,0 +1,32 @@
+{
+  "id" : "gic_razed_dealer_repeatablequest",
+  "title" : "^orange;Cultural Preservation [Repeatable]",
+  "text" : "Floran Liberators are seizing and stockpiling items that could potentially date back hundreds of years to former Hylotl clans. Possessing such cultural artifacts might sway private Hylotl enterprises to support certain endeavours. You wouldn't mind getting rich, would you?",
+  "completionText" : "To the victor go the spoils. Return to me or one of our associates if you ever run low on credits.",
+  "moneyRange" : [500,2500],
+  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 125 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_floran_shinobi_katana_player",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Obtain ^orange;<itemName>^reset; from a ^orange;Razed Black Market^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

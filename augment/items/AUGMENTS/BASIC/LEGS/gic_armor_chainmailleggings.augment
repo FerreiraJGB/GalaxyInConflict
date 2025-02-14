@@ -1,0 +1,30 @@
+{
+  "itemName" : "gic_armor_chainmailleggings",
+  "price" : 0,
+  "rarity" : "Common",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#CBD872;Leg Equipment^reset;",
+  "inventoryIcon" : "gic_armor_chainmailleggings.png",
+  
+  "description" : 
+  
+"Chain mail is a type of armour consisting of small metal rings linked together in a pattern to form a mesh. It was generally common in military use on Earth between the 3rd century BC and the 16th century AD in regions then known as Europe, Asia, and North Africa. These pieces are for lining modern legwear and are generally crude recreations developed in poor-yet-developed societies. It is no match for genuine good-quality mail armor.
+
+^green;+10% MELEE and PHYSICAL Resistance.^reset;",
+
+
+
+  "shortdescription" : "Contemporary Chainmail Leggings",
+
+  "augment" : {
+    "type" : "gic_basiclegs",
+    "name" : "gic_armor_chainmailleggings",
+    "displayName" : "Contemporary Chainmail Leggings",
+    "displayIcon" : "/items/augments/basic/legs/gic_armor_chainmailleggings.png",
+    "effects" : [ {"stat" : "ews_meleeResistance", "amount" : 0.1}, {"stat" : "physicalResistance", "amount" : 0.10}, "gic_armor_chainmailleggings" ]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_legwear_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

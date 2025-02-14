@@ -1,0 +1,75 @@
+{
+  "itemName" : "gic_screwdriver",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A common screwdriver. Can be used to repair vehicles.
+  
+^orange;Can repair, build, and unjam turrets on hitting them. Hitting vehicles will repair them.",
+  "shortdescription" : "Screwdriver (GiC)",
+  "tooltipKind" : "gic_largebase_sword",
+  "category" : "^#FF4949;Repair Tool",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee"],
+
+  "inventoryIcon" : "gic_screwdriver_icon.png",
+
+  "animation" : "gic_screwdriver.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_screwdriver.png"
+  },
+  "animationCustom" : {
+  
+    "sounds" : {
+      "fire" : [ "/sfx/melee/swing_broadsword.ogg" ]
+    }
+	
+	},
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua", "/abilities/weapons/gic_aggressiveengineering_weapon.lua"],
+  "scriptDelta" : 2,
+  
+  "elementalType" : "ews_melee",
+
+  "aimOffset" : -2.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+    "fireTime" : 0.5,
+    "baseDps" : 15,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "statusEffects" : ["gic_wrench"],
+      "knockbackMode" : "facing",
+      "knockback" : 0,
+      "knockbackRange" : 0,
+	  "damageType" : "IgnoresDef",
+      "timeout" : 1.0
+    },
+	
+
+	"stances" : {
+      "windup" : {
+//		"weaponOffset" : [ 0.1, 0.5 ],
+		"twoHanded" : false
+      },
+      "fire" : {
+		"weaponOffset" : [ 0.1, 0.5 ],
+		"twoHanded" : false
+      },
+      "hold" : {
+		"weaponOffset" : [ 0.1, 0.5 ],
+		"twoHanded" : false
+      }
+	 }
+
+	
+
+  },
+
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

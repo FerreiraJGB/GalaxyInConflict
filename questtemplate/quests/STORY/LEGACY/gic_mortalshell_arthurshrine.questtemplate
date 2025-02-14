@@ -1,0 +1,35 @@
+{
+  "id" : "gic_mortalshell_arthurshrineQuest",
+  "title" : "^#D1FFDE;Arthur, The Venerable",
+  "prerequisites" : [  ],
+  "text" : "There's a collection box embedded into the base of the statue. There's just a small puddle of water within.",
+  "completionText" : "You feel invigorated by an unknown power emanating from the spear... but closer inspection reveals it to be a mere stone prop. ^yellow;[Mortal Shell: Arthur] unlocked and equipped as [HEAD Tech]",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_munitionsworkbench_mortalshell_arthur_guide-codex", 1 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : false,
+	
+    "showTech" : [
+      "gic_mortalshell_arthur"
+    ],
+    "equipTech" : [
+      "gic_mortalshell_arthur"
+    ],
+
+	
+    "turnInEntityUid" : "gic_unitan_arthurthevenerable_statue_quest",
+    "conditions" : [
+    ]
+  }
+}

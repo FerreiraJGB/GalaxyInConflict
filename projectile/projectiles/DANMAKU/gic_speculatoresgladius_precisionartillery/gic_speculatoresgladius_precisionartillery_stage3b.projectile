@@ -1,0 +1,44 @@
+{
+  "projectileName" : "gic_speculatoresgladius_precisionartillery_stage3b",
+  "physics" : "rocket",
+  
+  
+  "periodicActions" : [
+    {
+      "time" : 0.75,
+      "action" : "sound",
+      "rangeMultiplier" : 4.0,
+      "options" : [
+        "/sfx/WorldAtWar/gic_naval_gun5.ogg"
+      ]
+    },  		
+    {
+      "time" : 0.75,
+      "action" : "projectile",
+      "type" : "gic_speculatoresgladius_precisionartillery_stage4",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0,
+	  "fuzzAngle" : 360,
+      "angleAdjust" : 0
+    }
+	
+  ],
+  
+  
+  "image" : "gic_speculatoresgladius_precisionartillery_stage3.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+
+  
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 2,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 5,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

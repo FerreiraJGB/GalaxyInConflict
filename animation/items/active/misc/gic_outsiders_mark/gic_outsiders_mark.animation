@@ -1,0 +1,44 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "mark" : {
+        "default" : "inactive",
+        "states" : {
+          "inactive" : {},
+          "active" : {}
+        }
+      }
+    },
+
+    "parts" : {
+      "casing" : {
+        "properties" : {
+          "centered" : true,
+          "offset" : [-0.15, -0.1],
+		  "image" : "<partImage>"
+        },
+
+        "partStates" : {
+          "mark" : {
+            "inactive" : {
+              "properties" : {
+                "image" : "<partImage>:inactive"
+              }
+            },
+            "active" : {
+              "properties" : {
+                "image" : "<partImage>:active"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "aimTeleport" : ["/sfx/tech/gic_dishonored_blink_aim_1.ogg","/sfx/tech/gic_dishonored_blink_aim_2.ogg"],
+    "placeOk" : ["/sfx/tech/gic_dishonored_blink_teleport_1.ogg","/sfx/tech/gic_dishonored_blink_teleport_2.ogg"],
+    "placeBad" : ["/sfx/interface/clickon_error.ogg"]
+  }
+}

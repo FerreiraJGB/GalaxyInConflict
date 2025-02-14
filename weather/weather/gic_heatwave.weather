@@ -1,0 +1,55 @@
+{
+  "name" : "gic_heatwave",
+
+  "particles" : [
+    {
+      "density" : 0.01,
+      "autoRotate" : true,
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/darksandcloud/1.png",
+        "velocity" : [0, -2],
+        "approach" : [15, 15],
+        "angularVelocity" : 0,
+        "timeToLive" : 20,
+        "collidesForeground" : true,
+        "collidesLiquid" : true,
+        "destructionAction" : "shrink",
+        "destructionTime" : 2,
+        "ignoreWind" : false
+      }
+    },
+    {
+      "density" : 0.001,
+      "particle" : {
+        "type" : "animated",
+        "animation" : "/animations/windstorm/windstorm2.animation",
+        "velocity" : [0, 0],
+        "fade" : 0.5,
+        "looping" : true,
+        "destructionTime" : 20,
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    },
+    {
+      "density" : 0.001,
+      "particle" : {
+        "type" : "textured",
+        "image" : "/particles/fog/1.png",
+        "velocity" : [0, 0],
+        "timeToLive" : 20,
+        "collidesForeground" : false,
+        "collidesLiquid" : true,
+        "ignoreWind" : false
+      }
+    }
+  ],
+
+  "statusEffects" : ["gic_biomeheatwave"],
+  "duration" : [50, 400],
+  "maximumWind" : 10.0
+
+}

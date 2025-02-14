@@ -1,0 +1,74 @@
+{
+  "type" : "gic_banditshockinfantry_general",
+  "baseType" : "gic_banditbase",
+
+  "dropPools" : [ "gic_shockbanditTreasure" ],
+
+  "scriptConfig" : {
+    "dialog" : {
+	  "attack" : "/dialog/bandits/gic_shockbandit_combat.config:attack",
+      "reattack" : "/dialog/bandits/gic_shockbandit_combat.config:reattack",
+      "killedTarget" : "/dialog/bandits/gic_shockbandit_combat.config:killedTarget",
+      "lostTarget" : "/dialog/bandits/gic_shockbandit_combat.config:lostTarget",
+      "outOfSight" : "/dialog/bandits/gic_shockbandit_combat.config:outOfSight",
+      "cheerOn" : "/dialog/bandits/gic_shockbandit_combat.config:cheerOn",
+      "cantReach" : "/dialog/bandits/gic_shockbandit_combat.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+
+          {
+            "head" : [ { "name" : "gic_kabal6head", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_militiarigchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "hazmatlegs", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : ["gic_dcdr516"]
+//            "sheathedprimary" : ["gic_mule_shockgrenadethrow_npc"]
+          }
+  
+        ] ]
+    ]
+  },
+  
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+      "physicalResistance" : {
+        "baseValue" : 0.8
+      },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.3
+      }
+	  
+	  
+	  
+    }
+  }
+  
+}

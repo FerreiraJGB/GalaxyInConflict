@@ -1,0 +1,52 @@
+{
+  "objectName" : "gic_captaincorpse",
+  "rarity" : "Common",
+  "category" : "storage",
+  "colonyTags" : ["human","bunker","storage"],
+  "price" : 50,
+  "printable" : false,
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "description" : "The corpse of a human. He may be carrying something useful.",
+  "shortdescription" : "Corpse",
+  "race" : "human",
+  "health" : 2.0,
+
+  "apexDescription" : "Sleep tight, buddy.",
+  "avianDescription" : "Dear Kluex...",
+  "floranDescription" : "Ssstupid meatbag.",
+  "glitchDescription" : "Attentive. He may be carrying something.",
+  "humanDescription" : "Rest in peace, buddy.",
+  "hylotlDescription" : "He tried to survive. It didn't end well.",
+  "novakidDescription" : "This isn't a good sign.",
+
+  "avaliDescription" : "If only he had augments, he would've lived.",
+  "avikanDescription" : "The corpse of a human.",
+  "trinkDescription" : "A clearly dead human.",
+  "drodenDescription" : "Homo Sapiens. Status: Dead.",
+  "aegiDescription" : "You didn't deserve to end like this.",
+
+  "breakDropOptions" : [
+    [ [ "fleshblock", 1, { } ] ]
+  ],
+  
+  "inventoryIcon" : "gic_captaincorpse.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_captaincorpse.png:<color>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+	
+  ],
+
+  "openSounds" : [ "/sfx/objects/fleshdoor_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/fleshdoor_close.ogg" ],
+  "slotCount" : 9,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

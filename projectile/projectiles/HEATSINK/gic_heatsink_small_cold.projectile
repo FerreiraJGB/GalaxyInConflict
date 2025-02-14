@@ -1,0 +1,25 @@
+{
+  "projectileName" : "gic_heatsink_small_cold",
+  "physics" : "gic_grenadenormal",
+  "onlyHitTerrain" : true,
+  "bounces" : -1,
+  "timeToLive" : 4.5,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [40, 60, 80],
+  "image" : "gic_heatsink_small_cold.png",
+  "frameNumber" : 1,
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/projectiles/snowball_hit_organic2.ogg"
+      ]
+    }
+  ],
+  "actionOnReap" : [
+  ],
+  "power" : 10,
+  "damageKind" : "default",
+  "damagePoly" : [ [-4.5, 0], [-3, -3], [0, -4.5], [3, -3], [4.5, 0], [3, 3], [0, 4.5], [-3, 3] ]
+}

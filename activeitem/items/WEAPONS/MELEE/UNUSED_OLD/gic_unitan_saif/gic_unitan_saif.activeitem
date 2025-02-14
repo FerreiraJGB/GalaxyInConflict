@@ -1,0 +1,64 @@
+{
+  "itemName" : "gic_unitan_saif",
+  "price" : 500,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A traditional sword issued as rank for specific charismatic officers, primarily for troop inspiration purposes.",
+  "shortdescription" : "Unitan Saif Fulath",
+  "tooltipKind" : "sword",
+  "category" : "Axe",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","axe"],
+ 
+  "inventoryIcon" : "gic_unitan_saif.png",
+
+  "animation" : "/items/active/weapons/melee/axe/axe.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_unitan_saif.png"
+  },
+  "animationCustom" : { "sounds" : {
+          "fire" : [ "/sfx/melee/gic_sekiro_ichimonji_16speed.ogg" ]
+        } },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "axecleave",
+  "primaryAbility" : {
+    "fireTime" : 0.70,
+    "baseDps" : 50,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "knockbackRange" : 15,
+      "damageType" : "IgnoresDef",
+      "statusEffects" : [ "gic_guardbreak" ]
+    },
+	
+    "allowHold" : false,
+    "stances" : {
+      "idle" : {
+        "allowRotate" : false
+      },
+      "windup" : {
+        "hold" : true,
+        "duration" : 0.55,
+
+        "allowRotate" : false
+      },
+      "fire" : {
+        "allowRotate" : false
+      },
+      "hold" : {
+        "allowRotate" : false
+      }
+    }
+	
+  },
+
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

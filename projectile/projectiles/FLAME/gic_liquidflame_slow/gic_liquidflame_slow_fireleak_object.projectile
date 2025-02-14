@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_liquidflame_slow_fireleak_object",
+  "physics" : "laser",
+  "bounces" : 0,
+  "timeToLive" : 0.001,  
+  "lightColor" : [255, 121, 25],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_liquidflame_slow_fireleak",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 0.1,
+      "angleAdjust" : 0
+    }
+	],
+  "image" : "gic_liquidflame_slow.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 20,
+  "knockback" : 10,
+  
+  "statusEffects" : [
+    "burning", "gic_oilfire_primer", "gic_oil", "gic_burn_wounds"
+  ],
+  
+  "speed" : 100,
+  "knockbackDirectional" : true,
+  "pointLight" : false
+}

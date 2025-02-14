@@ -1,0 +1,41 @@
+{
+  "projectileName" : "gic_magicshot_guardiantengu_summon_stage1",
+  "image" : "gic_magicshot_guardiantengu_summon_stage2.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 100,
+  "timeToLive" : 7,
+  "onlyHitTerrain" : true,
+  
+"actionOnReap" : [
+    {
+     "action" : "spawnmonster",
+     "type" : "gic_otherworld_frostsoldier_dying",
+     "level" : 1,
+     "offset": [0, 2],
+     "arguments" : { "damageTeam" : 16 }
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gic_remnantfromtheashes_claviger-03.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_fireexplosion",
+      "angle" : 90
+    }
+],
+  
+  "power" : 0.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

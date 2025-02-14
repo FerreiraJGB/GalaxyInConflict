@@ -1,0 +1,53 @@
+{
+  "objectName" : "gic_invisiblescanner_npc",
+  "colonyTags" : ["wired"],
+  "printable" : false,
+  "rarity" : "Common",
+  "scannable" :false,
+
+  "category" : "wire",
+  "price" : 15,
+  "description" : "Perfect for all your automated door needs!",
+  "shortdescription" : "Invisible Proximity Scanner",
+  "race" : "generic",
+
+  "apexDescription" : "It's a proximity device. It'll sense when I get close to it.",
+  "avianDescription" : "A proximity device. It could trigger something if I'm near.",
+  "floranDescription" : "Ssscanning eye on the wall. It's looking at me!",
+  "glitchDescription" : "Suspicious. This proximity scanner might be aware of me.",
+  "humanDescription" : "A proximity sensor. It can tell when I'm near.",
+  "hylotlDescription" : "This scanning device can tell when I'm present.",
+  "novakidDescription" : "A proximity scanner. Is it watching me right now?",
+
+  "inventoryIcon" : "gic_invisiblescanner_npc.png",
+  "orientations" : [
+    {
+      "image" : "gic_invisiblescanner_npc.png:<frame>.off",
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : []
+    }
+  ],
+
+  "scripts" : [
+    "/objects/wired/proximitysensor/proximitysensor.lua",
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/STAGE/gic_invisiblescanner_npc/gic_invisiblescanner_npc.animation",
+  "animationParts" : {
+    "switch" : "gic_invisiblescanner_npc.png"
+  },
+  "animationPosition" : [0, 0],
+
+  "outputNodes" : [ [0, 0] ],
+  
+  "interactive" : false,
+
+  "detectDuration" : 3,
+  "detectEntityTypes" : [ "npc" ],
+//  "detectDamageTeam" : [1],
+  "detectArea" : [ [0.5, 0.5], 3 ]
+}

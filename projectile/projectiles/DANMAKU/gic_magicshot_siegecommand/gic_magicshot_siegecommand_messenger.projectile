@@ -1,0 +1,47 @@
+{
+  "projectileName" : "gic_magicshot_siegecommand_messenger",
+  "image" : "gic_magicshot_siegecommand_null.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 1.2,
+  "emitters" : [ ],
+  "actionOnTimeout" : [
+ 
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_siegecommand_stage1",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 10,
+	  "angle" : -90
+    }
+	
+  ],
+  
+"periodicActions" : [
+
+],
+  
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 40,
+  "acceleration" : 0,
+  "knockback" : 18
+}

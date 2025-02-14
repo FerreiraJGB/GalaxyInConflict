@@ -1,0 +1,61 @@
+{
+  "projectileName" : "gic_magicshot_homingcrosshair_danmaku_target",
+  "renderlayer" : "player+10",
+  "bounces" : -1,
+  "image" : "gic_magicshot_homingcrosshair_target.png",
+  "animationCycle" : 0.5,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 4,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/electricexplosionknockbackstatus.config"
+    },
+    {
+      "time" : 0.2,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : -90
+    },
+    {
+      "time" : 0.2,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : 0
+    },
+    {
+      "time" : 0.2,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : 90
+    },
+    {
+      "time" : 0.2,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : 180
+    }
+  ],
+  
+  "actionOnTimeout" : [
+  ],
+  
+"periodicActions" : [
+],
+  
+  "power" : 20,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+
+  "maxSpeed" : 25,
+  "ignoredef" : true,
+  "flippable" : true,
+  "speed" : 0.0,
+  "timeToLive" : 0.5,
+  "physics" : "laser"
+}

@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_redsun_artifact",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_redsun_artifact.png",
+  "maxStack" : 1,
+  "description" : 
+  
+//"A red spherical orb, radiating slight warmth at a consistent temperature deemed comfortable to the holder. Only the brave are worthy of this stone. ^red;The strong fight. The coward flies.^reset;
+
+
+"A red orb that empowers individuals onto the same level as [BOSSES]. It may ground an individual, though a great foe's arena cares not for your flight. Only that you fight.
+^green;+400 HP^reset;
+^red;-10% Speed^reset;
+^red;-50% Jump Height^reset;
+^red;x10 Fall Damage^reset;",
+
+
+
+  "shortdescription" : "Red Sun",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_redsun_artifact",
+    "displayName" : "Red Sun Artifact",
+    "displayIcon" : "/items/augments/TRINKETS/gic_redsun_artifact.png",
+    "effects" : [ "gic_maxhealthboost_redsun_400", "gic_redsun_-50"] //{"stat" : "ews_psychicResistance", "amount" : 0.5}
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_redsun_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

@@ -1,0 +1,45 @@
+{
+  "itemName" : "gic_wolffak_medkit",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_wolffak_medkit.png",
+  
+  "description" : "Sometimes pronounced ''Wolfak'' or cynically as ''Well, fuck''. ^green;This kit offers a lot of equipment to address the broadest range of conditions^white;. Often part of long-term colonization efforts in hostile environments.
+^green;- Restores 500 health over 10s, costing 4 seconds.
+^orange;- Heals Burn Wounds^white; | ^yellow;- Heals Bruising.^white;
+^red;- Heals Blood Loss^white; | ^gray;- Heals Fractures.^white;",
+
+  "maxStack" : 4,
+
+  "shortdescription" : "^yellow;Wolf First Aid Kit",
+  "effects" : [ [
+      {
+        "effect" : "gic_wolffak_medkit"
+      },
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 4
+      },
+	  
+      {
+        "effect" : "gic_medkit_use_messenger",
+        "duration" : 4
+      },	
+	  
+	  {
+        "effect" : "gic_blood_pack_recovery"
+      },
+      {
+        "effect" : "gic_burn_pack_recovery"
+      },
+      {
+        "effect" : "gic_fracture_pack_recovery"
+      }	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_medkit_use" ],
+  "blockingEffects" : [
+  ]
+}

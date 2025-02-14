@@ -1,0 +1,125 @@
+{
+  "type" : "gic_unitanplanetarysoldier_skirmishally",
+  "baseType" : "gic_followerbase",
+
+  "dropPools" : [ "basicTreasure" ],
+
+
+  "movementParameters" : {
+    "runSpeed" : 13
+  },
+
+
+  "scriptConfig" : {
+    "behavior" : "follower",
+
+    "dialog" : {
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+      "follower" : {
+        "attack" : {
+          "default" : {
+            "default" : [
+              "Here they come!",
+              "Open fire!",
+			  "All guns! Open up!",
+			  "Fire! Fire! Fire everything we've got!",
+			  "Up the ridge!",
+			  "Move!",
+			  "Where's our fire support!?",
+			  "Take it at all costs!"
+            ]
+          }
+        },
+        "join" : {
+          "default" : {
+            "default" : [
+              "Reporting for duty!",
+              "Let's see them fight all of us!",
+			  "On your guard, soldiers!",
+			  "We're the United Systems. It's time we acted like it.",
+			  "Reporting in!",
+			  "Present and accounted for!"
+            ]
+          }
+        },
+        "returnFromCombat" : {
+          "default" : {
+            "default" : [
+              "Target down!",
+              "I am not afraid!",
+			  "Enemy slain!",
+			  "Target gunned down!"
+            ]
+          }
+        },
+        "wait" : {
+          "default" : {
+            "default" : [
+              "Defending this point.",
+			  "Holding this point.",
+			  "Staying here it is then."
+            ]
+          }
+        },
+        "returnFromWait" : {
+          "default" : {
+            "default" : [
+              "Ready for duty!"
+            ]
+          }
+        }
+      }
+    }
+  },
+
+
+
+
+
+
+
+
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_unitanguardhead", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_planetaryinfantrychest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "mediclegs", "parameters" : { "colorIndex" : [1] }  } ],
+            "back" : [ { "name" : "gic_planetaryinfantryback", "parameters" : { "colorIndex" : [1] }  } ],
+            "primary" : [
+              "gic_unita_ilws"
+			  ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.0
+      },
+      "protection" : {
+        "baseValue" : 0.7
+      }
+    }
+  }
+}

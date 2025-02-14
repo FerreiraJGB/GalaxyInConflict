@@ -1,0 +1,31 @@
+{
+  "projectileName" : "gic_crystal_areashockwave_stage2",
+  "image" : "gic_crystal_areashockwave_stage2.png",
+  "animationCycle" : 1,
+  "physics" : "bullet",
+  "frameNumber" : 4,
+  "pointLight" : false,
+  "speed" : 0,
+  "timeToLive" : 1,
+  "fullbright" : true,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    }
+  ],
+  
+"periodicActions" : [
+
+],
+
+  "power" : 80.0,
+  "knockback" : 80,
+  "damageKind" : "ews_antitank",
+  "damageType" : "IgnoresDef",
+//  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_magicbullet_fire_sine_winterlantern",
+
+  "bounces" : 0,
+  "image" : "gic_magicbullet_fire.png",
+  "animationCycle" : 0.1,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    }
+  ],
+  "power" : 20,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+
+  "maxSpeed" : 10,
+  "ignoredef" : true,
+  "scripts" : [ "/scripts/projectiles/sinewaveprojectile.lua" ],
+  "scriptDelta" : 3,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 10.0,
+  "acceleration" : 30,
+  "timeToLive" : 10,
+  "physics" : "rocket",
+  
+  "wavePeriod" : 4,
+  "waveAmplitude" : 2
+
+
+
+}

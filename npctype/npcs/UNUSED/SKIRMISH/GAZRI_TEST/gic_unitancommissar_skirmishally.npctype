@@ -1,0 +1,136 @@
+{
+  "type" : "gic_unitancommissar_skirmishally",
+  "baseType" : "gic_followerbase",
+
+  "dropPools" : [ "basicTreasure" ],
+
+
+  "movementParameters" : {
+    "runSpeed" : 20,
+    "walkSpeed" : 20
+  },
+
+
+  "scriptConfig" : {
+    "behavior" : "follower",
+
+    "dialog" : {
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+      "follower" : {
+        "attack" : {
+          "default" : {
+            "default" : [
+              "You serve me now!",
+              "Open fire!",
+			  "Traitors of humanity!",
+			  "They will see our might!",
+			  "Cowards will be executed!",
+			  "Cowardice will be met with severe punishment!",
+			  "Victory at all costs!",
+			  "You will serve on the frontlines or you will serve on the firing line!"
+            ]
+          }
+        },
+        "join" : {
+          "default" : {
+            "default" : [
+              "No fear!",
+              "Let's see them fight all of us!",
+			  "On your guard, soldiers!",
+			  "We will make sure they will serve us!",
+			  "Reporting in!",
+			  "See to it, yes?"
+            ]
+          }
+        },
+        "returnFromCombat" : {
+          "default" : {
+            "default" : [
+              "Target down!",
+              "I am not afraid!",
+			  "Enemy target, neutralized!",
+			  "Worthless!",
+			  "Another to the count!"
+            ]
+          }
+        },
+        "wait" : {
+          "default" : {
+            "default" : [
+              "Defending this point.",
+			  "Holding this point.",
+			  "Staying here it is then."
+            ]
+          }
+        },
+        "returnFromWait" : {
+          "default" : {
+            "default" : [
+              "Ready to serve for the United Systems!"
+            ]
+          }
+        }
+      }
+    }
+  },
+
+
+
+
+
+
+
+
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_captainhead", "parameters" : { "colorIndex" : [1] }  } ],
+            "chest" : [ { "name" : "gic_commissarchest", "parameters" : { "colorIndex" : [1] }  } ],
+            "legs" : [ { "name" : "gic_commissarpants", "parameters" : { "colorIndex" : [1] }  } ],
+            "primary" : ["gic_augmentyr_commissarpistol"]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 300.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.0
+      },
+      "protection" : {
+        "baseValue" : 0.45
+      },
+      "gic_suppressed_energyregenProtection" : {
+        "baseValue" : 1.0
+      },
+      "gic_suppressed_redflashProtection" : {
+        "baseValue" : 1.0
+      },
+      "gic_suppressed_vulnerabilityProtection" : {
+        "baseValue" : 1.0
+      },
+      "gic_suppressedProtection" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

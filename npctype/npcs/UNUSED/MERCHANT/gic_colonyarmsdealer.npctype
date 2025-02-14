@@ -1,0 +1,80 @@
+{
+  "type" : "gic_colonyarmsdealer",
+  "baseType" : "merchant",
+
+  "scriptConfig" : {
+    "questGenerator" : {
+      "pools" : ["common"],
+      "enableParticipation" : true,
+      "timeLimit" : 30,
+      "nearbyQuestLimit" : 1,
+      "nearbyQuestRange" : 50,
+      "questCountRange" : [1, 4]
+    },
+
+    "dialog" : {
+      "merchant" : {
+        "start" : "/dialog/gic_spacemerchant.config:merchantStart",
+        "end" : "/dialog/gic_spacemerchant.config:merchantEnd",
+        "follow" : "/dialog/gic_spacemerchant.config:follow",
+        "welcome" : "/dialog/gic_spacemerchant.config:welcome",
+        "tout" : "/dialog/gic_spacemerchant.config:tout"
+      },
+      "flee" : {
+        "helpme" : "/dialog/flee.config:helpme",
+        "safe" : "/dialog/flee.config:safe"
+      },
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/merchant.config:tagCriteria",
+          "enclosedArea" : "/dialog/merchant.config:enclosedArea",
+          "otherDeed" : "/dialog/merchant.config:otherDeed",
+          "severe" : "/dialog/merchant.config:severe",
+          "final" : "/dialog/merchant.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/merchant.config:beacon",
+          "rent" : "/dialog/merchant.config:rent"
+        }
+      },
+      "accuse" : "/dialog/thief.config:accuse",
+      "alert" : "/dialog/thief.config:alert"
+    },
+
+    "merchant" : {
+      "waitTime" : 10,
+      "storeRadius" : 5,
+      "poolsFile" : "/npcs/merchant/gic_armsdealer.config",
+      "categories" : {
+        "override" : [ "gic_colonyarmsdeal" ]
+      },
+      "buyFactorRange" : [ 1.0, 2.0 ],
+      "sellFactorRange" : [ 0.05, 0.1 ],
+      "numItems" : 1,
+      "paneLayoutOverride" : {
+        "windowtitle" : {
+          "title" : "  Colony Arms Dealer",
+          "subtitle" : "  Deals military weaponry."
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "back" : [
+              { "name" : "survivalgearback", "parameters" : { "colorIndex" : [1] } }
+            ],
+            "chest" : [
+              { "name" : "workoutchest", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "legs" : [
+              { "name" : "soldierpants", "parameters" : { "colorIndex" : [0] } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

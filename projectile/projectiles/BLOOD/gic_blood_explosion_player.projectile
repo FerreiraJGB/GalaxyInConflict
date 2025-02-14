@@ -1,0 +1,34 @@
+{
+  "projectileName" : "gic_blood_explosion_player",
+  "image" : "/projectiles/gic_null/gic_null.png",
+  "animationCycle" : 0.25,
+  "physics" : "laser",
+  "frameNumber" : 1,
+  "timeToLive" : 0,
+  "damageKindImage" : "gic_uxo_mortaricon.png",
+  "pointLight" : false,
+  "actionOnReap" : [
+	
+	
+	
+	
+    {
+      "action" : "projectile",
+      "type" : "gic_blood_giblet_shorttrail_small_player",
+      "inheritDamageFactor" : 0.0125,
+	  "fuzzAngle": 360,
+      "angle" : 0
+    }
+	
+  ],
+  
+
+  
+  "emitters" : [ ],
+  "power" : 0.0, //deals 150hp dmg at 600 power
+//  "damagePoly" : [ [-96, 0], [-22, -22], [0, -96], [22, -22], [22, 0], [22, 22], [0, 96], [-22, 22]  ],
+  "speed" : 0,
+  "damageKind" : "ews_explosive",
+  "damageType" : "NoDamage",
+  "damageTeam" : { "type" : "indiscriminate" }
+}

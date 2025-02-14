@@ -1,0 +1,32 @@
+{
+  "itemName" : "gic_koloniya_flashsuppressor",
+  "price" : 5000,
+  "rarity" : "Common",
+  "category" : "Attachment",
+  "inventoryIcon" : "gic_koloniya_flashsuppressor.png",
+  "description" : "Hides muzzle flash when attached to the muzzle of a firearm. Threading only supports standard CCR-type barrels.",
+  "shortdescription" : "CCR Flash Suppressor (GiC)",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_koloniya_flashsuppressor", //name of attachment
+	"attachmentTag" : ["gic_barrel_koloniya","gic_koloniya_flashsuppressor"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/barrel/gic_koloniya_flashsuppressor.png", //determines what image is displayed on the resulting gun
+	
+	"specialAttachmentConfig" : {
+		"type" : "flashhider"			//prevents any muzzle-flash related items from occuring, normal sound plays, normal smoke occurs.
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

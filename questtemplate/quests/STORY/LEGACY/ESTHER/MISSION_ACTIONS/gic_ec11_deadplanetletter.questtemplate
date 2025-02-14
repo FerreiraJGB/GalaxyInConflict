@@ -1,0 +1,31 @@
+{
+  "id" : "gic_ec11_deadplanetletterQuest",
+  "title" : "^#D1FFDE;Dead Planet Letter",
+  "text" : "",
+  "completionText" : "",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_unfalteringfriend_weaponizedartifact", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_ec11_brighton",
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_ec11_deadplanetletter-codex",
+        "count" : 1,
+        "consume" : true
+      }
+    ]
+  }
+}

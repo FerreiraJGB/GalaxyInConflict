@@ -1,0 +1,42 @@
+{
+  "objectName" : "gic_glitch_desklamp",
+  "colonyTags" : ["light"],
+  "rarity" : "Common",
+  "description" : "Desk Lamp.",
+  "shortdescription" : "Desk Lamp",
+  "race" : "generic",
+
+  "category" : "light",
+  "price" : 75,
+  "lightColor" : [135, 153, 135],
+  "tooltipKind" : "gic_largebase",
+
+  "inventoryIcon" : "gic_glitch_desklamp_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_glitch_desklamp.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-8, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/tinywallswitch.ogg" ],
+      "off" : [ "/sfx/objects/tinywallswitch.ogg" ]
+    }
+  },
+  "animationParts" : {
+    "bg" : "gic_glitch_desklamp.png",
+    "fg" : "gic_glitch_desklamp_lit.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [0, 1] ]
+}

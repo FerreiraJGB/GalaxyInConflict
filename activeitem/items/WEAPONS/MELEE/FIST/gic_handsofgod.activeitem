@@ -1,0 +1,180 @@
+{
+  "itemName" : "gic_handsofgod",
+  "price" : 750,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  
+  
+  
+  "description" : "A fist weapon bearing God's name. It hits far harder than most other fist weapons, and bashing stuns enemies longer.
+^yellow;2x fists of the same type required for combos and bleed.^reset;  
+^orange;Standing: Light-Light-Heavy^reset; | ^orange;Crouched: Light-Heavy^reset;
+^orange;[BLOCK] + [LIGHT] to perform a [STUN BASH]^reset;
+^yellow;150HP Block^reset; | ^green;Perfect-Parries regenerate HP.^reset;
+^orange;[HEAVY] attacks proc [BOSS-BLEED] on [STUNNED] targets.^reset;",
+
+//^green;Knockout Punch: Finishing moves deal boss bleeding. Crouch to initiate an uppercut finishing move, remain standing for a strong forward dash punch.^reset;
+//bleeding procs only on stunned items btw
+//^yellow;Duck and Weave: Crouch for 40% knockback resistance.
+
+  "shortdescription" : "Hands of God",
+  "tooltipKind" : "gic_largebase_sword",
+  "category" : "^#EA3C0B;''My hands, my weapons. My weapons... My hands!''^reset;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon"],
+
+  "inventoryIcon" : "gic_handsofgod_icon.png",
+  "animation" : "gic_handsofgod.animation",
+  "animationParts" : {
+    "weapon" : "gic_handsofgod.png",
+    "swoosh" : "swoosh/physicalswoosh.png",
+	"slash" : "swoosh/powerpunchswoosh.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/melee/gic_bloodborne_sude0.wav", "/sfx/melee/gic_bloodborne_sude1.wav", "/sfx/melee/gic_bloodborne_sude2.wav", "/sfx/melee/gic_bloodborne_sude_swing0.wav" ]
+    }
+  },
+  "scripts" : [ "gic_fistweapon.lua", "gic_crouchbuff.lua" ],
+
+  "needsEdgeTrigger" : true,
+  "edgeTriggerGrace" : 0.3,
+
+  "comboSteps" : 2,
+  "comboTiming" : [0.3, 0.5],
+  "comboCooldown" : 0.25,
+  "comboFinisherSource" : "/items/weapons/melee/fist/combofinishers/gic_powerpunch.combofinisher",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/weapons/melee/fist/gic_punch.lua"],
+    "class" : "Punch",
+
+    //"freezeTime" : 0.15,
+    "fireTime" : 0.5, //0.4
+    "baseDps" : 82.5,
+    "damageConfig" : {
+      "statusEffects" : [ ],
+	  "baseDamage" : 25,
+      "damageSourceKind" : "ews_melee",
+      "knockback" : [0, 15],
+      "timeoutGroup" : "primary",
+      "timeout" : 0.1
+    },
+	
+	"stunDamageConfig" : {
+      "statusEffects" : ["gic_stun_3", {"effect":"gic_attackpowernullification_3","duration":3.0}],
+	  "baseDamage" : 50,
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 20,
+      "timeoutGroup" : "primary",
+      "timeout" : 0.1
+    },
+	
+	"initDamageConfig" : {
+      "statusEffects" : [ ],
+	  "baseDamage" : 50,
+      "damageSourceKind" : "ews_melee",
+      "knockback" : [0, 15],
+      "timeoutGroup" : "primary",
+      "timeout" : 0.1
+    },
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 45,
+        "weaponRotationCenter" : [-1.0, 0.0],
+        "weaponOffset" : [-0.25, -0.575],
+
+        "allowRotate" : false,
+        "allowFlip" : true,
+
+        "frontArmFrame" : "run.2",
+        "backArmFrame" : "jump.3"
+      },
+	  "parry" : {
+        "armRotation" : 30, //10
+        "weaponRotation" : 45,
+        "weaponRotationCenter" : [-1.0, 0.0],
+        "weaponOffset" : [-0.25, -0.575],
+
+        "allowRotate" : false,
+        "allowFlip" : true,
+
+        "frontArmFrame" : "run.2",
+        "backArmFrame" : "jump.3"
+      },
+      "windup" : {
+        "duration" : 0.2,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "weaponRotationCenter" : [-1.0, 0.0],
+        "weaponOffset" : [-0.625, -0.125],
+
+        "allowRotate" : false,
+        "allowFlip" : true,
+
+        "frontArmFrame" : "swimIdle.1",
+        "backArmFrame" : "swim.1"
+      },
+      "windup2" : {
+        "duration" : 0.2,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "weaponRotationCenter" : [-1.0, 0.0],
+        "weaponOffset" : [-0.75, -0.125],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+        "frontArmFrame" : "swimIdle.1",
+        "backArmFrame" : "swim.1",
+
+        "recoil" : true
+      },
+      "fire" : {
+        "duration" : 0.2, //0.1
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "weaponRotationCenter" : [-1.0, 0.0],
+        "weaponOffset" : [0.125, -0.25],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+        "frontArmFrame" : "rotation",
+        "backArmFrame" : "rotation"
+      },
+	  
+	  "stunWindup" : {
+		"duration" : 0.25,
+        "armRotation" : 45,
+        "weaponRotation" : 45,
+        "weaponRotationCenter" : [-1.0, 0.0],
+        "weaponOffset" : [-0.25, -0.575],
+
+        "allowRotate" : false,
+        "allowFlip" : true,
+
+        "frontArmFrame" : "run.2",
+        "backArmFrame" : "jump.3"
+      },
+	  "stun" : {
+		"duration" : 0.1,
+        "armRotation" : -15,
+        "weaponRotation" : 45,
+        "weaponRotationCenter" : [-1.0, 0.0],
+        "weaponOffset" : [-0.25, -0.575],
+
+        "allowRotate" : false,
+        "allowFlip" : true,
+
+        "frontArmFrame" : "run.2",
+        "backArmFrame" : "jump.3"
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildfist.lua"
+}

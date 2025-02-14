@@ -1,0 +1,28 @@
+{
+  "projectileName" : "gic_summon_nanobot",
+  "physics" : "grenade",
+  "actionOnReap" : [
+    {
+     "action" : "spawnmonster",
+     "type" : "ixoling",
+     "level" : 1,
+     "offset": [0, 0],
+     "arguments" : {}
+    }
+	
+  ],
+  "image" : "gic_summon_nanobot.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  "damageKindImage" : "icon.png",
+  "power" : 0,
+  "speed" : 10,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

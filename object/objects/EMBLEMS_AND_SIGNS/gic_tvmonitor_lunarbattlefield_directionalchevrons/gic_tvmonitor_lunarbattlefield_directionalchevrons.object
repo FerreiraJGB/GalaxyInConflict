@@ -1,0 +1,43 @@
+{
+  "objectName" : "gic_tvmonitor_lunarbattlefield_directionalchevrons",
+  "colonyTags" : ["station","electronic","space"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "description" : "A screen displaying surprisingly motivational media.",
+  "shortdescription" : "TV Monitor Chevrons",
+  "race" : "generic",
+
+  
+  "lightColor" : [145, 145, 145],
+
+  "inventoryIcon" : "gic_tvmonitor_lunarbattlefield_directionalchevrons_icon.png",
+  "orientations" : [
+    {
+      "image" : "gic_tvmonitor_lunarbattlefield_directionalchevrons.png:<frame>",
+      "imagePosition" : [-48, -16],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "animation" : "gic_tvmonitor_lunarbattlefield_directionalchevrons.animation",
+  "animationParts" : {
+    "bg" : "gic_tvmonitor_lunarbattlefield_directionalchevrons.png",
+    "fg" : "gic_tvmonitor_lunarbattlefield_directionalchevrons_lit.png"
+  },
+  "animationPosition" : [-48, -16],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [-6, -2] ],
+
+  "interactive" : false,
+
+  "soundEffect" : "/sfx/objects/bunkerdisplay.ogg",
+  "soundEffectRangeMultiplier" : 0.25
+
+}

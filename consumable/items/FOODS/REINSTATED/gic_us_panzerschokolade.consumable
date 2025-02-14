@@ -1,0 +1,24 @@
+{
+  "itemName" : "gic_us_panzerschokolade",
+  "rarity" : "Common",
+  "price" : 500,
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_foods_reinstated.png",
+  "description" : "Extreme chocolate bar. May be laced with drugs.",
+  "shortdescription" : "Unitan Panzerschokolade",
+  "effects" : [ [
+    {
+        "effect" : "gic_food_antisup_def_boost",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 50,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

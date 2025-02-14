@@ -1,0 +1,38 @@
+{
+  "itemName" : "gic_tengutango",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#88350B;Otherworldly",
+  "inventoryIcon" : "gic_tengutango.png",
+  
+  
+  
+  "description" : "''Come on, 'Tengu'. Are you a beast, or do you yearn to live the life of humanity?''
+  
+A small drink with a light amber color and a very high alcohol content. Originally only known to the Tengu, the recipe was shared to the Unitans after being granted asylum.
+  
+^#EDC078;+10% Movement Speed for 30 minutes.^reset;",
+  
+  "shortdescription" : "Tengu Tango",
+  
+  
+  
+  "effects" : [ [
+  
+    {
+        "effect" : "gic_beverage_tengutango",
+        "duration" : 1800
+    }
+  
+  ] ],
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

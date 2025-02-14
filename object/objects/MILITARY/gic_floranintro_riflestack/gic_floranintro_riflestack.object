@@ -1,0 +1,51 @@
+{
+  "objectName" : "gic_floranintro_riflestack",
+  "colonyTags" : [],
+  "rarity" : "Legendary",
+  "tooltipKind" : "base",
+  "race" : "ancient",
+  "health" : 1.5,
+
+  "category" : "storage",
+  "price" : 0,
+  "printable" : false,
+  "description" : "[Interact to drop equipment to advance]",
+  "shortdescription" : "Floran Rifle Stack",
+
+  "inventoryIcon" : "icon.png",
+
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gic_floranintro_riflestack.png:default", "fullbright" : true }, { "image" : "gic_floranintro_riflestack_lit.png:default" } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "gic_floranintro_riflestack.png:default", "fullbright" : true }, { "image" : "gic_floranintro_riflestack_lit.png:default" } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "gic_floranintro_riflestack.animation",
+  "animationPosition" : [-16, 0],
+  "outputNodes" : [ [0, 0] ],
+
+  "scripts" : ["/objects/MILITARY/gic_protected_slabvolver_pedestal/gic_treasureburst_wiredoutput.lua"],
+  "scriptDelta" : 0,
+
+  "burstTreasurePool" : "gic_floranintro_riflestackTreasure",
+  "burstItemVelocityRange" : [5, 10],
+  "burstAngleVariance" : 0.5,
+  "burstOffset" : [0.5, 0],
+  "burstIntangibleTimeRange" : [0.25, 0.5]
+}

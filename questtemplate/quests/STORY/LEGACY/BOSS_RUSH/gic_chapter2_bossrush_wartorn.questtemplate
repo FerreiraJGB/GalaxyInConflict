@@ -1,0 +1,41 @@
+{
+  "id" : "gic_chapter2_bossrush_wartornquest",
+  "title" : "^orange;Boss Rush: Wartorn",
+  "text" : "Obtain: Firefly Revolver and Ruin's Vestigial Eye (defeat Ex-Cultist and kill False Protector).
+
+^orange;[Upon completion: Unlocks the Ex-Cultist and False Protector Boss-Rush Replays at the Portal Lab]",
+  "completionText" : "[Ex-Cultist and False Protector can now be replayed via the Portal Lab]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 100 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_firefly",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_ruinsvestigialeye",
+        "count" : 1,
+        "consume" : true,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

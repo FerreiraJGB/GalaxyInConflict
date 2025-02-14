@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_psychicshot_invisible_bullet_madman",
+  "image" : "gic_psychicshot_invisible_bullet.png",
+  "physics" : "laser",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "fullbright" : true,
+  "lightColor" : [200, 60, 169],
+  "pointLight" : false,
+  "timeToLive" : 6,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/gic_bullet.config"
+    }
+  ],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ ],
+  "speed" : 200,
+  
+  "damagePoly" : [ [-128, 0], [-22, -22], [0, -64], [22, -22], [22, 0], [22, 22], [0, 64], [-22, 22]  ],
+  
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef"
+}

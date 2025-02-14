@@ -1,0 +1,78 @@
+{
+  "projectileName" : "gic_mechrocket",
+  "bounces" : 0,
+  "image" : "gic_mechrocket.png",
+  "animationCycle" : 0.2,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "renderLayer" : "Monster+10",
+  
+"periodicActions" : [
+    {
+      "time" : 0.015,
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "textured",
+      "image" : "/animations/gic_mediumsteamcloud/gic_mediumsteamcloud.png",
+        "position" : [-0.5, 0],
+        "layer" : "back",
+        "timeToLive" : 0.2,
+        "destructionTime" : 2,
+        "destructionAction" : "fade",
+        "fullbright" : false,
+		"variance": {
+			"initialVelocity": [-1,1],
+			"position": [-1,1],
+			"rotation": 180
+		}
+      }
+    }
+],
+  
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.0125,
+      "fuzzAngle" : 45
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "inheritDamageFactor" : 0.0125,
+      "fuzzAngle" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 180,
+      "inheritDamageFactor" : 0.0125,
+      "directional" : "true"
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_shrapnel1",
+      "fuzzAngle" : 45,
+      "inheritDamageFactor" : 0.0125,
+      "directional" : "true"
+    },
+	{
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_largeexplosion/gic_largeexplosionknockback_controlled.config"
+    }
+  ],
+  "power" : 390,
+  "damageKind" : "ews_antitank",
+
+  "piercing" : false,
+  "maxSpeed" : 250,
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "gic_tinysmoke" ],
+  "flippable" : true,
+  "speed" : 190.0,
+  "acceleration" : 0,
+  "timeToLive" : 10,
+  "physics" : "gic_cannonfall"
+}

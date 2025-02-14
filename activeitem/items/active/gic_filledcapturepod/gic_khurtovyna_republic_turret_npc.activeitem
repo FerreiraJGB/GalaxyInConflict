@@ -1,0 +1,65 @@
+{
+  "itemName" : "gic_khurtovyna_republic_turret_npc",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "description" : "Contains a sentry gun.",
+  "shortdescription" : "NPC's Turret Pod",
+  "tooltipKind" : "filledcapturepod",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","ranged"],
+
+  "inventoryIcon" : "gic_filledcapturepodicon.png",
+  "animation" : "gic_filledcapturepod.animation",
+  "animationParts" : {
+    "filledcapturepod" : "gic_sentrygunkit_asgmk1_sniper_icon_null.png"
+  },
+  "animationCustom" : { },
+  "scripts" : ["gic_npcpetcapturepod.lua"],
+
+  "icons" : {
+    "healthy" : "/items/active/gic_filledcapturepod/gic_sentrygunkit_asgmk1_sniper_icon_null.png",
+    "dead" : "/items/active/gic_filledcapturepod/gic_sentrygunkit_asgmk1_sniper_icon_null.png"
+  },
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -20,
+      "animationState" : {
+        "weapon" : "visible"
+      },
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "windup" : {
+      "duration" : 0.1,
+      "transitionFunction" : "fire",
+      "armRotation" : 70,
+      "animationState" : {
+        "weapon" : "visible"
+      },
+      "allowRotate" : false,
+      "allowFlip" : false
+    },
+    "throw" : {
+      "armRotation" : 0,
+      "animationState" : {
+        "weapon" : "hidden"
+      },
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  },
+
+  "projectileType" : "gic_filledcapturepod_nothrow",
+  "projectileParameters" : {
+    "speed" : 0,
+    "level" : 1
+  },
+
+  "pets" : [
+	"gic_asgmk1_sniper_autoturret",
+	"gic_asgmk3b_burst_autoturret",
+	"gic_asgmk12s_shotgun_autoturret"
+  ]
+}

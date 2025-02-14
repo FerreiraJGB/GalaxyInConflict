@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_standardbullet_a_grimchaplain",
+  "image" : "icon.png",
+  "animationCycle" : 0.0,
+  "physics" : "laser",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "timeToLive" : 0.001,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [246, 191, 96],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+	  "/sfx/gun/gic_enfield_02.ogg"
+      ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_standardbullet_b",
+      "inheritDamageFactor" : 1,
+      "directional" : "true"
+    }
+  ],
+  "power" : 0,
+  "speed" : 0,
+  "damageType" : "noDamage",
+  "damageKind" : "ews_smallarms"
+}

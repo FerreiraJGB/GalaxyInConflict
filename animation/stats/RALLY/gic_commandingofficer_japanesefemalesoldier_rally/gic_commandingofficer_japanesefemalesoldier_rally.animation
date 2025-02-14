@@ -1,0 +1,70 @@
+{
+	"globalTagDefaults" : {
+		"facingDirection" : ""
+	},
+	"animatedParts" : {
+		"parts" : {
+			"turret" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : 1,
+					"transformationGroups" : ["turret"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"turret2" : {
+				"properties" : {
+					"image" : "gic_shoulderturret.png",
+					"zLevel" : -1,
+					"transformationGroups" : ["turret2"],
+					"offset" : [1.2,1.5]
+				}
+			},
+			"body" : {
+				"properties" : {
+					"image" : "gic_commandingofficer_japanesefemalesoldier_rally.png<facingDirection>",
+					"zLevel" : 0,
+					"transformationGroups" : ["body"],
+					"offset" : [0.0,0.5]
+				}
+			}
+		}
+	},
+	"transformationGroups" : {
+		"turret" : {},
+		"turret2" : {},
+		"body" : {}
+	},
+	"sounds" : {
+		"fire" : [
+		
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Alert_Concern.wav",
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Alert_Enemynearby.wav",
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Comrose_Request_Followme.wav",
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Comrose_Request_Gogogo_High.wav",
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Comrose_Request_Gogogo_Normal.wav",
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Inform_Hey.wav",
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Inform_Movement_Attack.wav",
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Inform_Movement_Charge.wav",
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Inform_Movement_Charge_Warcry.wav",
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Spotted_Generic_Soldier.wav",
+        "/sfx/npc/gic_battlefield5_VO_MP_JP_Female_Spotted_Generic_Trooper.wav"		
+		
+		],
+		"reload" : []
+	},
+	"particleEmitters" : {
+	  "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+        ],
+		"transformationGroups" : ["turret"]
+      }
+	}
+}

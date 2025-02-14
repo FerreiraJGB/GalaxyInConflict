@@ -1,0 +1,37 @@
+{
+  "itemName" : "gic_lettylager_glass",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#DCF1F4;Whiterock Brewery",
+  "inventoryIcon" : "gic_lettylager_glass.png",
+  
+  
+  
+  "description" : "''Don't get shot... and good luck.''
+  
+A standard glass of Letty Lager, a common brand aboard the Gazring Station. A low-to-nonexistent alcohol content enables even stoic drinkers to revel in social drinking.
+  
+^Yellow;- No Effects.^reset;",
+  
+  "shortdescription" : "Letty Lager",
+  
+  "effects" : [ [
+ //  {
+ //       "effect" : "gic_lowgravity_food_nueale",
+ //       "duration" : 1800
+ //   }
+  ] ],
+  
+  
+  
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

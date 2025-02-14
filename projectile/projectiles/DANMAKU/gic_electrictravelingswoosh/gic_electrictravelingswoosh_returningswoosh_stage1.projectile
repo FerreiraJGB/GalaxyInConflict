@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_electrictravelingswoosh_returningswoosh_stage1",
+  "image" : "gic_electrictravelingswoosh.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "piercing" : true,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "electric",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 2,
+  "emitters" : [ "fireplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_electrictravelingswoosh_returningswoosh_stage2",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 180
+    }
+  ],
+  "statusEffects" : [ ],
+  "power" : 50.0,
+  "speed" : 80,
+  "acceleration" : 5,
+  "knockback" : 10
+}

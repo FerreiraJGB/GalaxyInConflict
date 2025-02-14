@@ -1,0 +1,68 @@
+{
+  "type" : "gic_groundexplorer",
+  "baseType" : "gic_banditbase",
+
+  "dropPools" : [ "basicTreasure" ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Light'em!",
+			"Hey!",
+			"Over here!",
+			"Huh!?",
+			"Target Spotted!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  
+//Spearman  
+          {
+            "head" : [ { "name" : "gic_bandithood", "parameters" : { "colorIndex" : [3] }  } ],
+            "chest" : [ { "name" : "gic_militiarigchest", "parameters" : { "colorIndex" : [3] }  } ],
+            "legs" : [ { "name" : "hazmatlegs", "parameters" : { "colorIndex" : [3] } } ],
+            "back" : [ { "name" : "gic_shockbanditcarrierback", "parameters" : { "colorIndex" : [3] }  } ],
+            "primary" : ["gic_riot_stun_spear_npc", "gic_m89_servicerifle", "gic_usm47a2" ]
+          }	  
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_shockbanditcarrier_light", "gic_npc_death_blood_explosion"],      
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      }
+	  
+	  
+	  
+    }
+  }
+  
+}

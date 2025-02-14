@@ -1,0 +1,70 @@
+{
+  "id" : "gic_esther_chapter_4d_noblevampireQuest",
+  "title" : "^yellow;[GiC]: Noble Vampire",
+  "prerequisites" : [ "gic_esther_chapter_4c_grandlibrarianQuest" ],
+  
+  //QUEST 3
+  
+  //The text before warping to mission.
+  
+  "text" : "",
+  
+  //Returning after goal trigger.
+  
+  "completionText" : "",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+  "rewards" : [
+    [ [ "gic_mirrorknight_lionheart_shield", 1 ], [ "gic_youkainecklacehead", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_noassociatedmission.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : "Lionheart"
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : "Lionheart"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;Lionheart^reset; to travel to ^orange;The Old Chaos^reset;.",
+      "findGoal" : "Deal with the Noble Vampire.",
+      "turnIn" : "Return to ^orange;Lionheart^reset;."
+    },
+
+    "warpEntityUid" : "gic_esther_chapter_1_lionheart",
+    "warpAction" : "instanceworld:gic_esther_chapter_4d_1_HellsCarrier",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_esther_chapter_4d_1_HellsCarrier",
+	
+    "gic_missionUnlockedCinema" : "/cinematics/gic_coordinates.cinematic", //???
+    "gic_missionCompleteCinema" : "/cinematics/gic_coordinates.cinematic", //???
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 30,
+
+    "goalEntityUid" : "gic_esther_chapter_4d_noblevampire_goal",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "requireTurnIn" : false,
+
+    "turnInEntityUid" : "gic_esther_chapter_1_lionheart",
+	
+	
+  "setUniverseFlags" : [] 
+	
+	
+  }
+  
+}

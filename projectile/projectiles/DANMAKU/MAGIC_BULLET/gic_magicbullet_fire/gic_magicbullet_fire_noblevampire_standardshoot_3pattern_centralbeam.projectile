@@ -1,0 +1,88 @@
+{
+  "projectileName" : "gic_magicbullet_fire_noblevampire_standardshoot_3pattern_centralbeam",
+  "image" : "gic_magicbullet_fire.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 0.0,
+  "emitters" : [ ],
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire_fast",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+	  "angleAdjust" : -30
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire_fast",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+	  "angleAdjust" : -20
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire_fast",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+	  "angleAdjust" : -30
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire_fast",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+	  "angleAdjust" : -20
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_energy_large_fast",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire_fast",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+	  "angleAdjust" : -30
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire_fast",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+	  "angleAdjust" : -20
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire_fast",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+	  "angleAdjust" : 20
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire_fast",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 30,
+	  "angleAdjust" : 30
+    }
+  ],
+  
+  "actionOnCollide" : [
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 0.0,
+  "speed" : 0,
+  "acceleration" : 0,
+  "knockback" : 18
+}

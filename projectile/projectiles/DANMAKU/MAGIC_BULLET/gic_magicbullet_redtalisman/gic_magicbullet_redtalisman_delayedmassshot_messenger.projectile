@@ -1,0 +1,34 @@
+{
+  "projectileName" : "gic_magicbullet_redtalisman_delayedmassshot_messenger",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_magicbullet_redtalisman.png",
+  "animationCycle" : 0.1,
+  "timeToLive" : 1.5,
+  "frameNumber" : 1,
+  "onlyHitTerrain" : true,
+  "power" : 100,
+  "speed" : 40,
+  "acceleration" : -10,
+  "fullbright" : true,
+  "supportsProcessing" : true,
+  "renderLayer" : "Monster+10",
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_redtalisman_homing",
+      "inheritDamageFactor" : 1,
+	  "angleAdjust" : 180
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/melee/gic_bloodborne_magic-fireball-14db.wav"
+      ]
+    }
+  ],
+  "lightColor" : [0, 0, 40],
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef"
+}

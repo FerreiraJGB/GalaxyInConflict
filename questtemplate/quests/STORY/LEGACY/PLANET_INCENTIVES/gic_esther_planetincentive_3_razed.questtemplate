@@ -1,0 +1,35 @@
+{
+  "id" : "gic_esther_planetincentive_3_razedquest",
+  "title" : "^orange;[GiC] From the Ashes: Razed",
+  "text" : "",
+
+  "prerequisites" : [ "gic_esther_planetincentive_0_introquest", "hylotl_mission2" ],
+  "canBeAbandoned" : true,
+  "completionText" : "",
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 50 ], [ "kluexmap1", 1 ], [ "kluexmural2", 1 ], [ "kluexmural1", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_floran_shinobi_katana_player",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; on a ^orange;Razed World^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "metadata" : {
+    "name" : "gic_trenchbattle",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_trenchbattle_nomansland1" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 18,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : false
+  },
+
+  "parts" : [
+  
+  
+
+  
+  
+
+	
+
+  //Central Section
+  
+    {
+      "name" : "gic_trenchbattle_nomansland1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_nomansland1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_nomansland1.json" ]
+    },
+	
+    {
+      "name" : "gic_trenchbattle_nomansland2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_nomansland2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_nomansland2.json" ]
+    },	
+	
+	
+	
+	
+	
+	
+	
+  
+
+	//Right Side - Federal
+
+    {
+      "name" : "gic_trenchbattle_federal_rightend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_trenchbattle_federal_rightend.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_trenchbattle_federal_gunposition",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_federal_gunposition" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_federal_gunposition.json" ]
+    },
+	
+    {
+      "name" : "gic_trenchbattle_federal_machinegunposition",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_federal_machinegunposition" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_federal_machinegunposition.json" ]
+    },	
+	
+    {
+      "name" : "gic_trenchbattle_federal_shelled",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_federal_shelled" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_federal_shelled.json" ]
+    },	
+
+    {
+      "name" : "gic_trenchbattle_federal_building1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_federal_building1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_federal_building1.json" ]
+    },	
+
+    {
+      "name" : "gic_trenchbattle_federal_building2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_federal_building2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_federal_building2.json" ]
+    },	
+
+    {
+      "name" : "gic_trenchbattle_federal_trench3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_federal_trench3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_federal_trench3.json" ]
+    },		
+	
+    {
+      "name" : "gic_trenchbattle_federal_wall",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_federal_wall" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_federal_wall.json" ]
+    },			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//Left Side - Insurgents
+
+    {
+      "name" : "gic_trenchbattle_insurgent_leftend",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_trenchbattle_insurgent_leftend.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_trenchbattle_insurgent_flooded",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_insurgent_flooded" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_insurgent_flooded.json" ]
+    },			
+	
+    {
+      "name" : "gic_trenchbattle_insurgent_gunposition",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_insurgent_gunposition" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_insurgent_gunposition.json" ]
+    },	
+	
+    {
+      "name" : "gic_trenchbattle_insurgent_machinegunposition",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_insurgent_machinegunposition" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_insurgent_machinegunposition.json" ]
+    },	
+	
+    {
+      "name" : "gic_trenchbattle_insurgent_shelled",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_insurgent_shelled" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_insurgent_shelled.json" ]
+    },	
+	
+    {
+      "name" : "gic_trenchbattle_insurgent_trench1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_insurgent_trench1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_insurgent_trench1.json" ]
+    },	
+	
+    {
+      "name" : "gic_trenchbattle_insurgent_trench2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_insurgent_trench2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_insurgent_trench2.json" ]
+    },	
+	
+    {
+      "name" : "gic_trenchbattle_insurgent_trench3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_insurgent_trench3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_insurgent_trench3.json" ]
+    },	
+	
+    {
+      "name" : "gic_trenchbattle_insurgent_wall",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_trenchbattle_insurgent_wall" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_trenchbattle_insurgent_wall.json" ]
+    }	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

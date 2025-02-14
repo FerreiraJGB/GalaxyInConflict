@@ -1,0 +1,164 @@
+{
+  "metadata" : {
+    "name" : "gic_protectedcolony_laboratory",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_protectedcolony_laboratory_start"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 12,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_protectedcolony_laboratory_start",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_start.json" ] ],
+      "chance" : 0
+    },
+	
+
+
+    {
+      "name" : "gic_protectedcolony_laboratory_rogueknight",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_rogueknight" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_rogueknight.json" ] ],
+      "chance" : 1
+    },
+
+
+    {
+      "name" : "gic_protectedcolony_laboratory_bridge",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_bridge" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_bridge.json" ] ],
+      "chance" : 1
+    },
+	
+	
+    {
+      "name" : "gic_protectedcolony_laboratory_bazaarbetweentime",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_bazaarbetweentime" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_bazaarbetweentime.json" ] ],
+      "chance" : 0.5
+    },	
+	
+	
+	
+    {
+      "name" : "gic_protectedcolony_laboratory_hallway",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_hallway" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_hallway.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_protectedcolony_laboratory_labs",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_labs" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_labs.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_protectedcolony_laboratory_transitcorridor",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_transitcorridor" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_transitcorridor.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_protectedcolony_laboratory_bulkhead",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_bulkhead" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_bulkhead.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_protectedcolony_laboratory_parking",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_parking" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_parking.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_protectedcolony_laboratory_pipeworks",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_pipeworks" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_pipeworks.json" ] ],
+      "chance" : 1
+    },		
+	
+    {
+      "name" : "gic_protectedcolony_laboratory_stairs",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_stairs" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_stairs.json" ] ],
+      "chance" : 1
+    },		
+	
+    {
+      "name" : "gic_protectedcolony_laboratory_showcase",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_protectedcolony_laboratory_showcase" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_showcase.json" ] ],
+      "chance" : 1
+    },		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    {
+      "name" : "gic_protectedcolony_laboratory_end",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_protectedcolony_laboratory_end.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

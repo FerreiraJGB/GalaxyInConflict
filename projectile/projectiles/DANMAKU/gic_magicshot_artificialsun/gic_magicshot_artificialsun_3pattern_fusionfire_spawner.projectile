@@ -1,0 +1,57 @@
+{
+  "projectileName" : "gic_magicshot_artificialsun_3pattern_fusionfire_spawner",
+  "image" : "gic_magicshot_artificialsun_stage1.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_heavyarms",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 1,
+  "emitters" : [ "fireplasma" ],
+  "periodicActions" : [
+  
+    {
+      "time" : 0.15,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : 0
+    },
+    {
+      "time" : 0.15,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : 120
+    },
+    {
+      "time" : 0.15,
+      "action" : "projectile",
+      "type" : "gic_magicbullet_fire",
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : -120
+    }
+
+  ],
+  
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "statusEffects" : [ ],
+  "power" : 50.0,
+  "speed" : 0,
+  "acceleration" : -10,
+  "knockback" : 18
+}

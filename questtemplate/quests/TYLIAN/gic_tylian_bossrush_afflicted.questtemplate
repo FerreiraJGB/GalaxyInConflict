@@ -1,0 +1,44 @@
+{
+  "id" : "gic_tylian_bossrush_afflictedquest",
+  "title" : "^orange;Boss Rush: Afflicted Colony",
+  
+  "prerequisites" : [ "gic_tylian_planetincentive_1_afflictedquest" ],
+  
+  "text" : "Obtain: Living Erchius Sample and Erchius War Standard (kill Leech and Legion).
+
+^orange;[Upon completion: Unlocks Leech and Legion Boss-Rush Replays at the Bazaar]",
+  "completionText" : "[Leech and Legion can now be replayed via the Bazaar]",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_livingerchiussample",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_erchius_war_standard_player",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "itemName" : "gic_kirisamekirsch",
+  "rarity" : "Common",
+  "price" : 150,
+  "category" : "^#CC8A4D;Rock and Stone Brewers",
+  "inventoryIcon" : "gic_kirisamekirsch.png",
+  
+  
+  
+  "description" : "''It ain't magic if it ain't flashy. Danmaku's all about firepower.''
+
+Kirsch is a clear, colourless brandy from Germany, Switzerland and France, traditionally made from double distillation of morello cherries, a dark-coloured cultivar of the sour cherry.
+
+^#CC8A4D;Magic Bomb - When UNYIELDING BULWARK is triggered, rapidly fire danmaku shots for up to 15s | Beverage effect expires on trigger | 30 minute duration.^reset;",
+  
+  "shortdescription" : "Kirisame Kirsch",
+  
+  "effects" : [ [
+   {
+        "effect" : "gic_beverage_kirisamekirsch_primer",
+        "duration" : 1800
+    }
+  ] ],
+  
+  
+  
+  "foodValue" : 5,
+  "tooltipKind" : "gic_largebase_food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 2,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "emitters" : [ "drinking" ]
+}

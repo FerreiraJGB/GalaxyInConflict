@@ -1,0 +1,102 @@
+{
+  "objectName" : "gic_esther_chapter_1_springfield_bartender",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "category" : "Crafting Station",
+  "price" : 0,
+  "description" : "[Springfield Bar]",
+  "shortdescription" : "Springfield Bar",
+  "race" : "generic",
+  "printable" : false,
+  
+  "turnInQuests" : [
+  "gic_springfieldbar_introQuest",
+  "gic_ec01_identitycacheQuest",
+  "gic_ec11_officesafeQuest",
+  "gic_ec11_stealthbonusQuest"
+  ],  
+  
+  "offeredQuests" : [
+  "gic_springfieldbar_introQuest"
+  ],
+  
+  
+  "lightColor" : [0, 0, 0],
+
+  "inventoryIcon" : "gic_esther_chapter_1_springfield_bartenderportrait.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_esther_chapter_1_springfield_bartender.png:<color>.<frame>",
+      "imagePosition" : [-8, -0],
+
+      "spaceScan" : 0.0,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+
+
+
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/gic_springfieldbar.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Springfield Bar",
+        "subtitle" : "  The go-to choice of Docking Bay 75.",
+        "icon" : {
+          "file" : "/interface/crafting/gic_springfieldbar.png"
+        }
+      }
+    },
+	"recipes" : [
+	
+	
+	
+	
+		
+		
+		
+		
+	],
+    "filter" : [ "gic_esther_chapter_1_springfield_bartender" ]
+  },
+
+
+
+
+
+  "animation" : "gic_esther_chapter_1_springfield_bartender.animation",
+  "animationParts" : {
+    "bg" : "gic_esther_chapter_1_springfield_bartender.png",
+    "fg" : "gic_esther_chapter_1_springfield_bartenderlit.png"
+  },
+  "animationPosition" : [-8, -0],
+
+  "uniqueId" : "gic_esther_chapter_1_springfield_bartender",
+  "interactive" : true,
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  "scripts" : [ "/objects/missions/gic_esther_chapter_1_springfield_bartender/gic_springfield_talk.lua" ],
+  "scriptDelta" : 20,
+
+  "chatRadius" : 30,
+  "chatCooldown" : 25,
+  "chatOptions" : [
+"..."
+  ]
+  
+  
+  
+
+}

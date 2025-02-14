@@ -1,0 +1,33 @@
+{
+  "itemName" : "gic_springrazor_mine",
+  "price" : 50,
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "inventoryIcon" : "gic_springrazor_mine.png",
+  "image" : "gic_springrazor_mine.png",
+  "shortdescription" : "Springrazor Mine",
+  "description" : "A deployable mine that upon activation will send razor-sharp shrapnel in every direction, piercing through flesh and steel alike. Once thrown, will prime after 5 seconds, indiscriminately activating should it detect a valid entity. Will detect enemies through doors and walls, so be sure to give it plenty of open space! 5 minute auto-activation timer.",
+  "tooltipKind" : "gic_largebase",
+  "ammoUsage" : 1,
+  "maxStack" : 3,
+  "edgeTrigger" : true,
+  "windupTime" : 0.0,
+  "cooldown" : 1.5,
+
+  "projectileType" : "gic_springrazor_mine_arming",
+  "projectileConfig" : {
+    "speed" : 10,
+    "power" : 0,
+    "knockback" : 20,
+
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item.ogg" ]
+      }
+    ]
+  }
+
+}

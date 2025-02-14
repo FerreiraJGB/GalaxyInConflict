@@ -1,0 +1,39 @@
+{
+  "name" : "gic_bloodbranch",
+  "effectConfig" : {
+	"projectileType" : "gic_bloodbranch_spiritbullet_verticalspawn", //does not accept arrays
+	"projectileTypeMiss" : "gic_bloodbranch_spiritbullet_verticalspawn", //does not accept arrays
+	"textProjectileParams" : {
+	  "damageType": "noDamage",
+      "power": 0,
+      "speed": 0,
+      "timeToLive": 0.0,
+      "actionOnReap": [
+      ]
+	},
+	"missChance" : 10,
+	
+	"offset" : [0, 0.5],
+	
+	"muzzleOffset" : [1.1, 0.1],
+	
+	"muzzleOffset2" : [1, 0.0],
+	
+	"trackingDistance" : 120,
+	"trackingAngle" : 181, //181
+	"fireRate" : 0.2,
+	"inaccuracyAngle" : 0,
+	"baseDamage" : 20,
+	"projectileCount" : 1,
+	"ammoCountMax" : 1,
+	"reloadTimer" : 0.05
+  },
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "gic_bloodbranch.lua"
+  ],
+  "scriptDelta" : 1,
+  
+   "animationConfig" : "gic_bloodbranch.animation"
+}

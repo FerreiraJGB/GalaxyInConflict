@@ -1,0 +1,69 @@
+{
+  "type" : "gic_unitan_navalcrewmember",
+  "baseType" : "gic_unitan_base",
+
+  "dropPools" : [ "gic_unitancitizenTreasure" ],
+  "damageTeam" : 16,
+  "scriptConfig" : {
+
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "patrol"],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "attack" : "/dialog/gic_generic_combat_panic.config:attack",
+      "reattack" : "/dialog/gic_generic_combat_panic.config:reattack",
+      "killedTarget" : "/dialog/gic_generic_combat_panic.config:killedTarget",
+      "lostTarget" : "/dialog/gic_generic_combat_panic.config:lostTarget",
+      "outOfSight" : "/dialog/gic_generic_combat_panic.config:outOfSight",
+      "cheerOn" : "/dialog/gic_generic_combat_panic.config:cheerOn",
+      "cantReach" : "/dialog/gic_generic_combat_panic.config:cantReach"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [
+              { "name" : "gic_hardhathead", "parameters" : { "colorIndex" : 0 } }, { "name" : "", "parameters" : { "colorIndex" : 2 } }
+            ],
+            "chest" : [
+              { "name" : "jumpsuitchest", "parameters" : { "colorIndex" : 0 } }, { "name" : "workoutchest", "parameters" : { "colorIndex" : 1 } }, { "name" : "apexnavyjacket", "parameters" : { "colorIndex" : 1 } } //7
+            ],
+            "legs" : [
+              { "name" : "apexnavypants", "parameters" : { "colorIndex" : 1 } }
+            ],
+            "primary" : ["gic_rk6", "gic_usm12", "gic_kmk18", "gic_vss7"]
+          }
+    ]  ]  ]
+  },
+  
+  "innateStatusEffects" : ["gic_rally_unitan_primer", "gic_npc_death_blood_explosion"], 
+
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

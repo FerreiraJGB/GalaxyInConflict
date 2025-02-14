@@ -1,0 +1,32 @@
+{
+  "id" : "gic_wildlands_island_scammingbusinessman_repeatablequest",
+  "title" : "^orange;The Investment",
+  "text" : "Hey you! You want to make some easy money? If you buy into into my venture, I can triple your investment if you just pay the small price of... fifty credits. That's all it takes.",
+  "completionText" : "I promise to make that money back in just a week's time! If you want... Well, you can invest more!",
+  "moneyRange" : [10,10],
+  "ephemeral" : true,
+  "rewards" : [
+    [ ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_physicalcredit",
+        "count" : 50,
+        "consume" : true,
+        "description" : "Give ^orange;<itemName>^reset; to the ^orange;Wildlands Business Man^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}

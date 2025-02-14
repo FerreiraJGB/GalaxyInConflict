@@ -1,0 +1,179 @@
+{
+  "projectileName" : "gic_ammoresupply_droppod_stage3_republic",
+  "physics" : "gic_ammoresupply_pod",
+  
+  "actionOnTimeout" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_ammoresupply_droppod_stage4_republic",
+      "inheritDamageFactor" : 1
+    },
+    {
+      "action" : "projectile",
+      "type" : "gic_ammoresupply_droppod_cover",
+	  "offset" : [0, 1],
+	  "fuzzAngle" : 5,
+      "angleAdjust" : 0
+    }
+  ],
+  
+  "actionOnReap" : [
+
+
+    {
+      "action" : "item",
+      "name" : "gic_uscm4",
+      "count" : 1
+    },
+	
+    {
+      "action" : "item",
+      "name" : "gic_stanag_federatsiya_556x45mm_mag",
+      "count" : 3
+    },
+    {
+      "action" : "item",
+      "name" : "gic_stanag_federatsiya_556x45mm_mag",
+      "count" : 3
+    },	
+    {
+      "action" : "item",
+      "name" : "gic_stanag_federatsiya_556x45mm_mag",
+      "count" : 3
+    },
+	
+	
+	
+    {
+      "action" : "item",
+      "name" : "gic_mp41r",
+      "count" : 1
+    },	
+    {
+      "action" : "item",
+      "name" : "gic_mp41r_9x19mm_drum_mag",
+      "count" : 2
+    },
+    {
+      "action" : "item",
+      "name" : "gic_mp41r_9x19mm_drum_mag",
+      "count" : 2
+    },
+    {
+      "action" : "item",
+      "name" : "gic_mp41r_9x19mm_drum_mag",
+      "count" : 2
+    },	
+	
+	
+    {
+      "action" : "item",
+      "name" : "gic_lewisgun",
+      "count" : 1
+    },	
+    {
+      "action" : "item",
+      "name" : "gic_lewisgun_770x56mm_mag",
+      "count" : 2
+    },
+    {
+      "action" : "item",
+      "name" : "gic_lewisgun_770x56mm_mag",
+      "count" : 2
+    },		
+    {
+      "action" : "item",
+      "name" : "gic_lewisgun_770x56mm_mag",
+      "count" : 2
+    },	
+	
+	
+    {
+      "action" : "item",
+      "name" : "gic_lf2_grenade",
+      "count" : 6
+    },		
+    {
+      "action" : "item",
+      "name" : "gic_lf2_grenade",
+      "count" : 6
+    },	
+
+
+
+
+    {
+      "action" : "item",
+      "name" : "gic_stgl40",
+      "count" : 1
+    },
+    {
+      "action" : "item",
+      "name" : "gic_40x46mm_lv_smoke_grenade",
+      "count" : 12
+    },	
+    {
+      "action" : "item",
+      "name" : "gic_40x46mm_lv_flare_grenade",
+      "count" : 12
+    },
+    {
+      "action" : "item",
+      "name" : "gic_40x46mm_lv_canister_grenade",
+      "count" : 12
+    },
+
+
+
+	
+    {
+      "action" : "item",
+      "name" : "gic_military_bandage",
+      "count" : 20
+    },		
+    {
+      "action" : "item",
+      "name" : "gic_military_bandage",
+      "count" : 20
+    },	
+	
+	
+	
+    {
+      "action" : "item",
+      "name" : "gic_kmp2_medkit",
+      "count" : 10
+    },
+    {
+      "action" : "item",
+      "name" : "gic_wolffak_medkit",
+      "count" : 4
+    }
+
+
+	
+	
+  ],
+  
+
+  
+  
+
+
+  "image" : "gic_ammoresupply_droppod_stage3.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_antitank",
+  "damageType" : "ignoresdef",
+
+  "damageTeam" : { "type" : "indiscriminate" },  
+  "damageKindImage" : "icon.png",
+  "power" : 200,
+  "speed" : 100,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 5,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

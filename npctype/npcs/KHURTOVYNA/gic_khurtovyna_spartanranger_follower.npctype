@@ -1,0 +1,202 @@
+{
+  "type" : "gic_khurtovyna_spartanranger_follower",
+  "baseType" : "base",
+  
+  "damageTeamType" : "friendly",
+  "damageTeam" : 1,
+
+  "dropPools" : [ "villagertreasure" ],
+
+  "movementParameters" : {
+    "mass" : 1.0,
+    "runSpeed" : 20.0
+  },
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "follower",
+
+    "dialog" : {
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+      "follower" : {
+        "attack" : {
+          "default" : {
+            "default" : [
+              "Shoot!",
+			  "Open up!",
+              "Go!"
+            ]
+          }
+        },
+        "join" : {
+          "default" : {
+            "default" : [
+              "Let's go.",
+              "Let's move."
+            ]
+          }
+        },
+        "returnFromCombat" : {
+          "default" : {
+            "default" : [
+              "...",
+              "..."
+            ]
+          }
+        },
+        "wait" : {
+          "default" : {
+            "default" : [
+              "Standing by."
+            ]
+          }
+        },
+        "returnFromWait" : {
+          "default" : {
+            "default" : [
+              "Let's move!",
+			  "Let's go!"
+            ]
+          }
+        }
+      },
+	  
+  "reattack" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "attack" : {
+    "default" : {
+      "default" : [
+        "!"
+      ]
+    }
+  },
+  "killedTarget" : {
+    "default" : {
+      "default" : [
+		"..."
+      ]
+    }
+  },
+  "lostTarget" : {
+    "default" : {
+      "default" : [
+        "?"
+      ]
+    }
+  },
+  "outOfSight" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  },
+  "cantReach" : {
+    "default" : {
+      "default" : [
+        "..."
+      ]
+    }
+  }
+	  
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+	  
+	  //Grunt
+          {
+            "head" : [ { "name" : "gic_frostrepublic_sapperhead" } ],   
+            "chest" : [ { "name" : "gic_frostrepublic_sapperchest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_frostrepublic_infantrylegs", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_uscm4"
+            ],
+			"sheathedprimary" : [ 
+				{ "name" : "gic_npcbayonet_m16a3", "parameters" : { "backupWeapon" : true }  }
+			]
+          }
+		  
+		  
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion", "gic_dialogue_metro2033_commonsoldier_voice2", "gic_rally_khurtovyna_republic_primer", "gic_rally_khurtovyna_republic_medic_primer"],  
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 222.222
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 0
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : -0.5
+      },
+	  
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "ews_bleedResistance" : {
+        "baseValue" : 0.75
+      },
+	  
+      "gic_crewmember_stat" : {
+        "baseValue" : 1.0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.5
+      },
+
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.75
+      }
+	  
+	  
+    }
+  }
+  
+}

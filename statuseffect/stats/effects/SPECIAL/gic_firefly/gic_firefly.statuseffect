@@ -1,0 +1,34 @@
+{
+  "name" : "gic_firefly",
+  "effectConfig" : {
+	"projectileParameters" : {
+		"timeToLive" : 0.25,
+		"actionOnReap" : [
+			{
+				"action" : "projectile",
+				"type" : "mechexplosion",
+				"config" : {
+					"statusEffects" : [
+						{"effect":"gic_firefly","duration":0.1},
+						{"effect":"burning","duration":5}
+					],
+					"knockback": 20,
+					"power" : 150,
+					"damageTeam" : {
+						//valid damageTeams that i know of: "friendly", "enemy", "indiscriminate", "environmental"
+						"type" : "friendly"
+					}
+				}
+			}
+		]
+	}
+  },
+  "defaultDuration" : 0.1,
+
+  "scripts" : [
+    "gic_firefly.lua"
+  ]//,
+
+  //"label" : "Firefly - you bouta go boom mofo",
+  //"icon" : "/interface/statuses/gic_suppressed.png"
+}

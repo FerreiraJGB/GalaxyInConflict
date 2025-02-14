@@ -1,0 +1,494 @@
+{
+  "itemName" : "ews_boltrifle",
+  "price" : 0,
+  "inventoryIcon" : "ews_boltrifle.png:armed.1",		//Default inventory icon, will be set dynamically by scripts if attachments are enabled.
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "Demo of a single load bolt-action rifle. Uses ews_ammo_dummy for ammo.",
+  "shortdescription" : "Bolt-Action Rifle (EWS)",
+  "level" : 1,
+  "tooltipKind" : "gic_largebase_ammogun",//custom tooltip, values set by the .lua
+  "category" : "Bolt-Action Rifle",
+  "itemTags" : ["weapon","ranged","rifle"],
+  "twoHanded" : true,
+  
+  "ewsConfigurationPath" : "/items/active/weapons/ranged/ews_config.config", //optional, determines file path for default configuration stuff. this is the default value, which is used if this param is left undefined.
+
+  "npcAutoReloadDisabled" : false, //assumed to be false unless stated explicity as "true". enables automatic reloading by NPCs, default configuration can be found in "/items/active/weapons/ranged/ews_config.config"
+  "npcAutoReloadConfig" : {
+	"timerConfig" : [15,60] //range of values to auto reload to, for NPCs only. First index represents lowest value, second index represents highest value, in seconds.
+  },
+
+  "npcGun" : false,										//When enabled, the gun will have some minor changes to its functionality to allow NPCs to use the weapon correctly. Changes include (but are not limited to) automatically reloading when the gun is empty regardless of whether the user "fires" or not, semi-fire mode is altered to allow the NPCs to fire the weapon. This can also be enabled by giving the user the stat "ews_npcgun" and setting it to 1.
+  //Additionally, one could use the stat "ews_npcfirerate" to manually determine the fire rate of the NPC. For burst fire modes, this stat determines the in-between duration.
+  //UPDATE- The stat "ews_npcgun" is essentially useless now because EWS weapons automatically update themselves to be a "npcGun" when held by a NPC.
+  
+  "alwaysUseAmmo" : false,								//When enabled, the gun will always require its ammunition to load, regardless of whether the user has the infinite spare ammo stat or not (stat name is "ews_infammo", set to 1 to enable.)
+  
+  "usePowerMultiplier" : false,							//Enables the usage of the user's power multiplier to affect per-projectile damage. Is disabled by default.
+  
+  "crouchAccuracy" : true,								//defaults to true. When crouching, the user has a different inaccuracy/hit chance. Defaults to a 60% reduction in inaccuracy and hit chance when crouched, but specific values can be configurated under "primaryAbility".
+  "dynamicRecoil" : true,								//defaults to true. increases inaccuracy and (if enabled) miss chances as player fires. Completely configurable, but templates already exist. Default template is ASSAULTRIFLE. Values for each template can be found in a .txt file under /items/active/weapons/ranged/ or the main EWS guide.
+  
+  "missChanceToggle" : true,							//Miss chance module; when player fires, there will be a random chance of the player firing "projectileTypeMiss" instead of "projectileType". Miss chances and "projectileTypeMiss" are configurated in "primaryAbility". Is enabled by default if "primaryAbility" has "projectileTypeMiss" defined
+  
+  "consumeAmmoModule" : true,							//enables the "consuming" of ammo items on reloads.
+  "consumeAmmoType" : "ews_ammo_dummy",					//item id for the ammo item
+  
+  
+  "singleBulletLoad" : true,							//Different reload style; single bullet load means stances "reload1" and "reload2" are looped as the player manually inserts in each ammo item as needed. As stances are looped, sfx "switchAmmo" is played before stance "reload1" is triggered.
+  "singleBulletLoadPreAnims" : true,					//Adds an additional animation before "singleBulletLoad" triggers its special reload. Requires stances "prereload1", "prereload2", "prereload3", and requires sfx "reloadPre" (plays before "prereload1" triggers). Will trigger gunState "reloadPre".
+  "singleBulletLoadAfterAnims" : true,					//Adds an additional animation after "singleBulletLoad" finishes its special reload. Will go through stances "reload3", "reload4", "reload5", and "reload6", and requires sfx "reloadFinal" (plays before "reload3" triggers). Will trigger gunState "reloadFinal".
+  
+  "ejectProjectile" : true,								//If enabled, when stance "motion3" finishes, a projectile is spawned.
+  "ejectProjectileType" : "ews_null",	//Projectile dropped when stance "motion3" finishes, used mostly for shotguns and bolt action snipers.
+  "ejectProjectileTypeConfig" : {		//Config for "ejectProjectileType"; if ejectProjectileTypeConfigs and multiple ammo types, this gets overriden.
+	"timeToLive" : 0,
+	"actionOnReap" : [
+		{
+			"action" : "projectile",
+			"type" : "ews_boltrifle_shellcasing",
+			"fuzzAngle" : 20,
+			"directional" : "true",
+			"angle" : 90
+		}
+	]
+  },
+  
+  "ammoMax" 		: 5,			//Specifies how big the guns' magazine is.
+  "ammoAmount" 		: 5,			//Holds the current amount of ammo. Mostly set dynamically
+  "magazineProjectile": "[]", 		//Projectile dropped when reloading, basically a dummy projectile (Gnio)
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "ews_boltrifle.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+	"animatedParts":{
+      "stateTypes" : {
+        "gunState" : {
+          "default" : "empty",
+          "states" : {					//animations are handled by both gunammo.lua (ammo states) and gunfireammo.lua (firing state). If you want to change those, make a copy and work with that.
+			"firing" :{					//gun will transition to "firing" state each time you pull the trigger
+			  "frames" : 1,
+			  "cycle" : 0.5,
+			  "mode" : "transition",
+			  "transition" : "bolt"
+			},
+			"bolt" :{					//after firing state finishes, bolt anim triggers
+			  "frames" : 3,
+			  "cycle" : 0.4,
+			  "mode" : "transition",
+			  "transition" : "endbolt"
+			},
+			"endbolt" :{				//inbetween state (placeholder-ish?)
+			  "frames" : 1,
+			  "cycle" : 0.09,
+			  "mode" : "transition",
+			  "transition" : "armed"
+			},
+            "armed" : {					//gun transitions to "armed" state if it has ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+            "empty" : {					//gun transitions to "empty" if it has no ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+			"reloading" : {				//reloading animation of inserted each bullet
+			  "frames" : 4,
+			  "cycle" : 0.4,
+			  "mode" : "loop"
+			},
+			"reloadFinal" : {			//reloading animation after all bullets have been inserted
+			  "frames" : 3,
+			  "cycle" : 0.3,
+			  "mode" : "transition",
+			  "transition" : "empty"
+			},
+			"reloadPre" : {				//reloading animation before all bullets have been inserted
+			  "frames" : 3,
+			  "cycle" : 0.3,
+			  "mode" : "transition",
+			  "transition" : "empty2"
+			},
+			"empty2" : {				//more or less an inbetween state for reloadPre and the actual reloads
+              "frames" : 1,
+			  "mode":"end"
+            }
+          }
+        }
+      },
+
+      "parts" : {
+      "middle" : {
+          "properties" : {
+            "image" : null
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<partImage>:firing.<frame><paletteSwaps>"
+				}
+			  },
+			  "bolt" : {
+				"properties" : {
+				  "image" : "<partImage>:bolt.<frame><paletteSwaps>"
+				}
+			  },
+			  "endbolt" : {
+				"properties" : {
+				  "image" : "<partImage>:firing.4<paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<partImage>:empty.<frame><paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<partImage>:reloadint.<frame><paletteSwaps>"
+				}
+			  },
+			  "reloadFinal" : {
+			    "properties" : {
+				  "image" : "<partImage>:reloadfin.<frame><paletteSwaps>"
+				}
+			  },
+			  "reloadPre" : {
+			    "properties" : {
+				  "image" : "<partImage>:reload.<frame><paletteSwaps>"
+				}
+			  },
+			  "empty2" : {
+                "properties" : {
+                  "image" : "<partImage>:firing.4<paletteSwaps>"
+                }
+              }
+            }
+          }
+        }
+      }
+	},
+	"particleEmitters" : {
+      "muzzleFlash" : {
+        "burstCount" : 2,
+		"transformationGroups" : ["muzzle"],
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [1.8, -0.2], "count" : 2 }
+        ]
+      },
+      "hotsmoke" : {
+        "burstCount" : 3,
+		"transformationGroups" : ["muzzle"],
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [1.8, -0.2], "count" : 3 }
+        ]
+      }
+    },
+    "sounds" : {
+      "fire" 		: [ "/sfx/gun/ews_mosin_full.ogg" ],						//fire sfx
+	  "empty"		: [ "/sfx/gun/reload/machinepistol_reload_clip1.ogg" ],		//empty "click" sfx
+      "switchAmmo" 	: [ "/sfx/ews_bolt_action_reload_insert.ogg" ],				//reload sfx, plays every time bullet is "inserted"
+	  "reloadFinal" : [ "/sfx/ews_bolt_action_reload_end.ogg" ],				//plays after bullets have been loaded from reload anim
+	  "reloadPre" 	: [ "/sfx/ews_bolt_action_reload_init.ogg" ]				//plays right before reload anim
+    }
+  },
+
+
+
+  "baseOffset" : [0.5, 0.33],
+  "muzzleOffset" : [-0.4, 0.3],
+
+  "scripts" : ["/items/active/weapons/ranged/ews_weaponcore.lua"],						//main weapon scripts
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/ews_weapon.lua"],		//main gun fire scripts
+	"class" : "GunFire",
+	
+	"missChance" : 50, //out of 100
+	"missChanceCrouch" : 10, //missChanceCrouch is automatically 60% less than missChance, but placed this here for reference.
+	//"dynamicRecoilTemplate" : "ASSAULTRIFLE", uneeded as dynamicRecoilTemplate for assault rifles are present by default unless otherwise specified
+    "dynamicRecoilMaxSteps" : 5,
+    "dynamicRecoilMultiplier" : 0.6,
+    "dynamicRecoilTickDuration" : 0.5,
+
+    "fireTime" : 0.25,
+    "baseDamage" : 75,
+    "energyUsage" : false,		//energy usage. automatically disabled, set to a numerical value to enable.
+    "inaccuracy" : 0.020,
+	"crouchInaccuracy" : 0.015,
+
+    "projectileCount" : 1,
+    "fireType" : "semi",   //auto burst semi
+	
+	
+	"projectileTypeMiss" : "ews_standardbullet_miss",
+    "projectileType" : "ews_standardbullet",
+    "projectileParameters" : {
+      "knockback" : 10
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : -5,
+        "weaponRotation" : 7,
+        "weaponOffset" : [ 0.1, 0.3],
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.1",
+        "backArmFrame" : "swim.3"
+      },
+	  "fire" : {
+        "duration" : 0.05,
+        "armRotation" : -7,
+        "weaponRotation" : 9.75,
+        "weaponOffset" : [ 0.1, 0.3],
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "run.1",
+        "backArmFrame" : "swim.3"
+      },
+      "motion1" : {
+        "duration" : 0.20,
+        "armRotation" : -8,
+        "weaponRotation" : 7,
+        "weaponOffset" : [ 0.1, 0.3],
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+	    "frontArmFrame" : "run.1",
+        "backArmFrame" : "swim.3"
+      },
+      "motion2" : {
+        "duration" : 0.20,
+        "armRotation" : -8,
+        "weaponRotation" : 7,
+        "weaponOffset" : [ -0.1, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+        "frontArmFrame" : "rotation",
+        "backArmFrame" : "run.5"
+      },
+      "motion3" : {
+        "duration" : 0.20,
+        "armRotation" : -8,
+        "weaponRotation" : 7,
+        "weaponOffset" : [ -0.1, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+        "frontArmFrame" : "swim.3",
+        "backArmFrame" : "run.5"
+      },
+      "motion4" : {
+        "duration" : 0.20,
+        "armRotation" : -8,
+        "weaponRotation" : 7,
+        "weaponOffset" : [ -0.1, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+	    "frontArmFrame" : "swim.4",
+        "backArmFrame" : "run.5"
+      },
+      "motion5" : {
+        "duration" : 0.20,
+        "armRotation" : -8,
+        "weaponRotation" : 7,
+        "weaponOffset" : [ -0.1, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "run.5"
+      },
+      "motion6" : {
+        "duration" : 0.1,
+		"armRotation" : -5,
+        "weaponRotation" : 7,
+        "weaponOffset" : [ 0.1, 0.3],
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.1",
+        "backArmFrame" : "swim.3"
+	  },
+	  "prereload1" : {
+        "duration" : 0.15,
+        "armRotation" : 0,
+        "weaponRotation" : 15,
+        "weaponOffset" : [ -0.3, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.3",
+		"backArmFrame" : "run.5"
+      },
+      "prereload2" : {
+        "duration" : 0.2,
+        "armRotation" : 0,
+        "weaponRotation" : 15,
+        "weaponOffset" : [ -0.3, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.4",
+        "backArmFrame" : "run.5"
+      },
+      "prereload3" : {
+        "duration" : 0.0,
+        "armRotation" : 0,
+        "weaponRotation" : 15,
+        "weaponOffset" : [ -0.3, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "run.1",
+		"backArmFrame" : "run.5"
+      },
+      "reload" : {
+        "duration" : 0.20,
+        "armRotation" : -10,
+        "weaponRotation" : 15,
+        "weaponOffset" : [ -0.3, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+	    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "run.5"
+      },
+ 
+      "reload1" : {
+        "duration" : 0.20,
+        "armRotation" : 0,
+        "weaponRotation" : 15,
+        "weaponOffset" : [ -0.5, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.4",
+		"backArmFrame" : "run.5"
+      },
+      "reload2" : {
+        "duration" : 0.20,
+        "armRotation" : 0,
+        "weaponRotation" : 15,
+        "weaponOffset" : [ -0.5, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "idle.2",
+		"backArmFrame" : "run.5"
+      },
+      "reload3" : {
+        "duration" : 0.15,
+        "armRotation" : 0,
+        "weaponRotation" : 15,
+        "weaponOffset" : [ -0.3, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.2",
+        "backArmFrame" : "run.5"
+      },
+      "reload4" : {
+        "duration" : 0.15,
+        "armRotation" : 0,
+        "weaponRotation" : 15,
+        "weaponOffset" : [ -0.3, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "run.1",
+		"backArmFrame" : "run.5"
+      },
+      "reload5" : {
+        "duration" : 0.15,
+        "armRotation" : 0,
+        "weaponRotation" : 15,
+        "weaponOffset" : [ -0.3, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.4",
+        "backArmFrame" : "run.5"
+      },
+      "reload6" : {
+        "duration" : 0.0,
+        "armRotation" : 0,
+        "weaponRotation" : 15,
+        "weaponOffset" : [ -0.3, 0.1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.3",
+		"backArmFrame" : "run.5"
+      },
+      "cooldown" : {
+        "duration" : 0.0,
+        "armRotation" : -5,
+        "weaponRotation" : 7,
+        "weaponOffset" : [ 0.1, 0.3],
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.1",
+        "backArmFrame" : "swim.3"  
+      }
+    }
+  },
+  
+  "builder" : "/items/buildscripts/ews_buildunrandweapon.lua" //needed for the ammo values and damage values to register before the player equips the gun. Also needed for attachments n mags to appear on the gun (before the player equips the item)
+}

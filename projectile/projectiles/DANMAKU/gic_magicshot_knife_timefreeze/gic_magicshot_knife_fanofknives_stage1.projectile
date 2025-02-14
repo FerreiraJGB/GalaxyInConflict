@@ -1,0 +1,29 @@
+{
+  "projectileName" : "gic_magicshot_knife_fanofknives_stage1",
+  "image" : "gic_magicshot_knife_timefreeze.png",
+  "physics" : "bullet",
+  "animationCycle" : 0.25,
+  "onlyHitTerrain" : false,
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef",
+  "fullbright" : true,
+  "flippable" : true,
+  "timeToLive" : 1,
+  "emitters" : [  ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicshot_knife_fanofknives_stage2",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 0
+    }
+  ],
+  "statusEffects" : [ ],
+  "power" : 50.0,
+  "speed" : 6,
+  "acceleration" : -2,
+  "knockback" : 10
+}

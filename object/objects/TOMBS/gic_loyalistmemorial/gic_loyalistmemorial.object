@@ -1,0 +1,48 @@
+{
+  "objectName" : "gic_loyalistmemorial",
+  "colonyTags" : ["human"],
+  "rarity" : "Common",
+  "description" : "Memorial to the loyal followers of the Protectorate. May the stars guide their souls to the afterlife.",
+  "shortdescription" : "Loyalist Memorial",
+  "race" : "human",
+  "category" : "decorative",
+  "price" : 100,
+
+
+  "inventoryIcon" : "gic_loyalistmemorialicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_loyalistmemorial.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "scripts" : [
+    "/scripts/npcToyObject.lua"
+  ],
+
+  "npcToy" : {
+    "influence" : [
+      "tombstone",
+      "tombstoneComplete"
+    ],
+    "defaultReactions" : {
+      "tombstone" : [
+        [1.0, "mourn"]
+      ],
+      "tombstoneComplete" : [
+        [1.0, "cry"]
+      ]
+    },
+    "preciseStandPositionLeft" : [-2.5, 0.0],
+    "preciseStandPositionRight" : [2.5, 0.0],
+    "maxNpcs" : 1
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_magicbullet_ice_large_homing",
+  "bounces" : 0,
+  "image" : "gic_magicbullet_ice_large.png",
+  "animationCycle" : 0.1,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 1,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  "power" : 200,
+  
+  "renderLayer" : "Monster+10",
+  "damagePoly" : [ [-32, 0], [-22, -22], [0, -32], [22, -22], [32, 0], [22, 22], [0, 32], [-22, 22]  ],
+  
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+
+  "maxSpeed" : 10,
+  "ignoredef" : true,
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 10.0,
+  "acceleration" : 30,
+  "timeToLive" : 10,
+  "physics" : "rocket",
+  
+  "rotationRate" : 6,
+  "trackingLimit" : 300
+}

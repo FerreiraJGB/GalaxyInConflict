@@ -1,0 +1,34 @@
+{
+  "itemName" : "gic_equilibriumengine",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_equilibriumengine.png",
+  "maxStack" : 1,
+  "description" : 
+  
+
+
+
+"''The Otherworld isn't a natural phenomena. It is a replica of Earth as it was in the 18th Century. Creating an entire dimension, however small, is no minor feat, but we believed that if we could do so, then there was nothing we could not accomplish. We were almost correct.''
+
+^green;+15HP/s when BELOW 50% HP
+^red;-15HP/s when ABOVE 50% HP.",
+
+
+
+  "shortdescription" : "Equilibrium Engine",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_equilibriumengine",
+    "displayName" : "Equilibrium Engine",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_equilibriumengine.png",
+    "effects" : [ "gic_equilibriumengine_above50", "gic_equilibriumengine_below50" ]
+  },
+
+  "radioMessagesOnPickup" : [ ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

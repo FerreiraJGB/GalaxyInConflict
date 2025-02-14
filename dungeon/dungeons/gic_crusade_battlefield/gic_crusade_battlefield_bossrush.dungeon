@@ -1,0 +1,61 @@
+{
+  "metadata" : {
+    "name" : "gic_crusade_battlefield_bossrush",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_crusade_battlefield_transition"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 3,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+	
+	
+    {
+      "name" : "gic_crusade_battlefield_transition",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_battlefield_transition.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_crusade_warcamp_tents1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_crusade_warcamp_tents1" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_warcamp_tents1.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_crusade_warcamp_tents2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_crusade_warcamp_tents2" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_warcamp_tents2.json" ] ],
+      "chance" : 1
+    },
+
+
+    {
+      "name" : "gic_crusade_warcamp_arena_bossrush",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_crusade_warcamp_arena_bossrush.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

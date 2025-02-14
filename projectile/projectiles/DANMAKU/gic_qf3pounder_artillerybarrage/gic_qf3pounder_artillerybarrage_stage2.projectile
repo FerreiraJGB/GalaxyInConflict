@@ -1,0 +1,43 @@
+{
+  "projectileName" : "gic_qf3pounder_artillerybarrage_stage2",
+  "physics" : "rocket",
+  "periodicActions" : [
+
+	
+    {
+      "time" : 0.3,
+      "action" : "projectile",
+      "type" : "gic_qf3pounder_artillerybarrage_stage3",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0,
+	  "fuzzAngle" : 360,
+      "angleAdjust" : 0
+    },
+	
+    {
+      "time" : 0.3,
+      "action" : "projectile",
+      "type" : "gic_qf3pounder_artillerybarrage_stage3b",
+      "inheritDamageFactor" : 1,
+	  "angle" : 0,
+	  "fuzzAngle" : 360,
+      "angleAdjust" : 0
+    }
+	
+  ],
+  "image" : "gic_qf3pounder_artillerybarrage_stage2.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "ignoresdef",
+  
+  "damageKindImage" : "icon.png",
+  "power" : 70,
+  "speed" : 180,
+  "onlyHitTerrain" : true,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "timeToLive" : 0.5,
+  "pointLight" : false,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

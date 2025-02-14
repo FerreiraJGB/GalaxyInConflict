@@ -1,0 +1,25 @@
+{
+  "projectileName" : "gic_summon_crystalceilingspike_stage1",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_summon_crystalceilingspike_stage1.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 3,
+  "timeToLive" : 10,
+  "power" : 0,
+  "speed" : 100,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+  
+    {
+      "action" : "projectile",
+      "type" : "gic_summon_crystalceilingspike_stage2",
+      "inheritDamageFactor" : 1,
+//	  "fuzzAngle" : 30
+      "angleAdjust" : 0
+    }
+  ]
+}

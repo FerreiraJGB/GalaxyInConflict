@@ -1,0 +1,40 @@
+{
+  "itemName" : "gic_handcannon_melee",
+  "price" : 1000,
+  "level" : 6,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "Exactly.",
+  "shortdescription" : "Cannoneer Staff Melee NPC",
+  "tooltipKind" : "base",
+  "category" : "hammer",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","hammer"],
+
+  "inventoryIcon" : "gic_handcannon_melee.png",
+
+  "animation" : "/items/active/weapons/melee/hammer/hammer.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_handcannon_melee.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "hammersmash",
+  "primaryAbility" : {
+    "fireTime" : 1.0,
+    "baseDps" : 13.5,
+    "damageConfig" : {
+      "damageSourceKind" : "hammer",
+      "knockbackRange" : 50
+    }
+  },
+
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

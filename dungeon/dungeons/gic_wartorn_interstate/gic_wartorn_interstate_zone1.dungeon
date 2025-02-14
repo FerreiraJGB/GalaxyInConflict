@@ -1,0 +1,184 @@
+{
+  "metadata" : {
+    "name" : "gic_wartorn_interstate_zone1",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_wartorn_interstate_zone1_highway_start"],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 150,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+
+
+    {
+      "name" : "gic_wartorn_interstate_zone1_highway_start",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_highway_start.json" ] ],
+      "chance" : 0
+    },
+	
+
+    {
+      "name" : "gic_wartorn_interstate_zone1_highway_destroyed",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_highway_destroyed.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_highway_detour",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_wartorn_interstate_zone1_highway_detour" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_highway_detour.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_highway_overpass",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_wartorn_interstate_zone1_highway_overpass" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_highway_overpass.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_highway_buildings",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_wartorn_interstate_zone1_highway_buildings" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_highway_buildings.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_highway_swept",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_wartorn_interstate_zone1_highway_swept" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_highway_swept.json" ] ],
+      "chance" : 1
+    },
+	
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_highway_roadblock",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_wartorn_interstate_zone1_highway_roadblock" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_highway_roadblock.json" ] ],
+      "chance" : 1
+    },	
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_highway_policestop",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_wartorn_interstate_zone1_highway_policestop" ] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_highway_policestop.json" ] ],
+      "chance" : 1
+    },	
+	
+	
+	
+	
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_highway_transition",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_highway_transition.json" ] ],
+      "chance" : 0
+    },
+
+
+
+
+
+
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_bridge_roadblock",
+      "rules" : [
+        [ "maxSpawnCount", [2] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_bridge_roadblock.json" ] ],
+      "chance" : 1
+    },
+	
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_bridge_semidestroyed",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_bridge_semidestroyed.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_bridge_destroyed",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_bridge_destroyed.json" ] ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_bridge_switch",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_bridge_switch.json" ] ],
+      "chance" : 1
+    },
+	
+	
+	
+	
+	
+    {
+      "name" : "gic_wartorn_interstate_zone1_bridge_transition",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_bridge_transition.json" ] ],
+      "chance" : 0
+    },
+	
+	
+	
+	
+
+
+
+    {
+      "name" : "gic_wartorn_interstate_zone1_trail_end",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_wartorn_interstate_zone1_trail_end.json" ] ],
+      "chance" : 0
+    }
+	
+	
+  ]
+}

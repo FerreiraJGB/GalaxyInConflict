@@ -1,0 +1,682 @@
+{
+  "type" : "gic_otherworld_newlondinium_spearsoldier",
+  "shortdescription" : "[New Londinium Spear Soldier]",
+  "description" : "Knights of old.",
+
+  "categories" : [ "gic_otherworld_newlondinium_spearsoldier" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_otherworld_newlondinium_spearsoldier.animation",
+
+  "dropPools" : [ ], //{ "default" : "banditTreasure", "bow" : "banditTreasure" }
+
+  "baseParameters" : {
+  
+    "scripts" : [
+      "/monsters/gic_base_monster.lua"
+    ],
+	
+
+	
+//    "damageBar" : "None",
+
+    "behavior" : "gic_monster",
+    "deathBehavior" : "monster-death",
+    "seeThroughLiquid" : false,
+	
+	
+	
+	//BLOCKING/PARRYING RELEVANT STUFF:
+	"behaviorUpdateDelta" : 1, //SET THIS TO ONE SO MONSTER CAN "REACT" AS FAST AS POSSIBLE!!! also recommended to reduce value "primaryScriptDelta"
+	"blockMax" : 100, //how many "blocks" the mob can hold at a time (keep as an integer!)
+	"blockRechargeTime" : 3.0, //in seconds; when this amount of time passes, blocks can recharge back to full capacity. every time entity blocks, block timer resets to this
+	"blockStatusEffect" : "gic_parryshield_nosound", //status effect that is applied to mob when blocking are possible
+	"blockEffectBufferTime" : 0.2, //in seconds; refers to the amount of time before the blocking status effect is gutted after running out of blocks, try to match with blockedActions action duration
+	
+	"blockingGuardBreakEnabled" : true, //if enabled, once monster blocks last available block, trigger "guardBroken" action(s)
+	"blockingGuardBreakDuration" : 3.0, //unable to block or react to damage for this duration (unable to recharge blocks for this duration or to trigger damageTakenActions). actual duration of guard break animation depends on action in "guardBroken"
+	
+	"blockingAnimationWhitelist" : true, //enables a whitelist of animationStates where blocking is functional
+	"blockableAnimationStateType" : "body", //states what animationStateType to listen too
+	"blockableAnimationStates" : [	//valid animation states where blocking/parrying is triggerable
+		"idle",
+		"block",
+		"walk",
+		"shield",
+		"backdash",
+		"thrustwindup",
+		"thrust",
+		"thrustwinddown"
+	],	
+	
+	
+
+	
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 120,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 90,
+      "targetOutOfSightTime" : 15,
+	  
+	  "guardBrokenActions" : [
+        {
+		  "name" : "action-invulnerable",
+          "cooldown" : 0.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "guardBroken",
+            "winddownTime" : 0.0,
+            "winddownState" : "guardBroken",
+
+            "invulnerableTime" : 3.0,
+
+            "invulnerableState": "guardBroken",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "" //gic_colorwhite
+			
+          }
+        }
+      ],
+	  
+	  "blockedActions" : [
+		//shield parry
+        {
+		  "name" : "action-invulnerable",
+          "cooldown" : 0.0,
+          "parameters" : {
+            "windupTime" : 0.0,
+            "windupState" : "block",
+            "winddownTime" : 0.2,
+            "winddownState" : "",
+
+            "invulnerableTime" : 0.2,
+
+            "invulnerableState": "block",
+            "invulnerableActions": [
+				//this can be filled with *any* action, everything here ticks until invulnerable time is up
+			],
+            "invulnerableEffect": "invulnerable"
+			
+          }
+        }
+      ],
+	  
+      "foundTargetActions" : [
+        {
+          "name" : "action-animate",
+          "parameters" : {
+            "stateType" : "body",
+            "state" : "aggro",
+            "animationTime" : 5
+          }
+        }
+      ],
+
+      "hostileActions" : [
+	  
+	  
+	  
+	  
+	  
+	  
+	  //Ironically, this is only used to make the unit NOT shielded.
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : [2.0, 10.0],
+          "parameters" : {
+            "windupTime" : 0.05,
+            "windupState" : "",
+            "winddownTime" : 0.05,
+            "winddownState" : "",
+
+            "invulnerableTime" :1.75,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+	  //Shieldbash
+      {
+        "name" : "action-charge",
+        "cooldown" : [4.0, 10.0],
+        "parameters" : {
+          "maximumRange" : 11,
+          "minimumRange" : 0,
+          "windupTime" : 0.5,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 600,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "shieldbash",
+          "windupState" : "shieldbashwindup",
+          "winddownTime" : 1.25,
+          "winddownState" : ""
+        }
+      }
+			],
+            "invulnerableEffect": "gic_enemy_shielddown"
+          }
+        },
+
+
+	  
+	  
+	  
+	  
+	  
+	  //Ironically, this is only used to make the unit NOT shielded.
+		{
+          "name" : "action-invulnerable",
+          "cooldown" : [2.0, 10.0],
+          "parameters" : {
+            "windupTime" : 0.05,
+            "windupState" : "",
+            "winddownTime" : 0.05,
+            "winddownState" : "",
+
+            "invulnerableTime" :2.25,
+
+            "invulnerableState": "",
+            "invulnerableActions": [
+	  //Overhead Swing
+      {
+        "name" : "action-charge",
+        "cooldown" : [8.0, 16.0],
+        "parameters" : {
+          "maximumRange" : 11,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 100,
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "overheadswing",
+          "windupState" : "overheadswingwindup",
+          "winddownTime" : 1.75,
+          "winddownState" : ""
+        }
+      }
+			],
+            "invulnerableEffect": "gic_enemy_shielddown"
+          }
+        },
+
+
+	  
+
+	  //Thrust
+      {
+        "name" : "action-charge",
+        "cooldown" : 0.0,
+        "parameters" : {
+          "maximumRange" : 7,
+          "minimumRange" : 0,
+          "windupTime" : 0.75,
+          "chargeTime" : 0.1,
+          "chargeSpeed" : 2400,
+          "chargeControlForce" : 200, //300
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "chargeState" : "thrust",
+          "windupState" : "thrustwindup",
+          "winddownTime" : 0.75,
+          "winddownState" : ""
+        }
+      },
+	  	  
+
+
+		
+	  //Back Dash - Make distance for moving attacks.
+      {
+        "name" : "action-charge",
+        "cooldown" : 10.0,
+        "parameters" : {
+          "maximumRange" : 3,
+          "minimumRange" : 0,
+          "windupTime" : 0.1,
+//         "power" : 300,
+          "chargeTime" : 0.2,
+          "chargeSpeed" : -4800, //18
+          "chargeControlForce" : 500, //400
+          "wallCrashSound" : "wallCrash",
+          "wallCrashEmitter" : "",
+          "windupState" : "",
+          "chargeState" : "backdash",
+          "winddownTime" : 0.025,
+          "winddownState" : ""
+        }
+      }	  
+		
+
+
+      ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 80,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 7,
+            "jumpXVelocity" : 20,
+            "jumpYVelocity" : 60,
+            "jumpXControlForce" : 60,
+            "minXRange" : 30,
+            "minimumRange" : 10
+          }
+        }
+      ],
+	  
+
+
+
+      "periodicActions" : [
+      ],
+
+      "damageTakenActions" : [
+
+      ],
+
+	  "deathActions" : [
+	  
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "gic_blood_explosion",
+            "projectileParameters" : {
+              "power" : 0, //1200
+              "damageTeam" : { "type" : "indiscriminate" }, //"team" : 0
+              "damageKind" : "ews_explosive",
+			  "ignoresDef" : true
+            },
+            "aimDirection" : [0, 0],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0.0]
+          }
+        }
+		
+      ],
+
+
+
+      "wanderActions" : [
+      ]
+	  
+    },
+	
+
+	
+	
+	
+	
+	
+
+    "damageParts" : { //Regular Attacks
+      "body" : {
+        "damage" : 80,
+        "damageType" : "IgnoresDef",
+		"damageRepeatTimeout" : 0.25,
+        "teamType" : "enemy",
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 10,
+        "statusEffects" : [ ]
+      },
+	  "shieldbashDamage" : { //Shield Bash
+		"damage" : 20,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.25,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 30,
+        "statusEffects" : [ "gic_stun_1", "gic_stun_2" ],
+        "damageRepeatGroup": ""
+	  },
+	  "slashDamage" : { //Extreme attack
+		"damage" : 50,
+        "damageType" : "IgnoresDef",
+        "teamType" : "enemy",
+		"damageRepeatTimeout" : 0.25,
+        "damageSourceKind" : "ews_melee",
+        "knockback" : 30,
+        "statusEffects" : [ ],
+        "damageRepeatGroup": ""
+	  }
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-0.5, -2.1], [0.5, -2.1], [0.5, 2.0], [-0.5, 2.0] ], // [-0.5, -2.15], [0.5, -2.15], [0.5, 2.6], [-0.5, 2.6],    [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375] 
+      "damage" : 0,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "ews_melee",
+      "knockback" : 5,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.00,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.75, -1.0], [-0.35, -2.0], [0.35, -2.0], [0.75, -1.0], [0.75, 1.22], [0.35, 1.8], [-0.35, 1.8], [-0.75, 1.22] ],                 //[ [-0.5, -2.15], [0.5, -2.15], [0.5, 1.8], [-0.5, 1.8],      [-0.625, -0.9375], [-1.125, -0.4375], [-1.125, 0.4375], [-0.625, 0.9375]  ], //1.8 > 2.0
+
+      "mass" : 1,
+      "walkSpeed" : 4,
+      "runSpeed" : 4,
+      "gravityEnabled" : true,
+
+      "airFriction" : 1,
+      "airForce" : 0,
+      "flySpeed" : 0,
+	  
+      "airJumpProfile" : {
+        "jumpSpeed" : 20.0,
+        "jumpInitialPercentage" : 1.0,
+        "jumpHoldTime" : 0.3
+      }
+	  
+    },
+
+    "pathing" : {
+      "canOpenDoors" : true
+    },
+
+    "bodyMaterialKind" : "organic",
+
+    "knockoutTime" : 0.3,
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic",
+		"damageCap" : 200	//if received damage reaches above this number, damage will be reset to this value.
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/gic_monster_primary_damagecap.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+		
+
+        "knockbackStunTime" : {
+          "baseValue" : 1
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 50
+        },
+		
+        "maxHealth" : {
+          "baseValue" : 1000
+        },
+        "protection" : {
+          "baseValue" : 1
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+		
+        "powerMultiplier" : {
+          "baseValue" : 1
+        },
+		
+        "gic_suppressedProtection" : {
+          "baseValue" : 1.0
+        },	
+        "gic_suppressedStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+        "physicalResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireResistance" : {
+          "baseValue" : 0.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+		
+      "stunImmunity" : {
+        "baseValue" : 1.0
+      },	  
+      "gic_flashbangProtection" : {
+        "baseValue" : 1.0
+      },
+		
+      "gic_bleeding_lightStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_bleeding_mediumStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	
+      "gic_bleeding_heavyStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+      "gic_boss_statidentifier" : {
+        "baseValue" : 1.0
+      },
+		
+		
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : -3.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },
+	  
+      "gic_tazed_1StatusImmunity" : {
+        "baseValue" : 1
+      },
+	  
+      "gic_tazedStatusImmunity" : {
+        "baseValue" : 1
+      },
+
+      "gic_biomeweathercold_frostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "gic_biomeweathercold_deathlyfrostImmunity" : {
+        "baseValue" : 1
+      },	
+	  
+      "novaResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "holyResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "demonicResistance" : {
+        "baseValue" : 0
+      },
+	  
+      "bleedResistance" : {
+        "baseValue" : 1.0
+      },
+
+				"biooozeImmunity": {
+					"baseValue": 1.0
+				},
+				"insanityImmunity": {
+					"baseValue": 1.0
+				},
+				"protoImmunity": {
+					"baseValue": 1.0
+				},
+				"gasImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowImmunity": {
+					"baseValue": 1.0
+				},
+				"radiationburnImmunity": {
+					"baseValue": 1.0
+				},
+				"sulphuricImmunity": {
+					"baseValue": 1.0
+				},
+				"ffextremeheatImmunity": {
+					"baseValue": 1.0
+				},
+				"captureImmunity": {
+					"baseValue": 1.0
+				},
+				"penaltyBlock": {
+					"baseValue": 1.0
+				},
+				"critImmunity": {
+					"baseValue": 1.0
+				},
+				"shadowResistance": {
+					"baseValue": 0.5
+				},
+				"cosmicResistance": {
+					"baseValue": 0.5
+				},
+				"radioactiveResistance": {
+					"baseValue": 0
+				},
+				"bleedingImmunity": {
+					"baseValue": 1
+				},
+				"beestingImmunity": {
+					"baseValue": 1
+				},
+				"linerifleResistance": {
+					"baseValue": 0
+				},
+				"linerifleStatusImmunity": {
+					"baseValue": 1
+				},
+				"centensianenergyResistance": {
+					"baseValue": 0
+				},
+				"centensianenergyStatusImmunity": {
+					"baseValue": 1
+				},
+				"xanafianResistance": {
+					"baseValue": 1
+				},
+				"xanafianStatusImmunity": {
+					"baseValue": 1
+				},
+				"akkimariacidResistance": {
+					"baseValue": 0
+				},
+				"akkimariacidStatusImmunity": {
+					"baseValue": 1
+				},
+				"ucObliteratingBurnImmunity": {
+					"baseValue": 1
+				},
+				"specialStatusImmunity": {
+					"baseValue": 1.0
+				},
+				"ignoreInvisibilityEffects": {
+					"baseValue": 1
+				},
+				"silverResistance": {
+					"baseValue": 0.0
+				}	
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

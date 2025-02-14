@@ -1,0 +1,37 @@
+{
+  "id" : "gic_tylian_planetincentive_5_khurtovynaquest",
+  "title" : "^#CC7970;Tylian: Khurtovyna",
+  "text" : "Let's see... Oh, that's a terrible place. Khurtovyna. You've got the means of bypassing those Psychic Barriers, and all I really want from that place are the artifacts. You're free to perform any means necessary for the artifacts.",
+
+  "prerequisites" : [ "gic_tylian_planetincentive_4_wildlandsquest" ],
+  "canBeAbandoned" : false,
+  "completionText" : "Poor bastards. Any way you look at it, they're all losing every battle that comes their way. Well, here's your payment, as per usual. The next two might be a tough one to crack.",
+  
+  "moneyRange" : [5000,5000],
+//  "ephemeral" : true,
+  "rewards" : [
+    [ [ "gic_physicalcredit", 10 ], [ "gic_tylian_fleetingthoughts_2-codex", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questGiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_muted_artifact",
+        "count" : 5,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset; in a ^orange;Khurtovynan Rundown^reset;: ^green;<current> / <required>^reset;"
+      }
+	  
+    ]
+  }
+}

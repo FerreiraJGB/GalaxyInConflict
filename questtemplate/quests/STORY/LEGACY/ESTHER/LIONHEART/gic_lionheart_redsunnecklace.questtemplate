@@ -1,0 +1,47 @@
+{
+  "id" : "gic_lionheart_redsunnecklaceQuest",
+  "title" : "^#D1FFDE;The Virtuous",
+  
+  "text" : "If you yearn for the Red Sun's true power, one that is unhindered... Then kill a False Protector controlled by the Ruin. Do this, and bring me their Vestigial Eye. Tarry no longer, then.",
+  
+  "completionText" : "Ah-hah, you've found a proper Vestigial Eye... Brilliant.",
+  
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_redsunnecklacehead", 1 ], [ "gic_healingflask", 10 ] ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_chapter_1_lionheart/gic_esther_chapter_1_lionheartportrait.png"} ],
+        "title" : ""
+      }
+    },
+
+
+    "descriptions" : {
+      "turnIn" : "Speak to ^orange;Lionheart^reset;."
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_1_lionheart",
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_ruinsvestigialeye",
+        "count" : 1,
+        "consume" : true
+      }
+    ]
+	
+	
+  }
+}

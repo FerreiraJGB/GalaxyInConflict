@@ -1,0 +1,17 @@
+{
+  "name" : "gic_bandaged_adaptive",
+  "blockingStat" : "gic_bandagedStatusImmunity",
+  "effectConfig" : {
+    "ews_bleedResistance" : 0.5,
+	"adaptive_ews_bleedResistance" : 1.0,
+	"targetRace" : "gic_realistichuman"
+  },
+  "defaultDuration" :240,
+
+  "scripts" : [
+    "gic_bandaged_adaptive.lua"
+  ],
+
+  "label" : "Bandaged - Provides 50% resistance to all bleed-related damage for 4 minutes.",
+  "icon" : "/interface/statuses/gic_bandaged.png"
+}

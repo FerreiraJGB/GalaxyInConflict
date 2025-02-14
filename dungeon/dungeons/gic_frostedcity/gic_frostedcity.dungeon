@@ -1,0 +1,370 @@
+{
+  "metadata" : {
+    "name" : "gic_frostedcity",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_frostedcity_abandonedskyscraper_entrance" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 45,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+
+  //Skyscraper Sections
+  
+  
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_slopedtop",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_frostedcity_abandonedskyscraper_slopedtop.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_playerspawntop",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_frostedcity_abandonedskyscraper_playerspawntop.json" ] ],
+      "chance" : 0
+    },
+  
+  
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_apartments",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_abandonedskyscraper_apartments" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_abandonedskyscraper_apartments.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_blocked",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_abandonedskyscraper_blocked" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_abandonedskyscraper_blocked.json" ],
+      "chance" : 1
+    },	
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_cafeteria",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_abandonedskyscraper_cafeteria" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_abandonedskyscraper_cafeteria.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_collapseddouble",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_abandonedskyscraper_collapseddouble" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_abandonedskyscraper_collapseddouble.json" ],
+      "chance" : 1
+    },	
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_offices",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_abandonedskyscraper_offices" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_abandonedskyscraper_offices.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_shattered",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_abandonedskyscraper_shattered" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_abandonedskyscraper_shattered.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_suicide",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_abandonedskyscraper_suicide", "gic_frostedcity_abandonedskyscraper_entrance" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_abandonedskyscraper_suicide.json" ],
+      "chance" : 1
+    },
+	
+
+  //City Grounds
+  
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_entrance",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_abandonedskyscraper_entrance" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_abandonedskyscraper_entrance.json" ],
+      "chance" : 1
+    },
+  
+    {
+      "name" : "gic_frostedcity_abandonedskyscraper_entrance2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_abandonedskyscraper_entrance2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_abandonedskyscraper_entrance2.json" ],
+      "chance" : 1
+    },
+	
+
+	
+	
+    {
+      "name" : "gic_frostedcity_building1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_building1" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_building1.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_building2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_building2" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_building2.json" ],
+      "chance" : 1
+    },
+
+    {
+      "name" : "gic_frostedcity_building3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_building3" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_building3.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_building4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_building4" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_building4.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_building5",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_building5" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_building5.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_checkpoint",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_checkpoint" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_checkpoint.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_deadwood",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_deadwood" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_deadwood.json" ],
+      "chance" : 1
+    },
+	
+	
+	
+	
+	
+	
+	//Metro
+	
+	
+	
+	
+    {
+      "name" : "gic_frostedcity_metro_entrance",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_metro_entrance" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_metro_entrance.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_metro_maintenancedoor",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_metro_maintenancedoor" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_metro_maintenancedoor.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_metro_checkpoint",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_metro_checkpoint" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_metro_checkpoint.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_metro_sewerconnection",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_metro_sewerconnection" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_metro_sewerconnection.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_metro_standard",
+      "rules" : [
+        [ "maxSpawnCount", [2] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_metro_standard.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_metro_wandererboss",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_metro_wandererboss.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_metro_wall",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_metro_wall" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_metro_wall.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_metro_collapsed",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_metro_collapsed" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_metro_collapsed.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_metro_junkhouse",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_metro_junkhouse" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_metro_junkhouse.json" ],
+      "chance" : 1
+    },
+	
+    {
+      "name" : "gic_frostedcity_metro_junktown",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_frostedcity_metro_junktown" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_frostedcity_metro_junktown.json" ],
+      "chance" : 1
+    },
+	
+
+    {
+      "name" : "gic_frostedcity_metro_endleft",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_frostedcity_metro_endleft.json" ] ],
+      "chance" : 0
+    },	
+	
+    {
+      "name" : "gic_frostedcity_metro_endright",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", [ "gic_frostedcity_metro_endright.json" ] ],
+      "chance" : 0
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

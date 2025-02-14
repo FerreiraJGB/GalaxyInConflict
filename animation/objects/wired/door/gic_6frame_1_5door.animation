@@ -1,0 +1,81 @@
+{
+  "globalTagDefaults" : {
+    "doorDirection" : "Right"
+  },
+//1.5 seconds to open/close for heavy doors and such
+  "animatedParts" : {
+    "stateTypes" : {
+      "doorState" : {
+        "default" : "closed",
+        "states" : {
+          "open" : {
+            "frames" : 6,
+            "cycle" : 1.5
+          },
+          "closing" : {
+            "frames" : 6,
+            "cycle" : 1.5,
+            "mode" : "transition",
+            "transition" : "closed"
+          },
+          "closed" : { },
+          "locking" : {
+            "frames" : 6,
+            "cycle" : 1.5,
+            "mode" : "transition",
+            "transition" : "locked"
+          },
+          "locked" : { }
+        }
+      }
+    },
+
+    "parts" : {
+      "door" : {
+        "properties" : {
+          "centered" : false
+        },
+
+        "partStates" : {
+          "doorState" : {
+            "open" : {
+              "properties" : {
+                "image" : "<partImage>:open<doorDirection>.<frame>"
+              }
+            },
+
+            "closing" : {
+              "properties" : {
+                "image" : "<partImage>:close<doorDirection>.<frame>"
+              }
+            },
+
+            "closed" : {
+              "properties" : {
+                "image" : "<partImage>:close<doorDirection>.6"
+              }
+            },
+
+            "locking" : {
+              "properties" : {
+                "image" : "<partImage>:close<doorDirection>.<frame>"
+              }
+            },
+
+            "locked" : {
+              "properties" : {
+                "image" : "<partImage>:close<doorDirection>.6"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "open" : [],
+    "close" : [],
+    "locked" : [ "/sfx/interface/clickon_error.ogg" ]
+  }
+}

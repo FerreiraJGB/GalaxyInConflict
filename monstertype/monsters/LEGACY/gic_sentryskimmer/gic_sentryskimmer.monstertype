@@ -1,0 +1,231 @@
+{
+  "type" : "gic_sentryskimmer",
+  "shortdescription" : "gic_sentryskimmer",
+  "description" : "Flies around. Can be used anywhere.",
+
+  "categories" : [ "gic_sentryskimmer" ],
+  "parts" : [ "body" ],
+
+  "animation" : "gic_sentryskimmer.animation",
+
+  "dropPools" : [ { "default" : "money", "bow" : "money" } ],
+
+  "baseParameters" : {
+    "scripts" : [
+      "/monsters/monster.lua"
+    ],
+
+    "behavior" : "monster",
+
+    "seeThroughLiquid" : false,
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 90,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 200,
+      "targetOutOfSightTime" : 20.0,
+
+      "foundTargetActions" : [ ],
+
+      "fleeActions" : [ ],
+	  
+      // Attack specific parameters
+      "swoopVelocity" : 1200,
+    "baseSkills" : [ "flyingSwoopAttack" ],
+
+      "hostileActions" : [
+      ],
+
+      "periodicActions" : [
+       ],
+
+      "approachActions" : [
+        {
+          "name" : "approach-fly",
+          "parameters" : {
+            "targetOffset" : [0,5],
+            "minRange" : 20
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-fly",
+          "parameters" : {
+            "targetOffset" : [0,5],
+            "minRange" : 20
+          }
+        }
+      ],
+
+      "wanderActions" : [
+        {
+          "name" : "wander-fly",
+          "parameters" : {
+            "wanderTime" : [4,8],
+            "groundDistance" : 15,
+            "ceilingDistance" : 30,
+            "xVelocity" : 200,
+            "yVelocity" : 220
+          }
+        }
+      ],
+
+      "concurrentActions" : [ ],
+
+      "concurrentHostileActions" : [
+ 	    {
+          "name" : "action-fire",
+          "cooldown" : 0.0,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 200,
+            "minimumRange" : 6,
+            "windupState" : "",
+            "windupTime" : 1.5,
+
+            "projectileCount" : 50,
+            "projectileInterval" : 0.025,
+            "inaccuracy" : 0.3,
+            "fireParticleBurst" : "muzzleFlash_mg",			
+            "projectileType" : "gic_standardlaser",
+            "power" : 2,
+            "fireOffsets" : [[4.20, -1.9]],
+            "aimAtTarget" : false,
+            "onGround" : false,
+            "fireSound" : "fire_mg",
+            "fireDelay" : 0.00,
+            "aimDirection" : [1, 0],
+            "fireArc": false,
+            "projectileSpeed": 100,
+            "gravityMultiplier": 0.0,
+
+            "winddownState" : "",
+            "winddownTime" : 2
+          }
+        }
+	  ]
+    },
+
+    "touchDamage" : {
+      "poly" : [ [-1.5, -0.70], [1.5, -0.70], [1.5, 1.7], [-1.5, 1.7] ],
+      "damage" : 5,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "lash",
+      "knockback" : 60,
+      "statusEffects" : [ ]
+    },
+
+    "metaBoundBox" : [-4, -4, 4, 4],
+    "scale" : 1.0,
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-1.5, -0.70], [1.5, -0.70], [1.5, 1.7], [-1.5, 1.7] ],
+
+      "mass" : 4.5,
+      "walkSpeed" : 260,
+      "runSpeed" : 280,
+      "gravityEnabled" : false,
+
+      "airFriction" : 10,
+      "airForce" : 130,
+      "flySpeed" : 140
+    },
+
+    "bodyMaterialKind" : "robotic",
+    "deathParticles" : "deathPoof",
+    "knockoutEffect" : "",
+
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "robotic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/monster_primary.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+        "knockbackStunTime" : {
+          "baseValue" : 0.0
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 99999
+        },
+        "maxHealth" : {
+          "baseValue" : 120
+        },
+        "protection" : {
+          "baseValue" : 1.0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "grit" : {
+          "baseValue" : 1.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1.0
+        },
+        "physicalResistance" : {
+          "baseValue" : 0.2
+        },
+        "fireResistance" : {
+          "baseValue" : 1.0
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "iceResistance" : {
+          "baseValue" : 1.0
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : -2.0
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 1.0
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        }
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 100
+        }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8],
+    "capturable" : false,
+    "nametagColor" : [64, 200, 255]
+  }
+}

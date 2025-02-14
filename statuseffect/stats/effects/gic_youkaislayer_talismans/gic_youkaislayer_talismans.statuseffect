@@ -1,0 +1,30 @@
+{
+  "name" : "gic_youkaislayer_talismans",
+  
+  //Can be too easily exploited by adding and removing armor in slot repeatedly when being hit by low-damage weapons. Original projectile still useful as a later spell.
+  
+  "effectConfig" : {
+    "range" : 3,
+
+    // For the old visual effect, optional
+    // "visualProjectileCount" : 20,
+    // "visualProjectileType" : "armorthorns",
+    // "visualProjectileSpeed" : 20,
+    // "visualProjectileTime" : 0.15,
+    // "visualDuration" : 0.2,
+
+    "damageProjectileType" : "gic_magicbullet_redtalisman_talismanofdivineprotection",
+    "damageMultiplier" : 1.0,
+
+    "cooldown" : 5 //1
+
+  },
+  "defaultDuration" : 60,
+
+  "scripts" : [
+    "gic_youkaislayer_talismans.lua"
+  ],
+
+  "label" : "Youkai-Slayer Talismans - Emits a field of homing danmaku when its bearer is harmed | 5s cooldown per activation of talismans.",
+  "icon" : "/interface/statuses/gic_youkaislayer_talismans.png"
+}

@@ -1,0 +1,35 @@
+{
+  "itemName" : "gic_dualredsun_kneepads",
+  "price" : 0,
+  "rarity" : "Rare",
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#C24500;Trinket^reset;",
+  "inventoryIcon" : "gic_dualredsun_kneepads.png",
+  "maxStack" : 1,
+  "description" : 
+  
+
+
+"''What? You think strapping two of these fucking orbs to yourself is gonna help? Come on really- Oh, it's actually working. Wow, huh.''
+
+^green;+400 HP^reset; | ^red;-20% speed^reset; | ^red;-100% Jump Height^reset; | ^red;x20 fall damage.^reset;
+^red;-100% resistance to most forms of damage for 30s after drinking a healing flask.^reset;
+
+^yellow;Can stack with the standard Red Sun.^reset;",
+
+
+
+  "shortdescription" : "Dual Red Suns",
+
+  "augment" : {
+    "type" : "gic_trinket",
+    "name" : "gic_dualredsun_kneepads",
+    "displayName" : "Dual Red Suns",
+    "displayIcon" : "/items/augments/TRINKETS/WORLD/gic_dualredsun_kneepads.png",
+    "effects" : [ "gic_maxhealthboost_dualredsun_400", "gic_dualredsun_-100", "gic_dualredsun_burden_primer"]
+  },
+
+  "radioMessagesOnPickup" : [ "gic_pickup_redsun_augment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

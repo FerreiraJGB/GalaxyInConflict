@@ -1,0 +1,24 @@
+{
+  "projectileName" : "gic_speculatoresgladius_precisionartillery_object",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_speculatoresgladius_precisionartillery_object.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 1,
+  "timeToLive" : 6.0,
+  "power" : 0,
+  "speed" : 100,
+//  "onlyHitTerrain" : true,
+  "damageKind" : "hidden",
+//  "damageTeam" : { "type" : "indiscriminate" },
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_speculatoresgladius_precisionartillery_stage1",
+      "inheritDamageFactor" : 1,
+      "angle" : 90
+    }
+  ]
+}

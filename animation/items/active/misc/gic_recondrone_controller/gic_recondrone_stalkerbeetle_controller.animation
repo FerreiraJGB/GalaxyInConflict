@@ -1,0 +1,35 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "mark" : {
+        "default" : "inactive",
+        "states" : {
+          "inactive" : {},
+          "active" : {}
+        }
+      }
+    },
+
+    "parts" : {
+      "controller" : {
+        "properties" : {
+          "centered" : true,
+          "offset" : [0.15, 0.2],
+		  "image" : "<partImage>"
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "aimTeleport" : ["/sfx/npc/gic_remnantfromtheashes_thrall-01.ogg"],
+    "placeOk" : ["/sfx/npc/gic_remnantfromtheashes_thrall-02.ogg"],
+    "placeBad" : ["/sfx/interface/clickon_error.ogg"],
+	
+	"activate" : ["/sfx/npc/gic_remnantfromtheashes_thrall-01.ogg"],
+	"deactivate" : [],
+	"speedUp" : [],
+	"speedDown" : [],
+	"ping" : ["/sfx/objects/screen5.ogg"]
+  }
+}

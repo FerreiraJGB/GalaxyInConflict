@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_magicbullet_ruinorb_ruinmass_messenger_old",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_magicbullet_ruinorb.png",
+  "animationCycle" : 0.1,
+  "timeToLive" : 3,
+  "frameNumber" : 4,
+  "power" : 100,
+  "speed" : 50,
+  "acceleration" : -80,
+  "fullbright" : true,
+  "supportsProcessing" : true,
+  "renderLayer" : "Monster+10",
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_magicbullet_ruinorb_homing_05s",
+      "inheritDamageFactor" : 1
+    },
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/melee/gic_bloodborne_magic-fireball-14db.wav"
+      ]
+    }
+  ],
+  "lightColor" : [0, 0, 40],
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef"
+}

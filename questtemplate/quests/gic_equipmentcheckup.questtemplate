@@ -1,0 +1,39 @@
+{
+  "id" : "gic_equipmentcheckupquest",
+  "title" : "^#D1FFDE;Equipment Checkup",
+  "prerequisites" : [  ],
+  "text" : "Taking a look at the box, you remembered what it was like to get here. What you had to do to survive. You check your gear, and get ready to step into the beyond.",
+  "completionText" : "^orange;[Quick Dash] unlocked and equipped as [HEAD Tech] | ^orange;[Mortal Shell: Arthur] unlocked and equipped as [BODY Tech] | ^orange;[Jump Drive] unlocked and equipped as [LEG Tech].",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ ]
+  ],
+  "canBeAbandoned" : true,
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : false,
+	
+    "showTech" : [
+      "gic_quickdash",
+	  "gic_mortalshell_arthur",
+	  "gic_jumpdrive"
+    ],
+    "equipTech" : [
+      "gic_quickdash",
+	  "gic_mortalshell_arthur",
+	  "gic_jumpdrive"
+    ],
+
+	
+//    "turnInEntityUid" : "gic_unitan_solonthelawbringer_statue_quest",
+    "conditions" : [
+    ]
+  }
+}

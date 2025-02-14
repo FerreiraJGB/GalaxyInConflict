@@ -1,0 +1,20 @@
+{
+  "projectileName" : "gic_smallexplosionknockback_shrapnelbolt",
+  "image" : "gic_smallexplosion.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 6,
+  "speed" : 0,
+  "lightColor" : [160, 30, 30],
+  "pointLight" : true,
+
+  "damagePoly" : [ [-18.5, 0], [-14, -14], [0, -18.5], [14, -14], [18.5, 0], [14, 14], [0, 18.5], [-14, 14] ],
+  "animationLoops" : false,
+  "piercing" : true,
+  "bounces" : -1,
+  "flippable" : true,
+  "damageKind" : "ews_explosive",
+  "damageType" : "IgnoresDef",
+  "damageTeam" : { "type" : "indiscriminate" },
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium", "gic_bleeding_heavy", "gic_bulletshot", {"effect":"gic_boss_melee_primer","duration":1}],
+  "knockback" : 2
+}

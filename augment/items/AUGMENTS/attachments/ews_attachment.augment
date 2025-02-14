@@ -1,0 +1,28 @@
+{
+  "itemName" : "ews_attachment",
+  "price" : 5000,
+  "rarity" : "Essential",
+  "category" : "Attachment",
+  "inventoryIcon" : "template.png",
+  "description" : "-todo-",
+  "shortdescription" : "Attachment Test (EWS)",
+
+  "attachment" : {
+	"attachmentType" : "barrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "ews_attachment", //name of attachment
+	"attachmentTag" : "ews_rifle", //if target item has this tag, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/attachments/template.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentBonusType" : "set", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [-1,-1,-1,-1,-1,-1,-1,-1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [-1,-1,-1,-1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

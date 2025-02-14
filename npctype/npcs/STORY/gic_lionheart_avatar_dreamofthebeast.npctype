@@ -1,0 +1,304 @@
+{
+  "type" : "gic_lionheart_avatar_dreamofthebeast",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+
+  "npcname" : "Ultra-Sheriff",
+  "identity" : {
+    "gender" : "male"
+  },
+  
+  "keepAlive" : true,
+  
+  "humanoidConfig" : "/npcs/story/gic_lionheart_avatar_dreamofthebeast.config",
+  
+  "persistent" : true,
+
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+    "behavior" : "speaker",
+	
+    "chatPortrait" : "/interface/chatbubbles/gic_static.png:<frame>",
+
+    "behaviorConfig" : {
+      "alwaysRun" : false,
+      "wanderWaitTime" : [6.0, 10.0],
+      "wanderTime" : [0.0, 0.0],
+      "wanderDistance" : 0,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ]
+    },
+
+    "chatSounds" : {
+      "avian" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "apex" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "human" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "glitch" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "floran" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "hylotl" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "default" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      },
+      "gic_undeadskeleton" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_male1.ogg"
+        ]
+      }
+    },	
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+			"I've got the information already.",
+			"I thought I needed your help but she caved in quicker than I thought.",
+			"Her? Don't worry about her. Nobody's going to mess with her.",
+			"All I did was ask her about the letters...",
+			"-And who exactly sent it. And where they are.",
+			"I trust that you know why we're here.",
+			"A man needs an inheritance to start a family these days...",
+			"So really we're done here. Sorry for wasting your time.",
+			"A little choke-dust was all it took.",
+			"Pain's one thing, but not bein' able to breathe's another.",
+			"Capture? Oh she surrendered. That was it.",
+			"She'll be fine. Carry on.",
+			"Hmm...",
+			"I should be able to buy myself a carrier after this...",
+			"That's half of my birthright out of the way.",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"[Dialogue repeat]"
+          ]
+        }
+      },
+      "speak" : {
+        "default" : {
+          "default" : [
+            "Well, look who's here."
+          ]
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "gic_lionheartsarmor_helmetcoveredhead", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "chest" : [
+              { "name" : "gic_lionheartsarmorchest", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "legs" : [
+              { "name" : "gic_lionheartsarmorlegs", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "primary" : [
+			"gic_bloodbullet_tanto_player"
+			  ]
+          }
+        ] ]
+    ]
+  },
+  
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 1.0
+      },
+	  
+	  //Psychic
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },	
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : -0.5
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	,
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    },
+    "statusProperties" : {
+      "effectDirectives" : "?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=8af062FF?replace=31a6ffFF=40bf21FF"
+    }
+  }
+  
+}

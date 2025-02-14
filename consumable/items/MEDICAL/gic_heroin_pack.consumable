@@ -1,0 +1,54 @@
+{
+  "itemName" : "gic_heroin_pack",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_heroin_pack.png",
+  
+  "itemTags" : ["gic_syringerifle_ammo"],
+  
+  "maxStack" : 5,
+  "description" : "Heroin is made when morphine is heated and combined with certain chemicals. One of the biggest differences between heroin and morphine is the tripled potency. Heroin's side-effects often cause addiction, rendering it unsuitable for medical use.
+^green;- Restores 500 health, costing 3 seconds^reset; | ^yellow;- Heals Bruising.^white;
+^red;- Causes Opiate Addiction for unskilled or unprepared users.^white;
+^red;- Can cause an overdose.^white;",
+
+  "shortdescription" : "^Orange;Heroin Pack",
+  "effects" : [ [
+      {
+        "effect" : "gic_opiate_heroin_medkitheal",
+        "duration" : 3
+      },
+      {
+        "effect" : "gic_opiate_addiction"
+      },
+	  {
+        "effect" : "gic_applyopiate_addiction"
+      },
+	  
+      {
+        "effect" : "gic_trait_drugaddict_primer"
+      },
+	  
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 3
+      },
+	  {
+        "effect" : "gic_bruise_pack_recovery"
+      },
+
+	  {
+        "effect" : "gic_opiate_overdose_smalldelay"
+      },	  
+	  {
+        "effect" : "gic_opiate_overdose_active_check"
+      }
+	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_medkit_use" ],
+  "blockingEffects" : [
+  ]
+}

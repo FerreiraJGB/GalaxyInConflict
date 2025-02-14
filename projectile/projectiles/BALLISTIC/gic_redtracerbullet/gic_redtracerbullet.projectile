@@ -1,0 +1,34 @@
+{
+  "projectileName" : "gic_redtracerbullet",
+  "physics" : "gic_bulletfall",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_redtracerbullet.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "fullbright" : true,
+  "power" : 5.0,
+  "speed" : 190,
+  "knockback" : 0,
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_medium",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_bulletimpact/gic_bulletimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  "statusEffects" : [ "gic_bleeding_light", "gic_bleeding_medium" ],
+  "lightColor" : [96, 0, 0],
+  "damageKind" : "ews_smallarmsbullet",
+  "damageType" : "IgnoresDef"
+}

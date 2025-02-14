@@ -1,0 +1,297 @@
+{
+  "itemName" : "gic_u500_redarmy_npc",	//this is an example weapon. Copy the folder to your mod (in appropriate location) and change "examplerifle" for the name you want to use
+  "price" : 150,
+  "inventoryIcon" : "gic_u500.png:armed.1",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "A flamethrower combination that seems to appear more like a standard infantryman's kit. The ROKS U-500 was designed not to draw attention, so both fuel and gas are hidden within a flame-resistant backpack; the flame projector was designed to resemble a typical bolt-action rifle. Requires specialized U-500 Back-Mounted Pressurized Fuel Tanks.
+
+The flames will spread out when in the air and create a pool of fire on hitting terrain. Afflicts ^orange;IGNITION^reset; on ^orange;DIRECT HITS.^reset;",
+  "shortdescription" : "ROKS U-500 Flamethrower",
+  "level" : 1,
+  "tooltipKind" : "gic_largebase_ammogun",//custom tooltip, values set by the .lua (the code is spread to gunammo.lua, ammo.lua and reloadammo.lua)
+  "category" : "^orange;Flamethrower^reset;",
+  "itemTags" : ["weapon","ranged","rifle","flamethrower","gic"],
+  "twoHanded" : true,
+  
+  "consumeAmmoModule" : true,
+  "consumeAmmoType" : "gic_u500_back_tank",
+  
+  "ammoMax" 		: 50,			//Specifies how big the guns' magazine is.
+  "magazineProjectile": "gic_u500_back_tank_magreload", //"ews_20mm_casing", //Projectile dropped when reloading, basically a dummy projectile (Gnio)
+  "ammoAmount" 		: 50,			//Holds the current amount of ammo. Mostly set dynamically
+  "usesAmmo" 		: false,			//Used by ammo to determine if it should bother trying to load into the gun
+  "ammoTags" 		: ["bullet"],	//Tags, specifying the kind of ammo the gun takes
+  "ammoName" 		: "Focused Heat Energy",			//Used by the tooltip, set by ammo
+  "ammoType" 		: "", //"ews_augmentyr_20mm_magazineammo",			//Holds the name of currently used ammo item
+  "magazineType"	: "none",		//Holds the name of currently used magazine item or false if not using magazines (can omit this). Set to "none" for making a gun without a mag in currently.
+  "ammoIcon" 		: "/items/augments/ammo/simplebulletammo/icon.png",			//Used by the tooltip, set by ammo	
+  "ammoCasing" 		: false,	//Used by the gunfireammo ability. False for no casings, name of the casing item otherwise. Supposed to be set by the ammo item.
+  "extraAmmo" 		: false,		//Used for ejecting ammo, set dynamically
+  "extraAmmoList" 	: [],			//Used for ejecting ammo, set dynamically
+  "reloadParam" 	: false,		//false for reloadammo secondary ejecting ammo, [reload_amount,reload_cost,cooldown] for reloadammo reloading the gun (eg, for reloading one bullet for 20 energy every 2 seconds it will look like [1,20,2])
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "gic_u500.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/WEAPONS/ranged/gic_heavymachinegun_muzzleflash.png"
+  },
+  "animationCustom" : {
+	"animatedParts":{
+      "stateTypes" : {
+        "gunState" : {
+          "default" : "empty",
+          "states" : {					//animations are handled by both gunammo.lua (ammo states) and gunfireammo.lua (firing state). If you want to change those, make a copy and work with that.
+			"firing" :{					//gun will transition to "firing" state each time you pull the trigger
+			  "frames" : 4,
+			  "cycle" : 0.2,
+			  "mode" : "transition",
+			  "transition" : "armed"	//transition mode and animation is set up for the crossbow. may not work for everything
+			},
+            "armed" : {					//gun transitions to "armed" state if it has ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+            "empty" : {					//gun transitions to "empty" if it has no ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+			"reloading" : {				//reloading animation, placeholder here but can be useful if reloadejects is set to false
+			  "frames" : 1,
+			  "cycle" : 1.0,
+			  "mode" : "transition",
+			  "transition" : "empty"
+			}
+          }
+        }
+      },
+
+      "parts" : {
+        "middle" : {
+          "properties" : {
+            "image" : null
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<partImage>:firing.<frame><paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<partImage>:empty.<frame><paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<partImage>:empty.<frame><paletteSwaps>"
+				}
+			  }
+            }
+          }
+        }
+      }
+	},
+	"particleEmitters" : {
+      "muzzleFlash" : {
+        "burstCount" : 2,
+        "particles" : [
+		  { "particle" : "gic_tinyvehicledustysmoke", "offset" : [2.2, -0.5], "count" : 3 }
+        ]
+      },
+	
+      "hotsmoke" : {
+        "burstCount" : 3,
+        "particles" : [
+		  { "particle" : "gic_riflemuzzle", "offset" : [2.2, -0.5], "count" : 3 }
+        ]
+      }
+    },
+	
+	
+    "sounds" : {
+	  "fireStart" 	: [ "/sfx/WorldAtWar/gic_flmthwr_flux1.ogg", "/sfx/WorldAtWar/gic_flmthwr_flux2.ogg" ],
+	  "fireLoop" 	: [ "/sfx/WorldAtWar/gic_flmthwr_mn_flame.ogg" ],
+	  "fireEnd" 	: [ "/sfx/WorldAtWar/gic_flmthwr_cooldown.ogg", "/sfx/WorldAtWar/gic_flmthwr_cooldown_mn.ogg" ],
+	  "empty"		: [ "/sfx/WorldAtWar/gic_flmthwr_front.ogg" ],
+      "switchAmmo" 	: [ "/sfx/gic_generic_reload.ogg" ]
+    }
+  },
+
+	
+  "animationScripts" : [
+    "/items/active/effects/laserbeam.lua"
+  ],
+
+
+  "baseOffset" : [-0.2, -0.5],
+  "muzzleOffset" : [2, 0.2],
+
+  "scripts" : ["/items/active/weapons/ranged/ews_weaponcore.lua", "/abilities/weight/gic_heavy_weapon.lua", "/abilities/weapons/gic_flamethrowerequipment_explosion.lua"],
+
+  "elementalType" : "ews_explosive",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/ews_weapon_flamethrower.lua"],
+    "class" : "FlamethrowerAttack",
+
+
+    "fireTime" : 0.04,
+    "baseDamage" : 15,
+	"bonusDps" : 0,					//the parameter responsible for extra per-shot damage, introduced by ammo. Per shot damage gets spread over all the projectiles
+    "energyUsage" : false,
+    "inaccuracy" : 0.015,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+	
+    "projectileType" : "gic_realisticgasflame_u500",
+    "projectileParameters" : {
+      "knockback" : 2,
+	  "timeToLive" : 1.5
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+		"frontArmFrame" : "run.3",
+        "backArmFrame" : "fall.1"
+      },
+      "fire" : {
+        "duration" : 0.01,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+		"frontArmFrame" : "run.3",
+        "backArmFrame" : "fall.1"
+      },
+      "motion1" : {
+        "duration" : 0
+      },
+      "motion2" : {
+        "duration" : 0
+      },
+      "motion3" : {
+        "duration" : 0
+      },
+      "motion4" : {
+        "duration" : 0
+      },
+      "motion5" : {
+        "duration" : 0
+      },
+      "motion6" : {
+        "duration" : 0
+      },
+      "reload" : {
+        "duration" : 0.25,
+        "armRotation" : -20,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.3",
+		"backArmFrame" : "fall.1"
+      },
+      "reload1" : {
+        "duration" : 0.25,
+        "armRotation" : -20,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    "frontArmFrame" : "swim.2",
+		"backArmFrame" : "rotation"
+      },
+      "reload2" : {
+        "duration" : 0.25,
+        "armRotation" : -10,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "run.2",
+		"backArmFrame" : "rotation"
+      },
+      "reload3" : {
+        "duration" : 0.25,
+        "armRotation" : -10,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    "frontArmFrame" : "jump.1",
+		"backArmFrame" : "rotation"
+      },
+      "reload4" : {
+        "duration" : 0.25,
+        "armRotation" : -15,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "swim.4",
+		"backArmFrame" : "rotation"
+      },
+      "reload5" : {
+        "duration" : 0.25,
+        "armRotation" : -20,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		"frontArmFrame" : "run.3",
+		"backArmFrame" : "fall.1"
+      },
+      "reload6" : {
+        "duration" : 0
+      },
+      "cooldown" : {
+        "duration" : 0.02,
+        "armRotation" : 0,
+        "weaponRotation" : 3,
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+		"frontArmFrame" : "run.3",
+        "backArmFrame" : "fall.1"
+      }
+    }
+  },
+
+
+  "builder" : "/items/buildscripts/ews_buildunrandweapon.lua"
+}

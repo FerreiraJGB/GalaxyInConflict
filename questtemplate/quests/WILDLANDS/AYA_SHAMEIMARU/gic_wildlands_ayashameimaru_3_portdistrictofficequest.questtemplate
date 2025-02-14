@@ -1,0 +1,37 @@
+{
+  "id" : "gic_wildlands_ayashameimaru_3_portdistrictofficequest",
+  "title" : "^#F0523C;[AYA-3] PD Curio",
+  "text" : "How interesting.",
+  "completionText" : "Shh!",
+  "moneyRange" : [1,1],
+  "ephemeral" : false,
+  
+  "canBeAbandoned" : false,
+  
+  "rewards" : [
+    [ ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_questunlockcinematic.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+	
+    "gic_missionUnlockedCinema" : "/cinematics/characters/AYA_SHAMEIMARU/gic_wildlands_ayashameimaru_mission_3_2_portdistrictevidence.cinematic",
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+//      {
+//        "type" : "gatherItem",
+//        "itemName" : "gic_physicalmicrocredit",
+//        "count" : 1,
+//        "consume" : true,
+//        "description" : "Leave."
+//      }
+    ]
+  }
+}

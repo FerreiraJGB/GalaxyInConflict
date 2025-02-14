@@ -1,0 +1,276 @@
+{
+  "type" : "gic_lunarian_chapter6_soldier",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ ],
+  
+  "identity" : {
+    "gender" : "male"
+  },  
+  
+  "scriptConfig" : {
+    "behavior" : "villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 1,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+	
+      "complain" : {
+        "default" : {
+          "default" : [
+            "I never got used to it.",
+			"I'll never get used to this.",
+			"Not like those fairies... Death...",
+			"For all my life, I've been ageless... So decadent...",
+			"We were never pure... Look at us, fighting for our very existence.",
+			"The sun fades from our world... Mankind's moon, our home.",
+			"The purity is a lie... There's nothing left to remain pure for.",
+			"I've lost too many...",
+			"Can you fucking believe it? Bunny boys? We're a joke!",
+			"What a terrible fucking joke...",
+			"I don't want to die. I don't want to die. I don't want to die.",
+			"I don't want to die.",
+			"I wish I died hundreds of years ago.",
+			"Centuries spent surviving, to die now, for what?",
+			"The greatest joke is that I'll die on the dead rock I once called ''home''.",
+			"The Lunarian Regime is a fucking joke. Can't believe I didn't just hop the transports.",
+			"Bunny-Boys, the great male regiment. Who'll take care of us afterward?",
+			"Who the hell thinks bunny-men make for good infantry? This is stupid!",
+			"They'll laugh at us on the streets when this is over!"
+          ]
+        }
+      },
+	
+      "converse" : {
+        "default" : {
+          "default" : [
+            "I never got used to it.",
+			"I'll never get used to this.",
+			"Not like those fairies... Death...",
+			"For all my life, I've been ageless... So decadent...",
+			"We were never pure... Look at us, fighting for our very existence.",
+			"The sun fades from our world... Mankind's moon, our home.",
+			"The purity is a lie... There's nothing left to remain pure for.",
+			"I've lost too many...",
+			"Can you fucking believe it? Bunny boys? We're a joke!",
+			"What a terrible fucking joke...",
+			"I don't want to die. I don't want to die. I don't want to die.",
+			"I don't want to die.",
+			"I wish I died hundreds of years ago.",
+			"Centuries spent surviving, to die now, for what?",
+			"The greatest joke is that I'll die on the dead rock I once called ''home''.",
+			"The Lunarian Regime is a fucking joke. Can't believe I didn't just hop the transports.",
+			"Bunny-Boys, the great male regiment. Who'll take care of us afterward?",
+			"Who the hell thinks bunny-men make for good infantry? This is stupid!",
+			"They'll laugh at us on the streets when this is over!"
+          ]
+        }
+      },
+	  
+      "greeting" : {
+        "default" : {
+          "default" : [
+            "I never got used to it.",
+			"I'll never get used to this.",
+			"Not like those fairies... Death...",
+			"For all my life, I've been ageless... So decadent...",
+			"We were never pure... Look at us, fighting for our very existence.",
+			"The sun fades from our world... Mankind's moon, our home.",
+			"The purity is a lie... There's nothing left to remain pure for.",
+			"I've lost too many...",
+			"Can you fucking believe it? Bunny boys? We're a joke!",
+			"What a terrible fucking joke...",
+			"I don't want to die. I don't want to die. I don't want to die.",
+			"I don't want to die.",
+			"I wish I died hundreds of years ago.",
+			"Centuries spent surviving, to die now, for what?",
+			"The greatest joke is that I'll die on the dead rock I once called ''home''.",
+			"The Lunarian Regime is a fucking joke. Can't believe I didn't just hop the transports.",
+			"Bunny-Boys, the great male regiment. Who'll take care of us afterward?",
+			"Who the hell thinks bunny-men make for good infantry? This is stupid!",
+			"They'll laugh at us on the streets when this is over!"
+          ]
+        }
+      },
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      },
+	  
+      "hail" : {
+        "default" : {
+          "default" : [
+            "I never got used to it.",
+			"I'll never get used to this.",
+			"Not like those fairies... Death...",
+			"For all my life, I've been ageless... So decadent...",
+			"We were never pure... Look at us, fighting for our very existence.",
+			"The sun fades from our world... Mankind's moon, our home.",
+			"The purity is a lie... There's nothing left to remain pure for.",
+			"I've lost too many...",
+			"Can you fucking believe it? Bunny boys? We're a joke!",
+			"What a terrible fucking joke...",
+			"I don't want to die. I don't want to die. I don't want to die.",
+			"I don't want to die",
+			"I wish I died hundreds of years ago.",
+			"Centuries spent surviving, to die now, for what?",
+			"The greatest joke is that I'll die on the dead rock I once called ''home''.",
+			"The Lunarian Regime is a fucking joke. Can't believe I didn't just hop the transports.",
+			"Bunny-Boys, the great male regiment. Who'll take care of us afterward?",
+			"Who the hell thinks bunny-men make for good infantry? This is stupid!",
+			"They'll laugh at us on the streets when this is over!"
+          ]
+        }
+      },
+	  
+      "accuse" : {
+        "default" : {
+          "default" : [
+            "..."
+          ]
+        }
+      }
+	  
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_lunarassaultcorps_rabbitearshead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_division16_officechest", "parameters" : { "colorIndex" : [0, 1, 2, 3] }  }  ],
+            "legs" : [ { "name" : "gic_division16_officelegs", "parameters" : { "colorIndex" : [3] } } ],
+            "sheathedprimary" : [ "gic_scumbagpistol" ]
+		  }
+        ] ]
+    ]
+  },
+  
+  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.0
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.0
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

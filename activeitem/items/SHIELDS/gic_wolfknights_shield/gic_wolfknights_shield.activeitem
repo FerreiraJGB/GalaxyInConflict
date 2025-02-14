@@ -1,0 +1,75 @@
+{
+  "itemName" : "gic_wolfknights_shield",
+  "fixedLevel" : true,
+  "price" : 600,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "^#D6DFFF;Parry Shield^white;",
+  "description" : "''You stupid stupid stupid bastard! You fucking idiot! You've killed them all!''
+  
+^#D6DFFF;Unmoving Posture: 2.0s PARRY WINDOW | 1000HP STABILITY | 50% DEF.^white;
+
+^red;Accursed Attacks: -50% GENERAL RESISTANCE when equipped in either hand.^white;",
+
+  "shortdescription" : "Wolf-Knight's Shield",
+  "tooltipKind" : "gic_largebase",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "gic_wolfknights_shield_icon.png",
+
+  "animation" : "shield.animation",
+  "animationParts" : {
+    "shield" : "gic_wolfknights_shield.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/armor/gic_bloodborne_body-armor-6.wav" ],
+      "perfectBlock" : [ "/sfx/melee/gic_bloodborne_shield-iron1.wav" ],
+      "block" : [ "/sfx/melee/gic_bloodborne_shield-iron1.wav" ],
+      "break" : [ "/sfx/melee/gic_bloodborne_ShieldBreak00.wav" ],
+	  
+	  "shieldBash" : [ "/sfx/melee/gic_bloodborne_shieldpress.wav" ]
+	  
+    }
+  },
+
+  "scripts" : ["/items/shields/gic_bucklershield.lua", "/abilities/weapons/gic_wolfknights_shield.lua", "/abilities/weapons/gic_wolfknights_shield_hitsound.lua"  ],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 1000,
+  "cooldownTime" : 0.05,
+  "lowerCooldownTime" : 0.5,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 2.0,
+
+  "knockback" : 1, //15
+  
+  "damageBleedthroughEnabled" : true,
+  "damageBleedthroughAmount" : 0.5, //at 0.1, 10% of all damage received by the shield will bleed through and etc - unless the shield was broken on the hit.
+  //also note that as of the initial version, bleedthrough damage is dealt as "default"/physical damage; there is no way to pull the actual damage type received, as of my testing so far.       
+  
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

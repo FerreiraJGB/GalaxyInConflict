@@ -1,0 +1,190 @@
+{
+  "muteSfx" : true,
+  "muteMusic" : true,
+  "skippable" : true,
+//  "letterbox" : true,
+//  "backgroundColor" : [0, 0, 0, 200],
+//  "backgroundFadeTime" : 0.5,
+
+  "panels" : [
+  
+	
+	// --- --- ---
+	
+	
+  //Character Chatbox
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Character.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 54.5,
+          "zoom" : 0.75,
+          "alpha" : 1,
+          "position" : [650, 130]
+        },
+        {
+          "timecode" : 55,
+          "zoom" : 0.75,
+          "alpha" : 0,
+          "position" : [650, 130]
+        }
+      ]
+    },
+	
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/characters/AYA_SHAMEIMARU/Intro_Card_Textbox.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.5,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 1.0,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 54.5,
+          "zoom" : 0.5,
+          "alpha" : 1,
+          "position" : [480, 40]
+        },
+        {
+          "timecode" : 55,
+          "zoom" : 0.5,
+          "alpha" : 0,
+          "position" : [480, 40]
+        }
+      ]
+    },
+
+
+// ----------------- dialogue: Initial Meeting
+    {
+      "drawables" : [
+      ],
+      "text" : "I admit that with what's been happening, I haven't had much time to tell you exactly what I found. Though I'm sure that you're well-aware by now that we're dealing with some sort of cult. Not the most ''out there'' thing but also not something you can fix by going on a city-wide rampage. You'll need to use your powers in a more limited fashion.
+
+We know that there's a string of murders that gets quietly pushed aside. Their targets are people who make themselves known to the cult, and that includes us.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 1.0,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 23,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 26,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 26.5,
+          "alpha" : 0.0
+        }
+      ]
+    },
+	
+	
+	
+	
+    {
+      "drawables" : [
+      ],
+      "text" : "I'm certain that their influence has extended to the police. They're operating with snipers and by then there should've been a police response. Any especially loud gunfire should be of immense concern to a local authority, yet the two times we were pursued, no response was made. We're going to head to the police station and solve the case ourselves. Bring some firepower, but watch your trigger. We don't want to get into a scandal ourselves.
+
+When you're ready, we'll visit the local department. Quietly, of course. I think we've had enough snipers on our tail.",
+      "textPosition" : {
+        "position" : [-105, 20],
+        "vAnchor" : "top",
+          "zoom" : 2.0,
+        "wrapWidth" : 418
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 2.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+		
+		
+		
+        {
+          "timecode" : 26.5,
+		  
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 49.5,
+          "textPercentage" : 1
+        },
+        {
+          "timecode" : 54.5,
+          "alpha" : 1.0
+        },
+        {
+          "timecode" : 55,
+          "alpha" : 0.0
+        }
+      ]
+    }
+	
+	
+
+
+  ],
+  "audio" : [
+  
+    {
+      "timecode" : 1,
+      "resource" : "/sfx/interface/item_holster.ogg"
+    } 
+	
+	
+  ]
+}

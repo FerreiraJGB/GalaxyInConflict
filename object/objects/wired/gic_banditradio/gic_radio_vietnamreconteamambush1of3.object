@@ -1,0 +1,67 @@
+{
+  "objectName" : "gic_radio_vietnamreconteamambush1of3",
+  "colonyTags" : ["human","musical"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 105,
+  "lightColor" : [0, 0, 0],
+
+  "description" : "...",
+  "shortdescription" : "...",
+  "race" : "apex",
+
+
+  "inventoryIcon" : "gic_banditradioicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_banditradio.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-8, 0],
+      "animationParts" : {
+        "image" : "gic_banditradio.png"
+      },
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "animation" : "gic_banditradio_noparticle.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/recordscratch2.ogg" ],
+      "off" : [ "/sfx/objects/recordscratch1.ogg" ]
+    }
+  },
+
+  "scripts" : [
+    "/objects/wired/light/light.lua",
+    "/scripts/npcToyObject.lua",
+    "/objects/human/jukebox/jukebox.lua"
+  ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [0, 2] ],
+
+  "npcToy" : {
+    "influence" : [
+      "music",
+      "music",
+      "music",
+      "musicFinished"
+    ],
+    "defaultReactions" : {
+      "musicFinished" : [
+        [1.0, "smile"],
+        [1.0, "smile"]
+      ]
+    },
+    "randomStandXRange" : [-8, 8]
+  },
+
+//  "defaultLightState" : true,
+
+  "soundEffect" : "/sfx/ambience/gic_radioambience_vietnamreconteamambush1of3.ogg",
+  "soundEffectRangeMultiplier" : 1.0
+}

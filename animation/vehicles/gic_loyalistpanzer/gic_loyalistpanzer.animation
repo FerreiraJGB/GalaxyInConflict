@@ -1,0 +1,636 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "base" : {
+        "default" : "idle",
+        "states" : {
+          "warpInPart1" : {
+            "frames" : 4,
+            "cycle" : 0.33,
+            "mode" : "transition",
+            "transition" : "warpInPart2",
+            "properties" : {
+              "persistentSound" : "",
+              "immediateSound" : "",
+              "persistentSoundRangeMultiplier" : 1.0
+            }
+          },
+          "warpInPart2" : {
+            "frames" : 4,
+            "cycle" : 0.33,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "idle" : {},
+          "warpOutPart1" : {
+            "frames" : 4,
+            "cycle" : 0.33,
+            "mode" : "transition",
+            "transition" : "warpOutPart2"
+          },
+          "warpOutPart2" : {
+            "frames" : 4,
+            "cycle" : 0.33,
+            "mode" : "transition",
+            "transition" : "warpedOut",
+            "properties" : {
+              "persistentSound" : "",
+              "immediateSound" : "",
+              "persistentSoundRangeMultiplier" : 1.0
+            }
+          },
+          "warpedOut" : {},
+          "sinking" : {}
+        }
+      },
+
+      "propeller" : {
+        "priority" : 0,
+        "default" : "still",
+        "states" : {
+          "warpInPart1" : {
+            "frames" : 4,  
+            "cycle" : 0.33,
+            "mode" : "transition",
+            "transition" : "warpInPart2"
+            },
+
+          "warpInPart2" : {
+            "frames" : 4,  
+            "cycle" : 0.33,
+            "mode" : "transition",
+            "transition" : "idle"
+            },
+			
+          "still" : {
+            "frames" : 1,
+			
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_tank_idle.ogg",
+              "persistentSoundRangeMultiplier" : 3.0
+            }
+			
+			
+          },
+          "turning" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/vehicles/gic_pz2_move.ogg",
+              "persistentSoundRangeMultiplier" : 4.0
+            }
+          },
+          "warpOutPart1" : {
+            "frames" : 4,  
+            "cycle" : 0.33,
+            "mode" : "transition",
+            "transition" : "warpOutPart2"
+            },
+
+          "warpOutPart2" : {
+            "frames" : 4,  
+            "cycle" : 0.33,
+            "mode" : "transition",
+            "transition" : "invisible"
+            },
+			
+          "invisible" : {}
+        }
+      },
+	  
+	    "frontGun" : {
+        "default" : "off",
+
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.75,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },
+	  
+      "frontFiring" : {
+        "default" : "off",
+
+        "states" : {
+          "fire" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+			  "immediateSound" : "/sfx/gun/gic_105mm_type91.ogg"
+            }
+          },
+
+          "off" : { }
+        }
+      },
+      "frontFiring2" : {
+        "default" : "off",
+
+        "states" : {
+          "fire" : {
+            "frames" : 2,
+            "cycle" : 0.05,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+			  "immediateSound" : "/sfx/gun/gic_mg42_01.ogg"
+            }
+          },
+
+          "off" : { }
+        }
+      },
+
+
+      "onfire" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+
+          "on" : {
+            "frames" : 2,
+            "cycle" : 0.1,
+            "mode" : "loop"
+          }
+
+        }
+      },
+
+       "headlights" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+
+          "on" : {}
+        }
+      }
+    },
+
+    "parts" : {
+      "seat" : {
+        "properties" : {
+          "zLevel" : -2,
+          "transformationGroups" : ["flip", "rotation"],
+          "drivingSeatPosition" : [2.0, -0.5],
+          "titanicSeatPosition" : [1.0, -0.5],
+          "backSeat1Position" : [-1.6, -0.5]
+        }
+      },
+      "boathull" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "transformationGroups" : ["flip", "rotation"],
+          "offset" : [0.0, 2.0]
+        },
+
+        "partStates" : {
+          "base" : {
+            "warpInPart1" : {
+              "properties" : {}
+            },
+            "warpInPart2" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerbody.png:hull.<damageState>"
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerbody.png:hull.<damageState>"
+              }
+            },
+            "warpOutPart1" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerbody.png:hull.<damageState>"
+              }
+            },
+            "warpOutPart2" : {
+              "properties" : {}
+            },
+            "invisible" : {
+              "properties" : {}
+
+            },
+            "sinking" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerbody.png:hull.<damageState>"
+              }
+            }
+          }
+        }
+      },
+      "background" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -2,
+          "transformationGroups" : ["flip", "rotation"],
+          "offset" : [0.0, 2.0]
+        },
+
+        "partStates" : {
+          "base" : {
+            "warpInPart1" : {
+              "properties" : {}
+            },
+            "warpInPart2" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerbodyb.png:hull.<damageState>"
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerbodyb.png:hull.<damageState>"
+              }
+            },
+            "warpOutPart1" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerbodyb.png:hull.<damageState>"
+              }
+            },
+            "warpOutPart2" : {
+              "properties" : {}
+            },
+            "invisible" : {
+              "properties" : {}
+
+            },
+            "sinking" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerbodyb.png:hull.<damageState>"
+              }
+            }
+          }
+        }
+      },
+      "turret" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "transformationGroups" : ["flip", "rotation"],
+          "offset" : [0.0, 2.0]
+        },
+
+        "partStates" : {
+          "base" : {
+            "warpInPart1" : {
+              "properties" : {}
+            },
+            "warpInPart2" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerturret.png:hull.<damageState>"
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerturret.png:hull.<damageState>"
+              }
+            },
+            "warpOutPart1" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerturret.png:hull.<damageState>"
+              }
+            },
+            "warpOutPart2" : {
+              "properties" : {}
+            },
+            "invisible" : {
+              "properties" : {}
+
+            },
+            "sinking" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerturret.png:hull.<damageState>"
+              }
+            }
+          }
+        }
+      },
+
+      "warp" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 15,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"],
+          "offset" : [0.0, 0.0]
+        },
+
+        "partStates" : {
+          "base" : {
+            "warpInPart1" : {
+              "properties" : {
+                "image" : "apcwarp.png:warpInPart1.<frame>"
+              }
+            },
+            "warpInPart2" : {
+              "properties" : {
+                "image" : "apcwarp.png:warpInPart2.<frame>"
+              }
+            },
+            "idle" : {
+              "properties" : {}
+            },
+            "warpOutPart1" : {
+              "properties" : {
+                "image" : "apcwarp.png:warpOutPart1.<frame>"
+              }
+            },
+            "warpOutPart2" : {
+              "properties" : {
+                "image" : "apcwarp.png:warpOutPart2.<frame>"
+              }
+            },
+            "invisible" : {
+              "properties" : {}
+            }
+          }
+        }
+      },
+
+      "prop" : {
+        "properties" : {
+          "zLevel" : 4,
+          "centered" : true,
+          "transformationGroups" : ["flip", "rotation"],
+          "offset" : [0.0, 2.0]
+        },
+        "partStates" : {
+          "propeller" : {
+            "still" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerlegs.png:idle"
+              }
+            },
+            "turning" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzerlegs.png:on.<frame>"
+              }
+            }
+          }
+        }
+      },
+
+      "frontGun" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2,
+          "rotationGroup" : "guns",
+          "rotationCenter" : [2.2, 1.7],
+          "firePoint" : [7.0, 0.2],
+          "anchorPart" : "boathull",
+          "offset" : [2, 1.61]
+        },
+
+        "partStates" : {
+          "base" : {
+            "idle" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzercannon.png:rotation.<frame>"
+              }
+            }
+          }
+        }
+      },
+      "frontGun2" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2,
+          "rotationGroup" : "guns",
+          "rotationCenter" : [2.2, 1.7],
+          "firePoint2" : [0.5, 0],
+          "anchorPart" : "boathull",
+          "offset" : [3.0, 1.9]
+        },
+
+        "partStates" : {
+          "base" : {
+            "idle" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzergun.png:rotation"
+              }
+            }
+          }
+        }
+      },
+	  
+      "frontGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3,
+          "rotationGroup" : "guns",
+          "rotationCenter" : [2.2, 1.7],
+          "anchorPart" : "boathull",
+          "offset" : [3, 2.2],
+		  "fullbright" : true
+        },
+
+        "partStates" : {
+          "frontFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "gic_loyalistpanzermuzzle.png:default.<frame>",
+				"offset" : [11.8, 1.8]
+              }
+            }
+          }
+        }
+      },
+      "frontGunFire2" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3,
+          "rotationGroup" : "guns",
+          "rotationCenter" : [2.2, 1.7],
+          "anchorPart" : "boathull",
+          "offset" : [0.0, 1.9],
+		  "fullbright" : true
+        },
+
+        "partStates" : {
+          "frontFiring2" : {
+            "fire" : {
+              "properties" : {
+              }
+            }
+          }
+        }
+      },
+
+       "lights" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 6,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"]
+        },
+
+        "partStates" : {
+
+          "headlights" : {
+
+            "off" : {
+              "properties" : {
+              }
+            },
+
+            "on" : {
+              "properties" : {
+                "image" : "lmbtheadlights.png:headlights.<damageState>",
+				"offset" : [0.0, 0.0]
+              }
+            }
+          }
+        }
+      },
+
+      "fire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 6,
+          "fullbright" : true,
+          "transformationGroups" : ["flip", "rotation"]
+        },
+
+        "partStates" : {
+          "onfire" : {
+            "on" : {
+              "properties" : {
+                "image" : "fire.png:burn.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "rotation" : {
+      "interpolated" : true
+    },
+    "flip" : {}
+  },
+
+  "particleEmitters" : {
+    "bowWaveWater" : {
+       "emissionRate" : 25.0,
+       "active" : false,
+       "offsetRegion" : [ 5, -4, 5.1, -4],
+       "particles" : [{ "particle" : "splashwater"}]
+    },
+    "bowWaveLava" : {
+       "emissionRate" : 25.0,
+       "active" : false,
+       "offsetRegion" : [ 5, -4, 5.1, -4],
+       "particles" : [{ "particle" : "fireshard"}]
+    },
+    "bowWavePoison" : {
+       "emissionRate" : 25.0,
+       "active" : false,
+       "offsetRegion" : [ 5, -4, 5.1, -4],
+       "particles" : [{ "particle" : "splashpoison"}]
+    },
+
+    "splashWater" : {
+       "emissionRate" : 0,
+       "active" : false,
+       "burstCount" : 20,
+       "offsetRegion" : [ -7, -4, 5.0, -4],
+       "particles" : [{ "particle" : "splashwater"}]
+    },
+    "splashLava" : {
+       "emissionRate" : 0,
+       "active" : false,
+       "burstCount" : 20,
+       "offsetRegion" : [ -7, -4, 5.1, -4],
+       "particles" : [{ "particle" : "fireshard"}]
+    },
+    "splashPoison" : {
+       "emissionRate" : 0,
+       "active" : false,
+       "burstCount" : 20,
+       "offsetRegion" : [ -7, -4, 5.1, -4],
+       "particles" : [{ "particle" : "splashpoison"}]
+    },
+
+    "bubbles" : {
+       "enabled" : false,
+       "emissionRate" : 25.0,
+       "offsetRegion" : [ -5, -3, 3, 3],
+       "particles" : [{ "particle" : "bubbles"}]
+    },
+	
+    "smoke" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 8.0,
+      "zLevel" : -2,
+      "offsetRegion" : [-7, -4, 1, -4],
+      "particles" : []
+    },
+	
+    "smoke3" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 8.0,
+      "zLevel" : -2,
+      "offsetRegion" : [-7, -4, 4, -4],
+      "particles" : []
+    },
+    "smoke3a" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 8.0,
+      "zLevel" : -2,
+      "offsetRegion" : [-7, -8, 4, -4],
+      "particles" : []
+    },
+	
+    "smoke2" : {
+      "transformationGroups" : ["flip", "rotation"],
+      "emissionRate" : 8.0,
+      "zLevel" : -2,
+      "offsetRegion" : [-7, -4, -5, -4],
+      "particles" : []
+    }
+  },
+ "lights" : {
+    "headlightBeam" : {
+      "active" : false,
+      "transformationGroups" : ["flip", "rotation"],
+      "position" : [5.5, 0.5],
+      "color" : [0, 0, 0],
+      "pointLight" : true,
+      "pointAngle" : -7,
+      "pointBeam" : 5
+    }
+  },
+
+  "sounds" : {
+    "collisionNotification" : [
+      "/sfx/tech/hoverbike_bump1.ogg",
+      "/sfx/tech/hoverbike_bump2.ogg",
+      "/sfx/tech/hoverbike_bump3.ogg"
+    ],
+    "collisionDamage" : ["/sfx/melee/bite_robotic1.ogg"],
+    "changeDamageState" : [
+      "/sfx/gun/grenadeblast_small_fire1.ogg",
+      "/sfx/gun/grenadeblast_small_fire2.ogg",
+      "/sfx/gun/grenadeblast_small_fire3.ogg"
+    ],
+
+    "headlightSwitchOn" : ["/sfx/objects/floodlights_on.ogg"],
+    "headlightSwitchOff" : ["/sfx/objects/floodlights_off.ogg"],
+    "hornLoop" : ["/sfx/tech/honk.ogg"]
+  },
+  "rotationGroups" : {
+    "guns" : {
+      "angularVelocity" : 10.0
+    }
+  }
+}

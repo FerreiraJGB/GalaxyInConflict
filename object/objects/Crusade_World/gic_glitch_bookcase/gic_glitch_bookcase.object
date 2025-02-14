@@ -1,0 +1,51 @@
+{
+  "objectName" : "gic_glitch_bookcase",
+  "colonyTags" : ["storage"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+
+  "tooltipKind" : "gic_largebase",
+  "category" : "storage",
+  "price" : 25,
+  "description" : "Bookcase.",
+  "shortdescription" : "Bookcase",
+  "race" : "generic",
+  "health" : 1.5,
+
+
+  "inventoryIcon" : "gic_glitch_bookcase.png",
+  "orientations" : [
+    {
+      "image" : "gic_glitch_bookcase.png",
+      "direction" : "left",
+      "flipImages" : true,
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+      "image" : "gic_glitch_bookcase.png",
+      "direction" : "right",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    }
+  ],
+
+
+  "slotCount" : 32,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

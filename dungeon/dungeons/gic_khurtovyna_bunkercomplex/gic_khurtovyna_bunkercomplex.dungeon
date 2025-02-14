@@ -1,0 +1,562 @@
+{
+  "metadata" : {
+    "name" : "gic_khurtovyna_bunkercomplex",
+    "species" : "human",
+    "rules" : [
+    ],
+    "anchor" : [ "gic_khurtovyna_bunkercomplex_spawnshaft_story" ],
+//    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 400,
+    "extendSurfaceFreeSpace" : 10,
+    "protected" : true
+  },
+
+  "parts" : [
+  
+  
+
+  
+//Rooms
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_spawnshaft_story",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_spawnshaft_story" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_spawnshaft_story.json" ]
+    },	
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_storeroom",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_storeroom" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_storeroom.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_lockroom",
+      "rules" : [
+        [ "maxSpawnCount", [3] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_lockroom", "gic_khurtovyna_bunkercomplex_storage_door" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_lockroom.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_testingroom",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_testingroom" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_testingroom.json" ]
+    },
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_warehouse",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_warehouse" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_warehouse.json" ]
+    },
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_maintenance_saferoom",
+      "rules" : [
+        [ "maxSpawnCount", [4] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_maintenance_saferoom" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_maintenance_saferoom.json" ]
+    },
+
+
+
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_shelf_empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_shelf_empty.json" ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_shelf_spawn_sinsacksquad",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_shelf_spawn_sinsacksquad" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_shelf_spawn_sinsacksquad.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_shelf_spawn_kasaobake",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_shelf_spawn_kasaobake" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_shelf_spawn_kasaobake.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_shelf_spawn_voidlighter",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_shelf_spawn_voidlighter" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_shelf_spawn_voidlighter.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_shelf_spawn_judgmentstatue",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_shelf_spawn_judgmentstatue" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_shelf_spawn_judgmentstatue.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_shelf_spawn_turret",
+      "rules" : [
+        [ "maxSpawnCount", [5] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_shelf_spawn_turret" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_shelf_spawn_turret.json" ]
+    },	
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_shelf_mine",
+      "rules" : [
+        [ "maxSpawnCount", [5] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_shelf_mine" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_shelf_mine.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_shelf_supplylocker",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_shelf_supplylocker" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_shelf_supplylocker.json" ]
+    },	
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_shelf_spawn_electro",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_shelf_spawn_electro" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_shelf_spawn_electro.json" ]
+    },	
+
+
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_right_archiveroom",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_right_archiveroom" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_right_archiveroom.json" ],
+      "chance" : 0
+    },
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_office_left_armory",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_office_left_armory" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_office_left_armory.json" ],
+      "chance" : 0
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_office_left_serverroom",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_office_left_serverroom" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_office_left_serverroom.json" ],
+      "chance" : 0
+    },	
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_office_right_medicalbay",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_office_right_medicalbay" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_office_right_medicalbay.json" ],
+      "chance" : 0
+    },	
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_office_right_barracks",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_office_right_barracks" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_office_right_barracks.json" ],
+      "chance" : 0
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_office_left_barracks",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_office_left_barracks" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_office_left_barracks.json" ],
+      "chance" : 0
+    },	
+
+
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_office_cafeteria",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_office_cafeteria" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_office_cafeteria.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_office_securityroom",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_office_securityroom" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_office_securityroom.json" ]
+    },	
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_office_medium",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_office_medium", "gic_khurtovyna_bunkercomplex_office_small" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_office_medium.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_office_small",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_office_medium", "gic_khurtovyna_bunkercomplex_office_small" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_office_small.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_maintenance_T_top_intersect",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_maintenance_T_top_intersect" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_maintenance_T_top_intersect.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_maintenance_x_intersect",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_maintenance_x_intersect" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_maintenance_x_intersect.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_maintenance_x_subelevator",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_maintenance_x_subelevator.json" ]
+    },	
+	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_maintenance_vertical_hallway",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_maintenance_vertical_hallway" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_maintenance_vertical_hallway.json" ]
+    },	
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_maintenance_bioscan",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_maintenance_bioscan" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_maintenance_bioscan.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_door",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_door" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_door.json" ]
+    },	
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_hallway_vent",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_hallway_vent" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_hallway_vent.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_hallway_elevator",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_hallway_elevator" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_hallway_elevator.json" ]
+    },	
+
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_hallway",
+      "rules" : [
+        [ "maxSpawnCount", [10] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_hallway" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_hallway.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_hallway_alt",
+      "rules" : [
+        [ "maxSpawnCount", [5] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_hallway_alt" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_hallway_alt.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_maintenance_hallway",
+      "rules" : [
+        [ "maxSpawnCount", [2] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_maintenance_hallway" ] ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_maintenance_hallway.json" ]
+    },
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_vertical_hallway",
+      "rules" : [
+        [ "maxSpawnCount", [3] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_vertical_hallway" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_vertical_hallway.json" ]
+    },	
+
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_vertical_hallway_alt",
+      "rules" : [
+        [ "maxSpawnCount", [7] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_vertical_hallway_alt" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_vertical_hallway_alt.json" ]
+    },
+
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_L_bottomleft_corner",
+      "rules" : [
+        [ "maxSpawnCount", [7] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_L_bottomleft_corner" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_L_bottomleft_corner.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_L_bottomright_corner",
+      "rules" : [
+        [ "maxSpawnCount", [7] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_L_bottomright_corner" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_L_bottomright_corner.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_L_upperleft_corner",
+      "rules" : [
+        [ "maxSpawnCount", [7] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_L_upperleft_corner" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_L_upperleft_corner.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_L_upperright_corner",
+      "rules" : [
+        [ "maxSpawnCount", [7] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_L_upperright_corner" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_L_upperright_corner.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_T_bottom_intersect",
+      "rules" : [
+        [ "maxSpawnCount", [7] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_T_bottom_intersect" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_T_bottom_intersect.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_T_left_intersect",
+      "rules" : [
+        [ "maxSpawnCount", [7] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_T_left_intersect" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_T_left_intersect.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_T_right_intersect",
+      "rules" : [
+        [ "maxSpawnCount", [7] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_T_right_intersect" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_T_right_intersect.json" ]
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_T_top_intersect",
+      "rules" : [
+        [ "maxSpawnCount", [7] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_T_top_intersect" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_T_top_intersect.json" ]
+    },		
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_X_intersect",
+      "rules" : [
+        [ "maxSpawnCount", [10] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_storage_X_intersect" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_X_intersect.json" ]
+    },		
+	
+//End
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_apex_exitshaft_left",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "gic_khurtovyna_bunkercomplex_apex_exitshaft_left" ] ]
+
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_apex_exitshaft_left.json" ]
+    },	
+
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_top_endcap",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_top_endcap.json" ],
+      "chance" : 0
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_right_endcap",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_right_endcap.json" ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_left_endcap",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_left_endcap.json" ],
+      "chance" : 0
+    },	
+	
+    {
+      "name" : "gic_khurtovyna_bunkercomplex_storage_bottom_endcap",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "gic_khurtovyna_bunkercomplex_storage_bottom_endcap.json" ],
+      "chance" : 0
+    }		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  ]
+}

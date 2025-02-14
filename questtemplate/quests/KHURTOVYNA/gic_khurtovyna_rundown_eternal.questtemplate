@@ -1,0 +1,38 @@
+{
+  "id" : "gic_khurtovyna_rundown_eternalquest",
+  "prerequisites" : [ "gic_khurtovyna_rundown_biohazardquest" ],
+  "title" : "^#7AA8E0;RUNDOWN: ETERNAL",
+  "text" : "[Obtain a Void Core from RUNDOWN: ETERNAL]
+//:ERR _A#87: SECURITY SYSTEM MALFUNCTION - ILLEGAL INSTRUCTION AT 548CA92F1D79E2DC - ALARM - D_FE#####D VO_____ID C05E//REACTOR.",
+
+  "completionText" : "RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN/RETURN",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_khurtovyna_paradox-codex", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_voidcore_artifact",
+        "count" : 1,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}
+
+
+

@@ -1,0 +1,43 @@
+{
+  "projectileName" : "gic_electricenergyshot_charged_buffer",
+
+  "bounces" : 0,
+  "image" : "gic_electricenergyshot.png",
+  "animationCycle" : 1,
+  "lightColor" : [0, 0, 128],
+  "frameNumber" : 1,
+  "power" : 150,
+
+
+  "damageKind" : "ews_heavyarmsbullet",
+  "damageType" : "ignoresdef",
+  "statusEffects" : [ ],
+  
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_electricenergyshot",
+      "inheritDamageFactor" : 1
+    }
+  ],
+  
+  
+  
+  
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 0.00001,
+  "acceleration" : 0,
+  "timeToLive" : 0.0001,
+  "physics" : "rocket",
+  
+  "rotationRate" : 500,
+  "trackingLimit" : 3000  
+  
+  
+  
+  
+}

@@ -1,0 +1,214 @@
+{
+  "type" : "gic_colonialprisoner_crew",
+  "baseType" : "gic_base",
+  
+  "identity" : {
+    "gender" : "male"
+  },
+
+  "damageTeamType" : "friendly",
+
+  // Remove protection and powermultiplier gained from being level 1 as scaling is from player armor
+  "innateStatusEffects" : [ { "stat" : "protection", "amount": -30 }, {"stat" : "powerMultiplier", "amount" : -15} ], 
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "behavior" : "crewmember",
+    "behaviorConfig" : {
+      "emptyHands" : false,
+
+      // Wander behavior config
+      "wanderTime" : 3,
+      "idleTime" : 10,
+      "outerHomeRange" : 20,
+      "innerHomeRange" : 15,
+
+      "hostileDamageTeam" : {"type" : "friendly", "team" : 1}
+    },
+
+    "crew" : {
+      "recruitable" : true,
+
+      "recruitInteractAction" : {
+        "messageType" : "recruits.offerRecruit",
+        "messageArgs" : []
+      },
+
+      "powerMultiplierExponent" : 1.0,
+
+      "role" : {
+        "type" : "soldier",
+        "name" : "Rifleman",
+        "field" : "Penal Battalion Soldier",
+        "uniformColorIndex" : 4
+      },
+
+      "ranks" : [
+        "Penal Battalion Soldier"
+      ],
+
+      "defaultUniform" : {
+            "chest" : "apexofficerjacket",
+            "legs" : "humantier2pants"
+      },
+      "uniformSlots" : ["chest", "chestCosmetic", "legs", "legsCosmetic", "back", "backCosmetic"]
+    },
+
+    "questGenerator" : {
+      // Disable participation of crewmembers in generated quests until the
+      // generated quest system knows how to deal with entities that can
+      // disappear from the world and/or change uniqueId.
+      "enableParticipation" : false
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "Rifleman! Doing my time!",
+              "I'm <selfname>. Let me join you so I can get out of prison!",
+              "You should take me. I can do ''community service''.",
+              "Come on! Hire me! I don't want to go back to prison!"
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Just don't lock the door!",
+              "They serve food here?",
+              "This place is better than a prison!",
+			  "What's in here?"
+            ]
+          }
+        },
+        "respawned" : {
+          "default" : {
+            "default" : [
+              "Rifleman! Doing my time!",
+              "Respawning? That's new.",
+              "I'm back!",
+              "Beats being executed!",
+              "Respawning? Better than dying!",
+			  "Respawns? I can die again!"
+            ]
+          }
+        },
+        "unfollow" : {
+          "default" : {
+            "default" : [
+              "Alright, I'll stay here.",
+              "I'll stay here.",
+              "This place isn't as bad as prison.",
+              "Finally, I can rest.",
+              "Okay, I'll stay here."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "I'm going!",
+              "Okay, but then I rest!",
+              "If you say so!",
+              "What do I get?",
+              "Alright!"
+            ]
+          }
+        },
+        "cantreach" : {
+          "default" : {
+            "default" : [
+              "I can't run that fast!",
+              "This gun isn't light!",
+              "This equipment isn't light!",
+              "Wait up!"
+            ]
+          }
+		}
+      },
+
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/grumble.config:tagCriteria",
+          "enclosedArea" : "/dialog/grumble.config:enclosedArea",
+          "otherDeed" : "/dialog/grumble.config:otherDeed",
+          "severe" : "/dialog/grumble.config:severe",
+          "final" : "/dialog/grumble.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/arrivedhome.config:beacon",
+          "rent" : "/dialog/arrivedhome.config:rent"
+        }
+      },
+
+      "converse" : "/dialog/crewmember.config:converse",
+
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Kill!",
+			"Punish them!",
+			"What have I got to lose?",
+			"Is he next?",
+			"Here's your share!",
+			"There, see what it's like!",
+			"Come on, punk!",
+			"And there's more coming!",
+			"Time for their medicine!",
+			"They don't scare me!"
+          ]
+        }
+      },
+
+      "reattack" : "/dialog/combat.config:reattack",
+      "killedTarget" : "/dialog/combat.config:killedTarget",
+      "lostTarget" : "/dialog/combat.config:lostTarget",
+      "outOfSight" : "/dialog/combat.config:outOfSight",
+      "cheerOn" : "/dialog/combat.config:cheerOn",
+      "cantReach" : "/dialog/combat.config:cantReach"
+    }
+  },
+
+  "movementParameters" : {
+    // Runs slower due to heavy gear.
+    "runSpeed" : 12
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "chest" : [ { "name" : "apexofficerjacket", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "humantier2pants", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [ "gic_advancedstunspear" ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerability" : true,
+      "hitInvulnerabilityThreshold" : 0.0333,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : ""
+    },
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 200.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.00
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      }
+    }
+  }
+}

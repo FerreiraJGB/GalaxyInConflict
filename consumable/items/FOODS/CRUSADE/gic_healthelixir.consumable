@@ -1,0 +1,29 @@
+{
+  "itemName" : "gic_healthelixir",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "^#B15C46;Recovery Potion^white;",
+  "inventoryIcon" : "gic_healthelixir.png",
+  "maxStack" : 15,
+  "description" : "''Promotes robust health and fitness. Sure to protect against the ravages of the Gestalt!''
+  
+Health Elixir of unknown make. A substance is held within the vial, apparently intended for daily consumption. Whatever it is, it seems to rapidly heal both organic and robotic bodies.
+
+^green;Heals 500hp over 30s.^white;
+^red;Mobility hindered for 1 second.^white;",
+
+  "shortdescription" : "Health Elixir",
+  "effects" : [ [
+      {
+        "effect" : "gic_healthelixir_medkitheal"
+      },
+	  {
+        "effect" : "gic_healing_slowdown_1_healthelixir"
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_elixirheal" ],
+  "blockingEffects" : [
+  ]
+}

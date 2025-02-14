@@ -1,0 +1,25 @@
+{
+  "projectileName" : "gic_standardbullet_miss_c_shotgun",
+  "image" : "gic_standardbullet_miss_c.png",
+  "physics" : "gic_bulletfall",
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "timeToLive" : 1,
+  "fullBright" : true,
+  "onlyHitTerrain" : true,
+  "pointLight" : false,
+  "damageType" : "NoDamage",
+  "damageKindImage" : "icon.png",
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    }
+  ],
+  "power" : 10.0,
+  "speed" : 200,
+  "damageKind" : "ews_smallarms"
+}

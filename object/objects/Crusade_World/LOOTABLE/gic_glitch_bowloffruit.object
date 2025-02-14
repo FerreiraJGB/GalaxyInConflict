@@ -1,0 +1,33 @@
+{
+  "objectName" : "gic_glitch_bowloffruit",
+  "colonyTags" : [],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "Bowl of Fruit.",
+  "shortdescription" : "Bowl of Fruit",
+  "race" : "generic",  
+  "category" : "furniture",
+  "price" : 0,
+//  "tooltipKind" : "gic_largebase",
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "smashSounds" : [ "/sfx/objects/locker_open.ogg" ],  
+  
+  "breakDropOptions" : [
+    [ [ "redapple", 1, { } ], [ "grapes", 1, { } ] ]
+  ],
+
+  "inventoryIcon" : "gic_glitch_bowloffruit.png",
+  "orientations" : [
+    {
+      "dualImage" : "gic_glitch_bowloffruit.png",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

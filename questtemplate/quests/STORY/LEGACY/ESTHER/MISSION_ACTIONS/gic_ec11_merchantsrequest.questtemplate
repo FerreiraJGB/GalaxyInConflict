@@ -1,0 +1,31 @@
+{
+  "id" : "gic_ec11_merchantsrequestQuest",
+  "title" : "^#D1FFDE;Merchant's Request",
+  "text" : "",
+  "completionText" : "",
+  "moneyRange" : [0,0],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_ec11_merchantsletter-codex", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+    "turnInEntityUid" : "gic_esther_chapter_1_1_merchant",
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_ec11_larrysshipment",
+        "count" : 1,
+        "consume" : true
+      }
+    ]
+  }
+}

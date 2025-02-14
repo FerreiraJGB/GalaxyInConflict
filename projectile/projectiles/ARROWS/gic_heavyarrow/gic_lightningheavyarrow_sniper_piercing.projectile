@@ -1,0 +1,61 @@
+{
+  "projectileName" : "gic_lightningheavyarrow_sniper_piercing",
+  "physics" : "laser",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/electricexplosionknockback.config"
+    }
+  ],
+  "statusEffects" : ["gic_stun_1" ],  
+"periodicActions" : [
+    {
+      "time" : 0.005, //0.01
+      "repeat" : true,
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "streak",
+        "layer" : "front",
+        "fullbright" : true,
+        "destructionAction" : "shrink",
+        "size" : 1,
+        "color" : [253, 209, 77, 200],
+        "collidesForeground" : false,
+        "length" : 20,
+        "position" : [0, 0],
+        "timeToLive" : 0.05,
+        "destructionTime" : 0.2,
+        "initialVelocity" : [0.5, 0],
+        "variance" : {
+          "size" : 0,
+          "initialVelocity" : [0.5, -0],
+          "length" : 0
+        }
+      }
+    }
+],
+  
+  "image" : "gic_lightningheavyarrow_sniper_piercing.png",
+  "animationCycle" : 0.25,
+  "fullbright" : true,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "power" : 20,
+  "piercing" : true,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+  "damageKind" : "electric",
+  "damageType" : "ignoresdef",
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "lightColor" : [ 200, 100, 100 ],
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "emitters" : [ "electricplasma", "defaultblue", "electricplasma", "defaultblue", "electricplasma", "defaultblue"  ]
+}

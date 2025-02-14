@@ -1,0 +1,69 @@
+{
+  "itemName" : "gic_ironsentinel",
+  "price" : 500,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Exotic Underbarrel Attachment^white;",
+  "inventoryIcon" : "gic_ironsentinel_icon.png",
+  
+  "tooltipKind" : "gic_largebase",    
+  
+  
+  
+  
+  
+  "description" : "''The Augmentyr were meant to be the perfect soldiers. Transhumans who could fight, survive, and ultimately liberate the Dying Desert. They have fallen far from their purpose.''
+When used, deploys an ^orange;Old-War Turret^reset; that fights for you. ^orange;Lasts for 30s^reset; (being damaged reduces lifespan). ^yellow;Reloads using Cracked Red Suns.^reset;
+
+^green;Tap Right-Click to Deploy/Reload.^reset;
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  
+  
+  "shortdescription" : "Iron Sentinel",
+
+  "attachment" : {
+	"attachmentType" : "underbarrel", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_ironsentinel", //name of attachment
+	"attachmentTag" : ["ews_grenadelauncher", "gic_grenadelauncher" ], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/WEAPON_ATTACHMENTS/FOREGRIP/gic_ironsentinel.png", //determines what image is displayed on the resulting gun. For grenade launchers/under barrel launchers, do NOT add a frame identifier. Keep this as "[...].png".
+		
+	"attachmentId" : "gic_ironsentinel", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "grenadelauncher",
+		"grenadelauncherConfig" : {	//requires some part anims stuff in the main activeitem and some particle stuff. also needs some stances built in too.
+			"altFireTime" : 1.0,
+			"altAmmoMax" : 1,
+			"altAmmo" : 0,			//default starting ammo value
+			"altMagazine" : "gic_crackedredsun",				//the magazine item the alt fire needs to reload
+			"projectileTypeGrenade" : "gic_summon_ultrasheriff_turretpod_ironsentinel_spawn", //grenadeimpact
+			"projectileTypeGrenadeCount" : 1,
+			"projectileTypeGrenadeConfig" : {
+				"power" : 0,		//damage for projectile
+				"speed" : 0,
+				"knockback" : 0,
+//                "damageTeam" : { "type" : "indiscriminate" },
+                "statusEffects" : [  ]
+			},
+			
+			"fireSFX" : "/sfx/gun/gic_energyweapon_01.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("soundEffectGrenade")
+			"reloadSFX" : "/sfx/gic_energyweapon_reload.ogg", //if specified, then this firing SFX will be used instead of the default "soundEffectGrenade" SFX as listed in the main item itself ("switchAmmoAlt")
+			
+			"altInaccuracy" : 0,
+			"grenadeMuzzleOffset" : [1.2,-0.15]		//not the same thing as a muzzle offset; this is an offset offsetted off the main muzzleOffset
+		}
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1,1,1,1,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,1,1,1] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

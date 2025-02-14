@@ -1,0 +1,134 @@
+{
+  "type" : "gic_floranliberationfront_neutral_policeguard",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+
+  
+  "scriptConfig" : {
+    "behavior" : "villageguard",
+    "behaviorConfig" : {
+      "greetingChance" : 1,
+
+      "hostileDamageTeam" : { "type" : "enemy", "team" : 1 }
+    },
+
+    "questGenerator" : {
+      "pools" : ["guard"],
+      "enableParticipation" : false,
+      "timeLimit" : 30,
+      "nearbyQuestLimit" : 1,
+      "nearbyQuestRange" : 500,
+      "questCountRange" : [1, 4],
+      
+      "graduation" : {
+        "nextNpcType" : [
+          []
+        ]
+      }
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [5.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+      "converse" : "/dialog/FLORAN/gic_floranliberationfront_converse.config:converse",
+	  
+      "greeting" : "/dialog/FLORAN/gic_floranliberationfront_converse.config:converse",
+
+      "attack" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:attack",
+      "reattack" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:reattack",
+      "killedTarget" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:killedTarget",
+      "lostTarget" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:lostTarget",
+      "outOfSight" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:outOfSight",
+      "cheerOn" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:cheerOn",
+      "cantReach" : "/dialog/FLORAN/gic_floranliberationfront_combat_intimidate.config:cantReach",
+
+      "hail" : "/dialog/FLORAN/gic_floranliberationfront_guard_hail.config:hail",
+
+      "accuse" : "/dialog/thief.config:accuse"
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [1, [
+          {
+            "head" : [ { "name" : "gic_uscmichhead", "parameters" : { "colorIndex" : [7] }  } ],
+            "chest" : [ { "name" : "hylotltier1chest", "parameters" : { "colorIndex" : [11] }  } ],
+            "legs" : [ { "name" : "gic_hscplegs", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_banner_floranliberationfrontback", "parameters" : { "colorIndex" : [11] } } ],
+            "primary" : [ "gic_usm47a2" ]
+		  }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],  
+  
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+	  
+      "grit" : {
+        "baseValue" : 1
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.2
+      },
+	  
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.4
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.7
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : 0.1
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	
+	  
+    }
+  }
+}

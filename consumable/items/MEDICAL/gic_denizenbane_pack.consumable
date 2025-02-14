@@ -1,0 +1,40 @@
+{
+  "itemName" : "gic_denizenbane_pack",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_denizenbane_pack.png",
+  "maxStack" : 16,
+  
+  "itemTags" : ["gic_syringerifle_ammo"],
+  
+  "description" : "An unholy concoction of opioids, stabilizers, and cyanide, this substance is only mildly discomforting for most, but extremely fatal for the Denizens of Wildlands. These substances are intended to be launched from a Syringe Rifle.
+^red;- Causes a form of Paralysis. Paralysis advances in stages, increasing in effectiveness before wearing off gradually. Same effects as Paralyzant.
+^yellow;- Wildlands Denizens will fatally lose health over 15 seconds. In most cases, they will die from Denizen Bane Poisoning.",
+
+  "shortdescription" : "^orange;Denizen Bane Pack",
+  "effects" : [ [
+  
+  
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 1
+      },
+	  
+      {
+        "effect" : "gic_denizenbane_primer"
+      },
+	  
+      {
+        "effect" : "gic_applyparalyzant"
+      }
+	  
+	  
+	  
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_bandage_use" ],
+  "blockingEffects" : [
+  ]
+}

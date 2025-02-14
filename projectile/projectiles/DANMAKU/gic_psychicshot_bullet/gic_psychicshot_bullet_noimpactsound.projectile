@@ -1,0 +1,32 @@
+{
+  "projectileName" : "gic_psychicshot_bullet_noimpactsound",
+  "image" : "gic_psychicshot_bullet.png",
+  "physics" : "gic_bulletfall",
+  "piercing" : false,
+  "edgeTrigger" : true,
+  "bounces" : 0,
+  "frameNumber" : 1,
+  "animationCycle" : 0.1,
+  "fullbright" : true,
+  "lightColor" : [200, 60, 169],
+  "pointLight" : false,
+  "timeToLive" : 6,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "gic_suppression_small",
+      "inheritDamageFactor" : 0,
+      "angle" : 0
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact/gic_energyimpact_muzzle.config"
+    }
+  ],
+  "damageKindImage" : "icon.png",
+  "power" : 300.0,
+  "statusEffects" : [ "gic_bulletshot"],
+  "speed" : 200,
+  "damageKind" : "ews_psychic",
+  "damageType" : "IgnoresDef"
+}

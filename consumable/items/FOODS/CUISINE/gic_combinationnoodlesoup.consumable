@@ -1,0 +1,28 @@
+{
+  "itemName" : "gic_combinationnoodlesoup",
+  "rarity" : "Common",
+  "price" : 75,
+  "tooltipKind" : "gic_largebase_food",
+  "category" : "preparedFood",
+  "inventoryIcon" : "gic_combinationnoodlesoup.png",
+  "description" : "Vietnamese-style soup with a mixture of Pork, Beef, and Vegetables.
+  
+Noodles are a type of food made from unleavened dough which is either rolled flat and cut, stretched, or extruded, into long strips or strings. The earliest written record of noodles was found in a book dated to the Eastern Han period (25-220 BC).",
+  "shortdescription" : "Combination Noodle Soup",
+  "effects" : [ [
+  "gic_foodbuff_human_primer",
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue" : 20,
+
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}

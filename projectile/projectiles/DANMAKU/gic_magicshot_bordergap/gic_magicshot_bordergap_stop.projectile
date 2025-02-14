@@ -1,0 +1,30 @@
+{
+  "projectileName" : "gic_magicshot_bordergap_stop",
+  "image" : "gic_magicshot_bordergap_stop.png",
+  "animationCycle" : 0.2,
+  "animationLoops" : false,
+  "frameNumber" : 5,
+  "timeToLive" : 0.2,
+  "lightColor" : [50, 50, 50],
+  "pointLight" : true,
+  "flippable" : true,
+  "piercing" : true,
+  "statusEffects" : [ ],
+  "power" : 5.0,
+  "speed" : 0,
+  "knockback" : 20,
+  "movementSettings" : {
+    "collisionEnabled" : false
+  },
+  
+  "scripts" : [ "/scripts/projectiles/gic_miss_primer.lua" ],
+
+  "hitProjectile" : "gic_magicshot_bordergap_spawnsupply",
+  "missProjectile" : "gic_magicshot_bordergap_spawnmonster",
+  "missChance" : 30,  
+  
+  "onlyHitTerrain" : true,
+  "damageKind" : "plasma",
+  "fullbright" : true,
+  "damagePoly" : [[-16, 24], [8, 16], [16, -24], [-8, -16]]
+}

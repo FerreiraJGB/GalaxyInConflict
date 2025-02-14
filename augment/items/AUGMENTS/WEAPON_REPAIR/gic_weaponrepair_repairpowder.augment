@@ -1,0 +1,20 @@
+{
+  "itemName" : "gic_weaponrepair_repairpowder",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "^#E0EAFF;Weapon Repair Powder^white;",
+  "inventoryIcon" : "gic_weaponrepair_repairpowder.png",
+  "description" : "A seemingly magical batch of powder that can reverse degradation, oxidation, and more as if by reverting time itself. It won't repair a weapon by much, but it can bring back even the most abused firearms. ^Yellow;Can repair any standard ballistic firearm at any durability percentage, but only by 10% per repair powder dose.^reset;",
+  "shortdescription" : "Repair Powder (EWS/GiC)",
+  "maxStack" : 1,
+  "tooltipKind" : "gic_largebase",
+  "config" : {
+	"tags" : ["gic_repair", "gic_repair_muzzleloader"],	//main activeitem needs to have this tag under "weaponRepairAcceptTags"
+	"limit" : 0.0,	//if main item's weaponDurability/weaponDurabilityMax is greater/equal, then this "augment" can apply.
+	"repairAmount" : 0.1  //how much the weapon repairs (1.0 is 100%)
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/repairItems/ews_repairItem.lua" ]
+}

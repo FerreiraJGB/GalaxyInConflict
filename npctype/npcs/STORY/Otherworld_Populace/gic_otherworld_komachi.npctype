@@ -1,0 +1,241 @@
+{
+  "type" : "gic_otherworld_komachi",
+  "baseType" : "gic_base",
+
+  "damageTeamType" : "friendly",
+
+  "npcname" : "The Shinigami",
+  "identity" : {
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "fem12",
+    "hairColor" : "2", //RED (15 DARK GREEN)
+    "bodyColor" : "4" //LIGHTEST
+  },  
+  
+  "keepAlive" : true,
+  
+  "humanoidConfig" : "/npcs/story/Otherworld_Populace/gic_otherworld_komachi.config",
+  
+  "persistent" : true,
+
+  "dropPools" : [ ],
+
+  "scriptConfig" : {
+    "behavior" : "speaker",
+	
+	
+    "questGenerator" : {
+      "enableParticipation" : false
+    },
+	
+	
+    "offeredQuests" : [
+	"gic_ec36_komachiquest"
+	],
+	
+	
+    "turnInQuests" : [
+	"gic_ec36_komachiquest"
+	],
+	
+
+    "behaviorConfig" : {
+      "alwaysRun" : false,
+      "wanderWaitTime" : [6.0, 10.0],
+      "wanderTime" : [0.0, 0.0],
+      "wanderDistance" : 0,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ]
+    },
+
+    "chatSounds" : {
+      "human" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_female1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_female1.ogg"
+        ]
+      },
+      "default" : {
+        "male" : [
+          "/sfx/humanoid/human_chatter_female1.ogg"
+        ],
+        "female" : [
+          "/sfx/humanoid/human_chatter_female1.ogg"
+        ]
+      }
+    },	
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+			"You uh, need anything? I ain't your gal.",
+			"Go on, unless you want to touch paperwork.",
+			"Well, usherin' souls over is out of my jurisdiction.",
+			"I'm just a humble ferryman.",
+			"Well, I'm a woman, so that would make me a ferry-woman.",
+			"Meh.",
+			"Oh, the Yama?",
+			"I don't know, she said she was going to solve something.",
+			"In her place she put me. It's not much, but the Abyss made packing difficult.",
+			"I'm not er, very good with the work of judging people.",
+			"I think the Dynasty does a good enough job.",
+			"So I don't really need to do anything about that.",
+			"Not much for me to say...",
+			"I used to have a scythe, too.",
+			"The idea of me reaping their souls with a scythe?",
+			"It's all really just to comfort them.",
+			"I can't do that nowadays. Something's changed in this world.",
+			"The power I used to have as a Shinigami...",
+			"I feel like it's just withered away.",
+			"Like my purpose was just taken from me.",
+			"And now the Yama's gone. She was the only one I could look up to.",
+			"Yes, well, there's this mansion. A vampire and her mistress used to live there.",
+			"The Yama said she needed to solve these incidents herself.",
+			"Not sure what it means now, but the Yama seemed distraught enough.",
+			"So, that's how I'm here, along with that Dullahan merchant.",
+			"Never thought I'd see the day I'd just be here in some shack to accompany a merchant.",
+			"I'll see the Yama again soon, I'm sure.",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"...",
+			"[Dialogue repeat]"
+          ]
+        }
+      },
+      "speak" : {
+        "default" : {
+          "default" : [
+            "Oh, uh, hello?"
+          ]
+        }
+      }
+    }
+  },
+
+  "matchColorIndices" : true,
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "gic_shinigamihead", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "chest" : [
+              { "name" : "gic_shinigamichest", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "legs" : [
+              { "name" : "gic_shinigamilegs", "parameters" : { "colorIndex" : [0] } }
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "statusControllerSettings" : {    
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 1111111.1111 //accounts for vanilla scaling of 0.9x health at tier 1
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 1.0
+      },
+	  
+	  //Psychic
+      "ews_psychicResistance" : {
+        "baseValue" : 0.9
+      },	
+	 
+	  //Melee
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },	
+	  
+	  //Low-Caliber
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.5
+      },
+	  
+	  //High-Caliber
+      "ews_heavyarmsResistance" : {
+        "baseValue" : -0.5
+      },
+	  
+	  //Explosive Yield
+      "ews_explosiveResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Heavy Armor-Piercing
+      "ews_antitankResistance" : {
+        "baseValue" : 0.0
+      }	,
+	  
+      "protection" : {
+        "baseValue" : 1.0
+      },
+      "healthRegen" : {
+        "baseValue" : 100.0
+      }
+    },
+    "statusProperties" : {
+      "effectDirectives" : "?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=8af062FF?replace=31a6ffFF=40bf21FF"
+    }
+  }
+  
+}

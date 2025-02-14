@@ -1,0 +1,80 @@
+{
+  "itemName" : "gic_psychic_landlordslumplender_player_old",
+  "price" : 1000,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" :
+
+"In a world of madness and ghosts, one man had a simple rule for any entity, dead or alive, that resided on his property:
+''IF YOU STAY, THEN YOU PAY.''
+^#E2006D;Multiversal Shattering: Obliterates a target's defenses for 5 seconds.^white;
+^yellow;Material Freebooter: Killing blows on most anomalies confers microcredits as loot.^white;",
+  
+  "shortdescription" : "Landlord's Lump-Lender",
+  
+  "tooltipKind" : "gic_largebase_sword",
+  
+  "category" : "^#E2006D;Heavy Psychic Sledgehammer^white;",
+  
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","hammer"],
+
+  "inventoryIcon" : "gic_psychic_landlordslumplender_player_old.png",
+
+  "animation" : "/items/active/weapons/melee/hammer/hammer.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_psychic_landlordslumplender_player_old.png"
+  },
+  "animationCustom" : { 
+	"sounds" : {
+      "fire" : [ "/sfx/melee/gic_bloodborne_charge-comboattack.wav" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/gic_meleeweapon.lua"],
+
+  "elementalType" : "ews_psychic",
+
+  "primaryAbilityType" : "hammersmash",
+  "primaryAbility" : {
+    "fireTime" : 1.0,
+    "baseDps" : 90,
+    "damageConfig" : {
+
+      "knockbackRange" : 40,
+      "damageKind" : "ews_psychic_microcredit",	  
+      "damageSourceKind" : "ews_psychic_microcredit",
+      "statusEffects" : [{"effect":"gic_psychicGrounding","duration":5.0}, {"effect":"gic_defenseremoval","duration":5.0}],
+      "knockbackMode" : "facing",
+	  "damageType" : "IgnoresDef",
+      "timeout" : 0.3
+	  
+    },
+	
+    "allowHold" : true,
+    "stances" : {
+      "idle" : {
+        "allowRotate" : false
+      },
+      "windup" : {
+        "hold" : true,
+        "duration" : 0.55,
+
+        "allowRotate" : false
+      },
+      "fire" : {
+        "allowRotate" : false
+      },
+      "hold" : {
+        "allowRotate" : false
+      }
+    }
+	
+  },
+
+  "altAbilityType" : "spinslash",
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

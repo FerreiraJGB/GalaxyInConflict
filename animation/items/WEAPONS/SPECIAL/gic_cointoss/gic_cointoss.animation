@@ -1,0 +1,62 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "coin" : {
+        "default" : "1",
+        "states" : {
+          "1" : {},
+		  "2" : {},
+		  "3" : {},
+          "4" : {},
+		  "0" : {}
+        }
+      }
+    },
+
+    "parts" : {
+      "casing" : {
+        "properties" : {
+          "centered" : true,
+          "offset" : [-0.05, -0.05 ],
+		  "image" : "<partImage>"
+        },
+		
+		"partStates" : {
+            "coin" : {
+			  "0" : {
+				"properties" : {
+				  "image" : "gic_coin0.png"
+				}
+			  },
+			  "1" : {
+				"properties" : {
+				  "image" : "gic_coin1.png"
+				}
+			  },
+              "2" : {
+                "properties" : {
+                  "image" : "gic_coin2.png"
+                }
+              },
+              "3" : {
+                "properties" : {
+                  "image" : "gic_coin3.png"
+                }
+              },
+			  "4" : {
+			    "properties" : {
+				  "image" : "gic_coin4.png"
+				}
+			  }
+            }
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "trigger" : ["/sfx/gic_ultrakill_coinflick.ogg"],
+	"coinLoad" : ["/sfx/gic_ultrakill_coinload.ogg"],
+    "triggerFailed" : ["/sfx/interface/clickon_error.ogg"]
+  }
+}

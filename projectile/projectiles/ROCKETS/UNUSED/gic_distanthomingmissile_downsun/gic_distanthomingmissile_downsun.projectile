@@ -1,0 +1,39 @@
+{
+  "projectileName" : "gic_distanthomingmissile_downsun",
+
+  "bounces" : 0,
+  "image" : "gic_distanthomingmissile_downsun.png",
+  "animationCycle" : 1,
+  "lightColor" : [253, 160, 57],
+  "frameNumber" : 6,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smoke/smoke.config"
+    }
+	
+  ],
+  "power" : 10,
+  "damageKind" : "default",
+  "fullbright" : true,
+  "renderLayer" : "Monster+10",
+  "supportsProcessing" : true,
+  "maxSpeed" : 250,
+  "ignoredef" : true,
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,
+
+  "emitters" : [ "rocketsmoke" ],
+  "flippable" : true,
+  "speed" : 5.0,
+  "acceleration" : 2,
+  "timeToLive" : 1,
+  "physics" : "gic_distantprojectile",
+  
+  "rotationRate" : 0.7,
+  "trackingLimit" : 300
+}

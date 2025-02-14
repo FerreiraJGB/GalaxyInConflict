@@ -1,0 +1,40 @@
+{
+  "projectileName" : "gic_standardlaser_emp",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "gic_standardlaser.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "fullbright" : true,
+  "power" : 5.0,
+  "damageKind" : "ews_smallarmsthermal",
+  "damageType" : "IgnoresDef",
+  "speed" : 400,
+  "statusEffects" : [ "gic_colonial_energyshieldBreak" ],
+  "knockback" : 0,
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_laserimpact/gic_laserimpact.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_energyimpact_small/gic_energyimpact_small.config"
+    },
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_plasmaimpact_large/gic_plasmaimpact_large.config"
+    }
+  ],
+  
+  
+  
+  "scripts" : [ "/scripts/projectiles/gic_homingprojectile.lua" ],
+  "scriptDelta" : 3,  
+  
+  "rotationRate" : 5,
+  "trackingLimit" : 3000
+
+}

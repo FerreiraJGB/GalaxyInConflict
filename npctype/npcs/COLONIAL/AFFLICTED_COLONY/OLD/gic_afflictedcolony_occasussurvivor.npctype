@@ -1,0 +1,133 @@
+{
+  "type" : "gic_afflictedcolony_occasussurvivor",
+  "baseType" : "gic_soldierbase",
+  "damageTeam" : 1,
+  "damageTeamType" : "friendly",
+  "persistent" : true,
+  "dropPools" : [ "gic_undercolonyarmorymagsspawnTreasure" ],
+
+  "scriptConfig" : {
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+	
+	
+	
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "patrol", { "timeRange" : [0.6,0.2]}],
+        [5.0, "wander"]
+      ]
+    },
+	
+	
+
+    "dialog" : {
+      "converse" : "/dialog/space_colony/gic_afflictedcolony_converse.config:converse",
+	  
+      "greeting" : "/dialog/space_colony/gic_afflictedcolony_converse.config:converse",
+
+      "attack" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:attack",
+      "reattack" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:reattack",
+      "killedTarget" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:killedTarget",
+      "lostTarget" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:lostTarget",
+      "outOfSight" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:outOfSight",
+      "cheerOn" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:cheerOn",
+      "cantReach" : "/dialog/space_colony/gic_afflictedcolony_survivor_combat.config:cantReach",
+
+      "hail" : "/dialog/space_colony/gic_afflictedcolony_survivor_hail.config:hail",
+
+      "accuse" : "/dialog/thief.config:accuse"
+    }
+  },
+  
+  
+  
+  "items" : {
+    "override" : [
+      [0, [
+		  
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_occasusinfantryhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_occasusinfantrypants", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_scavengerpackback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_stormstubber"
+            ]
+//            "sheathedprimary" : [ "gic_handcannon" ]
+          },
+		  
+	  //Rifleman
+          {
+            "head" : [ { "name" : "gic_occasusinfantryhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_occasusinfantrypants", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_scavengerpackback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_stormstubber"
+            ]
+//            "sheathedprimary" : [ "gic_handcannon" ]
+          },
+		  
+	  //Besieger
+          {
+            "head" : [ { "name" : "gic_occasusinfantryhead", "parameters" : { "colorIndex" : [0] }  } ],
+            "chest" : [ { "name" : "gic_occasusinfantrychest", "parameters" : { "colorIndex" : [0] }  } ],
+            "legs" : [ { "name" : "gic_occasusinfantrypants", "parameters" : { "colorIndex" : [0] } } ],
+            "back" : [ { "name" : "gic_scavengerpackback", "parameters" : { "colorIndex" : [0] } } ],
+            "primary" : [
+              "gic_fuelsprayer"
+            ]
+          }
+        ] ]
+    ]
+  },
+  
+  "innateStatusEffects" : ["gic_npc_death_blood_explosion"],
+  
+  "statusControllerSettings" : {
+  
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "grit" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+	  
+      "ews_npcfirerate" : {
+        "baseValue" : 0.0
+      },
+	  
+        "fireResistance" : {
+          "baseValue" : 0.8
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+	  
+      "ews_meleeResistance" : {
+        "baseValue" : 0.5
+      },
+      "ews_smallarmsResistance" : {
+        "baseValue" : 0.0
+      }
+	  
+	  
+    }
+  }
+  
+}

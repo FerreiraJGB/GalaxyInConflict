@@ -1,0 +1,78 @@
+{
+  "type" : "gic_overgrown_undeadsoldier",
+  "baseType" : "gic_soldierbase",
+
+  "scriptConfig" : {
+  
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0.05,
+        "broadsword" : 0.45,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 0.6,
+        "shortsword" : 0.35,
+        "spear" : 0.55
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.02,
+        "broadsword" : 1.7,
+        "dagger" : 0.1,
+        "axe" : 0.4,
+        "hammer" : 2.0,
+        "shortsword" : 1.0,
+        "spear" : 1.4
+      }
+    },
+  
+    "dialog" : {
+      "attack" : "/dialog/infected/gic_overgrown_undead_combat.config:attack",
+      "reattack" : "/dialog/infected/gic_overgrown_undead_combat.config:reattack",
+      "killedTarget" : "/dialog/infected/gic_overgrown_undead_combat.config:killedTarget",
+      "lostTarget" : "/dialog/infected/gic_overgrown_undead_combat.config:lostTarget",
+      "outOfSight" : "/dialog/infected/gic_overgrown_undead_combat.config:outOfSight",
+      "cheerOn" : "/dialog/infected/gic_overgrown_undead_combat.config:cheerOn",
+      "cantReach" : "/dialog/infected/gic_overgrown_undead_combat.config:cantReach"
+    }
+  },
+
+  "dropPools" : [ ],
+
+  "movementParameters" : {
+    "crouchingPoly" : [ [-0.75, -2.0], [-0.35, -2.5], [0.35, -2.5], [0.75, -2.0], [0.75, -0.5], [0.35, 0], [-0.35, 0], [-0.75, -0.5] ],
+    "mass" : 5.0
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 200.0
+        },
+        "protection" : {
+          "baseValue" : 1.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 2.0
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_overgrownhead", "parameters" : { "colorIndex" : [1] } } ],
+            "chest" : [ { "name" : "gic_lust_infantryarmorchest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "hazmatlegs", "parameters" : { "colorIndex" : [1] } } ],
+            "back" : [ { "name" : "hazmatback", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : [
+			  "gic_crowbar_npc",
+			  "gic_hatchet_npc",
+			  "gic_stunbaton"
+            ],
+            "alt" : [ "gic_body_armor_overgrown" ]
+          }
+        ] ]
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id" : "gic_khurtovyna_rundown_anomalyquest",
+  "prerequisites" : [ "gic_khurtovyna_rundown_theadminquest" ],
+  "title" : "^#7AA8E0;RUNDOWN: ARTIFACT",
+  "text" : "[Obtain Muted Artifacts from RUNDOWN: ARTIFACT]
+
+RUNDOWN: ARTIFACT is a Low-Risk Expedition with multiple exits, small sectors, and a low anomaly count. Likewise, only MUTED ARTIFACTs are capable of spawning.
+Unlocks RUNDOWN: DEEPER.",
+
+  "completionText" : "Unlocked RUNDOWN: DEEPER - Medium-Risk Expedition with a significant increase in Sector Size, Anomalies, and Artifacts. Divers will be unable to use the Entry Lift to return to the surface, and must use a separate Exit Shaft to leave.",
+  "moneyRange" : [500,2500],
+  "ephemeral" : false,
+  "rewards" : [
+    [ [ "gic_khurtovyna_bunkerexperimentation-codex", 1 ], [ "gic_sentrygunkit_asgmk12s_shotgun", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_main_standard.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : "questGiver",
+      "questComplete" : "questReceiver"
+    },
+
+    "requireTurnIn" : true,
+
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "gic_muted_artifact",
+        "count" : 5,
+        "consume" : false,
+        "description" : "Find ^orange;<itemName>^reset;: ^green;<current> / <required>^reset;"
+      }
+    ]
+  }
+}
+
+
+

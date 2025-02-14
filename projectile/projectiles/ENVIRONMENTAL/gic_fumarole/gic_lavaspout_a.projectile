@@ -1,0 +1,36 @@
+{
+  "projectileName" : "gic_lavaspout_a",
+  "image" : "gic_fumarole_a.png",
+  "animationCycle" : 0.25,
+  "physics" : "bullet",
+  "frameNumber" : 1,
+  "pointLight" : false,
+  "speed" : 0,
+  "timeToLive" : 2,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/gic_explosion/gic_explosion.config"
+    }
+  ],
+  
+"periodicActions" : [
+    {
+      "time" : 0.1,
+      "action" : "projectile",
+      "type" : "gic_lavaspout_b",
+      "inheritDamageFactor" : 1,
+	  "fuzzAngle" : 5,
+	  "speed" : 200
+    }
+],
+  
+  "power" : 80.0,
+  "knockback" : 4,
+  "damageKind" : "ews_smallarms",
+  "damageType" : "IgnoresDef",
+  "emitters" : [ "daggerblue" ],
+  "damagePoly" : [ [-2, -3], [8, -3], [8, 2], [-2, 2] ]
+}
+
+

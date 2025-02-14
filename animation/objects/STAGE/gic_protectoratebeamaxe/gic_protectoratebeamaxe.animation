@@ -1,0 +1,62 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "beamaxe" : {
+        "default" : "hidden",
+        "states" : {
+          "hidden" : {},
+          "active" : {},
+          "inactive" : {}
+        }
+      }
+    },
+
+    "parts" : {
+      "beamaxe" : {
+        "properties" : {
+          "centered" : false,
+          "zLevel" : 2
+        },
+
+        "partStates" : {
+          "beamaxe" : {
+            "active" : {
+              "properties" : {
+                "image" : "gic_protectoratebeamaxe_lit.png:active"
+              }
+            },
+
+            "inactive" : {
+              "properties" : {
+                "image" : "gic_protectoratebeamaxe_lit.png:inactive"
+              }
+            }
+          }
+        }
+      },
+      "beamaxelit" : {
+        "properties" : {
+          "centered" : false,
+          "fullbright" : true,
+          "zLevel" : 1
+        },
+
+        "partStates" : {
+          "beamaxe" : {
+            "active" : {
+              "properties" : {
+                "image" : "gic_protectoratebeamaxe.png:active"
+              }
+            },
+
+            "inactive" : {
+              "properties" : {
+                "image" : "gic_protectoratebeamaxe.png:inactive"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

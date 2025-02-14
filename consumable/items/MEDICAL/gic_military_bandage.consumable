@@ -1,0 +1,43 @@
+{
+  "itemName" : "gic_military_bandage",
+  "rarity" : "Common",
+  "price" : 0,
+  "tooltipKind" : "gic_largebase",
+  "category" : "medicine",
+  "inventoryIcon" : "gic_military_bandage.png",
+  "maxStack" : 20,
+  "description" : "Common military-issued gauze bandage. Designed to immediately recover from larger wounds.
+
+^green;Recovers Light and Medium bleeding, costing 1s.^white;
+^green;Bleed damage HALTED^white; for ^yellow;4 minutes (+100% Bleed Resist).^white;
+
+^orange;Extrasolar Humans Only:
+^green;+10HP recovered per bandage.^white;",
+
+  "shortdescription" : "^yellow;Military Bandage",
+  "effects" : [ [
+      {
+        "effect" : "gic_foodbuff_human_primer",
+        "duration" : 10
+      },  
+	  {
+        "effect" : "gic_bandaged_100"
+      },
+      {
+        "effect" : "gic_medkit_recovery_use_penalty",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_bleeding_lightStatusImmunity",
+        "duration" : 1
+      },
+      {
+        "effect" : "gic_bleeding_mediumStatusImmunity",
+        "duration" : 1
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "gic_bandage_use" ],
+  "blockingEffects" : [
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "itemName" : "gic_firelance_spear_chargepose",
+  "price" : 10,
+  "level" : 6,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "Still charging huh?",
+  "shortdescription" : "Fire Lance Spear Charge Pose",
+  "tooltipKind" : "base",
+  "category" : "broadsword",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","broadsword"],
+
+  "inventoryIcon" : "gic_firelance_spear_chargepose.png",
+
+  "animation" : "gic_firelance_spear_chargepose.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_firelance_spear_chargepose.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+  "aimOffset" : -1.0,
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+    "fireTime" : 0.1,
+    "baseDps" : 80,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "knockbackRange" : [25, 35]
+    },
+	
+    "stances" : {
+	
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.1, 0.6],
+
+	    "frontArmFrame" : "swimIdle.1", //run.2
+        "backArmFrame" : "rotation",
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+	
+//      "idle" : {
+//        "armRotation" : -10,
+//        "weaponRotation" : -80,
+//        "twoHanded" : true,
+//        "weaponOffset" : [-0.1, 0.6],
+//	    "frontArmFrame" : "swimIdle.1", //run.2
+//        "backArmFrame" : "rotation",
+//        "allowRotate" : false,
+//        "allowFlip" : true
+//     },
+	  
+      "windup" : {
+        "duration" : 0.1,
+        "armRotation" : -20,
+        "weaponRotation" : -80,
+        "twoHanded" : true,
+        "weaponOffset" : [-0.1, -0.0],
+		
+	    "frontArmFrame" : "swimIdle.1", //run.2
+        "backArmFrame" : "rotation",
+
+        "allowRotate" : true,
+        "allowFlip" : false
+      },
+      "fire" : {
+        "duration" : 0.3,
+        "armRotation" : 10,
+        "weaponRotation" : -100,
+        "twoHanded" : true,
+        "weaponOffset" : [0.1, 1.0],
+		
+
+
+        "allowRotate" : true,
+        "allowFlip" : false
+      },
+      "hold" : {
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.6],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+    }
+	
+  },
+  "fireSounds" : [ "/sfx/melee/swing_spear.ogg" ],
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

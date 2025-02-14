@@ -1,0 +1,115 @@
+{
+  "type" : "gic_azoyou_boss",
+  "baseType" : "gic_soldierbase",
+
+  "npcname" : "Azoyou Orakle",
+  "identity" : {
+    "gender" : "female"
+  },  
+  "damageBar" : "special",
+  "persistent" : true,
+
+  "movementParameters" : {
+    "runSpeed" : 70,
+    "walkSpeed" : 70,
+    "airFriction" : 0.05,
+    "airJumpProfile" : {
+      "jumpSpeed" : 90.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 3
+    }
+  },
+	
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/fantasy/gic_demon_combat.config:attack",
+      "reattack" : "/dialog/fantasy/gic_demon_combat.config:reattack",
+      "killedTarget" : "/dialog/fantasy/gic_demon_combat.config:killedTarget",
+      "lostTarget" : "/dialog/fantasy/gic_demon_combat.config:lostTarget",
+      "outOfSight" : "/dialog/fantasy/gic_demon_combat.config:outOfSight",
+      "cheerOn" : "/dialog/fantasy/gic_demon_combat.config:cheerOn",
+      "cantReach" : "/dialog/fantasy/gic_demon_combat.config:cantReach"
+    }
+  },
+  
+  "damageTeam" : 2,
+
+  "dropPools" : [ "basicTreasure" ],
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "head" : [ { "name" : "gic_demonhorns_azoyouhead", "parameters" : { "colorIndex" : [8] } } ],
+            "chest" : [ { "name" : "hotholidaychest", "parameters" : { "colorIndex" : [1] } } ],
+            "legs" : [ { "name" : "wedding2legs", "parameters" : { "colorIndex" : [1] } } ],
+            "back" : [ { "name" : "demonwingsback", "parameters" : { "colorIndex" : [1] } } ],
+            "primary" : ["gic_psionickatana"],
+            "sheathedprimary" : [
+              "gic_azoyou_wand"
+            ]
+          }
+        ] ]
+    ]
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 40,
+    "statusEffects" : [ ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 3600.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 6
+      },
+      "protection" : {
+        "baseValue" : 1
+      },
+      "healthRegen" : {
+        "baseValue" : 0
+      },
+      "fireResistance" : {
+        "baseValue" : 1.0
+      },
+      "fireStatusImmunity" : {
+        "baseValue" : 1.0
+      },
+	  
+	  //Melee
+      "gic_meleeResistance" : {
+        "baseValue" : 0.1
+      },	
+	  
+	  //Low-Caliber
+      "gic_smallarmsResistance" : {
+        "baseValue" : 0.8
+      },
+	  
+	  //High-Caliber
+      "gic_heavyarmsResistance" : {
+        "baseValue" : 0.3
+      },
+	  
+	  //Explosive Yield
+      "gic_explosiveResistance" : {
+        "baseValue" : -0.2
+      },
+	  
+	  //Heavy Armor-Piercing
+      "gic_antitankResistance" : {
+        "baseValue" : -100.0
+      }
+	  
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "itemName" : "gic_stunbaton",
+  "price" : 10,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "There is a solution to dissent and unrest.--- OLD WEAPON --- No longer spawns anywhere.", //Used for the Industrial Synthetics
+  "shortdescription" : "Stun Baton",
+  "tooltipKind" : "gic_largebase_sword",
+  "category" : "^#6DFFD5;Melee^reset;",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","shortsword"],
+
+  "inventoryIcon" : "gic_stunbaton.png",
+
+  "animation" : "/items/active/weapons/melee/axe/axe.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "gic_stunbaton.png"
+  },
+      "animationCustom" : { "sounds" : {
+          "fire" : [ "/sfx/melee/swing_shortsword_electric1.ogg", "/sfx/melee/swing_shortsword_electric2.ogg", "/sfx/melee/swing_shortsword_electric3.ogg" ]
+        } },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "ews_melee",
+
+  "primaryAbilityType" : "axecleave",
+  "primaryAbility" : {
+    "fireTime" : 0.70,
+    "baseDps" : 50,
+    "damageConfig" : {
+      "damageSourceKind" : "ews_melee",
+      "knockbackRange" : 5,
+	  "damageType" : "IgnoresDef",
+      "statusEffects" : [ "electrified" ] //gic_tazed
+    },
+	
+    "allowHold" : true,
+    "stances" : {
+      "idle" : {
+        "allowRotate" : false
+      },
+      "windup" : {
+//        "hold" : true,
+//        "duration" : 0.55,
+
+        "allowRotate" : false
+      },
+      "fire" : {
+        "allowRotate" : false
+      },
+      "hold" : {
+        "allowRotate" : false
+      }
+    }
+	
+  },
+
+  "altAbilityType" : "",
+
+  "builder" : "/items/buildscripts/gic_buildunrandweapon.lua"
+}

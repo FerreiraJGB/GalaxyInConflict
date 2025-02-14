@@ -1,0 +1,49 @@
+{
+  "itemName" : "gic_pso_siderail_scope",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "^#E0EAFF;Receiver Siderail Sight Attachment^white;",
+  "inventoryIcon" : "gic_pso_siderail_scope_icon.png",
+  
+  "description" : "PSO-type sight (Pritsel Snaipersky Optichesky, ''Optical Sniper Sight'') originally introduced on Earth in 1963 with the Dragunov sniper rifle.
+  
+^green;+30% crouch accuracy | -15% crouch miss chance.^reset;
+^red;+20% standing miss chance.^reset;
+
+^green;Right-click on a compatible GiC Weapon to attach.^reset;",
+  
+  "shortdescription" : "PSO Siderail Scope (GiC)",
+  "tooltipKind" : "gic_largebase",
+  "attachment" : {
+	"attachmentType" : "sight", //sight, underbarrel, barrel, stock, misc
+	"attachmentName" : "gic_pso_siderail_scope", //name of attachment
+	"attachmentTag" : ["gic_sight_receiver","gic_pso_siderail_scope"], //if target item has one or more of these tags, then this attachment will be applicable to the item
+	"attachmentImage" : "/items/augments/weapon_attachments/sight/gic_pso_siderail_scope.png", //determines what image is displayed on the resulting gun
+	
+	"attachmentId" : "gic_pso_siderail_scope", //itemName of attachment
+	"removable" : true, //if true, then when the attachment is replaced, gives player back old attachment
+	
+	"specialAttachmentConfig" : {
+		"type" : "scope",
+		
+		//"scopeIn" : "/cursors/ews_scopeIn.cursor",
+		//"scopeInTime" : 0.5,						//seconds, aka the animationCycle from the cursor
+		//"scopeOut" : "/cursors/ews_scopeOut.cursor",
+		//"scopeOutTime" : 0.25,						//seconds, aka the animationCycle from the cursor
+		
+		"scopedIn" : "/cursors/gic_pso_sight_aim.cursor"	//only parameter absolutely needed for the scope function to work. Scope in and scope out stuff are optional.
+	},
+	
+	"attachmentBonusType" : "multiplicative", //additive, multiplicative, set; if attachmentBonusType is "set", you can set a attachmentBonus value as "-1" if you want to keep the value unaltered by the bonuses.
+	
+	"attachmentBonuses" : [1.0,0.7,1.2,0.85,1,1,1,1], //inaccuracy (additive/multiplicative/set),crouchInaccuracy (etc), missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier (inaccuracy), dynamicRecoilTickDuration, dynamicRecoilMissMultiplier
+	//or [inaccuracy, crouchInaccuracy, missChance, missChanceCrouch, dynamicRecoilMaxSteps, dynamicRecoilMultiplier, dynamicRecoilTickDuration, dynamicRecoilMissMultiplier]
+	
+	"attachmentBonusesAlt" : [1,0.7,1.2,0.85] //for alt fire modes; inaccuracy, crouchInaccuracy, missChance, missChanceCrouch
+	// or [altInaccuracy, altCrouchInaccuracy, altMissChance, altMissChanceCrouch]
+  },
+
+  //"radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/items/augments/attachments/ews_attachment.lua" ]
+}

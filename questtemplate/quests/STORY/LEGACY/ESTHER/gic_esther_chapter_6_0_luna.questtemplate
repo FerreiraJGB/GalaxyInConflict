@@ -1,0 +1,70 @@
+{
+  "id" : "gic_esther_chapter_6_0_lunaQuest",
+  "title" : "^yellow;[GiC]: Chapter 6 - Luna",
+  "prerequisites" : [ "gic_esther_chapter_5_0_division16Quest" ],
+  
+  //QUEST 3
+  
+  //The text before warping to mission.
+  
+  "text" : "---",
+  
+  //Returning after goal trigger.
+  
+  "completionText" : "---",
+  
+  
+  
+  
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : false,
+  "rewards" : [
+    [ [ "gic_lunarassaultcorps_rabbitearshead", 1 ] ]
+  ],
+	
+	
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/gic_instance_noassociatedmission_chapter6.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "questStarted" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_keine_hubworld/gic_esther_keine_hubworld_portrait.png"} ],
+        "title" : "Kamish"
+      },
+      "questComplete" : {
+        "portrait" : [ {"image" : "/objects/missions/gic_esther_keine_hubworld/gic_esther_keine_hubworld_portrait.png"} ],
+        "title" : "Kamish"
+      }
+    },
+
+    "descriptions" : {
+      "enterInstance" : "Speak to ^orange;Kamish^reset; to travel to ^orange;Luna^reset;.",
+      "findGoal" : "Load the Luna Railgun with the Lunar Artifact.",
+      "turnIn" : "Return to ^orange;Kamish^reset;."
+    },
+
+    "warpEntityUid" : "gic_esther_keine_hubworld",
+    "warpAction" : "instanceworld:gic_esther_chapter_6_1_LunarianTransport",
+    "warpDialog" : "/interface/confirmation/gic_teleportconfirmation.config:gic_esther_chapter_6_1_LunarianTransport_confirmation",
+	
+    "gic_missionUnlockedCinema" : "/cinematics/gic_coordinates_chapter6.cinematic", //???
+    "gic_missionCompleteCinema" : "/cinematics/ESTHER_STORY/gic_esther_lunarailgun/gic_esther_lunarailgun.cinematic",	 //literally crashes if you don't give it a 2nd cutscene
+	
+    "goalTrigger" : "proximity",
+    "proximityRange" : 100,
+
+    "goalEntityUid" : "gic_esther_chapter_6_2_LunarWar_Goal",
+    "indicateGoal" : true,
+    "trackGoalEntity" : false,
+
+    "requireTurnIn" : false,
+
+    "turnInEntityUid" : "gic_esther_keine_hubworld",
+	
+	
+  "setUniverseFlags" : [] 
+	
+	
+  }
+  
+}

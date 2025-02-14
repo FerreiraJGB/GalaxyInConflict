@@ -1,0 +1,72 @@
+{
+  "type" : "gic_electronicmerchant",
+  "baseType" : "merchant",
+
+  "scriptConfig" : {
+
+    "dialog" : {
+      "merchant" : {
+        "start" : "/dialog/gic_generalcivilianmerchant.config:merchantStart",
+        "end" : "/dialog/gic_generalcivilianmerchant.config:merchantEnd",
+        "follow" : "/dialog/gic_generalcivilianmerchant.config:follow",
+        "welcome" : "/dialog/gic_generalcivilianmerchant.config:welcome",
+        "tout" : "/dialog/gic_generalcivilianmerchant.config:tout"
+      },
+      "flee" : {
+        "helpme" : "/dialog/flee.config:helpme",
+        "safe" : "/dialog/flee.config:safe"
+      },
+      "tenant" : {
+        "grumbles" : {
+          "tagCriteria" : "/dialog/merchant.config:tagCriteria",
+          "enclosedArea" : "/dialog/merchant.config:enclosedArea",
+          "otherDeed" : "/dialog/merchant.config:otherDeed",
+          "severe" : "/dialog/merchant.config:severe",
+          "final" : "/dialog/merchant.config:final"
+        },
+        "arrivedHome" : {
+          "beacon" : "/dialog/merchant.config:beacon",
+          "rent" : "/dialog/merchant.config:rent"
+        }
+      },
+      "accuse" : "/dialog/thief.config:accuse",
+      "alert" : "/dialog/thief.config:alert"
+    },
+
+    "merchant" : {
+      "waitTime" : 10,
+      "storeRadius" : 5,
+      "poolsFile" : "/npcs/merchant/gic_civilianitemsstore.config",
+      "categories" : {
+        "override" : [ "gic_electronicshop" ]
+      },
+      "buyFactorRange" : [ 1.0, 2.0 ],
+      "sellFactorRange" : [ 0.05, 0.1 ],
+      "numItems" : 2,
+      "paneLayoutOverride" : {
+        "windowtitle" : {
+          "title" : "  Electronics Guru",
+          "subtitle" : "  Sells basic electronics."
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "back" : [
+              { "name" : "survivalgearback", "parameters" : { "colorIndex" : [5] } }
+            ],
+            "chest" : [
+              { "name" : "workoutchest", "parameters" : { "colorIndex" : [0] } }
+            ],
+            "legs" : [
+              { "name" : "workoutlegs", "parameters" : { "colorIndex" : [0] } }
+            ]
+          }
+        ] ]
+    ]
+  }
+}

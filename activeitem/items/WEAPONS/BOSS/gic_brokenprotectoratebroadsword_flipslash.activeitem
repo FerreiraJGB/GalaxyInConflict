@@ -1,0 +1,39 @@
+{
+  "itemName" : "gic_brokenprotectoratebroadsword_flipslash",
+  "price" : 500,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A very nice sword in very poor condition.",
+  "shortdescription" : "GiC Protectorate Broken Broadsword",
+  "tooltipKind" : "sword",
+  "category" : "broadsword",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","broadsword"],
+
+  "inventoryIcon" : [
+    {"image" : "gic_brokenprotectoratebroadswordblade.png"},
+    {"image" : "gic_brokenprotectoratebroadswordhandle.png"}
+  ],
+
+  "animation" : "/items/active/weapons/melee/broadsword/combobroadsword.animation",
+  "animationParts" : {
+    "handle" : "gic_brokenprotectoratebroadswordhandle.png",
+    "blade" : "gic_brokenprotectoratebroadswordblade.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "broadswordcombo",
+  "primaryAbility" : {
+    "fireTime" : 0.8,
+    "baseDps" : 20
+  },
+
+  "altAbilityType" : "flipslash",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}
